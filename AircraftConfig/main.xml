@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+##############################################
+# Copyright (c) Joshua Davidson (it0uchpods) #
+##############################################
+-->
+
+<!-- Boeing 737 MAX Aircraft Config Dialog -->
+
+<PropertyList>
+
+	<name>aircraft-config</name>
+	<layout>vbox</layout>
+	
+	<group>
+		<layout>hbox</layout>
+		<text>
+			<halign>left</halign>
+			<label>Aircraft Configuration V1.5.0</label>
+		</text>
+		<empty><stretch>1</stretch></empty>
+		<button>
+			<row>0</row>
+			<col>0</col>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>?</legend>
+			<binding>
+				<command>nasal</command>
+				<script>acconfig.help_dlg.open();</script>
+			</binding>
+		</button>
+		<button>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>X</legend>
+			<key>Esc</key>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	
+	<hrule/>
+		
+	<group>
+		<layout>hbox</layout>
+
+		<group>
+			<layout>vbox</layout>
+			
+				<group>
+					<layout>vbox</layout>
+					
+					<button>
+						<halign>center</halign>
+						<legend>Welcome</legend>
+						<pref-width>140</pref-width>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.welcome_dlg.open();</script>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Select Livery</legend>
+						<pref-width>140</pref-width>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle();</script>
+						</binding>
+					</button>
+				</group>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<group>
+					<layout>hbox</layout>
+
+					<hrule>
+						<stretch type="bool">true</stretch>
+					</hrule>
+					<text>
+						<label>Load Panel State</label>
+					</text>
+					<hrule>
+						<stretch type="bool">true</stretch>
+					</hrule>
+				</group>
+				
+				<group>
+					<layout>vbox</layout>
+					
+					<button>
+						<halign>center</halign>
+						<legend>Autostart</legend>
+						<pref-width>140</pref-width>
+						<binding>
+							<command>nasal</command>
+							<script>boeing737.autostart();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					
+					<button>
+						<halign>center</halign>
+						<legend>Shutdown</legend>
+						<pref-width>140</pref-width>
+						<binding>
+							<command>nasal</command>
+							<script>boeing737.shutdown();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+				</group>
+			</group>
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Enable De-icing Truck</label>
+				<property>services/deicing_truck/enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+
+			<button>
+				<halign>left</halign>
+				<legend>De-ice Aircraft</legend>
+				<padding>5</padding>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if (getprop("services/deicing_truck/enable") == 1) {
+							setprop("/services/deicing_truck/de-ice", 1);
+							screen.log.write("Starting De-icing Process...", 1, 1, 1);
+						} else
+							screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);
+					</script>
+				</binding>
+			</button>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Enable Baggage Ramp</label>
+				<property>services/baggage/enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Enable External Power Box</label>
+				<property>services/ext-pwr/enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Bus</label>
+				<property>controls/switches/bus</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Passenger Stairs Front</label>
+				<property>controls/switches/stairs1</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/switches/stairs1</property>
+				</binding>
+			</checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Passenger Stairs Rear</label>
+				<property>controls/switches/stairs2</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/switches/stairs2</property>
+				</binding>
+			</checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Catering Front</label>
+				<property>controls/switches/catering1</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/switches/catering1</property>
+				</binding>
+			</checkbox>
+			
+			<hrule/>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Show yokes</label>
+				<property>sim/yokes-visible</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>acconfig.writeSettings();</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Increase FPS (Disables decoration objects)</label>
+				<property>controls/switches/increase-fps</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>acconfig.writeSettings();</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
+		
+			<group>
+				<layout>hbox</layout>
+				
+				<button>
+					<legend>Fuel Truck Controls</legend>
+					<binding>
+						<command>nasal</command>
+						<script>acconfig.fuel_dlg.open();</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Announcements</legend>
+					<binding>
+						<command>nasal</command>
+						<script>acconfig.announcements_dlg.open();</script>
+					</binding>
+				</button>
+				
+			</group>
+					
+			<group>
+				<layout>hbox</layout>
+
+				
+				<button>
+					<legend>Lights</legend>
+					<binding>
+						<command>nasal</command>
+						<script>
+						acconfig.lights_dlg.open();
+						</script>
+					</binding>
+				</button>
+				
+				
+				<button>
+					<legend>Flight Controls</legend>
+					<binding>
+						<command>nasal</command>
+						<script>acconfig.fctl_dlg.open();</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Failures</legend>
+					<binding>
+						<command>nasal</command>
+						<script>acconfig.fail_dlg.open();</script>
+					</binding>
+				</button>
+				
+			</group>
+
+		</group>
+
+	</group>
+	
+</PropertyList>
