@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+     <keyboard>
+	
+     <key n="71">
+      <name>G</name>
+      <desc>Gear Down Custom Binding</desc>
+      <binding>
+        <command>property-assign</command>
+        <property>/b737/controls/gear/lever</property>
+        <value>0</value>
+      </binding>
+    </key>
+	
+    <key n="103">
+      <name>g</name>
+      <desc>Gear Up Custom Binding</desc>
+      <binding>
+        <command>property-assign</command>
+        <property>/b737/controls/gear/lever</property>
+        <value>1</value>
+      </binding>
+    </key>
+	
+    <key n="106">
+      <name>j</name>
+      <desc>Decrease spoiler lever position</desc>
+      <binding>
+        <command>property-adjust</command>
+        <property>b737/controls/flight/spoilers-lever-pos</property>
+        <step type="double">-1</step>
+        <min type="double">0</min>
+        <max type="double">6</max>
+      </binding>
+    </key>
+
+    <key n="107">
+      <name>k</name>
+      <desc>Increase spoiler lever position</desc>
+      <binding>
+        <command>property-adjust</command>
+        <property>b737/controls/flight/spoilers-lever-pos</property>
+        <step type="double">1</step>
+        <min type="double">0</min>
+        <max type="double">6</max>
+      </binding>
+    </key>
+	
+	<key n="2">
+		<name>Ctrl-b</name>
+		<desc>Cycle speedbrake setting</desc>
+		<binding>
+			<command>property-assign</command>
+			<property>/controls/flight/autospeedbrake</property>
+			<value>0</value>
+		</binding>
+		<binding>
+			<command>property-cycle</command>
+			<property>/b737/controls/flight/spoilers-lever-pos</property>
+			<value>0</value>
+			<value>1</value>
+			<value>2</value>
+			<value>3</value>
+			<value>4</value>
+			<value>5</value>
+			<value>6</value>
+		</binding>
+	</key>
+
+    <key n="113">
+      <name>q</name>
+      <desc>Turn tiller left</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          boeing737.tiller_left();
+        </script>
+      </binding>
+    </key>
+
+    <key n="81">
+      <name>Q</name>
+      <desc>Turn tiller left small</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          boeing737.tiller_left_small();
+        </script>
+      </binding>
+    </key>
+
+    <key n="101">
+      <name>e</name>
+      <desc>Turn tiller right</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          boeing737.tiller_right();
+        </script>
+      </binding>
+    </key>
+
+    <key n="69">
+      <name>E</name>
+      <desc>Turn tiller right small</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          boeing737.tiller_right_small();
+        </script>
+      </binding>
+    </key>
+
+    <key n="119">
+      <name>w</name>
+      <desc>Turn tiller to center</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          boeing737.tiller_center();
+        </script>
+      </binding>
+    </key>
+
+    <key n="127">
+      <name>Delete</name>
+      <desc>Thrust reversers toggle</desc>
+      <binding>
+        <condition>
+          <and>
+            <property>/sim/input/selected/engine[0]</property>
+            <less-than>
+              <property>/autopilot/internal/servo-throttle[0]</property>
+              <value>0.03</value>
+            </less-than>
+            <less-than>
+              <property>/autopilot/internal/servo-throttle[1]</property>
+              <value>0.03</value>
+            </less-than>
+            <or>
+              <less-than>
+                <property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+                <value>17.5</value>
+              </less-than>
+              <property>/b737/sensors/air-ground</property>
+            </or>
+            <equals>
+              <property>/engines/engine[0]/reverser-pos-norm</property>
+              <value>0</value>
+            </equals>
+          </and>
+        </condition>
+        <command>property-interpolate</command>
+        <property>/engines/engine[0]/reverser-pos-norm</property>
+        <value>1</value>
+        <time>2</time>
+      </binding>
+      <binding>
+        <condition>
+          <and>
+            <less-than>
+              <property>/autopilot/internal/servo-throttle[0]</property>
+              <value>0.03</value>
+            </less-than>
+            <less-than>
+              <property>/autopilot/internal/servo-throttle[1]</property>
+              <value>0.03</value>
+            </less-than>
+            <equals>
+              <property>/engines/engine[0]/reverser-pos-norm</property>
+              <value>1</value>
+            </equals>
+          </and>
+        </condition>
+        <command>property-interpolate</command>
+        <property>/engines/engine[0]/reverser-pos-norm</property>
+        <value>0</value>
+        <time>3</time>
+      </binding>
+      <binding>
+        <condition>
+          <and>
+            <property>/sim/input/selected/engine[1]</property>
+            <less-than>
+              <property>/autopilot/internal/servo-throttle[0]</property>
+              <value>0.03</value>
+            </less-than>
+            <less-than>
+              <property>/autopilot/internal/servo-throttle[1]</property>
+              <value>0.03</value>
+            </less-than>
+            <or>
+              <less-than>
+                <property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+                <value>17.5</value>
+              </less-than>
+              <property>/b737/sensors/air-ground</property>
+            </or>
+            <equals>
+              <property>/engines/engine[1]/reverser-pos-norm</property>
+              <value>0</value>
+            </equals>
+          </and>
+        </condition>
+        <command>property-interpolate</command>
+        <property>/engines/engine[1]/reverser-pos-norm</property>
+        <value>1</value>
+        <time>2</time>
+      </binding>
+      <binding>
+        <condition>
+          <and>
+            <less-than>
+              <property>/autopilot/internal/servo-throttle[0]</property>
+              <value>0.03</value>
+            </less-than>
+            <less-than>
+              <property>/autopilot/internal/servo-throttle[1]</property>
+              <value>0.03</value>
+            </less-than>
+            <equals>
+              <property>/engines/engine[1]/reverser-pos-norm</property>
+              <value>1</value>
+            </equals>
+          </and>
+        </condition>
+        <command>property-interpolate</command>
+        <property>/engines/engine[1]/reverser-pos-norm</property>
+        <value>0</value>
+        <time>3</time>
+      </binding>
+    </key>
+  </keyboard>
+
+  </PropertyList>
+  
