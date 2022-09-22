@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<filter n="10007">
+  <type>gain</type>
+  <gain>-3430</gain> <!-- 162 turns from 17 to 0. Measured from real aircraft. -->
+  <input>
+    <property>/fdm/jsbsim/fcs/stabilizer-pos-unit</property>
+  </input>
+  <output>
+    <property>/b737/helpers/trim-wheel-abs-pos</property>
+  </output>
+</filter>
+
+<filter n="10008">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <mod>
+          <property>/b737/helpers/trim-wheel-abs-pos</property>
+          <value>360</value>
+        </mod>
+        <value>-0.002777777777777777777777</value>
+      </product>
+    </expression>
+  </input>
+  <output>
+    <prop>/b737/helpers/trim-wheel-pos</prop>
+  </output>
+</filter>
+
+ <logic n="10009">
+   <input>
+     <and>
+       <greater-than>
+         <property>/b737/helpers/trim-wheel-pos</property>
+         <value>0.1</value>
+       </greater-than>
+       <less-than>
+         <property>/b737/helpers/trim-wheel-pos</property>
+         <value>0.9</value>
+       </less-than>
+     </and>
+   </input>
+   <output>/b737/sound/stab-trim</output>
+ </logic>
+
+<!-- VOR/LOC lamp on MCP -->
+ <logic>
+   <input>
+     <and>
+       <or>
+         <property>/autopilot/internal/LNAV-NAV-armed</property>
+         <property>/autopilot/internal/LNAV-NAV</property>
+       </or>
+       <not>
+         <property>/autopilot/internal/VNAV-GS-armed</property>
+       </not>
+       <not>
+         <or>
+           <property>/autopilot/internal/VNAV-GS</property>
+           <property>/autopilot/internal/VNAV-FLARE</property>
+         </or>
+       </not>
+     </and>
+   </input>
+   <output>/autopilot/internal/LNAV-NAV-light</output>
+ </logic>
+
+<!-- Calculating output for FLIGHT DIRECTORS -->
+
+<!-- ROLL -->
+<filter n="10010">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <and>
+        <property>/autopilot/internal/FCC-B-master</property>
+        <not><property>/autopilot/internal/FCC-A-master</property></not>
+      </and>
+    </condition>
+    <prop>/autopilot/settings/fccb-target-bank</prop>
+  </input>
+  <input>
+    <prop>/autopilot/settings/fcca-target-bank</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-left-bank-nf</prop>
+  </output>
+</filter>
+
+<filter n="100101">
+  <name>Median left fd roll pos</name>
+  <type>exponential</type>
+  <filter-time>0.2</filter-time>
+  <input>/instrumentation/flightdirector/fd-left-bank-nf</input>
+  <output>/instrumentation/flightdirector/fd-left-bank-f</output>
+</filter>
+
+<filter n="100102">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100</value>
+      </greater-than>
+    </condition>
+    <prop>/instrumentation/flightdirector/fd-left-bank-f</prop>
+  </input>
+  <input>
+    <prop>/instrumentation/flightdirector/fd-left-bank-nf</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-left-bank</prop>
+  </output>
+</filter>
+
+<filter n="10011">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <and>
+        <property>/autopilot/internal/FCC-A-master</property>
+        <not><property>/autopilot/internal/FCC-B-master</property></not>
+      </and>
+    </condition>
+    <prop>/autopilot/settings/fcca-target-bank</prop>
+  </input>
+  <input>
+    <prop>/autopilot/settings/fccb-target-bank</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-right-bank-nf</prop>
+  </output>
+</filter>
+
+<filter n="100111">
+  <name>Median right fd roll pos</name>
+ <type>exponential</type>
+  <filter-time>0.2</filter-time>
+  <input>/instrumentation/flightdirector/fd-right-bank-nf</input>
+  <output>/instrumentation/flightdirector/fd-right-bank-f</output>
+</filter>
+
+<filter n="100112">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100</value>
+      </greater-than>
+    </condition>
+    <prop>/instrumentation/flightdirector/fd-right-bank-f</prop>
+  </input>
+  <input>
+    <prop>/instrumentation/flightdirector/fd-right-bank-nf</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-right-bank</prop>
+  </output>
+</filter>
+
+<!-- PITCH -->
+<filter n="10012">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <and>
+        <property>/autopilot/internal/FCC-B-master</property>
+        <not><property>/autopilot/internal/FCC-A-master</property></not>
+      </and>
+    </condition>
+    <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
+  </input>
+  <input>
+    <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-left-pitch-nf</prop>
+  </output>
+</filter>
+
+<filter n="10013">
+  <name>Median left fd pitch pos</name>
+  <type>exponential</type>
+  <filter-time>0.2</filter-time>
+  <input>/instrumentation/flightdirector/fd-left-pitch-nf</input>
+  <output>/instrumentation/flightdirector/fd-left-pitch-f</output>
+</filter>
+
+<filter n="10014">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100</value>
+      </greater-than>
+    </condition>
+    <prop>/instrumentation/flightdirector/fd-left-pitch-f</prop>
+  </input>
+  <input>
+    <prop>/instrumentation/flightdirector/fd-left-pitch-nf</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-left-pitch</prop>
+  </output>
+</filter>
+
+<filter n="10015">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <and>
+        <property>/autopilot/internal/FCC-A-master</property>
+        <not><property>/autopilot/internal/FCC-B-master</property></not>
+      </and>
+    </condition>
+    <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
+  </input>
+  <input>
+    <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-right-pitch-nf</prop>
+  </output>
+</filter>
+
+<filter n="10016">
+  <name>Median right fd pitch pos</name>
+   <type>exponential</type>
+  <filter-time>0.2</filter-time>
+    <input>/instrumentation/flightdirector/fd-right-pitch-nf</input>
+  <output>/instrumentation/flightdirector/fd-right-pitch-f</output>
+</filter>
+
+<filter n="10017">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100</value>
+      </greater-than>
+    </condition>
+    <prop>/instrumentation/flightdirector/fd-right-pitch-f</prop>
+  </input>
+  <input>
+    <prop>/instrumentation/flightdirector/fd-right-pitch-nf</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-right-pitch</prop>
+  </output>
+</filter>
+
+<!-- Transfer weight to kilogramms-->
+<filter n="10018">
+  <type>gain</type>
+  <gain>0.4536</gain>
+  <input>
+    <prop>fdm/jsbsim/inertia/weight-lbs</prop>
+  </input>
+  <output>
+    <prop>fdm/jsbsim/inertia/weight-kg</prop>
+  </output>
+</filter>
+
+	<!-- Smooth slip skid indicator-->
+<filter n="100119">
+  <type>exponential</type>
+  <filter-time>0.2</filter-time>
+  <input>accelerations/pilot/y-accel-fps_sec</input>
+  <output>instrumentation/slip-skid-ball/side-accel-filtered-fps_sec</output>
+</filter>
+
+<filter n="100120">
+  <type>gain</type>
+  <gain>0.03108095</gain>
+  <input>instrumentation/slip-skid-ball/side-accel-filtered-fps_sec</input>
+  <output>instrumentation/slip-skid-ball/side-accel-filtered-norm</output>
+</filter>
+
+<!-- Translate steering angle to short int type -->
+<filter n="200100">
+  <type>gain</type>
+  <gain>420.1025</gain>
+  <input>fdm/jsbsim/fcs/steer-pos-deg</input>
+  <output>gear/gear[0]/steering-multiplay</output>
+</filter>
+
+</PropertyList>

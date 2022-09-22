@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+
+<!--
+**********************************************************************
+This file selects the instrumentation modules that should be available.
+**********************************************************************
+-->
+
+<PropertyList>
+
+    <adf>
+        <name>adf</name>
+        <number>0</number>
+    </adf>
+
+    <adf>
+        <name>adf</name>
+        <number>1</number>
+    </adf>
+
+    <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>0</number>
+        <total-pressure>/systems/pitot[0]/total-pressure-inhg</total-pressure>
+        <static-pressure>/systems/static[0]/pressure-inhg</static-pressure>
+    </airspeed-indicator>
+
+    <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>1</number>
+        <total-pressure>/systems/pitot[1]/total-pressure-inhg</total-pressure>
+        <static-pressure>/systems/static[1]/pressure-inhg</static-pressure>
+    </airspeed-indicator>
+
+    <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>2</number>
+        <total-pressure>/systems/pitot[2]/total-pressure-inhg</total-pressure>
+        <static-pressure>/systems/static[2]/pressure-inhg</static-pressure>
+    </airspeed-indicator>
+
+    <altimeter>
+        <name>altimeter</name>
+        <number>0</number>
+        <static-pressure>/systems/static[0]/pressure-inhg</static-pressure>
+        <quantum>0</quantum>
+        <tau>0.1</tau>
+   </altimeter>
+
+    <altimeter>
+        <name>altimeter</name>
+        <number>1</number>
+        <static-pressure>/systems/static[1]/pressure-inhg</static-pressure>
+        <quantum>0</quantum>
+        <tau>0.1</tau>
+   </altimeter>
+
+    <altimeter>
+        <name>altimeter</name>
+        <number>2</number>
+        <static-pressure>/systems/static[2]/pressure-inhg</static-pressure>
+        <quantum>0</quantum>
+        <tau>0.1</tau>
+   </altimeter>
+
+    <attitude-indicator>
+        <name>attitude-indicator</name>
+        <number>0</number>
+        <suction>/systems/vacuum/suction-inhg</suction>
+    </attitude-indicator>
+
+    <clock>
+        <name>clock</name>
+        <number>0</number>
+    </clock>
+
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
+
+    <dme>
+        <name>dme</name>
+        <number>1</number>
+    </dme>
+
+    <marker-beacon>
+        <name>marker-beacon</name>
+        <number>0</number>
+    </marker-beacon>
+
+    <heading-indicator>
+        <name>heading-indicator</name>
+        <number>0</number>
+        <suction>/systems/vacuum/suction-inhg</suction>
+    </heading-indicator>
+
+    <heading-indicator-dg>
+        <name>heading-indicator-dg</name>
+        <number>0</number>
+    </heading-indicator-dg>
+
+    <mk-viii>
+        <name>mk-viii</name>
+        <number>0</number>
+    </mk-viii>
+
+    <magnetic-compass>
+        <name>magnetic-compass</name>
+        <number>0</number>
+    </magnetic-compass>
+
+    <comm-radio>
+      <name>comm</name>
+      <number>0</number>
+    <eight-point-three>true</eight-point-three>
+    </comm-radio>
+
+    <comm-radio>
+      <name>comm</name>
+      <number>1</number>
+      <eight-point-three>true</eight-point-three>   
+     </comm-radio>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>0</number>
+    </nav-radio>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>1</number>
+    </nav-radio>
+
+
+    <slip-skid-ball>
+        <name>slip-skid-ball</name>
+        <number>0</number>
+    </slip-skid-ball>
+
+    <turn-indicator>
+        <name>turn-indicator</name>
+        <number>0</number>
+    </turn-indicator>
+
+    <transponder>
+        <name type="string">transponder</name>
+        <number type="int">0</number>
+        <mode type="int">1</mode> <!-- 0 = Mode A, 1 = Mode C, 2 = Mode S -->
+        <bus-volts type="double">8.0</bus-volts>
+        <encoder-path type="string">/instrumentation/altimeter</encoder-path>
+        <kt70-compatibility type="bool">0</kt70-compatibility>
+    </transponder>
+
+  <vertical-speed-indicator>
+    <name>vertical-speed-indicator</name>
+    <number>0</number>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
+  </vertical-speed-indicator>
+
+  <gps>
+    <name>gps</name>
+    <number>0</number>
+  </gps>
+
+  <radar>
+    <name>wxradar</name>
+    <number>0</number>
+  </radar>
+
+  <tacan>
+    <name>tacan</name>
+    <number>0</number>
+  </tacan>
+
+  <radar-altimeter>
+    <name>radar-altimeter</name>
+    <number>0</number>
+    <update-interval-sec>0.1</update-interval-sec>
+  </radar-altimeter>
+
+  <radar-altimeter>
+    <name>radar-altimeter</name>
+    <number>1</number>
+    <update-interval-sec>0.1</update-interval-sec>
+  </radar-altimeter>
+
+</PropertyList>
