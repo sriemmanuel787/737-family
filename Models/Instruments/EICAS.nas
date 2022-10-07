@@ -19,7 +19,7 @@ var canvasEng = {
 		return m;
 	},
 	getKeys: func() {
-		return ["fuel-flow1", "fuel-flow2", "oil-press1", "oil-press2", "oil-temp1", "oil-temp2", "oil-qty1", "oil-qty2", "vib1", "vib2", "oil-press-meter1", "oil-press-meter2", "vib-meter1", "vib-meter2", "throttle-num1", "throttle-num2", "throttle-n1", "throttle-n2", "n1-text1", "n1-dial1", "n1-text2", "n1-dial2", "egt-text1", "egt-dial1", "egt-text2", "egt-dial2", "motoring1", "motoring2", "n2-text1", "n2-dial1", "n2-text2", "n2-dial2", "fuel-flow", "thrust", "low-oil-pressure", "oil-filter-bypass", "start-valve-open", "fuel-flow2", "thrust2", "low-oil-pressure2", "oil-filter-bypass2", "start-valve-open2", "tank-r", "tank-c", "tank-l", "total", "flt-mode", "air-temp", "flap-dial"];
+		return ["fuel-flow1", "fuel-flow2", "oil-press1", "oil-press2", "oil-temp1", "oil-temp2", "oil-qty1", "oil-qty2", "vib1", "vib2", "oil-press-meter1", "oil-press-meter2", "vib-meter1", "vib-meter2", "throttle-num1", "throttle-num2", "throttle-n1", "throttle-n2", "n1-text1", "n1-dial1", "n1-text2", "n1-dial2", "egt-text1", "egt-dial1", "egt-text2", "egt-dial2", "motoring1", "motoring2", "n2-text1", "n2-dial1", "n2-text2", "n2-dial2", "fuel-flow", "thrust", "low-oil-pressure", "oil-filter-bypass", "start-valve-open", "fuel-flow2", "thrust2", "low-oil-pressure2", "oil-filter-bypass2", "start-valve-open2", "tank-r", "tank-c", "tank-l", "total", "flt-mode", "air-temp", "flap-trans", "flap-ext", "flap-dial"];
 	},
 	
 	setup: func() {},
@@ -46,13 +46,24 @@ var canvasEng = {
 		#N1
 		me["n1-dial1"].setRotation(getprop("/engines/engine[0]/n1")*2*D2R);
 		me["n1-dial2"].setRotation(getprop("/engines/engine[1]/n1")*2*D2R);
-		me["n1-dial1"].setRotation(getprop()*2*D2R); # property needs to be inserted
-		me["n1-dial2"].setRotation(getprop()*2*D2R); # property needs to be inserted
+		me["throttle-n1"].setRotation(getprop("/controls/engines/engine[0]/throttle")*2*D2R);
+		me["throttle-n2"].setRotation(getprop("/controls/engines/engine[1]/throttle")*2*D2R);
+		me["n1-text1"].setText(getprop("/engines/engine[0]/n1"));
+		me["n1-text2"].setText(getprop("/engines/engine[1]/n1"));
+		me["throttle-num1"].setText(getprop("/controls/engines/engine[0]/throttle"));
+		me["throttle-num2"].setText(getprop("/controls/engines/engine[1]/throttle"));
+
 		#EGT
+		me["egt-dial1"].setRotation(getprop("/engines/engine[0]/egt-actual")*0.2015*D2R);
+		me["egt-dial2"].setRotation(getprop("/engines/engine[1]/egt-actual")*0.2015*D2R);
+		me["egt-text1"].setText(getprop("/engines/engine[0]/egt-actual"));
+		me["egt-text2"].setText(getprop("/engines/engine[1]/egt-actual"));
 		
 		#N2
 		me["n2-dial1"].setRotation(getprop("/engines/engine[0]/n2")*2*D2R);
 		me["n2-dial2"].setRotation(getprop("/engines/engine[1]/n2")*2*D2R);
+		me["n2-text1"].setText(getprop("/engines/engine[0]/n2"));
+		me["n2-text2"].setText(getprop("/engines/engine[1]/n2"));
 		if (getprop("/engines/engine[0]/n2") > 18 and getprop("/engines/engine[0]/n2") < 24){
 			me["motoring1"].show();
 		}else{
@@ -65,7 +76,8 @@ var canvasEng = {
 		}
 		
 		#Oil and Fuel Flow
-		me["fuel-flow1"].setText()
+		me["fuel-flow1"].setText(getprop("/engines/engine[0]/fuel-flow_pph")*LB2KG/1000);
+		me["fuel-flow2"].setText(getprop("/engines/engine[1]/fuel-flow_pph")*LB2KG/1000);
 		
 		#Warnings
 		if (getprop("/controls/engines/engine[0]/starter") > 0){
@@ -73,20 +85,35 @@ var canvasEng = {
 		}else{
 			me["start-valve-open"].hide();
 		}
-		
 		if (getprop("/controls/engines/engine[1]/starter") > 0){
 			me["start-valve-open2"].show();
 		}else{
 			me["start-valve-open2"].hide();
 		}
-		
-		#Misc
-		me["air-temp"].setText(roundToNearest(getprop("/fdm/jsbsim/propulsion/tat-c"),1) + "c");
-		if (getprop("/it-autoflight/input/thrustStg") == "G/A" or getprop("/it-autoflight/input/thrustStg") == "TO") 
-			me["flt-mode"].setText(sprintf("%s",getprop("/it-autoflight/input/thrustStg")));
-		else
-      		me["flt-mode"].setText(sprintf("%s","CRZ"));
 
+		if(math.abs(getprop("/engines/engine[0]/n1")-getprop("/engines/engine[0]/n1")) > 10){
+			me["thrust"].show();
+		}else{
+			me["thrust"].hide();
+		}
+		if(math.abs(getprop("/engines/engine[1]/n1")-getprop("/engines/engine[1]/n1")) > 10){
+			me["thrust2"].show();
+		}else{
+			me["thrust2"].hide();
+		}
+
+		if(getprop("/engines/engine[0]/fuel-flow_pph")*LB2KG > 3){
+			me["fuel-flow"].show();
+		}else{
+			me["fuel-flow"].hide();
+		}
+		if(getprop("/engines/engine[1]/fuel-flow_pph")*LB2KG > 3){
+			me["fuel-flow2"].show();
+		}else{
+			me["fuel-flow2"].hide();
+		}
+
+		#Flap indicator
 		if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.125){
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*272*D2R);
 		}else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.25){
@@ -104,30 +131,45 @@ var canvasEng = {
 		}else{
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*270*D2R);
 		}
+		
+		if (getprop("/surface-positions/flap-pos-norm[0]") = 0.125 or getprop("/surface-positions/flap-pos-norm[0]") = 0.25 or getprop("/surface-positions/flap-pos-norm[0]") = 0.375 or getprop("/surface-positions/flap-pos-norm[0]") = 0.5 or or getprop("/surface-positions/flap-pos-norm[0]") = 0.625 or getprop("/surface-positions/flap-pos-norm[0]") = 0.75 or getprop("/surface-positions/flap-pos-norm[0]") = 0.825 or getprop("/surface-positions/flap-pos-norm[0]") = 1){
+			me["flaps-ext"].show();
+			me["flaps-trans"].hide();
+		} else if(getprop("/surface-positions/flap-pos-norm[0]") = 0){
+			me["flaps-ext"].hide();
+			me["flaps-trans"].hide();
+		} else {
+			me["flaps-ext"].hide();
+			me["flaps-trans"].show();
+		}
+		
+		#Misc
+		me["air-temp"].setText(roundToNearest(getprop("/fdm/jsbsim/propulsion/tat-c"),1) + "c");
+		
+		if (getprop("/it-autoflight/input/thrustStg") == "G/A" or getprop("/it-autoflight/input/thrustStg") == "TO") 
+			me["flt-mode"].setText(sprintf("%s",getprop("/it-autoflight/input/thrustStg")));
+		else
+      		me["flt-mode"].setText(sprintf("%s","CRZ"));
+
+		
 	}
 };
-
-
-
 
 var init = func() {
 	eicas = canvas.new({
 		"name": "EICAS",
-		"size": [692, 1024],
-		"view": [692, 1024],
+		"size": [1024, 1515],
+		"view": [1024, 1515],
 		"mipmapping": 1
 	});
 	
 	eicas.addPlacement({"node": "capt.screenL"});
 	
+	
 	var engGroup = display.createGroup();
 	
-	eng = canvasEng.new(engGroup, "Aircraft/MD-11/Nasal/Displays/res/ENG.svg");
+	eng = canvasEng.new(engGroup, "Aircraft/737-MAX/Models/Instruments/res/EICAS.svg");
 	
 	canvasBase.setup();
 	update.start();
-	
-	if (pts.Systems.Acconfig.Options.Du.sdFps.getValue() != 10) {
-		rateApply();
-	}
 }
