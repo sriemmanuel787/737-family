@@ -17,7 +17,7 @@ var Engines = {
 		ffActual:   [props.globals.getNode("/engines/engine[0]/fuel-flow_pph"), props.globals.getNode("/engines/engine[1]/fuel-flow_pph")],
 		n1Actual:   [props.globals.getNode("/engines/engine[0]/n1"), props.globals.getNode("/engines/engine[1]/n1")],
 		n2Actual:   [props.globals.getNode("/engines/engine[0]/n2"), props.globals.getNode("/engines/engine[1]/n2")],
-        startValve: [props.globals.getNode("/controls/engines/engine[0]/starter"), props.globals.getNode("/controls/engines/engine[1]/starter")],
+        	startValve: [props.globals.getNode("/controls/engines/engine[0]/starter"), props.globals.getNode("/controls/engines/engine[1]/starter")],
 		oilPsi:     [props.globals.getNode("/engines/engine[0]/oil-pressure-psi"), props.globals.getNode("/engines/engine[1]/oil-pressure-psi")],
 		state:      [props.globals.getNode("/sim/failure-manager/engines/engine[0]/serviceable"), props.globals.getNode("/sim/failure-manager/engines/engine[1]/serviceable")],
 	},
