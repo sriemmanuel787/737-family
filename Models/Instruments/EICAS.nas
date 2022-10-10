@@ -15,7 +15,9 @@ var canvasEng = {
 	new: func(canvasGroup, file) {
 		var m = {parents: [canvasEng, canvasBase]};
 		m.init(canvasGroup, file);
-		
+		foreach(var key; getKeys()) {
+			m[key] = EICAS.getElementById(key);
+		}
 		return m;
 	},
 	getKeys: func() {
@@ -38,32 +40,32 @@ var canvasEng = {
 		me["flap-dial"].setCenter(363*SCALE,408*SCALE);
 
 		# Fuel
-		me["tank-r"].setText(getprop("/consumables/fuel/tank[0]/level-kg")/1000);
-		me["tank-c"].setText(getprop("/consumables/fuel/tank[2]/level-kg")/1000);
-		me["tank-l"].setText(getprop("/consumables/fuel/tank[1]/level-kg")/1000);
-		me["total"].setText((getprop("/consumables/fuel/tank[0]/level-kg") + getprop("/consumables/fuel/tank[1]/level-kg") + getprop("/consumables/fuel/tank[2]/level-kg"))/1000);
+		me["tank-r"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[0]/level-kg")/1000));
+		me["tank-c"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[2]/level-kg")/1000));
+		me["tank-l"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[1]/level-kg")/1000));
+		me["total"].setText(sprintf("%0.1f", (getprop("/consumables/fuel/tank[0]/level-kg") + getprop("/consumables/fuel/tank[1]/level-kg") + getprop("/consumables/fuel/tank[2]/level-kg"))/1000));
 		
 		#N1
 		me["n1-dial1"].setRotation(getprop("/engines/engine[0]/n1")*2*D2R);
 		me["n1-dial2"].setRotation(getprop("/engines/engine[1]/n1")*2*D2R);
 		me["throttle-n1"].setRotation(getprop("/controls/engines/engine[0]/throttle")*2*D2R);
 		me["throttle-n2"].setRotation(getprop("/controls/engines/engine[1]/throttle")*2*D2R);
-		me["n1-text1"].setText(getprop("/engines/engine[0]/n1"));
-		me["n1-text2"].setText(getprop("/engines/engine[1]/n1"));
-		me["throttle-num1"].setText(getprop("/controls/engines/engine[0]/throttle"));
-		me["throttle-num2"].setText(getprop("/controls/engines/engine[1]/throttle"));
+		me["n1-text1"].setText(sprintf("%0.1f", getprop("/engines/engine[0]/n1")));
+		me["n1-text2"].setText(sprintf("%0.1f", getprop("/engines/engine[1]/n1")));
+		me["throttle-num1"].setText(sprintf("%0.1f", getprop("/controls/engines/engine[0]/throttle")));
+		me["throttle-num2"].setText(sprintf("%0.1f", getprop("/controls/engines/engine[1]/throttle")));
 
 		#EGT
 		me["egt-dial1"].setRotation(getprop("/engines/engine[0]/egt-actual")*0.2015*D2R);
 		me["egt-dial2"].setRotation(getprop("/engines/engine[1]/egt-actual")*0.2015*D2R);
-		me["egt-text1"].setText(getprop("/engines/engine[0]/egt-actual"));
-		me["egt-text2"].setText(getprop("/engines/engine[1]/egt-actual"));
+		me["egt-text1"].setText(sprintf("%i", getprop("/engines/engine[0]/egt-actual")));
+		me["egt-text2"].setText(sprintf("%i", getprop("/engines/engine[1]/egt-actual")));
 		
 		#N2
 		me["n2-dial1"].setRotation(getprop("/engines/engine[0]/n2")*2*D2R);
 		me["n2-dial2"].setRotation(getprop("/engines/engine[1]/n2")*2*D2R);
-		me["n2-text1"].setText(getprop("/engines/engine[0]/n2"));
-		me["n2-text2"].setText(getprop("/engines/engine[1]/n2"));
+		me["n2-text1"].setText(sprintf("%0.1f", getprop("/engines/engine[0]/n2")));
+		me["n2-text2"].setText(sprintf("%0.1f", getprop("/engines/engine[1]/n2")));
 		if (getprop("/engines/engine[0]/n2") > 18 and getprop("/engines/engine[0]/n2") < 24){
 			me["motoring1"].show();
 		}else{
@@ -76,61 +78,71 @@ var canvasEng = {
 		}
 		
 		#Oil and Fuel Flow
-		me["fuel-flow1"].setText(getprop("/engines/engine[0]/fuel-flow_pph")*LB2KG/1000);
-		me["fuel-flow2"].setText(getprop("/engines/engine[1]/fuel-flow_pph")*LB2KG/1000);
+		me["fuel-flow1"].setText(sprintf("%0.2f", getprop("/engines/engine[0]/fuel-flow_pph")*LB2KG/1000));
+		me["fuel-flow2"].setText(sprintf("%0.1f", getprop("/engines/engine[1]/fuel-flow_pph")*LB2KG/1000));
+		me["oil-press1"].setText(sprintf("%i", getprop("/engines/engine[0]/oil-pressure-psi")));
+		me["oil-press2"].setText(sprintf("%i", getprop("/engines/engine[1]/oil-pressure-psi")));
+		me["oil-press-meter1"].setTranslation(0, getprop("/engines/engine[0]/oil-pressure-psi")*(-2))
+		me["oil-press-meter2"].setTranslation(0, getprop("/engines/engine[1]/oil-pressure-psi")*(-2))
 		
 		#Warnings
-		if (getprop("/controls/engines/engine[0]/starter") > 0){
+		if (getprop("/controls/engines/engine[0]/starter") > 0)
 			me["start-valve-open"].show();
-		}else{
+		else
 			me["start-valve-open"].hide();
-		}
-		if (getprop("/controls/engines/engine[1]/starter") > 0){
+		
+		if (getprop("/controls/engines/engine[1]/starter") > 0)
 			me["start-valve-open2"].show();
-		}else{
+		else
 			me["start-valve-open2"].hide();
-		}
-
-		if(math.abs(getprop("/engines/engine[0]/n1")-getprop("/engines/engine[0]/n1")) > 10){
+		
+		if(getprop("/engines/engine[0]/oil-pressure-psi") < 20)
+			me["low-oil-pressure"].show();
+		else
+			me["low-oil-pressure"].hide();
+		
+		if(getprop("/engines/engine[1]/oil-pressure-psi") < 20)
+			me["low-oil-pressure2"].show();
+		else
+			me["low-oil-pressure2"].hide();
+		
+		if(math.abs(getprop("/engines/engine[0]/n1")-getprop("/engines/engine[0]/n1")) > 10)
 			me["thrust"].show();
-		}else{
+		else
 			me["thrust"].hide();
-		}
-		if(math.abs(getprop("/engines/engine[1]/n1")-getprop("/engines/engine[1]/n1")) > 10){
+		
+		if(math.abs(getprop("/engines/engine[1]/n1")-getprop("/engines/engine[1]/n1")) > 10)
 			me["thrust2"].show();
-		}else{
+		else
 			me["thrust2"].hide();
-		}
 
-		if(getprop("/engines/engine[0]/fuel-flow_pph")*LB2KG > 3){
+		if(getprop("/engines/engine[0]/fuel-flow_pph")*LB2KG > 3)
 			me["fuel-flow"].show();
-		}else{
+		else
 			me["fuel-flow"].hide();
-		}
-		if(getprop("/engines/engine[1]/fuel-flow_pph")*LB2KG > 3){
+		
+		if(getprop("/engines/engine[1]/fuel-flow_pph")*LB2KG > 3)
 			me["fuel-flow2"].show();
-		}else{
+		else
 			me["fuel-flow2"].hide();
-		}
 
 		#Flap indicator
-		if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.125){
+		if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.125)
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*272*D2R);
-		}else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.25){
+		else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.25)
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*311.2*D2R);
-		}else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.375){
+		else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.375)
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*306.7*D2R);
-		}else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.5){
+		else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.5)
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*309*D2R);
-		}else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.625){
+		else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.625)
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*288*D2R);
-		}else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.75){
+		else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.75)
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*159.3*D2R);
-		}else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.875){
+		else if (getprop("/surface-positions/flap-pos-norm[0]") <= 0.875)
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*221.7*D2R);
-		}else{
+		else
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*270*D2R);
-		}
 		
 		if (getprop("/surface-positions/flap-pos-norm[0]") = 0.125 or getprop("/surface-positions/flap-pos-norm[0]") = 0.25 or getprop("/surface-positions/flap-pos-norm[0]") = 0.375 or getprop("/surface-positions/flap-pos-norm[0]") = 0.5 or or getprop("/surface-positions/flap-pos-norm[0]") = 0.625 or getprop("/surface-positions/flap-pos-norm[0]") = 0.75 or getprop("/surface-positions/flap-pos-norm[0]") = 0.825 or getprop("/surface-positions/flap-pos-norm[0]") = 1){
 			me["flaps-ext"].show();
@@ -144,12 +156,12 @@ var canvasEng = {
 		}
 		
 		#Misc
-		me["air-temp"].setText(roundToNearest(getprop("/fdm/jsbsim/propulsion/tat-c"),1) + "c");
+		me["air-temp"].setText(sprintf("%+i" ,getprop("/fdm/jsbsim/propulsion/tat-c")) + "c");
 		
 		if (getprop("/it-autoflight/input/thrustStg") == "G/A" or getprop("/it-autoflight/input/thrustStg") == "TO") 
 			me["flt-mode"].setText(sprintf("%s",getprop("/it-autoflight/input/thrustStg")));
 		else
-      		me["flt-mode"].setText(sprintf("%s","CRZ"));
+      me["flt-mode"].setText(sprintf("%s","CRZ"));
 
 		
 	}
