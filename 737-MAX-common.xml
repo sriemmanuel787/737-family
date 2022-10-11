@@ -13,7 +13,7 @@
 				<splash type="bool">true</splash>
 				<path>Splash/splash-1.png</path>
 			</preview>
-			<preview>
+			<!-- <preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
 				<path>Splash/splash-2.png</path>
@@ -27,7 +27,7 @@
 				<type>exterior</type>
 				<splash type="bool">true</splash>
 				<path>Splash/splash-4.png</path>
-			</preview>
+			</preview> -->
 
 		</previews>
 

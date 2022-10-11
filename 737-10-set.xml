@@ -3,28 +3,28 @@
 <PropertyList include="737-MAX-common.xml">
 
 	<sim>
-		<description>Boeing 737 MAX 7</description>
-		<aero>737 MAX 7</aero>
+		<description>Boeing 737 MAX 10</description>
+		<aero>737 MAX 10</aero>
 		<variant-of>737 MAX</variant-of>
-		<liveries-path type="string">Aircraft/737-MAX/Models/Liveries-7</liveries-path>
+		<liveries-path type="string">Aircraft/737-MAX/Models/Liveries-10</liveries-path>
 		<startup>
-			<splash-texture>Aircraft/737-MAX/Splash/splash-7.png</splash-texture>
+			<splash-texture>Aircraft/737-MAX/Splash/splash-1.png</splash-texture>
 		</startup>
 
 		<previews>
 			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
-				<path>Splash/splash-7.png</path>
+				<path>Splash/splash-1.png</path>
 			</preview>
 		</previews>
 
-		<liveries-path type="string">Models/Liveries-7</liveries-path>
+		<liveries-path type="string">Models/Liveries-10</liveries-path>
 
 		<model>
-			<path>Aircraft/737-MAX/Models/737-7.xml</path>
+			<path>Aircraft/737-MAX/Models/737-10.xml</path>
 			<livery>
-				<file>BOE-7</file>
+				<file>BOE-10</file>
 			</livery>
 
 			<rendering>
@@ -167,7 +167,7 @@
 		<cdu>
 			<display>IDENT</display>
 			<ident>
-				<model>737 MAX 7</model>
+				<model>737 MAX 10</model>
 				<engines>CFM LEAP 1B</engines>
 			</ident>
 			<input type="string" />
