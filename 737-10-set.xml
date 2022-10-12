@@ -87,36 +87,8 @@
 				<z-offset-m archive="y">-17.6</z-offset-m>
 			</config>
 		</view>
-		<view n="101">
-			<name>Engine Left</name>
-			<type>lookfrom</type>
-			<internal archive="y">true</internal>
-			<config>
-				<from-model type="bool">true</from-model>
-				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">62</default-field-of-view-deg>
-				<pitch-offset-deg>0</pitch-offset-deg>
-				<heading-offset-deg>130</heading-offset-deg>
-				<x-offset-m archive="y">-1.83</x-offset-m>
-				<y-offset-m archive="y">1.2</y-offset-m>
-				<z-offset-m archive="y">-9.02</z-offset-m>
-			</config>
-		</view>
-		<view n="102">
-			<name>Engine Right</name>
-			<type>lookfrom</type>
-			<internal archive="y">true</internal>
-			<config>
-				<from-model type="bool">true</from-model>
-				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">62</default-field-of-view-deg>
-				<pitch-offset-deg>0</pitch-offset-deg>
-				<heading-offset-deg>-130</heading-offset-deg>
-				<x-offset-m archive="y">1.83</x-offset-m>
-				<y-offset-m archive="y">1.2</y-offset-m>
-				<z-offset-m archive="y">-9.02</z-offset-m>
-			</config>
-		</view>
+		<view n="101"></view>
+		<view n="102"></view>
 		<view n="103">
 			<name>Right Wing</name>
 			<type>lookfrom</type>
@@ -127,9 +99,9 @@
 				<default-field-of-view-deg type="double">80</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>-90</heading-offset-deg>
-				<x-offset-m archive="y">1.80</x-offset-m>
-				<y-offset-m archive="y">0.91</y-offset-m>
-				<z-offset-m archive="y">2.19</z-offset-m>
+				<x-offset-m archive="y">-14.51</x-offset-m>
+				<y-offset-m archive="y">20.19</y-offset-m>
+				<z-offset-m archive="y">6.81</z-offset-m>
 			</config>
 		</view>
 		<view n="104">
@@ -142,9 +114,9 @@
 				<default-field-of-view-deg type="double">80</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>90</heading-offset-deg>
-				<x-offset-m archive="y">-1.80</x-offset-m>
-				<y-offset-m archive="y">0.91</y-offset-m>
-				<z-offset-m archive="y">2.19</z-offset-m>
+				<x-offset-m archive="y">-14.51</x-offset-m>
+				<y-offset-m archive="y">-20.19</y-offset-m>
+				<z-offset-m archive="y">6.81</z-offset-m>
 			</config>
 		</view>
 		<view n="105">
@@ -178,10 +150,10 @@
 	<limits>
 		<!-- According to http://wwww.b737.org.uk -->
 		<mass-and-balance>
-			<maximum-ramp-mass-lbs>174670</maximum-ramp-mass-lbs>
-			<maximum-takeoff-mass-lbs>117000</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>145600</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>138700</maximum-zero-fuel-mass-lbs>
+			<maximum-ramp-mass-lbs>156500</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>197900</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>163900</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>156500</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 		<max-flap-extension-speed>
 			<flaps>0.125</flaps>

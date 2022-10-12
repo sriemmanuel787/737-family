@@ -241,7 +241,7 @@
 			</default>
 		</menubar>
 
-		<checklists include="737MAX-checklist.xml"/>
+		<checklists include="737-MAX-checklist.xml"/>
 
 		<yokes-visible type="bool">1</yokes-visible>
 	</sim>
