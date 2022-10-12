@@ -400,9 +400,9 @@
 	<propulsion>
 		<engine file="leap1b">
 			<location unit="IN">
-				<x>  -55.57524‬ </x> <!-- value from simulator data -->
-				<y>  -206.3868‬ </y> <!-- value from simulator data -->
-				<z>  -61.10784‬ </z> <!-- BWL 155.72 -->
+				<x>  -55.57524 </x> <!-- value from simulator data -->
+				<y>  -206.3868 </y> <!-- value from simulator data -->
+				<z>  -61.10784 </z> <!-- BWL 155.72 -->
 			</location>
 			<orient unit="DEG">
 				<roll>  0 </roll>
@@ -412,9 +412,9 @@
 			<feed>3</feed>
 			<thruster file="direct">
 				<location unit="IN">
-					<x>  -55.57524‬ </x> <!-- value from simulator data -->
-					<y>  -206.3868‬ </y> <!-- value from simulator data -->
-					<z>  -61.10784‬ </z> <!-- BWL 155.72 -->
+					<x>  -55.57524 </x> <!-- value from simulator data -->
+					<y>  -206.3868 </y> <!-- value from simulator data -->
+					<z>  -61.10784 </z> <!-- BWL 155.72 -->
 				</location>
 				<orient unit="DEG">
 					<roll>  0 </roll>
@@ -425,9 +425,9 @@
 		</engine>
 		<engine file="leap1b">
 			<location unit="IN">
-				<<x>  -55.57524‬ </x> <!-- value from simulator data -->
-				<y>    206.3868‬ </y> <!-- value from simulator data -->
-				<z>   -61.10784‬ </z> <!-- BWL 155.72 -->
+				<x>   -55.57524 </x> <!-- value from simulator data -->
+				<y>    206.3868 </y> <!-- value from simulator data -->
+				<z>   -61.10784 </z> <!-- BWL 155.72 -->
 			</location>
 			<orient unit="DEG">
 				<roll>  0 </roll>
@@ -437,9 +437,9 @@
 			<feed>4</feed>
 			<thruster file="direct">
 				<location unit="IN">
-					<x>  -55.57524‬ </x> <!-- value from simulator data -->
-					<y>   206.3868‬ </y> <!-- value from simulator data -->
-					<z>  -61.10784‬ </z> <!-- BWL 155.72 -->
+					<x>  -55.57524 </x> <!-- value from simulator data -->
+					<y>   206.3868 </y> <!-- value from simulator data -->
+					<z>  -61.10784 </z> <!-- BWL 155.72 -->
 				</location>
 				<orient unit="DEG">
 					<roll>  0 </roll>
@@ -451,9 +451,9 @@
 
 		<tank type="FUEL"><!-- Left wing tank -->
 			<location unit="IN">
-				<x> 23.3592‬   </x> <!-- based on trimsheet calculation. Correct value -->
-				<y> -315.6216‬ </y>
-				<z> 1.976304‬  </z>
+				<x> 23.3592   </x> <!-- based on trimsheet calculation. Correct value -->
+				<y> -315.6216 </y>
+				<z> 1.976304  </z>
 			</location>
 			<drain_location unit="IN">
 				<x> 703.09</x> <!-- based on trimsheet calculation. Correct value -->
@@ -466,9 +466,9 @@
 		</tank>
 		<tank type="FUEL"><!-- Right wing tank -->
 			<location unit="IN">
-				<x> 23.3592‬  </x> <!-- based on trimsheet calculation. Correct value -->
-				<y> 315.6216‬ </y>
-				<z> 1.976304‬ </z>
+				<x> 23.3592  </x> <!-- based on trimsheet calculation. Correct value -->
+				<y> 315.6216 </y>
+				<z> 1.976304 </z>
 			</location>
 			<drain_location unit="IN">
 				<x> 703.09</x> <!-- based on trimsheet calculation. Correct value -->
