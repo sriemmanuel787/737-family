@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<PropertyList include="MAX-model-common.xml">
+<PropertyList>
     <path>737-10.ac</path>
     <animation>
         <texture>MAX-10.png</texture>
@@ -7,7 +7,7 @@
 
     <nasal n="0">
         <load>
-	 var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-10");
+	 var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-19");
 	</load>
         <unload>
 	 livery_update.stop();
@@ -155,7 +155,7 @@
 
     <model>
         <name>Pushback</name>
-        <path>Aircraft/737-MAX/Models/Services/Pushback/pushback.xml</path>
+        <path>Aircraft/737-MAX/Models/Pushback/pushback.xml</path>
         <offsets>
             <x-m>-18.36</x-m>
             <y-m>0</y-m>
