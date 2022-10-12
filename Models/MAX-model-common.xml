@@ -1,19 +1,5 @@
 <?xml version="1.0"?>
 <PropertyList include="MAX-model-common.xml">
-    <path>737-10.ac</path>
-    <animation>
-        <texture>MAX-10.png</texture>
-    </animation>
-
-    <nasal n="0">
-        <load>
-	 var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-10");
-	</load>
-        <unload>
-	 livery_update.stop();
-	</unload>
-    </nasal>
-
     <animation n="0">
         <type>material</type>
         <object-name>aileron.L1</object-name>
@@ -102,32 +88,6 @@
         <texture-prop>texture</texture-prop>
     </animation>
 
-    <effect>
-        <inherits-from>Effects/model</inherits-from>
-        <parameters>
-            <lightmap-enabled>
-                <use>controls/lighting/landing-lights-norm</use>
-            </lightmap-enabled>
-            <texture n="3">
-                <image>Aircraft/737-MAX/Models/Effects/LightMap/lightmap-10.png</image>
-            </texture>
-        </parameters>
-        <object-name>belly</object-name>
-        <object-name>cdoor.fwdO</object-name>
-        <object-name>fuselage</object-name>
-        <object-name>n1.cowl</object-name>
-        <object-name>n1.opening</object-name>
-        <object-name>n1.reverser</object-name>
-        <object-name>n2.cowl</object-name>
-        <object-name>n2.opening</object-name>
-        <object-name>n2.reverser</object-name>
-        <object-name>rudder</object-name>
-        <object-name>wing.BL1</object-name>
-        <object-name>wing.UL1</object-name>
-        <object-name>wing.BR1</object-name>
-        <object-name>wing.UR1</object-name>
-    </effect>
-
     <animation>
         <type>shader</type>
         <shader>chrome</shader>
@@ -141,27 +101,6 @@
         <object-name>n1.chrome</object-name>
         <object-name>n2.chrome</object-name>
     </animation>
-
-    <model>
-        <name>Cockpit</name>
-        <path>Aircraft/737-MAX/Models/cockpit.xml</path>
-        <offsets>
-            <x-m>-18.32</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.0</z-m>
-            <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <name>Pushback</name>
-        <path>Aircraft/737-MAX/Models/Services/Pushback/pushback.xml</path>
-        <offsets>
-            <x-m>-18.36</x-m>
-            <y-m>0</y-m>
-            <z-m>-2.85</z-m>
-        </offsets>
-    </model>
 
     <!--Lights-->
 
@@ -350,46 +289,6 @@
         </offsets>
     </model>
 
-    <!-- Beacon -->
-
-    <model>
-        <path>Aircraft/737-MAX/Models/Lights/beacon.xml</path>
-        <name>beacon.top</name>
-        <offsets>
-            <x-m>0.00</x-m>
-            <y-m>0.00</y-m>
-            <z-m>2.57</z-m>
-        </offsets>
-    </model>
-    <model>
-        <path>Aircraft/737-MAX/Models/Lights/ALS/beacon.xml</path>
-        <name>beacon.top.ALS</name>
-        <offsets>
-            <x-m>0.00</x-m>
-            <y-m>0.00</y-m>
-            <z-m>2.57</z-m>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/737-MAX/Models/Lights/beacon.xml</path>
-        <name>beacon.bottom</name>
-        <offsets>
-            <x-m>0.0</x-m>
-            <y-m> 0.00</y-m>
-            <z-m>-1.42</z-m>
-        </offsets>
-    </model>
-    <model>
-        <path>Aircraft/737-MAX/Models/Lights/ALS/beacon.xml</path>
-        <name>beacon.bottom.ALS</name>
-        <offsets>
-            <x-m>0.0</x-m>
-            <y-m> 0.00</y-m>
-            <z-m>-1.55</z-m>
-        </offsets>
-    </model>
-
     <!--Select animation-->
     <animation>
         <type>select</type>
@@ -428,15 +327,6 @@
 
 
     <!-- Tyre Smoke -->
-    <model>
-        <path>Aircraft/737-MAX/Models/Effects/tyre-smoke-nose.xml</path>
-        <name>tyre-smoke-n</name>
-        <offsets>
-            <x-m>-18.00</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-5.50</z-m>
-        </offsets>
-    </model>
 
     <model>
         <path>Aircraft/737-MAX/Models/Effects/tyre-smoke-left.xml</path>
@@ -459,16 +349,6 @@
     </model>
 
     <!-- Tyre Rain -->
-    <model>
-        <path>Aircraft/737-MAX/Models/Effects/tyrespray/rain-nose.xml</path>
-        <name>tyre-smoke-n</name>
-        <offsets>
-            <x-m>-18.00</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-5.50</z-m>
-        </offsets>
-    </model>
-
     <model>
         <path>Aircraft/737-MAX/Models/Effects/tyrespray/rain-port.xml</path>
         <name>tyre-smoke-l</name>
