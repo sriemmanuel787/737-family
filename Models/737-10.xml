@@ -112,7 +112,6 @@
                 <image>Aircraft/737-MAX/Models/Effects/LightMap/lightmap-10.png</image>
             </texture>
         </parameters>
-
         <object-name>belly</object-name>
         <object-name>cdoor.fwdO</object-name>
         <object-name>fuselage</object-name>
