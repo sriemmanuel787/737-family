@@ -11,10 +11,16 @@ var roundToNearest = func(n, m) {
 	return x;
 }
 
-var canvasEng = {
-	new: func(canvasGroup, file) {
-		var m = {parents: [canvasEng, canvasBase]};
-		m.init(canvasGroup, file);
+var EICAS_canvas = nil;
+var EICAS_display = nil;
+
+var canvas_EICAS = {
+	new: func(canvas_group) {
+		var m = {parents: [canvas_EICAS]};
+		var font_mapper = func(family, weight){
+			if( family == "'Liberation Sans'" and weight == "normal" )
+				return "LiberationFonts/LiberationSans-Regular.ttf";
+		};
 		foreach(var key; getKeys()) {
 			m[key] = EICAS.getElementById(key);
 		}
@@ -175,8 +181,10 @@ var init = func() {
 		"mipmapping": 1
 	});
 	
-	eicas.addPlacement({"node": "capt.screenL"});
-	
+	EICAS_display.addPlacement({"node": "EICAS.captL"});
+	EICAS_display.addPlacement({"node": "EICAS.captR"});
+	EICAS_display.addPlacement({"node": "EICAS.foL"});
+	EICAS_display.addPlacement({"node": "EICAS.foR"});
 	
 	var engGroup = display.createGroup();
 	
