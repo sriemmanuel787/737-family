@@ -257,7 +257,6 @@
     <!--Lights-->
 
     <!-- Navigation Lights -->
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/greennav.xml</path>
         <name>Greenlight</name>
@@ -276,7 +275,6 @@
             <z-m>1.27</z-m>
         </offsets>
     </model>
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/rednav.xml</path>
         <name>Redlight</name>
@@ -297,7 +295,6 @@
     </model>
 
     <!-- Strobe -->
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/strobe.xml</path>
         <name>strobe.right</name>
@@ -316,7 +313,6 @@
             <z-m>1.06</z-m>
         </offsets>
     </model>
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/strobe.xml</path>
         <name>strobe.left</name>
@@ -335,7 +331,6 @@
             <z-m>1.06</z-m>
         </offsets>
     </model>
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/strobe.xml</path>
         <name>strobe.rear</name>
@@ -356,7 +351,6 @@
     </model>
 
     <!--Landing Light-->
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/landing-stbd.xml</path>
         <name>landing.LW</name>
@@ -398,7 +392,6 @@
     </model>
 
     <!--Taxi Light-->
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/TaxiLight.xml</path>
         <name>TaxiLight</name>
@@ -419,7 +412,6 @@
     </model>
 
     <!--Retractable-landinglight -->
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/Retractable-landinglight.xml</path>
         <name>LeftRBlight</name>
@@ -430,7 +422,6 @@
             <z-m>-1.30</z-m>
         </offsets>
     </model>
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/Retractable-landinglight.xml</path>
         <name>RightWRBlight</name>
@@ -442,7 +433,6 @@
     </model>
 
     <!-- Beacon -->
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/beacon.xml</path>
         <name>beacon.top</name>
@@ -461,7 +451,6 @@
             <z-m>2.57</z-m>
         </offsets>
     </model>
-
     <model>
         <path>Aircraft/737-MAX/Models/Lights/beacon.xml</path>
         <name>beacon.bottom</name>
@@ -644,7 +633,6 @@
             <heading-deg> 0 </heading-deg>
         </offsets>
     </model>
-
     <model>
         <path>Aircraft/737-MAX/Models/Effects/Contrail/contrail.xml</path>
         <offsets>
@@ -888,9 +876,11 @@
         </action>
     </animation>
     <animation>
-        <type>translate</type>
-        <object-name>doorLF</object-name>
-        <object-name>doorLF.001</object-name>
+        <type>rotate</type>
+        <object-name>door.FLO</object-name>
+        <object-name>door.FLI</object-name>
+        <object-name>hinge.FLO</object-name>
+        <object-name>hinge.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
         <factor>0.05</factor>
         <axis>
@@ -900,9 +890,9 @@
         </axis>
     </animation>
     <animation>
-        <type>translate</type>
-        <object-name>doorLF</object-name>
-        <object-name>doorLF.001</object-name>
+        <type>rotate</type>
+        <object-name>door.FLO</object-name>
+        <object-name>door.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos2/position-norm</property>
         <factor>1</factor>
         <axis>

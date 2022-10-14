@@ -1,15 +1,14 @@
-# B737-800 Systems File
+# B737-MAX Systems File
 
-# :)
-print(" ____ ______ ____ ______      ___   ___   ___  ");
-print("|  _ \____  |___ \____  |    / _ \ / _ \ / _ \ ");
-print("| |_) |  / /  __) |  / /____| (_) | | | | | | |");
-print("|  _ <  / /  |__ <  / /______> _ <| | | | | | |");
-print("| |_) |/ /   ___) |/ /      | (_) | |_| | |_| |");
-print("|____//_/   |____//_/        \___/ \___/ \___/ ");
+ print(" ______ ____ ______      __  __          __   __");
+ print("|____  |___ \____  |    |  \/  |   /\    \ \ / /");
+ print("    / /  __) |  / /_____| \  / |  /  \    \ V / ");
+ print("   / /  |__ <  / /______| |\/| | / /\ \    > <  ");
+ print("  / /   ___) |/ /       | |  | |/ ____ \  / . \ ");
+ print(" /_/   |____//_/        |_|  |_/_/    \_\/_/ \_\");
 print("-----------------------------------------------------------------------");
-print("(c) 2017-2018 Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods)");
-print("Report all bugs on GitHub Issues tab, or the forums. :)");
+print("(c) 2017-2018 Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), Israel Emmanuel (sriemmanuel787)");
+print("Report all bugs on GitHub Issues tab, or on the FlightGear Discord server. :)");
 print("Enjoy your flight!!!");
 print("-----------------------------------------------------------------------");
 print(" ");
