@@ -254,8 +254,8 @@
           <z>0.0191</z>
         </axis>
       </animation>
+      
     <!--Lights-->
-
     <!-- Navigation Lights -->
     <model>
         <path>Aircraft/737-MAX/Models/Lights/greennav.xml</path>
