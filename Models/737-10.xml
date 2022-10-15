@@ -164,7 +164,7 @@
     </model>
 
     <!-- Control surfaces -->
-    <animation>
+    <!-- <animation>
         <type>rotate</type>
         <object-name>elevators.R1</object-name>
         <object-name>elevators.R2</object-name>
@@ -193,7 +193,7 @@
             <y>0.0277</y>
             <z>-0.2309</z>
         </axis>
-    </animation>
+    </animation> -->
     <animation>
         <type>rotate</type>
         <object-name>aileron.L1</object-name>
