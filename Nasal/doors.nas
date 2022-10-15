@@ -285,4 +285,3 @@ var doorCRtoggle = func {
 		,3);	
 	}
 }
-}
