@@ -11,48 +11,6 @@
             <texture n="3">
                 <image>Aircraft/737-MAX/Models/Effects/LightMap/lightmap-cockpit.png</image>
             </texture>
-        </parameters>
-        <object-name>belly</object-name>
-        
+        </parameters>        
     </effect>
-    <!-- Cargo Rear -->
-
-    <animation>
-        <type>pick</type>
-        <visible>true</visible>
-        <object-name>door</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>
-      boeing737.doorCRtoggle();
-    </script>
-            </binding>
-        </action>
-    </animation>
-    <animation>
-        <type>translate</type>
-        <object-name>cargodoorR</object-name>
-        <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
-        <factor>0.05</factor>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-    <animation>
-        <type>translate</type>
-        <object-name>cargodoorR</object-name>
-        <property>controls/doors/CRDoor/CRDoorPos2/position-norm</property>
-        <factor>1</factor>
-        <axis>
-            <x>1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
 </PropertyList>

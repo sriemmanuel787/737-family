@@ -146,9 +146,9 @@
         <name>Cockpit</name>
         <path>Aircraft/737-MAX/Models/cockpit.xml</path>
         <offsets>
-            <x-m>-18.32</x-m>
+            <x-m>-18.386</x-m>
             <y-m>0.0</y-m>
-            <z-m>0.0</z-m>
+            <z-m>0.943</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -164,59 +164,63 @@
     </model>
 
     <!-- Control surfaces -->
-    <!-- <animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>elevators.L1</object-name>
+        <object-name>elevators.L2</object-name>
+        <property>sim/multiplay/generic/float[9]</property>
+        <factor>-30</factor>
+        <center>
+            <x-m>22.48</x-m>
+            <y-m>-6.24</y-m>
+            <z-m>2.08</z-m>
+        </center>
+        <axis>
+            <x>0.0729</x>
+            <y>-0.2309</y>
+            <z>0.0277</z>
+        </axis>
+    </animation>
+    <animation>
         <type>rotate</type>
         <object-name>elevators.R1</object-name>
         <object-name>elevators.R2</object-name>
         <property>sim/multiplay/generic/float[9]</property>
-        <interpolation>
-          <entry>
-            <ind>1</ind>
-            <dep>41</dep>
-          </entry>
-          <entry>
-            <ind>0</ind>
-            <dep>0.0</dep>
-          </entry>
-          <entry>
-            <ind>-1</ind>
-            <dep>-31</dep>
-          </entry>
-        </interpolation>
+        <factor>30</factor>
         <center>
-          <x-m>3.47</x-m>
-          <y-m>-12.62</y-m>
-          <z-m>0.54</z-m>
+            <x-m>22.48</x-m>
+            <y-m>6.24</y-m>
+            <z-m>2.08</z-m>
         </center>
         <axis>
             <x>0.0729</x>
-            <y>0.0277</y>
-            <z>-0.2309</z>
+            <y>0.2309</y>
+            <z>0.0277</z>
         </axis>
-    </animation> -->
+    </animation>
     <animation>
         <type>rotate</type>
         <object-name>aileron.L1</object-name>
         <object-name>aileron.L2</object-name>
         <property>sim/multiplay/generic/float[7]</property>
         <interpolation>
-          <entry>
-            <ind>1</ind>
-            <dep>41</dep>
-          </entry>
-          <entry>
-            <ind>0</ind>
-            <dep>0.0</dep>
-          </entry>
-          <entry>
-            <ind>-1</ind>
-            <dep>-31</dep>
-          </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>41</dep>
+            </entry>
+            <entry>
+                <ind>0</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>-1</ind>
+                <dep>-31</dep>
+            </entry>
         </interpolation>
         <center>
-          <x-m>3.47</x-m>
-          <y-m>-12.62</y-m>
-          <z-m>0.54</z-m>
+            <x-m>3.47</x-m>
+            <y-m>-12.62</y-m>
+            <z-m>0.54</z-m>
         </center>
         <axis>
             <x>-0.0579</x>
@@ -230,31 +234,64 @@
         <object-name>aileron.R2</object-name>
         <property>sim/multiplay/generic/float[8]</property>
         <interpolation>
-          <entry>
-            <ind>1</ind>
-            <dep>-41</dep>
-          </entry>
-          <entry>
-            <ind>0</ind>
-            <dep>0.0</dep>
-          </entry>
-          <entry>
-            <ind>-1</ind>
-            <dep>31</dep>
-          </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>-41</dep>
+            </entry>
+            <entry>
+                <ind>0</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>-1</ind>
+                <dep>31</dep>
+            </entry>
         </interpolation>
         <center>
-          <x-m>3.47</x-m>
-          <y-m>12.62</y-m>
-          <z-m>0.54</z-m>
+            <x-m>3.47</x-m>
+            <y-m>12.62</y-m>
+            <z-m>0.54</z-m>
         </center>
         <axis>
-          <x>0.0579</x>
-          <y>0.2027</y>
-          <z>0.0191</z>
+            <x>0.0579</x>
+            <y>0.2027</y>
+            <z>0.0191</z>
         </axis>
-      </animation>
-      
+    </animation>
+
+    <!-- Doors -->
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>cdoor.fwdI</object-name>
+        <object-name>cdoor.fwdO</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.doorCRtoggle();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>cdoor.fwdI</object-name>
+        <object-name>cdoor.fwdO</object-name>
+        <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
+        <factor>80</factor>
+        <center>
+            <x-m>-12.353</x-m>
+            <y-m>1.695</y-m>
+            <z-m>-0.435</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
     <!--Lights-->
     <!-- Navigation Lights -->
     <model>
@@ -855,7 +892,7 @@
             <z>0</z>
         </axis>
     </animation>
-    
+
     <!-- Door: Forward-Left -->
     <animation>
         <type>pick</type>
@@ -902,7 +939,7 @@
         </axis>
     </animation>
 
-    
+
     <!-- Left Rear Door -->
 
     <animation>
