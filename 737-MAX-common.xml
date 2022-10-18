@@ -84,6 +84,11 @@
 			<property-rule n="101">
 				<path>Aircraft/737-MAX/Systems/instrument-filters.xml</path>
 			</property-rule>
+			<wingflexer include="Systems/wingflexer-params.xml" />
+			<property-rule n="100">
+				<name>wing flexer property rule</name>
+				<path>Aircraft/Generic/wingflexer.xml</path>
+			</property-rule>
 		</systems>
 
 		<instrumentation>
@@ -159,45 +164,45 @@
 		<chase-distance-m>-60</chase-distance-m>
 
 		<flaps>
-			<setting>0.000</setting>			<!-- Flaps Up -->
-			<setting>0.125</setting>			<!-- Flaps 1  -->
-			<setting>0.250</setting>			<!-- Flaps 2  -->
-			<setting>0.375</setting>			<!-- Flaps 5  -->
-			<setting>0.500</setting>			<!-- Flaps 10 -->
-			<setting>0.625</setting>			<!-- Flaps 15 -->
-			<setting>0.750</setting>			<!-- Flaps 25 -->
-			<setting>0.875</setting>			<!-- Flaps 30 -->
-			<setting>1.000</setting>			<!-- Flaps 40 -->
+			<setting>0.000</setting> <!-- Flaps Up -->
+			<setting>0.125</setting> <!-- Flaps 1  -->
+			<setting>0.250</setting> <!-- Flaps 2  -->
+			<setting>0.375</setting> <!-- Flaps 5  -->
+			<setting>0.500</setting> <!-- Flaps 10 -->
+			<setting>0.625</setting> <!-- Flaps 15 -->
+			<setting>0.750</setting> <!-- Flaps 25 -->
+			<setting>0.875</setting> <!-- Flaps 30 -->
+			<setting>1.000</setting> <!-- Flaps 40 -->
 		</flaps>
 
 		<multiplay>
 			<generic>
-				<int n="0" alias="/systems/electrical/outputs/strobe"/>
-				<int n="1" alias="/systems/electrical/outputs/beacon"/>
-				<int n="2" alias="/controls/lighting/taxi-light"/>
-				<int n="3" alias="/controls/lighting/logo-lights"/>
-				<int n="4" alias="/controls/lighting/landing-lights"/>
-				<int n="5" alias="/controls/lighting/nav-lights"/>
-				<int n="6" alias="/gear/gear[0]/tyre-smoke"/>
-				<int n="7" alias="/gear/gear[1]/tyre-smoke"/>
-				<int n="8" alias="/gear/gear[2]/tyre-smoke"/>
-				<float n="0" alias="/gear/gear[0]/compression-m"/>
-				<float n="1" alias="/gear/gear[1]/compression-m"/>
-				<float n="2" alias="/gear/gear[2]/compression-m"/>
-				<float n="3" alias="/gear/gear[1]/compression-m"/>
-				<float n="4" alias="/gear/gear[2]/compression-m"/>
-				<float n="5" alias="/surface-positions/speedbrake-norm"/>
-				<float n="6" alias="/surface-positions/reverser-norm"/>
-				<float n="7" alias="/controls/flight/aileron-left"/>
-				<float n="8" alias="/controls/flight/aileron-right"/>
-				<float n="9" alias="/controls/flight/elevator-left"/>
-				<float n="10" alias="/controls/flight/elevator-right"/>
-				<float n="11" alias="/controls/flight/rudder-sum"/>
-				<string alias="/sim/multiplay/callsign"/>
+				<int n="0" alias="/systems/electrical/outputs/strobe" />
+				<int n="1" alias="/systems/electrical/outputs/beacon" />
+				<int n="2" alias="/controls/lighting/taxi-light" />
+				<int n="3" alias="/controls/lighting/logo-lights" />
+				<int n="4" alias="/controls/lighting/landing-lights" />
+				<int n="5" alias="/controls/lighting/nav-lights" />
+				<int n="6" alias="/gear/gear[0]/tyre-smoke" />
+				<int n="7" alias="/gear/gear[1]/tyre-smoke" />
+				<int n="8" alias="/gear/gear[2]/tyre-smoke" />
+				<float n="0" alias="/gear/gear[0]/compression-m" />
+				<float n="1" alias="/gear/gear[1]/compression-m" />
+				<float n="2" alias="/gear/gear[2]/compression-m" />
+				<float n="3" alias="/gear/gear[1]/compression-m" />
+				<float n="4" alias="/gear/gear[2]/compression-m" />
+				<float n="5" alias="/surface-positions/speedbrake-norm" />
+				<float n="6" alias="/surface-positions/reverser-norm" />
+				<float n="7" alias="/controls/flight/aileron-left" />
+				<float n="8" alias="/controls/flight/aileron-right" />
+				<float n="9" alias="/controls/flight/elevator-left" />
+				<float n="10" alias="/controls/flight/elevator-right" />
+				<float n="11" alias="/controls/flight/rudder-sum" />
+				<string alias="/sim/multiplay/callsign" />
 			</generic>
 		</multiplay>
 
-		<flight-recorder include="Systems/flight-recorder.xml"/>
+		<flight-recorder include="Systems/flight-recorder.xml" />
 
 		<ai>
 			<submodels>
@@ -241,7 +246,7 @@
 			</default>
 		</menubar>
 
-		<checklists include="737-MAX-checklist.xml"/>
+		<checklists include="737-MAX-checklist.xml" />
 
 		<yokes-visible type="bool">1</yokes-visible>
 	</sim>
@@ -258,13 +263,13 @@
 
 	<it-autoflight>
 		<settings>
-			<auto-bank-max-deg>30</auto-bank-max-deg>			<!-- Maximum Auto Bank Limit -->
-			<land-enable>1</land-enable>			<!-- Enable/Disable Autoland -->
-			<land-flap>0.750</land-flap>			<!-- Minimum Flap used for Landing -->
-			<retard-ft>35</retard-ft>			<!-- Enable Thrust Retard -->
-			<retard-enable>1</retard-enable>			<!-- AGL to Thrust Retard -->
-			<togaspd>156</togaspd>			<!-- V2 + 10kts -->
-			<autoland-without-ap>0</autoland-without-ap>			<!-- Engage LAND and FLARE Modes even if the AP is off -->
+			<auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
+			<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
+			<land-flap>0.750</land-flap> <!-- Minimum Flap used for Landing -->
+			<retard-ft>35</retard-ft> <!-- Enable Thrust Retard -->
+			<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
+			<togaspd>156</togaspd> <!-- V2 + 10kts -->
+			<autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
 		</settings>
 		<custom>
 			<athr-armed>0</athr-armed>
@@ -769,7 +774,7 @@
 		</flight>
 
 		<gear>
-			<autobrakes type="int">0</autobrakes>			<!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
+			<autobrakes type="int">0</autobrakes> <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
 			<tiller-cmd-norm type="double">0</tiller-cmd-norm>
 			<tiller-enabled type="bool">0</tiller-enabled>
 		</gear>
@@ -863,7 +868,7 @@
 		<ap-hide-helper type="bool">0</ap-hide-helper>
 		<at-helper type="bool">1</at-helper>
 		<warnings>
-			<altitude-alert-mode type="int">0</altitude-alert-mode>			<!-- 0 - acq, 1 - deviation -->
+			<altitude-alert-mode type="int">0</altitude-alert-mode> <!-- 0 - acq, 1 - deviation -->
 		</warnings>
 	</b737>
 
@@ -974,25 +979,27 @@
 			<serviceable type="bool">true</serviceable>
 		</altimeter>
 
-		<mk-viii>			<!-- mk-viii configuration, see: http://wiki.flightgear.org/index.php/GPWS -->
-			<serviceable>true</serviceable>			<!-- EGPWS_ENABLE -->
+		<mk-viii>
+			<!-- mk-viii configuration, see: http://wiki.flightgear.org/index.php/GPWS -->
+			<serviceable>true</serviceable> <!-- EGPWS_ENABLE -->
 			<configuration-module>
 				<category-1>  255 </category-1>
-				<category-3>   2 </category-3>				<!-- POSITION_INPUT_SELECT -->
-				<category-4>  13 </category-4>				<!-- ALTITUDE_CALLOUTS -->
-				<category-5>   0 </category-5>				<!-- AUDIO_MENU_SELECT -->
-				<category-6>   1 </category-6>				<!-- TERRAIN_DISPLAY_SELECT -->
-				<category-7> 124 </category-7>				<!-- OPTIONS_SELECT_GROUP_1 -->
-				<category-8>   3 </category-8>				<!-- RADIO_ALTITUDE_INPUT_SELECT-->
-				<category-9>   3 </category-9>				<!-- NAVIGATION_INPUT_SELECT -->
-				<category-10>  6 </category-10>				<!-- ATTITUDE_INPUT_SELECT -->
-				<category-13>  7 </category-13>				<!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
-				<category-14>  0 </category-14>				<!-- AUDIO_OUTPUT_LEVEL -->
+				<category-3>   2 </category-3> <!-- POSITION_INPUT_SELECT -->
+				<category-4>  13 </category-4> <!-- ALTITUDE_CALLOUTS -->
+				<category-5>   0 </category-5> <!-- AUDIO_MENU_SELECT -->
+				<category-6>   1 </category-6> <!-- TERRAIN_DISPLAY_SELECT -->
+				<category-7> 124 </category-7> <!-- OPTIONS_SELECT_GROUP_1 -->
+				<category-8>   3 </category-8> <!-- RADIO_ALTITUDE_INPUT_SELECT-->
+				<category-9>   3 </category-9> <!-- NAVIGATION_INPUT_SELECT -->
+				<category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->
+				<category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+				<category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
 			</configuration-module>
 			<voice>
 				<file-prefix type="string">Aircraft/737-MAX/Sounds/gpws/</file-prefix>
 			</voice>
-			<inputs>				<!-- Module I/O -->
+			<inputs>
+				<!-- Module I/O -->
 				<arinc429>
 					<decision-height-ncd> true </decision-height-ncd>
 					<decision-height> 200 </decision-height>
@@ -1003,10 +1010,11 @@
 					</present-status>
 				</rs-232>
 			</inputs>
-			<speaker>				<!-- Speaker Configuration -->
-				<max-dist type="double"> 200.0 </max-dist>				<!-- Max. distance where speaker is heard -->
-				<reference-dist type="double"> 2 </reference-dist>				<!-- Distance to pilot -->
-				<volume type="double"> 1.0 </volume>				<!-- Volume at reference distance -->
+			<speaker>
+				<!-- Speaker Configuration -->
+				<max-dist type="double"> 200.0 </max-dist> <!-- Max. distance where speaker is heard -->
+				<reference-dist type="double"> 2 </reference-dist> <!-- Distance to pilot -->
+				<volume type="double"> 1.0 </volume> <!-- Volume at reference distance -->
 			</speaker>
 		</mk-viii>
 
@@ -1035,7 +1043,7 @@
 				<model>737</model>
 				<engines>CFM56</engines>
 			</ident>
-			<input type="string"/>
+			<input type="string" />
 			<serviceable type="bool">true</serviceable>
 		</cdu>
 
@@ -1064,18 +1072,18 @@
 		<radar-altimeter n="0">
 			<serviceable type="bool">true</serviceable>
 			<antenna>
-				<x-offset-m type="double">11.9359</x-offset-m>				<!-- From MFEPD. Transmitter STA 430, receiver 450. -->
+				<x-offset-m type="double">11.9359</x-offset-m> <!-- From MFEPD. Transmitter STA 430, receiver 450. -->
 				<y-offset-m type="double">0</y-offset-m>
-				<z-offset-m type="double">1.44804</z-offset-m>				<!-- WL 148. From MFEPD. -->
+				<z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
 			</antenna>
 		</radar-altimeter>
 
 		<radar-altimeter n="1">
 			<serviceable type="bool">true</serviceable>
 			<antenna>
-				<x-offset-m type="double">12.9359</x-offset-m>				<!-- From MFEPD. Transmitter STA 390, receiver 410. -->
+				<x-offset-m type="double">12.9359</x-offset-m> <!-- From MFEPD. Transmitter STA 390, receiver 410. -->
 				<y-offset-m type="double">0</y-offset-m>
-				<z-offset-m type="double">1.44804</z-offset-m>				<!-- WL 148. From MFEPD. -->
+				<z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
 			</antenna>
 		</radar-altimeter>
 
@@ -1106,7 +1114,7 @@
 
 	<nasal>
 		<cdu>
-			<file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>			<!-- custom implementation of the CDU from instruments-3D -->
+			<file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file> <!-- custom implementation of the CDU from instruments-3D -->
 		</cdu>
 		<boeing737>
 			<file>Aircraft/737-MAX/Models/Instruments/PFD/PFD.nas</file>
