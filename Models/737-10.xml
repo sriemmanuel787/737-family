@@ -270,6 +270,37 @@
             <repeatable>true</repeatable>
             <binding>
                 <command>nasal</command>
+                <script>boeing737.doorCFtoggle();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>cdoor.fwdI</object-name>
+        <object-name>cdoor.fwdO</object-name>
+        <property>controls/doors/CFDoor/CFDoorPos1/position-norm</property>
+        <factor>80</factor>
+        <center>
+            <x-m>-12.353</x-m>
+            <y-m>1.695</y-m>
+            <z-m>-0.435</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>cdoor.aftI</object-name>
+        <object-name>cdoor.aftO</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>nasal</command>
                 <script>boeing737.doorCRtoggle();</script>
             </binding>
         </action>
