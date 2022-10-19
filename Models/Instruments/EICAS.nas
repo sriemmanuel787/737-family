@@ -1,6 +1,7 @@
-# 737 MAX Engine Indicating and Crew Alerting System
-# Based off of MD-11 by Joshua Davidson (Octal450)
-# Refactored by Israel Emmanuel (sriemmanuel787)
+# ==============================================================================
+# For 737-800 by Michael Soitanen
+# Updated and Expanded according to FCOM by Jonathan Redpath
+# ==============================================================================
 
 var roundToNearest = func(n, m) {
 	var x = int(n/m)*m;
@@ -11,27 +12,37 @@ var roundToNearest = func(n, m) {
 	return x;
 }
 
-var EICAS_canvas = nil;
-var EICAS_display = nil;
+var upperEICAS_canvas = nil;
+var upperEICAS_display = nil;
 
-var canvas_EICAS = {
-	new: func(canvas_group) {
-		var m = {parents: [canvas_EICAS]};
-		var font_mapper = func(family, weight){
-			if( family == "'Liberation Sans'" and weight == "normal" )
-				return "LiberationFonts/LiberationSans-Regular.ttf";
+var canvas_upperEICAS = {
+	new: func(canvas_group)
+	{
+		var m = { parents: [canvas_upperEICAS] };
+		var upperEICAS = canvas_group;
+		var font_mapper = func(family, weight)
+		{
+			return "LiberationFonts/LiberationSans-Regular.ttf";
 		};
-		foreach(var key; getKeys()) {
-			m[key] = EICAS.getElementById(key);
+		
+		canvas.parsesvg(upperEICAS, "Aircraft/737-Next-Generation/Models/Instruments/EICAS/EICAS.svg", {'font-mapper': font_mapper});
+		
+		var svg_keys = ["fuel-flow1", "fuel-flow2", "oil-press1", "oil-press2", "oil-temp1", "oil-temp2", "oil-qty1", "oil-qty2", "vib1", "vib2", "oil-press-meter1", "oil-press-meter2", "vib-meter1", "vib-meter2", "throttle-num1", "throttle-num2", "throttle-n1", "throttle-n2", "n1-text1", "n1-dial1", "n1-text2", "n1-dial2", "egt-text1", "egt-dial1", "egt-text2", "egt-dial2", "motoring1", "motoring2", "n2-text1", "n2-dial1", "n2-text2", "n2-dial2", "fuel-flow", "thrust", "low-oil-pressure", "oil-filter-bypass", "start-valve-open", "fuel-flow2", "thrust2", "low-oil-pressure2", "oil-filter-bypass2", "start-valve-open2", "tank-r", "tank-c", "tank-l", "total", "flt-mode", "air-temp", "flap-trans", "flap-ext", "flap-dial"];
+		foreach(var key; svg_keys) {
+			m[key] = upperEICAS.getElementById(key);
 		}
+                 m.timers = [];
+ 
 		return m;
 	},
-	getKeys: func() {
-		return ["fuel-flow1", "fuel-flow2", "oil-press1", "oil-press2", "oil-temp1", "oil-temp2", "oil-qty1", "oil-qty2", "vib1", "vib2", "oil-press-meter1", "oil-press-meter2", "vib-meter1", "vib-meter2", "throttle-num1", "throttle-num2", "throttle-n1", "throttle-n2", "n1-text1", "n1-dial1", "n1-text2", "n1-dial2", "egt-text1", "egt-dial1", "egt-text2", "egt-dial2", "motoring1", "motoring2", "n2-text1", "n2-dial1", "n2-text2", "n2-dial2", "fuel-flow", "thrust", "low-oil-pressure", "oil-filter-bypass", "start-valve-open", "fuel-flow2", "thrust2", "low-oil-pressure2", "oil-filter-bypass2", "start-valve-open2", "tank-r", "tank-c", "tank-l", "total", "flt-mode", "air-temp", "flap-trans", "flap-ext", "flap-dial"];
-	},
-	
-	setup: func() {},
-	update: func() {
+          newMFD: func()
+ 	{
+ 		me.update_timer = maketimer(0.1, func me.update() );
+ 		
+ 		me.update_timer.start();
+        },
+	update: func()
+	{
 		var SCALE = 256/121; # constant for expansion to 2-factor res
 
 		# center setting
@@ -49,7 +60,8 @@ var canvas_EICAS = {
 		me["tank-r"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[0]/level-kg")/1000));
 		me["tank-c"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[2]/level-kg")/1000));
 		me["tank-l"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[1]/level-kg")/1000));
-		me["total"].setText(sprintf("%0.1f", (getprop("/consumables/fuel/tank[0]/level-kg") + getprop("/consumables/fuel/tank[1]/level-kg") + getprop("/consumables/fuel/tank[2]/level-kg"))/1000));
+		#var totalFuel = getprop("/consumables/fuel/tank[0]/level-kg") + getprop("/consumables/fuel/tank[1]/level-kg") + getprop("/consumables/fuel/tank[2]/level-kg")
+		#me["total"].setText(sprintf("%0.1f", totalFuel/1000));
 		
 		#N1
 		me["n1-dial1"].setRotation(getprop("/engines/engine[0]/n1")*2*D2R);
@@ -88,8 +100,8 @@ var canvas_EICAS = {
 		me["fuel-flow2"].setText(sprintf("%0.1f", getprop("/engines/engine[1]/fuel-flow_pph")*LB2KG/1000));
 		me["oil-press1"].setText(sprintf("%i", getprop("/engines/engine[0]/oil-pressure-psi")));
 		me["oil-press2"].setText(sprintf("%i", getprop("/engines/engine[1]/oil-pressure-psi")));
-		me["oil-press-meter1"].setTranslation(0, getprop("/engines/engine[0]/oil-pressure-psi")*(-2))
-		me["oil-press-meter2"].setTranslation(0, getprop("/engines/engine[1]/oil-pressure-psi")*(-2))
+		# me["oil-press-meter1"].setTranslation(0, getprop("/engines/engine[0]/oil-pressure-psi")*(-2))
+		# me["oil-press-meter2"].setTranslation(0, getprop("/engines/engine[1]/oil-pressure-psi")*(-2))
 		
 		#Warnings
 		if (getprop("/controls/engines/engine[0]/starter") > 0)
@@ -150,16 +162,16 @@ var canvas_EICAS = {
 		else
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*270*D2R);
 		
-		if (getprop("/surface-positions/flap-pos-norm[0]") = 0.125 or getprop("/surface-positions/flap-pos-norm[0]") = 0.25 or getprop("/surface-positions/flap-pos-norm[0]") = 0.375 or getprop("/surface-positions/flap-pos-norm[0]") = 0.5 or or getprop("/surface-positions/flap-pos-norm[0]") = 0.625 or getprop("/surface-positions/flap-pos-norm[0]") = 0.75 or getprop("/surface-positions/flap-pos-norm[0]") = 0.825 or getprop("/surface-positions/flap-pos-norm[0]") = 1){
-			me["flaps-ext"].show();
-			me["flaps-trans"].hide();
-		} else if(getprop("/surface-positions/flap-pos-norm[0]") = 0){
-			me["flaps-ext"].hide();
-			me["flaps-trans"].hide();
-		} else {
-			me["flaps-ext"].hide();
-			me["flaps-trans"].show();
-		}
+		# if (getprop("/surface-positions/flap-pos-norm[0]") = 0.125 or getprop("/surface-positions/flap-pos-norm[0]") = 0.25 or getprop("/surface-positions/flap-pos-norm[0]") = 0.375 or getprop("/surface-positions/flap-pos-norm[0]") = 0.5 or or getprop("/surface-positions/flap-pos-norm[0]") = 0.625 or getprop("/surface-positions/flap-pos-norm[0]") = 0.75 or getprop("/surface-positions/flap-pos-norm[0]") = 0.825 or getprop("/surface-positions/flap-pos-norm[0]") = 1){
+			# me["flaps-ext"].show();
+			# me["flaps-trans"].hide();
+		# } else if(getprop("/surface-positions/flap-pos-norm[0]") = 0){
+			# me["flaps-ext"].hide();
+			# me["flaps-trans"].hide();
+		# } else {
+			# me["flaps-ext"].hide();
+			# me["flaps-trans"].show();
+		# }
 		
 		#Misc
 		me["air-temp"].setText(sprintf("%+i" ,getprop("/fdm/jsbsim/propulsion/tat-c")) + "c");
@@ -169,27 +181,26 @@ var canvas_EICAS = {
 		else
       me["flt-mode"].setText(sprintf("%s","CRZ"));
 
-		
-	}
+	},
 };
 
-var init = func() {
-	eicas = canvas.new({
+setlistener("sim/signals/fdm-initialized", func() {
+	upperEICAS_display = canvas.new({
 		"name": "EICAS",
-		"size": [1024, 1515],
+		"size": [1, 1],
 		"view": [1024, 1515],
 		"mipmapping": 1
 	});
-	
-	EICAS_display.addPlacement({"node": "EICAS.captL"});
-	EICAS_display.addPlacement({"node": "EICAS.captR"});
-	EICAS_display.addPlacement({"node": "EICAS.foL"});
-	EICAS_display.addPlacement({"node": "EICAS.foR"});
-	
-	var engGroup = display.createGroup();
-	
-	eng = canvasEng.new(engGroup, "Aircraft/737-MAX/Models/Instruments/res/EICAS.svg");
-	
-	canvasBase.setup();
-	update.start();
+	upperEICAS_display.addPlacement({"node": "upperEICASScreen"});
+	var group = upperEICAS_display.createGroup();
+	upperEICAS_canvas = canvas_upperEICAS.new(group);
+        upperEICAS_canvas.newMFD();
+ 	#upperEICAS_canvas.update();
+}, 0, 0);
+
+#setlistener("sim/signals/reinit", func upperEICAS_display.del());
+
+var showupperEICAS = func() {
+	var dlg = canvas.Window.new([1024, 1515], "dialog").set("resize", 1);
+	dlg.setCanvas(upperEICAS_display);
 }
