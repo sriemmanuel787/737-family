@@ -155,7 +155,7 @@
 
     <model>
         <name>Pushback</name>
-        <path>Aircraft/737-MAX/Models/Pushback/pushback.xml</path>
+        <path>Aircraft/737-MAX/Models/Autopush/pushback.xml</path>
         <offsets>
             <x-m>-18.36</x-m>
             <y-m>0</y-m>
