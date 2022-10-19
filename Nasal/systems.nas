@@ -7,8 +7,8 @@
  print("  / /   ___) |/ /       | |  | |/ ____ \  / . \ ");
  print(" /_/   |____//_/        |_|  |_/_/    \_\/_/ \_\\");
 print("-----------------------------------------------------------------------");
-print("(c) 2017-2018 Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), Israel Emmanuel (sriemmanuel787)");
-print("Report all bugs on GitHub Issues tab, or on the FlightGear Discord server. :)");
+print("Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), Israel Emmanuel (sriemmanuel787)");
+print("Report all bugs on GitHub Issues tab, or on the FlightGear Discord server.");
 print("Enjoy your flight!!!");
 print("-----------------------------------------------------------------------");
 print(" ");
