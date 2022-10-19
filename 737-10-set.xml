@@ -20,7 +20,11 @@
 		</previews>
 
 		<liveries-path type="string">Models/Liveries-10</liveries-path>
-
+		<nasal>
+			<boeing737>
+				<file>Aircraft/737-MAX/Nasal/liveries-10.nas</file>
+			</boeing737>
+		</nasal>
 		<model>
 			<path>Aircraft/737-MAX/Models/737-10.xml</path>
 			<livery>
