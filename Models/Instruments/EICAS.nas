@@ -27,7 +27,7 @@ var canvas_EICAS = {
 		# , {'font-mapper': font_mapper}
 		);
 		
-		var svg_keys = ["fuel-flow1", "fuel-flow2", "oil-press1", "oil-press2", "oil-temp1", "oil-temp2", "oil-qty1", "oil-qty2", "vib1", "vib2", "oil-press-meter1", "oil-press-meter2", "vib-meter1", "vib-meter2", "throttle-num1", "throttle-num2", "throttle-n1", "throttle-n2", "n1-text1", "n1-dial1", "n1-text2", "n1-dial2", "egt-text1", "egt-dial1", "egt-text2", "egt-dial2", "motoring1", "motoring2", "n2-text1", "n2-dial1", "n2-text2", "n2-dial2", "fuel-flow", "thrust", "low-oil-pressure", "oil-filter-bypass", "start-valve-open", "fuel-flow2", "thrust2", "low-oil-pressure2", "oil-filter-bypass2", "start-valve-open2", "tank-r", "tank-c", "tank-l", "total", "flt-mode", "air-temp", "flap-trans", "flap-ext", "flap-dial"];
+		var svg_keys = ["fuel-flow1", "fuel-flow2", "oil-press1", "oil-press2", "oil-temp1", "oil-temp2", "oil-qty1", "oil-qty2", "vib1", "vib2", "oil-press-meter1", "oil-press-meter2", "vib-meter1", "vib-meter2", "throttle-num1", "throttle-num2", "throttle-n1", "throttle-n2", "n1.text1", "n1-dial1", "n1.text2", "n1-dial2", "egt-text1", "egt-dial1", "egt-text2", "egt-dial2", "motoring1", "motoring2", "n2-text1", "n2-dial1", "n2-text2", "n2-dial2", "fuel-flow", "thrust", "low-oil-pressure", "oil-filter-bypass", "start-valve-open", "fuel-flow2", "thrust2", "low-oil-pressure2", "oil-filter-bypass2", "start-valve-open2", "tank-right", "tank-c", "tank-l", "total", "flt-mode", "air-temp", "flap-trans", "flap-ext", "flap-dial"];
 		foreach(var key; svg_keys) {
 			m[key] = EICAS.getElementById(key);
 		}
@@ -54,7 +54,7 @@ var canvas_EICAS = {
 		me["flap-dial"].setCenter(363*SCALE,408*SCALE);
 
 		# Fuel
-		me["tank-r"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[0]/level-kg")/1000));
+		me["tank-right"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[0]/level-kg")/1000));
 		me["tank-c"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[2]/level-kg")/1000));
 		me["tank-l"].setText(sprintf("%0.2f", getprop("/consumables/fuel/tank[1]/level-kg")/1000));
 		#var totalFuel = getprop("/consumables/fuel/tank[0]/level-kg") + getprop("/consumables/fuel/tank[1]/level-kg") + getprop("/consumables/fuel/tank[2]/level-kg")
@@ -65,8 +65,8 @@ var canvas_EICAS = {
 		me["n1-dial2"].setRotation(getprop("/engines/engine[1]/n1")*2*D2R);
 		me["throttle-n1"].setRotation(getprop("/controls/engines/engine[0]/throttle")*2*D2R);
 		me["throttle-n2"].setRotation(getprop("/controls/engines/engine[1]/throttle")*2*D2R);
-		me["n1-text1"].setText(sprintf("%0.1f", getprop("/engines/engine[0]/n1")));
-		me["n1-text2"].setText(sprintf("%0.1f", getprop("/engines/engine[1]/n1")));
+		me["n1.text1"].setText(sprintf("%0.1f", getprop("/engines/engine[0]/n1")));
+		me["n1.text2"].setText(sprintf("%0.1f", getprop("/engines/engine[1]/n1")));
 		me["throttle-num1"].setText(sprintf("%0.1f", getprop("/controls/engines/engine[0]/throttle")));
 		me["throttle-num2"].setText(sprintf("%0.1f", getprop("/controls/engines/engine[1]/throttle")));
 
