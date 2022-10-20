@@ -163,6 +163,22 @@
         </offsets>
     </model>
 
+    <!-- Gear compression - Left -->
+    <animation>
+        <type>translate</type>
+        <object-name>mlg.axleL</object-name>
+        <object-name>mlg.lowerL</object-name>
+        <object-name>mlg.scissorLL</object-name>
+        <object-name>mlg.tireL</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <factor>0.3048</factor>
+        <offset-m>0.1</offset-m>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
     <!-- Wing flex animations -->
     <animation>
         <type>rotate</type>
@@ -323,17 +339,18 @@
     <animation>
         <type>rotate</type>
         <object-name>rudder</object-name>
+        <object-name>lightning.rudder</object-name>
         <property>sim/multiplay/generic/float[11]</property>
         <factor>-30</factor>
-        <center> <!--change this later-->
-            <x-m>22.48</x-m>
-            <y-m>6.24</y-m>
-            <z-m>2.08</z-m>
+        <center>
+            <x-m>21.0392</x-m>
+            <y-m>0</y-m>
+            <z-m>6.19643</z-m>
         </center>
-        <axis> <!--change this as well-->
-            <x>0.0729</x>
-            <y>0.2309</y>
-            <z>0.0277</z>
+        <axis>
+            <x>0</x>
+            <y>0.24172</y>
+            <z>0.75828</z>
         </axis>
     </animation>
     <animation>

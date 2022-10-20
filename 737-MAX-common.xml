@@ -1174,16 +1174,16 @@
 			<file>Aircraft/737-MAX/Nasal/icing.nas</file>
 		</icing>
 		<autopush>
-            <file>Aircraft/737-800YV/Nasal/Autopush/autopush.nas</file>
+            <file>Aircraft/737-MAX/Nasal/Autopush/autopush.nas</file>
         </autopush>
         <autopush_driver>
-            <file>Aircraft/737-800YV/Nasal/Autopush/driver.nas</file>
+            <file>Aircraft/737-MAX/Nasal/Autopush/driver.nas</file>
         </autopush_driver>
         <dynarr>
-            <file>Aircraft/737-800YV/Nasal/Autopush/dynarr.nas</file>
+            <file>Aircraft/737-MAX/Nasal/Autopush/dynarr.nas</file>
         </dynarr>
         <autopush_route>
-            <file>Aircraft/737-800YV/Nasal/Autopush/route.nas</file>
+            <file>Aircraft/737-MAX/Nasal/Autopush/route.nas</file>
         </autopush_route>
 	</nasal>
 
