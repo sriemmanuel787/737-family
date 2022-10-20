@@ -31,7 +31,6 @@ var canvas_EICAS = {
 		foreach(var key; svg_keys) {
 			m[key] = EICAS.getElementById(key);
 		}
-		
                  m.timers = [];
  
 		return m;

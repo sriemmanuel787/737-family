@@ -2,7 +2,7 @@
 <PropertyList>
     <path>cockpit.ac</path>
 
-    <effect>
+    <!-- <effect>
         <inherits-from>Effects/model</inherits-from>
         <parameters>
             <lightmap-enabled>
@@ -12,7 +12,7 @@
                 <image>Aircraft/737-MAX/Models/Effects/LightMap/lightmap-cockpit.png</image>
             </texture>
         </parameters>        
-    </effect>
+    </effect> -->
     <model>
         <name>Panel</name>
         <path>Aircraft/737-MAX/Models/Instruments/panel.xml</path>

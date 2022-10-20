@@ -102,7 +102,7 @@
         <texture-prop>texture</texture-prop>
     </animation>
 
-    <effect>
+    <!-- <effect>
         <inherits-from>Effects/model</inherits-from>
         <parameters>
             <lightmap-enabled>
@@ -126,7 +126,7 @@
         <object-name>wing.UL1</object-name>
         <object-name>wing.BR1</object-name>
         <object-name>wing.UR1</object-name>
-    </effect>
+    </effect> -->
 
     <animation>
         <type>shader</type>
