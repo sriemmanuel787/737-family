@@ -171,8 +171,8 @@
         <object-name>mlg.scissorLL</object-name>
         <object-name>mlg.tireL</object-name>
         <property>gear/gear[1]/compression-norm</property>
-        <factor>0.3048</factor>
-        <offset-m>0.1</offset-m>
+        <factor>0.7482</factor>
+        <!-- <offset-m>0.1</offset-m> -->
         <axis>
             <x>0</x>
             <y>0</y>
