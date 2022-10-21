@@ -163,7 +163,7 @@
         </offsets>
     </model>
 
-    <!-- Gear compression - Left -->
+    <!-- Gear compression - Main -->
     <animation>
         <type>translate</type>
         <object-name>mlg.axleL</object-name>
@@ -171,12 +171,73 @@
         <object-name>mlg.scissorLL</object-name>
         <object-name>mlg.tireL</object-name>
         <property>gear/gear[1]/compression-norm</property>
-        <factor>0.7482</factor>
-        <!-- <offset-m>0.1</offset-m> -->
+        <factor>0.3677</factor>
         <axis>
             <x>0</x>
             <y>0</y>
             <z>1</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>mlg.axleR</object-name>
+        <object-name>mlg.lowerR</object-name>
+        <object-name>mlg.scissorLR</object-name>
+        <object-name>mlg.tireR</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <factor>0.3677</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>nlg.axle</object-name>
+        <object-name>nlg.lower</object-name>
+        <object-name>nlg.scissorsL</object-name>
+        <object-name>nlg.tire</object-name>
+        <property>gear/gear/compression-norm</property>
+        <factor>0.3677</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+    
+    <!-- Gear compression - Axles -->
+    <animation>
+        <type>rotate</type>
+        <object-name>nlg.scissorsL</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <factor>25.1238</factor>
+        <center>
+            <x>16.6971</x>
+            <y>0</y>
+            <z>-2.77978</z>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>nlg.scissorsU</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <factor>25.1238</factor>
+        <center>
+            <x>16.7144</x>
+            <y>0</y>
+            <z>-2.05863</z>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
         </axis>
     </animation>
     <!-- Wing flex animations -->
