@@ -163,6 +163,43 @@
         </offsets>
     </model>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.tireL</object-name>
+        <object-name>mlg.axleL</object-name>
+        <object-name>mlg.scissorLL</object-name>
+        <object-name>mlg.scissorUL</object-name>
+        <object-name>mlg.lowerL</object-name>
+        <object-name>mlg.upperL</object-name>
+        <object-name>mlg.coverarm</object-name>
+        <object-name>mlg.coverL1</object-name>
+        <object-name>mlg.coverL2</object-name>
+        <object-name>mlg.armL1</object-name>
+        <object-name>mlg.armL2</object-name>
+        <object-name>mlg.armL3</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>80</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-0.10986</x-m>
+            <y-m>-2.88208</y-m>
+            <z-m>-0.63626</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
     <!-- Gear compression - Main -->
     <animation>
         <type>translate</type>
@@ -214,9 +251,9 @@
         <property>gear/gear[1]/compression-norm</property>
         <factor>25.1238</factor>
         <center>
-            <x>16.6971</x>
-            <y>0</y>
-            <z>-2.77978</z>
+            <x-m>16.6971</x-m>
+            <y-m>0</y-m>
+            <z-m>-2.77978</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -230,9 +267,9 @@
         <property>gear/gear[1]/compression-norm</property>
         <factor>25.1238</factor>
         <center>
-            <x>16.7144</x>
-            <y>0</y>
-            <z>-2.05863</z>
+            <x-m>16.7144</x-m>
+            <y-m>0</y-m>
+            <z-m>-2.05863</z-m>
         </center>
         <axis>
             <x>0</x>

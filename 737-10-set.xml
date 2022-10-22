@@ -25,6 +25,12 @@
 				<file>Aircraft/737-MAX/Nasal/liveries-10.nas</file>
 			</boeing737>
 		</nasal>
+		<door>
+			<position-x-m type="float">-15.9187</position-x-m>
+			<position-y-m type="float">-1.71334</position-y-m>
+			<position-z-m type="float">0.00098</position-z-m>
+			<jetway-hood-deg type="float">0</jetway-hood-deg>
+		</door>
 		<model>
 			<path>Aircraft/737-MAX/Models/737-10.xml</path>
 			<livery>
