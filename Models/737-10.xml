@@ -7,7 +7,7 @@
 
     <nasal n="0">
         <load>
-	 var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-19");
+	 var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-10");
 	</load>
         <unload>
 	 livery_update.stop();
@@ -144,7 +144,7 @@
 
     <model>
         <name>Cockpit</name>
-        <path>Aircraft/737-MAX/Models/cockpit.xml</path>
+        <path>Aircraft/737-MAX/Models/Cockpit/cockpit.xml</path>
         <offsets>
             <x-m>-18.386</x-m>
             <y-m>0.0</y-m>

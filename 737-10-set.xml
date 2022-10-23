@@ -5,7 +5,7 @@
 	<sim>
 		<description>Boeing 737 MAX 10</description>
 		<aero>737-10</aero>
-		<!-- <variant-of>737 MAX</variant-of> -->
+		<variant-of>737-7</variant-of>
 		<liveries-path type="string">Aircraft/737-MAX/Models/Liveries-10</liveries-path>
 		<startup>
 			<splash-texture>Aircraft/737-MAX/Splash/splash-1.png</splash-texture>
