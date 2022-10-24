@@ -203,6 +203,7 @@
     <animation>
         <type>rotate</type>
         <object-name>mlg.armL2</object-name>
+        <property>gear/gear[1]/position-norm</property>
         <interpolation>
             <entry>
                 <ind>0.0</ind>
@@ -227,6 +228,93 @@
     <animation>
         <type>rotate</type>
         <object-name>mlg.armL3</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>-45</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>0.401928</x-m>
+            <y-m>-3.01577</y-m>
+            <z-m>-1.64715</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Gear animations: Main Right -->
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.tireR</object-name>
+        <object-name>mlg.axleR</object-name>
+        <object-name>mlg.scissorLR</object-name>
+        <object-name>mlg.scissorUR</object-name>
+        <object-name>mlg.lowerR</object-name>
+        <object-name>mlg.upperR</object-name>
+        <object-name>mlg.coverarm</object-name>
+        <object-name>mlg.coverL1</object-name>
+        <object-name>mlg.coverL2</object-name>
+        <object-name>mlg.armL3</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>80</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-0.10986</x-m>
+            <y-m>-2.88208</y-m>
+            <z-m>-0.63626</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.armL2</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>-45</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>1.13153</x-m>
+            <y-m>-1.98419</y-m>
+            <z-m>-0.781837</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.armL3</object-name>
+        <property>gear/gear[1]/position-norm</property>
         <interpolation>
             <entry>
                 <ind>0.0</ind>
