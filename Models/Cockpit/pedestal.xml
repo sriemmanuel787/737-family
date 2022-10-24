@@ -1,4 +1,36 @@
 <?xml version="1.0"?>
 <PropertyList>
-    <path>Aircraft/737-MAX/Models/Cockpit/Pedestal/pedestal.ac</path>
+    <path>Pedestal/pedestal.ac</path>
+    <animation>
+        <type>rotate</type>
+        <object-name>flaps</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor>89</factor>
+        <center>
+            <x-m>0.040164</x-m>
+            <y-m>-0.141565</y-m>
+            <z-m>0.549219</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>speedbrake</object-name>
+        <property>controls/flight/speedbrake-norm</property>
+        <factor>88</factor>
+        <center>
+            <x-m>0.040164</x-m>
+            <y-m>-0.141565</y-m>
+            <z-m>0.549219</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
 </PropertyList>
