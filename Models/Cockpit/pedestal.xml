@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>Pedestal/pedestal.ac</path>
+    <!-- Flap handle -->
     <animation>
         <type>rotate</type>
         <object-name>flaps</object-name>
@@ -17,6 +18,8 @@
             <z>0</z>
         </axis>
     </animation>
+
+    <!-- Speedbrake -->
     <animation>
         <type>rotate</type>
         <object-name>speedbrake</object-name>
@@ -26,6 +29,116 @@
             <x-m>0.040164</x-m>
             <y-m>-0.141565</y-m>
             <z-m>0.549219</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <!-- Throttle: N1 -->
+    <animation>
+        <type>rotate</type>
+        <object-name>n1</object-name>
+        <object-name>n1.rev</object-name>
+        <object-name>at.discL</object-name>
+        <property>controls/engines/engine[0]/throttle</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>0.040164</x-m>
+            <y-m>-0.141565</y-m>
+            <z-m>0.549219</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Throttle: N2 -->
+    <animation>
+        <type>rotate</type>
+        <object-name>n2</object-name>
+        <object-name>n2.rev</object-name>
+        <object-name>at.discR</object-name>
+        <property>controls/engines/engine[1]/throttle</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>0.040164</x-m>
+            <y-m>-0.141565</y-m>
+            <z-m>0.549219</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Rudder pedals -->
+    <animation>
+        <type>translate</type>
+        <object-name>pedal.L</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>0.05</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>pedal.R</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>-0.05</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <!-- Trim: Horizontal Stabilizer -->
+    <animation>
+        <type>rotate</type>
+        <object-name>trim.hstab</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>-10500</factor>
+        <center>
+            <x-m>0.02971</x-m>
+            <y-m>-0.02676</y-m>
+            <z-m>0.55156</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>trim.hstabm</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <interpolation>
+            <entry>
+                <ind>-1</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0</ind>
+                <dep>-14.5</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>-40.5</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>0.02971</x-m>
+            <y-m>-0.02676</y-m>
+            <z-m>0.55156</z-m>
         </center>
         <axis>
             <x>0</x>
