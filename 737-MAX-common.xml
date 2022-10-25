@@ -1050,7 +1050,7 @@
 			<display>IDENT</display>
 			<ident>
 				<model>737</model>
-				<engines>CFM56</engines>
+				<engines>CFM LEAP 1B</engines>
 			</ident>
 			<input type="string" />
 			<serviceable type="bool">true</serviceable>
