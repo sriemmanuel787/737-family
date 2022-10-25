@@ -174,7 +174,7 @@
         <object-name>mlg.scissorUL</object-name>
         <object-name>mlg.lowerL</object-name>
         <object-name>mlg.upperL</object-name>
-        <object-name>mlg.coverarm</object-name>
+        <object-name>mlg.coverarmL</object-name>
         <object-name>mlg.coverL1</object-name>
         <object-name>mlg.coverL2</object-name>
         <object-name>mlg.armL3</object-name>
@@ -250,6 +250,32 @@
             <z>0</z>
         </axis>
     </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.coverL1</object-name>
+        <object-name>mlg.coverarmL</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>1</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.9</ind>
+                <dep>45</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>0.494313</x-m>
+            <y-m>-3.02954</y-m>
+            <z-m>-1.46507</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
 
     <!-- Gear animations: Main Right -->
     <animation>
@@ -260,7 +286,7 @@
         <object-name>mlg.scissorUR</object-name>
         <object-name>mlg.lowerR</object-name>
         <object-name>mlg.upperR</object-name>
-        <object-name>mlg.coverarm.001</object-name>
+        <object-name>mlg.coverarmR</object-name>
         <object-name>mlg.coverR1</object-name>
         <object-name>mlg.coverR2</object-name>
         <object-name>mlg.armR3</object-name>
@@ -329,6 +355,32 @@
             <x-m>0.401928</x-m>
             <y-m>3.01577</y-m>
             <z-m>-1.64715</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.coverR1</object-name>
+        <object-name>mlg.coverarmR</object-name>
+        <property>gear/gear[2]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>1</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.9</ind>
+                <dep>-45</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>0.494313</x-m>
+            <y-m>3.02954</y-m>
+            <z-m>-1.46507</z-m>
         </center>
         <axis>
             <x>1</x>
