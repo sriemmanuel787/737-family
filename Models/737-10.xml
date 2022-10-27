@@ -389,6 +389,75 @@
         </axis>
     </animation>
 
+    <!-- Gear animation : Nose -->
+    <animation>
+        <type>rotate</type>
+        <object-name>nlg.doorR</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>90.0</dep>
+            </entry>
+            <entry>
+                <ind>0.75</ind>
+                <dep>90.0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>90.0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-18.0644</x-m>
+            <y-m>0.397849</y-m>
+            <z-m>-1.33888</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0.1</y>
+            <z>-0.05</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>nlg.doorL</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>-90.0</dep>
+            </entry>
+            <entry>
+                <ind>0.75</ind>
+                <dep>-90.0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>-90.0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-18.0644</x-m>
+            <y-m>-0.397849</y-m>
+            <z-m>-1.33888</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>-0.1</y>
+            <z>-0.05</z>
+        </axis>
+    </animation>
+
     <!-- Gear compression - Main -->
     <animation>
         <type>translate</type>
