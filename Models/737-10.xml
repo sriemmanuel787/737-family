@@ -423,7 +423,6 @@
             <z>-0.05</z>
         </axis>
     </animation>
-
     <animation>
         <type>rotate</type>
         <object-name>nlg.doorL</object-name>
@@ -455,6 +454,44 @@
             <x>1</x>
             <y>-0.1</y>
             <z>-0.05</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>nlg.upper</object-name>
+        <object-name>nlg.lower</object-name>
+        <object-name>nlg.scissorsU</object-name>
+        <object-name>nlg.scissorsL</object-name>
+        <object-name>nlg.axle</object-name>
+        <object-name>nlg.tire</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>120.0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>110.0</dep>
+            </entry>
+            <entry>
+                <ind>0.75</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0.0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-16.8059</x-m>
+            <y-m>0.306229</y-m>
+            <z-m>-1.41395</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
         </axis>
     </animation>
 
