@@ -5,7 +5,7 @@
 	xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 	<fileheader>
-		<author> Michael Soitanen, YV3399, it0uchpods and sriemmanuel787 </author>
+		<author> Michael Soitanen, YV3399, Octal450 and sriemmanuel787 </author>
 		<filecreationdate> 2022-08-31 </filecreationdate>
 		<version>$Revison: 1.0 $</version>
 		<description> Models a 737 MAX 10. </description>

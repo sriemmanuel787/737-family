@@ -1,7 +1,7 @@
 # B738 Shaking
 
 ##############################################
-# Copyright (c) Joshua Davidson (it0uchpods) #
+# Copyright (c) Joshua Davidson (Octal450) #
 ##############################################
 
 var shakeEffectB738 = props.globals.initNode("/systems/shake/effect", 0, "BOOL");

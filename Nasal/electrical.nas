@@ -1,5 +1,5 @@
 # 737-800 Electrical System
-# Joshua Davidson (it0uchpods)
+# Joshua Davidson (Octal450)
 
 #############
 # Init Vars #
