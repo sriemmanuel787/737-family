@@ -32,4 +32,13 @@
             <z-m>-1.0271</z-m>
         </offsets>
     </model>
+    <model>
+        <name>Autopilot Panel</name>
+        <path>Aircraft/737-MAX/Models/Cockpit/AP-Panel.xml</path>
+        <offsets>
+            <x-m>-0.41118</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.042008</z-m>
+        </offsets>
+    </model>
 </PropertyList>
