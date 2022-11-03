@@ -1700,7 +1700,7 @@
         </axis>
     </animation>
 
-    <!-- Door: Forward-Left -->
+    <!-- Door: Forward Left -->
     <animation>
         <type>pick</type>
         <visible>true</visible>
@@ -1726,27 +1726,88 @@
         <object-name>hinge.FLO</object-name>
         <object-name>hinge.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
-        <factor>1.57</factor>
+        <factor>90</factor>
         <center>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
+            <x-m>-16.418</x-m>
+            <y-m>-1.56569</y-m>
+            <z-m>0.958533</z-m>
         </center>
         <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>1</z>
+            <x>0.1</x>
+            <y>-0.35</y>
+            <z>-1</z>
         </axis>
     </animation>
     <animation>
         <type>rotate</type>
         <object-name>door.FLO</object-name>
         <object-name>door.FLI</object-name>
-        <property>controls/doors/LFDoor/LFDoorPos2/position-norm</property>
-        <factor>3.14</factor>
+        <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-16.3188</x-m>
+            <y-m>-1.57912</y-m>
+            <z-m>0.963608</z-m>
+        </center>
         <axis>
-            <x>0</x>
-            <y>0</y>
+            <x>-0.1</x>
+            <y>-0.35</y>
+            <z>-1</z>
+        </axis>
+    </animation>
+
+    <!-- Door: Forward Right -->
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>door.FRO</object-name>
+        <object-name>door.FRI</object-name>
+        <object-name>hinge.FRO</object-name>
+        <object-name>hinge.FRI</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    boeing737.doorRFtoggle();
+                </script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>door.FRO</object-name>
+        <object-name>door.FRI</object-name>
+        <object-name>hinge.FRO</object-name>
+        <object-name>hinge.FRI</object-name>
+        <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-16.418</x-m>
+            <y-m>1.56569</y-m>
+            <z-m>0.958533</z-m>
+        </center>
+        <axis>
+            <x>-0.1</x>
+            <y>-0.35</y>
+            <z>1</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>door.FRO</object-name>
+        <object-name>door.FRI</object-name>
+        <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-16.3188</x-m>
+            <y-m>1.57912</y-m>
+            <z-m>0.963608</z-m>
+        </center>
+        <axis>
+            <x>0.1</x>
+            <y>-0.35</y>
             <z>1</z>
         </axis>
     </animation>
