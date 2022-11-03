@@ -539,40 +539,6 @@
         </axis>
     </animation>
 
-    <!-- Gear compression - Axles -->
-    <animation>
-        <type>rotate</type>
-        <object-name>nlg.scissorsL</object-name>
-        <property>gear/gear[1]/compression-norm</property>
-        <factor>25.1238</factor>
-        <center>
-            <x-m>16.6971</x-m>
-            <y-m>0</y-m>
-            <z-m>-2.77978</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>nlg.scissorsU</object-name>
-        <property>gear/gear[1]/compression-norm</property>
-        <factor>25.1238</factor>
-        <center>
-            <x-m>16.7144</x-m>
-            <y-m>0</y-m>
-            <z-m>-2.05863</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
     <!-- Flap animations: Left wing -->
     <animation>
         <type>rotate</type>
@@ -1808,6 +1774,118 @@
         <axis>
             <x>0.1</x>
             <y>-0.35</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <!-- Door: Aft Left -->
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>door.ALO</object-name>
+        <object-name>door.ALI</object-name>
+        <object-name>hinge.ALO</object-name>
+        <object-name>hinge.ALI</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    boeing737.doorLRtoggle();
+                </script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>door.ALO</object-name>
+        <object-name>door.ALI</object-name>
+        <object-name>hinge.ALO</object-name>
+        <object-name>hinge.ALI</object-name>
+        <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>15.2539</x-m>
+            <y-m>-1.65192</y-m>
+            <z-m>0.863035</z-m>
+        </center>
+        <axis>
+            <x>-0.0813</x>
+            <y>0.0721</y>
+            <z>-1</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>door.ALO</object-name>
+        <object-name>door.ALI</object-name>
+        <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>15.3527</x-m>
+            <y-m>-1.63309</y-m>
+            <z-m>0.919093</z-m>
+        </center>
+        <axis>
+            <x>0.0813</x>
+            <y>-0.0721</y>
+            <z>-1</z>
+        </axis>
+    </animation>
+
+    <!-- Door: Aft Right -->
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>door.ARO</object-name>
+        <object-name>door.ARI</object-name>
+        <object-name>hinge.ARO</object-name>
+        <object-name>hinge.ARI</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    boeing737.doorRRtoggle();
+                </script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>door.ARO</object-name>
+        <object-name>door.ARI</object-name>
+        <object-name>hinge.ARO</object-name>
+        <object-name>hinge.ARI</object-name>
+        <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>15.2539</x-m>
+            <y-m>1.65192</y-m>
+            <z-m>0.863035</z-m>
+        </center>
+        <axis>
+            <x>0.0813</x>
+            <y>0.0721</y>
+            <z>1</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>door.ARO</object-name>
+        <object-name>door.ARI</object-name>
+        <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>15.3527</x-m>
+            <y-m>1.63309</y-m>
+            <z-m>0.919093</z-m>
+        </center>
+        <axis>
+            <x>-0.0813</x>
+            <y>-0.0721</y>
             <z>1</z>
         </axis>
     </animation>
