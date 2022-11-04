@@ -564,7 +564,7 @@
         <type>rotate</type>
         <object-name>nlg.scissorsU</object-name>
         <property>gear/gear[0]/compression-norm</property>
-        <factor>-35</factor>
+        <factor>-40</factor>
         <center>
             <x-m>-16.7142</x-m>
             <y-m>0.000746</y-m>
@@ -580,7 +580,7 @@
         <type>rotate</type>
         <object-name>nlg.scissorsL</object-name>
         <property>gear/gear[0]/compression-norm</property>
-        <factor>35</factor>
+        <factor>40</factor>
         <center>
             <x-m>-16.6964</x-m>
             <y-m>0.000603</y-m>
