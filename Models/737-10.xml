@@ -594,6 +594,70 @@
             <z>0</z>
         </axis>
     </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.scissorLL</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <factor>40</factor>
+        <center>
+            <x-m>0.33326</x-m>
+            <y-m>-2.88329</y-m>
+            <z-m>-2.73866</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.scissorUL</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <factor>-40</factor>
+        <center>
+            <x-m>0.217662</x-m>
+            <y-m>-2.88195</y-m>
+            <z-m>-2.05388</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.scissorLR</object-name>
+        <property>gear/gear[2]/compression-norm</property>
+        <factor>40</factor>
+        <center>
+            <x-m>0.33326</x-m>
+            <y-m>2.88329</y-m>
+            <z-m>-2.73866</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.scissorUR</object-name>
+        <property>gear/gear[2]/compression-norm</property>
+        <factor>-40</factor>
+        <center>
+            <x-m>0.217662</x-m>
+            <y-m>2.88195</y-m>
+            <z-m>-2.05388</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
 
     <!-- Flap animations: Left wing -->
     <animation>
