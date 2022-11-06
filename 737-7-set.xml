@@ -4,7 +4,7 @@
 
 	<sim>
 		<description>Boeing 737 MAX 7</description>
-		<aero>737 MAX 7</aero>
+		<aero>737-7</aero>
 		<primary-set>true</primary-set>
 		<liveries-path type="string">Aircraft/737-MAX/Models/Liveries-7</liveries-path>
 		<startup>
@@ -19,10 +19,10 @@
 			</preview>
 		</previews>
 
-		<liveries-path type="string">Models/Liveries-10</liveries-path>
+		<liveries-path type="string">Models/Liveries-7</liveries-path>
 		<nasal>
 			<boeing737>
-				<file>Aircraft/737-MAX/Nasal/liveries-10.nas</file>
+				<file>Aircraft/737-MAX/Nasal/liveries-7.nas</file>
 			</boeing737>
 		</nasal>
 		<door>
@@ -32,9 +32,9 @@
 			<jetway-hood-deg type="float">0</jetway-hood-deg>
 		</door>
 		<model>
-			<path>Aircraft/737-MAX/Models/737-10.xml</path>
+			<path>Aircraft/737-MAX/Models/737-7.xml</path>
 			<livery>
-				<file>BOE-10</file>
+				<file>BOE-7</file>
 			</livery>
 
 			<rendering>
@@ -62,7 +62,7 @@
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">-0.51</x-offset-m>
 				<y-offset-m archive="y">1.1</y-offset-m>
-				<z-offset-m archive="y">-17.98</z-offset-m>
+				<z-offset-m archive="y">-14.62</z-offset-m>
 			</config>
 		</view>
 
@@ -78,7 +78,7 @@
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">0.51</x-offset-m>
 				<y-offset-m archive="y">1.1</y-offset-m>
-				<z-offset-m archive="y">-17.98</z-offset-m>
+				<z-offset-m archive="y">-14.62</z-offset-m>
 			</config>
 		</view>
 
@@ -149,7 +149,7 @@
 		<cdu>
 			<display>IDENT</display>
 			<ident>
-				<model>737 MAX 10</model>
+				<model>737 MAX 7</model>
 				<engines>CFM LEAP 1B</engines>
 			</ident>
 			<input type="string" />
@@ -160,10 +160,10 @@
 	<limits>
 		<!-- According to http://wwww.b737.org.uk -->
 		<mass-and-balance>
-			<maximum-ramp-mass-lbs>156500</maximum-ramp-mass-lbs>
-			<maximum-takeoff-mass-lbs>197900</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>163900</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>156500</maximum-zero-fuel-mass-lbs>
+			<maximum-ramp-mass-lbs>145600</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>177000</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>145600</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>138700</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 		<max-flap-extension-speed>
 			<flaps>0.125</flaps>
@@ -206,27 +206,27 @@
 	<payload>
 
 		<pax>
-			<business type="double">6</business>
-			<tourist type="double">22</tourist>
-			<economy type="double">50</economy>
+			<business type="double">12</business>
+			<tourist type="double">28</tourist>
+			<economy type="double">94</economy>
 		</pax>
 		<weight>
 			<name type="string">Business class (12 pax max)</name>
 			<weight-lb alias="/payload/pax/business" />
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">12</max-lb>
+			<max-lb type="double">2160</max-lb>
 		</weight>
 		<weight>
-			<name type="string">Tourist class (40 pax max)</name>
+			<name type="string">Tourist class (18 pax max)</name>
 			<weight-lb alias="/payload/pax/tourist" />
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">40</max-lb>
+			<max-lb type="double">3240</max-lb>
 		</weight>
 		<weight>
-			<name type="string">Economy class (66 pax max)</name>
+			<name type="string">Economy class (94 pax max)</name>
 			<weight-lb alias="/payload/pax/economy" />
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">66</max-lb>
+			<max-lb type="double">16920</max-lb>
 		</weight>
 		<weight>
 			<name type="string">Cargo compartment 1A</name>
@@ -264,26 +264,5 @@
 			<min-lb type="double">0.0</min-lb>
 			<max-lb type="double">886</max-lb>
 		</weight>
-
 	</payload>
-	<boeing737>
-		<!-- <file>Aircraft/737-MAX/Models/Instruments/EICAS.nas</file> -->
-		<file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
-		<file>Aircraft/737-MAX/Nasal/autostart.nas</file>
-		<file>Aircraft/737-MAX/Nasal/controls.nas</file>
-		<file>Aircraft/737-MAX/Nasal/friction.nas</file>
-		<file>Aircraft/737-MAX/Nasal/lighting.nas</file>
-		<file>Aircraft/737-MAX/Nasal/tire-smoke.nas</file>
-		<file>Aircraft/737-MAX/Nasal/ground-services.nas</file>
-		<file>Aircraft/737-MAX/Nasal/liveries.nas</file>
-		<file>Aircraft/737-MAX/Nasal/systems.nas</file>
-		<file>Aircraft/737-MAX/Nasal/engine-fire.nas</file>
-		<file>Aircraft/737-MAX/Nasal/limits.nas</file>
-		<file>Aircraft/737-MAX/Nasal/doors.nas</file>
-		<file>Aircraft/737-MAX/Nasal/shake.nas</file>
-		<file>Aircraft/737-MAX/Nasal/warnings.nas</file>
-		<file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
-		<file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
-		<file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
-	</boeing737>
 </PropertyList>
