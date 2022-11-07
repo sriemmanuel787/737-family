@@ -1403,15 +1403,13 @@
                 <dep>-31</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>3.47</x-m>
-            <y-m>-12.62</y-m>
-            <z-m>0.54</z-m>
-        </center>
         <axis>
-            <x>-0.0579</x>
-            <y>0.2027</y>
-            <z>-0.0191</z>
+            <x1-m>4.07361</x1-m>
+            <y1-m>-14.4412</y1-m>
+            <z1-m>0.716727</z1-m>
+            <x2-m>2.86927</x2-m>
+            <y2-m>-10.8093</y2-m>
+            <z2-m>0.361428</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1433,15 +1431,13 @@
                 <dep>31</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>3.47</x-m>
-            <y-m>12.62</y-m>
-            <z-m>0.54</z-m>
-        </center>
         <axis>
-            <x>0.0579</x>
-            <y>0.2027</y>
-            <z>0.0191</z>
+            <x1-m>2.86927</x1-m>
+            <y1-m>10.8093</y1-m>
+            <z1-m>0.361428</z1-m>
+            <x2-m>4.07361</x2-m>
+            <y2-m>14.4412</y2-m>
+            <z2-m>0.716727</z2-m>
         </axis>
     </animation>
 
@@ -1450,16 +1446,13 @@
         <type>rotate</type>
         <object-name>spoiler.L1</object-name>
         <property>controls/flight/spoiler-6</property>
-        <factor>-52</factor>
-        <center>
-            <x-m>0.681717</x-m>
-            <y-m>-2.23223</y-m>
-            <z-m>-0.641252</z-m>
-        </center>
         <axis>
-            <x>0.0</x>
-            <y>1</y>
-            <z>-0.14</z>
+            <x1-m>0.689908</x1-m>
+            <y1-m>-4.6324</y1-m>
+            <z1-m>-0.153342</z1-m>
+            <x2-m>0.689797</x2-m>
+            <y2-m>-2.22314</y2-m>
+            <z2-m>-0.592752</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1467,15 +1460,13 @@
         <object-name>spoiler.L2</object-name>
         <property>controls/flight/spoiler-5</property>
         <factor>-38</factor>
-        <center>
-            <x-m>0.557287</x-m>
-            <y-m>-5.17999</y-m>
-            <z-m>-0.103402</z-m>
-        </center>
         <axis>
-            <x>-0.325</x>
-            <y>1</y>
-            <z>-0.10</z>
+            <x1-m>0.945157</x1-m>
+            <y1-m>-6.2657</y1-m>
+            <z1-m>0.047408</z1-m>
+            <x2-m>0.564707</x2-m>
+            <y2-m>-5.17288</y2-m>
+            <z2-m>-0.054462</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1483,15 +1474,13 @@
         <object-name>spoiler.L3</object-name>
         <property>controls/flight/spoiler-4</property>
         <factor>-38</factor>
-        <center>
-            <x-m>0.937768</x-m>
-            <y-m>-6.27281</y-m>
-            <z-m>-0.001522</z-m>
-        </center>
         <axis>
-            <x>-0.325</x>
-            <y>1</y>
-            <z>-0.10</z>
+           <x1-m>1.30325</x1-m>
+           <y1-m>-7.29422</y1-m>
+           <z1-m>0.143288</z1-m>
+           <x2-m>0.945158</x2-m>
+           <y2-m>-6.2657</y2-m>
+           <z2-m>0.047408</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1499,15 +1488,13 @@
         <object-name>spoiler.L4</object-name>
         <property>controls/flight/spoiler-3</property>
         <factor>-33</factor>
-        <center>
-            <x-m>1.29583</x-m>
-            <y-m>-7.30132</y-m>
-            <z-m>0.094358</z-m>
-        </center>
         <axis>
-            <x>-0.325</x>
-            <y>1</y>
-            <z>-0.10</z>
+            <x1-m>1.65802</x1-m>
+            <y1-m>-8.31328</y1-m>
+            <z1-m>0.238298</z1-m>
+            <x2-m>1.30325</x2-m>
+            <y2-m>-7.29422</y2-m>
+            <z2-m>0.143288</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1515,15 +1502,13 @@
         <object-name>spoiler.L5</object-name>
         <property>controls/flight/spoiler-2</property>
         <factor>-33</factor>
-        <center>
-            <x-m>1.65063</x-m>
-            <y-m>-8.32039</y-m>
-            <z-m>0.189358</z-m>
-        </center>
         <axis>
-            <x>-0.325</x>
-            <y>1</y>
-            <z>-0.10</z>
+            <x1-m>2.01812</x1-m>
+            <y1-m>-9.34762</y1-m>
+            <z1-m>0.334718</z1-m>
+            <x2-m>1.65802</x2-m>
+            <y2-m>-8.31328</y2-m>
+            <z2-m>0.238298</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1531,15 +1516,13 @@
         <object-name>spoiler.L6</object-name>
         <property>controls/flight/spoiler-1</property>
         <factor>-60</factor>
-        <center>
-            <x-m>2.01072</x-m>
-            <y-m>-9.35472</y-m>
-            <z-m>0.285788</z-m>
-        </center>
         <axis>
-            <x>-0.325</x>
-            <y>1</y>
-            <z>-0.10</z>
+            <x1-m>2.44052</x1-m>
+            <y1-m>-10.5607</y1-m>
+            <z1-m>0.447828</z1-m>
+            <x2-m>2.01812</x2-m>
+            <y2-m>-9.34762</y2-m>
+            <z2-m>0.334718</z2-m>
         </axis>
     </animation>
 
@@ -1549,15 +1532,13 @@
         <object-name>spoiler.R1</object-name>
         <property>controls/flight/spoiler-7</property>
         <factor>-52</factor>
-        <center>
-            <x-m>0.681717</x-m>
-            <y-m>2.23223</y-m>
-            <z-m>-0.641252</z-m>
-        </center>
         <axis>
-            <x>0.0</x>
-            <y>1</y>
-            <z>0.14</z>
+            <x1-m>0.689797</x1-m>
+            <y1-m>2.22314</y1-m>
+            <z1-m>-0.592752</z1-m>
+            <x2-m>0.689908</x2-m>
+            <y2-m>4.6324</y2-m>
+            <z2-m>-0.153342</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1565,15 +1546,13 @@
         <object-name>spoiler.R2</object-name>
         <property>controls/flight/spoiler-8</property>
         <factor>-38</factor>
-        <center>
-            <x-m>0.557287</x-m>
-            <y-m>5.17999</y-m>
-            <z-m>-0.103402</z-m>
-        </center>
         <axis>
-            <x>0.325</x>
-            <y>1</y>
-            <z>0.10</z>
+            <x1-m>0.564707</x1-m>
+            <y1-m>5.17288</y1-m>
+            <z1-m>-0.054462</z1-m>
+            <x2-m>0.945157</x2-m>
+            <y2-m>6.2657</y2-m>
+            <z2-m>0.047408</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1581,31 +1560,27 @@
         <object-name>spoiler.R3</object-name>
         <property>controls/flight/spoiler-9</property>
         <factor>-38</factor>
-        <center>
-            <x-m>0.937768</x-m>
-            <y-m>6.27281</y-m>
-            <z-m>-0.001522</z-m>
-        </center>
         <axis>
-            <x>0.325</x>
-            <y>1</y>
-            <z>0.10</z>
-        </axis>
+            <x1-m>0.945158</x1-m>
+            <y1-m>6.2657</y1-m>
+            <z1-m>0.047408</z1-m>
+            <x2-m>1.30325</x2-m>
+            <y2-m>7.29422</y2-m>
+            <z2-m>0.143288</z2-m>
+         </axis>
     </animation>
     <animation>
         <type>rotate</type>
         <object-name>spoiler.R4</object-name>
         <property>controls/flight/spoiler-10</property>
         <factor>-33</factor>
-        <center>
-            <x-m>1.29583</x-m>
-            <y-m>7.30132</y-m>
-            <z-m>0.094358</z-m>
-        </center>
         <axis>
-            <x>0.325</x>
-            <y>1</y>
-            <z>0.10</z>
+            <x1-m>1.30325</x1-m>
+            <y1-m>7.29422</y1-m>
+            <z1-m>0.143288</z1-m>
+            <x2-m>1.65802</x2-m>
+            <y2-m>8.31328</y2-m>
+            <z2-m>0.238298</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1613,15 +1588,13 @@
         <object-name>spoiler.R5</object-name>
         <property>controls/flight/spoiler-11</property>
         <factor>-33</factor>
-        <center>
-            <x-m>1.65063</x-m>
-            <y-m>8.32039</y-m>
-            <z-m>0.189358</z-m>
-        </center>
         <axis>
-            <x>0.325</x>
-            <y>1</y>
-            <z>0.10</z>
+            <x1-m>1.65802</x1-m>
+            <y1-m>8.31328</y1-m>
+            <z1-m>0.238298</z1-m>
+            <x2-m>2.01812</x2-m>
+            <y2-m>9.34762</y2-m>
+            <z2-m>0.334718</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1629,15 +1602,13 @@
         <object-name>spoiler.R6</object-name>
         <property>controls/flight/spoiler-12</property>
         <factor>-60</factor>
-        <center>
-            <x-m>2.01072</x-m>
-            <y-m>9.35472</y-m>
-            <z-m>0.285788</z-m>
-        </center>
         <axis>
-            <x>0.325</x>
-            <y>1</y>
-            <z>0.10</z>
+            <x1-m>2.01812</x1-m>
+            <y1-m>9.34762</y1-m>
+            <z1-m>0.334718</z1-m>
+            <x2-m>2.44052</x2-m>
+            <y2-m>10.5607</y2-m>
+            <z2-m>0.447828</z2-m>
         </axis>
     </animation>
 
