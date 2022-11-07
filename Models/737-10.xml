@@ -414,15 +414,13 @@
                 <dep>90.0</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>-18.0644</x-m>
-            <y-m>0.397849</y-m>
-            <z-m>-1.33888</z-m>
-        </center>
         <axis>
-            <x>1</x>
-            <y>0.1</y>
-            <z>-0.05</z>
+            <x1-m>-18.5625</x1-m>
+            <y1-m>0.398892</y1-m>
+            <z1-m>-1.22673</z1-m>
+            <x2-m>-16.7605</x2-m>
+            <y2-m>0.397133</y2-m>
+            <z2-m>-1.50763</z2-m>
         </axis>
     </animation>
     <animation>
@@ -447,15 +445,13 @@
                 <dep>-90.0</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>-18.0644</x-m>
-            <y-m>-0.397849</y-m>
-            <z-m>-1.33888</z-m>
-        </center>
         <axis>
-            <x>1</x>
-            <y>-0.1</y>
-            <z>-0.05</z>
+            <x1-m>-18.5625</x1-m>
+            <y1-m>-0.398892</y1-m>
+            <z1-m>-1.22673</z1-m>
+            <x2-m>-16.7605</x2-m>
+            <y2-m>-0.397133</y2-m>
+            <z2-m>-1.50763</z2-m>
         </axis>
     </animation>
     <animation>
@@ -666,16 +662,13 @@
         <object-name>flap.L2</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>25</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>0.707403</x-m>
-            <y-m>-5.18733</y-m>
-            <z-m>-0.309039</z-m>
-        </center>
         <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>-0.13</z>
+            <x1-m>0.707403</x1-m>
+            <y1-m>-5.18733</y1-m>
+            <z1-m>-0.309039</z1-m>
+            <x2-m>0.774423</x2-m>
+            <y2-m>-2.02185</y2-m>
+            <z2-m>-0.882517</z2-m>
         </axis>
     </animation>
     <animation>
@@ -712,16 +705,13 @@
         <object-name>flap.L2</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>10</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>1.39829</x-m>
-            <y-m>-2.03601</y-m>
-            <z-m>-0.877318</z-m>
-        </center>
         <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>-0.13</z>
+            <x1-m>1.37833</x1-m>
+            <y1-m>-3.93216</y1-m>
+            <z1-m>-0.487255</z1-m>
+            <x2-m>1.39829</x2-m>
+            <y2-m>-2.03601</y2-m>
+            <z2-m>-0.877319</z2-m>
         </axis>
     </animation>
     <animation>
@@ -757,7 +747,6 @@
         <object-name>cover.L2</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>28</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.375716</x-m>
             <y-m>-4.30666</y-m>
@@ -776,16 +765,13 @@
         <object-name>flap.L4</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>25</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>0.702153</x-m>
-            <y-m>-5.20602</y-m>
-            <z-m>-0.271946</z-m>
-        </center>
         <axis>
-            <x>-0.33</x>
-            <y>1</y>
-            <z>-0.12</z>
+            <x1-m>2.5588</x1-m>
+            <y1-m>-10.6344</y1-m>
+            <z1-m>0.308242</z1-m>
+            <x2-m>0.702153</x2-m>
+            <y2-m>-5.20602</y2-m>
+            <z2-m>-0.271946</z2-m>
         </axis>
     </animation>
     <animation>
@@ -822,16 +808,13 @@
         <object-name>flap.L4</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>10</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>1.53227</x-m>
-            <y-m>-5.20981</y-m>
-            <z-m>-0.295603</z-m>
-        </center>
         <axis>
-            <x>-0.33</x>
-            <y>1</y>
-            <z>-0.12</z>
+            <x1-m>2.8829</x1-m>
+            <y1-m>-10.41</y1-m>
+            <z1-m>0.270145</z1-m>
+            <x2-m>1.53535</x2-m>
+            <y2-m>-5.77964</y2-m>
+            <z2-m>-0.228522</z2-m>
         </axis>
     </animation>
     <animation>
@@ -867,7 +850,6 @@
         <object-name>cover.L4</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>26</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.741096</x-m>
             <y-m>-6.57895</y-m>
@@ -884,7 +866,6 @@
         <object-name>cover.L6</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>28</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>1.72708</x-m>
             <y-m>-9.21609</y-m>
@@ -912,15 +893,13 @@
                 <dep>100</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>-2.72807</x-m>
-            <y-m>-4.77485</y-m>
-            <z-m>-0.308911</z-m>
-        </center>
         <axis>
-            <x>-0.64</x>
-            <y>1</y>
-            <z>-0.102</z>
+            <x1-m>-2.72807</x1-m>
+            <y1-m>-4.77485</y1-m>
+            <z1-m>-0.308911</z1-m>
+            <x2-m>-4.2261</x2-m>
+            <y2-m>-2.47454</y2-m>
+            <z2-m>-0.620411</z2-m>
         </axis>
     </animation>
     <animation>
@@ -969,16 +948,13 @@
         <object-name>flap.R2</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>25</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>0.707403</x-m>
-            <y-m>5.18733</y-m>
-            <z-m>-0.309039</z-m>
-        </center>
         <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0.13</z>
+            <x1-m>0.774423</x1-m>
+            <y1-m>2.02185</y1-m>
+            <z1-m>-0.882517</z1-m>
+            <x2-m>0.707403</x2-m>
+            <y2-m>5.18733</y2-m>
+            <z2-m>-0.309039</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1015,16 +991,13 @@
         <object-name>flap.R2</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>10</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>1.39829</x-m>
-            <y-m>2.03601</y-m>
-            <z-m>-0.877318</z-m>
-        </center>
         <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0.13</z>
+            <x1-m>1.39829</x1-m>
+            <y1-m>-2.03601</y1-m>
+            <z1-m>-0.877319</z1-m>
+            <x2-m>1.37833</x2-m>
+            <y2-m>-3.93216</y2-m>
+            <z2-m>-0.487255</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1060,7 +1033,6 @@
         <object-name>cover.R2</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>28</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.375716</x-m>
             <y-m>4.30666</y-m>
@@ -1079,16 +1051,13 @@
         <object-name>flap.R4</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>25</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>0.702153</x-m>
-            <y-m>5.20602</y-m>
-            <z-m>-0.271946</z-m>
-        </center>
         <axis>
-            <x>0.33</x>
-            <y>1</y>
-            <z>0.12</z>
+            <x1-m>0.702153</x1-m>
+            <y1-m>5.20602</y1-m>
+            <z1-m>-0.271946</z1-m>
+            <x2-m>2.5588</x2-m>
+            <y2-m>10.6344</y2-m>
+            <z2-m>0.308242</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1125,7 +1094,6 @@
         <object-name>flap.R4</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>10</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>1.53227</x-m>
             <y-m>5.20981</y-m>
@@ -1170,7 +1138,6 @@
         <object-name>cover.R4</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>26</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.741096</x-m>
             <y-m>6.57895</y-m>
@@ -1187,7 +1154,6 @@
         <object-name>cover.R6</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>28</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>1.72708</x-m>
             <y-m>9.21609</y-m>
@@ -1215,15 +1181,13 @@
                 <dep>100</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>-2.72807</x-m>
-            <y-m>4.77485</y-m>
-            <z-m>-0.308911</z-m>
-        </center>
         <axis>
-            <x>0.64</x>
-            <y>1</y>
-            <z>0.102</z>
+            <x1-m>-4.2261</x1-m>
+            <y1-m>2.47454</y1-m>
+            <z1-m>-0.620411</z1-m>
+            <x2-m>-2.72807</x2-m>
+            <y2-m>4.77485</y2-m>
+            <z2-m>-0.308911</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1506,7 +1470,6 @@
         <object-name>spoiler.L1</object-name>
         <property>controls/flight/spoiler-6</property>
         <factor>-52</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.681717</x-m>
             <y-m>-2.23223</y-m>
@@ -1523,7 +1486,6 @@
         <object-name>spoiler.L2</object-name>
         <property>controls/flight/spoiler-5</property>
         <factor>-38</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.557287</x-m>
             <y-m>-5.17999</y-m>
@@ -1540,7 +1502,6 @@
         <object-name>spoiler.L3</object-name>
         <property>controls/flight/spoiler-4</property>
         <factor>-38</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.937768</x-m>
             <y-m>-6.27281</y-m>
@@ -1557,7 +1518,6 @@
         <object-name>spoiler.L4</object-name>
         <property>controls/flight/spoiler-3</property>
         <factor>-33</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>1.29583</x-m>
             <y-m>-7.30132</y-m>
@@ -1574,7 +1534,6 @@
         <object-name>spoiler.L5</object-name>
         <property>controls/flight/spoiler-2</property>
         <factor>-33</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>1.65063</x-m>
             <y-m>-8.32039</y-m>
@@ -1591,7 +1550,6 @@
         <object-name>spoiler.L6</object-name>
         <property>controls/flight/spoiler-1</property>
         <factor>-60</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>2.01072</x-m>
             <y-m>-9.35472</y-m>
@@ -1610,7 +1568,6 @@
         <object-name>spoiler.R1</object-name>
         <property>controls/flight/spoiler-7</property>
         <factor>-52</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.681717</x-m>
             <y-m>2.23223</y-m>
@@ -1627,7 +1584,6 @@
         <object-name>spoiler.R2</object-name>
         <property>controls/flight/spoiler-8</property>
         <factor>-38</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.557287</x-m>
             <y-m>5.17999</y-m>
@@ -1644,7 +1600,6 @@
         <object-name>spoiler.R3</object-name>
         <property>controls/flight/spoiler-9</property>
         <factor>-38</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>0.937768</x-m>
             <y-m>6.27281</y-m>
@@ -1661,7 +1616,6 @@
         <object-name>spoiler.R4</object-name>
         <property>controls/flight/spoiler-10</property>
         <factor>-33</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>1.29583</x-m>
             <y-m>7.30132</y-m>
@@ -1678,7 +1632,6 @@
         <object-name>spoiler.R5</object-name>
         <property>controls/flight/spoiler-11</property>
         <factor>-33</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>1.65063</x-m>
             <y-m>8.32039</y-m>
@@ -1695,7 +1648,6 @@
         <object-name>spoiler.R6</object-name>
         <property>controls/flight/spoiler-12</property>
         <factor>-60</factor>
-        <offset-deg>0</offset-deg>
         <center>
             <x-m>2.01072</x-m>
             <y-m>9.35472</y-m>
