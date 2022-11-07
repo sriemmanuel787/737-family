@@ -914,30 +914,28 @@
             </entry>
             <entry>
                 <ind>0.125</ind>
-                <dep>-12.5</dep>
+                <dep>12.5</dep>
             </entry>
             <entry>
                 <ind>0.375</ind>
-                <dep>-12.5</dep>
+                <dep>12.5</dep>
             </entry>
             <entry>
                 <ind>0.5</ind>
-                <dep>-25.0</dep>
+                <dep>25.0</dep>
             </entry>
             <entry>
                 <ind>1.0</ind>
-                <dep>-25.0</dep>
+                <dep>25.0</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>-1.85242</x-m>
-            <y-m>-5.29963</y-m>
-            <z-m>-0.801545</z-m>
-        </center>
         <axis>
-            <x>-0.52</x>
-            <y>1</y>
-            <z>-0.102</z>
+            <x1-m>-1.85242</x1-m>
+            <y1-m>-5.29963</y1-m>
+            <z1-m>-0.801545</z1-m>
+            <x2-m>4.07789</x2-m>
+            <y2-m>-16.7305</y2-m>
+            <z2-m>0.203126</z2-m>
         </axis>
     </animation>
 
@@ -1201,30 +1199,28 @@
             </entry>
             <entry>
                 <ind>0.125</ind>
-                <dep>-12.5</dep>
+                <dep>12.5</dep>
             </entry>
             <entry>
                 <ind>0.375</ind>
-                <dep>-12.5</dep>
+                <dep>12.5</dep>
             </entry>
             <entry>
                 <ind>0.5</ind>
-                <dep>-25.0</dep>
+                <dep>25.0</dep>
             </entry>
             <entry>
                 <ind>1.0</ind>
-                <dep>-25.0</dep>
+                <dep>25.0</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>-1.85242</x-m>
-            <y-m>5.29963</y-m>
-            <z-m>-0.801545</z-m>
-        </center>
         <axis>
-            <x>0.52</x>
-            <y>1</y>
-            <z>0.102</z>
+            <x1-m>4.07789</x1-m>
+            <y1-m>16.7305</y1-m>
+            <z1-m>0.203126</z1-m>
+            <x2-m>-1.85242</x2-m>
+            <y2-m>5.29963</y2-m>
+            <z2-m>-0.801545</z2-m>
         </axis>
     </animation>
 
