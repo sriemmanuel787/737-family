@@ -955,6 +955,7 @@
             <x2-m>0.707403</x2-m>
             <y2-m>5.18733</y2-m>
             <z2-m>-0.309039</z2-m>
+            
         </axis>
     </animation>
     <animation>
@@ -993,10 +994,10 @@
         <factor>10</factor>
         <axis>
             <x1-m>1.39829</x1-m>
-            <y1-m>-2.03601</y1-m>
+            <y1-m>2.03601</y1-m>
             <z1-m>-0.877319</z1-m>
             <x2-m>1.37833</x2-m>
-            <y2-m>-3.93216</y2-m>
+            <y2-m>3.93216</y2-m>
             <z2-m>-0.487255</z2-m>
         </axis>
     </animation>
@@ -1094,15 +1095,13 @@
         <object-name>flap.R4</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>10</factor>
-        <center>
-            <x-m>1.53227</x-m>
-            <y-m>5.20981</y-m>
-            <z-m>-0.295603</z-m>
-        </center>
         <axis>
-            <x>0.33</x>
-            <y>1</y>
-            <z>0.12</z>
+            <x1-m>1.53535</x1-m>
+            <y1-m>5.77964</y1-m>
+            <z1-m>-0.228522</z1-m>
+            <x2-m>2.8829</x2-m>
+            <y2-m>10.41</y2-m>
+            <z2-m>0.270145</z2-m>
         </axis>
     </animation>
     <animation>
