@@ -153,7 +153,6 @@
             <x-m>-18.386</x-m>
             <y-m>0.0</y-m>
             <z-m>0.943</z-m>
-            <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
 
@@ -162,7 +161,6 @@
         <path>Aircraft/737-MAX/Models/Autopush/pushback.xml</path>
         <offsets>
             <x-m>-18.36</x-m>
-            <y-m>0</y-m>
             <z-m>-2.85</z-m>
         </offsets>
     </model>
@@ -198,8 +196,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -223,8 +219,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -248,8 +242,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -274,8 +266,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -310,8 +300,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -335,8 +323,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -360,8 +346,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -386,8 +370,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -487,9 +469,7 @@
             <z-m>-1.41395</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -503,12 +483,9 @@
         <factor>-1</factor>
         <center>
             <x-m>-16.8435</x-m>
-            <y-m>0</y-m>
             <z-m>-2.06639</z-m>
         </center>
         <axis>
-            <x>0</x>
-            <y>0</y>
             <z>1</z>
         </axis>
     </animation>
@@ -523,8 +500,6 @@
         <property>gear/gear[1]/compression-norm</property>
         <factor>0.3677</factor>
         <axis>
-            <x>0</x>
-            <y>0</y>
             <z>1</z>
         </axis>
     </animation>
@@ -537,8 +512,6 @@
         <property>gear/gear[1]/compression-norm</property>
         <factor>0.3677</factor>
         <axis>
-            <x>0</x>
-            <y>0</y>
             <z>1</z>
         </axis>
     </animation>
@@ -551,8 +524,6 @@
         <property>gear/gear/compression-norm</property>
         <factor>0.3677</factor>
         <axis>
-            <x>0</x>
-            <y>0</y>
             <z>1</z>
         </axis>
     </animation>
@@ -569,9 +540,7 @@
             <z-m>-2.06228</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -585,9 +554,7 @@
             <z-m>-2.78008</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -601,9 +568,7 @@
             <z-m>-2.73866</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -617,9 +582,7 @@
             <z-m>-2.05388</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -633,9 +596,7 @@
             <z-m>-2.73866</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -649,9 +610,7 @@
             <z-m>-2.05388</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -696,8 +655,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -738,8 +695,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -753,9 +708,7 @@
             <z-m>-0.802985</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -799,8 +752,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -841,8 +792,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -856,9 +805,7 @@
             <z-m>-0.478179</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -872,9 +819,7 @@
             <z-m>-0.1913</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -981,8 +926,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -1023,8 +966,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -1038,9 +979,7 @@
             <z-m>-0.802985</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -1084,8 +1023,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -1126,8 +1063,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -1141,9 +1076,7 @@
             <z-m>-0.478179</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -1157,9 +1090,7 @@
             <z-m>-0.1913</z-m>
         </center>
         <axis>
-            <x>0</x>
             <y>1</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -1626,8 +1557,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -1646,8 +1575,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -1665,8 +1592,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
     <animation>
@@ -1685,8 +1610,6 @@
         </interpolation>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -1942,8 +1865,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -1975,8 +1896,6 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
         </axis>
     </animation>
 
@@ -2308,7 +2227,6 @@
             <x-m>-3.3</x-m>
             <y-m>-4.73</y-m>
             <z-m>-1.4</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
 
@@ -2325,7 +2243,6 @@
             <x-m>-3.3</x-m>
             <y-m>4.73</y-m>
             <z-m>-1.4</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
 
@@ -2340,9 +2257,7 @@
         <name>~fire_2</name>
         <offsets>
             <x-m>18.63</x-m>
-            <y-m>0.0</y-m>
             <z-m>2.06</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
 
@@ -2435,9 +2350,7 @@
         </condition>
         <offsets>
             <x-m>-4.2</x-m>
-            <y-m>0</y-m>
             <z-m>0.95</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
 
@@ -2461,7 +2374,6 @@
             <x-m>-13</x-m>
             <y-m>2</y-m>
             <z-m>2.16</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
     <model>
@@ -2496,10 +2408,5 @@
     </animation>
     <model>
         <path>Aircraft/737-MAX/Models/Services/Services.xml</path>
-        <offsets>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
-        </offsets>
     </model>
 </PropertyList>
