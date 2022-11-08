@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>737-10.ac</path>
+    <animation>
+        <texture>MAX-10.png</texture>
+    </animation>
 
     <nasal>
         <load>var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-10");</load>
@@ -455,15 +458,13 @@
         <object-name>hinge.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>-16.418</x-m>
-            <y-m>-1.56569</y-m>
-            <z-m>0.958533</z-m>
-        </center>
         <axis>
-            <x>0.1</x>
-            <y>-0.35</y>
-            <z>-1</z>
+            <x1-m>-16.418</x1-m>
+            <y1-m>-1.4826</y1-m>
+            <z1-m>1.23873</z1-m>
+            <x2-m>-16.418</x2-m>
+            <y2-m>-1.64878</y2-m>
+            <z2-m>0.678338</z2-m>
         </axis>
     </animation>
     <animation>
@@ -472,15 +473,13 @@
         <object-name>door.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>-16.3188</x-m>
-            <y-m>-1.57912</y-m>
-            <z-m>0.963608</z-m>
-        </center>
         <axis>
-            <x>-0.1</x>
-            <y>-0.35</y>
-            <z>-1</z>
+            <x1-m>-16.3188</x1-m>
+            <y1-m>-1.495</y1-m>
+            <z1-m>1.24888</z1-m>
+            <x2-m>-16.3188</x2-m>
+            <y2-m>-1.66324</y2-m>
+            <z2-m>0.678338</z2-m>
         </axis>
     </animation>
 
@@ -511,15 +510,13 @@
         <object-name>hinge.FRI</object-name>
         <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>-16.418</x-m>
-            <y-m>1.56569</y-m>
-            <z-m>0.958533</z-m>
-        </center>
         <axis>
-            <x>-0.1</x>
-            <y>-0.35</y>
-            <z>1</z>
+            <x1-m>-16.418</x1-m>
+            <y1-m>1.64878</y1-m>
+            <z1-m>0.678338</z1-m>
+            <x2-m>-16.418</x2-m>
+            <y2-m>1.4826</y2-m>
+            <z2-m>1.23873</z2-m>
         </axis>
     </animation>
     <animation>
@@ -528,15 +525,13 @@
         <object-name>door.FRI</object-name>
         <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>-16.3188</x-m>
-            <y-m>1.57912</y-m>
-            <z-m>0.963608</z-m>
-        </center>
         <axis>
-            <x>0.1</x>
-            <y>-0.35</y>
-            <z>1</z>
+            <x1-m>-16.3188</x1-m>
+            <y1-m>1.66324</y1-m>
+            <z1-m>0.678338</z1-m>
+            <x2-m>-16.3188</x2-m>
+            <y2-m>1.495</y2-m>
+            <z2-m>1.24888</z2-m>
         </axis>
     </animation>
 
@@ -567,15 +562,13 @@
         <object-name>hinge.ALI</object-name>
         <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>15.2539</x-m>
-            <y-m>-1.65192</y-m>
-            <z-m>0.863035</z-m>
-        </center>
         <axis>
-            <x>-0.0813</x>
-            <y>0.0721</y>
-            <z>-1</z>
+            <x1-m>15.254</x1-m>
+            <y1-m>-1.60819</y1-m>
+            <z1-m>1.21577</z1-m>
+            <x2-m>15.2539</x2-m>
+            <y2-m>-1.68074</y2-m>
+            <z2-m>0.622418</z2-m>
         </axis>
     </animation>
     <animation>
@@ -584,15 +577,13 @@
         <object-name>door.ALI</object-name>
         <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>15.3527</x-m>
-            <y-m>-1.63309</y-m>
-            <z-m>0.919093</z-m>
-        </center>
         <axis>
-            <x>0.0813</x>
-            <y>-0.0721</y>
-            <z>-1</z>
+            <x1-m>15.3527</x1-m>
+            <y1-m>-1.59867</y1-m>
+            <z1-m>1.21577</z1-m>
+            <x2-m>15.3527</x2-m>
+            <y2-m>-1.6675</y2-m>
+            <z2-m>0.622413</z2-m>
         </axis>
     </animation>
 
@@ -623,15 +614,13 @@
         <object-name>hinge.ARI</object-name>
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>15.2539</x-m>
-            <y-m>1.65192</y-m>
-            <z-m>0.863035</z-m>
-        </center>
         <axis>
-            <x>0.0813</x>
-            <y>0.0721</y>
-            <z>1</z>
+            <x1-m>15.2539</x1-m>
+            <y1-m>1.68074</y1-m>
+            <z1-m>0.622418</z1-m>
+            <x2-m>15.254</x2-m>
+            <y2-m>1.60819</y2-m>
+            <z2-m>1.21577</z2-m>
         </axis>
     </animation>
     <animation>
@@ -640,15 +629,13 @@
         <object-name>door.ARI</object-name>
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>15.3527</x-m>
-            <y-m>1.63309</y-m>
-            <z-m>0.919093</z-m>
-        </center>
         <axis>
-            <x>-0.0813</x>
-            <y>-0.0721</y>
-            <z>1</z>
+            <x1-m>15.3527</x1-m>
+            <y1-m>1.6675</y1-m>
+            <z1-m>0.622413</z1-m>
+            <x2-m>15.3527</x2-m>
+            <y2-m>1.59867</y2-m>
+            <z2-m>1.21577</z2-m>
         </axis>
     </animation>
 
@@ -672,11 +659,11 @@
         <object-name>cdoor.fwdI</object-name>
         <object-name>cdoor.fwdO</object-name>
         <property>controls/doors/CFDoor/CFDoorPos1/position-norm</property>
-        <factor>80</factor>
+        <factor>-180</factor>
         <center>
-            <x-m>-12.353</x-m>
-            <y-m>1.695</y-m>
-            <z-m>-0.435</z-m>
+            <x-m>-12.3619</x-m>
+            <y-m>1.69664</y-m>
+            <z-m>-0.43561</z-m>
         </center>
         <axis>
             <x>1</x>
@@ -703,14 +690,14 @@
         <object-name>cdoor.aftI</object-name>
         <object-name>cdoor.aftO</object-name>
         <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
-        <factor>80</factor>
-        <center>
-            <x-m>-12.353</x-m>
-            <y-m>1.695</y-m>
-            <z-m>-0.435</z-m>
-        </center>
+        <factor>-180</factor>
         <axis>
-            <x>1</x>
+            <x1-m>11.4293</x1-m>
+            <y1-m>1.70712</y1-m>
+            <z1-m>-0.39473</z1-m>
+            <x2-m>12.2889</x2-m>
+            <y2-m>1.68406</y2-m>
+            <z2-m>-0.39475</z2-m>
         </axis>
     </animation>
 
