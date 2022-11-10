@@ -41,6 +41,14 @@
             <z-m>-0.042008</z-m>
         </offsets>
     </model>
+    <model>
+        <path>Aircraft/737-MAX/Models/Cockpit/OH-Panel.xml</path>
+        <offsets>
+            <x-m>0.043298</x-m>
+            <z-m>0.472224</z-m>
+            <pitch-deg>73.348</pitch-deg>
+        </offsets>
+    </model>
 
     <!-- Yoke animations -->
     <animation>
