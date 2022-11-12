@@ -14,17 +14,6 @@
         </parameters>        
     </effect> -->
     <model>
-        <name>Panel</name>
-        <path>Aircraft/737-MAX/Models/Instruments/panel.xml</path>
-        <offsets>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
-            <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
-    <model>
-        <name>Pedestal</name>
         <path>Aircraft/737-MAX/Models/Cockpit/pedestal.xml</path>
         <offsets>
             <x-m>-0.334</x-m>
@@ -33,7 +22,6 @@
         </offsets>
     </model>
     <model>
-        <name>Autopilot Panel</name>
         <path>Aircraft/737-MAX/Models/Cockpit/AP-Panel.xml</path>
         <offsets>
             <x-m>-0.41118</x-m>

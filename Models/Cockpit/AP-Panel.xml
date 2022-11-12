@@ -381,7 +381,7 @@
     </animation>
 
     <!-- Approach -->
-    <animation>
+    <!-- <animation>
         <type>pick</type>
         <object-name>app.sel</object-name>
         <action>
@@ -401,5 +401,5 @@
                 <property></property>
             </equals>
         </condition>
-    </animation>
+    </animation> -->
 </PropertyList>
