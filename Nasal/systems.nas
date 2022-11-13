@@ -149,9 +149,9 @@ var aglgears = func {
 aglgears();
 
 # selected engine system
-props.globals.initNode("sim/input/selected/SelectedEngine738", 0, "INT");
-setlistener("sim/input/selected/SelectedEngine738", func {
-	a = getprop("sim/input/selected/SelectedEngine738");
+props.globals.initNode("sim/input/selected/SelectedEngine73X", 0, "INT");
+setlistener("sim/input/selected/SelectedEngine73X", func {
+	a = getprop("sim/input/selected/SelectedEngine73X");
 	if (a == 0) {
 		setprop("sim/input/selected/engine", 1);
 		setprop("sim/input/selected/engine[1]", 1);

@@ -1,4 +1,286 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
     <path>AP-OH/OH-Panel.ac</path>
+
+    <!-- Starters -->
+    <!-- APU -->
+    <animation>
+        <type>pick</type>
+        <object-name>apu.start</object-name>
+        <action>
+            <button>0</button>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>property-cycle</command>
+                <property>controls/APU/master</property>
+                <value>0</value>
+                <value>1</value>
+                <value>2</value>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>apu.start</object-name>
+        <property>controls/APU/master</property>
+        <factor>23</factor>
+        <center>
+            <x-m>-0.027065</x-m>
+            <y-m>-0.07862</y-m>
+            <z-m>-0.465208</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+    </animation>
+
+    <!-- N1 -->
+    <animation>
+        <type>knob</type>
+        <object-name>n1.start</object-name>
+        <property>controls/engines/engine[0]/starter</property>
+        <factor>-56</factor>
+        <center>
+            <x-m>-0.004527</x-m>
+            <y-m>-0.021022</y-m>
+            <z-m>-0.460612</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/starter</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- N2 -->
+    <animation>
+        <type>knob</type>
+        <object-name>n2.start</object-name>
+        <property>controls/engines/engine[2]/starter</property>
+        <factor>-56</factor>
+        <center>
+            <x-m>-0.004527</x-m>
+            <y-m>0.094018</y-m>
+            <z-m>-0.460612</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[2]/starter</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Engine Selector -->
+    <animation>
+        <type>knob</type>
+        <object-name>ignition</object-name>
+        <property>sim/input/selected/SelectedEngine73X</property>
+        <factor>30</factor>
+        <center>
+            <x-m>-0.01375</x-m>
+            <y-m>0.038255</y-m>
+            <z-m>-0.455875</z-m>
+        </center>
+        <axis>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/input/selected/SelectedEngine73X</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+
+    <!-- Lights -->
+    <!-- Landing -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.landingL</object-name>
+        <object-name>light.landingR</object-name>
+        <property>controls/lighting/landing-lights</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01412</x-m>
+            <y-m>-0.218018</y-m>
+            <z-m>-0.457091</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Runway turnoff -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.rturnoffL</object-name>
+        <object-name>light.rturnoffR</object-name>
+        <property>controls/lighting/RB-light</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01761</x-m>
+            <y-m>-0.13145</y-m>
+            <z-m>-0.455875</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/RB-light</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Taxi -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.taxi</object-name>
+        <property>controls/lighting/Taxi-light</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01761</x-m>
+            <y-m>-0.101682</y-m>
+            <z-m>-0.455875</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/Taxi-light</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Logo -->
+    <animation>
+        <type>knob</type>
+        <name>light.logo</name>
+        <property>controls/lighting/logo-lights</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01693</x-m>
+            <y-m>0.168852</y-m>
+            <z-m>-0.455875</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/logo-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Strobe -->
+    <animation>
+        <type>knob</type>
+        <name>light.strobe</name>
+        <property>controls/lighting/strobe</property>
+        <factor>-25</factor>
+        <center>
+            <x-m>-0.01693</x-m>
+            <y-m>0.205735</y-m>
+            <z-m>-0.455875</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/strobe</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Anti-collision -->
+    <animation>
+        <type>knob</type>
+        <name>light.collision</name>
+        <property>controls/lighting/beacon</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01693</x-m>
+            <y-m>0.24445</y-m>
+            <z-m>-0.455875</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/beacon</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Wing -->
+    <animation>
+        <type>knob</type>
+        <name>light.wing</name>
+        <property>controls/lighting/wing</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01693</x-m>
+            <y-m>0.27236</y-m>
+            <z-m>-0.455875</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/wing</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Wheel well -->
+    <animation>
+        <type>knob</type>
+        <name>light.wheel</name>
+        <property>controls/lighting/wheel</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01693</x-m>
+            <y-m>0.30166</y-m>
+            <z-m>-0.455875</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/wheel</property>
+            </binding>
+        </action>
+    </animation>
 </PropertyList>
