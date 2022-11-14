@@ -177,7 +177,7 @@
     <!-- Logo -->
     <animation>
         <type>knob</type>
-        <name>light.logo</name>
+        <object-name>light.logo</object-name>
         <property>controls/lighting/logo-lights</property>
         <factor>50</factor>
         <center>
@@ -199,7 +199,7 @@
     <!-- Strobe -->
     <animation>
         <type>knob</type>
-        <name>light.strobe</name>
+        <object-name>light.strobe</object-name>
         <property>controls/lighting/strobe</property>
         <factor>-25</factor>
         <center>
@@ -221,7 +221,7 @@
     <!-- Anti-collision -->
     <animation>
         <type>knob</type>
-        <name>light.collision</name>
+        <object-name>light.collision</object-name>
         <property>controls/lighting/beacon</property>
         <factor>50</factor>
         <center>
@@ -243,7 +243,7 @@
     <!-- Wing -->
     <animation>
         <type>knob</type>
-        <name>light.wing</name>
+        <object-name>light.wing</object-name>
         <property>controls/lighting/wing</property>
         <factor>50</factor>
         <center>
@@ -265,7 +265,7 @@
     <!-- Wheel well -->
     <animation>
         <type>knob</type>
-        <name>light.wheel</name>
+        <object-name>light.wheel</object-name>
         <property>controls/lighting/wheel</property>
         <factor>50</factor>
         <center>
@@ -283,4 +283,290 @@
             </binding>
         </action>
     </animation>
+
+
+    <!-- Fuel -->
+    <!-- Left Tank -->
+    <animation>
+        <type>knob</type>
+        <object-name>fuel.AL</object-name>
+        <property>controls/fuel/tank[0]/pump-aft</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.319509</y-m>
+            <z-m>-0.388173</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/fuel/tank[0]/pump-aft</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>fuel.FL</object-name>
+        <property>controls/fuel/tank[0]/pump-fwd</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.291423</y-m>
+            <z-m>-0.388173</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/fuel/tank[0]/pump-fwd</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Right Tank -->
+    <animation>
+        <type>knob</type>
+        <object-name>fuel.FR</object-name>
+        <property>controls/fuel/tank[1]/pump-fwd</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.250501</y-m>
+            <z-m>-0.388173</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/fuel/tank[1]/pump-fwd</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>fuel.AR</object-name>
+        <property>controls/fuel/tank[1]/pump-aft</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.223322</y-m>
+            <z-m>-0.388173</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/fuel/tank[1]/pump-aft</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Center Tank -->
+    <animation>
+        <type>knob</type>
+        <object-name>fuel.CL</object-name>
+        <property>controls/fuel/tank[2]/pump-left</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.285756</y-m>
+            <z-m>-0.334601</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/fuel/tank[2]/pump-left</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>fuel.CR</object-name>
+        <property>controls/fuel/tank[2]/pump-right</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.257689</y-m>
+            <z-m>-0.334601</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/fuel/tank[2]/pump-right</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Left Tank Pressure -->
+    <animation>
+        <type>select</type>
+        <object-name>fuel.ALpress</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>controls/fuel/tank[0]/pump-aft</property>
+                    <value>0</value>
+                </equals>
+                <less-than>
+                    <property>fdm/jsbsim/propulsion/tank[0]/contents-lbs</property>
+                    <value>1</value>
+                </less-than>
+            </or>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>fuel.FLpress</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>controls/fuel/tank[0]/pump-fwd</property>
+                    <value>0</value>
+                </equals>
+                <less-than>
+                    <property>fdm/jsbsim/propulsion/tank[0]/contents-lbs</property>
+                    <value>1</value>
+                </less-than>
+            </or>
+        </condition>
+    </animation>
+
+    <!-- Right Tank Pressure -->
+    <animation>
+        <type>select</type>
+        <object-name>fuel.FRpress</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>controls/fuel/tank[1]/pump-fwd</property>
+                    <value>0</value>
+                </equals>
+                <less-than>
+                    <property>fdm/jsbsim/propulsion/tank[1]/contents-lbs</property>
+                    <value>1</value>
+                </less-than>
+            </or>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>fuel.ARpress</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>controls/fuel/tank[1]/pump-aft</property>
+                    <value>0</value>
+                </equals>
+                <less-than>
+                    <property>fdm/jsbsim/propulsion/tank[1]/contents-lbs</property>
+                    <value>1</value>
+                </less-than>
+            </or>
+        </condition>
+    </animation>
+
+    <!-- Center Tank Pressure -->
+    <animation>
+        <type>select</type>
+        <object-name>fuel.CLpress</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>controls/fuel/tank[2]/pump-left</property>
+                    <value>0</value>
+                </equals>
+                <less-than>
+                    <property>fdm/jsbsim/propulsion/tank[2]/contents-lbs</property>
+                    <value>1</value>
+                </less-than>
+            </or>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>fuel.CRpress</object-name>
+        <condition>
+            <or>
+                <equals>
+                    <property>controls/fuel/tank[2]/pump-right</property>
+                    <value>0</value>
+                </equals>
+                <less-than>
+                    <property>fdm/jsbsim/propulsion/tank[2]/contents-lbs</property>
+                    <value>1</value>
+                </less-than>
+            </or>
+        </condition>
+    </animation>
+
+    <!-- Crossfeed -->
+    <animation>
+        <type>knob</type>
+        <object-name>fuel.crossfeed</object-name>
+        <property>controls/fuel/crossfeed</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-0.01514</x-m>
+            <y-m>-0.27091</y-m>
+            <z-m>-0.27887</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/fuel/crossfeed</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>fuel.crossfeedon</object-name>
+        <condition>
+            <equals>
+                <property>controls/fuel/crossfeed</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <!-- Fuel Temperature -->
+    <animation>
+        <type>rotate</type>
+        <object-name>fuel.temp</object-name>
+        <property>consumables/fuel/tank[0]/temperature_degC</property>
+        <factor>-1.75</factor>
+        <center>
+            <x-m>-0.016789</x-m>
+            <y-m>-0.271394</y-m>
+            <z-m>-0.216875</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+
+    <!-- Valve Status: N1 -->
+    <!-- <animation>
+        <type>select</type>
+        <object-name>n1.startvalve</object-name>
+        <object-name>n1.spar</object-name>
+        <property></property>
+    </animation> -->
 </PropertyList>
