@@ -4,27 +4,26 @@
 
 	<sim>
 		<description>Boeing 737 MAX 10</description>
+		<liveries-path type="string">Aircraft/737-MAX/Models/Liveries-10</liveries-path>
 		<aero>737-10</aero>
 		<variant-of>737-7</variant-of>
 		<startup>
-			<splash-texture>Aircraft/737-MAX/Splash/splash-1.png</splash-texture>
+			<splash-texture>Aircraft/737-MAX/Splash/Splash-10/splash-1.png</splash-texture>
+			<splash-texture>Aircraft/737-MAX/Splash/Splash-10/splash-2.png</splash-texture>
+			<splash-texture>Aircraft/737-MAX/Splash/Splash-10/splash-3.png</splash-texture>
 		</startup>
 
 		<previews>
 			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
-				<path>Splash/splash-1.png</path>
+				<path>Splash/Splash-10/splash-1.png</path>
+				<path>Splash/Splash-10/splash-2.png</path>
+				<path>Splash/Splash-10/splash-3.png</path>
 			</preview>
 		</previews>
 
-		<liveries-path type="string">Aircraft/737-MAX/Models/Liveries-10</liveries-path>
-		<nasal>
-			<boeing737>
-				<file>Aircraft/737-MAX/Nasal/liveries-10.nas</file>
-			</boeing737>
-		</nasal>
-
+		
 		<model>
 			<door>
 				<position-x-m type="float">-15.9187</position-x-m>
