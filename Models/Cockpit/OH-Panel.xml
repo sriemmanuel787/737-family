@@ -98,7 +98,7 @@
                 <property>sim/input/selected/SelectedEngine73X</property>
                 <step>1</step>
                 <min>-1</min>
-                <max>1</max>
+                <max>2</max>
                 <wrap>true</wrap>
             </binding>
         </action>
@@ -563,10 +563,371 @@
     </animation>
 
     <!-- Valve Status: N1 -->
-    <!-- <animation>
+    <animation>
         <type>select</type>
-        <object-name>n1.startvalve</object-name>
-        <object-name>n1.spar</object-name>
-        <property></property>
-    </animation> -->
+        <object-name>fuel.startL</object-name>
+        <object-name>fuel.sparL</object-name>
+        <condition>
+            <equals>
+                <property>controls/engines/engine[0]/starter</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <!-- Valve Status: N2 -->
+    <animation>
+        <type>select</type>
+        <object-name>fuel.startR</object-name>
+        <object-name>fuel.sparR</object-name>
+        <condition>
+            <equals>
+                <property>controls/engines/engine[1]/starter</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <!-- Filter Bypass (will properly implement later) -->
+    <animation>
+        <type>select</type>
+        <object-name>fuel.bypassL</object-name>
+        <object-name>fuel.bypassR</object-name>
+    </animation>
+
+
+    <!-- Electrical -->
+    <!-- APU Generator -->
+    <animation>
+        <type>knob</type>
+        <object-name>elec.genapu1</object-name>
+        <property>controls/electrical/apu/Lsw</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.135013</y-m>
+            <z-m>-0.324831</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electrical/apu/Lsw</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>elec.genapu2</object-name>
+        <property>controls/electrical/Rsw</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.089214</y-m>
+            <z-m>-0.324831</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electrical/Rsw</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- APU Generator Status -->
+    <animation>
+        <type>select</type>
+        <object-name>elec.genapuoff</object-name>
+        <condition>
+            <or>
+                <and>
+                    <or>
+                        <equals>
+                            <property>controls/electrical/apu/Lsw</property>
+                            <value>1</value>
+                        </equals>
+                        <equals>
+                            <property>controls/electrical/apu/Rsw</property>
+                            <value>1</value>
+                        </equals>
+                    </or>
+                    <greater-than>
+                        <property>systems/apu/rpm</property>
+                        <value>94.9</value>
+                    </greater-than>
+                </and>
+                <less-than>
+                    <property>systems/apu/rpm</property>
+                    <value>94.9</value>
+                </less-than>
+            </or>
+        </condition>
+    </animation>
+
+    <!-- N1 Generator -->
+    <animation>
+        <type>knob</type>
+        <object-name>elec.genN1</object-name>
+        <property>controls/electrical/eng/Lsw</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.16399</y-m>
+            <z-m>-0.324831</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electrical/eng/Lsw</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- N1 Generator Status -->
+    <animation>
+        <type>select</type>
+        <object-name>elec.N1genoff</object-name>
+        <condition>
+            <or>
+				<and>
+					<equals>
+						<property>controls/electrical/eng/Lsw</property>
+						<value>1</value>
+					</equals>
+					<greater-than>
+						<property>engines/engine[0]/n2</property>
+						<value>54</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>engines/engine[0]/n2</property>
+					<value>54</value>
+				</less-than>
+			</or>
+        </condition>
+    </animation>
+
+    <!-- N2 Generator -->
+    <animation>
+        <type>knob</type>
+        <object-name>elec.genN2</object-name>
+        <property>controls/electrical/eng/Rsw</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01356</x-m>
+            <y-m>-0.059798</y-m>
+            <z-m>-0.324831</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electrical/eng/Rsw</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- N2 Generator Status -->
+    <animation>
+        <type>select</type>
+        <object-name>elec.N2genoff</object-name>
+        <condition>
+            <or>
+				<and>
+					<equals>
+						<property>controls/electrical/eng/Rsw</property>
+						<value>1</value>
+					</equals>
+					<greater-than>
+						<property>engines/engine[1]/n2</property>
+						<value>54</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>engines/engine[1]/n2</property>
+					<value>54</value>
+				</less-than>
+			</or>
+        </condition>
+    </animation>
+
+    <!-- Ground Power -->
+    <animation>
+        <type>knob</type>
+        <object-name>elec.genground</object-name>
+        <property>controls/electrical/ext/sw</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01791</x-m>
+            <y-m>-0.111039</y-m>
+            <z-m>-0.232523</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electrical/ext/sw</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Ground Power Available -->
+    <animation>
+        <type>select</type>
+        <object-name>elec.groundavail</object-name>
+        <condition>
+            <equals>
+                <property>services/ext-pwr/enable</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <!-- Bus Transition -->
+    <animation>
+        <type>knob</type>
+        <object-name>elec.transcover</object-name>
+        <property>controls/OH/trans-cover</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>-0.012953</x-m>
+            <y-m>-0.13826</y-m>
+            <z-m>-0.26957</z-m>
+        </center>
+        <axis>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/OH/trans-cover</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>elec.transswitch</object-name>
+        <property>controls/electric/engine[0]/bus-tie</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01543</x-m>
+            <y-m>-0.11041</y-m>
+            <z-m>-0.269537</z-m>
+        </center>
+        <axis>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/engine[0]/bus-tie</property>
+                <property>controls/electric/engine[1]/bus-tie</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Bus Transition Status -->
+    <animation>
+        <type>select</type>
+        <object-name>elec.transoffL</object-name>
+        <condition>
+            <equals>
+                <property>controls/electric/engine[0]/bus-tie</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>elec.transoffR</object-name>
+        <condition>
+            <equals>
+                <property>controls/electric/engine[1]/bus-tie</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>elec.sourceoffL</object-name>
+        <condition>
+            <equals>
+                <property>controls/electric/engine[0]/bus-tie</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>elec.sourceoffR</object-name>
+        <condition>
+            <equals>
+                <property>controls/electric/engine[1]/bus-tie</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+    
+    <!-- Windshield Wipers -->
+    <animation>
+        <type>knob</type>
+        <object-name>wiper.L</object-name>
+        <property>controls/OH/wiper-left</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.009907</x-m>
+            <y-m>-0.072772</y-m>
+            <z-m>-0.403988</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/OH/wiper-left</property>
+                <step>1</step>
+                <min>0</min>
+                <max>4</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>wiper.R</object-name>
+        <property>controls/OH/wiper-right</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.009907</x-m>
+            <y-m>0.005628</y-m>
+            <z-m>-0.403988</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/OH/wiper-right</property>
+                <step>1</step>
+                <min>0</min>
+                <max>4</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
 </PropertyList>

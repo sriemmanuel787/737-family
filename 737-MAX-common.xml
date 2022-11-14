@@ -802,6 +802,10 @@
 			<batt-cover type="bool">1</batt-cover>
 			<gen1-switch type="int">1</gen1-switch>
 			<gen2-switch type="int">1</gen2-switch>
+			<trans-cover type="int">0</trans-cover>
+			<exit-light type="int">0</exit-light>
+			<wiper-left type="int">0</wiper-left>
+			<wiper-right type="int">0</wiper-right>
 		</OH>
 
 	</controls>
@@ -809,13 +813,13 @@
 	<fdm>
 		<jsbsim>
 			<external_reactions>
-                <tractor>
-                    <magnitude alias="/sim/model/autopush/force-lbf"/>
-                    <x alias="/sim/model/autopush/force-x"/>
-                    <y alias="/sim/model/autopush/force-y"/>
-                    <z alias="/sim/model/autopush/force-z"/>
-                </tractor>
-            </external_reactions>
+				<tractor>
+					<magnitude alias="/sim/model/autopush/force-lbf" />
+					<x alias="/sim/model/autopush/force-x" />
+					<y alias="/sim/model/autopush/force-y" />
+					<z alias="/sim/model/autopush/force-z" />
+				</tractor>
+			</external_reactions>
 			<fcs>
 				<flap-lrs type="double">0</flap-lrs>
 				<slats-cmd type="double">0</slats-cmd>
@@ -1173,17 +1177,17 @@
 			<file>Aircraft/737-MAX/Nasal/icing.nas</file>
 		</icing>
 		<autopush>
-            <file>Aircraft/737-MAX/Nasal/Autopush/autopush.nas</file>
-        </autopush>
-        <autopush_driver>
-            <file>Aircraft/737-MAX/Nasal/Autopush/driver.nas</file>
-        </autopush_driver>
-        <dynarr>
-            <file>Aircraft/737-MAX/Nasal/Autopush/dynarr.nas</file>
-        </dynarr>
-        <autopush_route>
-            <file>Aircraft/737-MAX/Nasal/Autopush/route.nas</file>
-        </autopush_route>
+			<file>Aircraft/737-MAX/Nasal/Autopush/autopush.nas</file>
+		</autopush>
+		<autopush_driver>
+			<file>Aircraft/737-MAX/Nasal/Autopush/driver.nas</file>
+		</autopush_driver>
+		<dynarr>
+			<file>Aircraft/737-MAX/Nasal/Autopush/dynarr.nas</file>
+		</dynarr>
+		<autopush_route>
+			<file>Aircraft/737-MAX/Nasal/Autopush/route.nas</file>
+		</autopush_route>
 	</nasal>
 
 </PropertyList>
