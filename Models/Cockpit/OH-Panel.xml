@@ -5,22 +5,7 @@
     <!-- Starters -->
     <!-- APU -->
     <animation>
-        <type>pick</type>
-        <object-name>apu.start</object-name>
-        <action>
-            <button>0</button>
-            <repeatable type="bool">false</repeatable>
-            <binding>
-                <command>property-cycle</command>
-                <property>controls/APU/master</property>
-                <value>0</value>
-                <value>1</value>
-                <value>2</value>
-            </binding>
-        </action>
-    </animation>
-    <animation>
-        <type>rotate</type>
+        <type>knob</type>
         <object-name>apu.start</object-name>
         <property>controls/APU/master</property>
         <factor>23</factor>
@@ -32,6 +17,16 @@
         <axis>
             <y>1</y>
         </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/APU/master</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>3</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
     </animation>
 
     <!-- N1 -->
@@ -60,7 +55,7 @@
     <animation>
         <type>knob</type>
         <object-name>n2.start</object-name>
-        <property>controls/engines/engine[2]/starter</property>
+        <property>controls/engines/engine[1]/starter</property>
         <factor>-56</factor>
         <center>
             <x-m>-0.004527</x-m>
@@ -73,7 +68,7 @@
         <action>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/engines/engine[2]/starter</property>
+                <property>controls/engines/engine[1]/starter</property>
             </binding>
         </action>
     </animation>
@@ -880,6 +875,42 @@
             </equals>
         </condition>
     </animation>
+
+    <!-- Drive Generators -->
+    <animation>
+        <type>knob</type>
+        <object-name>elec.gencoverN1</object-name>
+        <property>controls/OH/drive1-cover</property>
+        <center>
+            <x-m>-0.01191</x-m>
+            <y-m>-0.15717</y-m>
+            <z-m>-0.0985</z-m>
+        </center>
+        <axis>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/OH-drive1-cover</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>elec.gendisableN1</object-name>
+        <property>controls/engine[0]/generator</property>
+        <factor>-50</factor>
+        <center>
+            <x-m>-0.016645</x-m>
+            <y-m>-0.15705</y-m>
+            <z-m>-0.125109 m</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+    </animation>
+    
     
     <!-- Windshield Wipers -->
     <animation>
