@@ -881,18 +881,19 @@
         <type>knob</type>
         <object-name>elec.gencoverN1</object-name>
         <property>controls/OH/drive1-cover</property>
+        <factor>-90</factor>
         <center>
             <x-m>-0.01191</x-m>
             <y-m>-0.15717</y-m>
             <z-m>-0.0985</z-m>
         </center>
         <axis>
-            <z>1</z>
+            <y>1</y>
         </axis>
         <action>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/OH-drive1-cover</property>
+                <property>controls/OH/drive1-cover</property>
             </binding>
         </action>
     </animation>
@@ -904,11 +905,87 @@
         <center>
             <x-m>-0.016645</x-m>
             <y-m>-0.15705</y-m>
-            <z-m>-0.125109 m</z-m>
+            <z-m>-0.125109</z-m>
         </center>
         <axis>
             <y>1</y>
         </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engine[0]/generator</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>elec.gencoverN2</object-name>
+        <property>controls/OH/drive2-cover</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>-0.01191</x-m>
+            <y-m>-0.0985</y-m>
+            <z-m>-0.0985</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/OH/drive2-cover</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>elec.gendisableN2</object-name>
+        <property>controls/engine[1]/generator</property>
+        <factor>-50</factor>
+        <center>
+            <x-m>-0.016645</x-m>
+            <y-m>-0.12511</y-m>
+            <z-m>-0.125109</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engine[1]/generator</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- IDG Status -->
+    <animation>
+        <type>select</type>
+        <object-name>elec.drivestatus1</object-name>
+        <condition>
+            <less-than>
+                <property>engines/engine[0]/oil-pressure-psi</property>
+                <value>20</value>
+            </less-than>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>elec.drivestatus2</object-name>
+        <condition>
+            <less-than>
+                <property>engines/engine[1]/oil-pressure-psi</property>
+                <value>20</value>
+            </less-than>
+        </condition>
+    </animation>
+
+    <!-- Battery -->
+    <animation>
+        <type>knob</type>
+        <object-name>elec.battcover</object-name>
+        <property>controls/OH/batt-cover</property>
+        <factor>-90</factor>
     </animation>
     
     
