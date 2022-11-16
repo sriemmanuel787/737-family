@@ -100,7 +100,7 @@
     </animation>
 
 
-    <!-- Lights -->
+    <!-- Exterior Lights -->
     <!-- Landing -->
     <animation>
         <type>knob</type>
@@ -277,6 +277,83 @@
                 <property>controls/lighting/wheel</property>
             </binding>
         </action>
+    </animation>
+
+    <!-- Interior Lights -->
+    <!-- Warning Lights -->
+    <animation>
+        <type>material</type>
+        <object-name>fuel.ALpress</object-name>
+        <object-name>fuel.FLpress</object-name>
+        <object-name>fuel.FRpress</object-name>
+        <object-name>fuel.ARpress</object-name>
+        <object-name>fuel.CLpress</object-name>
+        <object-name>fuel.CRpress</object-name>
+        <object-name>fuel.bypassL</object-name>
+        <object-name>fuel.bypassR</object-name>
+        <object-name>fuel.crossfeedon</object-name>
+        <object-name>fuel.startL</object-name>
+        <object-name>fuel.startR</object-name>
+        <object-name>fuel.sparL</object-name>
+        <object-name>fuel.sparR</object-name>
+        <object-name>elec.N1genoff</object-name>
+        <object-name>elec.sourceoffL</object-name>
+        <object-name>elec.transoffL</object-name>
+        <object-name>elec.N2genoff</object-name>
+        <object-name>elec.sourceoffR</object-name>
+        <object-name>elec.transoffR</object-name>
+        <object-name>elec.genapuoff</object-name>
+        <object-name>elec.groundavail</object-name>
+        <object-name>elec.drivestatus1</object-name>
+        <object-name>elec.drivestatus2</object-name>
+        <object-name>elec.stdbystatus</object-name>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+    <!-- Panel Light -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.panel</object-name>
+        <property>controls/lighting/panel</property>
+        <factor>-230</factor>
+        <center>
+            <x-m>-0.013318</x-m>
+            <y-m>0.005578</y-m>
+            <z-m>0.004583</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/panel</property>
+                <min>0</min>
+                <max>1.01</max>
+                <step>0.01</step>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>tex</object-name>
+        <object-name>tex.001</object-name>
+        <emission>
+            <red>1</red>
+			<green>0.725</green>
+			<blue>0.259</blue>
+            <factor-prop>controls/lighting/panel</factor-prop>
+        </emission>
+    </animation>
+
+    <!-- Circuit Breaker -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.breaker</object-name>
     </animation>
 
 
@@ -986,8 +1063,47 @@
         <object-name>elec.battcover</object-name>
         <property>controls/OH/batt-cover</property>
         <factor>-90</factor>
+        <center>
+            <x-m>-0.012508</x-m>
+            <y-m>-0.153255</y-m>
+            <z-m>-0.01036</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/OH/batt-cover</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>elec.battswitch</object-name>
+        <property>controls/electric/battery-switch</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.016255</x-m>
+            <y-m>-0.153258</y-m>
+            <z-m>-0.026193</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/battery-switch</property>
+            </binding>
+        </action>
     </animation>
     
+    <!-- Auxilliary Battery -->
+    <animation>
+        <type>knob</type>
+        <object-name>elec.</object-name>
+    </animation>
     
     <!-- Windshield Wipers -->
     <animation>

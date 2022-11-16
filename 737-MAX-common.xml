@@ -796,10 +796,19 @@
 			</tank>
 		</fuel>
 
+		<lighting>
+			<panel type="float">0</panel>
+			<breaker type="float">0</breaker>
+			<exit-cover type="int">0</exit-cover>
+			<exit type="int">0</exit>
+			<no-smoking type="int">0</no-smoking>
+			<seatbelts type="int">0</seatbelts>
+		</lighting>
+
 		<OH>
 			<apugenl-switch type="int">1</apugenl-switch>
 			<apugenr-switch type="int">1</apugenr-switch>
-			<batt-cover type="bool">1</batt-cover>
+			<batt-cover type="bool">0</batt-cover>
 			<gen1-switch type="int">1</gen1-switch>
 			<gen2-switch type="int">1</gen2-switch>
 			<trans-cover type="int">0</trans-cover>
