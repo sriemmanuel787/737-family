@@ -1102,7 +1102,27 @@
     <!-- Auxilliary Battery -->
     <animation>
         <type>knob</type>
-        <object-name>elec.</object-name>
+        <object-name>elec.auxbatt</object-name>
+        <property>controls/electrical/DC</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.013707</x-m>
+            <y-m>-0.153694</y-m>
+            <z-m>0.01696</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/electrical/DC</property>
+                <min>0</min>
+                <max>8</max>
+                <step>1</step>
+                <wrap>true</wrap>
+            </binding>
+        </action>
     </animation>
     
     <!-- Windshield Wipers -->
