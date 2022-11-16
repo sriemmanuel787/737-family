@@ -814,7 +814,6 @@
 			<trans-cover type="int">0</trans-cover>
 			<drive1-cover type="int">0</drive1-cover>
 			<drive2-cover type="int">0</drive2-cover>
-			<exit-light type="int">0</exit-light>
 			<wiper-left type="int">0</wiper-left>
 			<wiper-right type="int">0</wiper-right>
 		</OH>

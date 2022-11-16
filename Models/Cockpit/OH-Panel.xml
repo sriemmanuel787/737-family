@@ -354,6 +354,120 @@
     <animation>
         <type>knob</type>
         <object-name>light.breaker</object-name>
+        <property-name>controls/lighting/breaker</property-name>
+        <factor>-230</factor>
+        <center>
+            <x-m>-0.013317</x-m>
+            <y-m>0.005577</y-m>
+            <z-m>0.064543</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/breaker</property>
+                <min>0</min>
+                <max>1.01</max>
+                <step>0.01</step>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Emergency Lights -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.exitcover</object-name>
+        <property>controls/lighting/exit-cover</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>-0.012953</x-m>
+            <y-m>0.010587</y-m>
+            <z-m>-0.1624</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/exit-cover</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>light.exitswitch</object-name>
+        <property>controls/lighting/exit</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.018135</x-m>
+            <y-m>0.010615</y-m>
+            <z-m>-0.189023</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighing/exit</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- No Smoking -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.nosmoking</object-name>
+        <property>controls/lighting/no-smoking</property>
+        <factor>25</factor>
+        <center>
+            <x-m>-0.014345</x-m>
+            <y-m>-0.012218</y-m>
+            <z-m>-0.249427</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/no-smoking</property>
+                <min>0</min>
+                <max>3</max>
+                <step>1</step>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Seatbelts -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.seatbelts</object-name>
+        <property>controls/lighting/seatbelts</property>
+        <factor>25</factor>
+        <center>
+            <x-m>-0.014345</x-m>
+            <y-m>0.022185</y-m>
+            <z-m>-0.249427</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/seatbelts</property>
+                <min>0</min>
+                <max>3</max>
+                <step>1</step>
+                <wrap>true</wrap>
+            </binding>
+        </action>
     </animation>
 
 
