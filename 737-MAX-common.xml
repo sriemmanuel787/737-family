@@ -706,8 +706,6 @@
 
 	<switches>
 		<increase-fps type="bool">0</increase-fps>
-		<no-smoking-sign type="bool">true</no-smoking-sign>
-		<seatbelt-sign type="bool">false</seatbelt-sign>
 	</switches>
 
 	<autopilot>
@@ -735,6 +733,15 @@
 	</autopilot>
 
 	<controls>
+		<anti-ice>
+			<probe-a type="int">0</probe-a>
+			<probe-b type="int">0</probe-b>
+			<windows-1 type="int">0</windows-1>
+			<windows-2 type="int">0</windows-2>
+			<windows-3 type="int">0</windows-3>
+			<windows-4 type="int">0</windows-4>
+		</anti-ice>
+		
 		<APU>
 			<master type="int">0</master>
 		</APU>
@@ -804,6 +811,12 @@
 			<no-smoking type="int">0</no-smoking>
 			<seatbelts type="int">0</seatbelts>
 		</lighting>
+
+		<wipers>
+            <speed type="double">0</speed>
+            <degrees type="double">0</degrees>
+            <delay type="double">0</delay>
+        </wipers>
 
 		<OH>
 			<apugenl-switch type="int">1</apugenl-switch>

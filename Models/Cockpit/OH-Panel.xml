@@ -2,6 +2,25 @@
 <PropertyList>
     <path>AP-OH/OH-Panel.ac</path>
 
+    <!-- Lights to be implemented later -->
+    <animation>
+        <type>select</type>
+        <object-name>fuel.bypassL</object-name>
+        <object-name>fuel.bypassR</object-name>
+        <object-name>heat.overheatL</object-name>
+        <object-name>heat.overheatCL</object-name>
+        <object-name>heat.overheatCR</object-name>
+        <object-name>heat.overheatR</object-name>
+        <object-name>heat.overheatcpitot</object-name>
+        <object-name>heat.overheatpitotL</object-name>
+        <object-name>heat.overheatalphaL</object-name>
+        <object-name>heat.overheatprobe</object-name>
+        <object-name>heat.overheatfpitot</object-name>
+        <object-name>heat.overheatpitotR</object-name>
+        <object-name>heat.overheatalphaR</object-name>
+        <object-name>heat.overheatpitotaux</object-name>
+    </animation>
+
     <!-- Starters -->
     <!-- APU -->
     <animation>
@@ -307,6 +326,24 @@
         <object-name>elec.drivestatus1</object-name>
         <object-name>elec.drivestatus2</object-name>
         <object-name>elec.stdbystatus</object-name>
+        <object-name>heat.overheatL</object-name>
+        <object-name>heat.overheatCL</object-name>
+        <object-name>heat.overheatCR</object-name>
+        <object-name>heat.overheatR</object-name>
+        <object-name>heat.overheatcpitot</object-name>
+        <object-name>heat.overheatpitotL</object-name>
+        <object-name>heat.overheatalphaL</object-name>
+        <object-name>heat.overheatprobe</object-name>
+        <object-name>heat.overheatfpitot</object-name>
+        <object-name>heat.overheatpitotR</object-name>
+        <object-name>heat.overheatalphaR</object-name>
+        <object-name>heat.overheatpitotaux</object-name>
+        <object-name>heat.wingvalveL</object-name>
+        <object-name>heat.wingvalveR</object-name>
+        <object-name>heat.N1cowl</object-name>
+        <object-name>heat.N2cowl</object-name>
+        <object-name>heat.N1fail</object-name>
+        <object-name>heat.N2fail</object-name>
         <emission>
             <red>1</red>
             <green>1</green>
@@ -773,13 +810,7 @@
             </equals>
         </condition>
     </animation>
-
-    <!-- Filter Bypass (will properly implement later) -->
-    <animation>
-        <type>select</type>
-        <object-name>fuel.bypassL</object-name>
-        <object-name>fuel.bypassR</object-name>
-    </animation>
+    
 
 
     <!-- Electrical -->
@@ -1245,7 +1276,267 @@
     <animation>
         <type>knob</type>
         <object-name>heat.windowL</object-name>
+        <property>controls/anti-ice/window-1</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.014515</x-m>
+            <y-m>0.062432</y-m>
+            <z-m>0.13577</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/window-1</property>
+            </binding>
+        </action>
     </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>heat.windowCL</object-name>
+        <property>controls/anti-ice/window-2</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.014515</x-m>
+            <y-m>0.0893</y-m>
+            <z-m>0.13577</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/window-2</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>heat.windowCR</object-name>
+        <property>controls/anti-ice/window-3</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.014515</x-m>
+            <y-m>0.15036</y-m>
+            <z-m>0.13577</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/window-3</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>heat.windowR</object-name>
+        <property>controls/anti-ice/window-4</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.014515</x-m>
+            <y-m>0.177225</y-m>
+            <z-m>0.13577</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/window-4</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Window Heat Status -->
+    <animation>
+        <type>select</type>
+        <object-name>heat.windowLon</object-name>
+        <condition>
+            <equals>
+                <property>controls/anti-ice/window-1</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>heat.windowCLon</object-name>
+        <condition>
+            <equals>
+                <property>controls/anti-ice/window-2</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>heat.windowCRon</object-name>
+        <condition>
+            <equals>
+                <property>controls/anti-ice/window-3</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>heat.windowRon</object-name>
+        <condition>
+            <equals>
+                <property>controls/anti-ice/window-4</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <!-- Probe Heat -->
+    <animation>
+        <type>knob</type>
+        <object-name>heat.probeA</object-name>
+        <property>controls/anti-ice/probe-a</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.014515</x-m>
+            <y-m>0.106002</y-m>
+            <z-m>0.097363</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/probe-a</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>heat.probeB</object-name>
+        <property>controls/anti-ice/probe-b</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.014515</x-m>
+            <y-m>0.133</y-m>
+            <z-m>0.097363</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/probe-b</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Wing Heat -->
+    <animation>
+        <type>knob</type>
+        <object-name>heat.wing</object-name>
+        <property>controls/anti-ice/wing-heat</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01251</x-m>
+            <y-m>0.088076</y-m>
+            <z-m>-0.029244</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/wing-heat</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Wing Heat Status -->
+    <animation>
+        <type>select</type>
+        <object-name>heat.wingvalveL</object-name>
+        <object-name>heat.wingvalveR</object-name>
+        <condition>
+            <equals>
+                <property>controls/anti-ice/wing-heat</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <!-- Engine Heat -->
+    <animation>
+        <type>knob</type>
+        <object-name>heat.N1</object-name>
+        <property>controls/anti-ice/engine[0]/carb-heat</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01251</x-m>
+            <y-m>0.137766</y-m>
+            <z-m>-0.037033</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/engine[0]/carb-heat</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>heat.N2</object-name>
+        <property>controls/anti-ice/engine[1]/carb-heat</property>
+        <factor>50</factor>
+        <center>
+            <x-m>-0.01251</x-m>
+            <y-m>0.167235</y-m>
+            <z-m>-0.037033</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/engine[1]/carb-heat</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Engine Heat Status -->
+    <animation>
+        <type>select</type>
+        <object-name>heat.N1cowl</object-name>
+        <condition>
+            <equals>
+                <property>controls/anti-ice/engine[0]/carb-heat</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>heat.N2cowl</object-name>
+        <condition>
+            <equals>
+                <property>controls/anti-ice/engine[1]/carb-heat</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
     
     <!-- Windshield Wipers -->
     <animation>
