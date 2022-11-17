@@ -1238,6 +1238,14 @@
             </binding>
         </action>
     </animation>
+
+
+    <!-- Heating -->
+    <!-- Windshield -->
+    <animation>
+        <type>knob</type>
+        <object-name>heat.windowL</object-name>
+    </animation>
     
     <!-- Windshield Wipers -->
     <animation>
