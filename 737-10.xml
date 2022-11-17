@@ -11,9 +11,7 @@
 		<description> Models a 737 MAX 10. </description>
 	</fileheader>
 
-<!--
-	base datum - nose of aircraft. BWL at this point 208.1 in. Source - structure diagrams.
--->
+	<!--base datum - nose of aircraft. BWL at this point 208.1 in. Source - structure diagrams.-->
 
 	<metrics>
 		<wingarea unit="FT2"> 1370.00 </wingarea> <!-- value from simulator data. Checked -->
@@ -40,7 +38,8 @@
 		</location>
 	</metrics>
 
-	<mass_balance> <!-- MOIs based on reverse engineering of FFS certification tests -->
+	<mass_balance>
+		<!-- MOIs based on reverse engineering of FFS certification tests -->
 		<ixx unit="SLUG*FT2">    445000 </ixx>
 		<iyy unit="SLUG*FT2"> 2.141e+06 </iyy>
 		<izz unit="SLUG*FT2"> 2.588e+06 </izz>
@@ -54,7 +53,8 @@
 			<z>   0 </z>
 		</location>
 
-		<pointmass name="Cabin Zone 0A"> <!-- Business class (8 pax max) Row 1-2 -->
+		<pointmass name="Cabin Zone 0A">
+			<!-- Business class (8 pax max) Row 1-2 -->
 			<weight unit="LBS"> 1324 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 301.5 </x>
@@ -63,7 +63,8 @@
 			</location>
 		</pointmass>
 
-		<pointmass name="Cabin Zone 0B"> <!-- Tourist class (54 pax max) Row 10-19 -->
+		<pointmass name="Cabin Zone 0B">
+			<!-- Tourist class (54 pax max) Row 10-19 -->
 			<weight unit="LBS"> 1324 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 541 </x>
@@ -72,7 +73,8 @@
 			</location>
 		</pointmass>
 
-		<pointmass name="Cabin Zone 0C"> <!-- Economy class (96 pax max) Row 20-36 -->
+		<pointmass name="Cabin Zone 0C">
+			<!-- Economy class (96 pax max) Row 20-36 -->
 			<weight unit="LBS"> 1324 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 874 </x>
@@ -81,7 +83,8 @@
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 1A"> <!-- max 553 kg/1218 lbs -->
+		<pointmass name="Cargo compartment 1A">
+			<!-- max 553 kg/1218 lbs -->
 			<weight unit="LBS"> 500 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 284 </x>
@@ -91,7 +94,8 @@
 		</pointmass>
 
 
-		<pointmass name="Cargo compartment 1B"> <!-- max 336 kg/741 lbs -->
+		<pointmass name="Cargo compartment 1B">
+			<!-- max 336 kg/741 lbs -->
 			<weight unit="LBS"> 200 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 334 </x>
@@ -100,7 +104,8 @@
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 2"> <!-- max 2670 kg/5887 lbs -->
+		<pointmass name="Cargo compartment 2">
+			<!-- max 2670 kg/5887 lbs -->
 			<weight unit="LBS"> 2500 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 464 </x>
@@ -109,7 +114,8 @@
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 3"> <!-- max 4086 kg/9008 lbs -->
+		<pointmass name="Cargo compartment 3">
+			<!-- max 4086 kg/9008 lbs -->
 			<weight unit="LBS"> 4000 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 932.5 </x>
@@ -118,7 +124,8 @@
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 4A"> <!-- max 362 kg/798 lbs -->
+		<pointmass name="Cargo compartment 4A">
+			<!-- max 362 kg/798 lbs -->
 			<weight unit="LBS"> 400 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 1097.5 </x>
@@ -127,7 +134,8 @@
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 4B"> <!-- max 402 kg/886 lbs -->
+		<pointmass name="Cargo compartment 4B">
+			<!-- max 402 kg/886 lbs -->
 			<weight unit="LBS"> 200 </weight>
 			<location name="POINTMASS" unit="IN">
 				<x> 1175.5 </x>
@@ -139,7 +147,8 @@
 	</mass_balance>
 
 	<ground_reactions>
-		<contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NLG compression is 15.5 in -->
+		<contact name="Nose Gear" type="BOGEY">
+			<!-- from AMM - maximum NLG compression is 15.5 in -->
 			<location unit="IN">
 				<x> 161 </x>
 				<y>   0 </y>
@@ -213,7 +222,8 @@
 			<brake_group> NONE </brake_group>
 			<retractable>1</retractable>
 		</contact>
-		<contact name="Left Main Gear" type="BOGEY"> <!-- from AMM - maximum MLG compression is 16 in -->
+		<contact name="Left Main Gear" type="BOGEY">
+			<!-- from AMM - maximum MLG compression is 16 in -->
 			<location unit="IN">
 				<x>  775 </x>
 				<y> -112.5 </y>
@@ -288,7 +298,8 @@
 			<brake_group> LEFT </brake_group>
 			<retractable>1</retractable>
 		</contact>
-		<contact name="Right Main Gear" type="BOGEY"> <!-- from AMM - maximum MLG compression is 16 in -->
+		<contact name="Right Main Gear" type="BOGEY">
+			<!-- from AMM - maximum MLG compression is 16 in -->
 			<location unit="IN">
 				<x> 775 </x>
 				<y> 112.5 </y>
@@ -449,7 +460,8 @@
 			</thruster>
 		</engine>
 
-		<tank type="FUEL"><!-- Left wing tank -->
+		<tank type="FUEL">
+			<!-- Left wing tank -->
 			<location unit="IN">
 				<x> 23.3592   </x> <!-- based on trimsheet calculation. Correct value -->
 				<y> -315.6216 </y>
@@ -464,7 +476,8 @@
 			<contents unit="LBS"> 0 </contents>
 			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
 		</tank>
-		<tank type="FUEL"><!-- Right wing tank -->
+		<tank type="FUEL">
+			<!-- Right wing tank -->
 			<location unit="IN">
 				<x> 23.3592  </x> <!-- based on trimsheet calculation. Correct value -->
 				<y> 315.6216 </y>
@@ -479,7 +492,8 @@
 			<contents unit="LBS"> 0 </contents>
 			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
 		</tank>
-		<tank type="FUEL"><!-- Center tank -->
+		<tank type="FUEL">
+			<!-- Center tank -->
 			<location unit="IN">
 				<x> 675.41 </x> <!-- based on trimsheet calculation. Correct value -->
 				<y>   0 </y>
@@ -494,7 +508,8 @@
 			<contents unit="LBS">  0 </contents>
 			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
 		</tank>
-		<tank type="FUEL"><!-- Feed pipe for left engine -->
+		<tank type="FUEL">
+			<!-- Feed pipe for left engine -->
 			<location unit="IN">
 				<x> 700 </x>
 				<y>-193 </y>
@@ -503,7 +518,8 @@
 			<capacity unit="LBS"> 0.5 </capacity>
 			<contents unit="LBS"> 0.25 </contents>
 		</tank>
-		<tank type="FUEL"><!-- Feed pipe for right engine -->
+		<tank type="FUEL">
+			<!-- Feed pipe for right engine -->
 			<location unit="IN">
 				<x> 700 </x>
 				<y> 193 </y>
@@ -514,10 +530,10 @@
 		</tank>
 	</propulsion>
 
-	<system file="pushback"/>
-	<system file="fuel"/>
-	<system file="fmc"/>
-	<system file="hydraulics-jsb"/>
+	<system file="pushback" />
+	<system file="fuel" />
+	<system file="fmc" />
+	<system file="hydraulics-jsb" />
 
 	<flight_control name="FCS: 737">
 		<channel name="Pitch">
@@ -672,7 +688,7 @@
 				<output>fcs/right-aileron-pos-rad</output>
 			</fcs_function>
 
-		   <aerosurface_scale name="Left aileron Normalized">
+			<aerosurface_scale name="Left aileron Normalized">
 				<input>fcs/left-aileron-pos-rad</input>
 				<domain>
 					<min>-0.3577924967</min>
@@ -700,7 +716,7 @@
 
 		</channel>
 
-		
+
 		<channel name="Yaw">
 
 			<summer name="Rudder Command Sum">
@@ -712,7 +728,7 @@
 				</clipto>
 			</summer>
 
-			<!--Yaw damper-->        
+			<!--Yaw damper-->
 			<washout_filter name="yaw-wf">
 				<input>velocities/r-aero-rad_sec</input>
 				<c1>4</c1>
@@ -726,7 +742,7 @@
 
 			<!--Slip stabilizer-->
 			<switch name="accelerations/Ny-switched">
-				<default value="0.0"/>
+				<default value="0.0" />
 				<test logic="AND" value="accelerations/Ny">
 					aero/h_b-mac-ft GE 1
 					/b737/controls/flight/yaw-damper NE 0
@@ -755,7 +771,7 @@
 			</summer>
 
 			<switch name="Yaw Damper Final">
-				<default value="0.0"/>
+				<default value="0.0" />
 				<test value="fcs/yaw-damper-sum">
 					/b737/controls/flight/yaw-damper ne 0
 				</test>
@@ -785,7 +801,8 @@
 				<output>fcs/rudder-sum</output>
 			</kinematic>
 
-			<aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
+			<aerosurface_scale name="Rudder Control">
+				<!-- -30...+30 degrees range -->
 				<input>fcs/rudder-sum</input>
 				<range>
 					<min>-0.523</min>
@@ -874,9 +891,9 @@
 		</channel>
 
 		<channel name="Flight Spoilers">
-		  <!-- operated by the speedbrake handle and roll control -->
+			<!-- operated by the speedbrake handle and roll control -->
 
-		  <fcs_function name="Outboard spoiler command low">
+			<fcs_function name="Outboard spoiler command low">
 				<function>
 					<table>
 						<independentVar>fcs/roll-trim-sum</independentVar>
@@ -937,22 +954,22 @@
 			</fcs_function>
 
 			<fcs_function>
-                <function>
-                    <min>
-                        <property>fcs/spoilers-outb-cmd-a</property>
-                        <property>fcs/spoilers-outb-cmd-b</property>
-                    </min>
-                </function>
+				<function>
+					<min>
+						<property>fcs/spoilers-outb-cmd-a</property>
+						<property>fcs/spoilers-outb-cmd-b</property>
+					</min>
+				</function>
 				<output>fcs/spoilers-outb-cmd-low</output>
 			</fcs_function>
 
 			<fcs_function>
-                <function>
-                    <max>
-                        <property>fcs/spoilers-outb-cmd-a</property>
-                        <property>fcs/spoilers-outb-cmd-b</property>
-                    </max>
-                </function>
+				<function>
+					<max>
+						<property>fcs/spoilers-outb-cmd-a</property>
+						<property>fcs/spoilers-outb-cmd-b</property>
+					</max>
+				</function>
 				<output>fcs/spoilers-outb-cmd-high</output>
 			</fcs_function>
 
@@ -1072,22 +1089,22 @@
 			</fcs_function>
 
 			<fcs_function>
-                <function>
-                    <min>
-                        <property>fcs/spoilers-inbd-cmd-a</property>
-                        <property>fcs/spoilers-inbd-cmd-b</property>
-                    </min>
-                </function>
+				<function>
+					<min>
+						<property>fcs/spoilers-inbd-cmd-a</property>
+						<property>fcs/spoilers-inbd-cmd-b</property>
+					</min>
+				</function>
 				<output>fcs/spoilers-inbd-cmd-low</output>
 			</fcs_function>
 
 			<fcs_function>
-                <function>
-                    <max>
-                        <property>fcs/spoilers-inbd-cmd-a</property>
-                        <property>fcs/spoilers-inbd-cmd-b</property>
-                    </max>
-                </function>
+				<function>
+					<max>
+						<property>fcs/spoilers-inbd-cmd-a</property>
+						<property>fcs/spoilers-inbd-cmd-b</property>
+					</max>
+				</function>
 				<output>fcs/spoilers-inbd-cmd-high</output>
 			</fcs_function>
 
@@ -1168,7 +1185,7 @@
 		</channel>
 
 		<channel name="Ground Spoilers">
-		
+
 			<kinematic name="Ground Spoilers Control">
 				<input>fcs/spoiler-cmd-norm</input>
 				<traverse>
@@ -1226,7 +1243,7 @@
 		<channel name="Autobrake">
 
 			<switch name="fcs/autobrake/errorfree-target-decel-fps_sec2-filtered">
-				<default value="fcs/autobrake/target-decel-fps_sec2"/>
+				<default value="fcs/autobrake/target-decel-fps_sec2" />
 				<test value="12">
 					velocities/u-fps LE 134
 					fcs/autobrake/target-decel-fps_sec2 == 14
@@ -1269,7 +1286,7 @@
 			</fcs_function>
 
 			<switch name="fcs/autobrake/errorfree-target-decel-fps_sec2-final">
-				<default value="fcs/autobrake/target-decel-fps_sec2-filtered"/>
+				<default value="fcs/autobrake/target-decel-fps_sec2-filtered" />
 				<test value="25">
 					fcs/autobrake/target-decel-fps_sec2-filtered == 25
 				</test>
@@ -1305,7 +1322,7 @@
 			</summer>
 
 			<switch name="fcs/autobrake/brake-left-cmd-final">
-				<default value="fcs/brake-left-cmd"/>
+				<default value="fcs/brake-left-cmd" />
 				<test value="fcs/autobrake/autobrake-cmd">
 					fcs/autobrake/autobrake-in-use == 1
 				</test>
@@ -1313,7 +1330,7 @@
 			</switch>
 
 			<switch name="fcs/autobrake/brake-right-cmd-final">
-				<default value="fcs/brake-right-cmd"/>
+				<default value="fcs/brake-right-cmd" />
 				<test value="fcs/autobrake/autobrake-cmd">
 					fcs/autobrake/autobrake-in-use == 1
 				</test>
@@ -1325,7 +1342,7 @@
 		<channel name="Throttle">
 
 			<switch name="fcs/throttle/max-reverse">
-				<default value="1"/>
+				<default value="1" />
 				<test value="0.742">
 					/engines/engine[0]/reverser-pos-norm GT 0.6
 					/engines/engine[1]/reverser-pos-norm GT 0.6
@@ -1389,7 +1406,7 @@
 							<independentVar lookup="row">velocities/vtrue-kts</independentVar>
 							<independentVar lookup="column">propulsion/engine[0]/n1</independentVar>
 							<tableData>
-									19.76   82.3
+								19.76   82.3
 								0   1.86    1.79
 								50  2.39    1.87
 								100 2.37    1.94
@@ -1410,7 +1427,7 @@
 							<independentVar lookup="row">velocities/vtrue-kts</independentVar>
 							<independentVar lookup="column">propulsion/engine[1]/n1</independentVar>
 							<tableData>
-									19.76   82.3
+								19.76   82.3
 								0   1.86    1.79
 								50  2.39    1.87
 								100 2.37    1.94
@@ -1443,101 +1460,100 @@
 				</function>
 				<output>external_reactions/reverse-drag-right/magnitude</output>
 			</fcs_function>
-			
+
 		</channel>
-		
+
 		<channel name="Tiller">
-			
+
 			<fcs_function name="Nose Wheel Steering 0">
 				<function name="fcs/steer-nose-deg[0]">
 					<description>Steering command for nose gear</description>
-                                            <table>
-                                                    <independentVar lookup="row">/velocities/groundspeed-kt</independentVar>
-                                                    <independentVar lookup="column">/controls/flight/rudder</independentVar>
-                                                    <tableData>
-                                                                    -1  0   1
-                                                    30.000 -70  0  70
-                                                    30.001 -10  0  10
-                                                    </tableData>
-                                            </table>
+					<table>
+						<independentVar lookup="row">/velocities/groundspeed-kt</independentVar>
+						<independentVar lookup="column">/controls/flight/rudder</independentVar>
+						<tableData>
+                            -1  0   1
+                            30.000 -70  0  70
+                            30.001 -10  0  10
+                        </tableData>
+					</table>
 				</function>
 			</fcs_function>
-			
+
 			<actuator name="Gear Nose Actuator">
 				<input>fcs/steer-nose-deg[0]</input>
 				<rate_limit>70</rate_limit>
 				<output>fcs/steer-pos-deg[0]</output>
 			</actuator>
-			
+
 		</channel>
 
 	</flight_control>
 
 	<aerodynamics>
 
-		
 
 		<function name="aero/function/kCDge">
 			<description>Change_in_drag_due_to_ground_effect</description>
-                              <table>
-                                      <independentVar>aero/h_b-mac-ft</independentVar>
-                                      <tableData>
-                                              0.0000	0.4800
-                                              0.1000	0.5150
-                                              0.1500	0.6290
-                                              0.2000	0.7090
-                                              0.3000	0.8150
-                                              0.4000	0.8820
-                                              0.5000	0.9280
-                                              0.6000	0.9620
-                                              0.7000	0.9880
-                                              0.8000	1.0000
-                                      </tableData>
-                              </table>
+			<table>
+				<independentVar>aero/h_b-mac-ft</independentVar>
+				<tableData>
+                    0.0000	0.4800
+                    0.1000	0.5150
+                    0.1500	0.6290
+                    0.2000	0.7090
+                    0.3000	0.8150
+                    0.4000	0.8820
+                    0.5000	0.9280
+                    0.6000	0.9620
+                    0.7000	0.9880
+                    0.8000	1.0000
+                </tableData>
+			</table>
 		</function>
 
 		<function name="aero/function/kCLge">
 			<description>Change_in_lift_due_to_ground_effect</description>
-                              <table>
-                                      <independentVar>aero/h_b-mac-ft</independentVar>
-                                      <tableData>
-                                              0.0000	1.2030
-                                              0.1000	1.1270
-                                              0.1500	1.0900
-                                              0.2000	1.0730
-                                              0.3000	1.0460
-                                              0.4000	1.0550
-                                              0.5000	1.0190
-                                              0.6000	1.0130
-                                              0.7000	1.0080
-                                              0.8000	1.0060
-                                              0.9000	1.0030
-                                              1.0000	1.0020
-                                              1.1000	1.0000
-                                      </tableData>
-                              </table>
+			<table>
+				<independentVar>aero/h_b-mac-ft</independentVar>
+				<tableData>
+                    0.0000	1.2030
+                    0.1000	1.1270
+                    0.1500	1.0900
+                    0.2000	1.0730
+                    0.3000	1.0460
+                    0.4000	1.0550
+                    0.5000	1.0190
+                    0.6000	1.0130
+                    0.7000	1.0080
+                    0.8000	1.0060
+                    0.9000	1.0030
+                    1.0000	1.0020
+                    1.1000	1.0000
+                </tableData>
+			</table>
 		</function>
 
 		<function name="aero/function/kCLsb">
 			<description>Change_in_lift_due_to_speed_brake</description>
-                              <table>
-                                      <independentVar>fcs/speedbrake-pos-norm</independentVar>
-                                      <tableData>
-                                              0.0000	1.0
-                                              0.1000	0.85
-                                      </tableData>
-                              </table>
+			<table>
+				<independentVar>fcs/speedbrake-pos-norm</independentVar>
+				<tableData>
+                    0.0000	1.0
+                    0.1000	0.85
+                </tableData>
+			</table>
 		</function>
 
 		<function name="aero/function/kCLsp">
 			<description>Change_in_lift_due_to_spoilers</description>
-				  <table>
-					  <independentVar>fcs/spoiler-pos-norm</independentVar>
-					  <tableData>
+			<table>
+				<independentVar>fcs/spoiler-pos-norm</independentVar>
+				<tableData>
 						  0.0000	1.0
 						  0.1000	0.6
 					  </tableData>
-				  </table>
+			</table>
 		</function>
 
 		<axis name="DRAG">
@@ -1547,16 +1563,16 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
-					  <table>
-						  <independentVar>aero/alpha-rad</independentVar>
-						  <tableData>
+					<table>
+						<independentVar>aero/alpha-rad</independentVar>
+						<tableData>
 							 -1.57	1.5000
 							 -0.26	0.0420
 							  0.00	0.0210
 							  0.26	0.0420
 							  1.57	1.5000
 						  </tableData>
-					  </table>
+					</table>
 				</product>
 			</function>
 
@@ -1576,15 +1592,15 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
-					  <table>
-						  <independentVar>velocities/mach</independentVar>
-						  <tableData>
+					<table>
+						<independentVar>velocities/mach</independentVar>
+						<tableData>
 							  0.00	0.0000
 							  0.79	0.0000
 							  1.10	0.0230
 							  1.80	0.0150
 						  </tableData>
-					  </table>
+					</table>
 				</product>
 			</function>
 
@@ -1633,16 +1649,16 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
-					  <table>
-						  <independentVar>aero/beta-rad</independentVar>
-						  <tableData>
+					<table>
+						<independentVar>aero/beta-rad</independentVar>
+						<tableData>
 							 -1.57	1.2300
 							 -0.26	0.0500
 							  0.00	0.0000
 							  0.26	0.0500
 							  1.57	1.2300
 						  </tableData>
-					  </table>
+					</table>
 				</product>
 			</function>
 
@@ -1651,7 +1667,9 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
-					<abs><property>fcs/elevator-pos-norm</property></abs>
+					<abs>
+						<property>fcs/elevator-pos-norm</property>
+					</abs>
 					<value>0.0059</value>
 				</product>
 			</function>
@@ -2150,7 +2168,7 @@
 
 	</external_reactions>
 
-   <!-- <output name="B737_datalog.csv" rate=“120” type="CSV">
+	<!-- <output name="B737_datalog.csv" rate=“120” type="CSV">
 		<property> /instrumentation/airspeed-indicator/indicated-speed-kt </property>
 		<property> /velocities/groundspeed-kt </property>
 		<property> /accelerations/pilot/x-accel-fps_sec </property>
