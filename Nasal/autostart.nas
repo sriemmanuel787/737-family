@@ -4,73 +4,106 @@
 # Autostart #
 
 var autostart = func {
+	setprop("controls/engines/engine[0]/throttle", 0);
+	setprop("controls/engines/engine[1]/throttle", 0);
+	setprop("controls/APU/off-start-run", 2);
+	setprop("engines/APU/rpm", 100);
+	setprop("controls/electric/battery-switch", 1);
+	setprop("controls/electric/APU-generator", 1);
+	setprop("controls/electric/external-power", 1);
+	setprop("controls/electric/engine[0]/generator", 1);
+	setprop("controls/electric/engine[1]/generator", 1);
+    setprop("controls/engines/engine[0]/cutoff", 1);
+	setprop("controls/fuel/tank[0]/pump-fwd", 1);
+	setprop("controls/fuel/tank[0]/pump-aft", 1);
+	setprop("controls/fuel/tank[1]/pump-fwd", 1);
+	setprop("controls/fuel/tank[1]/pump-aft", 1);
+	setprop("controls/fuel/crossfeed", 1);
+	setprop("controls/engines/engine[0]/starter", 1);
+	screen.log.write("APU, APU Generator, Battery, External Power and Engine Starters have been turned on.", 1, 1, 1);
 
-	setprop("/sim/input/selected/engine[0]",1);
-	setprop("/sim/input/selected/engine[1]",1);
-  
-	setprop("/controls/electric/battery-switch",1);
-	setprop("/services/ext-pwr/enable", 1);
-	setprop("/controls/electrical/ext/sw", 1);
-	setprop("/controls/electric/apugen1",1);
-	setprop("/controls/electric/apugen2",1);
+ 	var engine1listener = setlistener("engines/engine[0]/n2", func {
+		if (getprop("engines/engine[0]/n2") >= 25.18) {
+			settimer(func {
+				setprop("controls/engines/engine[0]/cutoff", 0);
+				screen.log.write("Engine 1 is starting up...", 1, 1, 1);
+    		}, 1);
+    		removelistener(engine1listener);
+		}
+	}, 0, 0);
 
-#	setprop("/systems/electrical/outputs/efis",28); #for central eicas function
-	
-	setprop("/controls/fuel/tank[0]/pump-aft",1);
-	setprop("/controls/fuel/tank[0]/pump-fwd",1);
-	setprop("/controls/fuel/tank[1]/pump-aft",1);
-	setprop("/controls/fuel/tank[1]/pump-fwd",1);
-	setprop("/controls/fuel/tank[2]/pump-left",1);
-	setprop("/controls/fuel/tank[2]/pump-right",1);
-	setprop("/controls/electrical/eng/Lsw", 1);
-	setprop("/controls/electrical/eng/Rsw", 1);
-	setprop("/controls/hydraulic/a-eng1-pump", 1);
-	setprop("/controls/hydraulic/a-elec2-pump", 1);
-	setprop("/controls/hydraulic/b-elec1-pump", 1);
-	setprop("/controls/hydraulic/b-eng2-pump", 1);
+	var engine1listener2 = setlistener("engines/engine[0]/n2", func {
+		if (getprop("engines/engine[0]/n2") >= 60) {
+			settimer(func {
+    			setprop("controls/engines/engine[0]/starter", 0);
+				screen.log.write("Engine 1 has been started and is now running.", 1, 1, 1);
+				screen.log.write("Engine 1 Generator is now supplying power.", 1, 1, 1);
+				setprop("controls/engines/engine[1]/starter", 1);
+    			setprop("controls/engines/engine[1]/cutoff", 1);
+    		}, 1);
+    	removelistener(engine1listener2);
+		}
+	}, 0, 0);
 
-  setprop("/controls/engines/engine[0]/starter",1);
-	setprop("/controls/engines/engine[1]/starter",1);
-	setprop("/controls/engines/engine[0]/cutoff",1);
-	setprop("/controls/engines/engine[1]/cutoff",1);
+	var engine2listener = setlistener("engines/engine[1]/n2", func {
+		if (getprop("engines/engine[1]/n2") >= 25.18) {
+			settimer(func {
+    			setprop("controls/engines/engine[1]/cutoff", 0);
+				screen.log.write("Engine 2 is starting up...", 1, 1, 1);
+    		}, 1);
+    		removelistener(engine2listener);
+		}
+	}, 0, 0);
 
-	if (getprop("/engines/engine[0]/n2") > 25) {
-		setprop("/controls/engines/engine[0]/cutoff",0);
-		setprop("/controls/engines/engine[1]/cutoff",0);
-	}
-	if (getprop("/engines/engine[0]/n2") > 55) {
-		setprop("/services/ext-pwr/enable", 0);
-		setprop("/controls/electrical/ext/sw", 0);
-		setprop("/controls/engines/autostart",0);
-	}
-	if (getprop("/engines/engine[0]/n2") <= 55) settimer(autostart,0);
-}
-
+	var engine2listener2 = setlistener("engines/engine[1]/n2", func {
+		if (getprop("engines/engine[1]/n2") >= 60) {
+			settimer(func {
+				setprop("controls/engines/engine[1]/starter", 0);
+				screen.log.write("Engine 2 has been started and is now running.", 1, 1, 1);
+				screen.log.write("Engine 2 Generator is now supplying power.", 1, 1, 1);
+    			setprop("engines/APU/running", 0);
+    			setprop("controls/electric/APU-generator", 0);
+    			setprop("controls/electric/external-power", 0);
+    			setprop("controls/APU/off-start-run", 0);
+    			setprop("/services/fuel-truck/enable", 0);
+    			setprop("/services/ext-pwr/enable", 0);
+    			setprop("/services/deicing_truck/enable", 0);
+				screen.log.write("APU, APU Generator and External Power have been turned off.", 1, 1, 1);
+				screen.log.write("The aircraft has been started up, you are ready to go :D", 1, 1, 1);
+    		}, 1);
+    	removelistener(engine2listener2);
+		}
+	}, 0, 0);
+};
 # Shutdown #
 
 var shutdown = func {
+	setprop("controls/electric/engine[0]/generator", 0);
+	setprop("controls/electric/engine[1]/generator", 0);
+	setprop("controls/engines/engine[0]/cutoff", 1);
+	setprop("controls/engines/engine[1]/cutoff", 1);
+	setprop("controls/fuel/tank[0]/pump-fwd", 0);
+	setprop("controls/fuel/tank[0]/pump-aft", 0);
+	setprop("controls/fuel/tank[1]/pump-fwd", 0);
+	setprop("controls/fuel/tank[1]/pump-aft", 0);
+	setprop("controls/fuel/crossfeed", 0);
+	setprop("controls/APU/off-start-run", 0);
+	screen.log.write("The Aircraft Engines have been shut down.", 1, 1, 1);
+};
 
-  	setprop("/controls/engines/engine[0]/cutoff",1);
-	  setprop("/controls/engines/engine[1]/cutoff",1);
-	  setprop("/controls/electric/battery-switch",0);
-		setprop("/controls/electrical/ext/Lsw", 0);
-		setprop("/controls/electrical/ext/Rsw", 0);
-		setprop("/services/ext-pwr/enable", 0);
-	  setprop("/controls/electric/apugen1",0);
-	  setprop("/controls/electric/apugen2",0);
-    setprop("/controls/engines/engine[0]/starter",0);
-	  setprop("/controls/engines/engine[1]/starter",0);
-
-  	setprop("/controls/fuel/tank[0]/pump-aft",0);
-	  setprop("/controls/fuel/tank[0]/pump-fwd",0);
-	  setprop("/controls/fuel/tank[1]/pump-aft",0);
-	  setprop("/controls/fuel/tank[1]/pump-fwd",0);
-	  setprop("/controls/fuel/tank[2]/pump-left",0);
-	  setprop("/controls/fuel/tank[2]/pump-right",0);
-
-
-#	  setprop("/controls/engines/autostart",1);
-}
+# listener to activate these functions accordingly
+setlistener("sim/model/start-idling", func(idle)
+ {
+ var run = idle.getBoolValue();
+ if (run)
+  {
+  startup();
+  }
+ else
+  {
+  shutdown();
+  }
+ }, 0, 0);
 
 var inair_started = 0;
 var inAirStart_check = func {
