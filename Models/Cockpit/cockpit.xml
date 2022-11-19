@@ -64,9 +64,9 @@
             <z-m>-0.960078</z-m>
         </center>
         <axis>
-            <x>0</x>
+            
             <y>-1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
     <animation>
@@ -84,8 +84,8 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
+            
+            
         </axis>
     </animation>
     <animation>
@@ -103,8 +103,8 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
-            <z>0</z>
+            
+            
         </axis>
     </animation>
 

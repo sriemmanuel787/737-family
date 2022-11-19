@@ -1353,7 +1353,7 @@
         </pitch>
         <position>
             <x>-24</x>
-            <y>0</y>
+            
             <z>0.86</z>
         </position>
         <reference-dist>1.0</reference-dist>
@@ -1363,4 +1363,3 @@
     </fx>
     
 </PropertyList>
-
