@@ -63,7 +63,7 @@
 						<binding>
 							<command>nasal</command>
 							<script>
-								setprop("/sim/failure-manager/engines/engine/serviceable", 0);
+								setprop("/sim/failure-manager/engines/engine[0]/serviceable", 0);
 							</script>
 						</binding>
 					</button>

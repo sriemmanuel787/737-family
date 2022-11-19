@@ -154,7 +154,7 @@
             </signal>
 	    <signal>
                 <type>double</type>
-                <property type="string">engines/engine/reverser-pos-norm</property>
+                <property type="string">engines/engine[0]/reverser-pos-norm</property>
             </signal>
             <signal>
                 <type>double</type>
