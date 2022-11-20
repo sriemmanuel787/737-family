@@ -14,7 +14,7 @@ A project to create the 737 MAX series for FlightGear, the free flight simulator
 
 ## Installation Instructions - Git
 - Open the Git Bash terminal, and make sure you are in your aircraft directory.
-- Enter "git clone https://github.com/sriemmanuel787/737-MAX.git" into the terminal.
+- Enter `git clone https://github.com/sriemmanuel787/737-MAX.git` into the terminal.
 - The aircraft should now show up in the launcher.
 
 *Progress is underway!* If you have any questions, feel free to email me at sriemmanuel787@outlook.com or contact me on the FG Discord with the usename 'naviat' Thanks!
