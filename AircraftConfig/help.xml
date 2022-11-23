@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- B73X Aircraft Config Dialog -->
 
 <PropertyList>
 
-	<name>aircraft-config-help</name>
-	<layout>vbox</layout>
+    <name>aircraft-config-help</name>
+    <layout>vbox</layout>
 
     <group>
         <layout>hbox</layout>
@@ -24,41 +24,41 @@
             </binding>
         </button>
     </group>
-	
-    <hrule/>
-	
-	<group>
-		<layout>vbox</layout>
-		
-		<text>
-			<halign>left</halign>
-			<label>Information:</label>
-		</text>
-		
-		<text>
-			<halign>left</halign>
-			<label>Boeing 737 MAX</label>
-		</text>
-		
-		<hrule/>
-		
-		<text>
-			<halign>left</halign>
-			<label>Key Commands:</label>
-		</text>
-		<text>
-			<halign>left</halign>
-			<label>DEL - Toggle Reverse Thrust</label>
-		</text>
-		<text>
-			<halign>left</halign>
-			<label>CTRL + B - Cycle Spoilers</label>
-		</text>
-		<text>
-			<halign>left</halign>
-			<label>SHIFT + B - Toggle Parking Brake</label>
-		</text>
-		
-	</group>
-	
+
+    <hrule />
+
+    <group>
+        <layout>vbox</layout>
+
+        <text>
+            <halign>left</halign>
+            <label>Information:</label>
+        </text>
+
+        <text>
+            <halign>left</halign>
+            <label>Boeing 737 MAX</label>
+        </text>
+
+        <hrule />
+
+        <text>
+            <halign>left</halign>
+            <label>Key Commands:</label>
+        </text>
+        <text>
+            <halign>left</halign>
+            <label>DEL - Toggle Reverse Thrust</label>
+        </text>
+        <text>
+            <halign>left</halign>
+            <label>CTRL + B - Cycle Spoilers</label>
+        </text>
+        <text>
+            <halign>left</halign>
+            <label>SHIFT + B - Toggle Parking Brake</label>
+        </text>
+
+    </group>
+
 </PropertyList>

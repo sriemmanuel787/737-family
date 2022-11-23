@@ -4,8 +4,8 @@
 
 <PropertyList>
 
-	<name>aircraft-config-lights</name>
-	<layout>vbox</layout>
+    <name>aircraft-config-lights</name>
+    <layout>vbox</layout>
 
     <group>
         <layout>hbox</layout>
@@ -24,94 +24,94 @@
             </binding>
         </button>
     </group>
-	
-    <hrule/>
 
-	<group>
-		<layout>vbox</layout>
+    <hrule />
+
+    <group>
+        <layout>vbox</layout>
 
 
-		<checkbox>
-			<label>Landing Lights</label>
-			<property>controls/lighting/landing-lights</property>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<live>true</live>
-		</checkbox>
+        <checkbox>
+            <label>Landing Lights</label>
+            <property>controls/lighting/landing-lights</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
 
-		<checkbox>
-			<label>Navigation lights</label>
-			<property>controls/lighting/nav-lights</property>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<live>true</live>
-		</checkbox>
+        <checkbox>
+            <label>Navigation lights</label>
+            <property>controls/lighting/nav-lights</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
 
-		<checkbox>
-			<label>Strobe lights</label>
-			<property>controls/lighting/strobe</property>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<live>true</live>
-		</checkbox>
+        <checkbox>
+            <label>Strobe lights</label>
+            <property>controls/lighting/strobe</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
 
-		<checkbox>
-			<label>Beacon</label>
-			<property>controls/lighting/beacon</property>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<live>true</live>
-		</checkbox>
-              
-                <checkbox>
-			<label>Logo Lights</label>
-			<property>controls/lighting/logo-lights</property>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<live>true</live>
-		</checkbox>
+        <checkbox>
+            <label>Beacon</label>
+            <property>controls/lighting/beacon</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
 
-                <checkbox>
-			<label>Winglets Lights</label>
-			<property>controls/lighting/wing</property>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<live>true</live>
-		</checkbox>
+        <checkbox>
+            <label>Logo Lights</label>
+            <property>controls/lighting/logo-lights</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
 
-                <checkbox>
-				<halign>left</halign>
-				<label>Panel light</label>
-				<property>/controls/lighting/panel-lights</property>
-				<binding>
-					<command>property-toggle</command>
-					<property>/controls/lighting/panel-lights</property>
-				</binding>
-				<binding>
-					<command>property-toggle</command>
-					<property>/sim/sound/switch</property>
-				</binding>
-			</checkbox>
-		
-			<text>
-				<label>Panel light</label>
-			</text>
-			<slider>
-				<row>0</row>
-				<col>2</col>
-				<min>0.2</min>
-				<max>1.0</max>
-				<property>/controls/lighting/panel-light</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-			</slider>
-	</group>
+        <checkbox>
+            <label>Winglets Lights</label>
+            <property>controls/lighting/wing</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <halign>left</halign>
+            <label>Panel light</label>
+            <property>/controls/lighting/panel-lights</property>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/lighting/panel-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </checkbox>
+
+        <text>
+            <label>Panel light</label>
+        </text>
+        <slider>
+            <row>0</row>
+            <col>2</col>
+            <min>0.2</min>
+            <max>1.0</max>
+            <property>/controls/lighting/panel-light</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </slider>
+    </group>
 
 </PropertyList>

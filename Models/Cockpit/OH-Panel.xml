@@ -381,8 +381,8 @@
         <object-name>tex.001</object-name>
         <emission>
             <red>1</red>
-			<green>0.725</green>
-			<blue>0.259</blue>
+            <green>0.725</green>
+            <blue>0.259</blue>
             <factor-prop>controls/lighting/panel</factor-prop>
         </emission>
     </animation>
@@ -810,7 +810,6 @@
             </equals>
         </condition>
     </animation>
-    
 
 
     <!-- Electrical -->
@@ -915,21 +914,21 @@
         <object-name>elec.N1genoff</object-name>
         <condition>
             <or>
-				<and>
-					<equals>
-						<property>controls/electrical/eng/Lsw</property>
-						<value>1</value>
-					</equals>
-					<greater-than>
-						<property>engines/engine[0]/n2</property>
-						<value>54</value>
-					</greater-than>
-				</and>
-				<less-than>
-					<property>engines/engine[0]/n2</property>
-					<value>54</value>
-				</less-than>
-			</or>
+                <and>
+                    <equals>
+                        <property>controls/electrical/eng/Lsw</property>
+                        <value>1</value>
+                    </equals>
+                    <greater-than>
+                        <property>engines/engine[0]/n2</property>
+                        <value>54</value>
+                    </greater-than>
+                </and>
+                <less-than>
+                    <property>engines/engine[0]/n2</property>
+                    <value>54</value>
+                </less-than>
+            </or>
         </condition>
     </animation>
 
@@ -961,21 +960,21 @@
         <object-name>elec.N2genoff</object-name>
         <condition>
             <or>
-				<and>
-					<equals>
-						<property>controls/electrical/eng/Rsw</property>
-						<value>1</value>
-					</equals>
-					<greater-than>
-						<property>engines/engine[1]/n2</property>
-						<value>54</value>
-					</greater-than>
-				</and>
-				<less-than>
-					<property>engines/engine[1]/n2</property>
-					<value>54</value>
-				</less-than>
-			</or>
+                <and>
+                    <equals>
+                        <property>controls/electrical/eng/Rsw</property>
+                        <value>1</value>
+                    </equals>
+                    <greater-than>
+                        <property>engines/engine[1]/n2</property>
+                        <value>54</value>
+                    </greater-than>
+                </and>
+                <less-than>
+                    <property>engines/engine[1]/n2</property>
+                    <value>54</value>
+                </less-than>
+            </or>
         </condition>
     </animation>
 
@@ -1243,7 +1242,7 @@
             </binding>
         </action>
     </animation>
-    
+
     <!-- Auxilliary Battery -->
     <animation>
         <type>knob</type>

@@ -2,11 +2,11 @@
 
 <PropertyList>
 
-	<path>light-cone.ac</path>
+    <path>light-cone.ac</path>
 
-	<effect>
-		<inherits-from>Effects/light-cone</inherits-from>
-		<object-name>Cone</object-name>
-	</effect>
+    <effect>
+        <inherits-from>Effects/light-cone</inherits-from>
+        <object-name>Cone</object-name>
+    </effect>
 
 </PropertyList>

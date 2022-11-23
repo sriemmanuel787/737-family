@@ -45,7 +45,7 @@ This file selects the instrumentation modules that should be available.
         <static-pressure>/systems/static[0]/pressure-inhg</static-pressure>
         <quantum>0</quantum>
         <tau>0.1</tau>
-   </altimeter>
+    </altimeter>
 
     <altimeter>
         <name>altimeter</name>
@@ -53,7 +53,7 @@ This file selects the instrumentation modules that should be available.
         <static-pressure>/systems/static[1]/pressure-inhg</static-pressure>
         <quantum>0</quantum>
         <tau>0.1</tau>
-   </altimeter>
+    </altimeter>
 
     <altimeter>
         <name>altimeter</name>
@@ -61,7 +61,7 @@ This file selects the instrumentation modules that should be available.
         <static-pressure>/systems/static[2]/pressure-inhg</static-pressure>
         <quantum>0</quantum>
         <tau>0.1</tau>
-   </altimeter>
+    </altimeter>
 
     <attitude-indicator>
         <name>attitude-indicator</name>
@@ -111,16 +111,16 @@ This file selects the instrumentation modules that should be available.
     </magnetic-compass>
 
     <comm-radio>
-      <name>comm</name>
-      <number>0</number>
-    <eight-point-three>true</eight-point-three>
+        <name>comm</name>
+        <number>0</number>
+        <eight-point-three>true</eight-point-three>
     </comm-radio>
 
     <comm-radio>
-      <name>comm</name>
-      <number>1</number>
-      <eight-point-three>true</eight-point-three>   
-     </comm-radio>
+        <name>comm</name>
+        <number>1</number>
+        <eight-point-three>true</eight-point-three>
+    </comm-radio>
 
     <nav-radio>
         <name>nav</name>
@@ -152,37 +152,37 @@ This file selects the instrumentation modules that should be available.
         <kt70-compatibility type="bool">0</kt70-compatibility>
     </transponder>
 
-  <vertical-speed-indicator>
-    <name>vertical-speed-indicator</name>
-    <number>0</number>
-    <static-pressure>/systems/static/pressure-inhg</static-pressure>
-  </vertical-speed-indicator>
+    <vertical-speed-indicator>
+        <name>vertical-speed-indicator</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </vertical-speed-indicator>
 
-  <gps>
-    <name>gps</name>
-    <number>0</number>
-  </gps>
+    <gps>
+        <name>gps</name>
+        <number>0</number>
+    </gps>
 
-  <radar>
-    <name>wxradar</name>
-    <number>0</number>
-  </radar>
+    <radar>
+        <name>wxradar</name>
+        <number>0</number>
+    </radar>
 
-  <tacan>
-    <name>tacan</name>
-    <number>0</number>
-  </tacan>
+    <tacan>
+        <name>tacan</name>
+        <number>0</number>
+    </tacan>
 
-  <radar-altimeter>
-    <name>radar-altimeter</name>
-    <number>0</number>
-    <update-interval-sec>0.1</update-interval-sec>
-  </radar-altimeter>
+    <radar-altimeter>
+        <name>radar-altimeter</name>
+        <number>0</number>
+        <update-interval-sec>0.1</update-interval-sec>
+    </radar-altimeter>
 
-  <radar-altimeter>
-    <name>radar-altimeter</name>
-    <number>1</number>
-    <update-interval-sec>0.1</update-interval-sec>
-  </radar-altimeter>
+    <radar-altimeter>
+        <name>radar-altimeter</name>
+        <number>1</number>
+        <update-interval-sec>0.1</update-interval-sec>
+    </radar-altimeter>
 
 </PropertyList>

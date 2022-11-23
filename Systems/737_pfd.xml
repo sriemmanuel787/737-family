@@ -7,35 +7,83 @@
         <type>gain</type>
         <gain>1.0</gain>
         <update-interval-secs type="double">0.1</update-interval-secs>
-        <input> 
+        <input>
             <expression>
-              <sum>
-                <table>
-                 <product>
-                    <property>/fdm/jsbsim/inertia/weight-lbs</property>
-                        <property>accelerations/pilot-g</property>
-                    </product>
-                    <entry><ind>88183</ind><dep>108</dep></entry>
-                    <entry><ind>99206</ind><dep>115</dep></entry>
-                    <entry><ind>110229</ind><dep>122</dep></entry>
-                    <entry><ind>121252</ind><dep>128</dep></entry>
-                    <entry><ind>132275</ind><dep>135</dep></entry>
-                    <entry><ind>143298</ind><dep>141</dep></entry>
-                    <entry><ind>154321</ind><dep>146</dep></entry>
-                    <entry><ind>165344</ind><dep>151</dep></entry>
-                    <entry><ind>176367</ind><dep>155</dep></entry>
-                    <entry><ind>187390</ind><dep>160</dep></entry>
-                </table>
-                <table>
-                    <property>/fdm/jsbsim/fcs/flap-pos-norm</property> 
-                    <entry><ind>0</ind><dep>26</dep></entry>
-                    <entry><ind>0.125</ind><dep>-6</dep></entry>
-                    <entry><ind>0.375</ind><dep>-8</dep></entry>
-                    <entry><ind>0.625</ind><dep>-22</dep></entry>
-                    <entry><ind>0.875</ind><dep>-25</dep></entry>
-                    <entry><ind>1</ind><dep>-26</dep></entry>
-                </table>
-              </sum>
+                <sum>
+                    <table>
+                        <product>
+                            <property>/fdm/jsbsim/inertia/weight-lbs</property>
+                            <property>accelerations/pilot-g</property>
+                        </product>
+                        <entry>
+                            <ind>88183</ind>
+                            <dep>108</dep>
+                        </entry>
+                        <entry>
+                            <ind>99206</ind>
+                            <dep>115</dep>
+                        </entry>
+                        <entry>
+                            <ind>110229</ind>
+                            <dep>122</dep>
+                        </entry>
+                        <entry>
+                            <ind>121252</ind>
+                            <dep>128</dep>
+                        </entry>
+                        <entry>
+                            <ind>132275</ind>
+                            <dep>135</dep>
+                        </entry>
+                        <entry>
+                            <ind>143298</ind>
+                            <dep>141</dep>
+                        </entry>
+                        <entry>
+                            <ind>154321</ind>
+                            <dep>146</dep>
+                        </entry>
+                        <entry>
+                            <ind>165344</ind>
+                            <dep>151</dep>
+                        </entry>
+                        <entry>
+                            <ind>176367</ind>
+                            <dep>155</dep>
+                        </entry>
+                        <entry>
+                            <ind>187390</ind>
+                            <dep>160</dep>
+                        </entry>
+                    </table>
+                    <table>
+                        <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
+                        <entry>
+                            <ind>0</ind>
+                            <dep>26</dep>
+                        </entry>
+                        <entry>
+                            <ind>0.125</ind>
+                            <dep>-6</dep>
+                        </entry>
+                        <entry>
+                            <ind>0.375</ind>
+                            <dep>-8</dep>
+                        </entry>
+                        <entry>
+                            <ind>0.625</ind>
+                            <dep>-22</dep>
+                        </entry>
+                        <entry>
+                            <ind>0.875</ind>
+                            <dep>-25</dep>
+                        </entry>
+                        <entry>
+                            <ind>1</ind>
+                            <dep>-26</dep>
+                        </entry>
+                    </table>
+                </sum>
             </expression>
         </input>
         <output>instrumentation/weu/state/stall-speed</output>
@@ -47,100 +95,157 @@
         <gain>1.0</gain>
         <update-interval-secs type="double">0.1</update-interval-secs>
         <input>
-          <condition>
-            <not-equals>
-              <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
-              <value>0</value>
-            </not-equals>
-          </condition>
+            <condition>
+                <not-equals>
+                    <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
             <expression>
-              <div>
-                <product>
-                  <property>/fdm/jsbsim/atmosphere/a-fps</property>
-                  <value>0.82</value>
-                  <value>0.5913174946</value>
-                  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-                </product>
-                <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
-               </div>
+                <div>
+                    <product>
+                        <property>/fdm/jsbsim/atmosphere/a-fps</property>
+                        <value>0.82</value>
+                        <value>0.5913174946</value>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                    </product>
+                    <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
+                </div>
             </expression>
         </input>
         <input>
-          <value>500</value>
+            <value>500</value>
         </input>
         <output>instrumentation/pfd/mmo-kt</output>
     </filter>
-    
+
     <filter>
         <name>VSI needle</name>
         <type>gain</type>
         <gain>1.0</gain>
         <update-interval-secs type="double">0.04</update-interval-secs>
-        <input> 
+        <input>
             <expression>
                 <table>
                     <property>velocities/vertical-speed-fps</property>
-                    <entry><ind>-100</ind><dep>-74</dep></entry>
-                    <entry><ind>-66.6666</ind><dep>-71.8</dep></entry>
-                    <entry><ind>-33.3333</ind><dep>-69.3</dep></entry>
-                    <entry><ind>-25</ind><dep>-64.4</dep></entry>
-                    <entry><ind>-16.6666</ind><dep>-57.3</dep></entry>
-                    <entry><ind>-8.3333</ind><dep>-36</dep></entry>
-                    <entry><ind>8.3333</ind><dep>36</dep></entry>
-                    <entry><ind>16.6666</ind><dep>57.3</dep></entry>
-                    <entry><ind>25</ind><dep>64.4</dep></entry>
-                    <entry><ind>33.3333</ind><dep>69.3</dep></entry>
-                    <entry><ind>66.6666</ind><dep>71.8</dep></entry>
-                    <entry><ind>100</ind><dep>74</dep></entry>
+                    <entry>
+                        <ind>-100</ind>
+                        <dep>-74</dep>
+                    </entry>
+                    <entry>
+                        <ind>-66.6666</ind>
+                        <dep>-71.8</dep>
+                    </entry>
+                    <entry>
+                        <ind>-33.3333</ind>
+                        <dep>-69.3</dep>
+                    </entry>
+                    <entry>
+                        <ind>-25</ind>
+                        <dep>-64.4</dep>
+                    </entry>
+                    <entry>
+                        <ind>-16.6666</ind>
+                        <dep>-57.3</dep>
+                    </entry>
+                    <entry>
+                        <ind>-8.3333</ind>
+                        <dep>-36</dep>
+                    </entry>
+                    <entry>
+                        <ind>8.3333</ind>
+                        <dep>36</dep>
+                    </entry>
+                    <entry>
+                        <ind>16.6666</ind>
+                        <dep>57.3</dep>
+                    </entry>
+                    <entry>
+                        <ind>25</ind>
+                        <dep>64.4</dep>
+                    </entry>
+                    <entry>
+                        <ind>33.3333</ind>
+                        <dep>69.3</dep>
+                    </entry>
+                    <entry>
+                        <ind>66.6666</ind>
+                        <dep>71.8</dep>
+                    </entry>
+                    <entry>
+                        <ind>100</ind>
+                        <dep>74</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
         <output>instrumentation/pfd/vsi-needle-deg</output>
     </filter>
 
-  <!-- =============================================================== -->
-  <!--                        PFD display preprocessors                -->
-  <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!--                        PFD display preprocessors                -->
+    <!-- =============================================================== -->
 
-  <!-- =============================================================== -->
-  <!--                 speed trend vector processing                   -->
-  <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!--                 speed trend vector processing                   -->
+    <!-- =============================================================== -->
 
-  <filter>
-    <name>Median airspeed last 1 sec</name>
-    <type>moving-average</type>
-    <samples>120</samples>
-    <input>instrumentation/airspeed-indicator/indicated-speed-kt</input>
-    <output>instrumentation/pfd/airspeed-kt-1sec-avg</output>
-  </filter>
+    <filter>
+        <name>Median airspeed last 1 sec</name>
+        <type>moving-average</type>
+        <samples>120</samples>
+        <input>instrumentation/airspeed-indicator/indicated-speed-kt</input>
+        <output>instrumentation/pfd/airspeed-kt-1sec-avg</output>
+    </filter>
 
-  <predict-simple>
-    <name>speed predictor (smoothed)</name>
-    <update-interval-secs type="double">0.05</update-interval-secs>
-    <input>instrumentation/pfd/airspeed-kt-1sec-avg</input>
-    <output>instrumentation/pfd/speed-lookahead</output>
-    <seconds>10.0</seconds>
-    <filter-gain>0.05</filter-gain>
-    <min>30</min>
-    <max>450</max>
-  </predict-simple>
- 
+    <predict-simple>
+        <name>speed predictor (smoothed)</name>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <input>instrumentation/pfd/airspeed-kt-1sec-avg</input>
+        <output>instrumentation/pfd/speed-lookahead</output>
+        <seconds>10.0</seconds>
+        <filter-gain>0.05</filter-gain>
+        <min>30</min>
+        <max>450</max>
+    </predict-simple>
+
     <filter>
         <name>VS autopilot</name>
         <type>gain</type>
         <gain>1</gain>
         <update-interval-secs type="double">0.1</update-interval-secs>
-        <input> 
+        <input>
             <expression>
                 <table>
-                    <property>/it-autoflight/settings/vertical-speed-fpm</property> 
-                    <entry><ind>-6000</ind><dep>-237</dep></entry>
-                    <entry><ind>-2000</ind><dep>-183</dep></entry>
-                    <entry><ind>-1000</ind><dep>-108</dep></entry>
-                    <entry><ind>    0</ind><dep>0</dep></entry>
-                    <entry><ind> 1000</ind><dep>108</dep></entry>
-                    <entry><ind> 2000</ind><dep>183</dep></entry>
-                    <entry><ind> 6000</ind><dep>237</dep></entry>
+                    <property>/it-autoflight/settings/vertical-speed-fpm</property>
+                    <entry>
+                        <ind>-6000</ind>
+                        <dep>-237</dep>
+                    </entry>
+                    <entry>
+                        <ind>-2000</ind>
+                        <dep>-183</dep>
+                    </entry>
+                    <entry>
+                        <ind>-1000</ind>
+                        <dep>-108</dep>
+                    </entry>
+                    <entry>
+                        <ind>    0</ind>
+                        <dep>0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1000</ind>
+                        <dep>108</dep>
+                    </entry>
+                    <entry>
+                        <ind> 2000</ind>
+                        <dep>183</dep>
+                    </entry>
+                    <entry>
+                        <ind> 6000</ind>
+                        <dep>237</dep>
+                    </entry>
                 </table>
             </expression>
         </input>

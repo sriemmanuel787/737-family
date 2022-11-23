@@ -64,9 +64,9 @@
             <z-m>-0.960078</z-m>
         </center>
         <axis>
-            
+
             <y>-1</y>
-            
+
         </axis>
     </animation>
     <animation>
@@ -84,8 +84,8 @@
         </center>
         <axis>
             <x>1</x>
-            
-            
+
+
         </axis>
     </animation>
     <animation>
@@ -103,8 +103,8 @@
         </center>
         <axis>
             <x>1</x>
-            
-            
+
+
         </axis>
     </animation>
 
@@ -121,34 +121,34 @@
                 <command>property-assign</command>
                 <property>it-autoflight/input/ap1</property>
                 <value>0</value>
-              </binding>
-              <binding>
+            </binding>
+            <binding>
                 <command>property-assign</command>
                 <property>it-autoflight/input/ap2</property>
                 <value>0</value>
-              </binding>
-              <binding>
+            </binding>
+            <binding>
                 <command>property-assign</command>
                 <property>it-cws/cwsa</property>
                 <value>0</value>
-              </binding>
-              <binding>
+            </binding>
+            <binding>
                 <command>property-assign</command>
                 <property>it-cws/cwsb</property>
                 <value>0</value>
-              </binding>
-              <binding>
+            </binding>
+            <binding>
                 <command>property-assign</command>
                 <property>controls/flight/apoff</property>
                 <value>1</value>
-              </binding>
-              <mod-up>
+            </binding>
+            <mod-up>
                 <binding>
-                  <command>property-assign</command>
-                  <property>controls/flight/apoff</property>
-                  <value>0</value>
+                    <command>property-assign</command>
+                    <property>controls/flight/apoff</property>
+                    <value>0</value>
                 </binding>
-              </mod-up>
+            </mod-up>
         </action>
     </animation>
 </PropertyList>

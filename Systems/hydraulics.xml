@@ -4,9 +4,9 @@
 <!-- Joshua Davidson (Octal450) -->
 
 <PropertyList>
- 
+
     <!-- Manual Reversion -->
-    
+
     <filter>
         <name>Aileron Min/Max</name>
         <type>gain</type>
@@ -16,15 +16,24 @@
             <expression>
                 <table>
                     <property>/velocities/mach</property>
-                    <entry><ind>0.1</ind><dep>1.0</dep></entry>
-                    <entry><ind>0.4</ind><dep>0.4</dep></entry>
-                    <entry><ind>0.9</ind><dep>0.1</dep></entry>
+                    <entry>
+                        <ind>0.1</ind>
+                        <dep>1.0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.4</ind>
+                        <dep>0.4</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.9</ind>
+                        <dep>0.1</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
         <output>/controls/flight/aileron-authority</output>
     </filter>
-    
+
     <filter>
         <name>Elevator Min/Max</name>
         <type>gain</type>
@@ -34,15 +43,24 @@
             <expression>
                 <table>
                     <property>/velocities/mach</property>
-                    <entry><ind>0.1</ind><dep>1.0</dep></entry>
-                    <entry><ind>0.4</ind><dep>0.3</dep></entry>
-                    <entry><ind>0.9</ind><dep>0.1</dep></entry>
+                    <entry>
+                        <ind>0.1</ind>
+                        <dep>1.0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.4</ind>
+                        <dep>0.3</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.9</ind>
+                        <dep>0.1</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
         <output>/controls/flight/elevator-authority</output>
     </filter>
-    
+
     <filter>
         <name>Aileron Manual Control</name>
         <type>gain</type>
@@ -72,7 +90,7 @@
         </max>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <name>Elevator Manual Control</name>
         <type>gain</type>
@@ -102,7 +120,7 @@
         </max>
         <max>1.0</max>
     </filter>
-    
+
     <!-- Aileron L -->
 
     <filter>
@@ -118,10 +136,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/systems/hydraulic/aileron-manual</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                    <property>/systems/hydraulic/aileron-manual</property>
+                    <entry>
+                        <ind>-1</ind>
+                        <dep>-0.5</dep>
+                    </entry>
+                    <entry>
+                        <ind> 0</ind>
+                        <dep> 0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1</ind>
+                        <dep> 0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -134,10 +161,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                    <property>/controls/flight/aileron-fde</property>
+                    <entry>
+                        <ind>-1</ind>
+                        <dep>-0.5</dep>
+                    </entry>
+                    <entry>
+                        <ind> 0</ind>
+                        <dep> 0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1</ind>
+                        <dep> 0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -145,7 +181,7 @@
         <min>-0.5</min>
         <max>0.5</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -153,9 +189,9 @@
         <output>/controls/flight/aileron-left</output>
         <max-rate-of-change>2.5</max-rate-of-change>
     </filter>
-    
+
     <!-- Aileron R -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -169,10 +205,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/systems/hydraulic/aileron-manual</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                    <property>/systems/hydraulic/aileron-manual</property>
+                    <entry>
+                        <ind>-1</ind>
+                        <dep>-0.5</dep>
+                    </entry>
+                    <entry>
+                        <ind> 0</ind>
+                        <dep> 0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1</ind>
+                        <dep> 0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -185,10 +230,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                    <property>/controls/flight/aileron-fde</property>
+                    <entry>
+                        <ind>-1</ind>
+                        <dep>-0.5</dep>
+                    </entry>
+                    <entry>
+                        <ind> 0</ind>
+                        <dep> 0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1</ind>
+                        <dep> 0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -196,7 +250,7 @@
         <min>-0.5</min>
         <max>0.5</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -204,13 +258,13 @@
         <output>/controls/flight/aileron-right</output>
         <max-rate-of-change>2.5</max-rate-of-change>
     </filter>
-    
- <!-- =============================================================== -->
- <!-- Spoiler Control                                                 -->
- <!-- =============================================================== -->
-    
+
+    <!-- =============================================================== -->
+    <!-- Spoiler Control                                                 -->
+    <!-- =============================================================== -->
+
     <!-- Spoiler 1 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -238,7 +292,7 @@
                     </or>
                 </and>
             </condition>
-            <property>/controls/flight/spoilers</property> 
+            <property>/controls/flight/spoilers</property>
         </input>
         <input>
             <condition>
@@ -253,7 +307,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -261,9 +315,9 @@
         <output>/controls/flight/spoiler-1</output>
         <max-rate-of-change>0.6</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 2 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -277,10 +331,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/speedbrake-norm</property> 
-                    <entry><ind>0.0</ind><dep>0.0</dep></entry>
-                    <entry><ind>0.5</ind><dep>0.4</dep></entry>
-                    <entry><ind>1.0</ind><dep>1.0</dep></entry>
+                    <property>/controls/flight/speedbrake-norm</property>
+                    <entry>
+                        <ind>0.0</ind>
+                        <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.5</ind>
+                        <dep>0.4</dep>
+                    </entry>
+                    <entry>
+                        <ind>1.0</ind>
+                        <dep>1.0</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -297,7 +360,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -305,9 +368,9 @@
         <output>/controls/flight/spoiler-2</output>
         <max-rate-of-change>0.5</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 3 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -321,10 +384,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/speedbrake-norm</property> 
-                    <entry><ind>0.0</ind><dep>0.0</dep></entry>
-                    <entry><ind>0.5</ind><dep>0.4</dep></entry>
-                    <entry><ind>1.0</ind><dep>1.0</dep></entry>
+                    <property>/controls/flight/speedbrake-norm</property>
+                    <entry>
+                        <ind>0.0</ind>
+                        <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.5</ind>
+                        <dep>0.4</dep>
+                    </entry>
+                    <entry>
+                        <ind>1.0</ind>
+                        <dep>1.0</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -341,7 +413,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -349,9 +421,9 @@
         <output>/controls/flight/spoiler-3</output>
         <max-rate-of-change>0.5</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 4 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -371,11 +443,17 @@
             </condition>
             <expression>
                 <sum>
-                    <property>/controls/flight/speedbrake-norm</property> 
+                    <property>/controls/flight/speedbrake-norm</property>
                     <table>
-                        <property>/controls/flight/aileron-fde</property> 
-                        <entry><ind>0.1</ind><dep>   0</dep></entry>
-                        <entry><ind>1.0</ind><dep>-0.5</dep></entry>
+                        <property>/controls/flight/aileron-fde</property>
+                        <entry>
+                            <ind>0.1</ind>
+                            <dep>   0</dep>
+                        </entry>
+                        <entry>
+                            <ind>1.0</ind>
+                            <dep>-0.5</dep>
+                        </entry>
                     </table>
                 </sum>
             </expression>
@@ -398,9 +476,15 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property> 
-                    <entry><ind>-0.1</ind><dep>  0</dep></entry>
-                    <entry><ind>-1.0</ind><dep>0.5</dep></entry>
+                    <property>/controls/flight/aileron-fde</property>
+                    <entry>
+                        <ind>-0.1</ind>
+                        <dep>  0</dep>
+                    </entry>
+                    <entry>
+                        <ind>-1.0</ind>
+                        <dep>0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -408,7 +492,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -416,9 +500,9 @@
         <output>/controls/flight/spoiler-4</output>
         <max-rate-of-change>0.6</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 5 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -438,11 +522,17 @@
             </condition>
             <expression>
                 <sum>
-                    <property>/controls/flight/speedbrake-norm</property> 
+                    <property>/controls/flight/speedbrake-norm</property>
                     <table>
-                        <property>/controls/flight/aileron-fde</property> 
-                        <entry><ind>0.1</ind><dep>   0</dep></entry>
-                        <entry><ind>1.0</ind><dep>-0.5</dep></entry>
+                        <property>/controls/flight/aileron-fde</property>
+                        <entry>
+                            <ind>0.1</ind>
+                            <dep>   0</dep>
+                        </entry>
+                        <entry>
+                            <ind>1.0</ind>
+                            <dep>-0.5</dep>
+                        </entry>
                     </table>
                 </sum>
             </expression>
@@ -465,9 +555,15 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property> 
-                    <entry><ind>-0.1</ind><dep>  0</dep></entry>
-                    <entry><ind>-1.0</ind><dep>0.5</dep></entry>
+                    <property>/controls/flight/aileron-fde</property>
+                    <entry>
+                        <ind>-0.1</ind>
+                        <dep>  0</dep>
+                    </entry>
+                    <entry>
+                        <ind>-1.0</ind>
+                        <dep>0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -475,7 +571,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -483,9 +579,9 @@
         <output>/controls/flight/spoiler-5</output>
         <max-rate-of-change>0.6</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 6 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -513,7 +609,7 @@
                     </or>
                 </and>
             </condition>
-            <property>/controls/flight/spoilers</property> 
+            <property>/controls/flight/spoilers</property>
         </input>
         <input>
             <condition>
@@ -528,7 +624,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -536,9 +632,9 @@
         <output>/controls/flight/spoiler-6</output>
         <max-rate-of-change>0.6</max-rate-of-change>
     </filter>
-    
+
     <!-- Left Spoiler Sum -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -557,9 +653,9 @@
         </input>
         <output>/controls/flight/spoiler-l-sum</output>
     </filter>
-    
+
     <!-- Spoiler 7 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -587,7 +683,7 @@
                     </or>
                 </and>
             </condition>
-            <property>/controls/flight/spoilers</property> 
+            <property>/controls/flight/spoilers</property>
         </input>
         <input>
             <condition>
@@ -602,7 +698,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -610,9 +706,9 @@
         <output>/controls/flight/spoiler-7</output>
         <max-rate-of-change>0.6</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 8 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -632,11 +728,17 @@
             </condition>
             <expression>
                 <sum>
-                    <property>/controls/flight/speedbrake-norm</property> 
+                    <property>/controls/flight/speedbrake-norm</property>
                     <table>
-                        <property>/controls/flight/aileron-fde</property> 
-                        <entry><ind>-0.1</ind><dep>   0</dep></entry>
-                        <entry><ind>-1.0</ind><dep>-0.5</dep></entry>
+                        <property>/controls/flight/aileron-fde</property>
+                        <entry>
+                            <ind>-0.1</ind>
+                            <dep>   0</dep>
+                        </entry>
+                        <entry>
+                            <ind>-1.0</ind>
+                            <dep>-0.5</dep>
+                        </entry>
                     </table>
                 </sum>
             </expression>
@@ -659,9 +761,15 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property> 
-                    <entry><ind>0.1</ind><dep>  0</dep></entry>
-                    <entry><ind>1.0</ind><dep>0.5</dep></entry>
+                    <property>/controls/flight/aileron-fde</property>
+                    <entry>
+                        <ind>0.1</ind>
+                        <dep>  0</dep>
+                    </entry>
+                    <entry>
+                        <ind>1.0</ind>
+                        <dep>0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -669,7 +777,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -677,9 +785,9 @@
         <output>/controls/flight/spoiler-8</output>
         <max-rate-of-change>0.6</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 9 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -699,11 +807,17 @@
             </condition>
             <expression>
                 <sum>
-                    <property>/controls/flight/speedbrake-norm</property> 
+                    <property>/controls/flight/speedbrake-norm</property>
                     <table>
-                        <property>/controls/flight/aileron-fde</property> 
-                        <entry><ind>-0.1</ind><dep>   0</dep></entry>
-                        <entry><ind>-1.0</ind><dep>-0.5</dep></entry>
+                        <property>/controls/flight/aileron-fde</property>
+                        <entry>
+                            <ind>-0.1</ind>
+                            <dep>   0</dep>
+                        </entry>
+                        <entry>
+                            <ind>-1.0</ind>
+                            <dep>-0.5</dep>
+                        </entry>
                     </table>
                 </sum>
             </expression>
@@ -726,9 +840,15 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property> 
-                    <entry><ind>0.1</ind><dep>  0</dep></entry>
-                    <entry><ind>1.0</ind><dep>0.5</dep></entry>
+                    <property>/controls/flight/aileron-fde</property>
+                    <entry>
+                        <ind>0.1</ind>
+                        <dep>  0</dep>
+                    </entry>
+                    <entry>
+                        <ind>1.0</ind>
+                        <dep>0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -736,7 +856,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -744,9 +864,9 @@
         <output>/controls/flight/spoiler-9</output>
         <max-rate-of-change>0.6</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 10 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -760,10 +880,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/speedbrake-norm</property> 
-                    <entry><ind>0.0</ind><dep>0.0</dep></entry>
-                    <entry><ind>0.5</ind><dep>0.4</dep></entry>
-                    <entry><ind>1.0</ind><dep>1.0</dep></entry>
+                    <property>/controls/flight/speedbrake-norm</property>
+                    <entry>
+                        <ind>0.0</ind>
+                        <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.5</ind>
+                        <dep>0.4</dep>
+                    </entry>
+                    <entry>
+                        <ind>1.0</ind>
+                        <dep>1.0</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -780,7 +909,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -788,9 +917,9 @@
         <output>/controls/flight/spoiler-10</output>
         <max-rate-of-change>0.5</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 11 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -804,10 +933,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/speedbrake-norm</property> 
-                    <entry><ind>0.0</ind><dep>0.0</dep></entry>
-                    <entry><ind>0.5</ind><dep>0.4</dep></entry>
-                    <entry><ind>1.0</ind><dep>1.0</dep></entry>
+                    <property>/controls/flight/speedbrake-norm</property>
+                    <entry>
+                        <ind>0.0</ind>
+                        <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind>0.5</ind>
+                        <dep>0.4</dep>
+                    </entry>
+                    <entry>
+                        <ind>1.0</ind>
+                        <dep>1.0</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -824,7 +962,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -832,9 +970,9 @@
         <output>/controls/flight/spoiler-11</output>
         <max-rate-of-change>0.5</max-rate-of-change>
     </filter>
-    
+
     <!-- Spoiler 12 -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -862,7 +1000,7 @@
                     </or>
                 </and>
             </condition>
-            <property>/controls/flight/spoilers</property> 
+            <property>/controls/flight/spoilers</property>
         </input>
         <input>
             <condition>
@@ -877,7 +1015,7 @@
         <min>0.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -885,9 +1023,9 @@
         <output>/controls/flight/spoiler-12</output>
         <max-rate-of-change>0.6</max-rate-of-change>
     </filter>
-    
+
     <!-- Right Spoiler Sum -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -906,11 +1044,11 @@
         </input>
         <output>/controls/flight/spoiler-r-sum</output>
     </filter>
-    
- <!-- =============================================================== -->
- <!-- Roll Control                                                    -->
- <!-- =============================================================== -->
-    
+
+    <!-- =============================================================== -->
+    <!-- Roll Control                                                    -->
+    <!-- =============================================================== -->
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -945,11 +1083,11 @@
         <min>-1.0</min>
         <max>1.0</max>
     </filter>
-    
- <!-- =============================================================== -->
- <!-- Elevator Control                                                -->
- <!-- =============================================================== -->
- 
+
+    <!-- =============================================================== -->
+    <!-- Elevator Control                                                -->
+    <!-- =============================================================== -->
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -963,10 +1101,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/systems/hydraulic/elevator-manual</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                    <property>/systems/hydraulic/elevator-manual</property>
+                    <entry>
+                        <ind>-1</ind>
+                        <dep>-0.5</dep>
+                    </entry>
+                    <entry>
+                        <ind> 0</ind>
+                        <dep> 0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1</ind>
+                        <dep> 0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -979,10 +1126,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/elevator-fde</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                    <property>/controls/flight/elevator-fde</property>
+                    <entry>
+                        <ind>-1</ind>
+                        <dep>-0.5</dep>
+                    </entry>
+                    <entry>
+                        <ind> 0</ind>
+                        <dep> 0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1</ind>
+                        <dep> 0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -990,7 +1146,7 @@
         <min>-0.5</min>
         <max>0.5</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -998,7 +1154,7 @@
         <output>/controls/flight/elevator-left</output>
         <max-rate-of-change>2.5</max-rate-of-change>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -1012,10 +1168,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/systems/hydraulic/elevator-manual</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                    <property>/systems/hydraulic/elevator-manual</property>
+                    <entry>
+                        <ind>-1</ind>
+                        <dep>-0.5</dep>
+                    </entry>
+                    <entry>
+                        <ind> 0</ind>
+                        <dep> 0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1</ind>
+                        <dep> 0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -1028,10 +1193,19 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/elevator-fde</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                    <property>/controls/flight/elevator-fde</property>
+                    <entry>
+                        <ind>-1</ind>
+                        <dep>-0.5</dep>
+                    </entry>
+                    <entry>
+                        <ind> 0</ind>
+                        <dep> 0.0</dep>
+                    </entry>
+                    <entry>
+                        <ind> 1</ind>
+                        <dep> 0.5</dep>
+                    </entry>
                 </table>
             </expression>
         </input>
@@ -1039,7 +1213,7 @@
         <min>-0.5</min>
         <max>0.5</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -1047,7 +1221,7 @@
         <output>/controls/flight/elevator-right</output>
         <max-rate-of-change>2.5</max-rate-of-change>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -1065,10 +1239,10 @@
         <max>1.0</max>
     </filter>
 
- <!-- =============================================================== -->
- <!-- Rudder Control                                                  -->
- <!-- =============================================================== -->
- 
+    <!-- =============================================================== -->
+    <!-- Rudder Control                                                  -->
+    <!-- =============================================================== -->
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -1093,16 +1267,34 @@
                 <product>
                     <sum>
                         <table>
-                            <property>/controls/flight/rudder</property> 
-                            <entry><ind>-1</ind><dep>-1.0</dep></entry>
-                            <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                            <entry><ind> 1</ind><dep> 1.0</dep></entry>
+                            <property>/controls/flight/rudder</property>
+                            <entry>
+                                <ind>-1</ind>
+                                <dep>-1.0</dep>
+                            </entry>
+                            <entry>
+                                <ind> 0</ind>
+                                <dep> 0.0</dep>
+                            </entry>
+                            <entry>
+                                <ind> 1</ind>
+                                <dep> 1.0</dep>
+                            </entry>
                         </table>
                         <table>
-                            <property>/controls/flight/rudder-trim</property> 
-                            <entry><ind>-1</ind><dep>-1.0</dep></entry>
-                            <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                            <entry><ind> 1</ind><dep> 1.0</dep></entry>
+                            <property>/controls/flight/rudder-trim</property>
+                            <entry>
+                                <ind>-1</ind>
+                                <dep>-1.0</dep>
+                            </entry>
+                            <entry>
+                                <ind> 0</ind>
+                                <dep> 0.0</dep>
+                            </entry>
+                            <entry>
+                                <ind> 1</ind>
+                                <dep> 1.0</dep>
+                            </entry>
                         </table>
                     </sum>
                     <value>-1.0</value>
@@ -1113,7 +1305,7 @@
         <min>-1.0</min>
         <max>1.0</max>
     </filter>
-    
+
     <filter>
         <debug>false</debug>
         <type>noise-spike</type>
@@ -1121,13 +1313,13 @@
         <output>/controls/flight/rudder-sum</output>
         <max-rate-of-change>2.5</max-rate-of-change>
     </filter>
-    
- <!-- =============================================================== -->
- <!-- Speedbrake Logic                                                -->
- <!-- =============================================================== -->
- 
+
+    <!-- =============================================================== -->
+    <!-- Speedbrake Logic                                                -->
+    <!-- =============================================================== -->
+
     <!-- Speedbrake Sum -->
-    
+
     <filter>
         <debug>false</debug>
         <type>gain</type>
@@ -1180,7 +1372,7 @@
         </input>
         <output>/controls/flight/speedbrake-output</output>
     </filter>
-    
+
     <filter>
         <name>Speedbrake Norm</name>
         <type>noise-spike</type>

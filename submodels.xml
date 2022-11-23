@@ -38,54 +38,54 @@
                      set to 32 the submodel will feel no gravity. If greater than 32 the object
                      will rise. Default is 0.
       <wind>         Set to true if you want the submodel to react to the wind.  Default is "false". 
--->  
- 
+-->
+
 <PropertyList>
 
 
-  <submodel>
-    <name>left engine contrail</name>
-    <model>Models/Geometry/contrail.xml</model>
-    <trigger>sim/ai/submodels/contrails</trigger>
-    <speed>10</speed>
-    <repeat>true</repeat>
-    <delay>0.1</delay>
-    <count>-1</count>
-    <x-offset>-7.0</x-offset>
-    <y-offset>-16.0</y-offset>
-    <z-offset>0.0</z-offset>
-		<yaw-offset>180</yaw-offset>
-    <life>12</life>
-    <buoyancy>32.0</buoyancy>
-    <aero-stabilised>0</aero-stabilised>
-    <wind>true</wind>
-		<eda>10</eda>
-		<cd>0.5</cd>
-		<weight>10</weight>
-		<random>1</random>
-  </submodel>
+    <submodel>
+        <name>left engine contrail</name>
+        <model>Models/Geometry/contrail.xml</model>
+        <trigger>sim/ai/submodels/contrails</trigger>
+        <speed>10</speed>
+        <repeat>true</repeat>
+        <delay>0.1</delay>
+        <count>-1</count>
+        <x-offset>-7.0</x-offset>
+        <y-offset>-16.0</y-offset>
+        <z-offset>0.0</z-offset>
+        <yaw-offset>180</yaw-offset>
+        <life>12</life>
+        <buoyancy>32.0</buoyancy>
+        <aero-stabilised>0</aero-stabilised>
+        <wind>true</wind>
+        <eda>10</eda>
+        <cd>0.5</cd>
+        <weight>10</weight>
+        <random>1</random>
+    </submodel>
 
 
-  <submodel>
-    <name>right engine contrail</name>
-    <model>Models/Geometry/contrail.xml</model>
-    <trigger>sim/ai/submodels/contrails</trigger>
-    <speed>10</speed>
-    <repeat>true</repeat>
-    <delay>0.1</delay>
-    <count>-1</count>
-    <x-offset>-7.0</x-offset>
-    <y-offset>16.0</y-offset>
-    <z-offset>0.0</z-offset>
-		<yaw-offset>180</yaw-offset>
-    <life>12</life>
-    <buoyancy>32</buoyancy>
-    <aero-stabilised>0</aero-stabilised>
-    <wind>true</wind>
-		<eda>10</eda>
-		<cd>0.5</cd>
-		<weight>10</weight>
-		<random>1</random>
-  </submodel>
+    <submodel>
+        <name>right engine contrail</name>
+        <model>Models/Geometry/contrail.xml</model>
+        <trigger>sim/ai/submodels/contrails</trigger>
+        <speed>10</speed>
+        <repeat>true</repeat>
+        <delay>0.1</delay>
+        <count>-1</count>
+        <x-offset>-7.0</x-offset>
+        <y-offset>16.0</y-offset>
+        <z-offset>0.0</z-offset>
+        <yaw-offset>180</yaw-offset>
+        <life>12</life>
+        <buoyancy>32</buoyancy>
+        <aero-stabilised>0</aero-stabilised>
+        <wind>true</wind>
+        <eda>10</eda>
+        <cd>0.5</cd>
+        <weight>10</weight>
+        <random>1</random>
+    </submodel>
 
 </PropertyList>

@@ -248,7 +248,7 @@
             </equals>
         </condition>
     </animation>
-    
+
     <!-- Gear animations: Main Left -->
     <animation>
         <type>rotate</type>
@@ -825,7 +825,7 @@
             <x2-m>1.707408</x2-m>
             <y2-m>5.18733</y2-m>
             <z2-m>-0.309039</z2-m>
-            
+
         </axis>
     </animation>
     <animation>
@@ -1292,12 +1292,12 @@
         <property>controls/flight/spoiler-4</property>
         <factor>-38</factor>
         <axis>
-           <x1-m>2.3033</x1-m>
-           <y1-m>-7.29422</y1-m>
-           <z1-m>0.143288</z1-m>
-           <x2-m>1.945208</x2-m>
-           <y2-m>-6.2657</y2-m>
-           <z2-m>0.047408</z2-m>
+            <x1-m>2.3033</x1-m>
+            <y1-m>-7.29422</y1-m>
+            <z1-m>0.143288</z1-m>
+            <x2-m>1.945208</x2-m>
+            <y2-m>-6.2657</y2-m>
+            <z2-m>0.047408</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1377,12 +1377,12 @@
         <property>controls/flight/spoiler-9</property>
         <factor>-38</factor>
         <axis>
-           <x1-m>1.945208</x1-m>
-           <y1-m>6.2657</y1-m>
-           <z1-m>0.047408</z1-m>
-           <x2-m>2.3033</x2-m>
-           <y2-m>7.29422</y2-m>
-           <z2-m>0.143288</z2-m>
+            <x1-m>1.945208</x1-m>
+            <y1-m>6.2657</y1-m>
+            <z1-m>0.047408</z1-m>
+            <x2-m>2.3033</x2-m>
+            <y2-m>7.29422</y2-m>
+            <z2-m>0.143288</z2-m>
         </axis>
     </animation>
     <animation>

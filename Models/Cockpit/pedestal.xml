@@ -13,9 +13,9 @@
             <z-m>0.549219</z-m>
         </center>
         <axis>
-            
+
             <y>1</y>
-            
+
         </axis>
     </animation>
 
@@ -31,9 +31,9 @@
             <z-m>0.549219</z-m>
         </center>
         <axis>
-            
+
             <y>1</y>
-            
+
         </axis>
     </animation>
     <!-- Throttle: N1 -->
@@ -50,9 +50,9 @@
             <z-m>0.549219</z-m>
         </center>
         <axis>
-            
+
             <y>1</y>
-            
+
         </axis>
     </animation>
 
@@ -70,9 +70,9 @@
             <z-m>0.549219</z-m>
         </center>
         <axis>
-            
+
             <y>1</y>
-            
+
         </axis>
     </animation>
 
@@ -112,9 +112,9 @@
             <z-m>0.55156</z-m>
         </center>
         <axis>
-            
+
             <y>1</y>
-            
+
         </axis>
     </animation>
     <animation>
@@ -141,9 +141,9 @@
             <z-m>0.55156</z-m>
         </center>
         <axis>
-            
+
             <y>1</y>
-            
+
         </axis>
     </animation>
 </PropertyList>

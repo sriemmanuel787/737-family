@@ -4,8 +4,8 @@
 
 <PropertyList>
 
-	<name>aircraft-config-fuel</name>
-	<layout>vbox</layout>
+    <name>aircraft-config-fuel</name>
+    <layout>vbox</layout>
 
     <group>
         <layout>hbox</layout>
@@ -24,83 +24,83 @@
             </binding>
         </button>
     </group>
-	
-    <hrule/>
 
-	<group>
-	<layout>vbox</layout>
-	
-		<group>
-		<layout>table</layout>
+    <hrule />
 
-		<text>
-		    <label>Request Fuel</label>
+    <group>
+        <layout>vbox</layout>
 
-		    <halign>right</halign>
-		    <row>0</row>
-		    <col>0</col>
-		</text>		
+        <group>
+            <layout>table</layout>
 
-		<text>
-		    <label>Fuel Quantity in Tanks (lbs)</label>
-		    <halign>right</halign>
-		    <row>1</row>
-		    <col>0</col>
-		</text>
-		
-		<input>
-            <row>1</row>
-            <col>1</col>
-            <property>consumables/fuel/total-fuel-lbs</property>
-            <live>true</live>
+            <text>
+                <label>Request Fuel</label>
+
+                <halign>right</halign>
+                <row>0</row>
+                <col>0</col>
+            </text>
+
+            <text>
+                <label>Fuel Quantity in Tanks (lbs)</label>
+                <halign>right</halign>
+                <row>1</row>
+                <col>0</col>
+            </text>
+
+            <input>
+                <row>1</row>
+                <col>1</col>
+                <property>consumables/fuel/total-fuel-lbs</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </input>
+
+            <input>
+                <row>0</row>
+                <col>1</col>
+                <property>/services/fuel-truck/request-lbs</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </input>
+
+        </group>
+
+        <hrule />
+
+        <checkbox>
+            <label>Enable Fuel Truck</label>
+            <property>services/fuel-truck/enable</property>
             <binding>
                 <command>dialog-apply</command>
             </binding>
-        </input>
-	
-		<input>
-            <row>0</row>
-            <col>1</col>
-            <property>/services/fuel-truck/request-lbs</property>
             <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>Connect pipe to Aircraft</label>
+            <property>services/fuel-truck/connect</property>
             <binding>
                 <command>dialog-apply</command>
             </binding>
-        </input>
-		
-		</group>
-		
-		<hrule />
-		
-			<checkbox>
-				<label>Enable Fuel Truck</label>
-				<property>services/fuel-truck/enable</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>Connect pipe to Aircraft</label>
-				<property>services/fuel-truck/connect</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-		
-		<hrule />
-		
-		<group>
-		<layout>hbox</layout>
-		
-			<button>
-				<legend>Refuel</legend>
-				<padding>5</padding>
-				<binding>
-					<command>nasal</command>
-					<script>
+            <live>true</live>
+        </checkbox>
+
+        <hrule />
+
+        <group>
+            <layout>hbox</layout>
+
+            <button>
+                <legend>Refuel</legend>
+                <padding>5</padding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
 						if ((getprop("services/fuel-truck/enable") == 1) and (getprop("services/fuel-truck/connect") == 1)) {
 
 							if (getprop("/services/fuel-truck/clean") == 1) {
@@ -118,28 +118,28 @@
 							screen.log.write("Please Enable and Connect the Fuel Truck First!", 1, 0, 0);
 
 					</script>
-				</binding>
-			</button>
-			
-			<button>
-				<legend>Stop!</legend>
-				<padding>5</padding>
-				<binding>
-					<command>nasal</command>
-					<script>
+                </binding>
+            </button>
+
+            <button>
+                <legend>Stop!</legend>
+                <padding>5</padding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
 						setprop("/services/fuel-truck/transfer", 0);
 						setprop("/services/fuel-truck/clean", 0);
 						screen.log.write("Operation stopped!", 1, 0, 0);
 					</script>
-				</binding>
-			</button>
-			
-			<button>
-				<legend>Drain Tanks</legend>
-				<padding>5</padding>
-				<binding>
-					<command>nasal</command>
-					<script>
+                </binding>
+            </button>
+
+            <button>
+                <legend>Drain Tanks</legend>
+                <padding>5</padding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
 						if ((getprop("services/fuel-truck/enable") == 1) and (getprop("services/fuel-truck/connect") == 1)) {
 						
 							if (getprop("/services/fuel-truck/transfer") == 1)
@@ -151,11 +151,11 @@
 						} else
 							screen.log.write("Please Enable and Connect the Fuel Truck First!", 1, 0, 0);
 					</script>
-				</binding>
-			</button>
-		
-		</group>
-	
-	</group>
+                </binding>
+            </button>
+
+        </group>
+
+    </group>
 
 </PropertyList>
