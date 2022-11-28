@@ -46,8 +46,8 @@ Distribute under the terms of GPLv2.
     <model>
         <path>Models/Autopush/Kalmar_FB250.ac</path>
         <offsets>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
+            
+            
             <z-m>-0.3</z-m>
             <heading-deg>0</heading-deg>
         </offsets>
@@ -85,9 +85,9 @@ Distribute under the terms of GPLv2.
         <property>&YAW-PROP;</property>
         <factor>&YAW-MULT;</factor>
         <center>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
+            
+            
+            
         </center>
         <axis>
 
@@ -109,8 +109,8 @@ Distribute under the terms of GPLv2.
         <factor>&COUNTER-MULT;</factor>
         <center>
             <x-m>-4.9</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
+            
+            
         </center>
         <axis>
 
@@ -136,9 +136,9 @@ Distribute under the terms of GPLv2.
         <factor>&PITCH-FACTOR;</factor>
         <offset-deg>&PITCH-OFFSET;</offset-deg>
         <center>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
+            
+            
+            
         </center>
         <axis>
 
@@ -155,7 +155,7 @@ Distribute under the terms of GPLv2.
         <center>
             <x-m>-11.78438</x-m>
             <y-m>-0.868919</y-m>
-            <z-m>0</z-m>
+            
         </center>
         <axis>
 
@@ -171,7 +171,7 @@ Distribute under the terms of GPLv2.
         <center>
             <x-m>-11.78438</x-m>
             <y-m>0.868919</y-m>
-            <z-m>0</z-m>
+            
         </center>
         <axis>
 
@@ -189,7 +189,7 @@ Distribute under the terms of GPLv2.
         <factor>-12</factor>
         <center>
             <x-m>-8.51984</x-m>
-            <y-m>0</y-m>
+            
             <z-m>0.69259</z-m>
         </center>
         <axis>
@@ -207,7 +207,7 @@ Distribute under the terms of GPLv2.
         <factor>-12</factor>
         <center>
             <x-m>-11.78438</x-m>
-            <y-m>0</y-m>
+            
             <z-m>0.69259</z-m>
         </center>
         <axis>

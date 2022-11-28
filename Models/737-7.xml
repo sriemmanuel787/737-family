@@ -163,7 +163,7 @@
         <path>Aircraft/737-MAX/Models/Autopush/pushback.xml</path>
         <offsets>
             <x-m>-14.999</x-m>
-            <y-m>0</y-m>
+            
             <z-m>-2.85</z-m>
         </offsets>
     </model>
@@ -284,7 +284,7 @@
         <factor>-1</factor>
         <center>
             <x-m>-13.4822</x-m>
-            <y-m>0</y-m>
+            
             <z-m>-2.06639</z-m>
         </center>
         <axis>
@@ -387,7 +387,7 @@
         <factor>-30</factor>
         <center>
             <x-m>16.1963</x-m>
-            <y-m>0</y-m>
+            
             <z-m>6.19643</z-m>
         </center>
         <axis>
@@ -1142,7 +1142,7 @@
         </condition>
         <offsets>
             <x-m>-4.2</x-m>
-            <y-m>0</y-m>
+            
             <z-m>0.95</z-m>
             <heading-deg>0</heading-deg>
         </offsets>
@@ -1204,9 +1204,9 @@
     <model>
         <path>Aircraft/737-MAX/Models/Services/Services.xml</path>
         <offsets>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
+            
+            
+            
         </offsets>
     </model>
 </PropertyList>
