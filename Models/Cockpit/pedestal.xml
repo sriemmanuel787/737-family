@@ -75,7 +75,7 @@
         <object-name>n1.startknob</object-name>
         <object-name>n1.startfail</object-name>
         <property>controls/engines/engine[0]/cutoff</property>
-        <factor>-40</factor>
+        <factor>40</factor>
         <center>
             <x-m>0.146817</x-m>
             <y-m>-0.049112</y-m>
@@ -99,7 +99,7 @@
         <object-name>n2.startknob</object-name>
         <object-name>n2.startfail</object-name>
         <property>controls/engines/engine[1]/cutoff</property>
-        <factor>-40</factor>
+        <factor>40</factor>
         <center>
             <x-m>0.146817</x-m>
             <y-m>-0.01216</y-m>
@@ -198,9 +198,7 @@
             <z-m>0.55156</z-m>
         </center>
         <axis>
-
             <y>1</y>
-
         </axis>
     </animation>
     <animation>
@@ -222,14 +220,12 @@
             </entry>
         </interpolation>
         <center>
-            <x-m>0.02971</x-m>
+            <x-m>0.040164</x-m>
             <y-m>-0.02676</y-m>
-            <z-m>0.55156</z-m>
+            <z-m>0.549219</z-m>
         </center>
         <axis>
-
             <y>1</y>
-
         </axis>
     </animation>
 </PropertyList>
