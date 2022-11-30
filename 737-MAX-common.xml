@@ -804,8 +804,10 @@
         </fuel>
 
         <lighting>
-            <panel type="float">0</panel>
-            <breaker type="float">0</breaker>
+            <panel type="int">0</panel>
+            <breaker type="int">0</breaker>
+            <pedestal type="int">0</pedestal>
+            <instrument-panel type="int">0</instrument-panel>
             <exit-cover type="int">0</exit-cover>
             <exit type="int">0</exit>
             <no-smoking type="int">0</no-smoking>

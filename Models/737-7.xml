@@ -152,7 +152,7 @@
         <path>Aircraft/737-MAX/Models/Cockpit/cockpit.xml</path>
         <offsets>
             <x-m>-15.025</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>0.943</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -768,7 +768,7 @@
         <name>strobe.rear</name>
         <offsets>
             <x-m>18.63</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>2.06</z-m>
         </offsets>
     </model>
@@ -777,7 +777,7 @@
         <name>strobe.rear.ALS</name>
         <offsets>
             <x-m>18.63</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>2.06</z-m>
         </offsets>
     </model>
@@ -887,7 +887,7 @@
         <path>Aircraft/737-MAX/Models/Lights/beacon.xml</path>
         <name>beacon.bottom</name>
         <offsets>
-            <x-m>0.0</x-m>
+            
             <y-m> 0.00</y-m>
             <z-m>-1.42</z-m>
         </offsets>
@@ -896,7 +896,7 @@
         <path>Aircraft/737-MAX/Models/Lights/ALS/beacon.xml</path>
         <name>beacon.bottom.ALS</name>
         <offsets>
-            <x-m>0.0</x-m>
+            
             <y-m> 0.00</y-m>
             <z-m>-1.55</z-m>
         </offsets>
@@ -945,7 +945,7 @@
         <name>tyre-smoke-n</name>
         <offsets>
             <x-m>-18.00</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>-5.50</z-m>
         </offsets>
     </model>
@@ -976,7 +976,7 @@
         <name>tyre-smoke-n</name>
         <offsets>
             <x-m>-18.00</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>-5.50</z-m>
         </offsets>
     </model>
@@ -1047,7 +1047,7 @@
         <name>~fire_2</name>
         <offsets>
             <x-m>18.63</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>2.06</z-m>
             <heading-deg>0</heading-deg>
         </offsets>

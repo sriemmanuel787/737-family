@@ -128,9 +128,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -232,9 +232,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -258,9 +258,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -284,9 +284,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -390,9 +390,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -416,9 +416,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -442,9 +442,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -538,9 +538,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -562,9 +562,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -586,9 +586,9 @@
                 <offset>0</offset>
             </pitch>
             <position>
-                <x>0.0</x>
+                
                 <y>-20</y>
-                <z>0.0</z>
+                
             </position>
         </engine>
 
@@ -804,7 +804,7 @@
             <position>
                 <x-m>0.25</x-m>
                 <y-m>-1.0</y-m>
-                <z-m>1.0</z-m>
+                <z-m>1</z-m>
             </position>
             <reference-dist>60.0</reference-dist>
             <max-dist>50.0</max-dist>
@@ -830,7 +830,7 @@
             <position>
                 <x-m>0.25</x-m>
                 <y-m>-1.0</y-m>
-                <z-m>1.0</z-m>
+                <z-m>1</z-m>
             </position>
             <reference-dist>60.0</reference-dist>
             <max-dist>50.0</max-dist>

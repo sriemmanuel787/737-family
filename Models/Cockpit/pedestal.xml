@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>Pedestal/pedestal.ac</path>
+    <!-- Interior Lighting -->
+    <animation>
+        <type>knob</type>
+        <object-name>light.pedestal</object-name>
+        
+    </animation>
+    
     <!-- Flap handle -->
     <animation>
         <type>rotate</type>
@@ -165,24 +172,22 @@
     <!-- Rudder pedals -->
     <animation>
         <type>translate</type>
-        <object-name>pedal.L</object-name>
+        <object-name>rudder.pedalLL</object-name>
+        <object-name>rudder.pedalRL</object-name>
         <property>controls/flight/rudder</property>
         <factor>0.05</factor>
         <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0.0</z>
+            <x>1</x>
         </axis>
     </animation>
     <animation>
         <type>translate</type>
-        <object-name>pedal.R</object-name>
+        <object-name>rudder.pedalLR</object-name>
+        <object-name>rudder.pedalRR</object-name>
         <property>controls/flight/rudder</property>
         <factor>-0.05</factor>
         <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0.0</z>
+            <x>1</x>
         </axis>
     </animation>
 
