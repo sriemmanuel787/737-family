@@ -7,7 +7,7 @@
    id="svg1143"
    xml:space="preserve"
    sodipodi:docname="EICAS.svg"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,15 +24,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      showgrid="false"
-     inkscape:zoom="2.1546294"
-     inkscape:cx="705.92185"
-     inkscape:cy="1310.4342"
+     inkscape:zoom="0.53865735"
+     inkscape:cx="697.10364"
+     inkscape:cy="603.35202"
      inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1143" /><defs
+     inkscape:current-layer="svg1143"
+     inkscape:pageshadow="0" /><defs
      id="defs1147"><rect
        x="547.65798"
        y="1259.1492"
@@ -422,7 +423,7 @@
          style="stroke-width:0.472657">1.16</tspan></text><text
        xml:space="preserve"
        transform="scale(0.81926548,1.2206056)"
-       id="text2880"
+       id="vib2"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.8275px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';white-space:pre;display:inline;fill:#ffffff;stroke-width:0.364664"
        inkscape:label="vib2"
        x="220.10835"
@@ -432,7 +433,7 @@
          style="white-space:pre;stroke-width:0.364664">0.0</tspan></text><text
        xml:space="preserve"
        transform="scale(0.81926548,1.2206056)"
-       id="text2884"
+       id="vib1"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.8275px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;fill:#ffffff;stroke-width:0.364664"
        inkscape:label="vib1"
        x="71.316605"
@@ -442,7 +443,7 @@
          style="stroke-width:0.364664">0.0</tspan></text><text
        xml:space="preserve"
        transform="scale(0.81926548,1.2206056)"
-       id="text2864"
+       id="oil-qty2"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.8275px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;fill:#ffffff;stroke-width:0.364664"
        inkscape:label="oil-qty2"
        x="220.10835"
@@ -452,7 +453,7 @@
          style="stroke-width:0.364664">100</tspan></text><text
        xml:space="preserve"
        transform="scale(0.81926548,1.2206056)"
-       id="text2868"
+       id="oil-qty1"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.8275px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;fill:#ffffff;stroke-width:0.364664"
        inkscape:label="oil-qty1"
        x="71.316605"
@@ -462,7 +463,7 @@
          style="stroke-width:0.364664">100</tspan></text><text
        xml:space="preserve"
        transform="scale(0.81926548,1.2206056)"
-       id="text2848"
+       id="oil-temp2"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.8275px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;fill:#ffffff;stroke-width:0.364664"
        inkscape:label="oil-temp2"
        x="220.10835"
@@ -472,7 +473,7 @@
          style="stroke-width:0.364664">999</tspan></text><text
        xml:space="preserve"
        transform="scale(0.81926548,1.2206056)"
-       id="text2852"
+       id="oil-temp1"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.8275px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;fill:#ffffff;stroke-width:0.364664"
        inkscape:label="oil-temp1"
        x="71.316605"
@@ -482,7 +483,7 @@
          style="stroke-width:0.364664">999</tspan></text><text
        xml:space="preserve"
        transform="scale(0.81926548,1.2206056)"
-       id="text2840"
+       id="oil-press2"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.8275px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;fill:#ffffff;stroke-width:0.364664"
        inkscape:label="oil-press2"
        x="220.10835"
@@ -494,7 +495,7 @@
        transform="scale(0.81926548,1.2206056)"
        id="text2830"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.8275px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;display:inline;fill:#ffffff;stroke-width:0.364664"
-       inkscape:label="oil-press1"
+       inkscape:label="oil-press2"
        x="71.316605"
        y="373.23776"><tspan
          id="oil-press1"
@@ -594,7 +595,7 @@
          class="t12"
          id="tspan963"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.0589px;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.75492">100.0</tspan></text><text
-       id="total"
+       id="tank-total"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.8648px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.48873"
        y="517.73834"
        x="324.44037"
@@ -617,7 +618,7 @@
          id="tspan899"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.8648px;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.48873">9
 </tspan></text><text
-       id="tank-l"
+       id="tank-left"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.8648px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:1.48873"
        y="482.14603"
        x="361.5192"
@@ -627,7 +628,7 @@
          id="tspan922"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.8648px;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.48873">9.99
 </tspan></text><text
-       id="tank-c"
+       id="tank-center"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.8648px;line-height:0%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;stroke-width:1.48873"
        y="482.14615"
        x="439.75351"
