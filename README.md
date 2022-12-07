@@ -1,5 +1,6 @@
 # 737-MAX
 A project to create the 737 MAX series for FlightGear, the free flight simulator.
+Original model by omri_ha_muglob
 
 ## Authors
 - Israel Emmanuel(naviat) - Systems, Animations
