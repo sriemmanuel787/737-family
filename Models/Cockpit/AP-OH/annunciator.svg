@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="420"
+   height="210"
+   viewBox="0 0 111.125 55.562502"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="annunciator.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="2.7865881"
+     inkscape:cx="214.95821"
+     inkscape:cy="141.03268"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="38.03935"
+       y="23.684878"
+       width="329.43513"
+       height="139.23838"
+       id="rect5080" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+       id="rect31"
+       height="55.5625"
+       x="0"
+       y="0"
+       width="111.125" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text5078"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect5080)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;line-height:1.25;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.2605"
+       x="25.572891"
+       y="12.526819"
+       id="flt-cont"
+       transform="scale(0.98456944,1.0156724)"><tspan
+         sodipodi:role="line"
+         id="tspan6580"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke-width:0.2605"
+         x="25.572891"
+         y="12.526819">FLT CONT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;line-height:1.25;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.2605"
+       x="28.528543"
+       y="31.093239"
+       id="irs"
+       transform="scale(0.98456944,1.0156724)"><tspan
+         sodipodi:role="line"
+         id="tspan6580-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke-width:0.2605"
+         x="28.528543"
+         y="31.093239">IRS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;line-height:1.25;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.2605"
+       x="28.28204"
+       y="49.535969"
+       id="fuel"
+       transform="scale(0.98456944,1.0156724)"><tspan
+         sodipodi:role="line"
+         id="tspan6580-7-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke-width:0.2605"
+         x="28.28204"
+         y="49.535969">FUEL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;line-height:1.25;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.2605"
+       x="84.736862"
+       y="12.526694"
+       id="elec"
+       transform="scale(0.98456944,1.0156724)"><tspan
+         sodipodi:role="line"
+         id="tspan6580-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke-width:0.2605"
+         x="84.736862"
+         y="12.526694">ELEC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;line-height:1.25;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.2605"
+       x="85.060158"
+       y="30.935635"
+       id="apu"
+       transform="scale(0.98456944,1.0156724)"><tspan
+         sodipodi:role="line"
+         id="tspan6580-7-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke-width:0.2605"
+         x="85.060158"
+         y="30.935635">APU</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;line-height:1.25;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.2605"
+       x="85.024788"
+       y="49.533131"
+       id="ovht-det"
+       transform="scale(0.98456944,1.0156724)"><tspan
+         sodipodi:role="line"
+         id="tspan6580-7-7-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.42px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffff00;fill-opacity:1;stroke-width:0.2605"
+         x="85.024788"
+         y="49.533131">OVHT/DET</tspan></text>
+  </g>
+</svg>
