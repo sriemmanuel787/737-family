@@ -24,9 +24,9 @@
     <model>
         <path>Aircraft/737-MAX/Models/Cockpit/AP-Panel.xml</path>
         <offsets>
-            <x-m>-0.41118</x-m>
-            
-            <z-m>-0.042008</z-m>
+            <x-m>-0.467051</x-m>
+            <y-m>0.000006</y-m>
+            <z-m>0.139449</z-m>
         </offsets>
     </model>
     <model>
