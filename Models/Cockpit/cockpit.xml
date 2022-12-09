@@ -32,9 +32,10 @@
     <model>
         <path>Aircraft/737-MAX/Models/Cockpit/OH-Panel.xml</path>
         <offsets>
-            <x-m>0.043298</x-m>
-            <z-m>0.472224</z-m>
-            <pitch-deg>73.348</pitch-deg>
+            <x-m>-0.021295</x-m>
+            <y-m>-0.004122</y-m>
+            <z-m>0.707994</z-m>
+            <pitch-deg>61.8114</pitch-deg>
         </offsets>
     </model>
 
@@ -56,17 +57,15 @@
         <object-name>column.FO1</object-name>
         <object-name>column.FO2</object-name>
         <property>systems/hydraulic/elevator-manual</property>
-        <factor>7</factor>
+        <factor>-7</factor>
         <offset-deg>5</offset-deg>
         <center>
-            <x-m>-0.410249</x-m>
-            
-            <z-m>-0.960078</z-m>
+            <x-m>-0.408176</x-m>
+            <y-m>-0.479006</y-m>
+            <z-m>-0.909735</z-m>
         </center>
         <axis>
-
-            <y>-1</y>
-
+            <y>1</y>
         </axis>
     </animation>
     <animation>
@@ -79,13 +78,11 @@
         <factor>-60</factor>
         <center>
             <x-m>-0.355549</x-m>
-            <y-m>-0.50028</y-m>
-            <z-m>-0.168406</z-m>
+            <y-m>-0.477626</y-m>
+            <z-m>-0.11806</z-m>
         </center>
         <axis>
             <x>1</x>
-
-
         </axis>
     </animation>
     <animation>
@@ -98,13 +95,11 @@
         <factor>-60</factor>
         <center>
             <x-m>-0.355549</x-m>
-            <y-m>0.50028</y-m>
-            <z-m>-0.168406</z-m>
+            <y-m>0.478548</y-m>
+            <z-m>-0.118032</z-m>
         </center>
         <axis>
             <x>1</x>
-
-
         </axis>
     </animation>
 
