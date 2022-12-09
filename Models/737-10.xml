@@ -18,7 +18,7 @@
         <path>Aircraft/737-MAX/Models/Cockpit/cockpit.xml</path>
         <offsets>
             <x-m>-18.346929</x-m>
-            <y-m>0.138145</y-m>
+            <!-- <y-m>-0.138145</y-m> -->
             <z-m>0.814206</z-m>
         </offsets>
     </model>
