@@ -2,17 +2,7 @@
 <PropertyList>
     <path>cockpit.ac</path>
 
-    <!-- <effect>
-        <inherits-from>Effects/model</inherits-from>
-        <parameters>
-            <lightmap-enabled>
-                <use>controls/lighting/landing-lights-norm</use>
-            </lightmap-enabled>
-            <texture n="3">
-                <image>Aircraft/737-MAX/Models/Effects/LightMap/lightmap-cockpit.png</image>
-            </texture>
-        </parameters>        
-    </effect> -->
+    <!-- Model Subsets -->
     <model>
         <path>Aircraft/737-MAX/Models/Cockpit/pedestal.xml</path>
         <offsets>
@@ -36,6 +26,24 @@
             <y-m>-0.004122</y-m>
             <z-m>0.707994</z-m>
             <pitch-deg>61.8114</pitch-deg>
+        </offsets>
+    </model>
+
+    <!-- Instruments -->
+    <model>
+        <path>Aircraft/737-MAX/Models/Instruments/PFD1.xml</path>
+        <offsets>
+            <x-m>-0.626476</x-m>
+            <y-m>-0.476571</y-m>
+            <z-m>-0.127213</z-m>
+        </offsets>
+    </model>
+    <model>
+        <path>Aircraft/737-MAX/Models/Instruments/PFD2.xml</path>
+        <offsets>
+            <x-m>-0.626476</x-m>
+            <y-m>0.476571</y-m>
+            <z-m>-0.127213</z-m>
         </offsets>
     </model>
 
