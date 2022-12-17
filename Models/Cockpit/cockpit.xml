@@ -29,24 +29,6 @@
         </offsets>
     </model>
 
-    <!-- Instruments -->
-    <model>
-        <path>Aircraft/737-MAX/Models/Instruments/PFD1.xml</path>
-        <offsets>
-            <x-m>-0.626476</x-m>
-            <y-m>-0.476571</y-m>
-            <z-m>-0.127213</z-m>
-        </offsets>
-    </model>
-    <model>
-        <path>Aircraft/737-MAX/Models/Instruments/PFD2.xml</path>
-        <offsets>
-            <x-m>-0.626476</x-m>
-            <y-m>0.476571</y-m>
-            <z-m>-0.127213</z-m>
-        </offsets>
-    </model>
-
     <!-- Yoke animations -->
     <animation>
         <type>rotate</type>
