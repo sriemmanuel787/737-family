@@ -1,11 +1,12 @@
 # 737-MAX
 A project to create the 737 MAX series for FlightGear, the free flight simulator.
-Original model by omri_ha_muglob
+<br>Original model by omri_ha_muglob
 
 ## Authors
 - Israel Emmanuel(naviat) - Systems, Animations
 - SP-NTX - 3D modelling
 - Captain Jake - 3D modelling
+- Semir Gebran (CaptB) - 3D modelling, testing
 - And others
 
 A big thanks to all FlightGear developers, especially those of the 737-800YV, 787, and MD-11. Your work has been crucial to the progress of this aircraft and FlightGear in general. Thanks for your efforts and dedication!
