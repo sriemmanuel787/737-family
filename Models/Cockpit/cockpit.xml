@@ -28,6 +28,13 @@
             <pitch-deg>61.8114</pitch-deg>
         </offsets>
     </model>
+    <model>
+        <path>Aircraft/737-MAX/Models/Instruments/panel.xml</path>
+        <offsets>
+            <x-m>-0.551809</x-m>
+            <y-m>-0.336924</y-m>
+        </offsets>
+    </model>
 
     <!-- Yoke animations -->
     <animation>

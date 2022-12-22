@@ -4,22 +4,22 @@ OBJECT world
 name "Blender_exporter_v3.3__panel.ac"
 kids 1
 OBJECT poly
-name "EICAS.captL"
+name "screen1.full"
 data 5
 Plane
 crease 40.0
 texture "tex.png"
 numvert 4
--0.44429 -0.08705 0.02847
--0.44429 -0.23855 0.02847
--0.44429 -0.08705 -0.07393
--0.44429 -0.23855 -0.07393
+0 0.07575 0.1024
+0 -0.07575 0.1024
+0 0.07575 -0.1024
+0 -0.07575 -0.1024
 numsurf 1
 SURF 0X0
 mat 0
 refs 4
-0 0 0
-1 1 0
-3 1 1
-2 0 1
+0 0 1
+1 0 0
+3 1 0
+2 1 1
 kids 0

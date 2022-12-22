@@ -92,8 +92,8 @@ var canvas_EICAS = {
 		me["fuel-flow2"].setText(sprintf("%0.1f", getprop("/engines/engine[1]/fuel-flow_pph")*LB2KG/1000));
 		me["oil-press1"].setText(sprintf("%i", getprop("/engines/engine[0]/oil-pressure-psi")));
 		me["oil-press2"].setText(sprintf("%i", getprop("/engines/engine[1]/oil-pressure-psi")));
-		# me["oil-press-meter1"].setTranslation(0, getprop("/engines/engine[0]/oil-pressure-psi")*(-2))
-		# me["oil-press-meter2"].setTranslation(0, getprop("/engines/engine[1]/oil-pressure-psi")*(-2))
+		me["oil-press-meter1"].setTranslation(0, getprop("/engines/engine[0]/oil-pressure-psi")*(-2))
+		me["oil-press-meter2"].setTranslation(0, getprop("/engines/engine[1]/oil-pressure-psi")*(-2))
 		
 		#Warnings
 		if (getprop("/controls/engines/engine[0]/starter") > 0)
@@ -154,16 +154,16 @@ var canvas_EICAS = {
 		else
 			me["flap-dial"].setRotation(getprop("/surface-positions/flap-pos-norm[0]")*270*D2R);
 		
-		# if (getprop("/surface-positions/flap-pos-norm[0]") = 0.125 or getprop("/surface-positions/flap-pos-norm[0]") = 0.25 or getprop("/surface-positions/flap-pos-norm[0]") = 0.375 or getprop("/surface-positions/flap-pos-norm[0]") = 0.5 or or getprop("/surface-positions/flap-pos-norm[0]") = 0.625 or getprop("/surface-positions/flap-pos-norm[0]") = 0.75 or getprop("/surface-positions/flap-pos-norm[0]") = 0.825 or getprop("/surface-positions/flap-pos-norm[0]") = 1){
-			# me["flaps-ext"].show();
-			# me["flaps-trans"].hide();
-		# } else if(getprop("/surface-positions/flap-pos-norm[0]") = 0){
-			# me["flaps-ext"].hide();
-			# me["flaps-trans"].hide();
-		# } else {
-			# me["flaps-ext"].hide();
-			# me["flaps-trans"].show();
-		# }
+		if (getprop("/surface-positions/flap-pos-norm[0]") = 0.125 or getprop("/surface-positions/flap-pos-norm[0]") = 0.25 or getprop("/surface-positions/flap-pos-norm[0]") = 0.375 or getprop("/surface-positions/flap-pos-norm[0]") = 0.5 or or getprop("/surface-positions/flap-pos-norm[0]") = 0.625 or getprop("/surface-positions/flap-pos-norm[0]") = 0.75 or getprop("/surface-positions/flap-pos-norm[0]") = 0.825 or getprop("/surface-positions/flap-pos-norm[0]") = 1){
+			me["flaps-ext"].show();
+			me["flaps-trans"].hide();
+		  else if(getprop("/surface-positions/flap-pos-norm[0]") = 0){
+			me["flaps-ext"].hide();
+			me["flaps-trans"].hide();
+		} else {
+			me["flaps-ext"].hide();
+			me["flaps-trans"].show();
+		}
 		
 		#Misc
 		me["air-temp"].setText(sprintf("%+i" ,getprop("/fdm/jsbsim/propulsion/tat-c")) + "c");
@@ -172,7 +172,7 @@ var canvas_EICAS = {
 			me["flt-mode"].setText(sprintf("%s",getprop("/it-autoflight/input/thrustStg")));
 		else
       		me["flt-mode"].setText(sprintf("%s","CRZ"));
-
+        }
 	},
 };
 

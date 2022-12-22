@@ -2381,10 +2381,10 @@ numsurf 1
 SURF 0X0
 mat 1
 refs 4
-0 0 0
-1 1 0
-3 1 0.5
-2 0 0.5
+0 0 0.5
+1 0 0
+3 1 0
+2 1 0.5
 kids 0
 OBJECT poly
 name "ap.cmdA"
