@@ -29,10 +29,39 @@
         </offsets>
     </model>
     <model>
-        <path>Aircraft/737-MAX/Models/Instruments/panel.xml</path>
+        <path>Aircraft/737-MAX/Models/Instruments/capt-L.xml</path>
         <offsets>
-            <x-m>-0.551809</x-m>
-            <y-m>-0.336924</y-m>
+            <x-m>-0.631638</x-m>
+            <y-m>-0.560049</y-m>
+            <z-m>-0.079459</z-m>
+            <pitch-deg>2.67672</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+        <path>Aircraft/737-MAX/Models/Instruments/capt-R.xml</path>
+        <offsets>
+            <x-m>-0.631638</x-m>
+            <y-m>-0.227789</y-m>
+            <z-m>-0.079459</z-m>
+            <pitch-deg>2.67672</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+        <path>Aircraft/737-MAX/Models/Instruments/fo-L.xml</path>
+        <offsets>
+            <x-m>-0.631638</x-m>
+            <y-m>0.227789</y-m>
+            <z-m>-0.079459</z-m>
+            <pitch-deg>2.67672</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+        <path>Aircraft/737-MAX/Models/Instruments/fo-R.xml</path>
+        <offsets>
+            <x-m>-0.631638</x-m>
+            <y-m>0.560049</y-m>
+            <z-m>-0.079459</z-m>
+            <pitch-deg>2.67672</pitch-deg>
         </offsets>
     </model>
 

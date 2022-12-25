@@ -1,6 +1,6 @@
 # ==============================================================================
-# For 737-800 by Michael Soitanen
-# Updated and Expanded according to FCOM by Jonathan Redpath
+# 737 MAX Primary Flight Display
+# Israel Emmanuel
 # ==============================================================================
 
 var PFDC_canvas = nil;
@@ -20,28 +20,28 @@ var canvas_PFDC = {
 		foreach(var key; svg_keys)
 			m[key] = PFDC.getElementById(key);
 
-        m["alt-tape0"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape1"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape2"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape3"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape4"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape5"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape6"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape7"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape8"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-tape9"].set("clip", "rect(803, 58, 61, 348)");
-        m["alt-20"].set("clip", "rect(822, 210, 63, 44)");
-        m["alt-100"].set("clip", "rect(822, 210, 63, 44)");
-        m["alt-1000"].set("clip", "rect(822, 210, 63, 44)");
-        m["alt-10000"].set("clip", "rect(822, 210, 63, 44)");
-        # m["spd-1"].set("clip", "rect(208, 480, 255, 438)");
-        # m["spd-10"].set("clip", "rect(208, 480, 255, 438)");
-        # m["spd-100"].set("clip", "rect(208, 480, 255, 438)");
-        m["spd-limitUR"].set("clip", "rect(500, 58, 6, 348)");
-        m["spd-limitUB"].set("clip", "rect(500, 58, 6, 348)");
-        m["spd-limitLR"].set("clip", "rect(500, 58, 6, 348)");
-        m["spd-limitLB"].set("clip", "rect(500, 58, 6, 348)");
-        m["spd-limitY"].set("clip", "rect(500, 58, 6, 348)");
+        m["alt-tape0"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape1"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape2"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape3"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape4"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape5"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape6"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape7"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape8"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-tape9"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
+        m["alt-20"].set("clip", "rect(217.488, 55.653, 16.669, 11.642)");
+        m["alt-100"].set("clip", "rect(217.488, 55.653, 16.669, 11.642)");
+        m["alt-1000"].set("clip", "rect(217.488, 55.653, 16.669, 11.642)");
+        m["alt-10000"].set("clip", "rect(217.488, 55.653, 16.669, 11.642)");
+        m["spd-1"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
+        m["spd-10"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
+        m["spd-100"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
+        m["spd-limitUR"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
+        m["spd-limitUB"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
+        m["spd-limitLR"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
+        m["spd-limitLB"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
+        m["spd-limitY"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
         m.timers=[];
 		return m;
 	},
@@ -250,7 +250,7 @@ var canvas_PFDC = {
 setlistener("sim/signals/fdm-initialized", func() {
 	PFDC_display = canvas.new({
 		"name": "PFDC",
-		"size": [970, 726],
+		"size": [1940, 1452],
 		"view": [256, 192],
 		"mipmapping": 1
 	});
