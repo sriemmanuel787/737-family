@@ -44,6 +44,29 @@ var canvas_EICAS = {
         me["n2-dial1"].setCenter(72, 296);
         me["n2-dial2"].setCenter(197, 296);
         me["flap-dial"].setCenter(363, 408);
+
+        # Engine N1
+        me["n1-dial1"].setRotation(getprop("engines/engine[0]/n1")*2*D2R);
+        me["throttle-n1"].setRotation(getprop("controls/engines/engine[0]")*2*D2R)
+        me["egt-dial1"].setRotation(getprop("engines/engine[0]/egt-actual")*0.2*D2R);
+        me["n2-dial1"].setRotation(getprop("engines/engine[0]/n2")*2*D2R);
+        me["n1-text1"].setText(sprintf("%.1", getprop("engines/engine[0]/n1")));
+        me["throttle-num1"].setText(sprintf("%.1", getprop("controls/engines/engine[0]")));
+        me["egt-text1"].setText(sprintf("%i", getprop("engines/engine[0]/egt-actual")));
+        me["n2-text1"].setText(sprintf("%.1", getprop("engines/engine[0]/n2")));
+        me["fuelflow1"].setText(sprintf("%.2", getprop("engines/engine[0]/fuel-flow_pph")*LB2KG));
+        
+        # Engine N2
+        me["n1-dial2"].setRotation(getprop("engines/engine[1]/n1")*2*D2R);
+        me["throttle-n2"].setRotation(getprop("controls/engines/engine[1]")*2*D2R)
+        me["egt-dial2"].setRotation(getprop("engines/engine[1]/egt-actual")*0.2*D2R);
+        me["n2-dial2"].setRotation(getprop("engines/engine[1]/n2")*2*D2R);
+        me["n1-text2"].setText(sprintf("%.1", getprop("engines/engine[1]/n1")));
+        me["throttle-num2"].setText(sprintf("%.1", getprop("controls/engines/engine[1]")));
+        me["egt-text2"].setText(sprintf("%i", getprop("engines/engine[1]/egt-actual")));
+        me["n2-text2"].setText(sprintf("%.1", getprop("engines/engine[1]/n2")));
+        me["fuelflow2"].setText(sprintf("%.2", getprop("engines/engine[1]/fuel-flow_pph")*LB2KG));
+
 		
 	}
 };
@@ -59,12 +82,12 @@ setlistener("sim/signals/fdm-initialized", func() {
 	var group = EICAS_display.createGroup();
 	EICAS_canvas = canvas_EICAS.new(group);
     EICAS_canvas.newMFD();
- 	#EICAS_canvas.update();
+ 	EICAS_canvas.update();
 }, 0, 0);
 
 #setlistener("sim/signals/reinit", func EICAS_display.del());
 
 var showEICAS = func() {
-	var dlg = canvas.Window.new([1024, 1515], "dialog").set("resize", 1);
+	var dlg = canvas.Window.new([484, 726], "dialog").set("resize", 1);
 	dlg.setCanvas(EICAS_display);
 }

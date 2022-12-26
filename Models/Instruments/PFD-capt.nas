@@ -5,6 +5,7 @@
 
 var PFDC_canvas = nil;
 var PFDC_display = nil;
+var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
 var canvas_PFDC = {
 	new: func(canvas_group) {
@@ -20,28 +21,29 @@ var canvas_PFDC = {
 		foreach(var key; svg_keys)
 			m[key] = PFDC.getElementById(key);
 
-        m["alt-tape0"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape1"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape2"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape3"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape4"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape5"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape6"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape7"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape8"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-tape9"].set("clip", "rect(212.46, 15.346, 16.14, 92.075)");
-        m["alt-20"].set("clip", "rect(217.488, 55.653, 16.669, 11.642)");
-        m["alt-100"].set("clip", "rect(217.488, 55.653, 16.669, 11.642)");
-        m["alt-1000"].set("clip", "rect(217.488, 55.653, 16.669, 11.642)");
-        m["alt-10000"].set("clip", "rect(217.488, 55.653, 16.669, 11.642)");
+        m["alt-tape0"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape1"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape2"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape3"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape4"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape5"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape6"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape7"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape8"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-tape9"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-ground"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
+        m["alt-20"].set("clip", "rect(55.563, 234.156, 67.204, 217.488)");
+        m["alt-100"].set("clip", "rect(55.563, 234.156, 67.204, 217.488)");
+        m["alt-1000"].set("clip", "rect(55.563, 234.156, 67.204, 217.488)");
+        m["alt-10000"].set("clip", "rect(55.563, 234.156, 67.204, 217.488)");
         m["spd-1"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
         m["spd-10"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
         m["spd-100"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
-        m["spd-limitUR"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
-        m["spd-limitUB"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
-        m["spd-limitLR"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
-        m["spd-limitLB"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
-        m["spd-limitY"].set("clip", "rect(132.292, 15.346, 1.588, 92.075)");
+        m["spd-limitUR"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
+        m["spd-limitUB"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
+        m["spd-limitLR"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
+        m["spd-limitLB"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
+        m["spd-limitY"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
         m.timers=[];
 		return m;
 	},
@@ -55,7 +57,6 @@ var canvas_PFDC = {
 
 	update: func(){
         #Setup stuff
-        var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
         me["back-trans"].setColorFill(0, 0, 0, 0.3);
 
         # Center Setting
@@ -71,13 +72,13 @@ var canvas_PFDC = {
         me["wind-heading"].setCenter(352, 520);
 
 		# Artificial Horizon
+        me["ground"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
+        me["sky"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
+        me["attitude"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
         me["ground"].setRotation(-getprop("orientation/roll-deg")*D2R);
         me["sky"].setRotation(-getprop("orientation/roll-deg")*D2R);
         me["attitude"].setRotation(-getprop("orientation/roll-deg")*D2R);
         me["turn-coordinator"].setRotation(-getprop("orientation/roll-deg")*D2R);
-        me["ground"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
-        me["sky"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
-        me["attitude"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
 
         # AFDS Mode
         if(getprop("autopilot/display/afds-mode") == "SINGLE CH") {
@@ -110,8 +111,8 @@ var canvas_PFDC = {
         me["xpdr"].setText(getprop("instrumentation/transponder/id-code"));
         me["selcal"].setText("AF-XS");
         me["registration"].setText(getprop("instrumentation/registration/registration"));
-        me["elapsed"].setText(sprintf("%i:%i", getprop("sim/time/steady-clock-sec")/60, math.mod(getprop("sim/time/steady-clock-sec"), 60)));
-        me["day"].setText(getprop("sim/time/utc/day"));
+        me["elapsed"].setText(sprintf("%i:%02i", getprop("sim/time/elapsed-sec")/60, math.mod(getprop("sim/time/elapsed-sec"), 60)));
+        me["day"].setText(sprintf("%i", getprop("sim/time/utc/day")));
         me["month"].setText(months[getprop("sim/time/utc/month") - 1]);
         me["year"].setText(sprintf("%i", math.mod(getprop("sim/time/utc/year"), 100)));
         me["utc"].setText(sprintf("%sz", getprop("sim/time/gmt-string")));
@@ -140,7 +141,7 @@ var canvas_PFDC = {
         elsif(getprop("position/altitude-ft")-getprop("it-autoflight/input/alt") < -400)
             me["ap-alt-tape"].setTranslation(0, -174);
         else
-            me["ap-alt-tape"].setTranslation(0, 174*(getprop("position/altitude-ft")-getprop("it-autoflight/input/alt")));
+            me["ap-alt-tape"].setTranslation(0, 174/400*(getprop("position/altitude-ft")-getprop("it-autoflight/input/alt")));
         
         # Hiding upper tapes by default
         me["alt-tape0"].hide();
@@ -187,11 +188,11 @@ var canvas_PFDC = {
 
         # Low-altitude box
         if(getprop("position/altitude-agl-ft") < 100)
-            me["alt-final"].setText(sprintf("%u", math.round(getprop("position/altitude-agl-ft"), 2)));
+            me["alt-final"].setText(sprintf("%i", math.round(getprop("position/altitude-agl-ft"), 2)));
         elsif (getprop("position/altitude-agl-ft") < 500)
-            me["alt-final"].setText(sprintf("%u", math.round(getprop("position/altitude-agl-ft"), 10)));
+            me["alt-final"].setText(sprintf("%i", math.round(getprop("position/altitude-agl-ft"), 10)));
         elsif (getprop("position/altitude-agl-ft") < 2520)
-            me["alt-final"].setText(sprintf("%u", math.round(getprop("position/altitude-agl-ft"), 20)));
+            me["alt-final"].setText(sprintf("%i", math.round(getprop("position/altitude-agl-ft"), 20)));
         else {
             me["alt-final"].hide();
             me["alt-final-box"].hide();
@@ -211,9 +212,9 @@ var canvas_PFDC = {
         me["alt-20"].setTranslation(0, math.mod(getprop("position/altitude-ft"), 100)*0.86);
 
         if(math.mod(getprop("position/altitude-ft"), 100) > 80)
-            me["alt-100"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 100)) * 0.2775, 248) + ((math.mod(getprop("position/altitude-ft"), 100) - 80) * 1.385));
+            me["alt-100"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 100)) * 0.2755, 248) + ((math.mod(getprop("position/altitude-ft"), 100) - 80) * 1.385));
         else
-            me["alt-100"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 100)) * 0.2775, 248));
+            me["alt-100"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 100)) * 0.2755, 248));
 
         if(math.mod(getprop("position/altitude-ft"), 1000) > 900)
             me["alt-1000"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 1000)) * 0.3, 270.2) + ((math.mod(getprop("position/altitude-ft"), 1000) - 900) * 0.303));
@@ -238,7 +239,7 @@ var canvas_PFDC = {
         } else {
             me["spd-1"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) * 21.3);
             if(math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) > 9){
-                me["spd-10"].setTranslation(0, (getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10)) * 3.43 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) - 9) * 34.3);
+                me["spd-10"].setTranslation(0, (getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10)) * 3.43 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) - 9) * 3.43);
             } else {
                 me["spd-10"].setTranslation(0, (getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10)) * 3.43);
             }
