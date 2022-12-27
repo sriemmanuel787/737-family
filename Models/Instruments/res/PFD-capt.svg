@@ -24,9 +24,9 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1.4474226"
-     inkscape:cx="485.00003"
-     inkscape:cy="224.88249"
+     inkscape:zoom="3.9756659"
+     inkscape:cx="930.6617"
+     inkscape:cy="202.60757"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -843,8 +843,8 @@
       <path
          id="aoa-needle"
          class="s2"
-         d="m 895,231 h 22 v 2 h -22 z"
-         style="fill:#ffffff" />
+         d="m 765.08192,231 h 323.83618 v 2 H 765.08192 Z"
+         style="fill:#ffffff;stroke-width:3.83665" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.4591px;line-height:125%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:0.350952"
