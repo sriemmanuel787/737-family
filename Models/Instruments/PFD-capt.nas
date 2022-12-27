@@ -17,7 +17,7 @@ var canvas_PFDC = {
 		
 		canvas.parsesvg(PFDC, "Aircraft/737-MAX/Models/Instruments/res/PFD-capt.svg" , {'font-mapper': font_mapper});
 		
-		var svg_keys = ["ground", "sky", "attitude", "turn-coordinator", "max-attitude", "afds-mode", "single-ch-back", "single-ch", "vor1", "vor2", "dme1", "dme2", "flt-no", "xpdr", "selcal", "registration", "day", "month", "year", "elapsed", "utc", "timer-arm", "timer-analog", "back-trans", "compass-text", "compass", "ap-heading", "sel-hdg", "hdg-type", "press-set", "wind-heading", "wing-stats", "ground-speed", "true-airspeed", "fd-horizontal", "fd-vertical", "alt-ground", "ap-alt-tape", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-tape8", "alt-tape9", "alt-neg", "alt-20", "alt-100", "alt-1000", "alt-10000", "alt-00000", "alt-m", "alt-final-box", "alt-final", "ap-alt-thousand", "ap-alt-hundred", "ap-alt-meter", "spd-box", "spd-tape", "mach", "spd-1", "spd-10", "spd-100", "spd-ap", "spd-limitUR", "spd-limitUB", "spd-limitLR", "spd-limitLB", "spd-limitY", "aoa-needle", "vs-neg", "vs-pos", "vnav", "lnav", "a-throttle", "ap-mode"];
+		var svg_keys = ["ground", "sky", "attitude", "turn-coordinator", "max-attitude", "afds-mode", "single-ch-back", "single-ch", "vor1", "vor2", "dme1", "dme2", "flt-no", "xpdr", "selcal", "registration", "day", "month", "year", "elapsed", "utc", "timer-arm", "timer-analog", "back-trans", "compass-text", "compass", "ap-heading", "sel-hdg", "hdg-type", "press-set", "wind-arrow", "wind-speed", "wind-heading","wing-stats", "ground-speed", "true-airspeed", "fd-horizontal", "fd-vertical", "alt-ground", "ap-alt-tape", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-tape8", "alt-tape9", "alt-neg", "alt-20", "alt-100", "alt-1000", "alt-10000", "alt-00000", "alt-m", "alt-final-box", "alt-final", "ap-alt-thousand", "ap-alt-hundred", "ap-alt-meter", "spd-box", "spd-tape", "mach", "spd-1", "spd-10", "spd-100", "spd-ap", "spd-limitUR", "spd-limitUB", "spd-limitLR", "spd-limitLB", "spd-limitY", "aoa-needle", "vs-neg", "vs-pos", "vnav", "lnav", "a-throttle", "ap-mode"];
 		foreach(var key; svg_keys)
 			m[key] = PFDC.getElementById(key);
 
@@ -56,21 +56,20 @@ var canvas_PFDC = {
         m["compass-text"].setCenter(647, 654);
         m["compass"].setCenter(647, 654);
         m["ap-heading"].setCenter(647, 654);
-        m["wind-heading"].setCenter(352, 520);
+        m["wind-arrow"].setCenter(352, 520);
         m.timers=[];
 
-        
 		return m;
 	},
 
-    newMFD: func(){
+    newMFD: func() {
  		me.update_timer = maketimer(0.05, func me.update());
  		me.update_timer.start();
  		me.update_slow_timer.start();
  		me.update_ap_modes_timer.start();
     },
 
-	update: func(){
+	update: func() {
         #Setup stuff
         me["back-trans"].setColorFill(0, 0, 0, 0.3);
 
@@ -78,12 +77,12 @@ var canvas_PFDC = {
         me["ground"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
         me["sky"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
         me["attitude"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
-        me["ground"].setRotation(-getprop("orientation/roll-deg")*D2R, 647, 232);
-        me["sky"].setRotation(-getprop("orientation/roll-deg")*D2R, 647, 232);
-        me["attitude"].setRotation(-getprop("orientation/roll-deg")*D2R, 647, 232);
+        me["ground"].setRotation(-getprop("orientation/roll-deg")*D2R);
+        me["sky"].setRotation(-getprop("orientation/roll-deg")*D2R);
+        me["attitude"].setRotation(-getprop("orientation/roll-deg")*D2R);
         if (getprop("orientation/roll-deg") > 60)
             me["turn-coordinator"].setRotation(-60*D2R);
-        elsif (getprop("orientation/roll-deg") > -60)
+        elsif (getprop("orientation/roll-deg") < -60)
             me["turn-coordinator"].setRotation(60*D2R);
         else
             me["turn-coordinator"].setRotation(-getprop("orientation/roll-deg")*D2R);
@@ -101,18 +100,8 @@ var canvas_PFDC = {
         }
 
         # NAV Radio
-        me["vor1"].setText(getprop("instrumentation/nav[0]/frequencies/selected-mhz"));
-        me["vor2"].setText(getprop("instrumentation/nav[1]/frequencies/selected-mhz"));
-        if(getprop("instrumentation/nav[0]/dme-in-range")){
-            me["dme1"].setText(getprop("instrumentation/nav[0]/gs-distance"));
-        } else {
-            me["dme1"].setText("---");
-        }
-        if(getprop("instrumentation/nav[1]/dme-in-range")){
-            me["dme2"].setText(getprop("instrumentation/nav[1]/gs-distance"));
-        } else {
-            me["dme2"].setText("---");
-        }
+        me["dme1"].setText(sprintf("%.03d", getprop("instrumentation/nav[0]/frequencies/selected-mhz")));
+        me["dme2"].setText(sprintf("%0.3d", getprop("instrumentation/nav[1]/frequencies/selected-mhz")));
 
         # Auxiliary Panel
         me["flt-no"].setText(getprop("instrumentation/registration/flt-no"));
@@ -128,18 +117,19 @@ var canvas_PFDC = {
         # Heading
         me["compass-text"].setRotation(-getprop("orientation/heading-deg")*D2R);
         me["compass"].setRotation(-getprop("orientation/heading-deg")*D2R);
-        me["ap-heading"].setRotation(-getprop("orientation/heading-deg")*D2R);
         me["ap-heading"].setRotation(-getprop("it-autoflight/input/hdg")*D2R);
+        me["ap-heading"].setRotation(-getprop("orientation/heading-deg")*D2R);
         me["sel-hdg"].setText(sprintf("%i", getprop("it-autoflight/input/hdg")));
 
         # Wind and Speeds
         me["ground-speed"].setText(sprintf("%i", getprop("velocities/groundspeed-kt")));
         me["true-airspeed"].setText(sprintf("%i", getprop("velocities/airspeed-kt")));
-        # me["wind-stats"].setText(sprintf("%03i°/%i", getprop("environment/wind-from-heading-deg"), getprop("enviroment/wind-speed-kt")));
-        me["wind-heading"].setRotation(getprop("environment/wind-from-heading-deg")*D2R);
+        me["wind-heading"].setText(sprintf("%03i", getprop("environment/wind-from-heading-deg")));
+        me["wind-speed"].setText(sprintf("%i", getprop("enviroment/wind-speed-kt")));
+        me["wind-arrow"].setRotation(getprop("environment/wind-from-heading-deg")*D2R);
 
         # Flight Director
-        if(getprop("it-autoflight/input/fd1")){
+        if(getprop("it-autoflight/input/fd1")) {
             me["fd-horizontal"].show();
             me["fd-vertical"].show();
             me["fd-horizontal"].setTranslation(0, getprop("it-autoflight/fd/pitch-bar"));
@@ -170,10 +160,11 @@ var canvas_PFDC = {
         me["alt-tape9"].hide();
 
         # Moving the tapes
+        me["alt-ground"].show().setTranslation(0, getprop("position/altitude-agl-ft")*0.44);
+
         if(getprop("position/altitude-ft") < 4600) {
             me["alt-tape0"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
             me["alt-tape1"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
-            me["alt-ground"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
         } elsif (getprop("position/altitude-ft") < 9600) {
             me["alt-tape1"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
             me["alt-tape2"].show().setTranslation(0, (getprop("position/altitude-ft")-4600)*0.44);
@@ -247,21 +238,29 @@ var canvas_PFDC = {
 
         # Speed Tape
         me["spd-tape"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
-        if(getprop("instrumentation/airspeed-indicator/indicated-speed-kt") < 45){
+        if(getprop("instrumentation/airspeed-indicator/indicated-speed-kt") < 45) {
             me["spd-1"].setTranslation(0, 105);
             me["spd-10"].setTranslation(0, 136.2);
         } else {
             me["spd-1"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) * 21.3);
             if(math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) > 9)
-                me["spd-10"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10), 100) * 3.43 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) - 9) * 3.43);
+                me["spd-10"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10), 100) * 3.43 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) - 9) * 34.3);
             else
                 me["spd-10"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10), 100) * 3.43);
 
             if(math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100) > 90)
-                me["spd-100"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100), 1000) * 0.343 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100) - 90) * 0.343);
+                me["spd-100"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100), 1000) * 0.343 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100) - 90) * 3.43);
             else
                 me["spd-100"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100), 1000) * 0.343);
         }
+        me["mach"].setText(sprintf(".%.03d", getprop("velocities/mach")));
+
+        if(getprop("it-autoflight/input/kts-mach"))
+            me["spd-ap"].setText(sprintf(".%.03d", getprop("it-autoflight/input/spd-mach")));
+        else
+            me["spd-ap"].setText(sprintf("%i", getprop("it-autoflight/input/spd-kts")));
+
+        
         
         # AOA Indicator
         if (math.abs(getprop("velocities/vertical-speed-fps") < 1000))
@@ -278,10 +277,10 @@ var canvas_PFDC = {
 
 
         if(getprop("velocities/vertical-speed-fps") > 500) {
-            me["vs-pos"].show.setText(sprintf("%i", getprop("velocities/vertical-speed-fps") - math.mod(getprop("velocities/vertical-speed-fps")), 50));
+            me["vs-pos"].show().setText(sprintf("%i", getprop("velocities/vertical-speed-fps") - math.mod(getprop("velocities/vertical-speed-fps"), 50)));
             me["vs-neg"].hide();
         } elsif (getprop("velocities/vertical-speed-fps") < -500) {
-            me["vs-neg"].show.setText(sprintf("%i", -getprop("velocities/vertical-speed-fps") + math.mod(getprop("velocities/vertical-speed-fps")), 50));
+            me["vs-neg"].show().setText(sprintf("%i", -getprop("velocities/vertical-speed-fps") + math.mod(getprop("velocities/vertical-speed-fps"), 50)));
             me["vs-pos"].hide();
         } else {
             me["vs-pos"].hide();
@@ -289,7 +288,9 @@ var canvas_PFDC = {
         }
 
         # Autopilot Modes
-        # me["a-throttle"].setText(getprop())
+        me["a-throttle"].setText(getprop("autopilot/display/throttle-mode"));
+        me["lnav"].setText(getprop("it-autoflight/mode/lat"));
+        me["vnav"].setText(getprop("it-autoflight/mode/vert"));
 	},
 };
 
@@ -310,6 +311,6 @@ setlistener("sim/signals/fdm-initialized", func() {
 #setlistener("sim/signals/reinit", func PFDC_display.del());
 
 var showPFDC = func() {
-	var dlg = canvas.Window.new([970, 726], "dialog").set("resize", 1);
+	var dlg = canvas.Window.new([485, 363], "dialog").set("resize", 0.5);
 	dlg.setCanvas(PFDC_display);
 }
