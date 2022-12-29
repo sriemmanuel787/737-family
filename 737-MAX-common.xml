@@ -1156,6 +1156,7 @@
         </cdu>
         <boeing737>
             <file>Aircraft/737-MAX/Models/Instruments/PFD-capt.nas</file>
+            <file>Aircraft/737-MAX/Models/Instruments/PFD-FO.nas</file>
             <file>Aircraft/737-MAX/Models/Instruments/EICAS.nas</file>
             <file>Aircraft/737-MAX/Models/Cockpit/AP-OH/annunciator.nas</file>
             <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>

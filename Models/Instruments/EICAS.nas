@@ -35,24 +35,24 @@ var canvas_EICAS = {
         # Center Setting
         me["n1-dial1"].setCenter(72, 106);
         me["throttle-n1"].setCenter(72, 106);
+        me["egt-dial1"].setCenter(72, 196);
+        me["n2-dial1"].setCenter(72, 296);
         me["n1-dial2"].setCenter(197, 106);
         me["throttle-n2"].setCenter(197, 106);
-        me["throttle-n1"].setCenter(72, 196);
-        me["n1-dial2"].setCenter(197, 196);
-        me["n2-dial1"].setCenter(72, 296);
+        me["egt-dial2"].setCenter(197, 196);
         me["n2-dial2"].setCenter(197, 296);
         me["flap-dial"].setCenter(363, 408);
 
         # Engine N1
         me["n1-dial1"].setRotation(getprop("engines/engine[0]/n1")*2*D2R);
-        me["throttle-n1"].setRotation(getprop("controls/engines/engine[0]/throttle")*200*D2R);
+        me["throttle-n1"].setRotation((getprop("controls/engines/engine[0]/throttle")-0.9)*200*D2R);
         me["egt-dial1"].setRotation(getprop("engines/engine[0]/egt-actual")*0.2*D2R);
         me["n2-dial1"].setRotation(getprop("engines/engine[0]/n2")*2*D2R);
         me["n1-text1"].setText(sprintf("%0.1f", getprop("engines/engine[0]/n1")));
         me["throttle-num1"].setText(sprintf("%0.1f", getprop("controls/engines/engine[0]/throttle")*100));
         me["egt-text1"].setText(sprintf("%i", getprop("engines/engine[0]/egt-actual")));
         me["n2-text1"].setText(sprintf("%0.1f", getprop("engines/engine[0]/n2")));
-        me["fuelflow1"].setText(sprintf("%0.2f", getprop("engines/engine[0]/fuel-flow_pph")*LB2KG));
+        me["fuelflow1"].setText(sprintf("%0.2f", getprop("engines/engine[0]/fuel-flow_pph")*LB2KG/1000));
 
         if(getprop("controls/engines/engine[0]/starter"))
             me["start-valve-open1"].show();
@@ -75,14 +75,14 @@ var canvas_EICAS = {
         
         # Engine N2
         me["n1-dial2"].setRotation(getprop("engines/engine[1]/n1")*2*D2R);
-        me["throttle-n2"].setRotation(getprop("controls/engines/engine[1]/throttle")*200*D2R);
+        me["throttle-n2"].setRotation((getprop("controls/engines/engine[1]/throttle")-0.9)*200*D2R);
         me["egt-dial2"].setRotation(getprop("engines/engine[1]/egt-actual")*0.2*D2R);
         me["n2-dial2"].setRotation(getprop("engines/engine[1]/n2")*2*D2R);
         me["n1-text2"].setText(sprintf("%0.1f", getprop("engines/engine[1]/n1")));
         me["throttle-num2"].setText(sprintf("%0.1f", getprop("controls/engines/engine[1]/throttle")*100));
         me["egt-text2"].setText(sprintf("%i", getprop("engines/engine[1]/egt-actual")));
         me["n2-text2"].setText(sprintf("%0.1f", getprop("engines/engine[1]/n2")));
-        me["fuelflow2"].setText(sprintf("%0.2f", getprop("engines/engine[1]/fuel-flow_pph")*LB2KG));
+        me["fuelflow2"].setText(sprintf("%0.2f", getprop("engines/engine[1]/fuel-flow_pph")*LB2KG/1000));
 
 		if(getprop("controls/engines/engine[1]/starter"))
             me["start-valve-open2"].show();

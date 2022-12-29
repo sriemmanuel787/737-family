@@ -1,12 +1,25 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>Pedestal/pedestal.ac</path>
-    <!-- Interior Lighting -->
-    <animation>
-        <type>knob</type>
-        <object-name>light.pedestal</object-name>
-        
-    </animation>
+    <!-- CDU -->
+    <model>
+        <path>Aircraft/737-MAX/Models/Cockpit/Pedestal/CDU.xml</path>
+        <offsets>
+            <x-m>-0.192361</x-m>
+            <y-m>-0.20549</y-m>
+            <z-m>0.593644</z-m>
+            <pitch-deg>-67.6508</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+        <path>Aircraft/737-MAX/Models/Cockpit/Pedestal/CDU.xml</path>
+        <offsets>
+            <x-m>-0.192361</x-m>
+            <y-m>0.153926</y-m>
+            <z-m>0.593644</z-m>
+            <pitch-deg>-67.6508</pitch-deg>
+        </offsets>
+    </model>
     
     <!-- Flap handle -->
     <animation>

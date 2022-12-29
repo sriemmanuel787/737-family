@@ -21,56 +21,55 @@ var canvas_PFDF = {
 		foreach(var key; svg_keys)
 			m[key] = PFDF.getElementById(key);
 
-        m["alt-tape0"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape1"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape2"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape3"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape4"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape5"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape6"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape7"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape8"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-tape9"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-ground"].set("clip", "rect(15.346, 228.6, 107.421, 212.46)");
-        m["alt-20"].set("clip", "rect(55.563, 234.156, 67.204, 217.488)");
-        m["alt-100"].set("clip", "rect(55.563, 234.156, 67.204, 217.488)");
-        m["alt-1000"].set("clip", "rect(55.563, 234.156, 67.204, 217.488)");
-        m["alt-10000"].set("clip", "rect(55.563, 234.156, 67.204, 217.488)");
-        m["spd-1"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
-        m["spd-10"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
-        m["spd-100"].set("clip", "rect(55.033, 127, 67.469, 115.888)");
-        m["spd-limitUR"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
-        m["spd-limitUB"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
-        m["spd-limitLR"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
-        m["spd-limitLB"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
-        m["spd-limitY"].set("clip", "rect(15.346, 133.879, 61.648, 132.292)");
-        m["spd-tape"].set("clip", "rect(15.346, 500, 132.292, 116.152)");
-        m["aoa-needle"].set("clip", "rect(29.633, 242.623, 93.133, 236.538)");
+        m["alt-tape0"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape1"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape2"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape3"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape4"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape5"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape6"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape7"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape8"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape9"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-ground"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-20"].set("clip", "rect(210, 561, 254, 498)");
+        m["alt-100"].set("clip", "rect(210, 561, 254, 498)");
+        m["alt-1000"].set("clip", "rect(210, 561, 254, 498)");
+        m["alt-10000"].set("clip", "rect(210, 561, 254, 498)");
+        m["spd-1"].set("clip", "rect(207, 157, 256, 113)");
+        m["spd-10"].set("clip", "rect(207, 157, 256, 113)");
+        m["spd-100"].set("clip", "rect(207, 157, 256, 113)");
+        m["spd-limitUR"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-limitUB"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-limitLR"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-limitLB"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-limitY"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-tape"].set("clip", "rect(58, 176, 406, 115)");
+        m["aoa-needle"].set("clip", "rect(112, 593, 352, 570)");
 
         # Center Setting
-        m["ground"].setCenter(647, 232);
-        m["sky"].setCenter(647, 232);
-        m["attitude"].setCenter(647, 232);
-        m["turn-coordinator"].setCenter(647, 232);
-        m["timer-arm"].setCenter(54, 154);
-        m["compass-text"].setCenter(647, 654);
-        m["compass"].setCenter(647, 654);
-        m["ap-heading"].setCenter(647, 654);
-        m["wind-arrow"].setCenter(352, 520);
+        m["ground"].setCenter(323, 232);
+        m["sky"].setCenter(323, 232);
+        m["attitude"].setCenter(323, 232);
+        m["turn-coordinator"].setCenter(323, 232);
+        m["timer-arm"].setCenter(706, 154);
+        m["compass-text"].setCenter(323, 654);
+        m["compass"].setCenter(323, 654);
+        m["ap-heading"].setCenter(323, 654);
+        m["wind-arrow"].setCenter(28, 520);
         m.timers=[];
 
-        
 		return m;
 	},
 
-    newMFD: func(){
+    newMFD: func() {
  		me.update_timer = maketimer(0.05, func me.update());
  		me.update_timer.start();
  		me.update_slow_timer.start();
  		me.update_ap_modes_timer.start();
     },
 
-	update: func(){
+	update: func() {
         #Setup stuff
         me["back-trans"].setColorFill(0, 0, 0, 0.3);
 
@@ -78,12 +77,12 @@ var canvas_PFDF = {
         me["ground"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
         me["sky"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
         me["attitude"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
-        me["ground"].setRotation(-getprop("orientation/roll-deg")*D2R, 647, 232);
-        me["sky"].setRotation(-getprop("orientation/roll-deg")*D2R, 647, 232);
-        me["attitude"].setRotation(-getprop("orientation/roll-deg")*D2R, 647, 232);
+        me["ground"].setRotation(-getprop("orientation/roll-deg")*D2R);
+        me["sky"].setRotation(-getprop("orientation/roll-deg")*D2R);
+        me["attitude"].setRotation(-getprop("orientation/roll-deg")*D2R);
         if (getprop("orientation/roll-deg") > 60)
             me["turn-coordinator"].setRotation(-60*D2R);
-        elsif (getprop("orientation/roll-deg") > -60)
+        elsif (getprop("orientation/roll-deg") < -60)
             me["turn-coordinator"].setRotation(60*D2R);
         else
             me["turn-coordinator"].setRotation(-getprop("orientation/roll-deg")*D2R);
@@ -101,18 +100,8 @@ var canvas_PFDF = {
         }
 
         # NAV Radio
-        me["vor1"].setText(getprop("instrumentation/nav[0]/frequencies/selected-mhz"));
-        me["vor2"].setText(getprop("instrumentation/nav[1]/frequencies/selected-mhz"));
-        if(getprop("instrumentation/nav[0]/dme-in-range")){
-            me["dme1"].setText(getprop("instrumentation/nav[0]/gs-distance"));
-        } else {
-            me["dme1"].setText("---");
-        }
-        if(getprop("instrumentation/nav[1]/dme-in-range")){
-            me["dme2"].setText(getprop("instrumentation/nav[1]/gs-distance"));
-        } else {
-            me["dme2"].setText("---");
-        }
+        me["dme1"].setText(sprintf("%.03d", getprop("instrumentation/nav[0]/frequencies/selected-mhz")));
+        me["dme2"].setText(sprintf("%0.3d", getprop("instrumentation/nav[1]/frequencies/selected-mhz")));
 
         # Auxiliary Panel
         me["flt-no"].setText(getprop("instrumentation/registration/flt-no"));
@@ -128,18 +117,19 @@ var canvas_PFDF = {
         # Heading
         me["compass-text"].setRotation(-getprop("orientation/heading-deg")*D2R);
         me["compass"].setRotation(-getprop("orientation/heading-deg")*D2R);
-        me["ap-heading"].setRotation(-getprop("orientation/heading-deg")*D2R);
         me["ap-heading"].setRotation(-getprop("it-autoflight/input/hdg")*D2R);
+        me["ap-heading"].setRotation(-getprop("orientation/heading-deg")*D2R);
         me["sel-hdg"].setText(sprintf("%i", getprop("it-autoflight/input/hdg")));
 
         # Wind and Speeds
         me["ground-speed"].setText(sprintf("%i", getprop("velocities/groundspeed-kt")));
         me["true-airspeed"].setText(sprintf("%i", getprop("velocities/airspeed-kt")));
-        # me["wind-stats"].setText(sprintf("%03i°/%i", getprop("environment/wind-from-heading-deg"), getprop("enviroment/wind-speed-kt")));
+        me["wind-heading"].setText(sprintf("%03i", getprop("environment/wind-from-heading-deg")));
+        me["wind-speed"].setText(sprintf("%i", getprop("environment/wind-speed-kt")));
         me["wind-arrow"].setRotation(getprop("environment/wind-from-heading-deg")*D2R);
 
         # Flight Director
-        if(getprop("it-autoflight/input/fd1")){
+        if(getprop("it-autoflight/input/fd1")) {
             me["fd-horizontal"].show();
             me["fd-vertical"].show();
             me["fd-horizontal"].setTranslation(0, getprop("it-autoflight/fd/pitch-bar"));
@@ -170,10 +160,11 @@ var canvas_PFDF = {
         me["alt-tape9"].hide();
 
         # Moving the tapes
+        me["alt-ground"].show().setTranslation(0, getprop("position/altitude-agl-ft")*0.44);
+
         if(getprop("position/altitude-ft") < 4600) {
             me["alt-tape0"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
             me["alt-tape1"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
-            me["alt-ground"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
         } elsif (getprop("position/altitude-ft") < 9600) {
             me["alt-tape1"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
             me["alt-tape2"].show().setTranslation(0, (getprop("position/altitude-ft")-4600)*0.44);
@@ -247,41 +238,68 @@ var canvas_PFDF = {
 
         # Speed Tape
         me["spd-tape"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
-        if(getprop("instrumentation/airspeed-indicator/indicated-speed-kt") < 45){
+        me["spd-limitLR"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
+        me["spd-limitLB"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
+        me["spd-limitUR"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
+        me["spd-limitUB"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
+        me["spd-limitY"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
+
+        if (getprop("controls/flight/flaps") > 0) {
+            me["spd-limitUR"].setTranslation(0, getprop(sprintf("limits/max-flap-extension-speed[%s]/speed", getprop("controls/flight/flaps") * 8)) * 2.9);
+            me["spd-limitUB"].setTranslation(0, getprop(sprintf("limits/max-flap-extension-speed[%s]/speed", getprop("controls/flight/flaps") * 8)) * 2.9);
+        }
+
+        if (getprop("instrumentation/weu/state/stall-speed") != nil) {
+            me["spd-limitLR"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed") * 2.9);
+            me["spd-limitLB"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed") * 2.9);
+            me["spd-limitY"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed") * 2.9);
+        }
+        
+        if (getprop("instrumentation/airspeed-indicator/indicated-speed-kt") < 45) {
             me["spd-1"].setTranslation(0, 105);
             me["spd-10"].setTranslation(0, 136.2);
         } else {
             me["spd-1"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) * 21.3);
             if(math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) > 9)
-                me["spd-10"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10), 100) * 3.43 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) - 9) * 3.43);
+                me["spd-10"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10), 100) * 3.43 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) - 9) * 34.3);
             else
                 me["spd-10"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10), 100) * 3.43);
 
             if(math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100) > 90)
-                me["spd-100"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100), 1000) * 0.343 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100) - 90) * 0.343);
+                me["spd-100"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100), 1000) * 0.343 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100) - 90) * 3.43);
             else
                 me["spd-100"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100), 1000) * 0.343);
         }
+        me["mach"].setText(sprintf(".%.03d", getprop("velocities/mach")));
+
+        if (getprop("it-autoflight/input/kts-mach"))
+            me["spd-ap"].setText(sprintf(".%.03d", getprop("it-autoflight/input/spd-mach")));
+        else
+            me["spd-ap"].setText(sprintf("%i", getprop("it-autoflight/input/spd-kts")));
+
+        
         
         # AOA Indicator
-        if (math.abs(getprop("velocities/vertical-speed-fps") < 1000))
-            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.056*D2R);
-        elsif (math.abs(getprop("velocities/vertical-speed-fps")) < 2000)
-            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.03425*D2R);
-        elsif (math.abs(getprop("velocities/vertical-speed-fps")) < 6000)
-            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.011833*D2R);
-        else
-            if(getprop("velocities/vertical-speed-fps") > 0)
+        if (math.abs(getprop("velocities/vertical-speed-fps")*60) < 1000)
+            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.056*60*D2R);
+        elsif (math.abs(getprop("velocities/vertical-speed-fps")*60) < 2000)
+            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.03425*60*D2R);
+        elsif (math.abs(getprop("velocities/vertical-speed-fps")*60) < 6000)
+            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.011833*60*D2R);
+        else {
+            if(getprop("velocities/vertical-speed-fps") * 60 > 0)
                 me["aoa-needle"].setRotation(71*D2R);
-            elsif(getprop("velocities/vertical-speed-fps") < 0)
+            elsif(getprop("velocities/vertical-speed-fps") * 60 < 0)
                 me["aoa-needle"].setRotation(71*D2R);
+        }
+            
 
 
-        if(getprop("velocities/vertical-speed-fps") > 500) {
-            me["vs-pos"].show.setText(sprintf("%i", getprop("velocities/vertical-speed-fps") - math.mod(getprop("velocities/vertical-speed-fps")), 50));
+        if(getprop("velocities/vertical-speed-fps")*60 > 500) {
+            me["vs-pos"].show().setText(sprintf("%i", getprop("velocities/vertical-speed-fps")*60 - math.mod(getprop("velocities/vertical-speed-fps")*60, 50)));
             me["vs-neg"].hide();
-        } elsif (getprop("velocities/vertical-speed-fps") < -500) {
-            me["vs-neg"].show.setText(sprintf("%i", -getprop("velocities/vertical-speed-fps") + math.mod(getprop("velocities/vertical-speed-fps")), 50));
+        } elsif (getprop("velocities/vertical-speed-fps")*60 < -500) {
+            me["vs-neg"].show().setText(sprintf("%i", -getprop("velocities/vertical-speed-fps")*60 + math.mod(getprop("velocities/vertical-speed-fps")*60, 50)));
             me["vs-pos"].hide();
         } else {
             me["vs-pos"].hide();
@@ -289,7 +307,9 @@ var canvas_PFDF = {
         }
 
         # Autopilot Modes
-        # me["a-throttle"].setText(getprop())
+        me["a-throttle"].setText(getprop("autopilot/display/throttle-mode"));
+        me["lnav"].setText(getprop("it-autoflight/mode/lat"));
+        me["vnav"].setText(getprop("it-autoflight/mode/vert"));
 	},
 };
 
@@ -297,10 +317,10 @@ setlistener("sim/signals/fdm-initialized", func() {
 	PFDF_display = canvas.new({
 		"name": "PFDF",
 		"size": [1940, 1452],
-		"view": [256, 192],
+		"view": [970, 726],
 		"mipmapping": 1
 	});
-	PFDF_display.addPlacement({"node": "screen1.full"});
+	PFDF_display.addPlacement({"node": "screen4.full"});
 	var group = PFDF_display.createGroup();
 	PFDF_canvas = canvas_PFDF.new(group);
     PFDF_canvas.newMFD();
@@ -310,6 +330,6 @@ setlistener("sim/signals/fdm-initialized", func() {
 #setlistener("sim/signals/reinit", func PFDF_display.del());
 
 var showPFDF = func() {
-	var dlg = canvas.Window.new([970, 726], "dialog").set("resize", 1);
+	var dlg = canvas.Window.new([485, 363], "dialog").set("resize", 0.5);
 	dlg.setCanvas(PFDF_display);
 }

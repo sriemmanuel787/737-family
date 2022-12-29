@@ -125,7 +125,7 @@ var canvas_PFDC = {
         me["ground-speed"].setText(sprintf("%i", getprop("velocities/groundspeed-kt")));
         me["true-airspeed"].setText(sprintf("%i", getprop("velocities/airspeed-kt")));
         me["wind-heading"].setText(sprintf("%03i", getprop("environment/wind-from-heading-deg")));
-        me["wind-speed"].setText(sprintf("%i", getprop("enviroment/wind-speed-kts")));
+        me["wind-speed"].setText(sprintf("%i", getprop("environment/wind-speed-kt")));
         me["wind-arrow"].setRotation(getprop("environment/wind-from-heading-deg")*D2R);
 
         # Flight Director
