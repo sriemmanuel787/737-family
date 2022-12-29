@@ -5,10 +5,15 @@
         <texture>737-10.png</texture>
     </animation>
 
-    <!-- <nasal>
-        <load><![CDATA[var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-10");]]></load>
-        <unload><![CDATA[livery_update.stop();]]></unload>
-    </nasal> -->
+    <nasal>
+        <load>
+         var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-10", 10);
+        </load>
+
+        <unload>
+         livery_update.stop();
+        </unload>
+    </nasal>
 
 
     <main include="animation-common.xml" omit-node="y" />
@@ -18,7 +23,6 @@
         <path>Aircraft/737-MAX/Models/Cockpit/cockpit.xml</path>
         <offsets>
             <x-m>-18.346929</x-m>
-            <!-- <y-m>-0.138145</y-m> -->
             <z-m>0.814206</z-m>
         </offsets>
     </model>
@@ -27,8 +31,8 @@
         <name>Pushback</name>
         <path>Aircraft/737-MAX/Models/Autopush/pushback.xml</path>
         <offsets>
-            <x-m>-18.36</x-m>
-            <z-m>-2.85</z-m>
+            <x-m>-16.9814</x-m>
+            <z-m>-3.15529</z-m>
         </offsets>
     </model>
 
@@ -192,63 +196,7 @@
             <y>1</y>
         </axis>
     </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>mlg.scissorLL</object-name>
-        <property>gear/gear[1]/compression-norm</property>
-        <factor>40</factor>
-        <center>
-            <x-m>0.33326</x-m>
-            <y-m>-2.88329</y-m>
-            <z-m>-2.73866</z-m>
-        </center>
-        <axis>
-            <y>1</y>
-        </axis>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>mlg.scissorUL</object-name>
-        <property>gear/gear[1]/compression-norm</property>
-        <factor>-40</factor>
-        <center>
-            <x-m>0.217662</x-m>
-            <y-m>-2.88195</y-m>
-            <z-m>-2.05388</z-m>
-        </center>
-        <axis>
-            <y>1</y>
-        </axis>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>mlg.scissorLR</object-name>
-        <property>gear/gear[2]/compression-norm</property>
-        <factor>40</factor>
-        <center>
-            <x-m>0.33326</x-m>
-            <y-m>2.88329</y-m>
-            <z-m>-2.73866</z-m>
-        </center>
-        <axis>
-            <y>1</y>
-        </axis>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>mlg.scissorUR</object-name>
-        <property>gear/gear[2]/compression-norm</property>
-        <factor>-40</factor>
-        <center>
-            <x-m>0.217662</x-m>
-            <y-m>2.88195</y-m>
-            <z-m>-2.05388</z-m>
-        </center>
-        <axis>
-            <y>1</y>
-        </axis>
-    </animation>
-
+    
     <!-- Control surfaces -->
     <animation>
         <type>rotate</type>

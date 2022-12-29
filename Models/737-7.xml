@@ -2,159 +2,28 @@
 <PropertyList>
     <path>737-7.ac</path>
     <animation>
-        <texture>MAX-7.png</texture>
+        <texture>737-7.png</texture>
     </animation>
 
     <nasal>
-        <load>var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-7");</load>
-        <unload>livery_update.stop();</unload>
+        <load>
+         var livery_update = aircraft.livery_update.new("Aircraft/737-MAX/Models/Liveries-7", 10);
+        </load>
+
+        <unload>
+         livery_update.stop();
+        </unload>
     </nasal>
 
+
     <main include="animation-common.xml" omit-node="y" />
-
-    <animation>
-        <type>material</type>
-        <object-name>aileron.L1</object-name>
-        <object-name>aileron.L2</object-name>
-        <object-name>aileron.R1</object-name>
-        <object-name>aileron.R2</object-name>
-        <object-name>antennae</object-name>
-        <object-name>apu.cover</object-name>
-        <object-name>belly</object-name>
-        <object-name>cdoor.aftO</object-name>
-        <object-name>cdoor.fwdO</object-name>
-        <object-name>cover.L1</object-name>
-        <object-name>cover.L2</object-name>
-        <object-name>cover.L3</object-name>
-        <object-name>cover.L4</object-name>
-        <object-name>cover.L5</object-name>
-        <object-name>cover.L6</object-name>
-        <object-name>cover.R1</object-name>
-        <object-name>cover.R2</object-name>
-        <object-name>cover.R3</object-name>
-        <object-name>cover.R4</object-name>
-        <object-name>cover.R5</object-name>
-        <object-name>cover.R6</object-name>
-        <object-name>door.ALO</object-name>
-        <object-name>door.ARO</object-name>
-        <object-name>door.FLO</object-name>
-        <object-name>door.FRO</object-name>
-        <object-name>fuselage</object-name>
-        <object-name>hinge.ALO</object-name>
-        <object-name>hinge.ARO</object-name>
-        <object-name>hinge.FLO</object-name>
-        <object-name>hinge.FRO</object-name>
-        <object-name>mlg.coverL1</object-name>
-        <object-name>mlg.coverR1</object-name>
-        <object-name>nlg.doorL</object-name>
-        <object-name>nlg.doorR</object-name>
-        <object-name>rudder</object-name>
-        <object-name>spoiler.L1</object-name>
-        <object-name>spoiler.L2</object-name>
-        <object-name>spoiler.L3</object-name>
-        <object-name>spoiler.L4</object-name>
-        <object-name>spoiler.L5</object-name>
-        <object-name>spoiler.L6</object-name>
-        <object-name>spoiler.R1</object-name>
-        <object-name>spoiler.R2</object-name>
-        <object-name>spoiler.R3</object-name>
-        <object-name>spoiler.R4</object-name>
-        <object-name>spoiler.R5</object-name>
-        <object-name>spoiler.R6</object-name>
-        <object-name>v-stab</object-name>
-        <object-name>windshield</object-name>
-        <object-name>wing.BL1</object-name>
-        <object-name>wing.BL2</object-name>
-        <object-name>wing.BL3</object-name>
-        <object-name>wing.BR1</object-name>
-        <object-name>wing.BR2</object-name>
-        <object-name>wing.BR3</object-name>
-        <object-name>wing.UL1</object-name>
-        <object-name>wing.UL2</object-name>
-        <object-name>wing.UL3</object-name>
-        <object-name>wing.UR1</object-name>
-        <object-name>wing.UR2</object-name>
-        <object-name>wing.UR3</object-name>
-        <object-name>winglet.L</object-name>
-        <object-name>winglet.R</object-name>
-        <property-base>sim/model/livery</property-base>
-        <texture-prop>fuselage</texture-prop>
-    </animation>
-
-    <animation>
-        <type>material</type>
-        <object-name>n1.cone</object-name>
-        <object-name>n1.cowl</object-name>
-        <object-name>n1.exhaust</object-name>
-        <object-name>n1.fan</object-name>
-        <object-name>n1.interior</object-name>
-        <object-name>n1.opening</object-name>
-        <object-name>n1.panel</object-name>
-        <object-name>n1.pylon</object-name>
-        <object-name>n1.reverser</object-name>
-        <object-name>n2.cone</object-name>
-        <object-name>n2.cowl</object-name>
-        <object-name>n2.exhaust</object-name>
-        <object-name>n2.fan</object-name>
-        <object-name>n2.interior</object-name>
-        <object-name>n2.opening</object-name>
-        <object-name>n2.panel</object-name>
-        <object-name>n2.pylon</object-name>
-        <object-name>n2.reverser</object-name>
-        <property-base>sim/model/livery</property-base>
-        <texture-prop>engine</texture-prop>
-    </animation>
-
-    <!-- <effect>
-        <inherits-from>Effects/model</inherits-from>
-        <parameters>
-            <lightmap-enabled>
-                <use>controls/lighting/landing-lights-norm</use>
-            </lightmap-enabled>
-            <texture n="3">
-                <image>Aircraft/737-MAX/Models/Effects/LightMap/lightmap-10.png</image>
-            </texture>
-        </parameters>
-        <object-name>belly</object-name>
-        <object-name>cdoor.fwdO</object-name>
-        <object-name>fuselage</object-name>
-        <object-name>n1.cowl</object-name>
-        <object-name>n1.opening</object-name>
-        <object-name>n1.reverser</object-name>
-        <object-name>n2.cowl</object-name>
-        <object-name>n2.opening</object-name>
-        <object-name>n2.reverser</object-name>
-        <object-name>rudder</object-name>
-        <object-name>wing.BL1</object-name>
-        <object-name>wing.UL1</object-name>
-        <object-name>wing.BR1</object-name>
-        <object-name>wing.UR1</object-name>
-    </effect> -->
-
-    <animation>
-        <type>shader</type>
-        <shader>chrome</shader>
-        <texture>chrome.png</texture>
-        <object-name>slat.L1</object-name>
-        <object-name>slat.L2</object-name>
-        <object-name>slat.L3</object-name>
-        <object-name>slat.R1</object-name>
-        <object-name>slat.R2</object-name>
-        <object-name>slat.R3</object-name>
-        <object-name>wing.chromeL</object-name>
-        <object-name>wing.chromeR</object-name>
-        <object-name>n1.chrome</object-name>
-        <object-name>n2.chrome</object-name>
-    </animation>
 
     <model>
         <name>Cockpit</name>
         <path>Aircraft/737-MAX/Models/Cockpit/cockpit.xml</path>
         <offsets>
-            <x-m>-15.025</x-m>
-            
-            <z-m>0.943</z-m>
-            <pitch-deg>0</pitch-deg>
+            <x-m>-14.172529</x-m>
+            <z-m>0.814206</z-m>
         </offsets>
     </model>
 
@@ -162,9 +31,8 @@
         <name>Pushback</name>
         <path>Aircraft/737-MAX/Models/Autopush/pushback.xml</path>
         <offsets>
-            <x-m>-14.999</x-m>
-            
-            <z-m>-2.85</z-m>
+            <x-m>-12.807</x-m>
+            <z-m>-3.15529</z-m>
         </offsets>
     </model>
 
@@ -191,15 +59,13 @@
                 <dep>90.0</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>-14.7031</x-m>
-            <y-m>0.397849</y-m>
-            <z-m>-1.33888</z-m>
-        </center>
         <axis>
-            <x>1</x>
-            <y>0.1</y>
-            <z>-0.05</z>
+            <x1-m>-14.3881</x1-m>
+            <y1-m>0.398892</y1-m>
+            <z1-m>-1.22673</z1-m>
+            <x2-m>-12.5861</x2-m>
+            <y2-m>0.397133</y2-m>
+            <z2-m>-1.50763</z2-m>
         </axis>
     </animation>
     <animation>
@@ -224,15 +90,13 @@
                 <dep>-90.0</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>-14.7031</x-m>
-            <y-m>-0.397849</y-m>
-            <z-m>-1.33888</z-m>
-        </center>
         <axis>
-            <x>1</x>
-            <y>-0.1</y>
-            <z>-0.05</z>
+            <x1-m>-14.3881</x1-m>
+            <y1-m>-0.398892</y1-m>
+            <z1-m>-1.22673</z1-m>
+            <x2-m>-12.5861</x2-m>
+            <y2-m>-0.397133</y2-m>
+            <z2-m>-1.50763</z2-m>
         </axis>
     </animation>
     <animation>
@@ -263,14 +127,12 @@
             </entry>
         </interpolation>
         <center>
-            <x-m>-13.4446</x-m>
+            <x-m>-12.6315</x-m>
             <y-m>0.306229</y-m>
             <z-m>-1.41395</z-m>
         </center>
         <axis>
-
             <y>1</y>
-
         </axis>
     </animation>
     <animation>
@@ -283,13 +145,10 @@
         <property>fdm/jsbsim/fcs/steer-pos-deg</property>
         <factor>-1</factor>
         <center>
-            <x-m>-13.4822</x-m>
-            
+            <x-m>-12.6691</x-m>
             <z-m>-2.06639</z-m>
         </center>
         <axis>
-
-
             <z>1</z>
         </axis>
     </animation>
@@ -304,8 +163,6 @@
         <property>gear/gear/compression-norm</property>
         <factor>0.3677</factor>
         <axis>
-
-
             <z>1</z>
         </axis>
     </animation>
@@ -317,14 +174,12 @@
         <property>gear/gear[0]/compression-norm</property>
         <factor>-40</factor>
         <center>
-            <x-m>-13.3529</x-m>
+            <x-m>-12.5398</x-m>
             <y-m>0.000746</y-m>
             <z-m>-2.06228</z-m>
         </center>
         <axis>
-
             <y>1</y>
-
         </axis>
     </animation>
     <animation>
@@ -333,33 +188,29 @@
         <property>gear/gear[0]/compression-norm</property>
         <factor>40</factor>
         <center>
-            <x-m>-13.3351</x-m>
+            <x-m>-12.522</x-m>
             <y-m>0.000603</y-m>
             <z-m>-2.78008</z-m>
         </center>
         <axis>
-
             <y>1</y>
-
         </axis>
     </animation>
-
+    
     <!-- Control surfaces -->
     <animation>
         <type>rotate</type>
         <object-name>elevators.L1</object-name>
         <object-name>elevators.L2</object-name>
         <property>sim/multiplay/generic/float[9]</property>
-        <factor>-30</factor>
-        <center>
-            <x-m>17.64</x-m>
-            <y-m>-6.24</y-m>
-            <z-m>2.08</z-m>
-        </center>
+        <factor>30</factor>
         <axis>
-            <x>0.0729</x>
-            <y>-0.2309</y>
-            <z>0.0277</z>
+            <x1-m>22.6857</x1-m>
+            <y1-m>-6.50597</y1-m>
+            <z1-m>2.11801</z1-m>
+            <x2-m>20.4678</x2-m>
+            <y2-m>-0.74259</y2-m>
+            <z2-m>1.4073</z2-m>
         </axis>
     </animation>
     <animation>
@@ -367,16 +218,14 @@
         <object-name>elevators.R1</object-name>
         <object-name>elevators.R2</object-name>
         <property>sim/multiplay/generic/float[9]</property>
-        <factor>30</factor>
-        <center>
-            <x-m>17.64</x-m>
-            <y-m>6.24</y-m>
-            <z-m>2.08</z-m>
-        </center>
+        <factor>-30</factor>
         <axis>
-            <x>0.0729</x>
-            <y>0.2309</y>
-            <z>0.0277</z>
+            <x2-m>20.4678</x2-m>
+            <y2-m>0.74259</y2-m>
+            <z2-m>1.4073</z2-m>
+            <x1-m>22.6857</x1-m>
+            <y1-m>6.50597</y1-m>
+            <z1-m>2.11801</z1-m>
         </axis>
     </animation>
     <animation>
@@ -385,15 +234,13 @@
         <object-name>lightning.rudder</object-name>
         <property>sim/multiplay/generic/float[11]</property>
         <factor>-30</factor>
-        <center>
-            <x-m>16.1963</x-m>
-            
-            <z-m>6.19643</z-m>
-        </center>
         <axis>
-            <x>0.24172</x>
-
-            <z>0.75828</z>
+            <x1-m>20.9916</x1-m>
+            <y1-m>0.000672</y1-m>
+            <z1-m>6.10992</z1-m>
+            <x2-m>22.2296</x2-m>
+            <y2-m>0.002223</y2-m>
+            <z2-m>9.11504</z2-m>
         </axis>
     </animation>
 
@@ -424,15 +271,13 @@
         <object-name>hinge.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>-13.057</x-m>
-            <y-m>-1.56569</y-m>
-            <z-m>0.958533</z-m>
-        </center>
         <axis>
-            <x>0.1</x>
-            <y>-0.35</y>
-            <z>-1</z>
+            <x1-m>-12.2436</x1-m>
+            <y1-m>-1.4826</y1-m>
+            <z1-m>1.23873</z1-m>
+            <x2-m>-12.2436</x2-m>
+            <y2-m>-1.64878</y2-m>
+            <z2-m>0.678338</z2-m>
         </axis>
     </animation>
     <animation>
@@ -441,15 +286,13 @@
         <object-name>door.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>-12.9575</x-m>
-            <y-m>-1.57912</y-m>
-            <z-m>0.963608</z-m>
-        </center>
         <axis>
-            <x>-0.1</x>
-            <y>-0.35</y>
-            <z>-1</z>
+            <x1-m>-12.1444</x1-m>
+            <y1-m>-1.495</y1-m>
+            <z1-m>1.24888</z1-m>
+            <x2-m>-12.1444</x2-m>
+            <y2-m>-1.66324</y2-m>
+            <z2-m>0.678338</z2-m>
         </axis>
     </animation>
 
@@ -480,15 +323,13 @@
         <object-name>hinge.FRI</object-name>
         <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>-13.057</x-m>
-            <y-m>1.56569</y-m>
-            <z-m>0.958533</z-m>
-        </center>
         <axis>
-            <x>-0.1</x>
-            <y>-0.35</y>
-            <z>1</z>
+            <x1-m>-12.2436</x1-m>
+            <y1-m>1.64878</y1-m>
+            <z1-m>0.678338</z1-m>
+            <x2-m>-12.2436</x2-m>
+            <y2-m>1.4826</y2-m>
+            <z2-m>1.23873</z2-m>
         </axis>
     </animation>
     <animation>
@@ -497,15 +338,13 @@
         <object-name>door.FRI</object-name>
         <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>-12.9575</x-m>
-            <y-m>1.57912</y-m>
-            <z-m>0.963608</z-m>
-        </center>
         <axis>
-            <x>0.1</x>
-            <y>-0.35</y>
-            <z>1</z>
+            <x1-m>-12.1444</x1-m>
+            <y1-m>1.66324</y1-m>
+            <z1-m>0.678338</z1-m>
+            <x2-m>-12.1444</x2-m>
+            <y2-m>1.495</y2-m>
+            <z2-m>1.24888</z2-m>
         </axis>
     </animation>
 
@@ -536,15 +375,13 @@
         <object-name>hinge.ALI</object-name>
         <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>10.411</x-m>
-            <y-m>-1.65192</y-m>
-            <z-m>0.863035</z-m>
-        </center>
         <axis>
-            <x>-0.0813</x>
-            <y>0.0721</y>
-            <z>-1</z>
+            <x1-m>12.3762</x1-m>
+            <y1-m>-1.60819</y1-m>
+            <z1-m>1.21577</z1-m>
+            <x2-m>12.3761</x2-m>
+            <y2-m>-1.68074</y2-m>
+            <z2-m>0.622418</z2-m>
         </axis>
     </animation>
     <animation>
@@ -553,15 +390,13 @@
         <object-name>door.ALI</object-name>
         <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>10.5098</x-m>
-            <y-m>-1.63309</y-m>
-            <z-m>0.919093</z-m>
-        </center>
         <axis>
-            <x>0.0813</x>
-            <y>-0.0721</y>
-            <z>-1</z>
+            <x1-m>12.4749</x1-m>
+            <y1-m>-1.59867</y1-m>
+            <z1-m>1.21577</z1-m>
+            <x2-m>12.4749</x2-m>
+            <y2-m>-1.6675</y2-m>
+            <z2-m>0.622413</z2-m>
         </axis>
     </animation>
 
@@ -592,15 +427,13 @@
         <object-name>hinge.ARI</object-name>
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>10.411</x-m>
-            <y-m>1.65192</y-m>
-            <z-m>0.863035</z-m>
-        </center>
         <axis>
-            <x>0.0813</x>
-            <y>0.0721</y>
-            <z>1</z>
+            <x1-m>12.3761</x1-m>
+            <y1-m>1.68074</y1-m>
+            <z1-m>0.622418</z1-m>
+            <x2-m>12.3762</x2-m>
+            <y2-m>1.60819</y2-m>
+            <z2-m>1.21577</z2-m>
         </axis>
     </animation>
     <animation>
@@ -609,15 +442,13 @@
         <object-name>door.ARI</object-name>
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
         <factor>90</factor>
-        <center>
-            <x-m>10.5098</x-m>
-            <y-m>1.63309</y-m>
-            <z-m>0.919093</z-m>
-        </center>
         <axis>
-            <x>-0.0813</x>
-            <y>-0.0721</y>
-            <z>1</z>
+            <x1-m>12.4749</x1-m>
+            <y1-m>1.6675</y1-m>
+            <z1-m>0.622413</z1-m>
+            <x2-m>12.4749</x2-m>
+            <y2-m>1.59867</y2-m>
+            <z2-m>1.21577</z2-m>
         </axis>
     </animation>
 
@@ -641,16 +472,14 @@
         <object-name>cdoor.fwdI</object-name>
         <object-name>cdoor.fwdO</object-name>
         <property>controls/doors/CFDoor/CFDoorPos1/position-norm</property>
-        <factor>80</factor>
+        <factor>-180</factor>
         <center>
-            <x-m>-8.992</x-m>
-            <y-m>1.695</y-m>
-            <z-m>-0.435</z-m>
+            <x-m>-8.1875</x-m>
+            <y-m>1.69664</y-m>
+            <z-m>-0.43561</z-m>
         </center>
         <axis>
             <x>1</x>
-
-
         </axis>
     </animation>
 
@@ -674,16 +503,14 @@
         <object-name>cdoor.aftI</object-name>
         <object-name>cdoor.aftO</object-name>
         <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
-        <factor>80</factor>
-        <center>
-            <x-m>-12.353</x-m>
-            <y-m>1.695</y-m>
-            <z-m>-0.435</z-m>
-        </center>
+        <factor>-180</factor>
         <axis>
-            <x>1</x>
-
-
+            <x1-m>8.5515</x1-m>
+            <y1-m>1.70712</y1-m>
+            <z1-m>-0.39473</z1-m>
+            <x2-m>9.4111</x2-m>
+            <y2-m>1.68406</y2-m>
+            <z2-m>-0.39475</z2-m>
         </axis>
     </animation>
 
@@ -944,8 +771,7 @@
         <path>Aircraft/737-MAX/Models/Effects/tyre-smoke-nose.xml</path>
         <name>tyre-smoke-n</name>
         <offsets>
-            <x-m>-18.00</x-m>
-            
+            <x-m>-13.8256</x-m>
             <z-m>-5.50</z-m>
         </offsets>
     </model>
@@ -975,8 +801,7 @@
         <path>Aircraft/737-MAX/Models/Effects/tyrespray/rain-nose.xml</path>
         <name>tyre-smoke-n</name>
         <offsets>
-            <x-m>-18.00</x-m>
-            
+            <x-m>-13.8256</x-m>
             <z-m>-5.50</z-m>
         </offsets>
     </model>
@@ -1015,7 +840,6 @@
             <x-m>-3.3</x-m>
             <y-m>-4.73</y-m>
             <z-m>-1.4</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
 
@@ -1032,7 +856,6 @@
             <x-m>-3.3</x-m>
             <y-m>4.73</y-m>
             <z-m>-1.4</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
 
@@ -1047,9 +870,7 @@
         <name>~fire_2</name>
         <offsets>
             <x-m>18.63</x-m>
-            
             <z-m>2.06</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
 
@@ -1142,9 +963,7 @@
         </condition>
         <offsets>
             <x-m>-4.2</x-m>
-            
             <z-m>0.95</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
 
@@ -1168,7 +987,6 @@
             <x-m>-13</x-m>
             <y-m>2</y-m>
             <z-m>2.16</z-m>
-            <heading-deg>0</heading-deg>
         </offsets>
     </model>
     <model>
@@ -1203,10 +1021,5 @@
     </animation>
     <model>
         <path>Aircraft/737-MAX/Models/Services/Services.xml</path>
-        <offsets>
-            
-            
-            
-        </offsets>
     </model>
 </PropertyList>

@@ -26,8 +26,6 @@ var canvas_EICAS = {
 
     newMFD: func(){
  		me.update_timer = maketimer(0.05, func me.update() );
- 		me.update_slow_timer = maketimer(0.2, func me.update_slow() );
- 		me.update_ap_modes_timer = maketimer(0.2, func me.update_ap_modes() );
  		me.update_timer.start();
  		me.update_slow_timer.start();
  		me.update_ap_modes_timer.start();
@@ -47,38 +45,106 @@ var canvas_EICAS = {
 
         # Engine N1
         me["n1-dial1"].setRotation(getprop("engines/engine[0]/n1")*2*D2R);
-        me["throttle-n1"].setRotation(getprop("controls/engines/engine[0]")*2*D2R)
+        me["throttle-n1"].setRotation(getprop("controls/engines/engine[0]/throttle")*200*D2R);
         me["egt-dial1"].setRotation(getprop("engines/engine[0]/egt-actual")*0.2*D2R);
         me["n2-dial1"].setRotation(getprop("engines/engine[0]/n2")*2*D2R);
-        me["n1-text1"].setText(sprintf("%.1", getprop("engines/engine[0]/n1")));
-        me["throttle-num1"].setText(sprintf("%.1", getprop("controls/engines/engine[0]")));
+        me["n1-text1"].setText(sprintf("%0.1f", getprop("engines/engine[0]/n1")));
+        me["throttle-num1"].setText(sprintf("%0.1f", getprop("controls/engines/engine[0]/throttle")*100));
         me["egt-text1"].setText(sprintf("%i", getprop("engines/engine[0]/egt-actual")));
-        me["n2-text1"].setText(sprintf("%.1", getprop("engines/engine[0]/n2")));
-        me["fuelflow1"].setText(sprintf("%.2", getprop("engines/engine[0]/fuel-flow_pph")*LB2KG));
+        me["n2-text1"].setText(sprintf("%0.1f", getprop("engines/engine[0]/n2")));
+        me["fuelflow1"].setText(sprintf("%0.2f", getprop("engines/engine[0]/fuel-flow_pph")*LB2KG));
+
+        if(getprop("controls/engines/engine[0]/starter"))
+            me["start-valve-open1"].show();
+        else
+            me["start-valve-open1"].hide();
+        me["oil-filter-bypass1"].hide();
+        if(getprop("engines/engine[0]/oil-pressure-psi") < 20)
+            me["low-oil-pressure1"].show();
+        else
+            me["low-oil-pressure1"].hide();
+        if(getprop("controls/engines/engine[0]/throttle") > getprop("engines/engine[0]/n1"))
+            me["thrust1"].show();
+        else
+            me["thrust1"].hide();
+        if(getprop("engines/engine[0]/fuel-flow_pph")/getprop("engines/engine[0]/n1") > 90)
+            me["fuel-flow1"].show();
+        else
+            me["fuel-flow1"].hide();
+        
         
         # Engine N2
         me["n1-dial2"].setRotation(getprop("engines/engine[1]/n1")*2*D2R);
-        me["throttle-n2"].setRotation(getprop("controls/engines/engine[1]")*2*D2R)
+        me["throttle-n2"].setRotation(getprop("controls/engines/engine[1]/throttle")*200*D2R);
         me["egt-dial2"].setRotation(getprop("engines/engine[1]/egt-actual")*0.2*D2R);
         me["n2-dial2"].setRotation(getprop("engines/engine[1]/n2")*2*D2R);
-        me["n1-text2"].setText(sprintf("%.1", getprop("engines/engine[1]/n1")));
-        me["throttle-num2"].setText(sprintf("%.1", getprop("controls/engines/engine[1]")));
+        me["n1-text2"].setText(sprintf("%0.1f", getprop("engines/engine[1]/n1")));
+        me["throttle-num2"].setText(sprintf("%0.1f", getprop("controls/engines/engine[1]/throttle")*100));
         me["egt-text2"].setText(sprintf("%i", getprop("engines/engine[1]/egt-actual")));
-        me["n2-text2"].setText(sprintf("%.1", getprop("engines/engine[1]/n2")));
-        me["fuelflow2"].setText(sprintf("%.2", getprop("engines/engine[1]/fuel-flow_pph")*LB2KG));
+        me["n2-text2"].setText(sprintf("%0.1f", getprop("engines/engine[1]/n2")));
+        me["fuelflow2"].setText(sprintf("%0.2f", getprop("engines/engine[1]/fuel-flow_pph")*LB2KG));
 
-		
+		if(getprop("controls/engines/engine[1]/starter"))
+            me["start-valve-open2"].show();
+        else
+            me["start-valve-open2"].hide();
+        me["oil-filter-bypass2"].hide();
+        if(getprop("engines/engine[1]/oil-pressure-psi") < 20)
+            me["low-oil-pressure2"].show();
+        else
+            me["low-oil-pressure2"].hide();
+        if(getprop("controls/engines/engine[1]/throttle") > getprop("engines/engine[1]/n1"))
+            me["thrust2"].show();
+        else
+            me["thrust2"].hide();
+        if(getprop("engines/engine[1]/fuel-flow_pph")/getprop("engines/engine[1]/n1") > 90)
+            me["fuel-flow2"].show();
+        else
+            me["fuel-flow2"].hide();
+
+        if(getprop("surface-positions/flap-pos-norm") > 0)
+            me["flap-ext"].show();
+        else
+            me["flap-ext"].hide();
+        
+        if(getprop("surface-positions/flap-pos-norm") <= 0.125)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*8*33.7*D2R);
+        elsif(getprop("surface-positions/flap-pos-norm") <= 0.25)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*4*77.9*D2R);
+        elsif(getprop("surface-positions/flap-pos-norm") <= 0.375)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*8/3*114.6*D2R);
+        elsif(getprop("surface-positions/flap-pos-norm") <= 5)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*2*153.9*D2R);
+        elsif(getprop("surface-positions/flap-pos-norm") <= 0.625)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*1.6*180*D2R);
+        elsif(getprop("surface-positions/flap-pos-norm") <= 0.75)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*4/3*208.7*D2R);
+        elsif(getprop("surface-positions/flap-pos-norm") <= 0.825)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*8/7*239*D2R);
+        elsif(getprop("surface-positions/flap-pos-norm") <= 1)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*270*D2R);
+
+        if(math.mod(getprop("surface-positions/flap-pos-norm")*8, 1) != 0)
+            me["flap-trans"].show();
+        else
+            me["flap-trans"].hide();
+
+        me["tank-l"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[0]/level-kg")/1000));
+        me["tank-r"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[1]/level-kg")/1000));
+        me["tank-c"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[2]/level-kg")/1000));
+        me["total"].setText(sprintf("%0.1f", (getprop("consumables/fuel/tank[0]/level-kg") + getprop("consumables/fuel/tank[1]/level-kg") + getprop("consumables/fuel/tank[2]/level-kg"))/1000));
 	}
 };
 
 setlistener("sim/signals/fdm-initialized", func() {
 	EICAS_display = canvas.new({
 		"name": "EICAS",
-		"size": [484, 726],
-		"view": [128, 192],
+		"size": [968, 1452],
+		"view": [484, 726],
 		"mipmapping": 1
 	});
-	EICAS_display.addPlacement({"node": "EICAS.captL"});
+	EICAS_display.addPlacement({"node": "screen2.R"});
+    EICAS_display.addPlacement({"node": "screen3.L"});
 	var group = EICAS_display.createGroup();
 	EICAS_canvas = canvas_EICAS.new(group);
     EICAS_canvas.newMFD();
