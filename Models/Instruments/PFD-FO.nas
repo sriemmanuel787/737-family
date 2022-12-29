@@ -50,13 +50,8 @@ var canvas_PFDF = {
         # Center Setting
         m["ground"].setCenter(323, 232);
         m["sky"].setCenter(323, 232);
-        m["attitude"].setCenter(323, 232);
         m["turn-coordinator"].setCenter(323, 232);
-        m["timer-arm"].setCenter(706, 154);
-        m["compass-text"].setCenter(323, 654);
-        m["compass"].setCenter(323, 654);
         m["ap-heading"].setCenter(323, 654);
-        m["wind-arrow"].setCenter(28, 520);
         m.timers=[];
 
 		return m;
