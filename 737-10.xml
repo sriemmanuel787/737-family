@@ -14,7 +14,7 @@
     <!--base datum - nose of aircraft. BWL at this point 208.1 in. Source - structure diagrams.-->
 
     <metrics>
-        <wingarea unit="FT2"> 1370.00 </wingarea> <!-- value from simulator data. Checked -->
+        <wingarea unit="FT2"> 2740.00 </wingarea> <!-- value from simulator data. Checked -->
         <wingspan unit="IN">  1414.00 </wingspan> <!-- value from simulator data. Checked -->
         <chord unit="IN">      155.81 </chord> <!-- value from simulator data. Checked -->
         <htailarea unit="FT2"> 352.80 </htailarea> <!-- value from simulator data. Checked -->
@@ -411,8 +411,8 @@
     <propulsion>
         <engine file="leap1b">
             <location unit="IN">
-                <x>  -55.57524 </x> <!-- value from simulator data -->
-                <y>  -206.3868 </y> <!-- value from simulator data -->
+                <x>  728.459096 </x> <!-- value from simulator data -->
+                <y>  -206.2932 </y> <!-- value from simulator data -->
                 <z>  -61.10784 </z> <!-- BWL 155.72 -->
             </location>
             <orient unit="DEG">
@@ -423,7 +423,7 @@
             <feed>3</feed>
             <thruster file="direct">
                 <location unit="IN">
-                    <x>  -55.57524 </x> <!-- value from simulator data -->
+                    <x>  728.459096 </x> <!-- value from simulator data -->
                     <y>  -206.3868 </y> <!-- value from simulator data -->
                     <z>  -61.10784 </z> <!-- BWL 155.72 -->
                 </location>
@@ -436,7 +436,7 @@
         </engine>
         <engine file="leap1b">
             <location unit="IN">
-                <x>   -55.57524 </x> <!-- value from simulator data -->
+                <x>   728.459096 </x> <!-- value from simulator data -->
                 <y>    206.3868 </y> <!-- value from simulator data -->
                 <z>   -61.10784 </z> <!-- BWL 155.72 -->
             </location>
@@ -448,7 +448,7 @@
             <feed>4</feed>
             <thruster file="direct">
                 <location unit="IN">
-                    <x>  -55.57524 </x> <!-- value from simulator data -->
+                    <x>  728.459096 </x> <!-- value from simulator data -->
                     <y>   206.3868 </y> <!-- value from simulator data -->
                     <z>  -61.10784 </z> <!-- BWL 155.72 -->
                 </location>

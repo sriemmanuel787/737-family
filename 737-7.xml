@@ -16,7 +16,7 @@
 -->
 
     <metrics>
-        <wingarea unit="FT2"> 1370.00 </wingarea> <!-- value from simulator data. Checked -->
+        <wingarea unit="FT2"> 2740.00 </wingarea> <!-- value from simulator data. Checked -->
         <wingspan unit="IN">  1414.00 </wingspan> <!-- value from simulator data. Checked -->
         <chord unit="IN">      155.81 </chord> <!-- value from simulator data. Checked -->
         <htailarea unit="FT2"> 352.80 </htailarea> <!-- value from simulator data. Checked -->
