@@ -13,6 +13,18 @@
             </equals>
         </condition>
     </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>screen4.full</object-name>
+        <object-name>screen4.L</object-name>
+        <object-name>screen4.R</object-name>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
     
     <animation>
         <type>pick</type>

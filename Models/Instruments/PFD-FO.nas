@@ -48,8 +48,8 @@ var canvas_PFDF = {
         m["aoa-needle"].set("clip", "rect(112, 593, 352, 570)");
 
         # Center Setting
-        m["ground"].setCenter(323, 232);
-        m["sky"].setCenter(323, 232);
+        # m["ground"].setCenter(323, 232);
+        # m["sky"].setCenter(323, 232);
         m["turn-coordinator"].setCenter(323, 232);
         m["ap-heading"].setCenter(323, 654);
         m.timers=[];
@@ -72,9 +72,9 @@ var canvas_PFDF = {
         me["ground"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
         me["sky"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
         me["attitude"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
-        me["ground"].setRotation(-getprop("orientation/roll-deg")*D2R);
-        me["sky"].setRotation(-getprop("orientation/roll-deg")*D2R);
-        me["attitude"].setRotation(-getprop("orientation/roll-deg")*D2R);
+        me["ground"].setRotation(getprop("orientation/roll-deg")*D2R);
+        me["sky"].setRotation(getprop("orientation/roll-deg")*D2R);
+        me["attitude"].setRotation(getprop("orientation/roll-deg")*D2R);
         if (getprop("orientation/roll-deg") > 60)
             me["turn-coordinator"].setRotation(-60*D2R);
         elsif (getprop("orientation/roll-deg") < -60)
