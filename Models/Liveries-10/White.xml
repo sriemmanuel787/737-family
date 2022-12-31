@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">White</name>
+                <fuselage>Liveries-10/737-10test.png</fuselage>
+                <engine>Liveries-10/UALtest.png</engine>
+            </livery>
+        </model>
+    </sim>
+
+</PropertyList>
