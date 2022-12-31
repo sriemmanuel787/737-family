@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>737-10.ac</path>
-    <animation>
-        <texture>737-10.png</texture>
-    </animation>
+
 
     <nasal>
         <load>
@@ -14,6 +12,100 @@
          livery_update.stop();
         </unload>
     </nasal>
+    <animation>
+        <type>material</type>
+        <object-name>aileron.L1</object-name>
+        <object-name>aileron.L2</object-name>
+        <object-name>aileron.R1</object-name>
+        <object-name>aileron.R2</object-name>
+        <object-name>antennae</object-name>
+        <object-name>apu.cover</object-name>
+        <object-name>belly</object-name>
+        <object-name>cdoor.aftO</object-name>
+        <object-name>cdoor.fwdO</object-name>
+        <object-name>cover.L1</object-name>
+        <object-name>cover.L2</object-name>
+        <object-name>cover.L3</object-name>
+        <object-name>cover.L4</object-name>
+        <object-name>cover.L5</object-name>
+        <object-name>cover.L6</object-name>
+        <object-name>cover.R1</object-name>
+        <object-name>cover.R2</object-name>
+        <object-name>cover.R3</object-name>
+        <object-name>cover.R4</object-name>
+        <object-name>cover.R5</object-name>
+        <object-name>cover.R6</object-name>
+        <object-name>door.ALO</object-name>
+        <object-name>door.ARO</object-name>
+        <object-name>door.FLO</object-name>
+        <object-name>door.FRO</object-name>
+        <object-name>fuselage</object-name>
+        <object-name>hinge.ALO</object-name>
+        <object-name>hinge.ARO</object-name>
+        <object-name>hinge.FLO</object-name>
+        <object-name>hinge.FRO</object-name>
+        <object-name>mlg.coverL1</object-name>
+        <object-name>mlg.coverR1</object-name>
+        <object-name>nlg.doorL</object-name>
+        <object-name>nlg.doorR</object-name>
+        <object-name>rudder</object-name>
+        <object-name>skid</object-name>
+        <object-name>spoiler.L1</object-name>
+        <object-name>spoiler.L2</object-name>
+        <object-name>spoiler.L3</object-name>
+        <object-name>spoiler.L4</object-name>
+        <object-name>spoiler.L5</object-name>
+        <object-name>spoiler.L6</object-name>
+        <object-name>spoiler.R1</object-name>
+        <object-name>spoiler.R2</object-name>
+        <object-name>spoiler.R3</object-name>
+        <object-name>spoiler.R4</object-name>
+        <object-name>spoiler.R5</object-name>
+        <object-name>spoiler.R6</object-name>
+        <object-name>v-stab</object-name>
+        <object-name>wing.BL1</object-name>
+        <object-name>wing.BL2</object-name>
+        <object-name>wing.BL3</object-name>
+        <object-name>wing.BR1</object-name>
+        <object-name>wing.BR2</object-name>
+        <object-name>wing.BR3</object-name>
+        <object-name>wing.UL1</object-name>
+        <object-name>wing.UL2</object-name>
+        <object-name>wing.UL3</object-name>
+        <object-name>wing.UR1</object-name>
+        <object-name>wing.UR2</object-name>
+        <object-name>wing.UR3</object-name>
+        <object-name>winglet.L</object-name>
+        <object-name>winglet.R</object-name>
+        <property-base>sim/model/livery</property-base>
+        <texture-prop>fuselage</texture-prop>
+        <texture>737-10.png</texture>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>n1.cone</object-name>
+        <object-name>n1.cowl</object-name>
+        <object-name>n1.exhaust</object-name>
+        <object-name>n1.fan</object-name>
+        <object-name>n1.interior</object-name>
+        <object-name>n1.opening</object-name>
+        <object-name>n1.panel</object-name>
+        <object-name>n1.pylon</object-name>
+        <object-name>n1.reverser</object-name>
+        <object-name>n2.cone</object-name>
+        <object-name>n2.cowl</object-name>
+        <object-name>n2.exhaust</object-name>
+        <object-name>n2.fan</object-name>
+        <object-name>n2.interior</object-name>
+        <object-name>n2.opening</object-name>
+        <object-name>n2.panel</object-name>
+        <object-name>n2.pylon</object-name>
+        <object-name>n2.reverser</object-name>
+        <property-base>sim/model/livery</property-base>
+        <texture-prop>engine</texture-prop>
+        <texture>CFM-LEAP.png</texture>
+    </animation>
 
 
     <main include="animation-common.xml" omit-node="y" />
