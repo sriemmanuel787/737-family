@@ -302,6 +302,7 @@
             <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
             <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
             <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
+            <file>Aircraft/737-MAX/Nasal/liveries.nas</file>
         </boeing737>
         <systems>
             <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
