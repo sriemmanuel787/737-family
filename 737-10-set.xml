@@ -41,7 +41,7 @@
             </door>
             <path>Aircraft/737-MAX/Models/737-10.xml</path>
             <livery>
-                <file type="string">737-10.png</file>
+                <file type="string">White</file>
             </livery>
 
             <rendering>
