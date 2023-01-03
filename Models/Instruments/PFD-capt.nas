@@ -48,8 +48,8 @@ var canvas_PFDC = {
         m["aoa-needle"].set("clip", "rect(112, 917, 352, 894)");
 
         # Center Setting
-        # m["ground"].setCenter(647, 232);
-        # m["sky"].setCenter(647, 232);
+        m["ground"].setCenter(647, 232);
+        m["sky"].setCenter(647, 232);
         m["turn-coordinator"].setCenter(647, 232);
         m["ap-heading"].setCenter(647, 654);
         m.timers=[];
