@@ -20,7 +20,7 @@
             <pitch-deg>-67.6508</pitch-deg>
         </offsets>
     </model>
-    
+
     <!-- Flap handle -->
     <animation>
         <type>rotate</type>

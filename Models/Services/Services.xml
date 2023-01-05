@@ -17,9 +17,9 @@
             </and>
         </condition>
         <offsets>
-            
-            
-            
+
+
+
         </offsets>
     </model>
 
@@ -38,9 +38,9 @@
             </and>
         </condition>
         <offsets>
-            
-            
-            
+
+
+
         </offsets>
     </model>
 
@@ -59,9 +59,9 @@
             </and>
         </condition>
         <offsets>
-            
-            
-            
+
+
+
         </offsets>
     </model>
 
@@ -83,8 +83,8 @@
         </condition>
         <offsets>
             <x-m>-10.5</x-m>
-            
-            
+
+
         </offsets>
     </model>
 
@@ -104,9 +104,9 @@
             </less-than>
         </condition>
         <offsets>
-            
-            
-            
+
+
+
         </offsets>
     </model>
 
@@ -125,9 +125,9 @@
             </and>
         </condition>
         <offsets>
-            
+
             <y-m>-10</y-m>
-            
+
         </offsets>
     </model>
 
@@ -147,8 +147,8 @@
         </condition>
         <offsets>
             <x-m>-11</x-m>
-            
-            
+
+
         </offsets>
     </model>
 
@@ -168,8 +168,8 @@
         </condition>
         <offsets>
             <x-m>-5.5</x-m>
-            
-            
+
+
         </offsets>
     </model>
 

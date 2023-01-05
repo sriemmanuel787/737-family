@@ -14,9 +14,9 @@
         <lighting>false</lighting>
 
         <offsets>
-            
-            
-            
+
+
+
         </offsets>
 
         <condition>
@@ -32,19 +32,19 @@
         <placer>
             <type>segments</type>
             <vertex>
-                
-                
-                
+
+
+
             </vertex>
             <vertex>
                 <x-m>1.5</x-m>
-                
-                
+
+
             </vertex>
             <vertex>
                 <x-m>3</x-m>
-                
-                
+
+
             </vertex>
         </placer>
 

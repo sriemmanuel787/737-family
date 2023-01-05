@@ -25,7 +25,7 @@
             <blue>1</blue>
         </emission>
     </animation>
-    
+
     <animation>
         <type>pick</type>
         <object-name>screen4.full</object-name>

@@ -153,7 +153,7 @@
 							screen.log.write("Starting De-icing Process...", 1, 1, 1);
 						} else
 							screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);
-					</script>
+                    </script>
                 </binding>
             </button>
 
@@ -274,7 +274,7 @@
                         <command>nasal</command>
                         <script>
 						acconfig.lights_dlg.open();
-						</script>
+                        </script>
                     </binding>
                 </button>
 

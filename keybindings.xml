@@ -76,7 +76,7 @@
                 <command>nasal</command>
                 <script>
           boeing737.tiller_left();
-        </script>
+                </script>
             </binding>
         </key>
 
@@ -87,7 +87,7 @@
                 <command>nasal</command>
                 <script>
           boeing737.tiller_left_small();
-        </script>
+                </script>
             </binding>
         </key>
 
@@ -98,7 +98,7 @@
                 <command>nasal</command>
                 <script>
           boeing737.tiller_right();
-        </script>
+                </script>
             </binding>
         </key>
 
@@ -109,7 +109,7 @@
                 <command>nasal</command>
                 <script>
           boeing737.tiller_right_small();
-        </script>
+                </script>
             </binding>
         </key>
 
@@ -120,7 +120,7 @@
                 <command>nasal</command>
                 <script>
           boeing737.tiller_center();
-        </script>
+                </script>
             </binding>
         </key>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
     <path>capt-R.ac</path>
-    
+
     <animation>
         <type>select</type>
         <object-name>screen2.full</object-name>

@@ -42,7 +42,7 @@
 					setprop("it-autoflight/custom/athr-armed", 0);
 					setprop("it-autoflight/input/athr", 0);
 				}
-				</script>
+                </script>
             </binding>
         </action>
     </animation>
@@ -87,7 +87,7 @@
 				} else if (getprop("it-autoflight/input/fd1") == 1) {
 					setprop("it-autoflight/input/fd1", 0);
 				}
-				</script>
+                </script>
             </binding>
         </action>
     </animation>
@@ -122,7 +122,7 @@
 				} else if (getprop("it-autoflight/input/fd2") == 1) {
 					setprop("it-autoflight/input/fd2", 0);
 				}
-				</script>
+                </script>
             </binding>
         </action>
     </animation>

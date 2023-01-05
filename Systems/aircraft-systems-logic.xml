@@ -131,7 +131,7 @@
                     <or>
                         <greater-than>
                             <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
-                            <value>0.7</value> <!-- flaps more than 20 degrees -->
+                            <value>0.7</value>                            <!-- flaps more than 20 degrees -->
                         </greater-than>
                         <property>/autopilot/internal/VNAV-GS</property>
                     </or>
@@ -197,7 +197,7 @@
     </filter>
 
     <flipflop>
-        <type>RS</type> <!-- or SR -->
+        <type>RS</type>        <!-- or SR -->
         <S>
             <and>
                 <less-than>
@@ -228,7 +228,7 @@
     <!-- AIR-GROUND system -->
 
     <logic>
-        <name>air-ground switch</name> <!-- outputs 1 if plane is on ground -->
+        <name>air-ground switch</name>        <!-- outputs 1 if plane is on ground -->
         <input>
             <or>
                 <property>/gear/gear[1]/wow</property>
@@ -241,7 +241,7 @@
     <!-- wheel spin detection system -->
 
     <logic>
-        <name>main wheel spin</name> <!-- outputs 1 if one of main wheels are spinnig faster than 60 kts -->
+        <name>main wheel spin</name>        <!-- outputs 1 if one of main wheels are spinnig faster than 60 kts -->
         <input>
             <or>
                 <greater-than>

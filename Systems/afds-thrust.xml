@@ -149,7 +149,7 @@
         </reference>
         <output>/controls/engines/throttle-cmd-pid</output>
         <config>
-            <Kp>0.02</Kp> <!-- 0.02 is good, slow up -->
+            <Kp>0.02</Kp>            <!-- 0.02 is good, slow up -->
             <Ti>9.0</Ti>
             <Td>0.00001</Td>
             <u_min>0.005</u_min>

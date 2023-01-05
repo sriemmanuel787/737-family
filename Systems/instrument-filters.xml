@@ -4,7 +4,7 @@
 
     <filter n="10007">
         <type>gain</type>
-        <gain>-3430</gain> <!-- 162 turns from 17 to 0. Measured from real aircraft. -->
+        <gain>-3430</gain>        <!-- 162 turns from 17 to 0. Measured from real aircraft. -->
         <input>
             <property>/fdm/jsbsim/fcs/stabilizer-pos-unit</property>
         </input>

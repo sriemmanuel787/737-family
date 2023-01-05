@@ -14,15 +14,15 @@
                 <path>Splash/splash-1.png</path>
             </preview>
             <preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/splash-2.png</path>
-			</preview>
-			<preview>
-				<type>interior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/splash-3.png</path>
-			</preview>
+                <type>exterior</type>
+                <splash type="bool">true</splash>
+                <path>Splash/splash-2.png</path>
+            </preview>
+            <preview>
+                <type>interior</type>
+                <splash type="bool">true</splash>
+                <path>Splash/splash-3.png</path>
+            </preview>
 
         </previews>
 
@@ -160,15 +160,15 @@
         <chase-distance-m>-60</chase-distance-m>
 
         <flaps>
-            <setting>0.000</setting> <!-- Flaps Up -->
-            <setting>0.125</setting> <!-- Flaps 1  -->
-            <setting>0.250</setting> <!-- Flaps 2  -->
-            <setting>0.375</setting> <!-- Flaps 5  -->
-            <setting>0.500</setting> <!-- Flaps 10 -->
-            <setting>0.625</setting> <!-- Flaps 15 -->
-            <setting>0.750</setting> <!-- Flaps 25 -->
-            <setting>0.875</setting> <!-- Flaps 30 -->
-            <setting>1.000</setting> <!-- Flaps 40 -->
+            <setting>0.000</setting>            <!-- Flaps Up -->
+            <setting>0.125</setting>            <!-- Flaps 1  -->
+            <setting>0.250</setting>            <!-- Flaps 2  -->
+            <setting>0.375</setting>            <!-- Flaps 5  -->
+            <setting>0.500</setting>            <!-- Flaps 10 -->
+            <setting>0.625</setting>            <!-- Flaps 15 -->
+            <setting>0.750</setting>            <!-- Flaps 25 -->
+            <setting>0.875</setting>            <!-- Flaps 30 -->
+            <setting>1.000</setting>            <!-- Flaps 40 -->
         </flaps>
 
         <multiplay>
@@ -259,13 +259,13 @@
 
     <it-autoflight>
         <settings>
-            <auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
-            <land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
-            <land-flap>0.750</land-flap> <!-- Minimum Flap used for Landing -->
-            <retard-ft>35</retard-ft> <!-- Enable Thrust Retard -->
-            <retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
-            <togaspd>156</togaspd> <!-- V2 + 10kts -->
-            <autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
+            <auto-bank-max-deg>30</auto-bank-max-deg>            <!-- Maximum Auto Bank Limit -->
+            <land-enable>1</land-enable>            <!-- Enable/Disable Autoland -->
+            <land-flap>0.750</land-flap>            <!-- Minimum Flap used for Landing -->
+            <retard-ft>35</retard-ft>            <!-- Enable Thrust Retard -->
+            <retard-enable>1</retard-enable>            <!-- AGL to Thrust Retard -->
+            <togaspd>156</togaspd>            <!-- V2 + 10kts -->
+            <autoland-without-ap>0</autoland-without-ap>            <!-- Engage LAND and FLARE Modes even if the AP is off -->
         </settings>
         <custom>
             <athr-armed>0</athr-armed>
@@ -777,7 +777,7 @@
         </flight>
 
         <gear>
-            <autobrakes type="int">0</autobrakes> <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
+            <autobrakes type="int">0</autobrakes>            <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
             <tiller-cmd-norm type="double">0</tiller-cmd-norm>
             <tiller-enabled type="bool">0</tiller-enabled>
         </gear>
@@ -901,7 +901,7 @@
         <ap-hide-helper type="bool">0</ap-hide-helper>
         <at-helper type="bool">1</at-helper>
         <warnings>
-            <altitude-alert-mode type="int">0</altitude-alert-mode> <!-- 0 - acq, 1 - deviation -->
+            <altitude-alert-mode type="int">0</altitude-alert-mode>            <!-- 0 - acq, 1 - deviation -->
         </warnings>
     </b737>
 
@@ -1014,19 +1014,19 @@
 
         <mk-viii>
             <!-- mk-viii configuration, see: http://wiki.flightgear.org/index.php/GPWS -->
-            <serviceable>true</serviceable> <!-- EGPWS_ENABLE -->
+            <serviceable>true</serviceable>            <!-- EGPWS_ENABLE -->
             <configuration-module>
                 <category-1>  255 </category-1>
-                <category-3>   2 </category-3> <!-- POSITION_INPUT_SELECT -->
-                <category-4>  13 </category-4> <!-- ALTITUDE_CALLOUTS -->
-                <category-5>   0 </category-5> <!-- AUDIO_MENU_SELECT -->
-                <category-6>   1 </category-6> <!-- TERRAIN_DISPLAY_SELECT -->
-                <category-7> 124 </category-7> <!-- OPTIONS_SELECT_GROUP_1 -->
-                <category-8>   3 </category-8> <!-- RADIO_ALTITUDE_INPUT_SELECT-->
-                <category-9>   3 </category-9> <!-- NAVIGATION_INPUT_SELECT -->
-                <category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->
-                <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
-                <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
+                <category-3>   2 </category-3>                <!-- POSITION_INPUT_SELECT -->
+                <category-4>  13 </category-4>                <!-- ALTITUDE_CALLOUTS -->
+                <category-5>   0 </category-5>                <!-- AUDIO_MENU_SELECT -->
+                <category-6>   1 </category-6>                <!-- TERRAIN_DISPLAY_SELECT -->
+                <category-7> 124 </category-7>                <!-- OPTIONS_SELECT_GROUP_1 -->
+                <category-8>   3 </category-8>                <!-- RADIO_ALTITUDE_INPUT_SELECT-->
+                <category-9>   3 </category-9>                <!-- NAVIGATION_INPUT_SELECT -->
+                <category-10>  6 </category-10>                <!-- ATTITUDE_INPUT_SELECT -->
+                <category-13>  7 </category-13>                <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+                <category-14>  0 </category-14>                <!-- AUDIO_OUTPUT_LEVEL -->
             </configuration-module>
             <voice>
                 <file-prefix type="string">Aircraft/737-MAX/Sounds/gpws/</file-prefix>
@@ -1045,9 +1045,9 @@
             </inputs>
             <speaker>
                 <!-- Speaker Configuration -->
-                <max-dist type="double"> 200.0 </max-dist> <!-- Max. distance where speaker is heard -->
-                <reference-dist type="double"> 2 </reference-dist> <!-- Distance to pilot -->
-                <volume type="double"> 1.0 </volume> <!-- Volume at reference distance -->
+                <max-dist type="double"> 200.0 </max-dist>                <!-- Max. distance where speaker is heard -->
+                <reference-dist type="double"> 2 </reference-dist>                <!-- Distance to pilot -->
+                <volume type="double"> 1.0 </volume>                <!-- Volume at reference distance -->
             </speaker>
         </mk-viii>
 
@@ -1110,18 +1110,18 @@
         <radar-altimeter n="0">
             <serviceable type="bool">true</serviceable>
             <antenna>
-                <x-offset-m type="double">11.9359</x-offset-m> <!-- From MFEPD. Transmitter STA 430, receiver 450. -->
+                <x-offset-m type="double">11.9359</x-offset-m>                <!-- From MFEPD. Transmitter STA 430, receiver 450. -->
                 <y-offset-m type="double">0</y-offset-m>
-                <z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
+                <z-offset-m type="double">1.44804</z-offset-m>                <!-- WL 148. From MFEPD. -->
             </antenna>
         </radar-altimeter>
 
         <radar-altimeter n="1">
             <serviceable type="bool">true</serviceable>
             <antenna>
-                <x-offset-m type="double">12.9359</x-offset-m> <!-- From MFEPD. Transmitter STA 390, receiver 410. -->
+                <x-offset-m type="double">12.9359</x-offset-m>                <!-- From MFEPD. Transmitter STA 390, receiver 410. -->
                 <y-offset-m type="double">0</y-offset-m>
-                <z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
+                <z-offset-m type="double">1.44804</z-offset-m>                <!-- WL 148. From MFEPD. -->
             </antenna>
         </radar-altimeter>
 
@@ -1155,70 +1155,70 @@
             <file>Aircraft/737-MAX/Nasal/property-tree-setup.nas</file>
         </pts>
         <cdu>
-            <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file> <!-- custom implementation of the CDU from instruments-3D -->
+            <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>            <!-- custom implementation of the CDU from instruments-3D -->
         </cdu>
         <boeing737>
             <file>Aircraft/737-MAX/Models/Instruments/PFD-capt.nas</file>
             <file>Aircraft/737-MAX/Models/Instruments/PFD-FO.nas</file>
             <file>Aircraft/737-MAX/Models/Instruments/EICAS.nas</file>
             AP-OH/annunciator.nas</file>
-            <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
-            <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
-            <file>Aircraft/737-MAX/Nasal/controls.nas</file>
-            <file>Aircraft/737-MAX/Nasal/friction.nas</file>
-            <file>Aircraft/737-MAX/Nasal/lighting.nas</file>
-            <file>Aircraft/737-MAX/Nasal/tire-smoke.nas</file>
-            <file>Aircraft/737-MAX/Nasal/ground-services.nas</file>
-            <file>Aircraft/737-MAX/Nasal/systems.nas</file>
-            <file>Aircraft/737-MAX/Nasal/engine-fire.nas</file>
-            <file>Aircraft/737-MAX/Nasal/limits.nas</file>
-            <file>Aircraft/737-MAX/Nasal/doors.nas</file>
-            <file>Aircraft/737-MAX/Nasal/shake.nas</file>
-            <file>Aircraft/737-MAX/Nasal/warnings.nas</file>
-            <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
-            <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
-            <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
-        </boeing737>
-        <systems>
-            <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
-            <file>Aircraft/737-MAX/Nasal/hydraulics.nas</file>
-            <file>Aircraft/737-MAX/Nasal/engines.nas</file>
-        </systems>
-        <nd>
-            <file>Aircraft/737-MAX/Nasal/ND.nas</file>
-        </nd>
-        <reversethrust>
-            <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
-        </reversethrust>
-        <itaf>
-            <file>Aircraft/737-MAX/Nasal/AFDS73X.nas</file>
-            <file>Aircraft/737-MAX/Nasal/AFDS73X-b.nas</file>
-            <file>Aircraft/737-MAX/Nasal/AFDS73X-c.nas</file>
-        </itaf>
-        <it-cws>
-            <file>Aircraft/737-MAX/Nasal/it-cws.nas</file>
-        </it-cws>
-        <thrust>
-            <file>Aircraft/737-MAX/Nasal/fadec.nas</file>
-        </thrust>
-        <acconfig>
-            <file>Aircraft/737-MAX/AircraftConfig/acconfig.nas</file>
-        </acconfig>
-        <icing>
-            <file>Aircraft/737-MAX/Nasal/icing.nas</file>
-        </icing>
-        <autopush>
-            <file>Aircraft/737-MAX/Nasal/Autopush/autopush.nas</file>
-        </autopush>
-        <autopush_driver>
-            <file>Aircraft/737-MAX/Nasal/Autopush/driver.nas</file>
-        </autopush_driver>
-        <dynarr>
-            <file>Aircraft/737-MAX/Nasal/Autopush/dynarr.nas</file>
-        </dynarr>
-        <autopush_route>
-            <file>Aircraft/737-MAX/Nasal/Autopush/route.nas</file>
-        </autopush_route>
-    </nasal>
+        <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
+        <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
+        <file>Aircraft/737-MAX/Nasal/controls.nas</file>
+        <file>Aircraft/737-MAX/Nasal/friction.nas</file>
+        <file>Aircraft/737-MAX/Nasal/lighting.nas</file>
+        <file>Aircraft/737-MAX/Nasal/tire-smoke.nas</file>
+        <file>Aircraft/737-MAX/Nasal/ground-services.nas</file>
+        <file>Aircraft/737-MAX/Nasal/systems.nas</file>
+        <file>Aircraft/737-MAX/Nasal/engine-fire.nas</file>
+        <file>Aircraft/737-MAX/Nasal/limits.nas</file>
+        <file>Aircraft/737-MAX/Nasal/doors.nas</file>
+        <file>Aircraft/737-MAX/Nasal/shake.nas</file>
+        <file>Aircraft/737-MAX/Nasal/warnings.nas</file>
+        <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
+        <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
+        <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
+    </boeing737>
+    <systems>
+        <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
+        <file>Aircraft/737-MAX/Nasal/hydraulics.nas</file>
+        <file>Aircraft/737-MAX/Nasal/engines.nas</file>
+    </systems>
+    <nd>
+        <file>Aircraft/737-MAX/Nasal/ND.nas</file>
+    </nd>
+    <reversethrust>
+        <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
+    </reversethrust>
+    <itaf>
+        <file>Aircraft/737-MAX/Nasal/AFDS73X.nas</file>
+        <file>Aircraft/737-MAX/Nasal/AFDS73X-b.nas</file>
+        <file>Aircraft/737-MAX/Nasal/AFDS73X-c.nas</file>
+    </itaf>
+    <it-cws>
+        <file>Aircraft/737-MAX/Nasal/it-cws.nas</file>
+    </it-cws>
+    <thrust>
+        <file>Aircraft/737-MAX/Nasal/fadec.nas</file>
+    </thrust>
+    <acconfig>
+        <file>Aircraft/737-MAX/AircraftConfig/acconfig.nas</file>
+    </acconfig>
+    <icing>
+        <file>Aircraft/737-MAX/Nasal/icing.nas</file>
+    </icing>
+    <autopush>
+        <file>Aircraft/737-MAX/Nasal/Autopush/autopush.nas</file>
+    </autopush>
+    <autopush_driver>
+        <file>Aircraft/737-MAX/Nasal/Autopush/driver.nas</file>
+    </autopush_driver>
+    <dynarr>
+        <file>Aircraft/737-MAX/Nasal/Autopush/dynarr.nas</file>
+    </dynarr>
+    <autopush_route>
+        <file>Aircraft/737-MAX/Nasal/Autopush/route.nas</file>
+    </autopush_route>
+</nasal>
 
 </PropertyList>

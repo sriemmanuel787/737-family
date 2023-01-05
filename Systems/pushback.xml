@@ -9,7 +9,7 @@
        /sim/model/pushback/position-norm gt 0.95
        /gear/gear/wow == 1
        gear/unit[0]/wheel-speed-fps lt 50
-     </test>
+            </test>
         </switch>
 
         <summer name="systems/pushback/speed-error">
@@ -30,7 +30,7 @@
             <default value="0" />
             <test value="systems/pushback/force">
        systems/pushback/linked == 0
-     </test>
+            </test>
             <output>external_reactions/pushback/magnitude</output>
         </switch>
 

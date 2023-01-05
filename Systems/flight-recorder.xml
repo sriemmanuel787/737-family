@@ -153,11 +153,11 @@
             </signal>
             <signal>
                 <type>float</type>
-                <property type="string">gear/gear[3]/compression-m</property> <!-- "virtual gear", contact point for left axle -->
+                <property type="string">gear/gear[3]/compression-m</property>                <!-- "virtual gear", contact point for left axle -->
             </signal>
             <signal>
                 <type>float</type>
-                <property type="string">gear/gear[4]/compression-m</property> <!-- "virtual gear", contact point for right axle -->
+                <property type="string">gear/gear[4]/compression-m</property>                <!-- "virtual gear", contact point for right axle -->
             </signal>
 
             <signal>

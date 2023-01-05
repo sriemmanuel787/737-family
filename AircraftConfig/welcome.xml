@@ -27,7 +27,7 @@
                 <command>nasal</command>
                 <script>
 				acconfig.help_dlg.open();
-				</script>
+                </script>
             </binding>
         </button>
         <button>
@@ -86,7 +86,7 @@
                 <command>nasal</command>
                 <script>
 				acconfig.writeSettings();
-				</script>
+                </script>
             </binding>
             <live>true</live>
         </checkbox>
@@ -106,7 +106,7 @@
                 <command>nasal</command>
                 <script>
 				acconfig.main_dlg.open();
-				</script>
+                </script>
             </binding>
             <binding>
                 <command>dialog-close</command>
