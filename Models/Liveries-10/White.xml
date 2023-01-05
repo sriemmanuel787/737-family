@@ -7,8 +7,11 @@
             <livery>
                 <name type="string">Test</name>
                 <fuselage>Liveries-10/737-10test.png</fuselage>
-                <engine>Liveries-10/UALtest.png</engine>
+                <engine>Liveries-engine/UAL.png</engine>
             </livery>
+            <registration>------</registration>
+            <airline-code>---</airline-code>
+            <selcal>----</selcal>
         </model>
     </sim>
 
