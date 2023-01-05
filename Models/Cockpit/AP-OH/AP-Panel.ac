@@ -26,7 +26,7 @@ MATERIAL "Material.005" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000
 MATERIAL "Material.002" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 OBJECT world
 name "Blender_exporter_v3.3__AP-Panel.ac"
-kids 118
+kids 130
 OBJECT poly
 name "alt.knob"
 data 12
@@ -2347,11 +2347,211 @@ refs 32
 30 0.703179 0.485389
 kids 0
 OBJECT poly
+name "annunciator.air-cond"
+data 9
+Plane.008
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 -0.01501 -0.51643
+0.00346 -0.01501 -0.48915
+0.00346 -0.00524 -0.51643
+0.00346 -0.00524 -0.48915
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+2 1 0.166667
+3 0.499999 0.166667
+1 0.499999 0.000014
+0 1 0.000015
+kids 0
+OBJECT poly
+name "annunciator.anti-ice"
+data 9
+Plane.003
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 0.0143 -0.46188
+0.00346 0.0143 -0.48915
+0.00346 0.00453 -0.48915
+0.00346 0.00453 -0.46188
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0 0.500014
+3 0 0.333319
+2 0.499999 0.333319
+1 0.499999 0.500014
+kids 0
+OBJECT poly
+name "annunciator.apu"
+data 9
+Plane.012
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 0.0042 0.45825
+0.00346 0.0042 0.48552
+0.00346 -0.00556 0.48552
+0.00346 -0.00556 0.45825
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 1 0.833333
+1 0.5 0.833333
+2 0.5 0.666667
+3 1 0.666667
+kids 0
+OBJECT poly
+name "annunciator.doors"
+data 9
+Plane.007
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 -0.01501 -0.46188
+0.00346 -0.01501 -0.48915
+0.00346 -0.00524 -0.48915
+0.00346 -0.00524 -0.46188
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+2 0.499999 0.166667
+3 0 0.166667
+0 0 0.000014
+1 0.499999 0.000014
+kids 0
+OBJECT poly
+name "annunciator.elec"
+data 9
+Plane.010
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 0.01397 0.45825
+0.00346 0.01397 0.48552
+0.00346 0.0042 0.45825
+0.00346 0.0042 0.48552
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+1 0.5 1
+3 0.5 0.833333
+2 1 0.833333
+0 1 1
+kids 0
+OBJECT poly
+name "annunciator.eng"
+data 9
+Plane.004
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 0.0143 -0.51643
+0.00346 0.0143 -0.48915
+0.00346 0.00453 -0.51643
+0.00346 0.00453 -0.48915
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+1 0.499999 0.500014
+3 0.499999 0.333319
+2 1 0.333319
+0 1 0.500014
+kids 0
+OBJECT poly
+name "annunciator.flt-cont"
+data 9
+Plane.009
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 0.01397 0.51279
+0.00346 0.01397 0.48552
+0.00346 0.0042 0.48552
+0.00346 0.0042 0.51279
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0 1
+3 0 0.833333
+2 0.5 0.833333
+1 0.5 1
+kids 0
+OBJECT poly
+name "annunciator.fuel"
+data 9
+Plane.013
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 -0.01533 0.51279
+0.00346 -0.01533 0.48552
+0.00346 -0.00556 0.48552
+0.00346 -0.00556 0.51279
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+2 0.5 0.666667
+3 0 0.666667
+0 0 0.5
+1 0.5 0.5
+kids 0
+OBJECT poly
+name "annunciator.hyd"
+data 9
+Plane.005
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 0.00453 -0.48915
+0.00346 0.00453 -0.46188
+0.00346 -0.00524 -0.48915
+0.00346 -0.00524 -0.46188
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0.499999 0.333319
+1 0 0.333319
+3 0 0.166667
+2 0.499999 0.166667
+kids 0
+OBJECT poly
+name "annunciator.irs"
+data 9
+Plane.011
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 0.0042 0.48552
+0.00346 0.0042 0.51279
+0.00346 -0.00556 0.48552
+0.00346 -0.00556 0.51279
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0.5 0.833333
+1 0 0.833333
+3 0 0.666667
+2 0.5 0.666667
+kids 0
+OBJECT poly
 name "annunciator.L"
 data 9
 Plane.215
 crease 40.0
-texture "blank.png"
+texture "annunciator-off.png"
 numvert 4
 0.00345 0.01397 0.51279
 0.00345 -0.01533 0.51279
@@ -2367,11 +2567,51 @@ refs 4
 2 1 1
 kids 0
 OBJECT poly
+name "annunciator.overhead"
+data 9
+Plane.006
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 0.00453 -0.51643
+0.00346 0.00453 -0.48915
+0.00346 -0.00524 -0.51643
+0.00346 -0.00524 -0.48915
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 1 0.333319
+1 0.499999 0.333319
+3 0.499999 0.166667
+2 1 0.166667
+kids 0
+OBJECT poly
+name "annunciator.ovht-det"
+data 9
+Plane.014
+crease 40.0
+texture "annunciator-lit.png"
+numvert 4
+0.00346 -0.01533 0.45825
+0.00346 -0.01533 0.48552
+0.00346 -0.00556 0.48552
+0.00346 -0.00556 0.45825
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+3 1 0.666667
+2 0.5 0.666667
+1 0.5 0.5
+0 1 0.5
+kids 0
+OBJECT poly
 name "annunciator.R"
 data 9
 Plane.216
 crease 40.0
-texture "blank.png"
+texture "annunciator-off.png"
 numvert 4
 0.00345 0.0143 -0.46188
 0.00345 -0.01501 -0.46188
@@ -18297,7 +18537,7 @@ numvert 544
 -0.04517 0.00007 -0.30972
 -0.04515 0.00005 -0.30987
 -0.03964 -0.00003 -0.31001
--0.03966 -0 -0.30987
+-0.03966 0 -0.30987
 -0.04518 -0.00028 -0.3096
 -0.04515 -0.00034 -0.30974
 -0.03965 -0.00044 -0.30987
@@ -18353,7 +18593,7 @@ numvert 544
 -0.04517 0.00007 -0.30545
 -0.04515 0.00005 -0.3053
 -0.03964 -0.00003 -0.30515
--0.03966 -0 -0.3053
+-0.03966 0 -0.3053
 -0.04517 0.00044 -0.3054
 -0.04515 0.00044 -0.30526
 -0.03964 0.0004 -0.30511
@@ -28934,7 +29174,7 @@ numvert 544
 -0.04517 0.00007 -0.4241
 -0.04515 0.00005 -0.42424
 -0.03964 -0.00003 -0.42439
--0.03966 -0 -0.42424
+-0.03966 0 -0.42424
 -0.04518 -0.00028 -0.42398
 -0.04515 -0.00034 -0.42411
 -0.03965 -0.00044 -0.42425
@@ -28990,7 +29230,7 @@ numvert 544
 -0.04517 0.00007 -0.41983
 -0.04515 0.00005 -0.41969
 -0.03964 -0.00003 -0.41954
--0.03966 -0 -0.41969
+-0.03966 0 -0.41969
 -0.04517 0.00044 -0.41979
 -0.04515 0.00044 -0.41964
 -0.03964 0.0004 -0.41949

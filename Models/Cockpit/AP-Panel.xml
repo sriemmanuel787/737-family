@@ -1,6 +1,28 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>AP-OH/AP-Panel.ac</path>
+    <!-- Annunciator -->
+    <!-- Illuminate all by default -->
+    <animation>
+        <type>material</type>
+        <object-name>annunciator.air-cond</object-name>
+        <object-name>annunciator.anti-ice</object-name>
+        <object-name>annunciator.apu</object-name>
+        <object-name>annunciator.doors</object-name>
+        <object-name>annunciator.elec</object-name>
+        <object-name>annunciator.eng</object-name>
+        <object-name>annunciator.flt-cont</object-name>
+        <object-name>annunciator.fuel</object-name>
+        <object-name>annunciator.hyd</object-name>
+        <object-name>annunciator.irs</object-name>
+        <object-name>annunciator.overhead</object-name>
+        <object-name>annunciator.ovht-det</object-name>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
 
     <!-- Switches -->
     <!-- Autothrottle -->
