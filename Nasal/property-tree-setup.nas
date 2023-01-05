@@ -70,7 +70,7 @@ var Autoflight = {
 	spdMach: 	props.globals.getNode("it-autoflight/input/spd-mach"),
 	togaArm: 	props.globals.getNode("it-autoflight/input/toga"),
 	vSpd: 		props.globals.getNode("it-autoflight/input/vs"),
-    afds: 		props.globals.getNode("autopilot/display/afds-mode"),
+    afds: 		props.globals.getNode("autopilot/display/afds-mode")
 };
 
 var Sim = {

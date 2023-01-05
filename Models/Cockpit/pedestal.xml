@@ -25,7 +25,7 @@
     <animation>
         <type>rotate</type>
         <object-name>flaps</object-name>
-        <property>surface-positions/flap-pos-norm</property>
+        <property>controls/flight/flaps</property>
         <factor>89</factor>
         <center>
             <x-m>0.040164</x-m>

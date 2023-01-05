@@ -76,6 +76,13 @@ var canvas_PFDC = {
         var elapsedSec = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
         var headingDeg = getprop("orientation/heading-deg");
         var headingAP = getprop("it-autoflight/input/hdg");
+        var windHeading = getprop("environment/wind-from-heading-deg");
+        var altitude = getprop("position/altitude-ft");
+        var altitudeAGL = getprop("position/altitude-agl-ft");
+        var altitudeAP = getprop("it-autoflight/input/alt");
+        var ias = getprop("instrumentation/airspeed-indicator/indicated-speed-kt");
+        var stall = getprop("instrumentation/weu/state/stall-speed");
+        var vSpeed = getprop("velocities/vertical-speed-fps");
         
 
 
@@ -130,9 +137,9 @@ var canvas_PFDC = {
         # Wind and Speeds
         me["ground-speed"].setText(sprintf("%i", getprop("velocities/groundspeed-kt")));
         me["true-airspeed"].setText(sprintf("%i", getprop("velocities/airspeed-kt")));
-        me["wind-heading"].setText(sprintf("%03i", getprop("environment/wind-from-heading-deg")));
+        me["wind-heading"].setText(sprintf("%03i", windHeading));
         me["wind-speed"].setText(sprintf("%i", getprop("environment/wind-speed-kt")));
-        me["wind-arrow"].setRotation(getprop("environment/wind-from-heading-deg")*D2R);
+        me["wind-arrow"].setRotation(windHeading*D2R);
 
         # Flight Director
         if(getprop("it-autoflight/input/fd1")) {
@@ -146,12 +153,12 @@ var canvas_PFDC = {
         }
         
         # Altitude and VNAV
-        if(getprop("position/altitude-ft")-getprop("it-autoflight/input/alt") > 400)
+        if(altitude-altitudeAP > 400)
             me["ap-alt-tape"].setTranslation(0, 174);
-        elsif(getprop("position/altitude-ft")-getprop("it-autoflight/input/alt") < -400)
+        elsif(altitude-altitudeAP < -400)
             me["ap-alt-tape"].setTranslation(0, -174);
         else
-            me["ap-alt-tape"].setTranslation(0, 174/400*(getprop("position/altitude-ft")-getprop("it-autoflight/input/alt")));
+            me["ap-alt-tape"].setTranslation(0, 174/400*(altitude-altitudeAP));
         
         # Hiding upper tapes by default
         me["alt-tape0"].hide();
@@ -166,115 +173,115 @@ var canvas_PFDC = {
         me["alt-tape9"].hide();
 
         # Moving the tapes
-        me["alt-ground"].show().setTranslation(0, getprop("position/altitude-agl-ft")*0.44);
+        me["alt-ground"].show().setTranslation(0, altitudeAGL*0.44);
 
-        if(getprop("position/altitude-ft") < 4600) {
-            me["alt-tape0"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
-            me["alt-tape1"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
-        } elsif (getprop("position/altitude-ft") < 9600) {
-            me["alt-tape1"].show().setTranslation(0, getprop("position/altitude-ft")*0.44);
-            me["alt-tape2"].show().setTranslation(0, (getprop("position/altitude-ft")-4600)*0.44);
-        } elsif (getprop("position/altitude-ft") < 14600) {
-            me["alt-tape2"].show().setTranslation(0, (getprop("position/altitude-ft")-4600)*0.44);
-            me["alt-tape3"].show().setTranslation(0, (getprop("position/altitude-ft")-9600)*0.44);
-        } elsif (getprop("position/altitude-ft") < 19600) {
-            me["alt-tape3"].show().setTranslation(0, (getprop("position/altitude-ft")-9600)*0.44);
-            me["alt-tape4"].show().setTranslation(0, (getprop("position/altitude-ft")-14600)*0.44);
-        } elsif (getprop("position/altitude-ft") < 24600) {
-            me["alt-tape4"].show().setTranslation(0, (getprop("position/altitude-ft")-14600)*0.44);
-            me["alt-tape5"].show().setTranslation(0, (getprop("position/altitude-ft")-19600)*0.44);
-        } elsif (getprop("position/altitude-ft") < 29600) {
-            me["alt-tape5"].show().setTranslation(0, (getprop("position/altitude-ft")-19600)*0.44);
-            me["alt-tape6"].show().setTranslation(0, (getprop("position/altitude-ft")-24600)*0.44);
-        } elsif (getprop("position/altitude-ft") < 34600) {
-            me["alt-tape6"].show().setTranslation(0, (getprop("position/altitude-ft")-24600)*0.44);
-            me["alt-tape7"].show().setTranslation(0, (getprop("position/altitude-ft")-29600)*0.44);
-        } elsif (getprop("position/altitude-ft") < 39600) {
-            me["alt-tape7"].show().setTranslation(0, (getprop("position/altitude-ft")-29600)*0.44);
-            me["alt-tape8"].show().setTranslation(0, (getprop("position/altitude-ft")-34600)*0.44);
-        } elsif (getprop("position/altitude-ft") < 44600) {
-            me["alt-tape8"].show().setTranslation(0, (getprop("position/altitude-ft")-34600)*0.44);
-            me["alt-tape9"].show().setTranslation(0, (getprop("position/altitude-ft")-39600)*0.44);
+        if(altitude < 4600) {
+            me["alt-tape0"].show().setTranslation(0, altitude*0.44);
+            me["alt-tape1"].show().setTranslation(0, altitude*0.44);
+        } elsif (altitude < 9600) {
+            me["alt-tape1"].show().setTranslation(0, altitude*0.44);
+            me["alt-tape2"].show().setTranslation(0, (altitude-4600)*0.44);
+        } elsif (altitude < 14600) {
+            me["alt-tape2"].show().setTranslation(0, (altitude-4600)*0.44);
+            me["alt-tape3"].show().setTranslation(0, (altitude-9600)*0.44);
+        } elsif (altitude < 19600) {
+            me["alt-tape3"].show().setTranslation(0, (altitude-9600)*0.44);
+            me["alt-tape4"].show().setTranslation(0, (altitude-14600)*0.44);
+        } elsif (altitude < 24600) {
+            me["alt-tape4"].show().setTranslation(0, (altitude-14600)*0.44);
+            me["alt-tape5"].show().setTranslation(0, (altitude-19600)*0.44);
+        } elsif (altitude < 29600) {
+            me["alt-tape5"].show().setTranslation(0, (altitude-19600)*0.44);
+            me["alt-tape6"].show().setTranslation(0, (altitude-24600)*0.44);
+        } elsif (altitude < 34600) {
+            me["alt-tape6"].show().setTranslation(0, (altitude-24600)*0.44);
+            me["alt-tape7"].show().setTranslation(0, (altitude-29600)*0.44);
+        } elsif (altitude < 39600) {
+            me["alt-tape7"].show().setTranslation(0, (altitude-29600)*0.44);
+            me["alt-tape8"].show().setTranslation(0, (altitude-34600)*0.44);
+        } elsif (altitude < 44600) {
+            me["alt-tape8"].show().setTranslation(0, (altitude-34600)*0.44);
+            me["alt-tape9"].show().setTranslation(0, (altitude-39600)*0.44);
         }
 
         # Low-altitude box
-        if(getprop("position/altitude-agl-ft") < 100)
-            me["alt-final"].setText(sprintf("%i", math.round(getprop("position/altitude-agl-ft"), 2)));
-        elsif (getprop("position/altitude-agl-ft") < 500)
-            me["alt-final"].setText(sprintf("%i", math.round(getprop("position/altitude-agl-ft"), 10)));
-        elsif (getprop("position/altitude-agl-ft") < 2520)
-            me["alt-final"].setText(sprintf("%i", math.round(getprop("position/altitude-agl-ft"), 20)));
+        if(altitudeAGL < 100)
+            me["alt-final"].setText(sprintf("%i", math.round(altitudeAGL, 2)));
+        elsif (altitudeAGL < 500)
+            me["alt-final"].setText(sprintf("%i", math.round(altitudeAGL, 10)));
+        elsif (altitudeAGL < 2520)
+            me["alt-final"].setText(sprintf("%i", math.round(altitudeAGL, 20)));
         else {
             me["alt-final"].hide();
             me["alt-final-box"].hide();
         }
 
         # Altitude box
-        if(getprop("position/altitude-ft") < 0)
+        if(altitude < 0)
             me["alt-neg"].show();
         else
             me["alt-neg"].hide();
         
-        if(getprop("position/altitude-ft") < 10000)
+        if(altitude < 10000)
             me["alt-00000"].show();
         else
             me["alt-00000"].hide();
 
-        me["alt-20"].setTranslation(0, math.mod(getprop("position/altitude-ft"), 100)*0.86);
+        me["alt-20"].setTranslation(0, math.mod(altitude, 100)*0.86);
 
-        if(math.mod(getprop("position/altitude-ft"), 100) > 80)
-            me["alt-100"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 100)) * 0.2755, 248) + ((math.mod(getprop("position/altitude-ft"), 100) - 80) * 1.385));
+        if(math.mod(altitude, 100) > 80)
+            me["alt-100"].setTranslation(0, math.mod((altitude - math.mod(altitude, 100)) * 0.2755, 248) + ((math.mod(altitude, 100) - 80) * 1.385));
         else
-            me["alt-100"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 100)) * 0.2755, 248));
+            me["alt-100"].setTranslation(0, math.mod((altitude - math.mod(altitude, 100)) * 0.2755, 248));
 
-        if(math.mod(getprop("position/altitude-ft"), 1000) > 900)
-            me["alt-1000"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 1000)) * 0.3, 270.2) + ((math.mod(getprop("position/altitude-ft"), 1000) - 900) * 0.303));
+        if(math.mod(altitude, 1000) > 900)
+            me["alt-1000"].setTranslation(0, math.mod((altitude - math.mod(altitude, 1000)) * 0.3, 270.2) + ((math.mod(altitude, 1000) - 900) * 0.303));
         else
-            me["alt-1000"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 1000)) * 0.3, 270.2));
+            me["alt-1000"].setTranslation(0, math.mod((altitude - math.mod(altitude, 1000)) * 0.3, 270.2));
 
-        if(math.mod(getprop("position/altitude-ft"), 10000) > 9000)
-            me["alt-10000"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 10000)) * 0.03, 270.2) + ((math.mod(getprop("position/altitude-ft"), 10000) - 9000) * 0.0303));
+        if(math.mod(altitude, 10000) > 9000)
+            me["alt-10000"].setTranslation(0, math.mod((altitude - math.mod(altitude, 10000)) * 0.03, 270.2) + ((math.mod(altitude, 10000) - 9000) * 0.0303));
         else
-            me["alt-10000"].setTranslation(0, math.mod((getprop("position/altitude-ft") - math.mod(getprop("position/altitude-ft"), 10000)) * 0.03, 270.2));
+            me["alt-10000"].setTranslation(0, math.mod((altitude - math.mod(altitude, 10000)) * 0.03, 270.2));
 
-        me["alt-m"].setText(sprintf("%i", getprop("position/altitude-ft") * FT2M));
-        me["ap-alt-meter"].setText(sprintf("%i", getprop("it-autoflight/input/alt") * FT2M));
-        me["ap-alt-thousand"].setText(sprintf("%i", getprop("it-autoflight/input/alt") / 1000));
-        me["ap-alt-hundred"].setText(sprintf("%03i", math.mod(getprop("it-autoflight/input/alt"), 1000)));
+        me["alt-m"].setText(sprintf("%i", altitude * FT2M));
+        me["ap-alt-meter"].setText(sprintf("%i", altitudeAP * FT2M));
+        me["ap-alt-thousand"].setText(sprintf("%i", altitudeAP / 1000));
+        me["ap-alt-hundred"].setText(sprintf("%03i", math.mod(altitudeAP, 1000)));
 
         # Speed Tape
-        me["spd-tape"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
-        me["spd-limitLR"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
-        me["spd-limitLB"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
-        me["spd-limitUR"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
-        me["spd-limitUB"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
-        me["spd-limitY"].setTranslation(0, getprop("instrumentation/airspeed-indicator/indicated-speed-kt") * 2.9);
+        me["spd-tape"].setTranslation(0, ias * 2.9);
+        me["spd-limitLR"].setTranslation(0, ias * 2.9);
+        me["spd-limitLB"].setTranslation(0, ias * 2.9);
+        me["spd-limitUR"].setTranslation(0, ias * 2.9);
+        me["spd-limitUB"].setTranslation(0, ias * 2.9);
+        me["spd-limitY"].setTranslation(0, ias * 2.9);
 
         if (getprop("controls/flight/flaps") > 0) {
             me["spd-limitUR"].setTranslation(0, getprop(sprintf("limits/max-flap-extension-speed[%s]/speed", getprop("controls/flight/flaps") * 8)) * 2.9);
             me["spd-limitUB"].setTranslation(0, getprop(sprintf("limits/max-flap-extension-speed[%s]/speed", getprop("controls/flight/flaps") * 8)) * 2.9);
         }
 
-        if (getprop("instrumentation/weu/state/stall-speed") != nil) {
-            me["spd-limitLR"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed") * 2.9);
-            me["spd-limitLB"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed") * 2.9);
-            me["spd-limitY"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed") * 2.9);
+        if (stall != nil) {
+            me["spd-limitLR"].setTranslation(0,-stall * 2.9);
+            me["spd-limitLB"].setTranslation(0,-stall * 2.9);
+            me["spd-limitY"].setTranslation(0,-stall * 2.9);
         }
         
-        if (getprop("instrumentation/airspeed-indicator/indicated-speed-kt") < 45) {
+        if (ias < 45) {
             me["spd-1"].setTranslation(0, 105);
             me["spd-10"].setTranslation(0, 136.2);
         } else {
-            me["spd-1"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) * 21.3);
-            if(math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) > 9)
-                me["spd-10"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10), 100) * 3.43 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10) - 9) * 34.3);
+            me["spd-1"].setTranslation(0, math.mod(ias, 10) * 21.3);
+            if(math.mod(ias, 10) > 9)
+                me["spd-10"].setTranslation(0, math.mod(ias-math.mod(ias, 10), 100) * 3.43 + (math.mod(ias, 10) - 9) * 34.3);
             else
-                me["spd-10"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 10), 100) * 3.43);
+                me["spd-10"].setTranslation(0, math.mod(ias-math.mod(ias, 10), 100) * 3.43);
 
-            if(math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100) > 90)
-                me["spd-100"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100), 1000) * 0.343 + (math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100) - 90) * 3.43);
+            if(math.mod(ias, 100) > 90)
+                me["spd-100"].setTranslation(0, math.mod(ias-math.mod(ias, 100), 1000) * 0.343 + (math.mod(ias, 100) - 90) * 3.43);
             else
-                me["spd-100"].setTranslation(0, math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt")-math.mod(getprop("instrumentation/airspeed-indicator/indicated-speed-kt"), 100), 1000) * 0.343);
+                me["spd-100"].setTranslation(0, math.mod(ias-math.mod(ias, 100), 1000) * 0.343);
         }
         me["mach"].setText(sprintf(".%.03d", getprop("velocities/mach")));
 
@@ -286,26 +293,24 @@ var canvas_PFDC = {
         
         
         # AOA Indicator
-        if (math.abs(getprop("velocities/vertical-speed-fps")*60) < 1000)
-            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.056*60*D2R);
-        elsif (math.abs(getprop("velocities/vertical-speed-fps")*60) < 2000)
-            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.03425*60*D2R);
-        elsif (math.abs(getprop("velocities/vertical-speed-fps")*60) < 6000)
-            me["aoa-needle"].setRotation(getprop("velocities/vertical-speed-fps")*0.011833*60*D2R);
+        if (math.abs(vSpeed*60) < 1000)
+            me["aoa-needle"].setRotation(vSpeed*0.056*60*D2R);
+        elsif (math.abs(vSpeed*60) < 2000)
+            me["aoa-needle"].setRotation(vSpeed*0.03425*60*D2R);
+        elsif (math.abs(vSpeed*60) < 6000)
+            me["aoa-needle"].setRotation(vSpeed*0.011833*60*D2R);
         else {
-            if(getprop("velocities/vertical-speed-fps") * 60 > 0)
+            if(vSpeed * 60 > 0)
                 me["aoa-needle"].setRotation(71*D2R);
-            elsif(getprop("velocities/vertical-speed-fps") * 60 < 0)
+            elsif(vSpeed * 60 < 0)
                 me["aoa-needle"].setRotation(71*D2R);
         }
-            
-
-
-        if(getprop("velocities/vertical-speed-fps")*60 > 500) {
-            me["vs-pos"].show().setText(sprintf("%i", getprop("velocities/vertical-speed-fps")*60 - math.mod(getprop("velocities/vertical-speed-fps")*60, 50)));
+        
+        if(vSpeed*60 > 500) {
+            me["vs-pos"].show().setText(sprintf("%i", vSpeed*60 - math.mod(vSpeed*60, 50)));
             me["vs-neg"].hide();
-        } elsif (getprop("velocities/vertical-speed-fps")*60 < -500) {
-            me["vs-neg"].show().setText(sprintf("%i", -getprop("velocities/vertical-speed-fps")*60 + math.mod(getprop("velocities/vertical-speed-fps")*60, 50)));
+        } elsif (vSpeed*60 < -500) {
+            me["vs-neg"].show().setText(sprintf("%i", -vSpeed*60 + math.mod(vSpeed*60, 50)));
             me["vs-pos"].hide();
         } else {
             me["vs-pos"].hide();
