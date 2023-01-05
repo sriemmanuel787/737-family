@@ -28,6 +28,10 @@
         <object-name>door.ARO</object-name>
         <object-name>door.FLO</object-name>
         <object-name>door.FRO</object-name>
+        <object-name>elevators.L1</object-name>
+        <object-name>elevators.L2</object-name>
+        <object-name>elevators.R1</object-name>
+        <object-name>elevators.R2</object-name>
         <object-name>flap.L1</object-name>
         <object-name>flap.L2</object-name>
         <object-name>flap.L3</object-name>
@@ -41,6 +45,8 @@
         <object-name>hinge.ARO</object-name>
         <object-name>hinge.FLO</object-name>
         <object-name>hinge.FRO</object-name>
+        <object-name>h-stab.L</object-name>
+        <object-name>h-stab.R</object-name>
         <object-name>mlg.coverL1</object-name>
         <object-name>mlg.coverR1</object-name>
         <object-name>n1.cone</object-name>
