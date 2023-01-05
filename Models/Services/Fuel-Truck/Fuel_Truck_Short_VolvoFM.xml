@@ -2,10 +2,6 @@
 
     <path>Fuel_Truck_Short_VolvoFM.ac</path>
 
-    <!--offsets>
-<heading-deg>90</heading-deg>
-</offsets-->
-
     <animation>
         <type>scale</type>
         <x-offset>0.9</x-offset>

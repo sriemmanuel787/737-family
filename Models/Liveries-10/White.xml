@@ -5,9 +5,9 @@
     <sim>
         <model>
             <livery>
-                <name type="string">Test</name>
-                <fuselage>Liveries-10/737-10test.png</fuselage>
-                <engine>Liveries-engine/UAL.png</engine>
+                <name type="string">White</name>
+                <fuselage>737-10.png</fuselage>
+                <engine>CFM-LEAP.png</engine>
             </livery>
             <registration>------</registration>
             <airline-code>---</airline-code>
