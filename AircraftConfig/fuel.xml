@@ -103,15 +103,15 @@
                     <script>
 						if ((getprop("services/fuel-truck/enable") == 1) and (getprop("services/fuel-truck/connect") == 1)) {
 
-							if (getprop("/services/fuel-truck/clean") == 1) {
+							if (getprop("services/fuel-truck/clean") == 1) {
 								screen.log.write("You can't load fuel while cleaning the tanks!'", 1, 0, 0); 
 							}
 							
-							if (getprop("/services/fuel-truck/request-lbs") > 90000) {
+							if (getprop("services/fuel-truck/request-lbs") > 90000) {
 								screen.log.write("Too much fuel requested!'", 1, 0, 0); 
 
 							} else {								
-									setprop("/services/fuel-truck/transfer", 1);
+									setprop("services/fuel-truck/transfer", 1);
 									screen.log.write("Re-fueling process started...", 0, 0.584, 1); 
 							}
 						} else
@@ -127,8 +127,8 @@
                 <binding>
                     <command>nasal</command>
                     <script>
-						setprop("/services/fuel-truck/transfer", 0);
-						setprop("/services/fuel-truck/clean", 0);
+						setprop("services/fuel-truck/transfer", 0);
+						setprop("services/fuel-truck/clean", 0);
 						screen.log.write("Operation stopped!", 1, 0, 0);
 					</script>
                 </binding>
@@ -142,10 +142,10 @@
                     <script>
 						if ((getprop("services/fuel-truck/enable") == 1) and (getprop("services/fuel-truck/connect") == 1)) {
 						
-							if (getprop("/services/fuel-truck/transfer") == 1)
+							if (getprop("services/fuel-truck/transfer") == 1)
 								screen.log.write("You can't clean the tanks while loading fuel!'", 1, 0, 0);
 							else {
-								setprop("/services/fuel-truck/clean", 1);
+								setprop("services/fuel-truck/clean", 1);
 								screen.log.write("Cleaning Fuel Tanks...", 0, 0.584, 1);
 							}
 						} else

@@ -68,22 +68,33 @@ var canvas_PFDC = {
         #Setup stuff
         me["back-trans"].setColorFill(0, 0, 0, 0.3);
 
+        # Variables
+        var pitchDeg = getprop("orientation/pitch-deg");
+        var rollDeg = getprop("orientation/roll-deg");
+        var afds = getprop("autopilot/display/afds-mode");
+        var nav = [getprop("instrumentation/nav[0]/frequencies/selected-mhz"), getprop("instrumentation/nav[1]/frequencies/selected-mhz")];
+        var elapsedSec = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
+        var headingDeg = getprop("orientation/heading-deg");
+        var headingAP = getprop("it-autoflight/input/hdg");
+        
+
+
 		# Artificial Horizon
-        me["ground"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
-        me["sky"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
-        me["attitude"].setTranslation(0, getprop("orientation/pitch-deg")*4.8);
-        me["ground"].setRotation(-getprop("orientation/roll-deg")*D2R);
-        me["sky"].setRotation(-getprop("orientation/roll-deg")*D2R);
-        me["attitude"].setRotation(-getprop("orientation/roll-deg")*D2R);
-        if (getprop("orientation/roll-deg") > 60)
+        me["ground"].setTranslation(0, pitchDeg*4.8);
+        me["sky"].setTranslation(0, pitchDeg*4.8);
+        me["attitude"].setTranslation(0, pitchDeg*4.8);
+        me["ground"].setRotation(-rollDeg*D2R);
+        me["sky"].setRotation(-rollDeg*D2R);
+        me["attitude"].setRotation(-rollDeg*D2R);
+        if (rollDeg > 60)
             me["turn-coordinator"].setRotation(-60*D2R);
-        elsif (getprop("orientation/roll-deg") < -60)
+        elsif (rollDeg < -60)
             me["turn-coordinator"].setRotation(60*D2R);
         else
-            me["turn-coordinator"].setRotation(-getprop("orientation/roll-deg")*D2R);
+            me["turn-coordinator"].setRotation(-rollDeg*D2R);
 
         # AFDS Mode
-        if(getprop("autopilot/display/afds-mode") == "SINGLE CH") {
+        if(afds == "SINGLE CH") {
             me["single-ch"].show();
             me["single-ch-back"].show();
             me["afds-mode"].hide();
@@ -91,30 +102,30 @@ var canvas_PFDC = {
             me["single-ch"].hide();
             me["single-ch-back"].hide();
             me["afds-mode"].show();
-            me["afds-mode"].setText(getprop("autopilot/display/afds-mode"));
+            me["afds-mode"].setText(afds);
         }
 
         # NAV Radio
-        me["dme1"].setText(sprintf("%.03d", getprop("instrumentation/nav[0]/frequencies/selected-mhz")));
-        me["dme2"].setText(sprintf("%0.3d", getprop("instrumentation/nav[1]/frequencies/selected-mhz")));
+        me["dme1"].setText(sprintf("%.03d", nav[0]));
+        me["dme2"].setText(sprintf("%0.3d", nav[1]));
 
         # Auxiliary Panel
         me["flt-no"].setText(getprop("instrumentation/registration/flt-no"));
         me["xpdr"].setText(getprop("instrumentation/transponder/id-code"));
         me["selcal"].setText("AF-XS");
         me["registration"].setText(getprop("instrumentation/registration/registration"));
-        me["elapsed"].setText(sprintf("%i:%02i", getprop("sim/time/elapsed-sec")/60, math.mod(getprop("sim/time/elapsed-sec"), 60)));
+        me["elapsed"].setText(sprintf("%i:%02i", elapsedSec/60, math.mod(elapsedSec, 60)));
         me["day"].setText(sprintf("%i", getprop("sim/time/utc/day")));
         me["month"].setText(months[getprop("sim/time/utc/month") - 1]);
         me["year"].setText(sprintf("%i", math.mod(getprop("sim/time/utc/year"), 100)));
         me["utc"].setText(sprintf("%sz", getprop("sim/time/gmt-string")));
 
         # Heading
-        me["compass-text"].setRotation(-getprop("orientation/heading-deg")*D2R);
-        me["compass"].setRotation(-getprop("orientation/heading-deg")*D2R);
-        me["ap-heading"].setRotation(-getprop("it-autoflight/input/hdg")*D2R);
-        me["ap-heading"].setRotation(-getprop("orientation/heading-deg")*D2R);
-        me["sel-hdg"].setText(sprintf("%i", getprop("it-autoflight/input/hdg")));
+        me["compass-text"].setRotation(-headingDeg*D2R);
+        me["compass"].setRotation(-headingDeg*D2R);
+        me["ap-heading"].setRotation(-headingAP*D2R);
+        me["ap-heading"].setRotation(-headingDeg*D2R);
+        me["sel-hdg"].setText(sprintf("%i", headingAP));
 
         # Wind and Speeds
         me["ground-speed"].setText(sprintf("%i", getprop("velocities/groundspeed-kt")));

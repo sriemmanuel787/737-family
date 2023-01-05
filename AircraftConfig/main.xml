@@ -149,7 +149,7 @@
                     <command>nasal</command>
                     <script>
 						if (getprop("services/deicing_truck/enable") == 1) {
-							setprop("/services/deicing_truck/de-ice", 1);
+							setprop("services/deicing_truck/de-ice", 1);
 							screen.log.write("Starting De-icing Process...", 1, 1, 1);
 						} else
 							screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);

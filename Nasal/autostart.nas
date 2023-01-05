@@ -65,9 +65,9 @@ var autostart = func {
     			setprop("controls/electric/APU-generator", 0);
     			setprop("controls/electric/external-power", 0);
     			setprop("controls/APU/off-start-run", 0);
-    			setprop("/services/fuel-truck/enable", 0);
-    			setprop("/services/ext-pwr/enable", 0);
-    			setprop("/services/deicing_truck/enable", 0);
+    			setprop("services/fuel-truck/enable", 0);
+    			setprop("services/ext-pwr/enable", 0);
+    			setprop("services/deicing_truck/enable", 0);
 				screen.log.write("APU, APU Generator and External Power have been turned off.", 1, 1, 1);
 				screen.log.write("The aircraft has been started up, you are ready to go :D", 1, 1, 1);
     		}, 1);
@@ -115,23 +115,23 @@ var inAirStart_check = func {
 var inAirStart = func {
     if (getprop("position/altitude-agl-ft")>400) {
     	settimer(func {setprop("controls/gear/brake-parking",0);}, 3);
-    	setprop("/b737/sensors/was-in-air", "true");
-    	setprop("/b737/sensors/landing", 0);
+    	setprop("b737/sensors/was-in-air", "true");
+    	setprop("b737/sensors/landing", 0);
 		autostart();
 		if(var vbaro = getprop("environment/metar/pressure-inhg")) {
             setprop("instrumentation/altimeter[0]/setting-inhg", vbaro);
             setprop("instrumentation/altimeter[1]/setting-inhg", vbaro);
             setprop("instrumentation/altimeter[2]/setting-inhg", vbaro);
         }
-        setprop("/it-autoflight/input/fd1", 1);
-        setprop("/it-autoflight/input/fd2", 1);
+        setprop("it-autoflight/input/fd1", 1);
+        setprop("it-autoflight/input/fd2", 1);
         var speed = boeing737.roundToNearest(getprop("sim/presets/airspeed-kt"), 1);
-        setprop("/it-autoflight/input/spd-kts", speed);
-        setprop("/it-autoflight/input/hdg", boeing737.roundToNearest(getprop("orientation/heading-magnetic-deg"), 1));
-        setprop("/it-autoflight/input/alt", boeing737.roundToNearest(getprop("sim/presets/altitude-ft"), 100));
-		setprop("/it-autoflight/input/kts-mach", 0);
-		setprop("/it-autoflight/input/lat", 0);
-		setprop("/it-autoflight/input/vert", 4);
+        setprop("it-autoflight/input/spd-kts", speed);
+        setprop("it-autoflight/input/hdg", boeing737.roundToNearest(getprop("orientation/heading-magnetic-deg"), 1));
+        setprop("it-autoflight/input/alt", boeing737.roundToNearest(getprop("sim/presets/altitude-ft"), 100));
+		setprop("it-autoflight/input/kts-mach", 0);
+		setprop("it-autoflight/input/lat", 0);
+		setprop("it-autoflight/input/vert", 4);
 
         # set ILS frequency
         var cur_runway = getprop("sim/presets/runway");
@@ -152,7 +152,7 @@ var inAirStart = func {
     	}
 
         #configure flaps and gears
-        var vref40 = getprop("/instrumentation/fmc/v-ref-40");
+        var vref40 = getprop("instrumentation/fmc/v-ref-40");
         if (speed > vref40 + 70) {
         	setprop("controls/flight/flaps", 0);
         	setprop("sim/flaps/current-setting", 0);

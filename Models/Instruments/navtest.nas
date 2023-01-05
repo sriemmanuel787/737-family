@@ -27,28 +27,28 @@ var wxr_live_tree = "/instrumentation/wxr";
 var NDSourceDriver = {};
 NDSourceDriver.new = func {
 	var m = {parents:[NDSourceDriver]};
-	m.get_hdg_mag= func getprop("/orientation/heading-magnetic-deg");
-	m.get_hdg_tru= func getprop("/orientation/heading-deg");
+	m.get_hdg_mag= func getprop("orientation/heading-magnetic-deg");
+	m.get_hdg_tru= func getprop("orientation/heading-deg");
 	m.get_hgg = func getprop("instrumentation/afds/settings/heading");
 	m.get_trk_mag= func
 	{
-		if(getprop("/velocities/groundspeed-kt") > 80)
-			getprop("/orientation/track-magnetic-deg");
+		if(getprop("velocities/groundspeed-kt") > 80)
+			getprop("orientation/track-magnetic-deg");
 		else
-			getprop("/orientation/heading-magnetic-deg");
+			getprop("orientation/heading-magnetic-deg");
 	};
 	m.get_trk_tru = func
 	{
-		if(getprop("/velocities/groundspeed-kt") > 80)
-			getprop("/orientation/track-deg");
+		if(getprop("velocities/groundspeed-kt") > 80)
+			getprop("orientation/track-deg");
 		else
-			getprop("/orientation/heading-deg");
+			getprop("orientation/heading-deg");
 	};
-	m.get_lat= func getprop("/position/latitude-deg");
-	m.get_lon= func getprop("/position/longitude-deg");
-	m.get_spd= func getprop("/instrumentation/airspeed-indicator/true-speed-kt");
-	m.get_gnd_spd= func getprop("/velocities/groundspeed-kt");
-	m.get_vspd= func getprop("/velocities/vertical-speed-fps");
+	m.get_lat= func getprop("position/latitude-deg");
+	m.get_lon= func getprop("position/longitude-deg");
+	m.get_spd= func getprop("instrumentation/airspeed-indicator/true-speed-kt");
+	m.get_gnd_spd= func getprop("velocities/groundspeed-kt");
+	m.get_vspd= func getprop("velocities/vertical-speed-fps");
 	return m;
 }
 
@@ -441,7 +441,7 @@ var NavDisplay = {
 		me.update_timer.start();
 
 		# TODO: move this to RTE.lcontroller ?
-		me.listen("/autopilot/route-manager/current-wp", func(activeWp) {
+		me.listen("autopilot/route-manager/current-wp", func(activeWp) {
 			canvas.updatewp( activeWp.getValue() );
 		});
 
@@ -520,12 +520,12 @@ var NavDisplay = {
 					pos.lat = wp.wp_lat;
 					pos.lon = wp.wp_lon;
 				} else {
-					pos.lat = getprop("/autopilot/route-manager/route/wp["~pln_wpt_idx~"]/latitude-deg");
-					pos.lon = getprop("/autopilot/route-manager/route/wp["~pln_wpt_idx~"]/longitude-deg");
+					pos.lat = getprop("autopilot/route-manager/route/wp["~pln_wpt_idx~"]/latitude-deg");
+					pos.lon = getprop("autopilot/route-manager/route/wp["~pln_wpt_idx~"]/longitude-deg");
 				}
 			} else {
-				pos.lat = getprop("/autopilot/route-manager/route/wp["~pln_wpt_idx~"]/latitude-deg");
-				pos.lon = getprop("/autopilot/route-manager/route/wp["~pln_wpt_idx~"]/longitude-deg");
+				pos.lat = getprop("autopilot/route-manager/route/wp["~pln_wpt_idx~"]/latitude-deg");
+				pos.lon = getprop("autopilot/route-manager/route/wp["~pln_wpt_idx~"]/longitude-deg");
 			}
 		} else {
 			pos.lat = userLat;
@@ -796,6 +796,6 @@ var NavDisplay = {
 		me.symbols['status.sta'].setVisible( me.get_switch('toggle_stations') and  me.in_mode('toggle_display_mode', ['MAP']));
 		# Okay, _how_ do we hook this up with FGPlot?
 		logprint(canvas._MP_dbg_lvl, "Total ND update took "~((systime()-_time)*100)~"ms");
-		setprop("/instrumentation/navdisplay["~ NavDisplay.id ~"]/update-ms", systime() - _time);
+		setprop("instrumentation/navdisplay["~ NavDisplay.id ~"]/update-ms", systime() - _time);
 	} # of update() method (50% of our file ...seriously?)
 };

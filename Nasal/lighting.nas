@@ -3,7 +3,7 @@
 
 
 var ll_started = 0;
-setlistener("/sim/signals/fdm-initialized", func {
+setlistener("sim/signals/fdm-initialized", func {
     if (ll_started == 1) return;
     ll_started = 1;
 
@@ -13,11 +13,11 @@ var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0,2, ], "/controls
 strobe_switch = props.globals.getNode("controls/switches/strobe", 1);
 beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
 
-setprop("/controls/lighting/strobe",0);
-setprop("/controls/lighting/beacon",0);
-setprop("/controls/lighting/landing-lights",0);
-setprop("/controls/lighting/logo-lights",0);
-setprop("/controls/lighting/nav-lights",0);
+setprop("controls/lighting/strobe",0);
+setprop("controls/lighting/beacon",0);
+setprop("controls/lighting/landing-lights",0);
+setprop("controls/lighting/logo-lights",0);
+setprop("controls/lighting/nav-lights",0);
 });
 
 setlistener("controls/lighting/landing-lights[0]", func

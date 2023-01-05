@@ -389,8 +389,8 @@
             <binding>
                 <command>nasal</command>
                 <script>
-				if (getprop("/it-autoflight/custom/athr-armed") == 1) {
-					setprop("/it-autoflight/input/athr", 0);
+				if (getprop("it-autoflight/custom/athr-armed") == 1) {
+					setprop("it-autoflight/input/athr", 0);
 				}
 				</script>
             </binding>

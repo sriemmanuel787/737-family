@@ -14,10 +14,10 @@ var timer_trim_stop = maketimer(0.1, func elev_trim_stop() );
  timer_trim_stop.singleShot = 1;
 
 var elevatorTrim = func {
-	var ap_a_on = getprop("/it-autoflight/output/ap1");
-	var ap_b_on = getprop("/it-autoflight/output/ap2");
-	var stab_pos = num( getprop("/fdm/jsbsim/fcs/stabilizer-pos-unit") );
-	var flaps_pos = num( getprop("/fdm/jsbsim/fcs/flap-pos-norm") );
+	var ap_a_on = getprop("it-autoflight/output/ap1");
+	var ap_b_on = getprop("it-autoflight/output/ap2");
+	var stab_pos = num( getprop("fdm/jsbsim/fcs/stabilizer-pos-unit") );
+	var flaps_pos = num( getprop("fdm/jsbsim/fcs/flap-pos-norm") );
 
 	setprop("fdm/jsbsim/fcs/stabilizer/stab-target", arg[0] * -17);
 
@@ -30,16 +30,16 @@ var elevatorTrim = func {
 }
 
 var elev_trim_stop = func {
-  var stab_pos = num( getprop("/fdm/jsbsim/fcs/stabilizer-pos-unit") );
+  var stab_pos = num( getprop("fdm/jsbsim/fcs/stabilizer-pos-unit") );
   setprop("fdm/jsbsim/fcs/stabilizer/stab-target", stab_pos);
 }
 
 var trim_handler = func {
   var old_trim = num( getprop("b737/controls/trim/stabilizer-old") );
   if ( old_trim == nil ) old_trim = 0.0;
-  var new_trim = num( getprop("/controls/flight/elevator-trim") );
+  var new_trim = num( getprop("controls/flight/elevator-trim") );
   if ( new_trim == nil ) new_trim = 0.0;
-  if (new_trim >= 0.99 or new_trim <= -0.99) setprop("/controls/flight/elevator-trim",0);
+  if (new_trim >= 0.99 or new_trim <= -0.99) setprop("controls/flight/elevator-trim",0);
   var delta = new_trim - old_trim;
   setprop( "b737/controls/trim/stabilizer-old", new_trim );
   if( delta > 0.0 ) elevatorTrim(1);
@@ -48,9 +48,9 @@ var trim_handler = func {
 setlistener( "/controls/flight/elevator-trim", trim_handler, 0, 0 );
 
 var elev_trim_rate = func {
-	var ap_a_on = getprop("/autopilot/internal/CMDA");
-	var ap_b_on = getprop("/autopilot/internal/CMDB");
-	var flaps_pos = num( getprop("/fdm/jsbsim/fcs/flap-pos-norm") );
+	var ap_a_on = getprop("autopilot/internal/CMDA");
+	var ap_b_on = getprop("autopilot/internal/CMDB");
+	var flaps_pos = num( getprop("fdm/jsbsim/fcs/flap-pos-norm") );
 
 	var trim_speed = 0.38;                                                    #Fastest with flaps extended and manual control
 	if (flaps_pos == 0 and !ap_a_on and !ap_b_on) trim_speed = 0.2; #With flaps retracted and AP off
@@ -64,9 +64,9 @@ setlistener( "/fdm/jsbsim/fcs/flap-pos-norm", elev_trim_rate, 0, 0);
 elev_trim_rate();
 
 var stop_stab_move = func {
-	var ap_a_on = getprop("/autopilot/internal/CMDA");
-	var ap_b_on = getprop("/autopilot/internal/CMDB");
-	if (!ap_a_on and !ap_b_on) setprop( "fdm/jsbsim/fcs/stabilizer/stab-target", getprop("/fdm/jsbsim/fcs/stabilizer-pos-unit") );
+	var ap_a_on = getprop("autopilot/internal/CMDA");
+	var ap_b_on = getprop("autopilot/internal/CMDB");
+	if (!ap_a_on and !ap_b_on) setprop( "fdm/jsbsim/fcs/stabilizer/stab-target", getprop("fdm/jsbsim/fcs/stabilizer-pos-unit") );
 }
 setlistener( "/autopilot/internal/CMDA", stop_stab_move, 0, 0);
 setlistener( "/autopilot/internal/CMDB", stop_stab_move, 0, 0);
@@ -82,8 +82,8 @@ var spoilers_control = func {
     setprop( "/controls/flight/speedbrake", 0.00 );
     setprop( "/controls/flight/spoilers", 0 );
 	setprop( "/controls/flight/autospeedbrake", 0 );
-    if (getprop("/sim/messages/copilot") == "Spoilers DOWN!") { } else {
-    if (getprop("sim/co-pilot")) setprop ("/sim/messages/copilot", "Spoilers DOWN!");}
+    if (getprop("sim/messages/copilot") == "Spoilers DOWN!") { } else {
+    if (getprop("sim/co-pilot")) setprop ("sim/messages/copilot", "Spoilers DOWN!");}
     setprop("b737/sound/spoiler-auto", 0);
     update_timer_spoilers.stop();
   }
@@ -91,8 +91,8 @@ var spoilers_control = func {
     setprop( "/controls/flight/speedbrake", 0.00 );
     setprop( "/controls/flight/spoilers", 0 );
 	setprop( "/controls/flight/autospeedbrake", 1 );
-    if (getprop("/sim/messages/copilot") == "Spoilers ARMED!") { } else {
-    if (getprop("sim/co-pilot")) setprop ("/sim/messages/copilot", "Spoilers ARMED!");}
+    if (getprop("sim/messages/copilot") == "Spoilers ARMED!") { } else {
+    if (getprop("sim/co-pilot")) setprop ("sim/messages/copilot", "Spoilers ARMED!");}
     update_timer_spoilers.stop();
     }
    if (lever_pos == 2) {
@@ -108,11 +108,11 @@ var spoilers_control = func {
   if (lever_pos == 4) {
     setprop( "/controls/flight/speedbrake", 0.4875 );
 
-    var wow_right = getprop("/gear/gear[2]/wow");
+    var wow_right = getprop("gear/gear[2]/wow");
     if (wow_right) setprop( "/controls/flight/spoilers", 1 );
     if (!wow_right) setprop( "/controls/flight/spoilers", 0 );
 
-    var height = getprop("/position/altitude-agl-ft");
+    var height = getprop("position/altitude-agl-ft");
     var time = height / 70;
     if (time < 0.2 or time > 600) time = 0.2;
     update_timer_spoilers.restart(time);
@@ -120,14 +120,14 @@ var spoilers_control = func {
   if (lever_pos == 5) {
     setprop( "/controls/flight/speedbrake", 0.65 );
 
-    var wow_right = getprop("/gear/gear[2]/wow");
+    var wow_right = getprop("gear/gear[2]/wow");
     if (wow_right) setprop( "/controls/flight/spoilers", 1 );
     if (!wow_right) setprop( "/controls/flight/spoilers", 0 );
 
-    if (getprop("/sim/messages/copilot") == "Spoilers at FLIGHT DETENT!") { } else {
-    if (getprop("sim/co-pilot")) setprop ("/sim/messages/copilot", "Spoilers at FLIGHT DETENT!");}
+    if (getprop("sim/messages/copilot") == "Spoilers at FLIGHT DETENT!") { } else {
+    if (getprop("sim/co-pilot")) setprop ("sim/messages/copilot", "Spoilers at FLIGHT DETENT!");}
 
-    var height = getprop("/position/altitude-agl-ft");
+    var height = getprop("position/altitude-agl-ft");
     var time = height / 70;
     if (time < 0.2 or time > 600) time = 0.2;
     update_timer_spoilers.restart(time);
@@ -135,14 +135,14 @@ var spoilers_control = func {
   if (lever_pos == 6) {
     setprop( "/controls/flight/speedbrake", 1.00 );
 
-    var wow_right = getprop("/gear/gear[2]/wow");
+    var wow_right = getprop("gear/gear[2]/wow");
     if (wow_right) setprop( "/controls/flight/spoilers", 1 );
     if (!wow_right) setprop( "/controls/flight/spoilers", 0 );
 
-    if (getprop("/sim/messages/copilot") == "Spoilers UP!") { } else {
-    if (getprop("sim/co-pilot")) setprop ("/sim/messages/copilot", "Spoilers UP!");}
+    if (getprop("sim/messages/copilot") == "Spoilers UP!") { } else {
+    if (getprop("sim/co-pilot")) setprop ("sim/messages/copilot", "Spoilers UP!");}
 
-    var height = getprop("/position/altitude-agl-ft");
+    var height = getprop("position/altitude-agl-ft");
     var time = height / 70;
     if (time < 0.2 or time > 600) time = 0.2;
    update_timer_spoilers.restart(time);
@@ -152,35 +152,35 @@ var spoilers_control = func {
 controls.gearDown = func(v) {
     if(getprop("controls/gear/gear-lock")) return;
     if (v < 0) {
-        if(!getprop("gear/gear[1]/wow"))setprop("/controls/gear/gear-down", 0);
+        if(!getprop("gear/gear[1]/wow"))setprop("controls/gear/gear-down", 0);
     } elsif (v > 0) {
-      setprop("/controls/gear/gear-down", 1);
+      setprop("controls/gear/gear-down", 1);
     }
 }
 
 setlistener( "/b737/controls/flight/spoilers-lever-pos", spoilers_control, 0, 0 );
 var update_timer_landing_check = maketimer(1, func landing_check() );
  update_timer_landing_check.start();
- var dearm_autothrust = maketimer(2, func {setprop("/autopilot/internal/SPD", 0);});
+ var dearm_autothrust = maketimer(2, func {setprop("autopilot/internal/SPD", 0);});
  dearm_autothrust.singleShot = 1;
  
 
-setlistener("/controls/flight/autospeedbrake-cmd", func {
-	if (getprop("/controls/flight/autospeedbrake-cmd") == 1) {
-		setprop("/b737/controls/flight/spoilers-lever-pos", 6);
+setlistener("controls/flight/autospeedbrake-cmd", func {
+	if (getprop("controls/flight/autospeedbrake-cmd") == 1) {
+		setprop("b737/controls/flight/spoilers-lever-pos", 6);
 	}
 }, 0, 0);
 
 var landing_check = func{
-	var air_ground = getprop("/b737/sensors/air-ground");
-	var spin_up = getprop("/b737/sensors/main-gear-spin");
-	var was_ia = getprop("/b737/sensors/was-in-air");
-	var landing = getprop("/b737/sensors/landing");
+	var air_ground = getprop("b737/sensors/air-ground");
+	var spin_up = getprop("b737/sensors/main-gear-spin");
+	var was_ia = getprop("b737/sensors/was-in-air");
+	var landing = getprop("b737/sensors/landing");
 	var lever_pos = num( getprop("b737/controls/flight/spoilers-lever-pos") );
-	var throttle_1 = getprop("/controls/engines/engine[0]/throttle");
-	var throttle_2 = getprop("/controls/engines/engine[1]/throttle");
-	var ab_pos = getprop("/controls/gear/autobrakes");
-	var ab_used = getprop("/fdm/jsbsim/fcs/autobrake/autobrake-used");
+	var throttle_1 = getprop("controls/engines/engine[0]/throttle");
+	var throttle_2 = getprop("controls/engines/engine[1]/throttle");
+	var ab_pos = getprop("controls/gear/autobrakes");
+	var ab_used = getprop("fdm/jsbsim/fcs/autobrake/autobrake-used");
 
 	if ((air_ground or spin_up) and was_ia and throttle_1 < 0.5 and throttle_2
    < 0.5 and !landing) { #normal landing
@@ -189,15 +189,15 @@ var landing_check = func{
 			setprop("b737/sound/spoiler-auto", 1);
 		}
 		if (ab_pos > 0 and !ab_used) autobrake_apply();
-		setprop("/b737/sensors/landing-time", getprop("/fdm/jsbsim/sim-time-sec"));
+		setprop("b737/sensors/landing-time", getprop("fdm/jsbsim/sim-time-sec"));
 		dearm_autothrust.start();
-		setprop("/b737/sensors/landing", 1);
+		setprop("b737/sensors/landing", 1);
 	} elsif (air_ground and !was_ia and spin_up and 
-    getprop("/controls/engines/engine[0]/throttle") < 0.05 and 
-    getprop("/controls/engines/engine[1]/throttle") < 0.05 and ab_pos == -1) { 
+    getprop("controls/engines/engine[0]/throttle") < 0.05 and 
+    getprop("controls/engines/engine[1]/throttle") < 0.05 and ab_pos == -1) { 
     #Rejected take-off
-		var GROUNDSPEED = getprop("/velocities/uBody-fps") * 0.593;
-		setprop("/autopilot/internal/SPD", 0);
+		var GROUNDSPEED = getprop("velocities/uBody-fps") * 0.593;
+		setprop("autopilot/internal/SPD", 0);
 		if (lever_pos == 0) {
 			setprop("b737/controls/flight/spoilers-lever-pos", 6);
 			setprop("b737/sound/spoiler-auto", 1);
@@ -208,7 +208,7 @@ var landing_check = func{
 		}
 	}
 
-    var height = getprop("/position/altitude-agl-ft");
+    var height = getprop("position/altitude-agl-ft");
     var time = height / 70;
     if (time < 0.2 or time > 600) time = 0.2;
 
@@ -218,73 +218,73 @@ landing_check();
 
 
 var ab_reset = func{
-	var ab_pos = getprop("/controls/gear/autobrakes");
-	var ab_used = getprop("/fdm/jsbsim/fcs/autobrake/autobrake-used");
-	var ab_start_time = getprop("/fdm/jsbsim/fcs/autobrake/start-time-sec");
+	var ab_pos = getprop("controls/gear/autobrakes");
+	var ab_used = getprop("fdm/jsbsim/fcs/autobrake/autobrake-used");
+	var ab_start_time = getprop("fdm/jsbsim/fcs/autobrake/start-time-sec");
 
 	if (ab_pos == 0 and ab_used) {
-		setprop("/fdm/jsbsim/fcs/autobrake/autobrake-used", 0);
-		setprop("/fdm/jsbsim/fcs/autobrake/start-time-sec", 0);
+		setprop("fdm/jsbsim/fcs/autobrake/autobrake-used", 0);
+		setprop("fdm/jsbsim/fcs/autobrake/start-time-sec", 0);
 	}
 
 }
 setlistener( "/controls/gear/autobrakes", ab_reset, 0, 0);
 
 var autobrake_apply = func {
-	var ab_pos = getprop("/controls/gear/autobrakes");
-	var ab_used = getprop("/fdm/jsbsim/fcs/autobrake/autobrake-used");
-	var ab_start_time = getprop("/fdm/jsbsim/fcs/autobrake/start-time-sec");
+	var ab_pos = getprop("controls/gear/autobrakes");
+	var ab_used = getprop("fdm/jsbsim/fcs/autobrake/autobrake-used");
+	var ab_start_time = getprop("fdm/jsbsim/fcs/autobrake/start-time-sec");
 
-	if (!ab_used) setprop("/fdm/jsbsim/fcs/autobrake/autobrake-in-use", 1);
-	if (!ab_used) setprop("/fdm/jsbsim/fcs/autobrake/autobrake-used", 1);
-	if (ab_start_time == 0 ) setprop("/fdm/jsbsim/fcs/autobrake/start-time-sec", getprop("/fdm/jsbsim/sim-time-sec"));
+	if (!ab_used) setprop("fdm/jsbsim/fcs/autobrake/autobrake-in-use", 1);
+	if (!ab_used) setprop("fdm/jsbsim/fcs/autobrake/autobrake-used", 1);
+	if (ab_start_time == 0 ) setprop("fdm/jsbsim/fcs/autobrake/start-time-sec", getprop("fdm/jsbsim/sim-time-sec"));
 
-	if (ab_pos == 1) setprop("/fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2", 4);
-	if (ab_pos == 2) setprop("/fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2", 5);
-	if (ab_pos == 3) setprop("/fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2", 7.2);
-	if (ab_pos == 4) setprop("/fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2",14);
-	if (ab_pos == -1) setprop("/fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2",25);
+	if (ab_pos == 1) setprop("fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2", 4);
+	if (ab_pos == 2) setprop("fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2", 5);
+	if (ab_pos == 3) setprop("fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2", 7.2);
+	if (ab_pos == 4) setprop("fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2",14);
+	if (ab_pos == -1) setprop("fdm/jsbsim/fcs/autobrake/target-decel-fps_sec2",25);
 }
 
 var left_brake = func {
-	var ab_in_use = getprop("/fdm/jsbsim/fcs/autobrake/autobrake-in-use");
-	var left_brake_cmd = getprop("/controls/gear/brake-left");
-	var parking_brake_cmd = getprop("/controls/gear/brake-parking");
+	var ab_in_use = getprop("fdm/jsbsim/fcs/autobrake/autobrake-in-use");
+	var left_brake_cmd = getprop("controls/gear/brake-left");
+	var parking_brake_cmd = getprop("controls/gear/brake-parking");
 
-	if (ab_in_use) setprop("/fdm/jsbsim/fcs/autobrake/autobrake-in-use", 0);
+	if (ab_in_use) setprop("fdm/jsbsim/fcs/autobrake/autobrake-in-use", 0);
 	if (!parking_brake_cmd) {
-		setprop("/fdm/jsbsim/fcs/brake-left-cmd", left_brake_cmd);
+		setprop("fdm/jsbsim/fcs/brake-left-cmd", left_brake_cmd);
 	} else {
-		setprop("/fdm/jsbsim/fcs/brake-left-cmd", parking_brake_cmd);
+		setprop("fdm/jsbsim/fcs/brake-left-cmd", parking_brake_cmd);
 	}
 }
 setlistener( "/controls/gear/brake-left", left_brake, 0, 0);
 
 var right_brake = func {
-	var ab_in_use = getprop("/fdm/jsbsim/fcs/autobrake/autobrake-in-use");
-	var right_brake_cmd = getprop("/controls/gear/brake-right");
-	var parking_brake_cmd = getprop("/controls/gear/brake-parking");
+	var ab_in_use = getprop("fdm/jsbsim/fcs/autobrake/autobrake-in-use");
+	var right_brake_cmd = getprop("controls/gear/brake-right");
+	var parking_brake_cmd = getprop("controls/gear/brake-parking");
 
-	if (ab_in_use) setprop("/fdm/jsbsim/fcs/autobrake/autobrake-in-use", 0);
+	if (ab_in_use) setprop("fdm/jsbsim/fcs/autobrake/autobrake-in-use", 0);
 	if (!parking_brake_cmd) {
-		setprop("/fdm/jsbsim/fcs/brake-right-cmd", right_brake_cmd);
+		setprop("fdm/jsbsim/fcs/brake-right-cmd", right_brake_cmd);
 	} else {
-		setprop("/fdm/jsbsim/fcs/brake-right-cmd", parking_brake_cmd);
+		setprop("fdm/jsbsim/fcs/brake-right-cmd", parking_brake_cmd);
 	}
 }
 setlistener( "/controls/gear/brake-right", right_brake, 0, 0);
 
 var parking_brake = func {
-	var parking_brake_cmd = getprop("/controls/gear/brake-parking");
+	var parking_brake_cmd = getprop("controls/gear/brake-parking");
 
-	setprop("/fdm/jsbsim/fcs/brake-right-cmd", parking_brake_cmd);
-	setprop("/fdm/jsbsim/fcs/brake-left-cmd", parking_brake_cmd);
+	setprop("fdm/jsbsim/fcs/brake-right-cmd", parking_brake_cmd);
+	setprop("fdm/jsbsim/fcs/brake-left-cmd", parking_brake_cmd);
 }
 setlistener( "/controls/gear/brake-parking", parking_brake, 0, 0);
 
 var parking_brake_set = func {
-	setprop("/controls/gear/brake-parking", 1);
-	setprop("/sim/menubar/visibility", "true");
+	setprop("controls/gear/brake-parking", 1);
+	setprop("sim/menubar/visibility", "true");
 }
 var timer_parking_brake = maketimer(2, func parking_brake_set() );
  timer_parking_brake.singleShot = 1;
@@ -294,11 +294,11 @@ var timer_parking_brake = maketimer(2, func parking_brake_set() );
 
 var efis_ctrl = func(n, knob, action) {
 	if (knob == "RANGE") {
-		var range_knob = getprop("/instrumentation/efis["~n~"]/inputs/range-knob") + action;
+		var range_knob = getprop("instrumentation/efis["~n~"]/inputs/range-knob") + action;
 		if (range_knob < 0) range_knob = 0;
 		if (range_knob > 7) range_knob = 7;
-		setprop("/instrumentation/efis["~n~"]/inputs/range-nm", 10*math.pow(2,range_knob-1));
-		setprop("/instrumentation/efis["~n~"]/inputs/range-knob",range_knob);
+		setprop("instrumentation/efis["~n~"]/inputs/range-nm", 10*math.pow(2,range_knob-1));
+		setprop("instrumentation/efis["~n~"]/inputs/range-knob",range_knob);
 	} elsif (knob == "MODE") {
 		var mode_knob = getprop("instrumentation/efis["~n~"]/mfd/mode-num") + action;
 		if (mode_knob < 0) mode_knob = 0;

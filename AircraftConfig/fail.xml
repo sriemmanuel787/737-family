@@ -52,7 +52,7 @@
                     <binding>
                         <command>nasal</command>
                         <script>
-								setprop("/controls/engines/engine[0]/cutoff", 1);
+								setprop("controls/engines/engine[0]/cutoff", 1);
 							</script>
                     </binding>
                 </button>
@@ -63,7 +63,7 @@
                     <binding>
                         <command>nasal</command>
                         <script>
-								setprop("/sim/failure-manager/engines/engine[0]/serviceable", 0);
+								setprop("sim/failure-manager/engines/engine[0]/serviceable", 0);
 							</script>
                     </binding>
                 </button>
@@ -74,7 +74,7 @@
                     <binding>
                         <command>nasal</command>
                         <script>
-								setprop("/controls/fires/fire/on-fire", 1);
+								setprop("controls/fires/fire/on-fire", 1);
 							</script>
                     </binding>
                 </button>
@@ -96,7 +96,7 @@
                     <binding>
                         <command>nasal</command>
                         <script>
-								setprop("/controls/engines/engine[1]/cutoff", 1);
+								setprop("controls/engines/engine[1]/cutoff", 1);
 							</script>
                     </binding>
                 </button>
@@ -107,7 +107,7 @@
                     <binding>
                         <command>nasal</command>
                         <script>
-								setprop("/sim/failure-manager/engines/engine[1]/serviceable", 0);
+								setprop("sim/failure-manager/engines/engine[1]/serviceable", 0);
 							</script>
                     </binding>
                 </button>
@@ -118,7 +118,7 @@
                     <binding>
                         <command>nasal</command>
                         <script>
-								setprop("/controls/fires/fire[1]/on-fire", 1);
+								setprop("controls/fires/fire[1]/on-fire", 1);
 							</script>
                     </binding>
                 </button>
@@ -134,7 +134,7 @@
                 <binding>
                     <command>nasal</command>
                     <script>
-			setprop("/sim/failure-manager/controls/flight/flaps/serviceable", 0);
+			setprop("sim/failure-manager/controls/flight/flaps/serviceable", 0);
 			</script>
                 </binding>
                 <live>true</live>
@@ -148,7 +148,7 @@
                 <binding>
                     <command>nasal</command>
                     <script>
-			setprop("/controls/fires/fire[2]/on-fire", 1);
+			setprop("controls/fires/fire[2]/on-fire", 1);
 			</script>
                 </binding>
                 <live>true</live>
@@ -165,11 +165,11 @@
             <binding>
                 <command>nasal</command>
                 <script>
-			setprop("/sim/failure-manager/controls/flight/flaps/serviceable", 1);
-			setprop("/controls/fires/fire[1]/on-fire", 0);
-			setprop("/controls/fires/fire/on-fire", 0);
-			setprop("/sim/failure-manager/engines/engine[1]/serviceable", 1);
-			setprop("/sim/failure-manager/engines/engine[0]/serviceable", 1);
+			setprop("sim/failure-manager/controls/flight/flaps/serviceable", 1);
+			setprop("controls/fires/fire[1]/on-fire", 0);
+			setprop("controls/fires/fire/on-fire", 0);
+			setprop("sim/failure-manager/engines/engine[1]/serviceable", 1);
+			setprop("sim/failure-manager/engines/engine[0]/serviceable", 1);
 			</script>
             </binding>
         </button>

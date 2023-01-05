@@ -82,4 +82,4 @@ var printGforce = func {
 };
 
 print("> Loaded printGforce version ", VERSION);
-setlistener("/sim/signals/fdm-initialized", printGforce_start, 0, 0);
+setlistener("sim/signals/fdm-initialized", printGforce_start, 0, 0);

@@ -23,7 +23,7 @@ var Engines = {
 
 var Controls = {
     Flight: {
-        aileronPos: [props.globals.getNode("surface-positions/left-aileron-pos-norm"), props.global.getNode("surface-positions/right-aileron-pos-norm")],
+        aileronPos: [props.globals.getNode("surface-positions/left-aileron-pos-norm"), props.globals.getNode("surface-positions/right-aileron-pos-norm")],
 		flapsPos:   props.globals.getNode("surface-positions/flap-pos-norm"),
 		spoilerPos: props.globals.getNode("surface-positions/spoilers-pos-norm"),
 		rudderPos:  props.globals.getNode("surface-positions/rudder-pos-norm"),
@@ -83,4 +83,10 @@ var Sim = {
 
 var Radio = {
     nav: [props.globals.getNode("instrumentation/nav[0]/frequencies/selected-mhz"), props.globals.getNode("instrumentation/nav[1]/frequencies/selected-mhz")]
+}
+
+var Info = {
+    icao:         props.globals.getNode("sim/model/airline-code"),
+    registration: props.globals.getNode("sim/model/registration"),
+    selcal:       props.globals.getNode("sim/model/selcal")
 }

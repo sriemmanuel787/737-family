@@ -91,7 +91,7 @@ var updatePilotG = func {
 updatePilotG();
 
 var checkGandVNE = func {
-  if (getprop("/sim/freeze/replay-state"))
+  if (getprop("sim/freeze/replay-state"))
     return;
 
   var max_positive = getprop("limits/max-positive-g");

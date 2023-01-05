@@ -1758,7 +1758,7 @@
 		<repeatable>false</repeatable>  
 		<binding>
 			<command>nasal</command>
-			<script>setprop("/instrumentation/cdu/input","");</script>
+			<script>setprop("instrumentation/cdu/input","");</script>
 		</binding>
 	</action>
 </animation>

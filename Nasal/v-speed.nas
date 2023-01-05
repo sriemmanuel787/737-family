@@ -6,19 +6,19 @@
 # Declare variables
 ###############################################################################
 
-var vSpeedBug = props.globals.initNode("/controls/fmc/v-speed-bug", 100, "DOUBLE");
-var vSpeedSelectorMode = props.globals.initNode("/controls/fmc/v-speed-mode", 0, "DOUBLE");
-var vSpeedSelectorModeText = props.globals.initNode("/controls/fmc/v-speed-mode-text", "AUTO", "STRING");
-var vSpeedSelectorPFDText = props.globals.initNode("/controls/fmc/v-speed-pfd-text", "AUTO", "STRING");
+var vSpeedBug = props.globals.initNode("controls/fmc/v-speed-bug", 100, "DOUBLE");
+var vSpeedSelectorMode = props.globals.initNode("controls/fmc/v-speed-mode", 0, "DOUBLE");
+var vSpeedSelectorModeText = props.globals.initNode("controls/fmc/v-speed-mode-text", "AUTO", "STRING");
+var vSpeedSelectorPFDText = props.globals.initNode("controls/fmc/v-speed-pfd-text", "AUTO", "STRING");
 
-var v1Speed = props.globals.initNode("/instrumentation/fmc/speeds/v1-kt", 0, "DOUBLE");
-var vrSpeed = props.globals.initNode("/instrumentation/fmc/speeds/vr-kt", 0, "DOUBLE");
-var vrefSpeed = props.globals.initNode("/instrumentation/fmc/speeds/vref-kt", 0, "DOUBLE");
-var whiteBugSpeed = props.globals.initNode("/instrumentation/fmc/speeds/white-bug-kt", 0, "DOUBLE");
-var gWeight = props.globals.initNode("/instrumentation/fmc/weights/gw", 0, "DOUBLE");
+var v1Speed = props.globals.initNode("instrumentation/fmc/speeds/v1-kt", 0, "DOUBLE");
+var vrSpeed = props.globals.initNode("instrumentation/fmc/speeds/vr-kt", 0, "DOUBLE");
+var vrefSpeed = props.globals.initNode("instrumentation/fmc/speeds/vref-kt", 0, "DOUBLE");
+var whiteBugSpeed = props.globals.initNode("instrumentation/fmc/speeds/white-bug-kt", 0, "DOUBLE");
+var gWeight = props.globals.initNode("instrumentation/fmc/weights/gw", 0, "DOUBLE");
 
-var airground = props.globals.getNode("/b737/sensors/air-ground", 1);
-var setFlag = props.globals.initNode("/instrumentation/fmc/speeds/vspeeds-man-set", 0);
+var airground = props.globals.getNode("b737/sensors/air-ground", 1);
+var setFlag = props.globals.initNode("instrumentation/fmc/speeds/vspeeds-man-set", 0);
 
 ###############################################################################
 # main v speed class
@@ -122,11 +122,11 @@ var vspeed = {
 ###############################################################################
 # Listeners
 ###############################################################################
-setlistener("/controls/fmc/v-speed-mode", func {
+setlistener("controls/fmc/v-speed-mode", func {
 	vspeed.modeKnob();
 }, 0, 0);
 
-setlistener("/controls/fmc/v-speed-bug", func {
+setlistener("controls/fmc/v-speed-bug", func {
 	vspeed.speedKnob();
 }, 0, 0);
 

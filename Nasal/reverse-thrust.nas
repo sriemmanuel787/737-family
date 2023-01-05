@@ -6,7 +6,7 @@ r4 = "/controls/engines/engine[1]";
 r5 = "/sim/input/selected";
 rv1 = "/engines/engine[0]/reverser-pos-norm"; 
 rv2 = "/engines/engine[1]/reverser-pos-norm"; 
-var agl = getprop("/position/altitude-agl-ft");
+var agl = getprop("position/altitude-agl-ft");
 
 val = getprop(rv1);
 if (val == 0 or val == nil and agl < 10) {
