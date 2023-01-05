@@ -8,33 +8,39 @@
         <primary-set>true</primary-set>
         <liveries-path type="string">Aircraft/737-MAX/Models/Liveries-7</liveries-path>
         <startup>
-            <splash-texture>Aircraft/737-MAX/Splash/splash-1.png</splash-texture>
+            <splash-texture>Aircraft/737-MAX/Splash/Splash-7/splash-1.png</splash-texture>
+            <splash-texture>Aircraft/737-MAX/Splash/Splash-7/splash-2.png</splash-texture>
+            <splash-texture>Aircraft/737-MAX/Splash/Splash-7/splash-3.png</splash-texture>
         </startup>
 
         <previews>
             <preview>
                 <type>exterior</type>
                 <splash type="bool">true</splash>
-                <path>Splash/splash-1.png</path>
+                <path>Splash/Splash-10/splash-1.png</path>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <splash type="bool">true</splash>
+                <path>Splash/Splash-10/splash-2.png</path>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <splash type="bool">true</splash>
+                <path>Splash/Splash-10/splash-3.png</path>
             </preview>
         </previews>
 
-        <liveries-path type="string">Models/Liveries-7</liveries-path>
-        <nasal>
-            <boeing737>
-                <file>Aircraft/737-MAX/Nasal/liveries-7.nas</file>
-            </boeing737>
-        </nasal>
-        <door>
-            <position-x-m type="float">-15.9187</position-x-m>
-            <position-y-m type="float">-1.71334</position-y-m>
-            <position-z-m type="float">0.00098</position-z-m>
-            <jetway-hood-deg type="float">0</jetway-hood-deg>
-        </door>
         <model>
+            <door>
+                <position-x-m type="float">-15.9187</position-x-m>
+                <position-y-m type="float">-1.71334</position-y-m>
+                <position-z-m type="float">0.00098</position-z-m>
+                <jetway-hood-deg type="float">0</jetway-hood-deg>
+            </door>
             <path>Aircraft/737-MAX/Models/737-7.xml</path>
             <livery>
-                <file>BOE-7</file>
+                <file type="string">737-7</file>
             </livery>
 
             <rendering>
@@ -294,6 +300,7 @@
             <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
             <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
             <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
+            <file>Aircraft/737-MAX/Nasal/liveries-7.nas</file>
         </boeing737>
         <systems>
             <file>Aircraft/737-MAX/Nasal/electrical.nas</file>

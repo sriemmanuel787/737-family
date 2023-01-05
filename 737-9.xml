@@ -46,7 +46,7 @@
         <ixy unit="SLUG*FT2">         0 </ixy>
         <ixz unit="SLUG*FT2">    110000 </ixz>
         <iyz unit="SLUG*FT2">         0 </iyz>
-        <emptywt unit="LBS">     145400 </emptywt> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
+        <emptywt unit="LBS">     156500 </emptywt> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
         <location name="CG" unit="IN">
             <x> 729.56 </x> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
             <y>   0 </y>

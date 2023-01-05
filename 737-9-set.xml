@@ -3,31 +3,31 @@
 <PropertyList include="737-MAX-common.xml">
 
     <sim>
-        <description>Boeing 737 MAX 10</description>
-        <liveries-path type="string">Aircraft/737-MAX/Models/Liveries-10</liveries-path>
-        <aero>737-10</aero>
+        <description>Boeing 737 MAX 9</description>
+        <liveries-path type="string">Aircraft/737-MAX/Models/Liveries-9</liveries-path>
+        <aero>737-9</aero>
         <variant-of>737-7</variant-of>
         <startup>
-            <splash-texture>Aircraft/737-MAX/Splash/Splash-10/splash-1.png</splash-texture>
-            <splash-texture>Aircraft/737-MAX/Splash/Splash-10/splash-2.png</splash-texture>
-            <splash-texture>Aircraft/737-MAX/Splash/Splash-10/splash-3.png</splash-texture>
+            <splash-texture>Aircraft/737-MAX/Splash/Splash-9/splash-1.png</splash-texture>
+            <splash-texture>Aircraft/737-MAX/Splash/Splash-9/splash-2.png</splash-texture>
+            <splash-texture>Aircraft/737-MAX/Splash/Splash-9/splash-3.png</splash-texture>
         </startup>
 
         <previews>
             <preview>
                 <type>exterior</type>
                 <splash type="bool">true</splash>
-                <path>Splash/Splash-10/splash-1.png</path>
+                <path>Splash/Splash-9/splash-1.png</path>
             </preview>
             <preview>
                 <type>exterior</type>
                 <splash type="bool">true</splash>
-                <path>Splash/Splash-10/splash-2.png</path>
+                <path>Splash/Splash-9/splash-2.png</path>
             </preview>
             <preview>
                 <type>exterior</type>
                 <splash type="bool">true</splash>
-                <path>Splash/Splash-10/splash-3.png</path>
+                <path>Splash/Splash-9/splash-3.png</path>
             </preview>
         </previews>
 
@@ -38,9 +38,9 @@
                 <position-z-m type="float">0.00098</position-z-m>
                 <jetway-hood-deg type="float">0</jetway-hood-deg>
             </door>
-            <path>Aircraft/737-MAX/Models/737-10.xml</path>
+            <path>Aircraft/737-MAX/Models/737-9.xml</path>
             <livery>
-                <file type="string">737-10</file>
+                <file type="string">737-9</file>
             </livery>
 
             <rendering>
@@ -155,7 +155,7 @@
         <cdu>
             <display>IDENT</display>
             <ident>
-                <model>737 MAX 10</model>
+                <model>737 MAX 9</model>
                 <engines>CFM LEAP 1B</engines>
             </ident>
             <input type="string" />
@@ -165,7 +165,6 @@
 
     <limits>
         <!-- According to http://wwww.b737.org.uk -->
-        <!-- Still experimental, many weights not yet tested -->
         <mass-and-balance>
             <maximum-ramp-mass-lbs>156500</maximum-ramp-mass-lbs>
             <maximum-takeoff-mass-lbs>197900</maximum-takeoff-mass-lbs>
@@ -214,8 +213,8 @@
 
         <pax>
             <business type="double">20</business>
-            <tourist type="double">54</tourist>
-            <economy type="double">122</economy>
+            <tourist type="double">33</tourist>
+            <economy type="double">126</economy>
         </pax>
         <weight>
             <name type="string">Business class (20 pax max)</name>
@@ -224,16 +223,16 @@
             <max-lb type="double">3560</max-lb>
         </weight>
         <weight>
-            <name type="string">Tourist class (54 pax max)</name>
+            <name type="string">Tourist class (33 pax max)</name>
             <weight-lb alias="/payload/pax/tourist" />
             <min-lb type="double">0.0</min-lb>
-            <max-lb type="double">9612</max-lb>
+            <max-lb type="double">5874</max-lb>
         </weight>
         <weight>
-            <name type="string">Economy class (122 pax max)</name>
+            <name type="string">Economy class (126 pax max)</name>
             <weight-lb alias="/payload/pax/economy" />
             <min-lb type="double">0.0</min-lb>
-            <max-lb type="double">21716</max-lb>
+            <max-lb type="double">2248</max-lb>
         </weight>
         <weight>
             <name type="string">Cargo compartment 1A</name>
@@ -301,7 +300,7 @@
             <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
             <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
             <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
-            <file>Aircraft/737-MAX/Nasal/liveries-10.nas</file>
+            <file>Aircraft/737-MAX/Nasal/liveries-9.nas</file>
         </boeing737>
         <systems>
             <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
