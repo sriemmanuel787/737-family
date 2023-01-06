@@ -273,9 +273,9 @@
     </payload>
 
     <nasal>
-        <tree>
+        <pts>
             <file>Aircraft/737-MAX/Nasal/property-tree-setup.nas</file>
-        </tree>
+        </pts>
         <cdu>
             <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>            <!-- custom implementation of the CDU from instruments-3D -->
         </cdu>
@@ -283,64 +283,63 @@
             <file>Aircraft/737-MAX/Models/Instruments/PFD-capt.nas</file>
             <file>Aircraft/737-MAX/Models/Instruments/PFD-FO.nas</file>
             <file>Aircraft/737-MAX/Models/Instruments/EICAS.nas</file>
-            AP-OH/annunciator.nas</file>
-        <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
-        <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
-        <file>Aircraft/737-MAX/Nasal/controls.nas</file>
-        <file>Aircraft/737-MAX/Nasal/friction.nas</file>
-        <file>Aircraft/737-MAX/Nasal/lighting.nas</file>
-        <file>Aircraft/737-MAX/Nasal/tire-smoke.nas</file>
-        <file>Aircraft/737-MAX/Nasal/ground-services.nas</file>
-        <file>Aircraft/737-MAX/Nasal/systems.nas</file>
-        <file>Aircraft/737-MAX/Nasal/engine-fire.nas</file>
-        <file>Aircraft/737-MAX/Nasal/limits.nas</file>
-        <file>Aircraft/737-MAX/Nasal/doors.nas</file>
-        <file>Aircraft/737-MAX/Nasal/shake.nas</file>
-        <file>Aircraft/737-MAX/Nasal/warnings.nas</file>
-        <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
-        <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
-        <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
-        <file>Aircraft/737-MAX/Nasal/liveries-7.nas</file>
-    </boeing737>
-    <systems>
-        <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
-        <file>Aircraft/737-MAX/Nasal/hydraulics.nas</file>
-        <file>Aircraft/737-MAX/Nasal/engines.nas</file>
-    </systems>
-    <nd>
-        <file>Aircraft/737-MAX/Nasal/ND.nas</file>
-    </nd>
-    <reversethrust>
-        <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
-    </reversethrust>
-    <itaf>
-        <file>Aircraft/737-MAX/Nasal/AFDS73X.nas</file>
-        <file>Aircraft/737-MAX/Nasal/AFDS73X-b.nas</file>
-        <file>Aircraft/737-MAX/Nasal/AFDS73X-c.nas</file>
-    </itaf>
-    <it-cws>
-        <file>Aircraft/737-MAX/Nasal/it-cws.nas</file>
-    </it-cws>
-    <thrust>
-        <file>Aircraft/737-MAX/Nasal/fadec.nas</file>
-    </thrust>
-    <acconfig>
-        <file>Aircraft/737-MAX/AircraftConfig/acconfig.nas</file>
-    </acconfig>
-    <icing>
-        <file>Aircraft/737-MAX/Nasal/icing.nas</file>
-    </icing>
-    <autopush>
-        <file>Aircraft/737-MAX/Nasal/Autopush/autopush.nas</file>
-    </autopush>
-    <autopush_driver>
-        <file>Aircraft/737-MAX/Nasal/Autopush/driver.nas</file>
-    </autopush_driver>
-    <dynarr>
-        <file>Aircraft/737-MAX/Nasal/Autopush/dynarr.nas</file>
-    </dynarr>
-    <autopush_route>
-        <file>Aircraft/737-MAX/Nasal/Autopush/route.nas</file>
-    </autopush_route>
-</nasal>
+            <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
+            <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
+            <file>Aircraft/737-MAX/Nasal/controls.nas</file>
+            <file>Aircraft/737-MAX/Nasal/friction.nas</file>
+            <file>Aircraft/737-MAX/Nasal/lighting.nas</file>
+            <file>Aircraft/737-MAX/Nasal/tire-smoke.nas</file>
+            <file>Aircraft/737-MAX/Nasal/ground-services.nas</file>
+            <file>Aircraft/737-MAX/Nasal/systems.nas</file>
+            <file>Aircraft/737-MAX/Nasal/engine-fire.nas</file>
+            <file>Aircraft/737-MAX/Nasal/limits.nas</file>
+            <file>Aircraft/737-MAX/Nasal/doors.nas</file>
+            <file>Aircraft/737-MAX/Nasal/shake.nas</file>
+            <file>Aircraft/737-MAX/Nasal/warnings.nas</file>
+            <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
+            <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
+            <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
+            <file>Aircraft/737-MAX/Nasal/liveries-7.nas</file>
+        </boeing737>
+        <systems>
+            <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
+            <file>Aircraft/737-MAX/Nasal/hydraulics.nas</file>
+            <file>Aircraft/737-MAX/Nasal/engines.nas</file>
+        </systems>
+        <nd>
+            <file>Aircraft/737-MAX/Nasal/ND.nas</file>
+        </nd>
+        <reversethrust>
+            <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
+        </reversethrust>
+        <itaf>
+            <file>Aircraft/737-MAX/Nasal/AFDS73X.nas</file>
+            <file>Aircraft/737-MAX/Nasal/AFDS73X-b.nas</file>
+            <file>Aircraft/737-MAX/Nasal/AFDS73X-c.nas</file>
+        </itaf>
+        <it-cws>
+            <file>Aircraft/737-MAX/Nasal/it-cws.nas</file>
+        </it-cws>
+        <thrust>
+            <file>Aircraft/737-MAX/Nasal/fadec.nas</file>
+        </thrust>
+        <acconfig>
+            <file>Aircraft/737-MAX/AircraftConfig/acconfig.nas</file>
+        </acconfig>
+        <icing>
+            <file>Aircraft/737-MAX/Nasal/icing.nas</file>
+        </icing>
+        <autopush>
+            <file>Aircraft/737-MAX/Nasal/Autopush/autopush.nas</file>
+        </autopush>
+        <autopush_driver>
+            <file>Aircraft/737-MAX/Nasal/Autopush/driver.nas</file>
+        </autopush_driver>
+        <dynarr>
+            <file>Aircraft/737-MAX/Nasal/Autopush/dynarr.nas</file>
+        </dynarr>
+        <autopush_route>
+            <file>Aircraft/737-MAX/Nasal/Autopush/route.nas</file>
+        </autopush_route>
+    </nasal>
 </PropertyList>

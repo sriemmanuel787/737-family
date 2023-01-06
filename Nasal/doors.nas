@@ -13,21 +13,17 @@ var cockpitdoortoggle = func {
 	if(!getprop("controls/doors/cockpitdoor/opened")){
 		# closed, please open
 		cockpitdoor.move(1);
-		settimer(
-			func{
+		settimer( func {
 				props.globals.getNode("controls/doors/cockpitdoor/opened").setBoolValue(1);
 				setprop("controls/doors/cockpitdoor/state",0);
-			}
-		,3);
+			} ,3);
 	} else {
 		# opened, please close
 		cockpitdoor.move(0);
-		settimer(
-			func{
+		settimer( func{
 				props.globals.getNode("controls/doors/cockpitdoor/opened").setBoolValue(0);
 				setprop("controls/doors/cockpitdoor/state",0);
-			}
-		,3);
+			},3);
 	}
 }
 
@@ -45,17 +41,13 @@ var doorLFtoggle = func {
 	if (!getprop("controls/doors/LFDoor/opened")){
 		# closed, please open
 		doorLF1.move(1);
-		settimer(
-			func{
-				doorLF2.move(1);
-			}
-		,1);
-		settimer(
-			func{
-				props.globals.getNode("controls/doors/LFDoor/opened").setBoolValue(1);
-				setprop("controls/doors/LFDoor/state",0);
-			}
-		,3);	
+		settimer( func{
+			doorLF2.move(1);
+		} ,1);
+		settimer( func{
+			props.globals.getNode("controls/doors/LFDoor/opened").setBoolValue(1);
+			setprop("controls/doors/LFDoor/state",0);
+		} ,3);	
 	} else {
 		# opened, please close
 		doorLF2.move(0);
