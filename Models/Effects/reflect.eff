@@ -13,13 +13,6 @@
         <lightmap-multi type="int">0</lightmap-multi>
         <lightmap-color type="vec3d">1 1 1</lightmap-color>
         <lightmap-factor type="float"><use>controls/lighting/landing-lights[0]</use></lightmap-factor>
-        (* <texture n="3">
-            <image>Aircraft/737-MAX/Models/Effects/fuselage_lightmap.png</image>
-            <filter>linear-mipmap-linear</filter>
-            <wrap-s>clamp</wrap-s>
-            <wrap-t>clamp</wrap-t>
-            <internal-format>normalized</internal-format>
-        </texture> *)
         <texture n="5">
             <type>cubemap</type>
             <images>
