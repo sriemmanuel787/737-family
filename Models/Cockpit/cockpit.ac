@@ -1888,7 +1888,7 @@ OBJECT poly
 name "column.capt"
 data 7
 739.896
-crease 30.0
+crease 90.0
 texture "yoke.png"
 numvert 154
 -0.37605 -0.82689 0.47786
@@ -3516,7 +3516,7 @@ OBJECT poly
 name "column.capt1"
 data 7
 739.008
-crease 30.0
+crease 90.0
 texture "yoke.png"
 numvert 87
 -0.35635 -0.84459 0.47784
@@ -4476,7 +4476,7 @@ OBJECT poly
 name "column.FO"
 data 7
 739.005
-crease 30.0
+crease 90.0
 texture "yoke.png"
 numvert 154
 -0.37605 -0.82689 -0.47514
@@ -6104,7 +6104,7 @@ OBJECT poly
 name "column.FO1"
 data 7
 739.006
-crease 30.0
+crease 90.0
 texture "yoke.png"
 numvert 87
 -0.35635 -0.84459 -0.47516
@@ -48457,7 +48457,7 @@ OBJECT poly
 name "yoke.capt"
 data 7
 739.033
-crease 30.0
+crease 90.0
 texture "yoke.png"
 numvert 493
 -0.32205 -0.11792 0.62986
@@ -54491,7 +54491,7 @@ OBJECT poly
 name "yoke.FO"
 data 7
 739.002
-crease 30.0
+crease 90.0
 texture "yoke.png"
 numvert 493
 -0.32205 -0.11792 -0.62705
