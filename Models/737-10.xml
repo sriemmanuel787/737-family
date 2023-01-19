@@ -550,6 +550,7 @@
         <visible>true</visible>
         <object-name>cdoor.fwdI</object-name>
         <object-name>cdoor.fwdO</object-name>
+        <object-name>overlay.cdoor.fwd</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
@@ -563,8 +564,9 @@
         <type>rotate</type>
         <object-name>cdoor.fwdI</object-name>
         <object-name>cdoor.fwdO</object-name>
+        <object-name>overlay.cdoor.fwd</object-name>
         <property>controls/doors/CFDoor/CFDoorPos1/position-norm</property>
-        <factor>-180</factor>
+        <factor>-90</factor>
         <center>
             <x-m>-12.3619</x-m>
             <y-m>1.69664</y-m>
