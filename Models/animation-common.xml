@@ -143,6 +143,7 @@
         <object-name>winglet.chromeR</object-name>
         <object-name>n1.chrome</object-name>
         <object-name>n2.chrome</object-name>
+        <object-name>static-port</object-name>
     </animation>
 
     <!-- Exterior Illumination -->

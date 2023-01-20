@@ -342,6 +342,9 @@
         <visible>true</visible>
         <object-name>door.FLO</object-name>
         <object-name>door.FLI</object-name>
+        <object-name>handle.FL</object-name>
+        <object-name>socket.FL</object-name>
+        <object-name>overlay.doorFL</object-name>
         <object-name>hinge.FLO</object-name>
         <object-name>hinge.FLI</object-name>
         <action>
@@ -359,6 +362,9 @@
         <type>rotate</type>
         <object-name>door.FLO</object-name>
         <object-name>door.FLI</object-name>
+        <object-name>handle.FL</object-name>
+        <object-name>socket.FL</object-name>
+        <object-name>overlay.doorFL</object-name>
         <object-name>hinge.FLO</object-name>
         <object-name>hinge.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
@@ -376,6 +382,9 @@
         <type>rotate</type>
         <object-name>door.FLO</object-name>
         <object-name>door.FLI</object-name>
+        <object-name>handle.FL</object-name>
+        <object-name>socket.FL</object-name>
+        <object-name>overlay.doorFL</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
@@ -394,6 +403,9 @@
         <visible>true</visible>
         <object-name>door.FRO</object-name>
         <object-name>door.FRI</object-name>
+        <object-name>handle.FR</object-name>
+        <object-name>socket.FR</object-name>
+        <object-name>overlay.doorFR</object-name>
         <object-name>hinge.FRO</object-name>
         <object-name>hinge.FRI</object-name>
         <action>
@@ -411,6 +423,9 @@
         <type>rotate</type>
         <object-name>door.FRO</object-name>
         <object-name>door.FRI</object-name>
+        <object-name>handle.FR</object-name>
+        <object-name>socket.FR</object-name>
+        <object-name>overlay.doorFR</object-name>
         <object-name>hinge.FRO</object-name>
         <object-name>hinge.FRI</object-name>
         <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
@@ -428,6 +443,9 @@
         <type>rotate</type>
         <object-name>door.FRO</object-name>
         <object-name>door.FRI</object-name>
+        <object-name>handle.FR</object-name>
+        <object-name>socket.FR</object-name>
+        <object-name>overlay.doorFR</object-name>
         <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
@@ -446,6 +464,9 @@
         <visible>true</visible>
         <object-name>door.ALO</object-name>
         <object-name>door.ALI</object-name>
+        <object-name>handle.AL</object-name>
+        <object-name>socket.AL</object-name>
+        <object-name>overlay.doorAL</object-name>
         <object-name>hinge.ALO</object-name>
         <object-name>hinge.ALI</object-name>
         <action>
@@ -463,6 +484,9 @@
         <type>rotate</type>
         <object-name>door.ALO</object-name>
         <object-name>door.ALI</object-name>
+        <object-name>handle.AL</object-name>
+        <object-name>socket.AL</object-name>
+        <object-name>overlay.doorAL</object-name>
         <object-name>hinge.ALO</object-name>
         <object-name>hinge.ALI</object-name>
         <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
@@ -480,6 +504,9 @@
         <type>rotate</type>
         <object-name>door.ALO</object-name>
         <object-name>door.ALI</object-name>
+        <object-name>handle.AL</object-name>
+        <object-name>socket.AL</object-name>
+        <object-name>overlay.doorAL</object-name>
         <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
@@ -498,6 +525,9 @@
         <visible>true</visible>
         <object-name>door.ARO</object-name>
         <object-name>door.ARI</object-name>
+        <object-name>handle.AR</object-name>
+        <object-name>socket.AR</object-name>
+        <object-name>overlay.doorAR</object-name>
         <object-name>hinge.ARO</object-name>
         <object-name>hinge.ARI</object-name>
         <action>
@@ -515,6 +545,9 @@
         <type>rotate</type>
         <object-name>door.ARO</object-name>
         <object-name>door.ARI</object-name>
+        <object-name>handle.AR</object-name>
+        <object-name>socket.AR</object-name>
+        <object-name>overlay.doorAR</object-name>
         <object-name>hinge.ARO</object-name>
         <object-name>hinge.ARI</object-name>
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
@@ -532,6 +565,9 @@
         <type>rotate</type>
         <object-name>door.ARO</object-name>
         <object-name>door.ARI</object-name>
+        <object-name>handle.AR</object-name>
+        <object-name>socket.AR</object-name>
+        <object-name>overlay.doorAR</object-name>
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
@@ -583,6 +619,7 @@
         <visible>true</visible>
         <object-name>cdoor.aftI</object-name>
         <object-name>cdoor.aftO</object-name>
+        <object-name>overlay.cdoor.aft</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
@@ -597,7 +634,7 @@
         <object-name>cdoor.aftI</object-name>
         <object-name>cdoor.aftO</object-name>
         <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
-        <factor>-180</factor>
+        <factor>-90</factor>
         <axis>
             <x1-m>11.4293</x1-m>
             <y1-m>1.70712</y1-m>
