@@ -80,10 +80,10 @@
                 <path>Aircraft/737-MAX/Systems/instrument-filters.xml</path>
             </property-rule>
             <wingflexer include="Systems/wingflexer-params.xml" />
-            <property-rule n="100">
+            <autopilot n="13">
                 <name>wing flexer property rule</name>
                 <path>Aircraft/Generic/wingflexer.xml</path>
-            </property-rule>
+            </autopilot>
         </systems>
 
         <instrumentation>
