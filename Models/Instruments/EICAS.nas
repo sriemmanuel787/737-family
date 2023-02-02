@@ -53,6 +53,10 @@ var canvas_EICAS = {
         me["egt-text1"].setText(sprintf("%i", getprop("engines/engine[0]/egt-actual")));
         me["n2-text1"].setText(sprintf("%0.1f", getprop("engines/engine[0]/n2")));
         me["fuelflow1"].setText(sprintf("%0.2f", getprop("engines/engine[0]/fuel-flow_pph")*LB2KG/1000));
+        if(getprop("engines/engine[0]/n2") > 18 and getprop("engines/engine[0]/n2") < 24)
+            me["motoring1"].show();
+        else
+            me["motoring1"].hide();
 
         if(getprop("controls/engines/engine[0]/starter"))
             me["start-valve-open1"].show();
@@ -67,7 +71,7 @@ var canvas_EICAS = {
             me["thrust1"].show();
         else
             me["thrust1"].hide();
-        if(getprop("engines/engine[0]/fuel-flow_pph")/getprop("engines/engine[0]/n1") > 90)
+        if(getprop("engines/engine[0]/fuel-flow_pph")/getprop("engines/engine[0]/n1") > 100)
             me["fuel-flow1"].show();
         else
             me["fuel-flow1"].hide();
@@ -83,6 +87,10 @@ var canvas_EICAS = {
         me["egt-text2"].setText(sprintf("%i", getprop("engines/engine[1]/egt-actual")));
         me["n2-text2"].setText(sprintf("%0.1f", getprop("engines/engine[1]/n2")));
         me["fuelflow2"].setText(sprintf("%0.2f", getprop("engines/engine[1]/fuel-flow_pph")*LB2KG/1000));
+        if(getprop("engines/engine[1]/n2") > 18 and getprop("engines/engine[1]/n2") < 24)
+            me["motoring2"].show();
+        else
+            me["motoring2"].hide();
 
 		if(getprop("controls/engines/engine[1]/starter"))
             me["start-valve-open2"].show();
@@ -97,7 +105,7 @@ var canvas_EICAS = {
             me["thrust2"].show();
         else
             me["thrust2"].hide();
-        if(getprop("engines/engine[1]/fuel-flow_pph")/getprop("engines/engine[1]/n1") > 90)
+        if(getprop("engines/engine[1]/fuel-flow_pph")/getprop("engines/engine[1]/n1") > 100)
             me["fuel-flow2"].show();
         else
             me["fuel-flow2"].hide();
@@ -107,6 +115,7 @@ var canvas_EICAS = {
         else
             me["flap-ext"].hide();
         
+        # Flap Dial
         if(getprop("surface-positions/flap-pos-norm") <= 0.125)
             me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-norm")*8*33.7*D2R);
         elsif(getprop("surface-positions/flap-pos-norm") <= 0.25)
@@ -129,10 +138,15 @@ var canvas_EICAS = {
         else
             me["flap-trans"].hide();
 
+        # Fuel Tanks
         me["tank-l"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[0]/level-kg")/1000));
         me["tank-r"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[1]/level-kg")/1000));
         me["tank-c"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[2]/level-kg")/1000));
         me["total"].setText(sprintf("%0.1f", (getprop("consumables/fuel/tank[0]/level-kg") + getprop("consumables/fuel/tank[1]/level-kg") + getprop("consumables/fuel/tank[2]/level-kg"))/1000));
+
+        # Temperature and Flight Mode
+        me["air-temp"].setText(sprintf("%+ic"), getprop("environment/temperature-degc"));
+        me["flt-mode"].setText(getprop("it-autoflight/input/thrustStg"));
 	}
 };
 
