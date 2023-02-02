@@ -48,8 +48,6 @@ var canvas_PFDC = {
         m["aoa-needle"].set("clip", "rect(112, 917, 352, 894)");
 
         # Center Setting
-        m["ground"].setCenter(647, 232);
-        m["sky"].setCenter(647, 232);
         m["turn-coordinator"].setCenter(647, 232);
         m["ap-heading"].setCenter(647, 654);
         m.timers=[];
@@ -87,12 +85,9 @@ var canvas_PFDC = {
 
 
 		# Artificial Horizon
-        me["ground"].setTranslation(0, pitchDeg*4.8);
-        me["sky"].setTranslation(0, pitchDeg*4.8);
-        me["attitude"].setTranslation(0, pitchDeg*4.8);
-        me["ground"].setRotation(-rollDeg*D2R);
-        me["sky"].setRotation(-rollDeg*D2R);
-        me["attitude"].setRotation(-rollDeg*D2R);
+        me["ground"].setTranslation(0, pitchDeg*4.8).setCenter(647, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
+        me["sky"].setTranslation(0, pitchDeg*4.8).setCenter(647, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
+        me["attitude"].setTranslation(0, pitchDeg*4.8).setCenter(647, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
         if (rollDeg > 60)
             me["turn-coordinator"].setRotation(-60*D2R);
         elsif (rollDeg < -60)

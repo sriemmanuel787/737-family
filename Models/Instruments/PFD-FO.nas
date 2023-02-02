@@ -87,12 +87,9 @@ var canvas_PFDF = {
 
 
 		# Artificial Horizon
-        me["ground"].setTranslation(0, pitchDeg*4.8);
-        me["sky"].setTranslation(0, pitchDeg*4.8);
-        me["attitude"].setTranslation(0, pitchDeg*4.8);
-        me["ground"].setRotation(rollDeg*D2R);
-        me["sky"].setRotation(rollDeg*D2R);
-        me["attitude"].setRotation(rollDeg*D2R);
+        me["ground"].setTranslation(0, pitchDeg*4.8).setCenter(323, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
+        me["sky"].setTranslation(0, pitchDeg*4.8).setCenter(323, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
+        me["attitude"].setTranslation(0, pitchDeg*4.8).setCenter(323, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
         if (rollDeg > 60)
             me["turn-coordinator"].setRotation(-60*D2R);
         elsif (rollDeg < -60)
