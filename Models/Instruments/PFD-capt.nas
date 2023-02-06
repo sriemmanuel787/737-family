@@ -58,8 +58,6 @@ var canvas_PFDC = {
     newMFD: func() {
  		me.update_timer = maketimer(0.05, func me.update());
  		me.update_timer.start();
- 		me.update_slow_timer.start();
- 		me.update_ap_modes_timer.start();
     },
 
 	update: func() {

@@ -27,8 +27,6 @@ var canvas_EICAS = {
     newMFD: func(){
  		me.update_timer = maketimer(0.05, func me.update() );
  		me.update_timer.start();
- 		me.update_slow_timer.start();
- 		me.update_ap_modes_timer.start();
     },
 
 	update: func(){
@@ -145,7 +143,7 @@ var canvas_EICAS = {
         me["total"].setText(sprintf("%0.1f", (getprop("consumables/fuel/tank[0]/level-kg") + getprop("consumables/fuel/tank[1]/level-kg") + getprop("consumables/fuel/tank[2]/level-kg"))/1000));
 
         # Temperature and Flight Mode
-        me["air-temp"].setText(sprintf("%+ic"), getprop("environment/temperature-degc"));
+        # me["air-temp"].setText(sprintf("%+i\c"), getprop("environment/temperature-degc"));
         me["flt-mode"].setText(getprop("it-autoflight/input/thrustStg"));
 	}
 };
