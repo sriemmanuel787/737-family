@@ -14,7 +14,7 @@ var canvas_NDWide = {
 			return "OCRBMT.TTF";
 		};
 		
-		canvas.parsesvg(NDWide, "Aircraft/737-MAX/Models/Instruments/res/NDWide.svg" , {'font-mapper': font_mapper});
+		canvas.parsesvg(NDWide, "Aircraft/737-MAX/Models/Cockpit/Screens/NDWide.svg" , {'font-mapper': font_mapper});
 		
 		var svg_keys = ["true-airspeed", "ground-speed", "wind-speed", "wind-heading", "wind-arrow", "range", "wpt-next", "wpt-time", "wpt-distance", "NM", "heading", "heading-mode", "hdg-mode", "heading-ap", "TFC", "WPT", "ARPT", "TERR", "WX-A", "vor1hdg", "vor2hdg", "dme1", "dme2", "vor1", "vor2", "anp", "rnp", "hdg-ap", "hdg-track", "range-half", "overlay-norm", "compass"];
 		foreach(var key; svg_keys)

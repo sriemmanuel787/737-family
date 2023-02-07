@@ -14,7 +14,7 @@ var canvas_EICAS = {
 			return "OCRBMT.TTF";
 		};
 		
-		canvas.parsesvg(EICAS, "Aircraft/737-MAX/Models/Instruments/res/EICAS.svg" , {'font-mapper': font_mapper});
+		canvas.parsesvg(EICAS, "Aircraft/737-MAX/Models/Cockpit/Screens/EICAS.svg" , {'font-mapper': font_mapper});
 		
 		var svg_keys = ["fuelflow1", "fuelflow2", "oil-press1", "oil-press2", "oil-temp1", "oil-temp2", "oil-qty1", "oil-qty2", "vib1", "vib2", "oil-press-meter1", "oil-press-meter2", "oil-temp-meter1", "oil-temp-meter2", "vib-meter1", "vib-meter2", "throttle-num1", "throttle-num2", "throttle-n1", "throttle-n2", "n1-text1", "n1-dial1", "n1-text2", "n1-dial2", "egt-text1", "egt-dial1", "egt-text2", "egt-dial2", "motoring1", "motoring2", "n2-dial1", "n2-text1", "n2-dial2", "n2-text2", "fuel-flow1", "thrust1", "low-oil-pressure1", "oil-filter-bypass1", "start-valve-open1", "fuel-flow2", "thrust2", "low-oil-pressure2", "oil-filter-bypass2", "start-valve-open2", "tank-r", "tank-c", "tank-l", "total", "air-temp", "flt-mode", "flap-trans", "flap-ext", "flap-dial"];
 		foreach(var key; svg_keys)

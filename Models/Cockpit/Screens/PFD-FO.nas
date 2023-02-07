@@ -3,53 +3,55 @@
 # Israel Emmanuel
 # ==============================================================================
 
-var PFDC_canvas = nil;
-var PFDC_display = nil;
+var PFDF_canvas = nil;
+var PFDF_display = nil;
 var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
-var canvas_PFDC = {
+var canvas_PFDF = {
 	new: func(canvas_group) {
-		var m = {parents: [canvas_PFDC]};
-		var PFDC = canvas_group;
+		var m = {parents: [canvas_PFDF]};
+		var PFDF = canvas_group;
 		var font_mapper = func(family, weight) {
 			return "OCRBMT.TTF";
 		};
 		
-		canvas.parsesvg(PFDC, "Aircraft/737-MAX/Models/Instruments/res/PFD-capt.svg" , {'font-mapper': font_mapper});
+		canvas.parsesvg(PFDF, "Aircraft/737-MAX/Models/Cockpit/Screens/PFD-FO.svg" , {'font-mapper': font_mapper});
 		
 		var svg_keys = ["ground", "sky", "attitude", "turn-coordinator", "max-attitude", "afds-mode", "single-ch-back", "single-ch", "vor1", "vor2", "dme1", "dme2", "flt-no", "xpdr", "selcal", "registration", "day", "month", "year", "elapsed", "utc", "timer-arm", "timer-analog", "back-trans", "compass-text", "compass", "ap-heading", "sel-hdg", "hdg-type", "press-set", "wind-arrow", "wind-speed", "wind-heading","wing-stats", "ground-speed", "true-airspeed", "fd-horizontal", "fd-vertical", "alt-ground", "ap-alt-tape", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-tape8", "alt-tape9", "alt-neg", "alt-20", "alt-100", "alt-1000", "alt-10000", "alt-00000", "alt-m", "alt-final-box", "alt-final", "ap-alt-thousand", "ap-alt-hundred", "ap-alt-meter", "spd-box", "spd-tape", "mach", "spd-1", "spd-10", "spd-100", "spd-ap", "spd-limitUR", "spd-limitUB", "spd-limitLR", "spd-limitLB", "spd-limitY", "aoa-needle", "vs-neg", "vs-pos", "vnav", "lnav", "a-throttle", "ap-mode"];
 		foreach(var key; svg_keys)
-			m[key] = PFDC.getElementById(key);
+			m[key] = PFDF.getElementById(key);
 
-        m["alt-tape0"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape1"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape2"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape3"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape4"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape5"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape6"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape7"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape8"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-tape9"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-ground"].set("clip", "rect(58, 864, 406, 803)");
-        m["alt-20"].set("clip", "rect(210, 885, 254, 822)");
-        m["alt-100"].set("clip", "rect(210, 885, 254, 822)");
-        m["alt-1000"].set("clip", "rect(210, 885, 254, 822)");
-        m["alt-10000"].set("clip", "rect(210, 885, 254, 822)");
-        m["spd-1"].set("clip", "rect(207, 481, 256, 437)");
-        m["spd-10"].set("clip", "rect(207, 481, 256, 437)");
-        m["spd-100"].set("clip", "rect(207, 481, 256, 437)");
-        m["spd-limitUR"].set("clip", "rect(58, 506, 406, 500)");
-        m["spd-limitUB"].set("clip", "rect(58, 506, 406, 500)");
-        m["spd-limitLR"].set("clip", "rect(58, 506, 406, 500)");
-        m["spd-limitLB"].set("clip", "rect(58, 506, 406, 500)");
-        m["spd-limitY"].set("clip", "rect(58, 506, 406, 500)");
-        m["spd-tape"].set("clip", "rect(58, 500, 406, 439)");
-        m["aoa-needle"].set("clip", "rect(112, 917, 352, 894)");
+        m["alt-tape0"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape1"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape2"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape3"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape4"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape5"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape6"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape7"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape8"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-tape9"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-ground"].set("clip", "rect(58, 540, 406, 479)");
+        m["alt-20"].set("clip", "rect(210, 561, 254, 498)");
+        m["alt-100"].set("clip", "rect(210, 561, 254, 498)");
+        m["alt-1000"].set("clip", "rect(210, 561, 254, 498)");
+        m["alt-10000"].set("clip", "rect(210, 561, 254, 498)");
+        m["spd-1"].set("clip", "rect(207, 157, 256, 113)");
+        m["spd-10"].set("clip", "rect(207, 157, 256, 113)");
+        m["spd-100"].set("clip", "rect(207, 157, 256, 113)");
+        m["spd-limitUR"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-limitUB"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-limitLR"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-limitLB"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-limitY"].set("clip", "rect(58, 182, 406, 176)");
+        m["spd-tape"].set("clip", "rect(58, 176, 406, 115)");
+        m["aoa-needle"].set("clip", "rect(112, 593, 352, 570)");
 
         # Center Setting
-        m["turn-coordinator"].setCenter(647, 232);
-        m["ap-heading"].setCenter(647, 654);
+        m["ground"].setCenter(323, 232);
+        m["sky"].setCenter(323, 232);
+        m["turn-coordinator"].setCenter(323, 232);
+        m["ap-heading"].setCenter(323, 654);
         m.timers=[];
 
 		return m;
@@ -83,9 +85,9 @@ var canvas_PFDC = {
 
 
 		# Artificial Horizon
-        me["ground"].setTranslation(0, pitchDeg*4.8).setCenter(647, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
-        me["sky"].setTranslation(0, pitchDeg*4.8).setCenter(647, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
-        me["attitude"].setTranslation(0, pitchDeg*4.8).setCenter(647, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
+        me["ground"].setTranslation(0, pitchDeg*4.8).setCenter(323, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
+        me["sky"].setTranslation(0, pitchDeg*4.8).setCenter(323, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
+        me["attitude"].setTranslation(0, pitchDeg*4.8).setCenter(323, 232-(pitchDeg*4.8)).setRotation(-rollDeg*D2R);
         if (rollDeg > 60)
             me["turn-coordinator"].setRotation(-60*D2R);
         elsif (rollDeg < -60)
@@ -318,22 +320,22 @@ var canvas_PFDC = {
 };
 
 setlistener("sim/signals/fdm-initialized", func() {
-	PFDC_display = canvas.new({
-		"name": "PFDC",
+	PFDF_display = canvas.new({
+		"name": "PFDF",
 		"size": [1940, 1452],
 		"view": [970, 726],
 		"mipmapping": 1
 	});
-	PFDC_display.addPlacement({"node": "screen1.full"});
-	var group = PFDC_display.createGroup();
-	PFDC_canvas = canvas_PFDC.new(group);
-    PFDC_canvas.newMFD();
- 	PFDC_canvas.update();
+	PFDF_display.addPlacement({"node": "screen4.full"});
+	var group = PFDF_display.createGroup();
+	PFDF_canvas = canvas_PFDF.new(group);
+    PFDF_canvas.newMFD();
+ 	PFDF_canvas.update();
 }, 0, 0);
 
-#setlistener("sim/signals/reinit", func PFDC_display.del());
+#setlistener("sim/signals/reinit", func PFDF_display.del());
 
-var showPFDC = func() {
+var showPFDF = func() {
 	var dlg = canvas.Window.new([485, 363], "dialog").set("resize", 0.5);
-	dlg.setCanvas(PFDC_display);
+	dlg.setCanvas(PFDF_display);
 }
