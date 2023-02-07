@@ -62,7 +62,7 @@ var canvas_NDWide = {
 
         # Route Drawing
         if(getprop("autopilot/route-manager/wp[0]/id") != ""){
-            var start = [getprop("autopilot/route-manager/wp[0]/latitude-deg"), getprop("autopilot/route-manager/wp[0]/longitude-deg")];
+            var start = [getprop("autopilot/route-manager/route/wp[0]/latitude-deg"), getprop("autopilot/route-manager/route/wp[0]/longitude-deg")];
             var pos = [getprop("position/latitude-deg"), getprop("position/longitude-deg")];
             # Haversine formula, to find the distance bewteen the first waypoint and the current position
             var dist = 7917.5*math.asin(math.sqrt(math.pow(math.sin(math.abs(start[0]-pos[0])/2), 2) + math.cos(start[0])*math.cos(pos[0])*math.pow(math.sin(math.abs(start[1]-pos[1])/2), 2)));

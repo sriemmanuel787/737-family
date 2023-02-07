@@ -15,21 +15,15 @@
 
     <!-- Instrument Screens -->
     <animation>
-        <type>select</type>
-        <object-name>screen1.L</object-name>
-        <object-name>screen1.R</object-name>
-        <condition>
-            <equals>
-                <property>sim/fdm-initialized</property>
-                <value>0</value>
-            </equals>
-        </condition>
-    </animation>
-    <animation>
         <type>material</type>
         <object-name>screen1.full</object-name>
-        <object-name>screen1.L</object-name>
-        <object-name>screen1.R</object-name>
+        <object-name>screen2.full</object-name>
+        <object-name>screen2.L</object-name>
+        <object-name>screen2.R</object-name>
+        <object-name>screen3.full</object-name>
+        <object-name>screen3.L</object-name>
+        <object-name>screen3.R</object-name>
+        <object-name>screen4.full</object-name>
         <emission>
             <red>1</red>
             <green>1</green>
@@ -58,17 +52,6 @@
                 <value>0</value>
             </equals>
         </condition>
-    </animation>
-    <animation>
-        <type>material</type>
-        <object-name>screen2.full</object-name>
-        <object-name>screen2.L</object-name>
-        <object-name>screen2.R</object-name>
-        <emission>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-        </emission>
     </animation>
     <animation>
         <type>pick</type>
@@ -105,17 +88,6 @@
         </condition>
     </animation>
     <animation>
-        <type>material</type>
-        <object-name>screen3.full</object-name>
-        <object-name>screen3.L</object-name>
-        <object-name>screen3.R</object-name>
-        <emission>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-        </emission>
-    </animation>
-    <animation>
         <type>pick</type>
         <object-name>screen3.R</object-name>
         <action>
@@ -126,28 +98,6 @@
                 <script>boeing737.showEICAS();</script>
             </binding>
         </action>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>screen4.L</object-name>
-        <object-name>screen4.R</object-name>
-        <condition>
-            <equals>
-                <property>sim/fdm-initialized</property>
-                <value>0</value>
-            </equals>
-        </condition>
-    </animation>
-    <animation>
-        <type>material</type>
-        <object-name>screen4.full</object-name>
-        <object-name>screen4.L</object-name>
-        <object-name>screen4.R</object-name>
-        <emission>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-        </emission>
     </animation>
     <animation>
         <type>pick</type>

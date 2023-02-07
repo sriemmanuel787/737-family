@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1024"
+   height="1024"
+   viewBox="0 0 1024 1024"
+   version="1.1"
+   id="svg2495"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="autopilot.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2497"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.74827815"
+     inkscape:cx="366.17399"
+     inkscape:cy="573.98442"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2492" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="Shape 1"
+       class="s0"
+       d="M 0,0 H 1024 V 1024 H 0 Z"
+       style="fill:#000000" />
+    <text
+       xml:space="preserve"
+       style="font-size:175.108px;line-height:125%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f9f9f9;stroke-width:0"
+       x="482.27798"
+       y="190.0087"
+       id="altitude"
+       transform="scale(1.0000466,0.99995341)"
+       inkscape:label="altitude"><tspan
+         sodipodi:role="line"
+         id="tspan2568"
+         x="482.27798"
+         y="190.0087"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Std7SegCustom;-inkscape-font-specification:Std7SegCustom;stroke-width:0">99999</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:175.108px;line-height:125%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f9f9f9;stroke-width:0"
+       x="482.27798"
+       y="394.01819"
+       id="ias-mach"
+       transform="scale(1.0000466,0.99995341)"
+       inkscape:label="ias-mach"><tspan
+         sodipodi:role="line"
+         id="tspan2624"
+         x="482.27798"
+         y="394.01819"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Std7SegCustom;-inkscape-font-specification:Std7SegCustom;stroke-width:0">99999</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:175.108px;line-height:125%;font-family:'OCR B MT';-inkscape-font-specification:'OCR B MT';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f9f9f9;stroke-width:0"
+       x="463.27887"
+       y="599.12775"
+       id="v-speed"
+       transform="scale(1.0000466,0.99995341)"
+       inkscape:label="v-speed"><tspan
+         sodipodi:role="line"
+         id="tspan2630"
+         x="463.27887"
+         y="599.12775"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Std7SegCustom;-inkscape-font-specification:Std7SegCustom;stroke-width:0">99999</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:175.106px;line-height:125%;font-family:Std7SegCustom;-inkscape-font-specification:Std7SegCustom;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f9f9f9;stroke-width:0"
+       x="304.19424"
+       y="806.00598"
+       id="course2"
+       inkscape:label="course2"><tspan
+         sodipodi:role="line"
+         id="tspan2636"
+         x="304.19424"
+         y="806.00598"
+         style="stroke-width:0">999</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:175.106px;line-height:125%;font-family:Std7SegCustom;-inkscape-font-specification:Std7SegCustom;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f9f9f9;stroke-width:0"
+       x="730.19427"
+       y="805.00598"
+       id="heading"
+       inkscape:label="heading"><tspan
+         sodipodi:role="line"
+         id="tspan2642"
+         x="730.19427"
+         y="805.00598"
+         style="stroke-width:0">999</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:175.106px;line-height:125%;font-family:Std7SegCustom;-inkscape-font-specification:Std7SegCustom;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f9f9f9;stroke-width:0"
+       x="724.19427"
+       y="1010.006"
+       id="course1"
+       inkscape:label="course1"><tspan
+         sodipodi:role="line"
+         id="tspan2648"
+         x="724.19427"
+         y="1010.006"
+         style="stroke-width:0">999</tspan></text>
+  </g>
+</svg>
