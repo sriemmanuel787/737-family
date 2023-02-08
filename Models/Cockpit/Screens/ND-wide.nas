@@ -54,9 +54,10 @@ var canvas_NDWide = {
             me["wpt-distance"].hide();
             me["NM"].hide();
         }else{
-            me["wpt-next"].setText(getprop("autopilot/route-manager/wp/id"));
-            me["wpt-time"].setText(getprop("autopilot/route-manager/wp/eta"));
-            me["wpt-distance"].setText(sprintf("%.01f", getprop("autopilot/route-manager/wp/dist")));
+            me["wpt-next"].show().setText(getprop("autopilot/route-manager/wp/id"));
+            me["wpt-time"].show().setText(getprop("autopilot/route-manager/wp/eta"));
+            me["wpt-distance"].show().setText(sprintf("%.01f", getprop("autopilot/route-manager/wp/dist")));
+            me["NM"].show();
         }
         
 
@@ -66,7 +67,7 @@ var canvas_NDWide = {
             var pos = [getprop("position/latitude-deg"), getprop("position/longitude-deg")];
             # Haversine formula, to find the distance bewteen the first waypoint and the current position
             var dist = 7917.5*math.asin(math.sqrt(math.pow(math.sin(math.abs(start[0]-pos[0])/2), 2) + math.cos(start[0])*math.cos(pos[0])*math.pow(math.sin(math.abs(start[1]-pos[1])/2), 2)));
-            # var angle = 
+            var angle = math.atan2(math.cos(start[0]) * math.sin(math.abs(start[1]-pos[1])), math.cos(pos[0]) * math.sin(start[0]) - (math.sin(pos[0]) * math.cos(start[0]) * math.cos(math.abs(start[1]-pos[1]))));
         }
         
         # Take the heading from previous waypoint to next waypoint and subtract from currect heading.
@@ -76,7 +77,7 @@ var canvas_NDWide = {
         
 
         # for(var i = 1; i < getprop("autopilot/route-manager/route/num"); i++){
-
+            
         # }
 
         # Compass
