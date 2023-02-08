@@ -39,7 +39,7 @@
                 <pref-width>76</pref-width>
                 <binding>
                     <command>property-toggle</command>
-                    <property>/it-autoflight/input/ap1</property>
+                    <property>/it-autoflight/output/ap1</property>
                 </binding>
             </button>
             <button>
@@ -59,7 +59,7 @@
                 <pref-width>76</pref-width>
                 <binding>
                     <command>property-toggle</command>
-                    <property>/it-autoflight/input/ap2</property>
+                    <property>/it-autoflight/output/ap2</property>
                 </binding>
             </button>
             <button>
