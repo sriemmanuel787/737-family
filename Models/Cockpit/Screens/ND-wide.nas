@@ -44,7 +44,7 @@ var canvas_NDWide = {
         me["wind-heading"].setText(sprintf("%03i", getprop("environment/wind-from-heading-deg")));
         me["wind-speed"].setText(sprintf("%i", getprop("environment/wind-speed-kt")));
         me["range"].setText(sprintf("%i", getprop("instrumentation/efis[0]/inputs/range-nm")));
-        me["range-half"].setText(sprintf("%i", getprop("instrumentation/efis[0]/inputs/range-nm"))/2);
+        me["range-half"].setText(sprintf("%i", getprop("instrumentation/efis[0]/inputs/range-nm")/2));
         me["wind-arrow"].setRotation(getprop("environment/wind-from-heading-deg")*D2R);
 
         # Next Waypoint

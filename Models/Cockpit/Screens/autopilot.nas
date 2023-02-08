@@ -33,16 +33,17 @@ var canvas_AP = {
         me["course1"].setText(sprintf("%03i", getprop("it-autoflight/input/true-course")));
         me["course2"].setText(sprintf("%03i", getprop("it-autoflight/input/true-course")));
         me["heading"].setText(sprintf("%03i", getprop("it-autoflight/input/hdg")));
-        if(getprop("it-autoflight/input/vs") == 0)
+        if(getprop("it-autoflight/input/vs") == 0 or getprop("it-autoflight/input/vert") != 1)
             me["v-speed"].hide();
         else
-            me["v-speed"].setText(getprop("it-autoflight/input/vs"));
+            me["v-speed"].setText(sprintf("%i", getprop("it-autoflight/input/vs")));
 
         if(getprop("it-autoflight/input/kts-mach") == 0)
-            me["ias-mach"].setText(getprop("it-autoflight/input/spd-kts"));
+            me["ias-mach"].setText(sprintf("%i", getprop("it-autoflight/input/spd-kts")));
         else
-            me["ias-mach"].setText(getprop("it-autoflight/input/spd-mach"));
-        me["altitude"].setText(getprop("it-autoflight/input/alt"));
+            me["ias-mach"].setText(sprintf("%i", getprop("it-autoflight/input/spd-mach")));
+            
+        me["altitude"].setText(sprintf("%i", getprop("it-autoflight/input/alt")));
 	}
 };
 

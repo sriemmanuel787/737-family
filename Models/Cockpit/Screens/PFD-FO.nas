@@ -117,9 +117,9 @@ var canvas_PFDF = {
         me["selcal"].setText("AF-XS");
         me["registration"].setText(getprop("instrumentation/registration/registration"));
         me["elapsed"].setText(sprintf("%i:%02i", elapsedSec/60, math.mod(elapsedSec, 60)));
-        me["day"].setText(sprintf("%i", getprop("sim/time/utc/day")));
+        me["day"].setText(sprintf("%02i", getprop("sim/time/utc/day")));
         me["month"].setText(months[getprop("sim/time/utc/month") - 1]);
-        me["year"].setText(sprintf("%i", math.mod(getprop("sim/time/utc/year"), 100)));
+        me["year"].setText(sprintf("%02i", math.mod(getprop("sim/time/utc/year"), 100)));
         me["utc"].setText(sprintf("%sz", getprop("sim/time/gmt-string")));
 
         # Heading
