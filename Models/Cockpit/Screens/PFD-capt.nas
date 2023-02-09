@@ -79,6 +79,7 @@ var canvas_PFDC = {
         var ias = getprop("instrumentation/airspeed-indicator/indicated-speed-kt");
         var stall = getprop("instrumentation/weu/state/stall-speed");
         var vSpeed = getprop("velocities/vertical-speed-fps");
+        var vsi = getprop("instrumentation/pfd/vsi-needle-deg");
         
 
 
@@ -294,18 +295,7 @@ var canvas_PFDC = {
         
         
         # AOA Indicator
-        if (math.abs(vSpeed*60) < 1000)
-            me["aoa-needle"].setRotation(vSpeed*0.056*60*D2R);
-        elsif (math.abs(vSpeed*60) < 2000)
-            me["aoa-needle"].setRotation(vSpeed*0.03425*60*D2R);
-        elsif (math.abs(vSpeed*60) < 6000)
-            me["aoa-needle"].setRotation(vSpeed*0.011833*60*D2R);
-        else {
-            if(vSpeed * 60 > 0)
-                me["aoa-needle"].setRotation(71*D2R);
-            elsif(vSpeed * 60 < 0)
-                me["aoa-needle"].setRotation(71*D2R);
-        }
+        me["aoa-needle"].setRotation(vsi*D2R);
         
         if(vSpeed*60 > 500) {
             me["vs-pos"].show().setText(sprintf("%i", vSpeed*60 - math.mod(vSpeed*60, 50)));
