@@ -55,7 +55,7 @@ setlistener("sim/signals/fdm-initialized", func() {
 		"mipmapping": 1
 	});
 	AP_display.addPlacement({"node": "ap.course1"});
-    AP_display.addPlacement({"node": "ap.speed"});
+    AP_display.addPlacement({"node": "ap.spd"});
     AP_display.addPlacement({"node": "ap.heading"});
     AP_display.addPlacement({"node": "ap.altitude"});
     AP_display.addPlacement({"node": "ap.vspeed"});

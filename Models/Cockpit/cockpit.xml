@@ -26,7 +26,7 @@
         <object-name>screen4.full</object-name>
         <object-name>screen.iesi</object-name>
         <object-name>ap.course1</object-name>
-        <object-name>ap.speed</object-name>
+        <object-name>ap.spd</object-name>
         <object-name>ap.heading</object-name>
         <object-name>ap.altitude</object-name>
         <object-name>ap.vspeed</object-name>
