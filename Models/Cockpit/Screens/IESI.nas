@@ -32,15 +32,15 @@ var canvas_IESI = {
 	update: func(){
         # Compass and attitude
         me["compass"].setRotation(-getprop("orientation/heading-deg")*D2R);
-        me["attitude"].setTranslation(0, getprop("orientation/pitch-deg")*4).setCenter(121,314-(getprop("orientation/pitch-deg")*4)).setRotation(-getprop("orientation/roll-deg")*D2R);
-        me["ground"].setTranslation(0, getprop("orientation/pitch-deg")*4).setCenter(121,314-(getprop("orientation/pitch-deg")*4)).setRotation(-getprop("orientation/roll-deg")*D2R);
-        me["sky"].setTranslation(0, getprop("orientation/pitch-deg")*4).setCenter(121,314-(getprop("orientation/pitch-deg")*4)).setRotation(-getprop("orientation/roll-deg")*D2R);
+        me["attitude"].setTranslation(0, getprop("orientation/pitch-deg")*4).setCenter(121,134-(getprop("orientation/pitch-deg")*4)).setRotation(-getprop("orientation/roll-deg")*D2R);
+        me["ground"].setTranslation(0, getprop("orientation/pitch-deg")*4).setCenter(121,134-(getprop("orientation/pitch-deg")*4)).setRotation(-getprop("orientation/roll-deg")*D2R);
+        me["sky"].setTranslation(0, getprop("orientation/pitch-deg")*4).setCenter(121,134-(getprop("orientation/pitch-deg")*4)).setRotation(-getprop("orientation/roll-deg")*D2R);
         if(getprop("orientation/roll-deg") > 45){
-            me["turn-coordinator"].setCenter(121,314).setRotation(-45*D2R);
+            me["turn-coordinator"].setCenter(121,134).setRotation(-45*D2R);
         } elsif (getprop("orientation/roll-deg") < -45){
-            me["turn-coordinator"].setCenter(121,314).setRotation(45*D2R);
+            me["turn-coordinator"].setCenter(121,134).setRotation(45*D2R);
         } else {
-            me["turn-coordinator"].setCenter(121,314).setRotation(-getprop("orientation/roll-deg")*D2R);
+            me["turn-coordinator"].setCenter(121,134).setRotation(-getprop("orientation/roll-deg")*D2R);
         }
 	}
 };
