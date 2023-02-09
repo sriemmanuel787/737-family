@@ -286,6 +286,7 @@
             <file>Aircraft/737-MAX/Models/Cockpit/Screens/EICAS.nas</file>
             <file>Aircraft/737-MAX/Models/Cockpit/Screens/ND-wide.nas</file>
             <file>Aircraft/737-MAX/Models/Cockpit/Screens/autopilot.nas</file>
+            <file>Aircraft/737-MAX/Models/Cockpit/Screens/IESI.nas</file>
             <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
             <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
             <file>Aircraft/737-MAX/Nasal/controls.nas</file>

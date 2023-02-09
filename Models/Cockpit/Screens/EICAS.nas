@@ -143,7 +143,7 @@ var canvas_EICAS = {
         me["total"].setText(sprintf("%0.1f", (getprop("consumables/fuel/tank[0]/level-kg") + getprop("consumables/fuel/tank[1]/level-kg") + getprop("consumables/fuel/tank[2]/level-kg"))/1000));
 
         # Temperature and Flight Mode
-        # me["air-temp"].setText(sprintf("%+i\c"), getprop("environment/temperature-degc"));
+        me["air-temp"].setText(sprintf("%+i", getprop("environment/temperature-degc")));
         me["flt-mode"].setText(getprop("it-autoflight/input/thrustStg"));
 	}
 };

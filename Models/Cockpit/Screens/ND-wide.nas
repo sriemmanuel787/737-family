@@ -97,7 +97,16 @@ var canvas_NDWide = {
         # VOR-DME
         me["dme1"].setText(sprintf("%.03d", getprop("instrumentation/dme[0]/frequencies/selected-mhz")));
         me["dme2"].setText(sprintf("%.03d", getprop("instrumentation/dme[1]/frequencies/selected-mhz")));
-        # me[""]
+
+        if(getprop("instrumentation/nav[0]/nav-id") == "")
+            me["vor1"].setText("------");
+        else
+            me["vor1"].setText(getprop("instrumentation/nav[0]/nav-id"));
+            
+        if(getprop("instrumentation/nav[1]/nav-id") == "")
+            me["vor2"].setText("------");
+        else
+            me["vor2"].setText(getprop("instrumentation/nav[1]/nav-id"));
 
         # Map modes
         if(getprop("instrumentation/efis[0]/inputs/arpt")){
