@@ -31,6 +31,20 @@
         <object-name>ap.altitude</object-name>
         <object-name>ap.vspeed</object-name>
         <object-name>ap.course2</object-name>
+        <object-name>pd.commact1</object-name>
+        <object-name>pd.commact2</object-name>
+        <object-name>pd.navact1</object-name>
+        <object-name>pd.navact2</object-name>
+        <object-name>pd.adfact1</object-name>
+        <object-name>pd.adfact2</object-name>
+        <object-name>pd.commsty1</object-name>
+        <object-name>pd.commsty2</object-name>
+        <object-name>pd.navsty1</object-name>
+        <object-name>pd.navsty2</object-name>
+        <object-name>pd.adfsty1</object-name>
+        <object-name>pd.adfsty2</object-name>
+        <object-name>pd.transponder</object-name>
+        <object-name>pd.trim-rudderscreen</object-name>
         <emission>
             <red>1</red>
             <green>1</green>
