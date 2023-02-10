@@ -13,7 +13,7 @@
         </offsets>
     </model>
 
-    <!-- Instrument Screens -->
+    <!-- Illuminating screens, displays and lights -->
     <animation>
         <type>material</type>
         <object-name>screen1.full</object-name>
@@ -31,6 +31,21 @@
         <object-name>ap.altitude</object-name>
         <object-name>ap.vspeed</object-name>
         <object-name>ap.course2</object-name>
+        <object-name>ap.at-engage</object-name>
+        <object-name>ap.n1-engage</object-name>
+        <object-name>ap.speed-engage</object-name>
+        <object-name>ap.lvlchg-engage</object-name>
+        <object-name>ap.vnav-engage</object-name>
+        <object-name>ap.hdgsel-engage</object-name>
+        <object-name>ap.app-engage</object-name>
+        <object-name>ap.vorloc-engage</object-name>
+        <object-name>ap.lnav-engage</object-name>
+        <object-name>ap.althld-engage</object-name>
+        <object-name>ap.vs-engage</object-name>
+        <object-name>ap.cmda-engage</object-name>
+        <object-name>ap.cmdb-engage</object-name>
+        <object-name>ap.cwsa-engage</object-name>
+        <object-name>ap.cwsb-engage</object-name>
         <object-name>pd.commact1</object-name>
         <object-name>pd.commact2</object-name>
         <object-name>pd.navact1</object-name>
@@ -51,6 +66,8 @@
             <blue>1</blue>
         </emission>
     </animation>
+
+    <!-- Instrument Screens -->
     <animation>
         <type>pick</type>
         <object-name>screen1.full</object-name>
@@ -110,7 +127,7 @@
     </animation>
     <animation>
         <type>pick</type>
-        <object-name>screen3.R</object-name>
+        <object-name>screen3.L</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
@@ -239,5 +256,296 @@
                 </binding>
             </mod-up>
         </action>
+    </animation>
+
+    <!-- Autopilot Panel -->
+    <animation>
+        <type>knob</type>
+        <object-name>ap.fd1</object-name>
+        <property>it-autoflight/input/fd1</property>
+        <factor>-60</factor>
+        <center>
+            <x-m>-0.619114</x-m>
+            <y-m>-0.226423</y-m>
+            <z-m>0.132913</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>it-autoflight/input/fd1</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.at</object-name>
+        <property>it-autoflight/input/athr</property>
+        <factor>-60</factor>
+        <center>
+            <x-m>-0.619132</x-m>
+            <y-m>-0.205095</y-m>
+            <z-m>0.16982</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>it-autoflight/input/athr</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.fd2</object-name>
+        <property>it-autoflight/input/fd2</property>
+        <factor>-60</factor>
+        <center>
+            <x-m>-0.61958</x-m>
+            <y-m>0.230409</y-m>
+            <z-m>0.132913</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>it-autoflight/input/fd2</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.crs1</object-name>
+        <property>it-autoflight/input/true-course</property>
+        <factor>45</factor>
+        <center>
+            <x-m>-0.609835</x-m>
+            <y-m>-0.250368</y-m>
+            <z-m>0.152558</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>it-autoflight/input/true-course</property>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.speed-knob</object-name>
+        <property>it-autoflight/input/spd-kts</property>
+        <factor>45</factor>
+        <center>
+            <x-m>-0.608543</x-m>
+            <y-m>-0.137081</y-m>
+            <z-m>0.147016</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>it-autoflight/input/spd-kts</property>
+                <min>0</min>
+            </binding>
+        </action>
+        <condition>
+            <equals>
+                <property>it-autoflight/input/kts-mach</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>knob</type>
+        <object-name>ap.speed-knob</object-name>
+        <property>it-autoflight/input/spd-mach</property>
+        <factor>45</factor>
+        <center>
+            <x-m>-0.608543</x-m>
+            <y-m>-0.137081</y-m>
+            <z-m>0.147016</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>it-autoflight/input/spd-mach</property>
+                <step>0.001</step>
+                <min>0</min>
+            </binding>
+        </action>
+        <condition>
+            <equals>
+                <property>it-autoflight/input/kts-mach</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.bank</object-name>
+        <property>it-autoflight/input/bank-limit-sw</property>
+        <interpolation>
+            <entry>
+                <ind>6</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>2</ind>
+                <dep>-140</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-0.605266</x-m>
+            <y-m>-0.056959</y-m>
+            <z-m>0.154557</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>it-autoflight/input/bank-limit-sw</property>
+                <min>2</min>
+                <max>7</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.hdg-knob</object-name>
+        <property>it-autoflight/input/hdg</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.605266</x-m>
+            <y-m>-0.056959</y-m>
+            <z-m>0.154557</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>it-autoflight/input/hdg</property>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.alt-knob</object-name>
+        <property>it-autoflight/input/alt</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.609835</x-m>
+            <y-m>0.036557</y-m>
+            <z-m>0.155627</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>it-autoflight/input/alt</property>
+                <step>100</step>
+                <min>0</min>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.vs-knob</object-name>
+        <property>it-autoflight/input/vs</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.62752</x-m>
+            <y-m>0.13274</y-m>
+            <z-m>0.1437</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>it-autoflight/input/vs</property>
+                <step>100</step>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.crs2</object-name>
+        <property>it-autoflight/input/true-course</property>
+        <factor>45</factor>
+        <center>
+            <x-m>-0.609835</x-m>
+            <y-m>0.254292</y-m>
+            <z-m>0.152558</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>it-autoflight/input/true-course</property>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.at-engage</object-name>
+        <condition>
+            <equals>
+                <property>it-autoflight/output/athr</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.n1-engage</object-name>
+        <condition>
+            <equals>
+                <property>it-autoflight/input/athr</property>
+                <value>1</value>
+            </equals>
+        </condition>
     </animation>
 </PropertyList>
