@@ -838,4 +838,108 @@
             </binding>
         </action>
     </animation>
+
+    <!-- Electronic Flight Instrument System -->
+    <animation>
+        <type>slider</type>
+        <object-name>ap.voradf1L</object-name>
+        <property>instrumentation/efis[0]/inputs/lh-vor-adf</property>
+        <factor>0.003</factor>
+        <axis>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[0]/inputs/lh-vor-adf</property>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>slider</type>
+        <object-name>ap.voradf2L</object-name>
+        <property>instrumentation/efis[0]/inputs/rh-vor-adf</property>
+        <factor>0.003</factor>
+        <axis>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[0]/inputs/rh-vor-adf</property>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.barometerL</object-name>
+        <property>instrumentation/efis[0]/inputs/baro-knob</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.598065</x-m>
+            <y-m>-0.319555</y-m>
+            <z-m>0.167885</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[0]/inputs/baro-knob</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.navmodeL</object-name>
+        <property>instrumentation/efis[0]/mfd/mode-num</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.612875</x-m>
+            <y-m>-0.37923</y-m>
+            <z-m>0.143415</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[0]/mfd/mode-num</property>
+                <min>0</min>
+                <max>4</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.navrangeL</object-name>
+        <property>instrumentation/efis[0]/inputs/range-knob</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.612875</x-m>
+            <y-m>-0.34436</y-m>
+            <z-m>0.143415</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[0]/inputs/range-knob</property>
+                <min>0</min>
+                <max>7</max>
+            </binding>
+        </action>
+    </animation>
 </PropertyList>
