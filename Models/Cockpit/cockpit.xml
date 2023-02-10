@@ -542,10 +542,153 @@
         <type>select</type>
         <object-name>ap.n1-engage</object-name>
         <condition>
+            <and>
+                <equals>
+                    <property>it-autoflight/input/athr</property>
+                    <value>1</value>
+                </equals>
+                <not>
+                    <equals>
+                        <property>it-autoflight/output/thr-mode</property>
+                        <value>0</value>
+                    </equals>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.speed-engage</object-name>
+        <condition>
+            <and>
+                <equals>
+                    <property>it-autoflight/input/athr</property>
+                    <value>1</value>
+                </equals>
+                <equals>
+                    <property>it-autoflight/output/thr-mode</property>
+                    <value>0</value>
+                </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.vnav-engage</object-name>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.lvlchg-engage</object-name>
+        <condition>
             <equals>
-                <property>it-autoflight/input/athr</property>
+                <property>it-autoflight/output/vert</property>
+                <value>4</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.hdg-engage</object-name>
+        <condition>
+            <equals>
+                <property>it-autoflight/output/lat</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.lnav-engage</object-name>
+        <condition>
+            <equals>
+                <property>it-autoflight/output/lat</property>
                 <value>1</value>
             </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.vorloc-engage</object-name>
+        <condition>
+            <equals>
+                <property>it-autoflight/output/loc-armed</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.app-engage</object-name>
+        <condition>
+            <equals>
+                <property>it-autoflight/output/appr-armed</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.althld-engage</object-name>
+        <condition>
+            <equals>
+                <property>it-autoflight/output/vert</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.vs-engage</object-name>
+        <condition>
+            <equals>
+                <property>it-autoflight/vert</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.cmda-engage</object-name>
+        <condition>
+            <property>it-autoflight/output/ap1</property>
+            <value>1</value>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.cwsa-engage</object-name>
+        <condition>
+            <property>it-cws/cwsa</property>
+            <value>1</value>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.cmdb-engage</object-name>
+        <condition>
+            <property>it-autoflight/output/ap2</property>
+            <value>1</value>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ap.cwsb-engage</object-name>
+        <condition>
+            <property>it-cws/cwsb</property>
+            <value>1</value>
         </condition>
     </animation>
 </PropertyList>
