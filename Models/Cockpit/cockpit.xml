@@ -40,7 +40,7 @@
         <object-name>ap.app-engage</object-name>
         <object-name>ap.vorloc-engage</object-name>
         <object-name>ap.lnav-engage</object-name>
-        <object-name>ap.althld-engage</object-name>
+        <object-name>ap.althld.engage</object-name>
         <object-name>ap.vs-engage</object-name>
         <object-name>ap.cmda-engage</object-name>
         <object-name>ap.cmdb-engage</object-name>
@@ -539,6 +539,16 @@
     </animation>
 
     <animation>
+        <type>pick</type>
+        <object-name>ap.n1</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonN1();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
         <object-name>ap.n1-engage</object-name>
         <condition>
@@ -557,6 +567,16 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>pick</type>
+        <object-name>ap.speed</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonSPD();</script>
+            </binding>
+        </action>
+    </animation>
     <animation>
         <type>select</type>
         <object-name>ap.speed-engage</object-name>
@@ -580,6 +600,16 @@
     </animation>
 
     <animation>
+        <type>pick</type>
+        <object-name>ap.lvlchg</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonLVLCH();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
         <object-name>ap.lvlchg-engage</object-name>
         <condition>
@@ -591,8 +621,18 @@
     </animation>
 
     <animation>
+        <type>pick</type>
+        <object-name>ap.hdgsel</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonHDG();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
-        <object-name>ap.hdg-engage</object-name>
+        <object-name>ap.hdgsel-engage</object-name>
         <condition>
             <equals>
                 <property>it-autoflight/output/lat</property>
@@ -601,6 +641,16 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>pick</type>
+        <object-name>ap.lnav</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonLNAV();</script>
+            </binding>
+        </action>
+    </animation>
     <animation>
         <type>select</type>
         <object-name>ap.lnav-engage</object-name>
@@ -613,6 +663,16 @@
     </animation>
 
     <animation>
+        <type>pick</type>
+        <object-name>ap.vorloc</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonVORLOC();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
         <object-name>ap.vorloc-engage</object-name>
         <condition>
@@ -623,6 +683,16 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>pick</type>
+        <object-name>ap.app</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonAPPR();</script>
+            </binding>
+        </action>
+    </animation>
     <animation>
         <type>select</type>
         <object-name>ap.app-engage</object-name>
@@ -635,6 +705,16 @@
     </animation>
 
     <animation>
+        <type>pick</type>
+        <object-name>ap.althld</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonALT();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
         <object-name>ap.althld-engage</object-name>
         <condition>
@@ -645,6 +725,16 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>pick</type>
+        <object-name>ap.vs</object-name>
+        <action>
+            <binding>
+                <command>nasal</command>
+                <script>itaf.buttonVS();</script>
+            </binding>
+        </action>
+    </animation>
     <animation>
         <type>select</type>
         <object-name>ap.vs-engage</object-name>
@@ -657,6 +747,16 @@
     </animation>
 
     <animation>
+        <type>pick</type>
+        <object-name>ap.cmda</object-name>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>it-autoflight/output/ap1</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
         <object-name>ap.cmda-engage</object-name>
         <condition>
@@ -665,6 +765,16 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>pick</type>
+        <object-name>ap.cwsa</object-name>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>it-cws/cwsa</property>
+            </binding>
+        </action>
+    </animation>
     <animation>
         <type>select</type>
         <object-name>ap.cwsa-engage</object-name>
@@ -675,6 +785,16 @@
     </animation>
 
     <animation>
+        <type>pick</type>
+        <object-name>ap.cmdb</object-name>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>it-autoflight/output/ap2</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
         <object-name>ap.cmdb-engage</object-name>
         <condition>
@@ -684,11 +804,38 @@
     </animation>
 
     <animation>
+        <type>pick</type>
+        <object-name>ap.cwsb</object-name>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>it-cws/cwsb</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
         <object-name>ap.cwsb-engage</object-name>
         <condition>
             <property>it-cws/cwsb</property>
             <value>1</value>
         </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.disc</object-name>
+        <action>
+            <binding>
+                <command>property-assign</command>
+                <property>it-autoflight/output/ap1</property>
+                <value>0</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>it-autoflight/output/ap2</property>
+                <value>0</value>
+            </binding>
+        </action>
     </animation>
 </PropertyList>
