@@ -31,19 +31,19 @@ var canvas_pedestal = {
 
 	update: func(){
         me["rudder-trim"].setTranslation(getprop("fdm/trim/rudder") * 8, 0);
-        me["commmact1"].setText(sprintf("%.03d", getprop("instrumentation/comm[0]/frequencies/selected-mhz")));
-        me["commmact2"].setText(sprintf("%.03d", getprop("instrumentation/comm[1]/frequencies/selected-mhz")));
-        me["navact1"].setText(sprintf("%.02d", getprop("instrumentation/nav[0]/frequencies/selected-mhz")));
-        me["navact2"].setText(sprintf("%.02d", getprop("instrumentation/nav[1]/frequencies/selected-mhz")));
-        me["adfact1"].setText(sprintf("%.01d", getprop("instrumentation/adf[0]/frequencies/selected-khz")));
-        me["adfact2"].setText(sprintf("%.01d", getprop("instrumentation/adf[1]/frequencies/selected-khz")));
-        me["commmsty1"].setText(sprintf("%.03d", getprop("instrumentation/comm[0]/frequencies/standby-mhz")));
-        me["commmsty2"].setText(sprintf("%.03d", getprop("instrumentation/comm[1]/frequencies/standby-mhz")));
-        me["navsty1"].setText(sprintf("%.02d", getprop("instrumentation/nav[0]/frequencies/standby-mhz")));
-        me["navsty2"].setText(sprintf("%.02d", getprop("instrumentation/nav[1]/frequencies/standby-mhz")));
-        me["adfsty1"].setText(sprintf("%.01d", getprop("instrumentation/adf[0]/frequencies/standby-khz")));
-        me["adfsty2"].setText(sprintf("%.01d", getprop("instrumentation/adf[1]/frequencies/standby-khz")));
-        me["transponder-code"].setText(sprintf("%i", getprop("intstrumentation/transponder/id-code")));
+        me["commact1"].setText(sprintf("%.03f", getprop("instrumentation/comm[0]/frequencies/selected-mhz")));
+        me["commact2"].setText(sprintf("%.03f", getprop("instrumentation/comm[1]/frequencies/selected-mhz")));
+        me["navact1"].setText(sprintf("%.02f", getprop("instrumentation/nav[0]/frequencies/selected-mhz")));
+        me["navact2"].setText(sprintf("%.02f", getprop("instrumentation/nav[1]/frequencies/selected-mhz")));
+        me["adfact1"].setText(sprintf("%.01f", getprop("instrumentation/adf[0]/frequencies/selected-khz")));
+        me["adfact2"].setText(sprintf("%.01f", getprop("instrumentation/adf[1]/frequencies/selected-khz")));
+        me["commsty1"].setText(sprintf("%.03f", getprop("instrumentation/comm[0]/frequencies/standby-mhz")));
+        me["commsty2"].setText(sprintf("%.03f", getprop("instrumentation/comm[1]/frequencies/standby-mhz")));
+        me["navsty1"].setText(sprintf("%.02f", getprop("instrumentation/nav[0]/frequencies/standby-mhz")));
+        me["navsty2"].setText(sprintf("%.02f", getprop("instrumentation/nav[1]/frequencies/standby-mhz")));
+        me["adfsty1"].setText(sprintf("%.01f", getprop("instrumentation/adf[0]/frequencies/standby-khz")));
+        me["adfsty2"].setText(sprintf("%.01f", getprop("instrumentation/adf[1]/frequencies/standby-khz")));
+        me["transponder-code"].setText(sprintf("%i", getprop("instrumentation/transponder/id-code")));
 
         if(getprop("instrumentation/adf[0]/mode") == "adf"){
             me["adf1"].show();
