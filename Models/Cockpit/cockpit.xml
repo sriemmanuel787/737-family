@@ -839,7 +839,7 @@
         </action>
     </animation>
 
-    <!-- Electronic Flight Instrument System -->
+    <!-- Left Electronic Flight Instrument System -->
     <animation>
         <type>slider</type>
         <object-name>ap.voradf1L</object-name>
@@ -939,6 +939,308 @@
                 <property>instrumentation/efis[0]/inputs/range-knob</property>
                 <min>0</min>
                 <max>7</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-wxrL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/wxr</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-staL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/sta</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-wptL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/wpt</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-arptL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/arpt</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-dataL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/data</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-posL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/pos</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-terrL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/terr</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.fpvL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/fpv</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.mtrsL</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[0]/inputs/alt-meters</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Right Electronic Flight Instrument System -->
+    <animation>
+        <type>slider</type>
+        <object-name>ap.voradf1R</object-name>
+        <property>instrumentation/efis[1]/inputs/lh-vor-adf</property>
+        <factor>0.003</factor>
+        <axis>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[1]/inputs/lh-vor-adf</property>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>slider</type>
+        <object-name>ap.voradf2R</object-name>
+        <property>instrumentation/efis[1]/inputs/rh-vor-adf</property>
+        <factor>0.003</factor>
+        <axis>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[1]/inputs/rh-vor-adf</property>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.barometerR</object-name>
+        <property>instrumentation/efis[1]/inputs/baro-knob</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.598065</x-m>
+            <y-m>0.407305</y-m>
+            <z-m>0.167885</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[1]/inputs/baro-knob</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.navmodeR</object-name>
+        <property>instrumentation/efis[1]/mfd/mode-num</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.612875</x-m>
+            <y-m>0.34764</y-m>
+            <z-m>0.143415</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[1]/mfd/mode-num</property>
+                <min>0</min>
+                <max>4</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>ap.navrangeR</object-name>
+        <property>instrumentation/efis[1]/inputs/range-knob</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-0.612875</x-m>
+            <y-m>0.3825</y-m>
+            <z-m>0.143415</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[1]/inputs/range-knob</property>
+                <min>0</min>
+                <max>7</max>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-wxrR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/wxr</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-staR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/sta</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-wptR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/wpt</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-arptR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/arpt</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-dataR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/data</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-posR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/pos</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.nav-terrR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/terr</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.fpvR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/fpv</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap.mtrsR</object-name>
+        <action>
+            <binding>
+                <command>proprty-toggle</command>
+                <property>instrumentation/efis[1]/inputs/alt-meters</property>
             </binding>
         </action>
     </animation>
