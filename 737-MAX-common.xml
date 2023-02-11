@@ -249,12 +249,17 @@
 
     <lighting>
         <interior type="double">0</interior>
-        <panel-norm>0.2</panel-norm>
+        <panel-aft-norm type="double">0</panel-aft-norm>
+        <panel-aft-flood type="double">0</panel-aft-flood>
+        <panel-fwd-norm type="double">0</panel-fwd-norm>
+        <panel-afds-norm type="double">0</panel-afds-norm>
+        <mfd-captL type="double">1</mfd-captL>
+        <mfd-captR type="double">1</mfd-captR>
+        <mfd-foL type="double">1</mfd-foL>
+        <mfd-foR type="double">1</mfd-foR>
         <cockpit type="bool">false</cockpit>
-        <cones type="bool">true</cones>
         <dome-norm type="double">0</dome-norm>
-        <overhead-panel-norm type="double">1.0</overhead-panel-norm>
-        <main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
+        <overhead-panel-norm type="double">0</overhead-panel-norm>
     </lighting>
 
     <it-autoflight>

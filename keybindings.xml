@@ -75,7 +75,7 @@
             <binding>
                 <command>nasal</command>
                 <script>
-          boeing737.tiller_left();
+            boeing737.tiller_left();
                 </script>
             </binding>
         </key>

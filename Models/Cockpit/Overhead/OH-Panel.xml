@@ -40,7 +40,7 @@
             <binding>
                 <command>property-adjust</command>
                 <property>controls/APU/master</property>
-                <step>-1</step>
+                <factor>-1</factor>
                 <min>0</min>
                 <max>3</max>
                 <wrap>true</wrap>
@@ -110,7 +110,7 @@
             <binding>
                 <command>property-adjust</command>
                 <property>sim/input/selected/SelectedEngine73X</property>
-                <step>1</step>
+                <factor>1</factor>
                 <min>-1</min>
                 <max>2</max>
                 <wrap>true</wrap>
@@ -367,10 +367,10 @@
         <action>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/lighting/panel</property>
+                <property>controls/lighting/overhead-panel-norm</property>
                 <min>0</min>
                 <max>1.01</max>
-                <step>0.01</step>
+                <factor>0.01</factor>
                 <wrap>false</wrap>
             </binding>
         </action>
@@ -383,7 +383,7 @@
             <red>1</red>
             <green>0.725</green>
             <blue>0.259</blue>
-            <factor-prop>controls/lighting/panel</factor-prop>
+            <factor-prop>controls/lighting/overhead-panel-norm</factor-prop>
         </emission>
     </animation>
 
@@ -407,7 +407,7 @@
                 <property>controls/lighting/breaker</property>
                 <min>0</min>
                 <max>1.01</max>
-                <step>0.01</step>
+                <factor>0.01</factor>
                 <wrap>false</wrap>
             </binding>
         </action>
@@ -475,7 +475,7 @@
                 <property>controls/lighting/no-smoking</property>
                 <min>0</min>
                 <max>3</max>
-                <step>1</step>
+                <factor>1</factor>
                 <wrap>true</wrap>
             </binding>
         </action>
@@ -501,7 +501,7 @@
                 <property>controls/lighting/seatbelts</property>
                 <min>0</min>
                 <max>3</max>
-                <step>1</step>
+                <factor>1</factor>
                 <wrap>true</wrap>
             </binding>
         </action>
@@ -1263,7 +1263,7 @@
                 <property>controls/electrical/DC</property>
                 <min>0</min>
                 <max>8</max>
-                <step>1</step>
+                <factor>1</factor>
                 <wrap>true</wrap>
             </binding>
         </action>
@@ -1555,7 +1555,7 @@
             <binding>
                 <command>property-adjust</command>
                 <property>controls/OH/wiper-left</property>
-                <step>1</step>
+                <factor>1</factor>
                 <min>0</min>
                 <max>4</max>
                 <wrap>true</wrap>
@@ -1579,7 +1579,7 @@
             <binding>
                 <command>property-adjust</command>
                 <property>controls/OH/wiper-right</property>
-                <step>1</step>
+                <factor>1</factor>
                 <min>0</min>
                 <max>4</max>
                 <wrap>true</wrap>
