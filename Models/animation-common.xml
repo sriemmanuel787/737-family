@@ -1442,17 +1442,30 @@
         <spot-cutoff>75</spot-cutoff>
         <range-m>325</range-m>
     </light>
+    <animation>
+        <type>select</type>
+        <object-name>light.landingR</object-name>
+        <object-name>light.landingL</object-name>
+        <condition>
+            <equals>
+                <property>controls/lights/landing-lights</property>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <!-- Logo Lights -->
     <light>
-        <name>light.landingL</name>
+        <name>light.logoL</name>
         <type>spot</type>
         <position>
-            <x-m>-3.45119</x-m>
-            <y-m>2.27995</y-m>
-            <z-m>-0.54352</z-m>
+            <x-m>20.4638</x-m>
+            <y-m>-3.60379</y-m>
+            <z-m>1.88721</z-m>
         </position>
         <direction>
-            <pitch-deg>90</pitch-deg>
-            <roll-deg>0</roll-deg>
+            <pitch-deg>0</pitch-deg>
+            <roll-deg>140</roll-deg>
             <heading-deg>0</heading-deg>
         </direction>
         <ambient>
@@ -1480,6 +1493,151 @@
         </attenuation>
         <spot-exponent>18.1423</spot-exponent>
         <spot-cutoff>75</spot-cutoff>
-        <range-m>325</range-m>
+        <range-m>32</range-m>
     </light>
+    <light>
+        <name>light.logoR</name>
+        <type>spot</type>
+        <position>
+            <x-m>20.4638</x-m>
+            <y-m>3.60379</y-m>
+            <z-m>1.88721</z-m>
+        </position>
+        <direction>
+            <pitch-deg>0</pitch-deg>
+            <roll-deg>-140</roll-deg>
+            <heading-deg>0</heading-deg>
+        </direction>
+        <ambient>
+            <r>1</r>
+            <g>1</g>
+            <b>1</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>1</r>
+            <g>1</g>
+            <b>1</b>
+            <a>1</a>
+        </diffuse>
+        <specular>
+            <r>1</r>
+            <g>1</g>
+            <b>1</b>
+            <a>1</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.014</l>
+            <q>0.0007</q>
+        </attenuation>
+        <spot-exponent>18.1423</spot-exponent>
+        <spot-cutoff>75</spot-cutoff>
+        <range-m>32</range-m>
+    </light>
+    <animation>
+        <type>select</type>
+        <object-name>light.logoL</object-name>
+        <object-name>light.logoR</object-name>
+        <condition>
+            <equals>
+                <property>controls/lighting/logo-lights</property>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <!-- Beacon Lights -->
+    <light>
+        <name>light.beaconU</name>
+        <type>spot</type>
+        <position>
+            <x-m>-2.97378</x-m>
+            <y-m>0.12954</y-m>
+            <z-m>2.47587</z-m>
+        </position>
+        <direction>
+            <pitch-deg>0</pitch-deg>
+            <roll-deg>180</roll-deg>
+            <heading-deg>0</heading-deg>
+        </direction>
+        <ambient>
+            <r>1</r>
+            <g>1</g>
+            <b>1</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>1</r>
+            <g>1</g>
+            <b>1</b>
+            <a>1</a>
+        </diffuse>
+        <specular>
+            <r>1</r>
+            <g>0</g>
+            <b>0</b>
+            <a>1</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.014</l>
+            <q>0.0007</q>
+        </attenuation>
+        <spot-exponent>18.1423</spot-exponent>
+        <spot-cutoff>75</spot-cutoff>
+        <range-m>32</range-m>
+    </light>
+    <light>
+        <name>light.beaconL</name>
+        <type>spot</type>
+        <position>
+            <x-m>0.39404</x-m>
+            <y-m>-0.00005</y-m>
+            <z-m>-1.84177</z-m>
+        </position>
+        <direction>
+            <pitch-deg>0</pitch-deg>
+            <roll-deg>0</roll-deg>
+            <heading-deg>0</heading-deg>
+        </direction>
+        <ambient>
+            <r>1</r>
+            <g>0</g>
+            <b>0</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>1</r>
+            <g>1</g>
+            <b>1</b>
+            <a>1</a>
+        </diffuse>
+        <specular>
+            <r>1</r>
+            <g>1</g>
+            <b>1</b>
+            <a>1</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.014</l>
+            <q>0.0007</q>
+        </attenuation>
+        <spot-exponent>18.1423</spot-exponent>
+        <spot-cutoff>180</spot-cutoff>
+        <range-m>32</range-m>
+    </light>
+    <animation>
+        <type>select</type>
+        <object-name>light.beaconU</object-name>
+        <object-name>light.beaconL</object-name>
+        <condition>
+            <equals>
+                <condition>controls/lighting/beacon</condition>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
+
 </PropertyList>
