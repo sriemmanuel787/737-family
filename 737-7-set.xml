@@ -17,17 +17,17 @@
             <preview>
                 <type>exterior</type>
                 <splash type="bool">true</splash>
-                <path>Splash/Splash-10/splash-1.png</path>
+                <path>Splash/Splash-7/splash-1.png</path>
             </preview>
             <preview>
                 <type>exterior</type>
                 <splash type="bool">true</splash>
-                <path>Splash/Splash-10/splash-2.png</path>
+                <path>Splash/Splash-7/splash-2.png</path>
             </preview>
             <preview>
                 <type>exterior</type>
                 <splash type="bool">true</splash>
-                <path>Splash/Splash-10/splash-3.png</path>
+                <path>Splash/Splash-7/splash-3.png</path>
             </preview>
         </previews>
 
