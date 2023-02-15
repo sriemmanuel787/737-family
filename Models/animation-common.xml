@@ -143,7 +143,7 @@
         <object-name>winglet.chromeR</object-name>
         <object-name>n1.chrome</object-name>
         <object-name>n2.chrome</object-name>
-        <object-name>static-port</object-name>
+        <object-name>static-ports</object-name>
     </animation>
 
     <!-- Exterior Illumination -->
@@ -470,6 +470,7 @@
         <object-name>aileron.L2</object-name>
         <object-name>winglet.L</object-name>
         <object-name>winglet.chromeL</object-name>
+        <object-name>light.strobeL</object-name>
         <object-name>slat.L2</object-name>
         <object-name>slat.L3</object-name>
         <object-name>flap.L3</object-name>
@@ -501,6 +502,7 @@
         <object-name>aileron.L2</object-name>
         <object-name>winglet.L</object-name>
         <object-name>winglet.chromeL</object-name>
+        <object-name>light.strobeL</object-name>
         <object-name>slat.L3</object-name>
         <object-name>lightning.wingL</object-name>
         <property>sim/systems/wingflexer/z-m</property>
@@ -528,6 +530,7 @@
         <object-name>aileron.R2</object-name>
         <object-name>winglet.R</object-name>
         <object-name>winglet.chromeR</object-name>
+        <object-name>light.strobeR</object-name>
         <object-name>slat.R2</object-name>
         <object-name>slat.R3</object-name>
         <object-name>flap.R3</object-name>
@@ -559,6 +562,7 @@
         <object-name>aileron.R2</object-name>
         <object-name>winglet.R</object-name>
         <object-name>winglet.chromeR</object-name>
+        <object-name>light.strobeR</object-name>
         <object-name>slat.R3</object-name>
         <object-name>lightning.wingR</object-name>
         <property>sim/systems/wingflexer/z-m</property>
