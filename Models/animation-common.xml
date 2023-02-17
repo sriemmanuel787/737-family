@@ -149,7 +149,7 @@
     <!-- Exterior Illumination -->
     <animation>
         <type>material</type>
-        <object-name>landing</object-name>
+        <object-name>lights.landing</object-name>
         <emission>
             <red>1</red>
             <green>1</green>
