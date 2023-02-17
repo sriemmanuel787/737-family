@@ -61,6 +61,10 @@
         </text>
         <text>
             <halign>center</halign>
+            <label>Note: To turn on the displays, use the knobs on the forward pedestal.</label>
+        </text>
+        <text>
+            <halign>center</halign>
             <label>Please report bugs on GitHub Issues! Enjoy!</label>
         </text>
 
