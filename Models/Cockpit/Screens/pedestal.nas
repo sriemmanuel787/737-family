@@ -30,11 +30,11 @@ var canvas_pedestal = {
     },
 
 	update: func(){
-        me["rudder-trim"].setTranslation(getprop("fdm/trim/rudder") * 8, 0);
+        me["rudder-trim"].setTranslation(getprop("fdm/trim/rudder") * 16, 0);
 
         if(getprop("instrumentation/comm[0]/power-btn")){
             me["commact1"].show().setText(sprintf("%.03f", getprop("instrumentation/comm[0]/frequencies/selected-mhz")));
-            me["commsty1"].setText(sprintf("%.03f", getprop("instrumentation/comm[0]/frequencies/standby-mhz")));
+            me["commsty1"].show().setText(sprintf("%.03f", getprop("instrumentation/comm[0]/frequencies/standby-mhz")));
         } else {
             me["commact1"].hide();
             me["commsty1"].hide();
@@ -42,7 +42,7 @@ var canvas_pedestal = {
 
         if(getprop("instrumentation/comm[1]/power-btn")){
             me["commact2"].show().setText(sprintf("%.03f", getprop("instrumentation/comm[1]/frequencies/selected-mhz")));
-            me["commsty2"].setText(sprintf("%.03f", getprop("instrumentation/comm[1]/frequencies/standby-mhz")));
+            me["commsty2"].show().setText(sprintf("%.03f", getprop("instrumentation/comm[1]/frequencies/standby-mhz")));
         } else {
             me["commact2"].hide();
             me["commsty2"].hide();

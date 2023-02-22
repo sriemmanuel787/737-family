@@ -1497,13 +1497,11 @@
         <type>pick</type>
         <object-name>pd.comm1swap</object-name>
         <action>
+            <button>0</button>
             <binding>
-                <command>nasal</command>
-                <script>
-                    var temp = getprop("instrumentation/comm[0]/frequencies/selected-mhz");
-                    setprop("instrumentation/comm[0]/frequencies/selected-mhz", getprop("instrumentation/comm[0]/frequencies/standby-mhz"));
-                    setprop("instrumentation/comm[0]/frequencies/standby-mhz", temp);
-                </script>
+                <command>property-swap</command>
+                <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+                <property>instrumentation/comm[0]/frequencies/standby-mhz</property>
             </binding>
         </action>
     </animation>
@@ -1511,6 +1509,7 @@
         <type>pick</type>
         <object-name>pd.comm-pwr1</object-name>
         <action>
+            <button>0</button>
             <binding>
                 <command>property-toggle</command>
                 <property>instrumentation/comm[0]/power-btn</property>
@@ -1564,13 +1563,11 @@
         <type>pick</type>
         <object-name>pd.comm2swap</object-name>
         <action>
+            <button>0</button>
             <binding>
-                <command>nasal</command>
-                <script>
-                    var temp = getprop("instrumentation/comm[1]/frequencies/selected-mhz");
-                    setprop("instrumentation/comm[1]/frequencies/selected-mhz", getprop("instrumentation/comm[1]/frequencies/standby-mhz"));
-                    setprop("instrumentation/comm[1]/frequencies/standby-mhz", temp);
-                </script>
+                <command>property-swap</command>
+                <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+                <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
             </binding>
         </action>
     </animation>
@@ -1578,6 +1575,7 @@
         <type>pick</type>
         <object-name>pd.comm-pwr2</object-name>
         <action>
+            <button>0</button>
             <binding>
                 <command>property-toggle</command>
                 <property>instrumentation/comm[1]/power-btn</property>
@@ -1631,13 +1629,11 @@
         <type>pick</type>
         <object-name>pd.nav1swap</object-name>
         <action>
+            <button>0</button>
             <binding>
-                <command>nasal</command>
-                <script>
-                    var temp = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
-                    setprop("instrumentation/nav[0]/frequencies/selected-mhz", getprop("instrumentation/nav[0]/frequencies/standby-mhz"));
-                    setprop("instrumentation/nav[0]/frequencies/standby-mhz", temp);
-                </script>
+                <command>property-swap</command>
+                <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+                <property>instrumentation/nav[0]/frequencies/standby-mhz</property>
             </binding>
         </action>
     </animation>
@@ -1688,13 +1684,11 @@
         <type>pick</type>
         <object-name>pd.nav2swap</object-name>
         <action>
+            <button>0</button>
             <binding>
-                <command>nasal</command>
-                <script>
-                    var temp = getprop("instrumentation/nav[1]/frequencies/selected-mhz");
-                    setprop("instrumentation/nav[1]/frequencies/selected-mhz", getprop("instrumentation/nav[1]/frequencies/standby-mhz"));
-                    setprop("instrumentation/nav[1]/frequencies/standby-mhz", temp);
-                </script>
+                <command>property-swap</command>
+                <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+                <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
             </binding>
         </action>
     </animation>
@@ -1745,13 +1739,11 @@
         <type>pick</type>
         <object-name>pd.adf1swap</object-name>
         <action>
+            <button>0</button>
             <binding>
-                <command>nasal</command>
-                <script>
-                    var temp = getprop("instrumentation/adf[0]/frequencies/selected-khz");
-                    setprop("instrumentation/adf[0]/frequencies/selected-khz", getprop("instrumentation/adf[0]/frequencies/standby-khz"));
-                    setprop("instrumentation/adf[0]/frequencies/standby-khz", temp);
-                </script>
+                <command>property-swap</command>
+                <property>instrumentation/adf[0]/frequencies/selected-khz</property>
+                <property>instrumentation/adf[0]/frequencies/standby-khz</property>
             </binding>
         </action>
     </animation>
@@ -1802,13 +1794,11 @@
         <type>pick</type>
         <object-name>pd.adf2swap</object-name>
         <action>
+            <button>0</button>
             <binding>
-                <command>nasal</command>
-                <script>
-                    var temp = getprop("instrumentation/adf[1]/frequencies/selected-khz");
-                    setprop("instrumentation/adf[1]/frequencies/selected-khz", getprop("instrumentation/adf[1]/frequencies/standby-khz"));
-                    setprop("instrumentation/adf[1]/frequencies/standby-khz", temp);
-                </script>
+                <command>property-swap</command>
+                <property>instrumentation/adf[1]/frequencies/selected-khz</property>
+                <property>instrumentation/adf[1]/frequencies/standby-khz</property>
             </binding>
         </action>
     </animation>
