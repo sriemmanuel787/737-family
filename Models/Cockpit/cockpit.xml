@@ -22,18 +22,7 @@
         <object-name>pd.tex.3</object-name>
         <object-name>pd.tex.4</object-name>
         <object-name>pd.tex.5</object-name>
-        <object-name>pd.tex.6</object-name>
-        <object-name>pd.tex.7</object-name>
-        <object-name>pd.tex.8</object-name>
-        <object-name>pd.tex.9</object-name>
-        <object-name>pd.tex.10</object-name>
-        <object-name>pd.tex.11</object-name>
-        <object-name>pd.tex.12</object-name>
-        <object-name>pd.tex.13</object-name>
-        <object-name>pd.tex.14</object-name>
-        <object-name>pd.tex.15</object-name>
-        <object-name>pd.tex.16</object-name>
-        <object-name>pd.tex.17</object-name>
+        <object-name>pd.tex-aft</object-name>
         <emission>
             <red>1</red>
             <green>0.725</green>
