@@ -54,7 +54,7 @@
 
         <pointmass name="Cabin Zone 0A">
             <!-- Business class (8 pax max) Row 1-2 -->
-            <weight unit="LBS"> 1324 </weight>
+            <weight unit="LBS"> 8 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 301.5 </x>
                 <y> 0 </y>
@@ -64,7 +64,7 @@
 
         <pointmass name="Cabin Zone 0B">
             <!-- Tourist class (54 pax max) Row 10-19 -->
-            <weight unit="LBS"> 1324 </weight>
+            <weight unit="LBS"> 54 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 541 </x>
                 <y> 0 </y>
@@ -74,7 +74,7 @@
 
         <pointmass name="Cabin Zone 0C">
             <!-- Economy class (96 pax max) Row 20-36 -->
-            <weight unit="LBS"> 1324 </weight>
+            <weight unit="LBS"> 96 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 874 </x>
                 <y> 0 </y>
