@@ -173,8 +173,8 @@
         <object-name>mlg.lowerL</object-name>
         <object-name>mlg.upperL</object-name>
         <object-name>mlg.coverarmL</object-name>
-        <object-name>mlg.coverL1</object-name>
         <object-name>mlg.coverL2</object-name>
+        <object-name>mlg.coverL3</object-name>
         <object-name>mlg.armL3</object-name>
         <property>gear/gear[1]/position-norm</property>
         <interpolation>
@@ -188,12 +188,26 @@
             </entry>
         </interpolation>
         <center>
-            <x-m>0.89019</x-m>
+            <x-m>1.23396</x-m>
             <y-m>-2.88208</y-m>
-            <z-m>-0.63626</z-m>
+            <z-m>-0.63622</z-m>
         </center>
         <axis>
             <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.coverL1</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <factor>90</factor>
+        <axis>
+            <x1-m>1.54294</x1-m>
+            <y1-m>-3.02165</y1-m>
+            <z1-m>-0.73105</z1-m>
+            <x2-m>1.01584</x2-m>
+            <y2-m>-3.14957</y2-m>
+            <z2-m>-0.79177</z2-m>
         </axis>
     </animation>
     <animation>
@@ -202,18 +216,18 @@
         <property>gear/gear[1]/position-norm</property>
         <interpolation>
             <entry>
-                <ind>0.0</ind>
-                <dep>45</dep>
+                <ind>0</ind>
+                <dep>-55</dep>
             </entry>
             <entry>
-                <ind>1.0</ind>
+                <ind>1</ind>
                 <dep>0</dep>
             </entry>
         </interpolation>
         <center>
-            <x-m>2.13158</x-m>
-            <y-m>-1.98419</y-m>
-            <z-m>-0.781837</z-m>
+            <x-m>1.50234</x-m>
+            <y-m>-2.20334</y-m>
+            <z-m>-0.97052</z-m>
         </center>
         <axis>
             <x>1</x>
@@ -225,16 +239,16 @@
         <property>gear/gear[1]/position-norm</property>
         <interpolation>
             <entry>
-                <ind>0.0</ind>
-                <dep>-45</dep>
+                <ind>0</ind>
+                <dep>55</dep>
             </entry>
             <entry>
-                <ind>1.0</ind>
+                <ind>1</ind>
                 <dep>0</dep>
             </entry>
         </interpolation>
         <center>
-            <x-m>1.401978</x-m>
+            <x-m>1.40198</x-m>
             <y-m>-3.01577</y-m>
             <z-m>-1.64715</z-m>
         </center>
@@ -244,26 +258,26 @@
     </animation>
     <animation>
         <type>rotate</type>
-        <object-name>mlg.coverL1</object-name>
+        <object-name>mlg.coverL3</object-name>
         <object-name>mlg.coverarmL</object-name>
         <property>gear/gear[1]/position-norm</property>
         <interpolation>
             <entry>
                 <ind>1</ind>
-                <dep>0</dep>
+                <dep>45</dep>
             </entry>
             <entry>
                 <ind>0.9</ind>
-                <dep>45</dep>
+                <dep>0</dep>
             </entry>
         </interpolation>
-        <center>
-            <x-m>1.494363</x-m>
-            <y-m>-3.02954</y-m>
-            <z-m>-1.46507</z-m>
-        </center>
         <axis>
-            <x>1</x>
+            <x1-m>1.65193</x1-m>
+            <y1-m>-3.00152</y1-m>
+            <z1-m>-1.46442</z1-m>
+            <x2-m>1.06473</x2-m>
+            <y2-m>-3.08987</y2-m>
+            <z2-m>-1.48129</z2-m>
         </axis>
     </animation>
 
@@ -277,8 +291,8 @@
         <object-name>mlg.lowerR</object-name>
         <object-name>mlg.upperR</object-name>
         <object-name>mlg.coverarmR</object-name>
-        <object-name>mlg.coverR1</object-name>
         <object-name>mlg.coverR2</object-name>
+        <object-name>mlg.coverR3</object-name>
         <object-name>mlg.armR3</object-name>
         <property>gear/gear[2]/position-norm</property>
         <interpolation>
@@ -292,55 +306,9 @@
             </entry>
         </interpolation>
         <center>
-            <x-m>0.89019</x-m>
-            <y-m>2.88208</y-m>
-            <z-m>-0.63626</z-m>
-        </center>
-        <axis>
-            <x>1</x>
-        </axis>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>mlg.armR2</object-name>
-        <property>gear/gear[2]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>45</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind>
-                <dep>0</dep>
-            </entry>
-        </interpolation>
-        <center>
-            <x-m>2.13158</x-m>
-            <y-m>1.98419</y-m>
-            <z-m>-0.781837</z-m>
-        </center>
-        <axis>
-            <x>1</x>
-        </axis>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>mlg.armR3</object-name>
-        <property>gear/gear[2]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>-45</dep>
-            </entry>
-            <entry>
-                <ind>1.0</ind>
-                <dep>0</dep>
-            </entry>
-        </interpolation>
-        <center>
-            <x-m>1.401978</x-m>
-            <y-m>3.01577</y-m>
-            <z-m>-1.64715</z-m>
+            <x-m>1.23396</x-m>
+            <y-m>2.88008</y-m>
+            <z-m>-0.636219</z-m>
         </center>
         <axis>
             <x>1</x>
@@ -349,25 +317,85 @@
     <animation>
         <type>rotate</type>
         <object-name>mlg.coverR1</object-name>
-        <object-name>mlg.coverarmR</object-name>
         <property>gear/gear[2]/position-norm</property>
+        <factor>-90</factor>
+        <axis>
+            <x1-m>1.54294</x1-m>
+            <y1-m>3.02165</y1-m>
+            <z1-m>-0.73105</z1-m>
+            <x2-m>1.01584</x2-m>
+            <y2-m>3.14957</y2-m>
+            <z2-m>-0.791769</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.armR2</object-name>
+        <property>gear/gear[1]/position-norm</property>
         <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>55</dep>
+            </entry>
             <entry>
                 <ind>1</ind>
                 <dep>0</dep>
             </entry>
-            <entry>
-                <ind>0.9</ind>
-                <dep>-45</dep>
-            </entry>
         </interpolation>
         <center>
-            <x-m>1.494318</x-m>
-            <y-m>3.02954</y-m>
-            <z-m>-1.46507</z-m>
+            <x-m>1.50225</x-m>
+            <y-m>1.98126</y-m>
+            <z-m>-0.782302</z-m>
         </center>
         <axis>
             <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.armR3</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>-55</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>1.40198</x-m>
+            <y-m>3.01377</y-m>
+            <z-m>-1.64715</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>mlg.coverR3</object-name>
+        <object-name>mlg.coverarmR</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>1</ind>
+                <dep>-45</dep>
+            </entry>
+            <entry>
+                <ind>0.9</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>1.65193</x1-m>
+            <y1-m>2.99987</y1-m>
+            <z1-m>-1.46245</z1-m>
+            <x2-m>1.06473</x2-m>
+            <y2-m>3.08821</y2-m>
+            <z2-m>-1.47932</z2-m>
         </axis>
     </animation>
 
