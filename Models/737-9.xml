@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>737-9.ac</path>
-    <animation>
-        <texture>737-9.png</texture>
-    </animation>
+
 
     <nasal>
         <load>
@@ -14,6 +12,100 @@
          livery_update.stop();
         </unload>
     </nasal>
+    <animation>
+        <type>material</type>
+        <object-name>aileron.L1</object-name>
+        <object-name>aileron.L2</object-name>
+        <object-name>aileron.R1</object-name>
+        <object-name>aileron.R2</object-name>
+        <object-name>antennae</object-name>
+        <object-name>apu.cover</object-name>
+        <object-name>belly</object-name>
+        <object-name>cdoor.aftO</object-name>
+        <object-name>cdoor.fwdO</object-name>
+        <object-name>cover.L1</object-name>
+        <object-name>cover.L2</object-name>
+        <object-name>cover.L3</object-name>
+        <object-name>cover.L4</object-name>
+        <object-name>cover.L5</object-name>
+        <object-name>cover.L6</object-name>
+        <object-name>cover.R1</object-name>
+        <object-name>cover.R2</object-name>
+        <object-name>cover.R3</object-name>
+        <object-name>cover.R4</object-name>
+        <object-name>cover.R5</object-name>
+        <object-name>cover.R6</object-name>
+        <object-name>door.ALO</object-name>
+        <object-name>door.ARO</object-name>
+        <object-name>door.FLO</object-name>
+        <object-name>door.FRO</object-name>
+        <object-name>fuselage</object-name>
+        <object-name>hinge.ALO</object-name>
+        <object-name>hinge.ARO</object-name>
+        <object-name>hinge.FLO</object-name>
+        <object-name>hinge.FRO</object-name>
+        <object-name>mlg.coverL1</object-name>
+        <object-name>mlg.coverR1</object-name>
+        <object-name>nlg.doorL</object-name>
+        <object-name>nlg.doorR</object-name>
+        <object-name>rudder</object-name>
+        <object-name>skid</object-name>
+        <object-name>spoiler.L1</object-name>
+        <object-name>spoiler.L2</object-name>
+        <object-name>spoiler.L3</object-name>
+        <object-name>spoiler.L4</object-name>
+        <object-name>spoiler.L5</object-name>
+        <object-name>spoiler.L6</object-name>
+        <object-name>spoiler.R1</object-name>
+        <object-name>spoiler.R2</object-name>
+        <object-name>spoiler.R3</object-name>
+        <object-name>spoiler.R4</object-name>
+        <object-name>spoiler.R5</object-name>
+        <object-name>spoiler.R6</object-name>
+        <object-name>v-stab</object-name>
+        <object-name>wing.BL1</object-name>
+        <object-name>wing.BL2</object-name>
+        <object-name>wing.BL3</object-name>
+        <object-name>wing.BR1</object-name>
+        <object-name>wing.BR2</object-name>
+        <object-name>wing.BR3</object-name>
+        <object-name>wing.UL1</object-name>
+        <object-name>wing.UL2</object-name>
+        <object-name>wing.UL3</object-name>
+        <object-name>wing.UR1</object-name>
+        <object-name>wing.UR2</object-name>
+        <object-name>wing.UR3</object-name>
+        <object-name>winglet.L</object-name>
+        <object-name>winglet.R</object-name>
+        <property-base>sim/model/livery</property-base>
+        <texture-prop>fuselage</texture-prop>
+        <texture>737-9.png</texture>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>n1.cone</object-name>
+        <object-name>n1.cowl</object-name>
+        <object-name>n1.exhaust</object-name>
+        <object-name>n1.fan</object-name>
+        <object-name>n1.interior</object-name>
+        <object-name>n1.opening</object-name>
+        <object-name>n1.panel</object-name>
+        <object-name>n1.pylon</object-name>
+        <object-name>n1.reverser</object-name>
+        <object-name>n2.cone</object-name>
+        <object-name>n2.cowl</object-name>
+        <object-name>n2.exhaust</object-name>
+        <object-name>n2.fan</object-name>
+        <object-name>n2.interior</object-name>
+        <object-name>n2.opening</object-name>
+        <object-name>n2.panel</object-name>
+        <object-name>n2.pylon</object-name>
+        <object-name>n2.reverser</object-name>
+        <property-base>sim/model/livery</property-base>
+        <texture-prop>engine</texture-prop>
+        <texture>CFM-LEAP.png</texture>
+    </animation>
 
 
     <main include="animation-common.xml" omit-node="y" />
@@ -22,8 +114,8 @@
         <name>Cockpit</name>
         <path>Aircraft/737-MAX/Models/Cockpit/cockpit.xml</path>
         <offsets>
-            <x-m>-18.346929</x-m>
-            <z-m>0.814206</z-m>
+            <x-m>-17.10823</x-m>
+            <z-m>0.81421</z-m>
         </offsets>
     </model>
 
@@ -31,7 +123,7 @@
         <name>Pushback</name>
         <path>Aircraft/737-MAX/Models/Autopush/pushback.xml</path>
         <offsets>
-            <x-m>-16.9814</x-m>
+            <x-m>-15.742701</x-m>
             <z-m>-3.15529</z-m>
         </offsets>
     </model>
@@ -60,10 +152,10 @@
             </entry>
         </interpolation>
         <axis>
-            <x1-m>-18.5625</x1-m>
+            <x1-m>-17.3238</x1-m>
             <y1-m>0.398892</y1-m>
             <z1-m>-1.22673</z1-m>
-            <x2-m>-16.7605</x2-m>
+            <x2-m>-15.5218</x2-m>
             <y2-m>0.397133</y2-m>
             <z2-m>-1.50763</z2-m>
         </axis>
@@ -91,10 +183,10 @@
             </entry>
         </interpolation>
         <axis>
-            <x1-m>-18.5625</x1-m>
+            <x1-m>-17.3238</x1-m>
             <y1-m>-0.398892</y1-m>
             <z1-m>-1.22673</z1-m>
-            <x2-m>-16.7605</x2-m>
+            <x2-m>-15.5218</x2-m>
             <y2-m>-0.397133</y2-m>
             <z2-m>-1.50763</z2-m>
         </axis>
@@ -127,7 +219,7 @@
             </entry>
         </interpolation>
         <center>
-            <x-m>-16.8059</x-m>
+            <x-m>-15.5642</x-m>
             <y-m>0.306229</y-m>
             <z-m>-1.41395</z-m>
         </center>
@@ -145,7 +237,7 @@
         <property>fdm/jsbsim/fcs/steer-pos-deg</property>
         <factor>-1</factor>
         <center>
-            <x-m>-16.8435</x-m>
+            <x-m>-15.6048</x-m>
             <z-m>-2.06639</z-m>
         </center>
         <axis>
@@ -153,7 +245,7 @@
         </axis>
     </animation>
 
-    <!-- Gear compression - Main -->
+    <!-- Gear compression -->
     <animation>
         <type>translate</type>
         <object-name>nlg.axle</object-name>
@@ -174,7 +266,7 @@
         <property>gear/gear[0]/compression-norm</property>
         <factor>-40</factor>
         <center>
-            <x-m>-16.7142</x-m>
+            <x-m>-15.4755</x-m>
             <y-m>0.000746</y-m>
             <z-m>-2.06228</z-m>
         </center>
@@ -188,7 +280,7 @@
         <property>gear/gear[0]/compression-norm</property>
         <factor>40</factor>
         <center>
-            <x-m>-16.6964</x-m>
+            <x-m>-15.4577</x-m>
             <y-m>0.000603</y-m>
             <z-m>-2.78008</z-m>
         </center>
@@ -205,10 +297,10 @@
         <property>sim/multiplay/generic/float[9]</property>
         <factor>30</factor>
         <axis>
-            <x1-m>22.6857</x1-m>
+            <x1-m>21.447001</x1-m>
             <y1-m>-6.50597</y1-m>
             <z1-m>2.11801</z1-m>
-            <x2-m>20.4678</x2-m>
+            <x2-m>19.229101</x2-m>
             <y2-m>-0.74259</y2-m>
             <z2-m>1.4073</z2-m>
         </axis>
@@ -220,10 +312,10 @@
         <property>sim/multiplay/generic/float[9]</property>
         <factor>-30</factor>
         <axis>
-            <x2-m>20.4678</x2-m>
+            <x2-m>19.229101</x2-m>
             <y2-m>0.74259</y2-m>
             <z2-m>1.4073</z2-m>
-            <x1-m>22.6857</x1-m>
+            <x1-m>21.447001</x1-m>
             <y1-m>6.50597</y1-m>
             <z1-m>2.11801</z1-m>
         </axis>
@@ -235,10 +327,10 @@
         <property>sim/multiplay/generic/float[11]</property>
         <factor>-30</factor>
         <axis>
-            <x1-m>20.9916</x1-m>
+            <x1-m>20.1602</x1-m>
             <y1-m>0.000672</y1-m>
             <z1-m>6.10992</z1-m>
-            <x2-m>22.2296</x2-m>
+            <x2-m>21.4343</x2-m>
             <y2-m>0.002223</y2-m>
             <z2-m>9.11504</z2-m>
         </axis>
@@ -250,6 +342,9 @@
         <visible>true</visible>
         <object-name>door.FLO</object-name>
         <object-name>door.FLI</object-name>
+        <object-name>handle.FL</object-name>
+        <object-name>socket.FL</object-name>
+        <object-name>overlay.doorFL</object-name>
         <object-name>hinge.FLO</object-name>
         <object-name>hinge.FLI</object-name>
         <action>
@@ -267,15 +362,18 @@
         <type>rotate</type>
         <object-name>door.FLO</object-name>
         <object-name>door.FLI</object-name>
+        <object-name>handle.FL</object-name>
+        <object-name>socket.FL</object-name>
+        <object-name>overlay.doorFL</object-name>
         <object-name>hinge.FLO</object-name>
         <object-name>hinge.FLI</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
-            <x1-m>-16.418</x1-m>
+            <x1-m>-15.1794</x1-m>
             <y1-m>-1.4826</y1-m>
             <z1-m>1.23873</z1-m>
-            <x2-m>-16.418</x2-m>
+            <x2-m>-15.1794</x2-m>
             <y2-m>-1.64878</y2-m>
             <z2-m>0.678338</z2-m>
         </axis>
@@ -284,13 +382,16 @@
         <type>rotate</type>
         <object-name>door.FLO</object-name>
         <object-name>door.FLI</object-name>
+        <object-name>handle.FL</object-name>
+        <object-name>socket.FL</object-name>
+        <object-name>overlay.doorFL</object-name>
         <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
-            <x1-m>-16.3188</x1-m>
+            <x1-m>-14.9401</x1-m>
             <y1-m>-1.495</y1-m>
             <z1-m>1.24888</z1-m>
-            <x2-m>-16.3188</x2-m>
+            <x2-m>-14.9401</x2-m>
             <y2-m>-1.66324</y2-m>
             <z2-m>0.678338</z2-m>
         </axis>
@@ -302,6 +403,9 @@
         <visible>true</visible>
         <object-name>door.FRO</object-name>
         <object-name>door.FRI</object-name>
+        <object-name>handle.FR</object-name>
+        <object-name>socket.FR</object-name>
+        <object-name>overlay.doorFR</object-name>
         <object-name>hinge.FRO</object-name>
         <object-name>hinge.FRI</object-name>
         <action>
@@ -319,15 +423,18 @@
         <type>rotate</type>
         <object-name>door.FRO</object-name>
         <object-name>door.FRI</object-name>
+        <object-name>handle.FR</object-name>
+        <object-name>socket.FR</object-name>
+        <object-name>overlay.doorFR</object-name>
         <object-name>hinge.FRO</object-name>
         <object-name>hinge.FRI</object-name>
         <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
-            <x1-m>-16.418</x1-m>
+            <x1-m>-15.1793</x1-m>
             <y1-m>1.64878</y1-m>
             <z1-m>0.678338</z1-m>
-            <x2-m>-16.418</x2-m>
+            <x2-m>-15.1794</x2-m>
             <y2-m>1.4826</y2-m>
             <z2-m>1.23873</z2-m>
         </axis>
@@ -336,13 +443,16 @@
         <type>rotate</type>
         <object-name>door.FRO</object-name>
         <object-name>door.FRI</object-name>
+        <object-name>handle.FR</object-name>
+        <object-name>socket.FR</object-name>
+        <object-name>overlay.doorFR</object-name>
         <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
-            <x1-m>-16.3188</x1-m>
+            <x1-m>-14.9401</x1-m>
             <y1-m>1.66324</y1-m>
             <z1-m>0.678338</z1-m>
-            <x2-m>-16.3188</x2-m>
+            <x2-m>-14.9401</x2-m>
             <y2-m>1.495</y2-m>
             <z2-m>1.24888</z2-m>
         </axis>
@@ -354,6 +464,9 @@
         <visible>true</visible>
         <object-name>door.ALO</object-name>
         <object-name>door.ALI</object-name>
+        <object-name>handle.AL</object-name>
+        <object-name>socket.AL</object-name>
+        <object-name>overlay.doorAL</object-name>
         <object-name>hinge.ALO</object-name>
         <object-name>hinge.ALI</object-name>
         <action>
@@ -371,15 +484,18 @@
         <type>rotate</type>
         <object-name>door.ALO</object-name>
         <object-name>door.ALI</object-name>
+        <object-name>handle.AL</object-name>
+        <object-name>socket.AL</object-name>
+        <object-name>overlay.doorAL</object-name>
         <object-name>hinge.ALO</object-name>
         <object-name>hinge.ALI</object-name>
         <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
-            <x1-m>15.254</x1-m>
+            <x1-m>14.4227</x1-m>
             <y1-m>-1.60819</y1-m>
             <z1-m>1.21577</z1-m>
-            <x2-m>15.2539</x2-m>
+            <x2-m>14.4226</x2-m>
             <y2-m>-1.68074</y2-m>
             <z2-m>0.622418</z2-m>
         </axis>
@@ -388,13 +504,16 @@
         <type>rotate</type>
         <object-name>door.ALO</object-name>
         <object-name>door.ALI</object-name>
+        <object-name>handle.AL</object-name>
+        <object-name>socket.AL</object-name>
+        <object-name>overlay.doorAL</object-name>
         <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
-            <x1-m>15.3527</x1-m>
+            <x1-m>14.6641</x1-m>
             <y1-m>-1.59867</y1-m>
             <z1-m>1.21577</z1-m>
-            <x2-m>15.3527</x2-m>
+            <x2-m>14.6641</x2-m>
             <y2-m>-1.6675</y2-m>
             <z2-m>0.622413</z2-m>
         </axis>
@@ -406,6 +525,9 @@
         <visible>true</visible>
         <object-name>door.ARO</object-name>
         <object-name>door.ARI</object-name>
+        <object-name>handle.AR</object-name>
+        <object-name>socket.AR</object-name>
+        <object-name>overlay.doorAR</object-name>
         <object-name>hinge.ARO</object-name>
         <object-name>hinge.ARI</object-name>
         <action>
@@ -423,6 +545,9 @@
         <type>rotate</type>
         <object-name>door.ARO</object-name>
         <object-name>door.ARI</object-name>
+        <object-name>handle.AR</object-name>
+        <object-name>socket.AR</object-name>
+        <object-name>overlay.doorAR</object-name>
         <object-name>hinge.ARO</object-name>
         <object-name>hinge.ARI</object-name>
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
@@ -440,6 +565,9 @@
         <type>rotate</type>
         <object-name>door.ARO</object-name>
         <object-name>door.ARI</object-name>
+        <object-name>handle.AR</object-name>
+        <object-name>socket.AR</object-name>
+        <object-name>overlay.doorAR</object-name>
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
@@ -458,6 +586,7 @@
         <visible>true</visible>
         <object-name>cdoor.fwdI</object-name>
         <object-name>cdoor.fwdO</object-name>
+        <object-name>overlay.cdoor.fwd</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
@@ -471,8 +600,9 @@
         <type>rotate</type>
         <object-name>cdoor.fwdI</object-name>
         <object-name>cdoor.fwdO</object-name>
+        <object-name>overlay.cdoor.fwd</object-name>
         <property>controls/doors/CFDoor/CFDoorPos1/position-norm</property>
-        <factor>-180</factor>
+        <factor>-90</factor>
         <center>
             <x-m>-12.3619</x-m>
             <y-m>1.69664</y-m>
@@ -489,6 +619,7 @@
         <visible>true</visible>
         <object-name>cdoor.aftI</object-name>
         <object-name>cdoor.aftO</object-name>
+        <object-name>overlay.cdoor.aft</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
@@ -503,7 +634,7 @@
         <object-name>cdoor.aftI</object-name>
         <object-name>cdoor.aftO</object-name>
         <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
-        <factor>-180</factor>
+        <factor>-90</factor>
         <axis>
             <x1-m>11.4293</x1-m>
             <y1-m>1.70712</y1-m>
