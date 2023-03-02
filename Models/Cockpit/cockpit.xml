@@ -1802,4 +1802,36 @@
             </binding>
         </action>
     </animation>
+
+    <!-- Throttle Quadrant -->
+    <animation>
+        <type>knob</type>
+        <object-name>pd.parking-brake</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>70</factor>
+        <center>
+            <x-m>-0.272493</x-m>
+            <y-m>-0.100863</y-m>
+            <z-m>-0.337834</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/gear/brake-parking</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>pd.parking-brake-light</object-name>
+        <emission>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+            <factor-prop>controls/gear/brake-parking</factor-prop>
+        </emission>
+    </animation>
 </PropertyList>
