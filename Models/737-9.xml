@@ -553,10 +553,10 @@
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
-            <x1-m>15.2539</x1-m>
+            <x1-m>14.4226</x1-m>
             <y1-m>1.68074</y1-m>
             <z1-m>0.622418</z1-m>
-            <x2-m>15.254</x2-m>
+            <x2-m>14.4226</x2-m>
             <y2-m>1.60819</y2-m>
             <z2-m>1.21577</z2-m>
         </axis>
@@ -571,10 +571,10 @@
         <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
         <factor>90</factor>
         <axis>
-            <x1-m>15.3527</x1-m>
+            <x1-m>14.6641</x1-m>
             <y1-m>1.6675</y1-m>
             <z1-m>0.622413</z1-m>
-            <x2-m>15.3527</x2-m>
+            <x2-m>14.6641</x2-m>
             <y2-m>1.59867</y2-m>
             <z2-m>1.21577</z2-m>
         </axis>
@@ -604,7 +604,7 @@
         <property>controls/doors/CFDoor/CFDoorPos1/position-norm</property>
         <factor>-90</factor>
         <center>
-            <x-m>-12.3619</x-m>
+            <x-m>-11.1232</x-m>
             <y-m>1.69664</y-m>
             <z-m>-0.43561</z-m>
         </center>
@@ -636,10 +636,10 @@
         <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
         <factor>-90</factor>
         <axis>
-            <x1-m>11.4293</x1-m>
+            <x1-m>10.598</x1-m>
             <y1-m>1.70712</y1-m>
             <z1-m>-0.39473</z1-m>
-            <x2-m>12.2889</x2-m>
+            <x2-m>11.4576</x2-m>
             <y2-m>1.68406</y2-m>
             <z2-m>-0.39475</z2-m>
         </axis>
