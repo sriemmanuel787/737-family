@@ -1803,6 +1803,28 @@
         </action>
     </animation>
 
+    <!-- Rudder Pedals -->
+    <animation>
+        <type>translate</type>
+        <object-name>rudder.pedalLL</object-name>
+        <object-name>rudder.pedalRL</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>0.05</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>rudder.pedalLR</object-name>
+        <object-name>rudder.pedalRR</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>-0.05</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+
     <!-- Throttle Quadrant -->
     <animation>
         <type>knob</type>
@@ -1833,5 +1855,208 @@
             <blue>0</blue>
             <factor-prop>controls/gear/brake-parking</factor-prop>
         </emission>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>n1.startlever</object-name>
+        <object-name>n1.startknob</object-name>
+        <object-name>n1.startfail</object-name>
+        <property>controls/engines/engine[0]/cutoff</property>
+        <factor>40</factor>
+        <center>
+            <x-m>-0.28942</x-m>
+            <y-m>-0.02988</y-m>
+            <z-m>-0.288111</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/cutoff</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>n2.startlever</object-name>
+        <object-name>n2.startknob</object-name>
+        <object-name>n2.startfail</object-name>
+        <property>controls/engines/engine[1]/cutoff</property>
+        <factor>40</factor>
+        <center>
+            <x-m>-0.28942</x-m>
+            <y-m>0.00707</y-m>
+            <z-m>-0.288111</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[1]/cutoff</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>n1.startfail</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>controls/fires/fire[0]/on-fire</property>
+                    <value>0</value>
+                </greater-than>
+                <not>
+                    <property>controls/fires/fire[0]/extinguish-handle-armed</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>n2.startfail</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>controls/fires/fire[1]/on-fire</property>
+                    <value>0</value>
+                </greater-than>
+                <not>
+                    <property>controls/fires/fire[1]/extinguish-handle-armed</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>pd.trim-htsabm</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>2.235</factor>
+        <axis>
+            <y>1</y>
+        </axis>
+        <center>
+            <x-m>-0.396076</x-m>
+            <y-m>-0.00753</y-m>
+            <z-m>-0.342531</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>pd.trim-hstab</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>-10500</factor>
+        <center>
+            <x-m>-0.40653</x-m>
+            <y-m>-0.00753</y-m>
+            <z-m>-0.33019</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>pd.speedbrake</object-name>
+        <property>controls/flight/speedbrake-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-0.395017</x-m>
+            <y-m>-0.005839</y-m>
+            <z-m>-0.3305</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/flight/speedbrake-norm</property>
+                <min>0</min>
+                <max>7</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>pd.flaps</object-name>
+        <property>controls/flight/flaps</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-0.395017</x-m>
+            <y-m>-0.005839</y-m>
+            <z-m>-0.3305</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/flight/flaps</property>
+                <min>0</min>
+                <max>1</max>
+                <factor>0.125</factor>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>pd.n1</object-name>
+        <object-name>pd.n1-rev</object-name>
+        <object-name>at.discL</object-name>
+        <property>controls/engines/engine[0]/throttle</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>-0.395017</x-m>
+            <y-m>-0.005839</y-m>
+            <z-m>-0.3305</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/throttle</property>
+                <factor>0.01</factor>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>pd.n2</object-name>
+        <object-name>pd.n2-rev</object-name>
+        <object-name>at.discR</object-name>
+        <property>controls/engines/engine[1]/throttle</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>-0.395017</x-m>
+            <y-m>-0.005839</y-m>
+            <z-m>-0.3305</z-m>
+        </center>
+        <axis>
+            <y>1</y>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[1]/throttle</property>
+                <factor>0.01</factor>
+            </binding>
+        </action>
     </animation>
 </PropertyList>
