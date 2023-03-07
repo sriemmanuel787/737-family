@@ -55,11 +55,6 @@ var canvas_PFDC = {
 		return m;
 	},
 
-    newMFD: func() {
- 		me.update_timer = maketimer(0.05, func me.update());
- 		me.update_timer.start();
-    },
-
 	update: func() {
         #Setup stuff
         me["back-trans"].setColorFill(0, 0, 0, 0.3);
@@ -325,7 +320,8 @@ setlistener("sim/signals/fdm-initialized", func() {
 	PFDC_display.addPlacement({"node": "screen1.full"});
 	var group = PFDC_display.createGroup();
 	PFDC_canvas = canvas_PFDC.new(group);
-    PFDC_canvas.newMFD();
+	me.update_timer = maketimer(0.05, func me.update() );
+ 	me.update_timer.start();
  	PFDC_canvas.update();
 }, 0, 0);
 

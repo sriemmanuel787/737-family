@@ -24,11 +24,6 @@ var canvas_AP = {
 		return m;
 	},
 
-    newMFD: func(){
- 		me.update_timer = maketimer(0.05, func me.update() );
- 		me.update_timer.start();
-    },
-
 	update: func(){
         me["course1"].setText(sprintf("%03i", getprop("it-autoflight/input/true-course")));
         me["course2"].setText(sprintf("%03i", getprop("it-autoflight/input/true-course")));
@@ -62,7 +57,8 @@ setlistener("sim/signals/fdm-initialized", func() {
     AP_display.addPlacement({"node": "ap.course2"});
 	var group = AP_display.createGroup();
 	AP_canvas = canvas_AP.new(group);
-    AP_canvas.newMFD();
+	me.update_timer = maketimer(0.05, func me.update() );
+ 	me.update_timer.start();
  	AP_canvas.update();
 }, 0, 0);
 

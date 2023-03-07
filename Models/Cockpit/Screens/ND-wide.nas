@@ -24,11 +24,6 @@ var canvas_NDWide = {
 		return m;
 	},
 
-    newMFD: func(){
- 		me.update_timer = maketimer(0.05, func me.update() );
- 		me.update_timer.start();
-    },
-
 	update: func(){
         # Center Setting
         me["heading-ap"].setCenter(me["compass"].getCenter());
@@ -145,7 +140,8 @@ setlistener("sim/signals/fdm-initialized", func() {
 	NDWide_display.addPlacement({"node": "screen2.full"});
 	var group = NDWide_display.createGroup();
 	NDWide_canvas = canvas_NDWide.new(group);
-    NDWide_canvas.newMFD();
+	me.update_timer = maketimer(0.05, func me.update() );
+ 	me.update_timer.start();
  	NDWide_canvas.update();
 }, 0, 0);
 
