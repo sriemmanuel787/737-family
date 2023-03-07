@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
-<fdm_config name="B38M" release="BETA" version="2.0"
+<fdm_config name="B39M" release="BETA" version="2.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
     <fileheader>
         <author> Michael Soitanen, YV3399, Octal450 and sriemmanuel787 </author>
         <filecreationdate> 2023-01-05 </filecreationdate>
         <version>$Revison: 1.0 $</version>
-        <description> Models a 737 MAX 8. </description>
+        <description> Models a 737 MAX 9. </description>
     </fileheader>
 
     <!--base datum - nose of aircraft. BWL at this point 208.1 in. Source - structure diagrams.-->
@@ -45,7 +45,7 @@
         <ixy unit="SLUG*FT2">         0 </ixy>
         <ixz unit="SLUG*FT2">    110000 </ixz>
         <iyz unit="SLUG*FT2">         0 </iyz>
-        <emptywt unit="LBS">     156500 </emptywt>        <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
+        <emptywt unit="LBS">      93680 </emptywt>        <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
         <location name="CG" unit="IN">
             <x> 729.56 </x>            <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
             <y>   0 </y>
@@ -54,7 +54,7 @@
 
         <pointmass name="Cabin Zone 0A">
             <!-- Business class (8 pax max) Row 1-2 -->
-            <weight unit="LBS"> 1324 </weight>
+            <weight unit="LBS"> 8 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 301.5 </x>
                 <y> 0 </y>
@@ -64,7 +64,7 @@
 
         <pointmass name="Cabin Zone 0B">
             <!-- Tourist class (54 pax max) Row 10-19 -->
-            <weight unit="LBS"> 1324 </weight>
+            <weight unit="LBS"> 54 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 541 </x>
                 <y> 0 </y>
@@ -74,7 +74,7 @@
 
         <pointmass name="Cabin Zone 0C">
             <!-- Economy class (96 pax max) Row 20-36 -->
-            <weight unit="LBS"> 1324 </weight>
+            <weight unit="LBS"> 96 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 874 </x>
                 <y> 0 </y>

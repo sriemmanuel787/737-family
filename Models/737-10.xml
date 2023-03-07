@@ -45,7 +45,11 @@
         <object-name>hinge.FLO</object-name>
         <object-name>hinge.FRO</object-name>
         <object-name>mlg.coverL1</object-name>
+        <object-name>mlg.coverL2</object-name>
+        <object-name>mlg.coverL3</object-name>
         <object-name>mlg.coverR1</object-name>
+        <object-name>mlg.coverR2</object-name>
+        <object-name>mlg.coverR3</object-name>
         <object-name>nlg.doorL</object-name>
         <object-name>nlg.doorR</object-name>
         <object-name>rudder</object-name>

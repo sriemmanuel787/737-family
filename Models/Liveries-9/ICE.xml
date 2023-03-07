@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Icelandair</name>
+                <fuselage>Liveries-9/ICE.png</fuselage>
+                <engine>Liveries-engine/ICE.png</engine>
+            </livery>
+            <registration>TF-ICA</registration>
+            <airline-code>ICE</airline-code>
+            <selcal>----</selcal>
+        </model>
+    </sim>
+</PropertyList>

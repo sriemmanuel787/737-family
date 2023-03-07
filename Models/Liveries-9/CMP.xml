@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Copa Airlines</name>
+                <fuselage>Liveries-9/CMP.png</fuselage>
+                <engine>Liveries-engine/UAL.png</engine>
+            </livery>
+            <registration>HP-9902CMP</registration>
+            <airline-code>CMP</airline-code>
+            <selcal>AD-FM</selcal>
+        </model>
+    </sim>
+</PropertyList>

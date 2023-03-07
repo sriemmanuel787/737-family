@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Thai Lion Air</name>
+                <fuselage>Liveries-9/TLM.png</fuselage>
+                <engine>Liveries-engine/LNI.png</engine>
+            </livery>
+            <registration>HS-LSI</registration>
+            <airline-code>TLM</airline-code>
+            <selcal>----</selcal>
+        </model>
+    </sim>
+</PropertyList>

@@ -220,19 +220,19 @@
             <name type="string">Business class (20 pax max)</name>
             <weight-lb alias="/payload/pax/business" />
             <min-lb type="double">0.0</min-lb>
-            <max-lb type="double">3560</max-lb>
+            <max-lb type="double">20</max-lb>
         </weight>
         <weight>
             <name type="string">Tourist class (33 pax max)</name>
             <weight-lb alias="/payload/pax/tourist" />
             <min-lb type="double">0.0</min-lb>
-            <max-lb type="double">5874</max-lb>
+            <max-lb type="double">33</max-lb>
         </weight>
         <weight>
             <name type="string">Economy class (126 pax max)</name>
             <weight-lb alias="/payload/pax/economy" />
             <min-lb type="double">0.0</min-lb>
-            <max-lb type="double">2248</max-lb>
+            <max-lb type="double">126</max-lb>
         </weight>
         <weight>
             <name type="string">Cargo compartment 1A</name>
@@ -280,9 +280,13 @@
             <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>            <!-- custom implementation of the CDU from instruments-3D -->
         </cdu>
         <boeing737>
-            <file>Aircraft/737-MAX/Models/Instruments/PFD-capt.nas</file>
-            <file>Aircraft/737-MAX/Models/Instruments/PFD-FO.nas</file>
-            <file>Aircraft/737-MAX/Models/Instruments/EICAS.nas</file>
+            <file>Aircraft/737-MAX/Models/Cockpit/Screens/PFD-capt.nas</file>
+            <file>Aircraft/737-MAX/Models/Cockpit/Screens/PFD-FO.nas</file>
+            <file>Aircraft/737-MAX/Models/Cockpit/Screens/EICAS.nas</file>
+            <file>Aircraft/737-MAX/Models/Cockpit/Screens/ND-wide.nas</file>
+            <file>Aircraft/737-MAX/Models/Cockpit/Screens/autopilot.nas</file>
+            <file>Aircraft/737-MAX/Models/Cockpit/Screens/pedestal.nas</file>
+            <file>Aircraft/737-MAX/Models/Cockpit/Screens/IESI.nas</file>
             <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
             <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
             <file>Aircraft/737-MAX/Nasal/controls.nas</file>

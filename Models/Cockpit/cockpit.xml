@@ -265,6 +265,25 @@
         <object-name>pd.adfsty2</object-name>
         <object-name>pd.transponder</object-name>
         <object-name>pd.trim-rudderscreen</object-name>
+        <object-name>light.anti-skid-inop</object-name>
+        <object-name>light.apu-bottle-discharge</object-name>
+        <object-name>light.apu-det-inop</object-name>
+        <object-name>light.auto-brake-disarm</object-name>
+        <object-name>light.cab-door-unlocked</object-name>
+        <object-name>light.detector-fault</object-name>
+        <object-name>light.engine1-overheat</object-name>
+        <object-name>light.engine2-overheat</object-name>
+        <object-name>light.fault</object-name>
+        <object-name>light.gpws-inop</object-name>
+        <object-name>light.l-bottle-discharge</object-name>
+        <object-name>light.mlgL-down</object-name>
+        <object-name>light.mlgL-up</object-name>
+        <object-name>light.mlgR-down</object-name>
+        <object-name>light.mlgR-up</object-name>
+        <object-name>light.nlg-down</object-name>
+        <object-name>light.nlg-up</object-name>
+        <object-name>light.r-bottle-discharge</object-name>
+        <object-name>light.wheel-well</object-name>
         <emission>
             <red>1</red>
             <green>1</green>

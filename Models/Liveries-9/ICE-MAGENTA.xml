@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Icelandair (Magenta)</name>
+                <fuselage>Liveries-9/ICE-MAGENTA.png</fuselage>
+                <engine>Liveries-engine/ICE-2022.png</engine>
+            </livery>
+            <registration>TF-ICD</registration>
+            <airline-code>ICE</airline-code>
+            <selcal>AE-CL</selcal>
+        </model>
+    </sim>
+</PropertyList>

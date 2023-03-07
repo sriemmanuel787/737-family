@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Alaska Airlines</name>
+                <fuselage>Liveries-9/ASA.png</fuselage>
+                <engine>Liveries-engine/ASA.png</engine>
+            </livery>
+            <registration>N971AK</registration>
+            <airline-code>ASA</airline-code>
+            <selcal>BE-FP</selcal>
+        </model>
+    </sim>
+</PropertyList>

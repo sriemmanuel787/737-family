@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name type="string">United Air Lines (2019)</name>
+                <fuselage>Liveries-9/UAL-2019.png</fuselage>
+                <engine>Liveries-engine/UAL-2019.png</engine>
+            </livery>
+            <registration>N27519</registration>
+            <airline-code>UAL</airline-code>
+            <selcal>AS-EF</selcal>
+        </model>
+    </sim>
+</PropertyList>
