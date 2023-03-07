@@ -1156,6 +1156,9 @@
     </instrumentation>
 
     <nasal>
+	    <hack>
+            <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file><!-- must be first -->
+        </hack>
         <pts>
             <file>Aircraft/737-MAX/Nasal/property-tree-setup.nas</file>
         </pts>
