@@ -29,6 +29,21 @@
                 <splash type="bool">true</splash>
                 <path>Splash/Splash-9/splash-3.png</path>
             </preview>
+            <preview>
+                <type>exterior</type>
+                <splash type="bool">true</splash>
+                <path>Splash/Splash-9/splash-4.png</path>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <splash type="bool">true</splash>
+                <path>Splash/Splash-9/splash-5.png</path>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <splash type="bool">true</splash>
+                <path>Splash/Splash-9/splash-6.png</path>
+            </preview>
         </previews>
 
         <model>

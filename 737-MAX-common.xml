@@ -7,25 +7,6 @@
         <status>Version 0.5</status>
         <flight-model>jsb</flight-model>
 
-        <previews>
-            <preview>
-                <type>exterior</type>
-                <splash type="bool">true</splash>
-                <path>Splash/splash-1.png</path>
-            </preview>
-            <preview>
-                <type>exterior</type>
-                <splash type="bool">true</splash>
-                <path>Splash/splash-2.png</path>
-            </preview>
-            <preview>
-                <type>interior</type>
-                <splash type="bool">true</splash>
-                <path>Splash/splash-3.png</path>
-            </preview>
-
-        </previews>
-
         <systems>
             <!-- Disable the generic electrical system -->
             <electrical>
