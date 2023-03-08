@@ -154,8 +154,8 @@ setlistener("sim/signals/fdm-initialized", func() {
     EICAS_display.addPlacement({"node": "screen3.L"});
 	var group = EICAS_display.createGroup();
 	EICAS_canvas = canvas_EICAS.new(group);
-	me.update_timer = maketimer(0.05, func me.update() );
- 	me.update_timer.start();
+	update_timer = maketimer(0.1, func EICAS_canvas.update());
+ 	update_timer.start();
  	EICAS_canvas.update();
 }, 0, 0);
 

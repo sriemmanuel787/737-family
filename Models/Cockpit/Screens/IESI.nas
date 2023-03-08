@@ -50,8 +50,8 @@ setlistener("sim/signals/fdm-initialized", func() {
 	IESI_display.addPlacement({"node": "screen.iesi"});
 	var group = IESI_display.createGroup();
 	IESI_canvas = canvas_IESI.new(group);
-	me.update_timer = maketimer(0.05, func me.update() );
- 	me.update_timer.start();
+	update_timer = maketimer(0.5, func IESI_canvas.update());
+ 	update_timer.start();
  	IESI_canvas.update();
 }, 0, 0);
 

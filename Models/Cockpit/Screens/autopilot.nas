@@ -57,8 +57,8 @@ setlistener("sim/signals/fdm-initialized", func() {
     AP_display.addPlacement({"node": "ap.course2"});
 	var group = AP_display.createGroup();
 	AP_canvas = canvas_AP.new(group);
-	me.update_timer = maketimer(0.05, func me.update() );
- 	me.update_timer.start();
+	update_timer = maketimer(0.5, func AP_canvas.update());
+ 	update_timer.start();
  	AP_canvas.update();
 }, 0, 0);
 

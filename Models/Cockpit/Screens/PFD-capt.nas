@@ -320,8 +320,8 @@ setlistener("sim/signals/fdm-initialized", func() {
 	PFDC_display.addPlacement({"node": "screen1.full"});
 	var group = PFDC_display.createGroup();
 	PFDC_canvas = canvas_PFDC.new(group);
-	me.update_timer = maketimer(0.05, func me.update() );
- 	me.update_timer.start();
+	update_timer = maketimer(0.1, func PFDC_canvas.update());
+ 	update_timer.start();
  	PFDC_canvas.update();
 }, 0, 0);
 
