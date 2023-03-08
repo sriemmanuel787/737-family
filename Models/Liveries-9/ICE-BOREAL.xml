@@ -4,7 +4,7 @@
     <sim>
         <model>
             <livery>
-                <name type="string">Icelandair (Green)</name>
+                <name type="string">Icelandair (Boreal Blue)</name>
                 <fuselage>Liveries-9/ICE-BOREAL.png</fuselage>
                 <engine>Liveries-engine/ICE-2022.png</engine>
             </livery>
