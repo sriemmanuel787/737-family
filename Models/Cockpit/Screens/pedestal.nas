@@ -24,11 +24,6 @@ var canvas_pedestal = {
 		return m;
 	},
 
-    newMFD: func(){
- 		me.update_timer = maketimer(0.05, func me.update() );
- 		me.update_timer.start();
-    },
-
 	update: func(){
         me["rudder-trim"].setTranslation(getprop("fdm/trim/rudder") * 16, 0);
 
@@ -110,7 +105,8 @@ setlistener("sim/signals/fdm-initialized", func() {
     pedestal_display.addPlacement({"node": "pd.trim-rudderscreen"});
 	var group = pedestal_display.createGroup();
 	pedestal_canvas = canvas_pedestal.new(group);
-    pedestal_canvas.newMFD();
+	update_timer = maketimer(0.5, func pedestal_canvas.update());
+ 	update_timer.start();
  	pedestal_canvas.update();
 }, 0, 0);
 
