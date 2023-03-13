@@ -121,10 +121,10 @@ var canvas_PFDF = {
             me["vor2"].setText(getprop("instrumentation/nav[1]/nav-id"));
 
         # Auxiliary Panel
-        me["flt-no"].setText(getprop("instrumentation/registration/flt-no"));
+        me["flt-no"].setText(getprop("sim/model/airline-code"));
         me["xpdr"].setText(getprop("instrumentation/transponder/id-code"));
-        me["selcal"].setText("AF-XS");
-        me["registration"].setText(getprop("instrumentation/registration/registration"));
+        me["selcal"].setText(getprop("sim/model/selcal"));
+        me["registration"].setText(getprop("sim/model/registration"));
         me["elapsed"].setText(sprintf("%i:%02i", elapsedSec/60, math.mod(elapsedSec, 60)));
         me["day"].setText(sprintf("%02i", getprop("sim/time/utc/day")));
         me["month"].setText(months[getprop("sim/time/utc/month") - 1]);
