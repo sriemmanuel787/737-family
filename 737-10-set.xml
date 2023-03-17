@@ -96,15 +96,43 @@
                 <from-model type="bool">true</from-model>
                 <from-model-idx type="int">0</from-model-idx>
                 <default-field-of-view-deg type="double">41</default-field-of-view-deg>
-                <pitch-offset-deg>-70</pitch-offset-deg>
+                <pitch-offset-deg>-26</pitch-offset-deg>
                 <heading-offset-deg>0</heading-offset-deg>
-                <x-offset-m archive="y">-0.15</x-offset-m>
-                <y-offset-m archive="y">1.3</y-offset-m>
-                <z-offset-m archive="y">-17.6</z-offset-m>
+                <x-offset-m archive="y">0</x-offset-m>
+                <y-offset-m archive="y">1.13674</y-offset-m>
+                <z-offset-m archive="y">-18.6515</z-offset-m>
             </config>
         </view>
-        <view n="101"></view>
-        <view n="102"></view>
+        <view n="101">
+            <name>Aft Pedestal</name>
+            <type>lookfrom</type>
+            <internal archive="y">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <default-field-of-view-deg type="double">100</default-field-of-view-deg>
+                <pitch-offset-deg>-90</pitch-offset-deg>
+                <heading-offset-deg>0</heading-offset-deg>
+                <x-offset-m archive="y">0</x-offset-m>
+                <y-offset-m archive="y">0.893842</y-offset-m>
+                <z-offset-m archive="y">-18.2707</z-offset-m>
+            </config>
+        </view>
+        <view n="102">
+            <name>Fwd Pedestal</name>
+            <type>lookfrom</type>
+            <internal archive="y">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <default-field-of-view-deg type="double">100</default-field-of-view-deg>
+                <pitch-offset-deg>-90</pitch-offset-deg>
+                <heading-offset-deg>0</heading-offset-deg>
+                <x-offset-m archive="y">0</x-offset-m>
+                <y-offset-m archive="y">0.706965</y-offset-m>
+                <z-offset-m archive="y">-18.0636</z-offset-m>
+            </config>
+        </view>
         <view n="103">
             <name>Right Wing</name>
             <type>lookfrom</type>

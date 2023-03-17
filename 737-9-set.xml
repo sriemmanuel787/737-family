@@ -125,7 +125,21 @@
                 <z-offset-m archive="y">-17.6</z-offset-m>
             </config>
         </view>
-        <view n="101"></view>
+        <view n="101">
+            <name>Aft Pedestal</name>
+            <type>lookfrom</type>
+            <internal archive="y">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <default-field-of-view-deg type="double">41</default-field-of-view-deg>
+                <pitch-offset-deg>-90</pitch-offset-deg>
+                <heading-offset-deg>0</heading-offset-deg>
+                <x-offset-m archive="y">0</x-offset-m>
+                <y-offset-m archive="y">0.893842</y-offset-m>
+                <z-offset-m archive="y">-16.997391</z-offset-m>
+            </config>
+        </view>
         <view n="102"></view>
         <view n="103">
             <name>Right Wing</name>
