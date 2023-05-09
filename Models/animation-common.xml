@@ -147,10 +147,11 @@
     </animation>
 
     <model>
-        <file>Aircraft/737-MAX/Models/Effects/dirt-streaks.xml</file>
+        <path>Aircraft/737-MAX/Models/Effects/dirt-streak-nose.xml</path>
         <offsets>
-            <x-m>-15.5429</x-m>
-            <z-m>-3.15105</z-m>
+            <x-m>1.51323</x-m>
+            <y-m>-2.8838</y-m>
+            <z-m>-3.047245</z-m>
         </offsets>
     </model>
     <!-- Exterior Illumination -->

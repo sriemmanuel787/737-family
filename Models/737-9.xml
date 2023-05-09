@@ -132,6 +132,15 @@
         </offsets>
     </model>
 
+    <!-- Dirt Streaks -->
+     <model>
+        <path>Aircraft/737-MAX/Models/Effects/dirt-streak-nose.xml</path>
+        <offsets>
+            <x-m>-15.5429</x-m>
+            <z-m>-3.15105</z-m>
+        </offsets>
+    </model>
+
     <!-- Gear animation : Nose -->
     <animation>
         <type>rotate</type>
