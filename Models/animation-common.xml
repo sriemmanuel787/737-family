@@ -146,6 +146,13 @@
         <object-name>static-ports</object-name>
     </animation>
 
+    <model>
+        <file>Aircraft/737-MAX/Models/Effects/dirt-streaks.xml</file>
+        <offsets>
+            <x-m>-15.5429</x-m>
+            <z-m>-3.15105</z-m>
+        </offsets>
+    </model>
     <!-- Exterior Illumination -->
     <animation>
         <type>material</type>
