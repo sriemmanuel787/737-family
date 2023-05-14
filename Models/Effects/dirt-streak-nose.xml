@@ -3,16 +3,12 @@
 <PropertyList>
 
     <particlesystem>
-        <texture>dirt.png</texture>
+        <texture>streak-main.png</texture>
         <emissive>false</emissive>
         <lighting>false</lighting>
 
         <condition>
             <and>
-                <equals>
-                	<property>instrumentation/terrain-type</property>
-                	<value>Grass</value>
-                </equals>
                 <greater-than>
                     <property>velocities/groundspeed-kt</property>
                     <value>10</value>
@@ -62,16 +58,16 @@
             <start>
                 <color>
                     <red>
-                        <value>0.8</value>
+                        <property>instrumentation/terrain/red</property>
                     </red>
                     <green>
-                        <value>0.8</value>
+                        <value>instrumentation/terrain/green</value>
                     </green>
                     <blue>
-                        <value>0.8</value>
+                        <value>instrumentation/terrain/blue</value>
                     </blue>
                     <alpha>
-                        <value>0.8</value>
+                        <value>instrumentation/terrain/alpha</value>
                     </alpha>
                 </color>
                 <size>
@@ -81,13 +77,13 @@
             <end>
                 <color>
                     <red>
-                        <value>0</value>
+                        <property>instrumentation/terrain/red</property>
                     </red>
                     <green>
-                        <value>0</value>
+                        <value>instrumentation/terrain/green</value>
                     </green>
                     <blue>
-                        <value>0</value>
+                        <value>instrumentation/terrain/blue</value>
                     </blue>
                     <alpha>
                         <value>0</value>

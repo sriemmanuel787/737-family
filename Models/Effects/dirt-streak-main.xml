@@ -1,18 +1,4 @@
 <?xml version="1.0"?>
-
-<!-- Possible Terrain Types:
-Grass
-Landmass
-ShrubGrassCover
-BarrenCover
-ShrubCover
-Lake
-BuiltUpCover
-Grassland
-Marsh
-Freeway
-Ocean
- -->
 <PropertyList>
 
     <particlesystem>
@@ -21,15 +7,11 @@ Ocean
             <y-m>-2.8838</y-m>
             <z-m>-3.047245</z-m>
         </offsets>
-        <texture>dirt.png</texture>
+        <texture>streak-main.png</texture>
         <emissive>false</emissive>
         <lighting>false</lighting>
         <condition>
             <and>
-                <equals>
-                	<property>instrumentation/terrain-type</property>
-                	<value>Grass</value>
-                </equals>
                 <greater-than>
                     <property>velocities/groundspeed-kt</property>
                     <value>10</value>
@@ -79,16 +61,16 @@ Ocean
             <start>
                 <color>
                     <red>
-                        <value>0.8</value>
+                        <property>instrumentation/terrain/red</property>
                     </red>
                     <green>
-                        <value>0.8</value>
+                        <value>instrumentation/terrain/green</value>
                     </green>
                     <blue>
-                        <value>0.8</value>
+                        <value>instrumentation/terrain/blue</value>
                     </blue>
                     <alpha>
-                        <value>0.8</value>
+                        <value>instrumentation/terrain/alpha</value>
                     </alpha>
                 </color>
                 <size>
@@ -98,13 +80,13 @@ Ocean
             <end>
                 <color>
                     <red>
-                        <value>0</value>
+                        <property>instrumentation/terrain/red</property>
                     </red>
                     <green>
-                        <value>0</value>
+                        <value>instrumentation/terrain/green</value>
                     </green>
                     <blue>
-                        <value>0</value>
+                        <value>instrumentation/terrain/blue</value>
                     </blue>
                     <alpha>
                         <value>0</value>
@@ -139,10 +121,6 @@ Ocean
         <lighting>false</lighting>
         <condition>
             <and>
-                <equals>
-                	<property>instrumentation/terrain-type</property>
-                	<value>Grass</value>
-                </equals>
                 <greater-than>
                     <property>velocities/groundspeed-kt</property>
                     <value>10</value>
