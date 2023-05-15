@@ -49,7 +49,7 @@ var terrUpdate = func {
             streak[2].setValue(45/255);
         }
     } elsif (region == "Africa: Kilimanjaro") {
-        if (ground[0] == "ScrubCover" || ground[0] == "EvergreenBroadCover") {
+        if (ground[0] == "ScrubCover" or ground[0] == "EvergreenBroadCover") {
             streak[0].setValue(82/255);
             streak[1].setValue(67/255);
             streak[2].setValue(45/255);
@@ -59,11 +59,11 @@ var terrUpdate = func {
             streak[0].setValue(166/255);
             streak[1].setValue(122/255);
             streak[2].setValue(86/255);
-        } elsif (ground[0] == "RainForest" || ground[0] == "EvergreenBroadCover" || ground[0] == "Grassland" || ground[0] == "Shrub" || ground[0] == "Orchard" || ground[0] == "IrrCropPastureCover") {
+        } elsif (ground[0] == "RainForest" or ground[0] == "EvergreenBroadCover" or ground[0] == "Grassland" or ground[0] == "Shrub" or ground[0] == "Orchard" or ground[0] == "IrrCropPastureCover") {
             streak[0].setValue(82/255);
             streak[1].setValue(67/255);
             streak[2].setValue(45/255);
-        } elsif (ground[0] == "Sclerophyllous" || ground[0] == "DryCropPastureCover") {
+        } elsif (ground[0] == "Sclerophyllous" or ground[0] == "DryCropPastureCover") {
             streak[0].setValue(166/255);
             streak[1].setValue(122/255);
             streak[2].setValue(86/255);
@@ -77,7 +77,7 @@ var terrUpdate = func {
             streak[2].setValue(192/255);
         }
     } elsif (region == "African rainforest") {
-        if (ground[0] == "Grass" || ground[0] == "MixedForestCover" || ground[0] == "MixedCrop" || ground[0] == "EvergreenBroadCover") {
+        if (ground[0] == "Grass" or ground[0] == "MixedForestCover" or ground[0] == "MixedCrop" or ground[0] == "EvergreenBroadCover") {
             streak[0].setValue(166/255);
             streak[1].setValue(122/255);
             streak[2].setValue(86/255);
@@ -87,13 +87,13 @@ var terrUpdate = func {
             streak[2].setValue(73/255);
         }
     } elsif (region == "Africa: savanna") {
-        if (ground[0] == "RainForest" || ground[0] == "EvergreenBroadCover" || ground[0] == "ShrubCover" || ground[0] == "DryCropPastureCover") {
+        if (ground[0] == "RainForest" or ground[0] == "EvergreenBroadCover" or ground[0] == "ShrubCover" or ground[0] == "DryCropPastureCover") {
             streak[0].setValue(82/255);
             streak[1].setValue(67/255);
             streak[2].setValue(45/255);
         }
     } elsif (region == "Alaska and NW Territories") {
-        if (ground[0] == "MixedForestCover" || ground[0] == "DeciduousBroadCover" || ground[0] == "ShrubCover" || ground[0] == "EvergreenBroadCover") {
+        if (ground[0] == "MixedForestCover" or ground[0] == "DeciduousBroadCover" or ground[0] == "ShrubCover" or ground[0] == "EvergreenBroadCover") {
             streak[0].setValue(82/255);
             streak[1].setValue(67/255);
             streak[2].setValue(45/255);
@@ -109,13 +109,13 @@ var terrUpdate = func {
             streak[2].setValue(73/255);
         }
     } elsif (region == "Ascension Island") {
-        if (ground[0] == "Scrub" || ground[0] == "Grass") {
+        if (ground[0] == "Scrub" or ground[0] == "Grass") {
             streak[0].setValue(96/255);
             streak[1].setValue(73/255);
             streak[2].setValue(52/255);
         }
     } elsif (region == "Asia") {
-        if (ground[0] == "IrrCropPastureCover" || ground[0] == "MixedCropPastureCover" || ground[0] == "Grassland" || ground[0] == "DeciduousBroadCover" || ground[0] == "ShrubCover") {
+        if (ground[0] == "IrrCropPastureCover" or ground[0] == "MixedCropPastureCover" or ground[0] == "Grassland" or ground[0] == "DeciduousBroadCover" or ground[0] == "ShrubCover") {
             streak[0].setValue(82/255);
             streak[1].setValue(67/255);
             streak[2].setValue(45/255);
