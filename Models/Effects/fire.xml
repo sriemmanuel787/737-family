@@ -12,9 +12,6 @@ xsaint
         <lighting>false</lighting>
 
         <offsets>
-
-
-
             <pitch-deg>0</pitch-deg>
             <roll-deg>90</roll-deg>
         </offsets>
