@@ -346,11 +346,6 @@
         <reversethrust>
             <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
         </reversethrust>
-        <itaf>
-            <file>Aircraft/737-MAX/Nasal/AFDS73X.nas</file>
-            <file>Aircraft/737-MAX/Nasal/AFDS73X-b.nas</file>
-            <file>Aircraft/737-MAX/Nasal/AFDS73X-c.nas</file>
-        </itaf>
         <it-cws>
             <file>Aircraft/737-MAX/Nasal/it-cws.nas</file>
         </it-cws>
