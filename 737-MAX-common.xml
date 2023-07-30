@@ -547,43 +547,6 @@
                 </binding>
             </key>
 
-            <key n="32">
-                <name>space</name>
-                <desc>Disable Autopilot</desc>
-                <binding>
-                    <command>property-assign</command>
-                    <property>it-autoflight/input/ap1</property>
-                    <value>0</value>
-                </binding>
-                <binding>
-                    <command>property-assign</command>
-                    <property>it-autoflight/input/ap2</property>
-                    <value>0</value>
-                </binding>
-                <binding>
-                    <command>property-assign</command>
-                    <property>it-cws/cwsa</property>
-                    <value>0</value>
-                </binding>
-                <binding>
-                    <command>property-assign</command>
-                    <property>it-cws/cwsb</property>
-                    <value>0</value>
-                </binding>
-                <binding>
-                    <command>property-assign</command>
-                    <property>controls/flight/apoff</property>
-                    <value>1</value>
-                </binding>
-                <mod-up>
-                    <binding>
-                        <command>property-assign</command>
-                        <property>controls/flight/apoff</property>
-                        <value>0</value>
-                    </binding>
-                </mod-up>
-            </key>
-
             <key n="109">
                 <name>m</name>
                 <desc>Set full throttle</desc>
@@ -1039,6 +1002,7 @@
                 <baro-knob type="double">0</baro-knob>
                 <baro-previous type="double">1013</baro-previous>
                 <baro-previous-show type="bool">0</baro-previous-show>
+                <range-nm type="int">50</range-nm>
             </inputs>
         </efis>
 
@@ -1101,9 +1065,6 @@
             <file>Aircraft/737-MAX/Nasal/hydraulics.nas</file>
             <file>Aircraft/737-MAX/Nasal/engines.nas</file>
         </systems>
-        <nd>
-            <file>Aircraft/737-MAX/Nasal/ND.nas</file>
-        </nd>
         <reversethrust>
             <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
         </reversethrust>
