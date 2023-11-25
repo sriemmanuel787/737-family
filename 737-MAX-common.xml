@@ -26,26 +26,6 @@
             <autopilot n="3">
                 <path>Aircraft/737-MAX/Systems/aircraft-systems-logic.xml</path>
             </autopilot>
-            <autopilot n="4">
-                <name>AFDS DRIVERS</name>
-                <path>Aircraft/737-MAX/Systems/afds-drivers.xml</path>
-            </autopilot>
-            <autopilot n="5">
-                <name>AFDS ROLL YAW</name>
-                <path>Aircraft/737-MAX/Systems/afds-roll-yaw.xml</path>
-            </autopilot>
-            <autopilot n="6">
-                <name>AFDS PITCH</name>
-                <path>Aircraft/737-MAX/Systems/afds-pitch.xml</path>
-            </autopilot>
-            <autopilot n="7">
-                <name>AFDS THRUST</name>
-                <path>Aircraft/737-MAX/Systems/afds-thrust.xml</path>
-            </autopilot>
-            <autopilot n="8">
-                <name>IT-CWS</name>
-                <path>Aircraft/737-MAX/Systems/it-cws.xml</path>
-            </autopilot>
             <autopilot n="9">
                 <path>Aircraft/737-MAX/Systems/autospeedbrake.xml</path>
             </autopilot>
@@ -66,6 +46,10 @@
             <autopilot n="13">
                 <name>wing flexer property rule</name>
                 <path>Aircraft/Generic/wingflexer.xml</path>
+            </autopilot>
+            <autopilot>
+                <name>IT-AUTOFLIGHT</name>
+                <path>Systems/it-autoflight.xml</path>
             </autopilot>
             <autopilot>
                 <name>IT-AUTOTHRUST</name>
@@ -1022,9 +1006,6 @@
     </instrumentation>
 
     <nasal>
-        <itaf>
-            <file>Nasal/it-autoflight.nas</file>
-        </itaf>
         <hack>
             <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file><!-- must be first -->
         </hack>
@@ -1065,12 +1046,12 @@
             <file>Aircraft/737-MAX/Nasal/hydraulics.nas</file>
             <file>Aircraft/737-MAX/Nasal/engines.nas</file>
         </systems>
+        <itaf>
+            <file>Nasal/it-autoflight.nas</file>
+        </itaf>
         <reversethrust>
             <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
         </reversethrust>
-        <it-cws>
-            <file>Aircraft/737-MAX/Nasal/it-cws.nas</file>
-        </it-cws>
         <thrust>
             <file>Aircraft/737-MAX/Nasal/fadec.nas</file>
         </thrust>

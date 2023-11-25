@@ -139,6 +139,15 @@ setlistener("sim/signals/fdm-initialized", func() {
 	});
 	NDWide_display.addPlacement({"node": "screen2.full"});
 	var group = NDWide_display.createGroup();
+    var testMap = group.createChild("map");
+    testMap.setController("Aircraft position");
+    testMap.setRange(25);
+    testMap.setTranslation(440,330);
+    var r = func(name,vis=1,zindex=nil) return caller(0)[0];
+    # TFC, APT and APS are the layer names as per $FG_ROOT/Nasal/canvas/map and the names used in each .lcontroller file
+    # in this case, it will load the traffic layer (TFC), airports (APT) and render an airplane symbol (APS)
+    foreach(var type; [r('TFC'),r('APT'), r('APS') ] )
+            testMap.addLayer(factory: canvas.SymbolLayer, type_arg: type.name, visible: type.vis, priority: type.zindex,);
 	NDWide_canvas = canvas_NDWide.new(group);
 	update_timer = maketimer(0.1, func NDWide_canvas.update());
  	update_timer.start();
