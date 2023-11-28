@@ -66,7 +66,7 @@
         <type>gain</type>
         <gain>1</gain>
         <update-interval-secs type="double">0.02</update-interval-secs>
-        <input>/controls/flight/aileron-fde</input>
+        <input>/controls/flight/aileron</input>
         <output>/systems/hydraulic/aileron-manual</output>
         <min>
             <condition>
@@ -96,7 +96,7 @@
         <type>gain</type>
         <gain>1</gain>
         <update-interval-secs type="double">0.02</update-interval-secs>
-        <input>/controls/flight/elevator-fde</input>
+        <input>/controls/flight/elevator</input>
         <output>/systems/hydraulic/elevator-manual</output>
         <min>
             <condition>
@@ -161,7 +161,7 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property>
+                    <property>/controls/flight/aileron</property>
                     <entry>
                         <ind>-1</ind>
                         <dep>-0.5</dep>
@@ -230,7 +230,7 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property>
+                    <property>/controls/flight/aileron</property>
                     <entry>
                         <ind>-1</ind>
                         <dep>-0.5</dep>
@@ -445,7 +445,7 @@
                 <sum>
                     <property>/controls/flight/speedbrake-norm</property>
                     <table>
-                        <property>/controls/flight/aileron-fde</property>
+                        <property>/controls/flight/aileron</property>
                         <entry>
                             <ind>0.1</ind>
                             <dep>   0</dep>
@@ -476,7 +476,7 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property>
+                    <property>/controls/flight/aileron</property>
                     <entry>
                         <ind>-0.1</ind>
                         <dep>  0</dep>
@@ -524,7 +524,7 @@
                 <sum>
                     <property>/controls/flight/speedbrake-norm</property>
                     <table>
-                        <property>/controls/flight/aileron-fde</property>
+                        <property>/controls/flight/aileron</property>
                         <entry>
                             <ind>0.1</ind>
                             <dep>   0</dep>
@@ -555,7 +555,7 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property>
+                    <property>/controls/flight/aileron</property>
                     <entry>
                         <ind>-0.1</ind>
                         <dep>  0</dep>
@@ -730,7 +730,7 @@
                 <sum>
                     <property>/controls/flight/speedbrake-norm</property>
                     <table>
-                        <property>/controls/flight/aileron-fde</property>
+                        <property>/controls/flight/aileron</property>
                         <entry>
                             <ind>-0.1</ind>
                             <dep>   0</dep>
@@ -761,7 +761,7 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property>
+                    <property>/controls/flight/aileron</property>
                     <entry>
                         <ind>0.1</ind>
                         <dep>  0</dep>
@@ -809,7 +809,7 @@
                 <sum>
                     <property>/controls/flight/speedbrake-norm</property>
                     <table>
-                        <property>/controls/flight/aileron-fde</property>
+                        <property>/controls/flight/aileron</property>
                         <entry>
                             <ind>-0.1</ind>
                             <dep>   0</dep>
@@ -840,7 +840,7 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/aileron-fde</property>
+                    <property>/controls/flight/aileron</property>
                     <entry>
                         <ind>0.1</ind>
                         <dep>  0</dep>
@@ -1126,7 +1126,7 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/elevator-fde</property>
+                    <property>/controls/flight/elevator</property>
                     <entry>
                         <ind>-1</ind>
                         <dep>-0.5</dep>
@@ -1193,7 +1193,7 @@
             </condition>
             <expression>
                 <table>
-                    <property>/controls/flight/elevator-fde</property>
+                    <property>/controls/flight/elevator</property>
                     <entry>
                         <ind>-1</ind>
                         <dep>-0.5</dep>

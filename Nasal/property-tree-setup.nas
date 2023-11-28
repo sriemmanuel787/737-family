@@ -83,10 +83,10 @@ var Sim = {
 
 var Radio = {
     nav: [props.globals.getNode("instrumentation/nav[0]/frequencies/selected-mhz"), props.globals.getNode("instrumentation/nav[1]/frequencies/selected-mhz")]
-}
+};
 
 var Info = {
     icao:         props.globals.getNode("sim/model/airline-code"),
     registration: props.globals.getNode("sim/model/registration"),
     selcal:       props.globals.getNode("sim/model/selcal")
-}
+};

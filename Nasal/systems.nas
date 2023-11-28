@@ -1,11 +1,11 @@
 # B737-MAX Systems File
 
- print(" ______ ____ ______      __  __          __   __");
- print("|____  |___ \____  |    |  \/  |   /\    \ \ / /");
- print("    / /  __) |  / /_____| \  / |  /  \    \ V / ");
- print("   / /  |__ <  / /______| |\/| | / /\ \    > <  ");
- print("  / /   ___) |/ /       | |  | |/ ____ \  / . \ ");
- print(" /_/   |____//_/        |_|  |_/_/    \_\/_/ \_\\");
+print(" ______ ____ ______      __  __          __   __");
+print("|____  |___ \____  |    |  \/  |   /\    \ \ / /");
+print("    / /  __) |  / /_____| \  / |  /  \    \ V / ");
+print("   / /  |__ <  / /______| |\/| | / /\ \    > <  ");
+print("  / /   ___) |/ /       | |  | |/ ____ \  / . \ ");
+print(" /_/   |____//_/        |_|  |_/_/    \_\/_/ \_\\");
 print("-----------------------------------------------------------------------");
 print("Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), Israel Emmanuel (sriemmanuel787)");
 print("Report all bugs on GitHub Issues tab, or on the FlightGear Discord server.");
@@ -45,32 +45,6 @@ setlistener("sim/signals/fdm-initialized", func {
 	systems.hyd_init();
 	boeing737.shaketimer.start();
 }, 0, 0);
-
-setprop("it-autoflight/input/kts-mach", 0);
-setprop("it-autoflight/input/ap1", 0);
-setprop("it-autoflight/input/ap2", 0);
-setprop("it-autoflight/input/athr", 0);
-setprop("it-autoflight/input/fd1", 0);
-setprop("it-autoflight/input/fd2", 0);
-setprop("it-autoflight/input/spd-kts", 100);
-setprop("it-autoflight/input/spd-mach", 0.5);
-setprop("it-autoflight/input/hdg", 360);
-setprop("it-autoflight/input/alt", 10000);
-setprop("it-autoflight/input/vs", 0);
-setprop("it-autoflight/input/lat", 0);
-setprop("it-autoflight/input/vert", 4);
-setprop("it-autoflight/input/bank-limit", 30);
-setprop("it-autoflight/input/trk", 0);
-setprop("it-autoflight/output/ap1", 0);
-setprop("it-autoflight/output/ap2", 0);
-setprop("it-autoflight/output/at", 0);
-setprop("it-autoflight/output/fd1", 0);
-setprop("it-autoflight/output/fd2", 0);
-setprop("it-autoflight/output/loc-armed", 0);
-setprop("it-autoflight/output/appr-armed", 0);
-setprop("it-autoflight/output/thr-mode", 0);
-setprop("it-autoflight/output/retard", 0);
-setprop("it-autoflight/internal/alt", 10000);
 	
 var timerstall = maketimer(5, func(){
 
@@ -90,63 +64,36 @@ setprop("b737/sound/stall",0);
 #########
 
 # seatbelt/no smoking sign triggers
-setlistener("controls/switches/seatbelt-sign", func
- {
- props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(1);
+setlistener("controls/switches/seatbelt-sign", func {
+	props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(1);
+	settimer(func {
+		props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(0);
+	}, 2);
+}, 0, 0);
+setlistener("controls/switches/no-smoking-sign", func {
+	props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(1);
+	settimer(func {
+		props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(0);
+	}, 2);
+}, 0, 0);
 
- settimer(func
-  {
-  props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(0);
-  }, 2);
- }, 0, 0);
-setlistener("controls/switches/no-smoking-sign", func
- {
- props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(1);
+setlistener("controls/switches/switch", func {
+	if(!getprop("controls/switches/switch")) return;
+ 	settimer(func {
+		props.globals.getNode("controls/switches/switch").setBoolValue(0);
+ 	}, 0.1);
+}, 0, 0);
 
- settimer(func
-  {
-  props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(0);
-  }, 2);
- }, 0, 0);
+setlistener("controls/doors/cockpitdoor/sound", func {
+	if(!getprop("controls/doors/cockpitdoor/sound")) return;
+ 	settimer(func {
+  		props.globals.getNode("controls/doors/cockpitdoor/sound").setBoolValue(0);
+ 	}, 3);
+}, 0, 0);
 
-setlistener("controls/switches/switch",
-	func {
-		if(!getprop("controls/switches/switch")) return;
- 		settimer(
- 			func {
-  				props.globals.getNode("controls/switches/switch").setBoolValue(0);
- 			}
- 		, 0.1);
- 	}, 0, 0
- );
- setlistener("controls/doors/cockpitdoor/sound",
-	func {
-		if(!getprop("controls/doors/cockpitdoor/sound")) return;
- 		settimer(
- 			func {
-  				props.globals.getNode("controls/doors/cockpitdoor/sound").setBoolValue(0);
- 			}
- 		, 3);
- 	}, 0, 0
- );
-setlistener("controls/lighting/landing-lights",
-	func {
-		if(getprop("controls/lighting/landing-lights")) setprop("controls/lighting/landing-lights-norm",1); else setprop("controls/lighting/landing-lights-norm",0);
-	}, 0, 0
-);
-
-
-var aglgears = func {
-    var agl = getprop("position/altitude-agl-ft") or 0;
-    var aglft = agl - 8.194;  # is the position from the Boeing 737 above ground
-    var aglm = aglft * 0.3048;
-    setprop("position/gear-agl-ft", aglft);
-    setprop("position/gear-agl-m", aglm);
-
-    settimer(aglgears, 0.1);
-}
-
-aglgears();
+setlistener("controls/lighting/landing-lights", func {
+	if(getprop("controls/lighting/landing-lights")) setprop("controls/lighting/landing-lights-norm",1); else setprop("controls/lighting/landing-lights-norm",0);
+}, 0, 0);
 
 # selected engine system
 props.globals.initNode("sim/input/selected/SelectedEngine73X", 0, "INT");

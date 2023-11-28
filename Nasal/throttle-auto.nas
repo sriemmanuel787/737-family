@@ -1,4 +1,3 @@
-
 var throttleIdle = 0;
 var throttleMax  = .94;
 var throttleMovePerSecondSlow = 0.10;
@@ -6,7 +5,8 @@ var throttleMovePerSecondFast = 0.30;
 var throttleUpdInterval = 0.05;
 
 var setMaxPower = func{
-    setPower(throttleMax, 1.0, 0);
+    setprop("controls/engines/engine[0]/throttle", 0.94);
+    setprop("controls/engines/engine[1]/throttle", 0.94);
 }
 
 var setIdlePower = func{
