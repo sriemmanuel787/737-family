@@ -930,7 +930,7 @@
         <cdu>
             <display>IDENT</display>
             <ident>
-                <model>737</model>
+                <model>737 MAX</model>
                 <engines>CFM LEAP 1B</engines>
             </ident>
             <input type="string" />
@@ -1003,6 +1003,11 @@
         <slip-skid-ball>
             <side-accel-filtered-norm type="double">0</side-accel-filtered-norm>
         </slip-skid-ball>
+
+        <mfd>
+            <flap-dial-deg>0</flap-dial-deg>
+            
+        </mfd>
     </instrumentation>
 
     <nasal>
