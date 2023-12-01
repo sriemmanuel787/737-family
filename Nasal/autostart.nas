@@ -1,9 +1,14 @@
-## 737-800 Start - Shutdown
+## 737-MAX Start - Shutdown
 
 
 # Autostart #
 
 var autostart = func {
+	setprop("controls/hydraulic/a-eng1-pump", 1);
+	setprop("controls/hydraulic/a-elec2-pump", 1);
+	setprop("controls/hydraulic/b-eng1-pump", 1);
+	setprop("controls/hydraulic/b-elec2-pump", 1);
+	setprop("controls/hydraulic/a-b-cross-pump", 1);
 	setprop("controls/engines/engine[0]/throttle", 0);
 	setprop("controls/engines/engine[1]/throttle", 0);
 	setprop("controls/APU/off-start-run", 2);
