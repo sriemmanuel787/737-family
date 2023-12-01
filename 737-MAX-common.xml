@@ -48,6 +48,10 @@
                 <path>Aircraft/Generic/wingflexer.xml</path>
             </autopilot>
             <autopilot>
+                <name>Gear-AGL-Ft</name>
+                <path>Systems/gear-agl-ft.xml</path>
+            </autopilot>
+            <autopilot>
                 <name>IT-AUTOFLIGHT</name>
                 <path>Systems/it-autoflight.xml</path>
             </autopilot>
