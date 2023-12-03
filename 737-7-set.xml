@@ -280,25 +280,6 @@
             <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>            <!-- custom implementation of the CDU from instruments-3D -->
         </cdu>
         <boeing737>
-            <file>Aircraft/737-MAX/Models/Instruments/PFD-capt.nas</file>
-            <file>Aircraft/737-MAX/Models/Instruments/PFD-FO.nas</file>
-            <file>Aircraft/737-MAX/Models/Instruments/EICAS.nas</file>
-            <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
-            <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
-            <file>Aircraft/737-MAX/Nasal/controls.nas</file>
-            <file>Aircraft/737-MAX/Nasal/friction.nas</file>
-            <file>Aircraft/737-MAX/Nasal/lighting.nas</file>
-            <file>Aircraft/737-MAX/Nasal/tire-smoke.nas</file>
-            <file>Aircraft/737-MAX/Nasal/ground-services.nas</file>
-            <file>Aircraft/737-MAX/Nasal/systems.nas</file>
-            <file>Aircraft/737-MAX/Nasal/engine-fire.nas</file>
-            <file>Aircraft/737-MAX/Nasal/limits.nas</file>
-            <file>Aircraft/737-MAX/Nasal/doors.nas</file>
-            <file>Aircraft/737-MAX/Nasal/shake.nas</file>
-            <file>Aircraft/737-MAX/Nasal/warnings.nas</file>
-            <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
-            <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
-            <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
             <file>Aircraft/737-MAX/Nasal/liveries-7.nas</file>
         </boeing737>
         <systems>

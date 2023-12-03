@@ -1,3 +1,4 @@
+print("Loading Multi-Function Display");
 var mfd_canvas = nil;
 var mfd_display = nil;
 
@@ -17,7 +18,7 @@ var canvas_mfd = {
 
         m.timers=[];
 		# Setting centers of elements outside the loop
-		me["flap-dial"].setCenter("1026, 1169");
+		m["flap-dial"].setCenter("1026, 1169");
 
 		return m;
 	},
@@ -77,15 +78,15 @@ var canvas_mfd = {
 			me["fuel-flow-eng2"].hide();
 
 		# Flap Dial
-		me["flap-dial"].setRotation();
+		# me["flap-dial"].setRotation();
 	},
 };
 
 setlistener("sim/signals/fdm-initialized", func() {
 	mfd_display = canvas.new({
 		"name": "MFD",
-		"size": [4096, 8192],
-		"view": [2048, 4096],
+		"size": [8192, 8192],
+		"view": [4096, 2048],
 		"mipmapping": 1
 	});
 	mfd_display.addPlacement({"node": "screen.mfd-capt"});
