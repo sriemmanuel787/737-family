@@ -27,6 +27,7 @@ var canvas_mfd = {
 		# Variables
 		var eng1n1 = getprop("engines/engine[0]/n1");
 		var eng2n1 = getprop("engines/engine[1]/n1");
+		var flapPos = getprop("surface-positions/flap-pos-norm");
 
         # Air Temperature, Flight Mode
 		me["air-temperature"].setText(sprintf("%+i", getprop("environment/temperature-degc")));
@@ -37,48 +38,68 @@ var canvas_mfd = {
 		me["oil-filter-bypass-eng1"].hide();
 		me["oil-filter-bypass-eng2"].hide();
 
-		if(getprop("controls/engines/engine[0]/starter"))
+		if (getprop("controls/engines/engine[0]/starter"))
 			me["start-valve-open-eng1"].show();
 		else
 			me["start-valve-open-eng1"].hide();
 		
-		if(getprop("engines/engine[0]/oil-pressure-psi") < 20)
+		if (getprop("engines/engine[0]/oil-pressure-psi") < 20)
 			me["low-oil-pressure-eng1"].show();
 		else
 			me["low-oil-pressure-eng1"].hide();
 
-		if(getprop("controls/engines/engine[0]/throttle") > eng1n1)
+		if (getprop("controls/engines/engine[0]/throttle") > eng1n1)
 			me["thrust-eng1"].show();
 		else
 			me["thrust-eng1"].hide();
 
-		if((getprop("engines/engine[0]/fuel-flow_pph")/eng1n1) >100)
+		if ((getprop("engines/engine[0]/fuel-flow_pph")/eng1n1) >100)
 			me["fuel-flow-eng1"].show();
 		else
 			me["fuel-flow-eng1"].hide();
 
-		if(getprop("controls/engines/engine[1]/starter"))
+		if (getprop("controls/engines/engine[1]/starter"))
 			me["start-valve-open-eng2"].show();
 		else
 			me["start-valve-open-eng2"].hide();
 		
-		if(getprop("engines/engine[1]/oil-pressure-psi") < 20)
+		if (getprop("engines/engine[1]/oil-pressure-psi") < 20)
 			me["low-oil-pressure-eng2"].show();
 		else
 			me["low-oil-pressure-eng2"].hide();
 
-		if(getprop("controls/engines/engine[1]/throttle") > getprop("engines/engine[1]/n1"))
+		if (getprop("controls/engines/engine[1]/throttle") > getprop("engines/engine[1]/n1"))
 			me["thrust-eng2"].show();
 		else
 			me["thrust-eng2"].hide();
 
-		if((getprop("engines/engine[1]/fuel-flow_pph")/eng1n1) >100)
+		if ((getprop("engines/engine[1]/fuel-flow_pph")/eng1n1) >100)
 			me["fuel-flow-eng2"].show();
 		else
 			me["fuel-flow-eng2"].hide();
 
 		# Flap Dial
-		# me["flap-dial"].setRotation();
+		me["flap-dial"].setRotation(getprop("instrumentation/mfd/flap-dial-deg"));
+
+		if (flapPos == 0) {
+			me["le-flaps-transit"].hide();
+			me["le-flaps-ext"].hide();
+		} elsif (flapPos > 0 and flapPos < 0.125) {
+			me["le-flaps-transit"].show();
+			me["le-flaps-ext"].show();
+		} else {
+			me["le-flaps-transit"].hide();
+			me["le-flaps-ext"].show();
+		}
+
+		# Fuel Tanks
+		me["fuel-left"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[0]/level-kg")/1000));
+        me["fuel-right"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[1]/level-kg")/1000));
+        me["fuel-center"].setText(sprintf("%0.2f", getprop("consumables/fuel/tank[2]/level-kg")/1000));
+        me["fuel-total"].setText(sprintf("%0.1f", (getprop("consumables/fuel/tank[0]/level-kg") + getprop("consumables/fuel/tank[1]/level-kg") + getprop("consumables/fuel/tank[2]/level-kg"))/1000));
+
+		# Engine Performance
+		# me[""]
 	},
 };
 
