@@ -1,8 +1,5 @@
 <?xml version="1.0"?>
 
-<!-- # GEAR system for BOEING 747-400  #
-     # by Gijs de Rooy			   # -->
-
 <system name="gear">
 
     <channel name="gear">
