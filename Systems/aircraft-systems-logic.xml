@@ -130,8 +130,8 @@
                 <not>
                     <or>
                         <greater-than>
-                            <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
-                            <value>0.7</value>                            <!-- flaps more than 20 degrees -->
+                            <property>/fdm/jsbsim/fcs/flap-pos-rad</property>
+                            <value>20</value>
                         </greater-than>
                         <property>/autopilot/internal/VNAV-GS</property>
                     </or>
