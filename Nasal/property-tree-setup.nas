@@ -23,8 +23,8 @@ var Engines = {
 
 var Controls = {
     Flight: {
-        aileronPos: [props.globals.getNode("surface-positions/left-aileron-pos-norm"), props.globals.getNode("surface-positions/right-aileron-pos-norm")],
-		flapsPos:   props.globals.getNode("surface-positions/flap-pos-norm"),
+        aileronPos: [props.globals.getNode("surface-positions/left-aileron-pos-rad"), props.globals.getNode("surface-positions/right-aileron-pos-rad")],
+		flapsPos:   props.globals.getNode("surface-positions/flap-pos-rad"),
 		spoilerPos: props.globals.getNode("surface-positions/spoilers-pos-norm"),
 		rudderPos:  props.globals.getNode("surface-positions/rudder-pos-norm"),
 		elevPos:	props.globals.getNode("surface-positions/elevator-pos-norm"),

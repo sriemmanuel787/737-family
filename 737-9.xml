@@ -697,7 +697,7 @@
                     <min>-1</min>
                     <max> 1</max>
                 </range>
-                <output>fcs/left-aileron-pos-norm</output>
+                <output>fcs/left-aileron-pos-rad</output>
             </aerosurface_scale>
 
             <aerosurface_scale name="Right aileron Normalized">
@@ -710,7 +710,7 @@
                     <min>-1</min>
                     <max> 1</max>
                 </range>
-                <output>fcs/right-aileron-pos-norm</output>
+                <output>fcs/right-aileron-pos-rad</output>
             </aerosurface_scale>
 
         </channel>
@@ -866,7 +866,7 @@
                         <time>5</time>
                     </setting>
                 </traverse>
-                <output>fcs/flap-pos-norm</output>
+                <output>fcs/flap-pos-rad</output>
             </kinematic>
 
         </channel>
@@ -1608,7 +1608,7 @@
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
-                    <property>fcs/flap-pos-norm</property>
+                    <property>fcs/flap-pos-rad</property>
                     <value>0.059</value>
                 </product>
             </function>
@@ -1771,7 +1771,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>aero/function/kCLge</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       0
 							0.125   0.103
@@ -1832,7 +1832,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/spoilers-23-pos</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       -0.0008
 							1       -0.00225
@@ -1848,7 +1848,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/spoilers-45-pos</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       -0.0008
 							1       -0.00225
@@ -1864,7 +1864,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/spoilers-89-pos</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       -0.0008
 							1       -0.00225
@@ -1880,7 +1880,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/spoilers-1011-pos</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       -0.0008
 							1       -0.00225

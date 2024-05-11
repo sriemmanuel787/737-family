@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
-<fdm_config name="738" release="BETA" version="2.0"
+<fdm_config name="B38M" release="BETA" version="2.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
@@ -8,12 +8,8 @@
         <author>Michael Soitanen, YV3399 And it0uchpods</author>
         <filecreationdate>2014-09-30</filecreationdate>
         <version>$Revison: 1.0 $</version>
-        <description>Models a 737-800.</description>
+        <description>Models a 737 MAX 8</description>
     </fileheader>
-
-    <!--
-	base datum - nose of aircraft. BWL at this point 208.1 in. Source - structure diagrams.
--->
 
     <metrics>
         <wingarea unit="FT2">1341.00</wingarea><!-- value from simulator data. Checked -->
@@ -34,7 +30,7 @@
             <z>56.18</z>
         </location>
         <location name="VRP" unit="M">
-            <x>19.8099</x>
+            <x>0</x>
             <y>0</y>
             <z>0.0785</z>
         </location>
@@ -50,45 +46,45 @@
         <emptywt unit="LBS">97060</emptywt><!-- based on real info about EI-RUA aircraft. 2 pilots
         and 5 cabin crew included -->
         <location name="CG" unit="IN">
-            <x>729.56</x><!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew
+            <x>-50.357323</x><!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew
             included -->
             <y>0</y>
-            <z>0</z>
+            <z>-3.09055118</z>
         </location>
 
         <pointmass name="Cabin Zone 0A"><!-- Business class (8 pax max) Row 1-2 -->
             <weight unit="LBS">1324</weight>
             <location name="POINTMASS" unit="IN">
-                <x>301.5</x>
+                <x>-478.417323</x>
                 <y>0</y>
-                <z>27.5</z>
+                <z>24.40944882</z>
             </location>
         </pointmass>
 
         <pointmass name="Cabin Zone 0B"><!-- Tourist class (54 pax max) Row 10-19 -->
             <weight unit="LBS">1324</weight>
             <location name="POINTMASS" unit="IN">
-                <x>541</x>
+                <x>-238.917323</x>
                 <y>0</y>
-                <z>27.5</z>
+                <z>24.40944882</z>
             </location>
         </pointmass>
 
         <pointmass name="Cabin Zone 0C"><!-- Economy class (96 pax max) Row 20-36 -->
             <weight unit="LBS">1324</weight>
             <location name="POINTMASS" unit="IN">
-                <x>874</x>
+                <x>94.082677</x>
                 <y>0</y>
-                <z>27.5</z>
+                <z>24.40944882</z>
             </location>
         </pointmass>
 
         <pointmass name="Cargo compartment 1A"><!-- max 553 kg/1218 lbs -->
             <weight unit="LBS">500</weight>
             <location name="POINTMASS" unit="IN">
-                <x>284</x>
+                <x>-495.917323</x>
                 <y>0</y>
-                <z>-30</z>
+                <z>-33.09055118</z>
             </location>
         </pointmass>
 
@@ -96,56 +92,59 @@
         <pointmass name="Cargo compartment 1B"><!-- max 336 kg/741 lbs -->
             <weight unit="LBS">200</weight>
             <location name="POINTMASS" unit="IN">
-                <x>334</x>
+                <x>-445.917323</x>
                 <y>0</y>
-                <z>-30</z>
+                <z>-33.09055118</z>
             </location>
         </pointmass>
 
         <pointmass name="Cargo compartment 2"><!-- max 2670 kg/5887 lbs -->
             <weight unit="LBS">2500</weight>
             <location name="POINTMASS" unit="IN">
-                <x>464</x>
+                <x>-315.917323</x>
                 <y>0</y>
-                <z>-30</z>
+                <z>-33.09055118</z>
             </location>
         </pointmass>
 
         <pointmass name="Cargo compartment 3"><!-- max 4086 kg/9008 lbs -->
             <weight unit="LBS">4000</weight>
             <location name="POINTMASS" unit="IN">
-                <x>932.5</x>
+                <x>143.582677</x>
                 <y>0</y>
-                <z>-30</z>
+                <z>-33.09055118</z>
             </location>
         </pointmass>
 
         <pointmass name="Cargo compartment 4A"><!-- max 362 kg/798 lbs -->
             <weight unit="LBS">400</weight>
             <location name="POINTMASS" unit="IN">
-                <x>1097.5</x>
+                <x>317.582677</x>
                 <y>0</y>
-                <z>-30</z>
+                <z>-33.09055118</z>
             </location>
         </pointmass>
 
         <pointmass name="Cargo compartment 4B"><!-- max 402 kg/886 lbs -->
             <weight unit="LBS">200</weight>
             <location name="POINTMASS" unit="IN">
-                <x>1175.5</x>
+                <x>395.582677</x>
                 <y>0</y>
-                <z>-30</z>
+                <z>-33.09055118</z>
             </location>
         </pointmass>
 
     </mass_balance>
 
+    <!-- X axis:  forwards and backwards-->
+    <!-- Y axis: side to side -->
+    <!-- Z axis: up and down -->
     <ground_reactions>
-        <contact name="Nose Gear" type="BOGEY"><!-- from AMM - maximum NLG compression is 15.5 in -->
+        <contact name="Nose Gear" type="BOGEY">
             <location unit="IN">
                 <x>161</x>
                 <y>0</y>
-                <z>-110.83</z><!-- BWL 106.57 -->
+                <z>-110.83</z> <!-- TUNE -->
             </location>
             <static_friction>0.8</static_friction>
             <dynamic_friction>0.5</dynamic_friction>
@@ -157,11 +156,11 @@
             <retractable>1</retractable>
         </contact>
 		<contact name="Left Main Gear"
-            type="BOGEY"><!-- from AMM - maximum MLG compression is 16 in -->
+            type="BOGEY">
             <location unit="IN">
                 <x>775</x>
                 <y>-112.5</y>
-                <z>-113.99</z><!-- BWL 98.31 -->
+                <z>-113.99</z> <!-- TUNE -->
             </location>
             <static_friction>0.4</static_friction>
             <dynamic_friction>0.5</dynamic_friction>
@@ -173,11 +172,11 @@
             <retractable>1</retractable>
         </contact>
 		<contact name="Right Main Gear"
-            type="BOGEY"><!-- from AMM - maximum MLG compression is 16 in -->
+            type="BOGEY">
             <location unit="IN">
                 <x>775</x>
                 <y>112.5</y>
-                <z>-113.99</z><!-- BWL 98.31 -->
+                <z>-113.99</z> <!-- TUNE -->
             </location>
             <static_friction>0.4</static_friction>
             <dynamic_friction>0.5</dynamic_friction>
@@ -193,7 +192,7 @@
             <location unit="IN">
                 <x>1417.05</x>
                 <y>0</y>
-                <z>-13.5</z><!-- BWL 194.60 -->
+                <z>-13.5</z> <!-- TUNE -->
             </location>
             <static_friction>1</static_friction>
             <dynamic_friction>1</dynamic_friction>
@@ -209,7 +208,7 @@
             <location unit="IN">
                 <x>0</x>
                 <y>0</y>
-                <z>0</z>
+                <z>0</z> <!-- TUNE -->
             </location>
             <static_friction>1</static_friction>
             <dynamic_friction>1</dynamic_friction>
@@ -225,9 +224,9 @@
     <propulsion>
         <engine file="leap1b">
             <location unit="IN">
-                <x>715.6</x><!-- value from simulator data -->
-                <y>-193.68</y><!-- value from simulator data -->
-                <z>-52.38</z><!-- BWL 155.72 -->
+                <x>715.6</x>
+                <y>-193.68</y>
+                <z>-52.38</z> <!-- TUNE -->
             </location>
             <orient unit="DEG">
                 <roll>0</roll>
@@ -237,9 +236,9 @@
             <feed>3</feed>
             <thruster file="direct">
                 <location unit="IN">
-                    <x>715.6</x><!-- value from simulator data -->
-                    <y>-193.68</y><!-- value from simulator data -->
-                    <z>-52.38</z><!-- BWL 155.72 -->
+                    <x>715.6</x>
+                    <y>-193.68</y>
+                    <z>-52.38</z> <!-- TUNE -->
                 </location>
                 <orient unit="DEG">
                     <roll>0</roll>
@@ -250,9 +249,9 @@
         </engine>
         <engine file="leap1b">
             <location unit="IN">
-                <x>715.6</x><!-- value from simulator data -->
-                <y>193.68</y><!-- value from simulator data -->
-                <z>-52.38</z><!-- BWL 155.72 -->
+                <x>715.6</x>
+                <y>193.68</y>
+                <z>-52.38</z> <!-- TUNE -->
             </location>
             <orient unit="DEG">
                 <roll>0</roll>
@@ -262,9 +261,9 @@
             <feed>4</feed>
             <thruster file="direct">
                 <location unit="IN">
-                    <x>715.6</x><!-- value from simulator data -->
-                    <y>193.68</y><!-- value from simulator data -->
-                    <z>-52.38</z><!-- BWL 155.72 -->
+                    <x>715.6</x>
+                    <y>193.68</y>
+                    <z>-52.38</z> <!-- TUNE -->
                 </location>
                 <orient unit="DEG">
                     <roll>0</roll>
@@ -365,19 +364,6 @@
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>
 
-            <aerosurface_scale name="Elevator Normalized">
-                <input>fcs/elevator-pos-rad</input>
-                <domain>
-                    <min>-0.336</min>
-                    <max>0.3875</max>
-                </domain>
-                <range>
-                    <min>-1</min>
-                    <max>1</max>
-                </range>
-                <output>fcs/elevator-pos-norm</output>
-            </aerosurface_scale>
-
         </channel>
 
         <channel name="Roll">
@@ -391,6 +377,7 @@
                 </clipto>
             </summer>
 
+            <!-- Table function: y = -0.05877x^2 - 0.3183x - 0.0167 -->
             <fcs_function name="Left Aileron Control">
                 <function>
                     <table>
@@ -437,6 +424,7 @@
                 <output>fcs/left-aileron-pos-rad</output>
             </fcs_function>
 
+            <!-- Table function: y = -0.05877x^2 - 0.3183x + 0.0167 -->
             <fcs_function name="Right Aileron Control">
                 <function>
                     <table>
@@ -483,32 +471,6 @@
                 <output>fcs/right-aileron-pos-rad</output>
             </fcs_function>
 
-            <aerosurface_scale name="Left aileron Normalized">
-                <input>fcs/left-aileron-pos-rad</input>
-                <domain>
-                    <min>-0.3577924967</min>
-                    <max>0.2705260341</max>
-                </domain>
-                <range>
-                    <min>-1</min>
-                    <max>1</max>
-                </range>
-                <output>fcs/left-aileron-pos-norm</output>
-            </aerosurface_scale>
-
-            <aerosurface_scale name="Right aileron Normalized">
-                <input>fcs/right-aileron-pos-rad</input>
-                <domain>
-                    <min>-0.3577924967</min>
-                    <max>0.2705260341</max>
-                </domain>
-                <range>
-                    <min>-1</min>
-                    <max>1</max>
-                </range>
-                <output>fcs/right-aileron-pos-norm</output>
-            </aerosurface_scale>
-
         </channel>
 
         <channel name="Yaw">
@@ -522,8 +484,7 @@
                 </clipto>
             </summer>
 
-            <!--Yaw
-            damper-->
+            <!--Yaw damper-->
             <washout_filter name="yaw-wf">
                 <input>velocities/r-aero-rad_sec</input>
                 <c1>4</c1>
@@ -535,8 +496,7 @@
             </pure_gain>
 
 
-            <!--Slip
-            stabilizer-->
+            <!--Slip stabilizer-->
             <switch name="accelerations/Ny-switched">
                 <default value="0.0" />
                 <test logic="AND" value="accelerations/Ny">
@@ -554,8 +514,7 @@
                     <min>-0.12</min>
                     <max>0.12</max>
                 </clipto>
-                <!--<output>fcs/yaw-slip-out</output>
-                possible for debug -->
+                <!--<output>fcs/yaw-slip-out</output> possible for debug -->
             </pid>
 
             <summer name="Yaw Damper Sum">
@@ -601,23 +560,10 @@
             <aerosurface_scale name="Rudder Control"><!-- -30...+30 degrees range -->
                 <input>fcs/rudder-sum</input>
                 <range>
-                    <min>-0.523</min>
-                    <max>0.523</max>
+                    <min>-0.5235987756</min>
+                    <max>0.5235987756</max>
                 </range>
                 <output>fcs/rudder-pos-rad</output>
-            </aerosurface_scale>
-
-            <aerosurface_scale name="Rudder Normalized">
-                <input>fcs/rudder-pos-rad</input>
-                <domain>
-                    <min>-0.523</min>
-                    <max>0.523</max>
-                </domain>
-                <range>
-                    <min>-1</min>
-                    <max>1</max>
-                </range>
-                <output>fcs/rudder-pos-norm</output>
             </aerosurface_scale>
 
         </channel>
@@ -631,39 +577,39 @@
                         <time>0</time>
                     </setting>
                     <setting>
-                        <position>0.125</position>
+                        <position>1</position>
                         <time>13</time>
                     </setting>
                     <setting>
-                        <position>0.25</position>
+                        <position>2</position>
                         <time>3</time>
                     </setting>
                     <setting>
-                        <position>0.375</position>
+                        <position>5</position>
                         <time>4</time>
                     </setting>
                     <setting>
-                        <position>0.5</position>
+                        <position>10</position>
                         <time>2</time>
                     </setting>
                     <setting>
-                        <position>0.625</position>
+                        <position>15</position>
                         <time>3</time>
                     </setting>
                     <setting>
-                        <position>0.75</position>
+                        <position>25</position>
                         <time>2</time>
                     </setting>
                     <setting>
-                        <position>0.875</position>
+                        <position>30</position>
                         <time>5</time>
                     </setting>
                     <setting>
-                        <position>1</position>
+                        <position>40</position>
                         <time>5</time>
                     </setting>
                 </traverse>
-                <output>fcs/flap-pos-norm</output>
+                <output>fcs/flap-pos-rad</output>
             </kinematic>
 
         </channel>
@@ -749,7 +695,7 @@
                 <output>fcs/spoilers-outb-cmd-b</output>
             </fcs_function>
 
-            <fcs_function>
+            <fcs_function name="Outbound spoiler command low">
                 <function>
                     <min>
                         <property>fcs/spoilers-outb-cmd-a</property>
@@ -759,7 +705,7 @@
                 <output>fcs/spoilers-outb-cmd-low</output>
             </fcs_function>
 
-            <fcs_function>
+            <fcs_function name="Outbound spoiler command high">
                 <function>
                     <max>
                         <property>fcs/spoilers-outb-cmd-a</property>
@@ -884,7 +830,7 @@
                 <output>fcs/spoilers-inbd-cmd-b</output>
             </fcs_function>
 
-            <fcs_function>
+            <fcs_function name="Inbound spoiler command low">
                 <function>
                     <min>
                         <property>fcs/spoilers-inbd-cmd-a</property>
@@ -894,7 +840,7 @@
                 <output>fcs/spoilers-inbd-cmd-low</output>
             </fcs_function>
 
-            <fcs_function>
+            <fcs_function name="Inbound spoiler command high">
                 <function>
                     <max>
                         <property>fcs/spoilers-inbd-cmd-a</property>
@@ -1404,7 +1350,7 @@
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
-                    <property>fcs/flap-pos-norm</property>
+                    <property>fcs/flap-pos-rad</property>
                     <value>0.059</value>
                 </product>
             </function>
@@ -1567,7 +1513,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>aero/function/kCLge</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       0
 							0.125   0.103
@@ -1629,7 +1575,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/spoilers-23-pos</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       -0.0008
 							1       -0.00225
@@ -1645,7 +1591,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/spoilers-45-pos</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       -0.0008
 							1       -0.00225
@@ -1661,7 +1607,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/spoilers-89-pos</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       -0.0008
 							1       -0.00225
@@ -1677,7 +1623,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/spoilers-1011-pos</property>
                     <table>
-                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <independentVar>fcs/flap-pos-rad</independentVar>
                         <tableData>
 							0       -0.0008
 							1       -0.00225
@@ -1936,8 +1882,7 @@
             </direction>
         </force>
 
-		<force name="reverse-drag-left"
-            frame="BODY">
+		<force name="reverse-drag-left" frame="BODY">
             <location unit="IN">
                 <x>715.6</x>
                 <y>-193.68</y>
@@ -1950,8 +1895,7 @@
             </direction>
         </force>
 
-		<force name="reverse-drag-right"
-            frame="BODY">
+		<force name="reverse-drag-right" frame="BODY">
             <location unit="IN">
                 <x>715.6</x>
                 <y>193.68</y>
