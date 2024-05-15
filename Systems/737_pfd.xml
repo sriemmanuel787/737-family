@@ -57,29 +57,29 @@
                         </entry>
                     </table>
                     <table>
-                        <property>/fdm/jsbsim/fcs/flap-pos-rad</property>
+                        <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
                         <entry>
                             <ind>0</ind>
                             <dep>26</dep>
                         </entry>
                         <entry>
-                            <ind>1</ind>
+                            <ind>0.125</ind>
                             <dep>-6</dep>
                         </entry>
                         <entry>
-                            <ind>5</ind>
+                            <ind>0.375</ind>
                             <dep>-8</dep>
                         </entry>
                         <entry>
-                            <ind>15</ind>
+                            <ind>0.625</ind>
                             <dep>-22</dep>
                         </entry>
                         <entry>
-                            <ind>30</ind>
+                            <ind>0.875</ind>
                             <dep>-25</dep>
                         </entry>
                         <entry>
-                            <ind>40</ind>
+                            <ind>1</ind>
                             <dep>-26</dep>
                         </entry>
                     </table>

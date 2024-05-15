@@ -17,7 +17,7 @@ var elevatorTrim = func {
 	var ap_a_on = getprop("it-autoflight/output/ap1");
 	var ap_b_on = getprop("it-autoflight/output/ap2");
 	var stab_pos = num( getprop("fdm/jsbsim/fcs/stabilizer-pos-unit") );
-	var flaps_pos = num( getprop("fdm/jsbsim/fcs/flap-pos-rad") );
+	var flaps_pos = num( getprop("fdm/jsbsim/fcs/flap-pos-norm") );
 
 	setprop("fdm/jsbsim/fcs/stabilizer/stab-target", arg[0] * -17);
 
@@ -50,7 +50,7 @@ setlistener( "/controls/flight/elevator-trim", trim_handler, 0, 0 );
 var elev_trim_rate = func {
 	var ap_a_on = getprop("autopilot/internal/CMDA");
 	var ap_b_on = getprop("autopilot/internal/CMDB");
-	var flaps_pos = num( getprop("fdm/jsbsim/fcs/flap-pos-rad") );
+	var flaps_pos = num( getprop("fdm/jsbsim/fcs/flap-pos-norm") );
 
 	var trim_speed = 0.38;                                                    #Fastest with flaps extended and manual control
 	if (flaps_pos == 0 and !ap_a_on and !ap_b_on) trim_speed = 0.2; #With flaps retracted and AP off
@@ -60,7 +60,7 @@ var elev_trim_rate = func {
 }
 setlistener( "/autopilot/internal/CMDA", elev_trim_rate, 0, 0);
 setlistener( "/autopilot/internal/CMDB", elev_trim_rate, 0, 0);
-setlistener( "/fdm/jsbsim/fcs/flap-pos-rad", elev_trim_rate, 0, 0);
+setlistener( "/fdm/jsbsim/fcs/flap-pos-norm", elev_trim_rate, 0, 0);
 elev_trim_rate();
 
 var stop_stab_move = func {

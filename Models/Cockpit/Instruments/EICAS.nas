@@ -103,30 +103,30 @@ var canvas_EICAS = {
         else
             me["fuel-flow2"].hide();
 
-        if(getprop("surface-positions/flap-pos-rad") > 0)
+        if(getprop("surface-positions/flap-pos-deg") > 0)
             me["flap-ext"].show();
         else
             me["flap-ext"].hide();
         
         # Flap Dial
-        if(getprop("surface-positions/flap-pos-rad") <= 0.125)
-            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-rad")*8*33.7*D2R);
-        elsif(getprop("surface-positions/flap-pos-rad") <= 0.25)
-            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-rad")*4*77.9*D2R);
-        elsif(getprop("surface-positions/flap-pos-rad") <= 0.375)
-            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-rad")*8/3*114.6*D2R);
-        elsif(getprop("surface-positions/flap-pos-rad") <= 5)
-            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-rad")*2*153.9*D2R);
-        elsif(getprop("surface-positions/flap-pos-rad") <= 0.625)
-            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-rad")*1.6*180*D2R);
-        elsif(getprop("surface-positions/flap-pos-rad") <= 0.75)
-            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-rad")*4/3*208.7*D2R);
-        elsif(getprop("surface-positions/flap-pos-rad") <= 0.825)
-            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-rad")*8/7*239*D2R);
-        elsif(getprop("surface-positions/flap-pos-rad") <= 1)
-            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-rad")*270*D2R);
+        if(getprop("surface-positions/flap-pos-deg") <= 0.125)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-deg")*8*33.7*D2R);
+        elsif(getprop("surface-positions/flap-pos-deg") <= 0.25)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-deg")*4*77.9*D2R);
+        elsif(getprop("surface-positions/flap-pos-deg") <= 0.375)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-deg")*8/3*114.6*D2R);
+        elsif(getprop("surface-positions/flap-pos-deg") <= 5)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-deg")*2*153.9*D2R);
+        elsif(getprop("surface-positions/flap-pos-deg") <= 0.625)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-deg")*1.6*180*D2R);
+        elsif(getprop("surface-positions/flap-pos-deg") <= 0.75)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-deg")*4/3*208.7*D2R);
+        elsif(getprop("surface-positions/flap-pos-deg") <= 0.825)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-deg")*8/7*239*D2R);
+        elsif(getprop("surface-positions/flap-pos-deg") <= 1)
+            me["flap-dial"].setRotation(getprop("surface-positions/flap-pos-deg")*270*D2R);
 
-        if(math.mod(getprop("surface-positions/flap-pos-rad")*8, 1) != 0)
+        if(math.mod(getprop("surface-positions/flap-pos-deg")*8, 1) != 0)
             me["flap-trans"].show();
         else
             me["flap-trans"].hide();

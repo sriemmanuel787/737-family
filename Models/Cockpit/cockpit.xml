@@ -305,8 +305,54 @@
 
     <!-- Instrument Screens -->
     <animation>
+        <type>pick</type>
+        <object-name>screen1.full</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.showPFDC();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
         <type>select</type>
+        <object-name>screen2.L</object-name>
+        <object-name>screen2.R</object-name>
+        <condition>
+            <equals>
+                <property>sim/fdm-initialized</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>screen2.R</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.showEICAS();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
         <object-name>screen2.full</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.showNDWide();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>select</type>
         <object-name>screen3.full</object-name>
         <condition>
             <equals>
@@ -314,6 +360,30 @@
                 <value>0</value>
             </equals>
         </condition>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>screen3.L</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.showEICAS();</script>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>screen4.full</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.showPFDF();</script>
+            </binding>
+        </action>
     </animation>
 
     <!-- Yoke animations -->

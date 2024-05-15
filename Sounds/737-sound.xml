@@ -667,7 +667,7 @@
             <name>flaps</name>
             <mode>in-transit</mode>
             <path>Aircraft/737-MAX/Sounds/flaps.wav</path>
-            <property>/surface-positions/flap-pos-rad</property>
+            <property>/surface-positions/flap-pos-norm</property>
             <volume>
                 <property>sim/current-view/z-offset-m</property>
                 <offset>1</offset>

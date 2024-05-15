@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+	<name>wingflex</name>
+	<inherits-from>Effects/model-wingflex</inherits-from> <!-- inherit from the wingflex effect, this includes the wingflex shader. The effect itself inherits from model-default -->
+	<parameters>
+		<wingflex-type>0</wingflex-type> <!-- 0 = non-organic; 1 = organic -->
+		<wingflex-z><use>/sim/systems/wingflexer/z-m</use></wingflex-z> <!-- Set this property to one that gives the displacement of the wingtips, in z-direction, in meters-->
+		<body-width>1.87226</body-width> <!-- This sets an offset, so that the wing root is not yet displaced. Set this to be the width of your aircraft's body. (in m) -->
+		<wing-span>35.9</wing-span> <!-- Self-explanatory, the wing span -->
+	</parameters>
+
+	<generate>
+		<tangent type="int">6</tangent>
+		<binormal type="int">7</binormal>
+	</generate>
+
+	<technique n="4">
+		<pass>
+			<program>
+				<attribute>
+					<name>tangent</name>
+					<index>6</index>
+				</attribute>
+				<attribute>
+					<name>binormal</name>
+					<index>7</index>
+				</attribute>
+			</program>
+		</pass>
+	</technique>
+
+	<technique n="7">
+		<pass>
+			<program>
+				<attribute>
+					<name>tangent</name>
+					<index>6</index>
+					</attribute>
+					<attribute>
+					<name>binormal</name>
+					<index>7</index>
+				</attribute>
+			</program>
+		</pass>
+	</technique>
+
+	<technique n="9">
+		<pass>
+			<program>
+				<attribute>
+					<name>tangent</name>
+					<index>6</index>
+					</attribute>
+					<attribute>
+					<name>binormal</name>
+					<index>7</index>
+				</attribute>
+			</program>
+		</pass>
+	</technique>
+
+</PropertyList>

@@ -27,7 +27,7 @@ var canvas_mfd = {
 		# Variables
 		var eng1n1 = getprop("engines/engine[0]/n1");
 		var eng2n1 = getprop("engines/engine[1]/n1");
-		var flapPos = getprop("surface-positions/flap-pos-rad");
+		var flapPos = getprop("surface-positions/flap-pos-deg");
 
         # Air Temperature, Flight Mode
 		me["air-temperature"].setText(sprintf("%+i", getprop("environment/temperature-degc")));

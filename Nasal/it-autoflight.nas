@@ -46,7 +46,7 @@ var Misc = {
 	efis0True: props.globals.getNode("/instrumentation/efis[0]/mfd/true-north", 1),
 	efis1Trk: props.globals.getNode("/instrumentation/efis[1]/hdg-trk-selected", 1),
 	efis1True: props.globals.getNode("/instrumentation/efis[1]/mfd/true-north", 1),
-	flapNorm: props.globals.getNode("/surface-positions/flap-pos-rad", 1),
+	flapNorm: props.globals.getNode("/surface-positions/flap-pos-norm", 1),
 };
 
 var Orientation = {

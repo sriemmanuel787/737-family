@@ -1,4 +1,4 @@
-## 737-MAX Start - Shutdown
+## 737-800 Start - Shutdown
 
 
 # Autostart #
