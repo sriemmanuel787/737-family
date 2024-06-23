@@ -2,7 +2,7 @@
 <PropertyList>
     <path>737-8.ac</path>
 
-    <effect>
+    <!-- <effect>
         <inherits-from>Models/Effects/wingflex</inherits-from>
         <object-name>aileron.L</object-name>
         <object-name>aileron.R</object-name>
@@ -80,5 +80,5 @@
         <object-name>wing.R</object-name>
         <object-name>winglet.AT-L</object-name>
         <object-name>winglet.AT-R</object-name>
-    </effect>
+    </effect> -->
 </PropertyList>
