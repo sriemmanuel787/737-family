@@ -3,6 +3,7 @@
 <PropertyList>
 	<name>wingflex</name>
 	<inherits-from>Effects/model-wingflex</inherits-from> <!-- inherit from the wingflex effect, this includes the wingflex shader. The effect itself inherits from model-default -->
+	<inherits-from>fuselage</inherits-from>
 	<parameters>
 		<wingflex-type>0</wingflex-type> <!-- 0 = non-organic; 1 = organic -->
 		<wingflex-z><use>/sim/systems/wingflexer/z-m</use></wingflex-z> <!-- Set this property to one that gives the displacement of the wingtips, in z-direction, in meters-->

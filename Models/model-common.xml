@@ -1,9 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Animation common properties -->
 
-<?xml version="1.0"?>
 <PropertyList>
-    <!-- <effect>
-        <inherits-from>Models/Effects/wingflex</inherits-from>
+    <effect>
+        <inherits-from>Effects/fuselage</inherits-from>
+        <object-name>antennae</object-name>
+        <object-name>apu.cover</object-name>
+        <object-name>door.LA</object-name>
+        <object-name>door.LF</object-name>
+        <object-name>door.RA</object-name>
+        <object-name>door.RF</object-name>
+        <object-name>cargo.doorF</object-name>
+        <object-name>cargo.doorA</object-name>
+        <object-name>elevator.L1</object-name>
+        <object-name>elevator.L2</object-name>
+        <object-name>elevator.R1</object-name>
+        <object-name>elevator.R2</object-name>
+        <object-name>fuselage</object-name>
+        <object-name>gpu.cover</object-name>
+        <object-name>h-stab.L</object-name>
+        <object-name>h-stab.R</object-name>
+        <object-name>mlg.coverL3</object-name>
+        <object-name>mlg.coverR3</object-name>
+        <object-name>nlg.doorL</object-name>
+        <object-name>nlg.doorR</object-name>
+        <object-name>press.cover</object-name>
+        <object-name>ram.L</object-name>
+        <object-name>ram.R</object-name>
+        <object-name>rudder</object-name>
+        <object-name>tail-skid</object-name>
+        <object-name>v-stab</object-name>
+    </effect>
+    
+    <effect>
+        <inherits-from>Effects/wingflex</inherits-from>
         <object-name>aileron.L</object-name>
         <object-name>aileron.R</object-name>
         <object-name>flap.coverL1</object-name>
@@ -42,6 +72,10 @@
         <object-name>light.posR</object-name>
         <object-name>light.strobeL</object-name>
         <object-name>light.strobeR</object-name>
+        <object-name>mlg.coverL1</object-name>
+        <object-name>mlg.coverL2</object-name>
+        <object-name>mlg.coverR1</object-name>
+        <object-name>mlg.coverR2</object-name>
         <object-name>n1.cowl</object-name>
         <object-name>n1.fan</object-name>
         <object-name>n1.intake</object-name>
@@ -80,6 +114,92 @@
         <object-name>wing.R</object-name>
         <object-name>winglet.AT-L</object-name>
         <object-name>winglet.AT-R</object-name>
-    </effect> -->
+    </effect>
+
+    <effect>
+        <inherits-from>Effects/wing-parts</inherits-from>
+        <object-name>n1.fan</object-name>
+        <object-name>n1.intake</object-name>
+        <object-name>n1.pylon</object-name>
+        <object-name>n2.fan</object-name>
+        <object-name>n2.intake</object-name>
+        <object-name>n2.pylon</object-name>
+        <object-name>wing.chromeL</object-name>
+        <object-name>wing.chromeR</object-name>
+        <object-name>wing.hookL</object-name>
+        <object-name>wing.hookR</object-name>
+    </effect>
+
+    <!-- TO-DO: Effects for glass
+        Props needed:
+        environment/aircraft-effects/splash-vector-x
+        environment/aircraft-effects/splash-vector-y
+        environment/aircraft-effects/splash-vector-z
+        environment/aircraft-effects/frost-level
+        environment/aircraft-effects/fog-level
+        environent/aircraft-effects/use-wipers
+    -->
+
+    <!-- Animations -->
+    <!-- Engines -->
+    <animation>
+        <type>spin</type>
+        <object-name>n1.fan</object-name>
+        <property>engines/engine[0]/n1</property>
+        <factor>-46</factor>
+        <axis>
+            <x1-m>-3.83608</x1-m>
+            <y1-m>-5.14298</y1-m>
+            <z1-m>0.445152</z1-m>
+            <x2-m>-3.44732</x2-m>
+            <y2-m>-5.14258</y2-m>
+            <z2-m>0.445094</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>n1.rev</object-name>
+        <property>engines/engine[0]/reverser-pos-norm</property>
+        <factor>0.5</factor>
+        <axis>
+            <x1-m>-2.6311</x1-m>
+            <y1-m>-5.05067</y1-m>
+            <z1-m>1.6004</z1-m>
+            <x2-m>-0.840188</x2-m>
+            <y2-m>-5.12519</y2-m>
+            <z2-m>1.6004</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>spin</type>
+        <object-name>n2.fan</object-name>
+        <property>engines/engine[1]/n1</property>
+        <factor>-46</factor>
+        <axis>
+            <x1-m>-3.83608</x1-m>
+            <y1-m>5.14298</y1-m>
+            <z1-m>0.445152</z1-m>
+            <x2-m>-3.44732</x2-m>
+            <y2-m>5.14258</y2-m>
+            <z2-m>0.445094</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>n2.rev</object-name>
+        <property>engines/engine[1]/reverser-pos-norm</property>
+        <factor>0.5</factor>
+        <axis>
+            <x1-m>-2.6311</x1-m>
+            <y1-m>5.05067</y1-m>
+            <z1-m>1.6004</z1-m>
+            <x2-m>-0.840188</x2-m>
+            <y2-m>5.12519</y2-m>
+            <z2-m>1.6004</z2-m>
+        </axis>
+    </animation>
     
 </PropertyList>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+    <name>hud-screen</name>
+    <inherits-from>Effects/hud</inherits-from>
+    <parameters>
+        <brightness>1.0</brightness>
+        <sample-res>0.0006</sample-res>
+        <sample-far>2.5</sample-far>
+    </parameters>
+</PropertyList>

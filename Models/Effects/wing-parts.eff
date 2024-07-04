@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+    <name>wing-parts</name>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <inherits-from>wingflex</inherits-from>
+    <parameters>
+        <grain-texture-enabled type="int">2</grain-texture-enabled>
+        <grain-magnification type="float">0.1</grain-magnification>
+    </parameters>
+</PropertyList>

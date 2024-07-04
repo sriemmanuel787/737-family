@@ -4,4 +4,9 @@
     <path>
         <path>cockpit.ac</path>
     </path>
+
+    <!-- <effect>
+        <inherits-from>Models/Effects/hud-screen</inherits-from>
+        <object-name>hud.screen</object-name>
+    </effect> -->
 </PropertyList>
