@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
-    <path>
         <path>cockpit.ac</path>
-    </path>
 
     <!-- <effect>
         <inherits-from>Models/Effects/hud-screen</inherits-from>

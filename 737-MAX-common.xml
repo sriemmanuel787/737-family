@@ -580,59 +580,91 @@
     </autopilot>
 
     <controls>
+        <bleed>
+            <apu-on type="bool">0</apu-on>
+            <isolation-valve type="bool">0</isolation-valve>
+            <l-recirc-fan type="int">0</l-recirc-fan>
+            <n1-on type="bool">0</n1-on>
+            <n2-on type="bool">0</n2-on>
+            <ovht-test type="bool">0</ovht-test>
+            <pack-l type="int">0</pack-l>
+            <pack-r type="int">0</pack-r>
+            <r-recirc-fan type="int">0</r-recirc-fan>
+            <trip-reset type="bool">0</trip-reset>
+        </bleed>
         <elec>
+            <ac-mode type="int">0</ac-mode>
+            <apu-gen-1 type="bool">0</apu-gen-1>
+            <apu-gen-2 type="bool">0</apu-gen-2>
+            <bus-trans type="bool">0</bus-trans>
+            <cabin type="bool">0</cabin>
             <dc-mode type="int">0</dc-mode>
             <dc-on type="int">0</dc-on>
-            <ac-mode type="int">0</ac-mode>
-            <cabin type="bool">0</cabin>
+            <drive-1-conn type="bool">0</drive-1-conn>
+            <drive-2-conn type="bool">0</drive-2-conn>
+            <gen-1 type="bool">0</gen-1>
+            <gen-2 type="bool">0</gen-2>
+            <grd-power type="bool">0</grd-power>
             <ife type="bool">0</ife>
+            <standby-pwr type="int">0</standby-pwr>
         </elec>
+        <eng>
+            <apu type="int">0</apu>
+            <eng-mode type="int">0</eng-mode>
+            <n1-start type="int">0</n1-start>
+            <n2-start type="int">0</n2-start>
+        </eng>
         <flt-control>
+            <alt-flaps-arm type="bool">0</alt-flaps-arm>
+            <alt-flaps type="int">0</alt-flaps>
             <rudder-a type="int">0</rudder-a>
             <rudder-b type="int">0</rudder-b>
             <spoiler-a type="bool">0</spoiler-a>
             <spoiler-b type="bool">0</spoiler-b>
             <yaw-damper type="bool">0</yaw-damper>
-            <alt-flaps-arm type="bool">0</alt-flaps-arm>
-            <alt-flaps type="int">0</alt-flaps>
         </flt-control>
         <fuel>
             <crossfeed type="bool">0</crossfeed>
-            <pump-lf type="bool">0</pump-lf>
-            <pump-la type="bool">0</pump-la>
-            <pump-rf type="bool">0</pump-rf>
-            <pump-ra type="bool">0</pump-ra>
             <pump-cl type="bool">0</pump-cl>
             <pump-cr type="bool">0</pump-cr>
+            <pump-la type="bool">0</pump-la>
+            <pump-lf type="bool">0</pump-lf>
+            <pump-ra type="bool">0</pump-ra>
+            <pump-rf type="bool">0</pump-rf>
         </fuel>
+        <heat>
+            <eng-1 type="bool">0</eng-1>
+            <eng-1-hyd type="bool">0</eng-1-hyd>
+            <eng-2 type="bool">0</eng-2>
+            <eng-2-hyd type="bool">0</eng-2-hyd>
+            <elec-1-hyd type="bool">0</elec-1-hyd>
+            <elec-2-hyd type="bool">0</elec-2-hyd>
+            <probe-a type="bool">0</probe-a>
+            <probe-b type="bool">0</probe-b>
+            <window-fwd-l type="bool">0</window-fwd-l>
+            <window-fwd-r type="bool">0</window-fwd-r>
+            <window-side-l type="bool">0</window-side-l>
+            <window-side-r type="bool">0</window-side-r>
+            <wing type="bool">0</wing>
+        </heat>
         <lighting>
+            <anti-collision type="bool">0</anti-collision>
             <landing-l type="bool">0</landing-l>
             <landing-r type="bool">0</landing-r>
-            <rwy-turnoff-l type="bool">0</rwy-turnoff-l>
-            <rwy-turnoff-r type="bool">0</rwy-turnoff-r>
             <logo type="bool">0</logo>
             <position type="int">0</position>
-            <anti-collision type="bool">0</anti-collision>
-            <wing type="bool">0</wing>
+            <rwy-turnoff-l type="bool">0</rwy-turnoff-l>
+            <rwy-turnoff-r type="bool">0</rwy-turnoff-r>
             <wheel-well type="bool">0</wheel-well>
+            <wing type="bool">0</wing>
         </lighting>
         <nav>
-            <vhf-nav type="int">0</vhf-nav>
-            <irs type="int">0</irs>
-            <fmc type="int">0</fmc>
-            <display-src type="int">0</display-src>
             <control-src type="int">0</control-src>
+            <display-src type="int">0</display-src>
+            <fmc type="int">0</fmc>
+            <irs type="int">0</irs>
+            <vhf-nav type="int">0</vhf-nav>
         </nav>
-
-
-        <anti-ice>
-            <probe-a type="int">0</probe-a>
-            <probe-b type="int">0</probe-b>
-            <windows-1 type="int">0</windows-1>
-            <windows-2 type="int">0</windows-2>
-            <windows-3 type="int">0</windows-3>
-            <windows-4 type="int">0</windows-4>
-        </anti-ice>
 
         <APU>
             <master type="int">0</master>
@@ -679,22 +711,6 @@
             <tiller-enabled type="bool">0</tiller-enabled>
         </gear>
 
-        <fuel>
-            <crossfeed type="bool">0</crossfeed>
-            <tank n="0">
-                <pump-fwd type="bool">0</pump-fwd>
-                <pump-aft type="bool">0</pump-aft>
-            </tank>
-            <tank n="1">
-                <pump-fwd type="bool">0</pump-fwd>
-                <pump-aft type="bool">0</pump-aft>
-            </tank>
-            <tank n="2">
-                <pump-left type="bool">0</pump-left>
-                <pump-right type="bool">0</pump-right>
-            </tank>
-        </fuel>
-
         <lighting>
             <panel type="int">0</panel>
             <breaker type="int">0</breaker>
@@ -705,25 +721,6 @@
             <no-smoking type="int">0</no-smoking>
             <seatbelts type="int">0</seatbelts>
         </lighting>
-
-        <wipers>
-            <speed type="double">0</speed>
-            <degrees type="double">0</degrees>
-            <delay type="double">0</delay>
-        </wipers>
-
-        <OH>
-            <apugenl-switch type="int">1</apugenl-switch>
-            <apugenr-switch type="int">1</apugenr-switch>
-            <batt-cover type="bool">0</batt-cover>
-            <gen1-switch type="int">1</gen1-switch>
-            <gen2-switch type="int">1</gen2-switch>
-            <trans-cover type="int">0</trans-cover>
-            <drive1-cover type="int">0</drive1-cover>
-            <drive2-cover type="int">0</drive2-cover>
-            <wiper-left type="int">0</wiper-left>
-            <wiper-right type="int">0</wiper-right>
-        </OH>
 
     </controls>
 
@@ -1049,7 +1046,7 @@
             <side-accel-filtered-norm type="double">0</side-accel-filtered-norm>
         </slip-skid-ball>
     </instrumentation>
-
+    <gui n="0" include="gui/it-gui.xml"/>
     <nasal>
         <hack>
             <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file><!-- must be first -->
