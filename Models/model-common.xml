@@ -2,6 +2,9 @@
 <!-- Animation common properties -->
 
 <PropertyList>
+    <!-- Lights -->
+    <!-- Compositor -->
+    
     <effect>
         <inherits-from>Effects/fuselage</inherits-from>
         <object-name>antennae</object-name>

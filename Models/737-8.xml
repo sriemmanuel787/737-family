@@ -5,6 +5,7 @@
 
     <model>
         <object-name>Cockpit</object-name>
+        <usage>interior</usage>
         <path>Aircraft/737-MAX/Models/Cockpit/cockpit.xml</path>
         <offsets>
             <x-m>2.5765</x-m>
