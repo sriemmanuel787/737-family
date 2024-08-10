@@ -18,7 +18,7 @@ var Engines = {
 	n2Actual:   [props.globals.getNode("engines/engine[0]/n2"), props.globals.getNode("engines/engine[1]/n2")],
     startValve: [props.globals.getNode("controls/engines/engine[0]/starter"), props.globals.getNode("controls/engines/engine[1]/starter")],
 	oilPsi:     [props.globals.getNode("engines/engine[0]/oil-pressure-psi"), props.globals.getNode("engines/engine[1]/oil-pressure-psi")],
-	state:      [props.globals.getNode("sim/failure-manager/engines/engine[0]/serviceable"), props.globals.getNode("sim/failure-manager/engines/engine[1]/serviceable")],
+	engState:      [props.globals.getNode("sim/failure-manager/engines/engine[0]/serviceable"), props.globals.getNode("sim/failure-manager/engines/engine[1]/serviceable")],
 };
 
 var Controls = {
@@ -52,25 +52,30 @@ var Orientation = {
 };
 
 var Autoflight = {
-	fdPitch: 	props.globals.getNode("it-autoflight/fd/pitch-bar"),
-	fdRoll: 	props.globals.getNode("it-autoflight/fd/roll-bar"),
-	fd1: 		props.globals.getNode("it-autoflight/input/fd1"),
-	fd2: 		props.globals.getNode("it-autoflight/input/fd2"),
-	alt: 		props.globals.getNode("it-autoflight/input/alt"),
-	ap1: 		props.globals.getNode("it-autoflight/input/ap1"),
-	ap2: 		props.globals.getNode("it-autoflight/input/ap2"),
-	aThr:	 	props.globals.getNode("it-autoflight/input/athr"),
-	fltAngle: 	props.globals.getNode("it-autoflight/input/fpa"),
-	heading:  	props.globals.getNode("it-autoflight/input/hdg"),
-	ktsMach:  	props.globals.getNode("it-autoflight/input/kts-mach"),
-	lnav: 		props.globals.getNode("it-autoflight/mode/lat"),
-	vnav: 		props.globals.getNode("it-autoflight/mode/vert"),
-	thr:		props.globals.getNode("it-autoflight/mode/thr"),
-	spdKts: 	props.globals.getNode("it-autoflight/input/spd-kts"),
-	spdMach: 	props.globals.getNode("it-autoflight/input/spd-mach"),
-	togaArm: 	props.globals.getNode("it-autoflight/input/toga"),
-	vSpd: 		props.globals.getNode("it-autoflight/input/vs"),
-    afds: 		props.globals.getNode("autopilot/display/afds-mode")
+	fdPitch: 	 props.globals.getNode("it-autoflight/fd/pitch-bar"),
+	fdRoll: 	 props.globals.getNode("it-autoflight/fd/roll-bar"),
+	fd1: 		 props.globals.getNode("it-autoflight/input/fd1"),
+	fd2: 		 props.globals.getNode("it-autoflight/input/fd2"),
+	alt: 		 props.globals.getNode("it-autoflight/input/alt"),
+	ap1: 		 props.globals.getNode("it-autoflight/input/ap1"),
+	ap2: 		 props.globals.getNode("it-autoflight/input/ap2"),
+	aThr:	 	 props.globals.getNode("it-autoflight/input/athr"),
+	fltAngle: 	 props.globals.getNode("it-autoflight/input/fpa"),
+	heading:  	 props.globals.getNode("it-autoflight/input/hdg"),
+	ktsMach:  	 props.globals.getNode("it-autoflight/input/kts-mach"),
+	lnav: 		 props.globals.getNode("it-autoflight/mode/lat"),
+	vnav: 		 props.globals.getNode("it-autoflight/mode/vert"),
+	thr:		 props.globals.getNode("it-autoflight/mode/thr"),
+	spdKts: 	 props.globals.getNode("it-autoflight/input/spd-kts"),
+	spdMach: 	 props.globals.getNode("it-autoflight/input/spd-mach"),
+	togaArm: 	 props.globals.getNode("it-autoflight/input/toga"),
+	vSpd: 		 props.globals.getNode("it-autoflight/input/vs"),
+    afds: 		 props.globals.getNode("autopilot/display/afds-mode"),
+	rollMode:    props.globals.getNode("autopilot/display/roll-mode"),
+	pitchMode:   props.globals.getNode("autopilot/display/pitch-mode"),
+	spdMode:     props.globals.getNode("autopilot/display/throttle-mode"),
+	rollModeArm: props.globals.getNode("autopilot/input/roll-mode-armed"),
+	pitchModeArm:props.globals.getNode("autopilot/input/pitch-mode-armed"),
 };
 
 var Sim = {
