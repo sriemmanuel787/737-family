@@ -55,6 +55,10 @@
                 <name>IT-AUTOTHRUST</name>
                 <path>Systems/it-autothrust.xml</path>
             </autopilot>
+            <autopilot>
+                <name>Gear AGL FT</name>
+                <path>Systems/gear-agl-ft.xml</path>
+            </autopilot>
         </systems>
 
         <instrumentation>
@@ -1053,15 +1057,14 @@
         </slip-skid-ball>
     </instrumentation>
     <nasal>
-        <hack>
-            <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file><!-- must be first -->
-        </hack>
         <pts>
             <file>Aircraft/737-MAX/Nasal/property-tree-setup.nas</file>
         </pts>
+        <hack>
+            <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file>
+        </hack>
         <cdu>
-            <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>            <!-- custom
-            implementation of the CDU from instruments-3D -->
+            <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>
         </cdu>
         <canvas_pfd>
             <file>Aircraft/737-MAX/Nasal/Displays/PFD.nas</file>
