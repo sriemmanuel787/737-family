@@ -2,13 +2,13 @@ print("Loading Primary Flight Display");
 var pfd_canvas = nil;
 var pfd_display = nil;
 
-var value = {
-	autopilot: {
+var Value = {
+	Autopilot: {
 		pitchArm: "",
 		rollArm: "",
 		pitchMode: "",
 		rollMode: "",
-		speedMode: "",
+		speedMode: ""
 	}
 }
 
@@ -27,7 +27,7 @@ var canvas_pfd = {
 			m[key] = pfd.getElementById(key);
 
         m.timers=[];
-		
+
 		# These run once - do not put inside update()
 		m["spd-back"].setColorFill(0, 0, 0, 0.2);
 		m["alt-back"].setColorFill(0, 0, 0, 0.2);
@@ -38,6 +38,12 @@ var canvas_pfd = {
 	},
 
 	update: func() {
+		Value.Autopilot.pitchArm = pts.Autoflight.pitchModeArm.getValue();
+		Value.Autopilot.rollArm = pts.Autoflight.rollModeArm.getValue();
+		Value.Autopilot.pitchMode = pts.Autoflight.pitchMode.getValue();
+		Value.Autopilot.rollMode = pts.Autoflight.rollMode.getValue();
+		Value.Autopilot.speedMode = pts.Autoflight.spdMode.getValue();
+
 		# Hide failure flags by default
 		me["fail-no-vspd"].hide();
 		me["fail-spd-lim"].hide();
@@ -60,6 +66,13 @@ var canvas_pfd = {
 		me["fail-spd"].hide();
 		me["warning-msg"].hide();
 		me["warning-back"].hide();
+
+		# Autopilot modes
+		me["ap-pitch-arm"].setText(Value.Autopilot.pitchArm);
+		me["ap-roll-arm"].setText(Value.Autopilot.rollArm);
+		me["ap-pitch-mode"].setText(Value.Autopilot.pitchMode);
+		me["ap-roll-mode"].setText(Value.Autopilot.rollMode);
+		me["ap-speed-mode"].setText(Value.Autopilot.speedMode);
 	},
 };
 

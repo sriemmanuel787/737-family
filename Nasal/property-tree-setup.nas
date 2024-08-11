@@ -3,9 +3,9 @@
 
 var Consumables = {
     Fuel:{
-        right:  props.globals.getNode("consumables/fuel/tank[0]/level-kg"),
-        left:   props.globals.getNode("consumables/fuel/tank[1]/level-kg"),
-        center: props.globals.getNode("consumables/fuel/tank[2]/level-kg"),
+        tankRight:  props.globals.getNode("consumables/fuel/tank[0]/level-kg"),
+        tankLeft:   props.globals.getNode("consumables/fuel/tank[1]/level-kg"),
+        tankCenter: props.globals.getNode("consumables/fuel/tank[2]/level-kg"),
     }
 };
 
@@ -52,30 +52,30 @@ var Orientation = {
 };
 
 var Autoflight = {
-	fdPitch: 	 props.globals.getNode("it-autoflight/fd/pitch-bar"),
-	fdRoll: 	 props.globals.getNode("it-autoflight/fd/roll-bar"),
-	fd1: 		 props.globals.getNode("it-autoflight/input/fd1"),
-	fd2: 		 props.globals.getNode("it-autoflight/input/fd2"),
-	alt: 		 props.globals.getNode("it-autoflight/input/alt"),
-	ap1: 		 props.globals.getNode("it-autoflight/input/ap1"),
-	ap2: 		 props.globals.getNode("it-autoflight/input/ap2"),
-	aThr:	 	 props.globals.getNode("it-autoflight/input/athr"),
-	fltAngle: 	 props.globals.getNode("it-autoflight/input/fpa"),
-	heading:  	 props.globals.getNode("it-autoflight/input/hdg"),
-	ktsMach:  	 props.globals.getNode("it-autoflight/input/kts-mach"),
-	lnav: 		 props.globals.getNode("it-autoflight/mode/lat"),
-	vnav: 		 props.globals.getNode("it-autoflight/mode/vert"),
-	thr:		 props.globals.getNode("it-autoflight/mode/thr"),
-	spdKts: 	 props.globals.getNode("it-autoflight/input/spd-kts"),
-	spdMach: 	 props.globals.getNode("it-autoflight/input/spd-mach"),
-	togaArm: 	 props.globals.getNode("it-autoflight/input/toga"),
-	vSpd: 		 props.globals.getNode("it-autoflight/input/vs"),
-    afds: 		 props.globals.getNode("autopilot/display/afds-mode"),
-	rollMode:    props.globals.getNode("autopilot/display/roll-mode"),
-	pitchMode:   props.globals.getNode("autopilot/display/pitch-mode"),
-	spdMode:     props.globals.getNode("autopilot/display/throttle-mode"),
-	rollModeArm: props.globals.getNode("autopilot/input/roll-mode-armed"),
-	pitchModeArm:props.globals.getNode("autopilot/input/pitch-mode-armed"),
+	fdPitch: 	  props.globals.getNode("it-autoflight/fd/pitch-bar"),
+	fdRoll: 	  props.globals.getNode("it-autoflight/fd/roll-bar"),
+	fd1: 		  props.globals.getNode("it-autoflight/input/fd1"),
+	fd2: 		  props.globals.getNode("it-autoflight/input/fd2"),
+	alti: 		  props.globals.getNode("it-autoflight/input/alt"),
+	ap1: 		  props.globals.getNode("it-autoflight/input/ap1"),
+	ap2: 		  props.globals.getNode("it-autoflight/input/ap2"),
+	aThr:	 	  props.globals.getNode("it-autoflight/input/athr"),
+	fltAngle: 	  props.globals.getNode("it-autoflight/input/fpa"),
+	heading:  	  props.globals.getNode("it-autoflight/input/hdg"),
+	ktsMach:  	  props.globals.getNode("it-autoflight/input/kts-mach"),
+	lnav: 		  props.globals.getNode("it-autoflight/mode/lat"),
+	vnav: 		  props.globals.getNode("it-autoflight/mode/vert"),
+	thr:		  props.globals.getNode("it-autoflight/mode/thr"),
+	spdKts: 	  props.globals.getNode("it-autoflight/input/spd-kts"),
+	spdMach: 	  props.globals.getNode("it-autoflight/input/spd-mach"),
+	togaArm: 	  props.globals.getNode("it-autoflight/input/toga"),
+	vSpd: 		  props.globals.getNode("it-autoflight/input/vs"),
+    afds: 		  props.globals.getNode("autopilot/display/afds-mode"),
+	rollMode:     props.globals.getNode("autopilot/display/roll-mode"),
+	pitchMode:    props.globals.getNode("autopilot/display/pitch-mode"),
+	spdMode:      props.globals.getNode("autopilot/display/throttle-mode"),
+	rollModeArm:  props.globals.getNode("autopilot/input/roll-mode-armed"),
+	pitchModeArm: props.globals.getNode("autopilot/input/pitch-mode-armed")
 };
 
 var Sim = {
@@ -83,6 +83,8 @@ var Sim = {
 	month:       props.globals.getNode("sim/time/utc/month"),
 	year:        props.globals.getNode("sim/time/utc/year"),
 	timeElapsed: props.globals.getNode("sim/time/elapsed-sec"),
+	timeUTC:     props.globals.getNode("sim/time/gmt-string"),
+	year:        props.globals.getNode("sim/time/utc/year"),
 	timeUTC:     props.globals.getNode("sim/time/gmt-string")
 };
 

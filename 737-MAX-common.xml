@@ -6,8 +6,8 @@
         <author>Original by Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), legoboyvdlp,
             RenanMsV (BR-RVD), adapted by SP-NTX, Captain Jake, Marsdolphin, Israel Emmanuel
             (naviat)</author>
-        <status>Version 0.5</status>
         <flight-model>jsb</flight-model>
+        <gui n="0" include="gui/it-gui.xml" />
 
         <systems>
             <!-- Disable the generic electrical system -->
@@ -199,58 +199,69 @@
     </sim>
 
     <it-autoflight>
-		<config>
-			<roll>
-				<kp-low>0.11</kp-low> <!-- Kp at low speed -->
-				<kp-high>0.05</kp-high> <!-- Kp at high speed -->
-				<ti>1.0</ti>
-				<td>0.0001</td>
-			</roll>
-			<pitch>
-				<kp-low>-0.14</kp-low> <!-- Kp at low speed -->
-				<kp-high>-0.06</kp-high> <!-- Kp at high speed -->
-				<ti>0.5</ti>
-				<td>0.001</td>
-			</pitch>
-			<cmd>
-				<alt>-5</alt>
-				<flch-accel>1.5</flch-accel>
-				<roll>1.6</roll>
-			</cmd>
-			<autoland> 
-				<pitch-kp>0.0051</pitch-kp>
-				<yaw-kp>-0.05</yaw-kp>
-			</autoland>
-			<rollout>
-				<roll-kp>-0.1</roll-kp>
-				<pitch-nose>0.1</pitch-nose>
-				<pitch-rate>-1.5</pitch-rate>
-				<yaw-kp>-0.02</yaw-kp>
-			</rollout>
-		</config>
-		<settings>
-			<accel-ft type="double">1000</accel-ft> <!-- Acceleration AGL when T/O CLB changes to SPD CLB, 0 to disable -->
-			<auto-bank-limit-calc type="bool">1</auto-bank-limit-calc> <!-- Disable to add a custom auto bank limit schedule -->
-			<autoland-without-ap type="bool">1</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
-			<autothrottle-max type="double">0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
-			<autothrottle-min type="double">0.02</autothrottle-min> <!-- Thrust Low Limit Normalized -->
-			<bank-max-deg type="double">25</bank-max-deg> <!-- Maximum Bank Limit -->
-			<custom-fma type="bool">0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented --> 
-			<disable-final type="bool">0</disable-final> <!-- Disable the Final Controllers, for custom FCS integration -->
-			<fd-starts-on type="bool">0</fd-starts-on> <!-- Enable/Disable Flight Director being on by default -->
-			<fd-takeoff-offset type="double">0</fd-takeoff-offset> <!-- Adjust the Flight Director Pitch Bar on ground -->
-			<hdg-hld-separate type="bool">0</hdg-hld-separate> <!-- Separates the HDG HLD mode from the HDG SEL mode -->
-			<land-enable type="bool">1</land-enable> <!-- Enable/Disable Autoland -->
-			<land-flap type="double">0.7</land-flap> <!-- Minimum Flap used for Landing -->
-			<lnav-ft type="double">50</lnav-ft> <!-- AGL when LNAV becomes active if armed -->
-			<retard-enable type="bool">1</retard-enable> <!-- AGL to Thrust Retard -->
-			<retard-ft type="double">50</retard-ft> <!-- Enable Thrust Retard -->
-			<takeoff-hdg-cap type="double">5</takeoff-hdg-cap> <!-- Maximum bank to capture current hdg in T/O mode -->
-			<toga-spd type="double">160</toga-spd> <!-- V2 + 10kts -->
-			<use-controls-engines type="bool">1</use-controls-engines> <!-- Use /controls/engines properties -->
-			<use-controls-flight type="bool">1</use-controls-flight> <!-- Use /controls/flight properties -->
-		</settings>
-	</it-autoflight>
+        <config>
+            <roll>
+                <kp-low>0.11</kp-low> <!-- Kp at low speed -->
+                <kp-high>0.05</kp-high> <!-- Kp at high speed -->
+                <ti>1.0</ti>
+                <td>0.0001</td>
+            </roll>
+            <pitch>
+                <kp-low>-0.14</kp-low> <!-- Kp at low speed -->
+                <kp-high>-0.06</kp-high> <!-- Kp at high speed -->
+                <ti>0.5</ti>
+                <td>0.001</td>
+            </pitch>
+            <cmd>
+                <alt>-5</alt>
+                <flch-accel>1.5</flch-accel>
+                <roll>1.6</roll>
+            </cmd>
+            <autoland>
+                <pitch-kp>0.0051</pitch-kp>
+                <yaw-kp>-0.05</yaw-kp>
+            </autoland>
+            <rollout>
+                <roll-kp>-0.1</roll-kp>
+                <pitch-nose>0.1</pitch-nose>
+                <pitch-rate>-1.5</pitch-rate>
+                <yaw-kp>-0.02</yaw-kp>
+            </rollout>
+        </config>
+        <settings>
+            <accel-ft type="double">1000</accel-ft> <!-- Acceleration AGL when T/O CLB changes to SPD
+            CLB, 0 to disable -->
+            <auto-bank-limit-calc type="bool">1</auto-bank-limit-calc> <!-- Disable to add a custom
+            auto bank limit schedule -->
+            <autoland-without-ap type="bool">1</autoland-without-ap> <!-- Engage LAND and FLARE Modes
+            even if the AP is off -->
+            <autothrottle-max type="double">0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
+            <autothrottle-min type="double">0.02</autothrottle-min> <!-- Thrust Low Limit Normalized -->
+            <bank-max-deg type="double">25</bank-max-deg> <!-- Maximum Bank Limit -->
+            <custom-fma type="bool">0</custom-fma> <!-- Call functions when modes change for a custom
+            FMA to be implemented -->
+            <disable-final type="bool">0</disable-final> <!-- Disable the Final Controllers, for
+            custom FCS integration -->
+            <fd-starts-on type="bool">0</fd-starts-on> <!-- Enable/Disable Flight Director being on
+            by default -->
+            <fd-takeoff-offset type="double">0</fd-takeoff-offset> <!-- Adjust the Flight Director
+            Pitch Bar on ground -->
+            <hdg-hld-separate type="bool">0</hdg-hld-separate> <!-- Separates the HDG HLD mode from
+            the HDG SEL mode -->
+            <land-enable type="bool">1</land-enable> <!-- Enable/Disable Autoland -->
+            <land-flap type="double">0.7</land-flap> <!-- Minimum Flap used for Landing -->
+            <lnav-ft type="double">50</lnav-ft> <!-- AGL when LNAV becomes active if armed -->
+            <retard-enable type="bool">1</retard-enable> <!-- AGL to Thrust Retard -->
+            <retard-ft type="double">50</retard-ft> <!-- Enable Thrust Retard -->
+            <takeoff-hdg-cap type="double">5</takeoff-hdg-cap> <!-- Maximum bank to capture current
+            hdg in T/O mode -->
+            <toga-spd type="double">160</toga-spd> <!-- V2 + 10kts -->
+            <use-controls-engines type="bool">1</use-controls-engines> <!-- Use /controls/engines
+            properties -->
+            <use-controls-flight type="bool">1</use-controls-flight> <!-- Use /controls/flight
+            properties -->
+        </settings>
+    </it-autoflight>
 
     <lighting>
         <interior type="double">0</interior>
@@ -266,11 +277,6 @@
         <dome-norm type="double">0</dome-norm>
         <overhead-panel-norm type="double">0</overhead-panel-norm>
     </lighting>
-
-    <autopilot>
-        <name>IT-AUTOFLIGHT</name>
-        <path>Systems/it-autoflight.xml</path>
-    </autopilot>
 
     <consumables>
         <fuel>
@@ -1046,7 +1052,6 @@
             <side-accel-filtered-norm type="double">0</side-accel-filtered-norm>
         </slip-skid-ball>
     </instrumentation>
-    <gui n="0" include="gui/it-gui.xml"/>
     <nasal>
         <hack>
             <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file><!-- must be first -->
@@ -1058,6 +1063,9 @@
             <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>            <!-- custom
             implementation of the CDU from instruments-3D -->
         </cdu>
+        <canvas_pfd>
+            <file>Aircraft/737-MAX/Nasal/Displays/PFD.nas</file>
+        </canvas_pfd>
         <boeing737>
             <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
             <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
@@ -1073,8 +1081,7 @@
             <file>Aircraft/737-MAX/Nasal/shake.nas</file>
             <file>Aircraft/737-MAX/Nasal/warnings.nas</file>
             <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
-            <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file>
-            <file>Aircraft/737-MAX/Nasal/printGforce.nas</file>
+            <!-- <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file> -->
         </boeing737>
         <systems>
             <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
