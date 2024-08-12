@@ -1093,6 +1093,7 @@
         </systems>
         <itaf>
             <file>Nasal/it-autoflight.nas</file>
+            <file>Nasal/custom-fma.nas</file>
         </itaf>
         <reversethrust>
             <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
