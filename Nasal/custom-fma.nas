@@ -7,6 +7,10 @@ var UpdateFma = {
 	spdText: "PITCH",
 	thrText: "THR LIM",
 	vertText: "T/O CLB",
+    var latMode = {};
+    var spdMode = {};
+    var thrMode = {};
+    var vertMode = {};
 	thr: func() { # Called when speed/thrust modes change
 		me.spdText = Text.spd.getValue();
 		me.thrText = Text.thr.getValue();
