@@ -7,7 +7,7 @@ var UpdateFma = {
 	spdText: "PITCH",
 	thrText: "THR LIM",
 	vertText: "T/O CLB",
-    var latMode = {};
+    var latMode = {"T/O" : "", "RLOU" : "ROLLOUT", "HDG" : "HDG SEL", "ALGN" : "VOR/LOC", "ROLL" : "", "LNAV" : "LNAV", "LOC" : "VOR/LOC"};
     var spdMode = {};
     var thrMode = {};
     var vertMode = {};
