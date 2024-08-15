@@ -208,14 +208,14 @@ var OPTIONS = {
 	tempRevision: props.globals.initNode("/systems/acconfig/temp/saved-revision", 0, "INT"),
 	welcomeSkip: props.globals.initNode("/systems/acconfig/options/welcome-skip", 0, "BOOL"),
 	read: func() {
-		io.read_properties(getprop("/sim/fg-home") ~ "/Export/MD-11-options.xml", "/systems/acconfig/temp");
+		io.read_properties(getprop("/sim/fg-home") ~ "/Export/737-MAX-options.xml", "/systems/acconfig/temp");
 		
 		# Only load if options is new enough
 		if (me.tempRevision.getValue() < CONFIG.minOptionsRevision) {
 			print("System: Options reset!");
 			gui.popupTip("System: Aircraft Options have been reset due to aircraft installation/update!", 10);
 		} else {
-			io.read_properties(getprop("/sim/fg-home") ~ "/Export/MD-11-options.xml", "/systems/acconfig/options");
+			io.read_properties(getprop("/sim/fg-home") ~ "/Export/737-MAX-options.xml", "/systems/acconfig/options");
 			
 			# These aren't stored in acconfig themselves, so we move them there
 			setprop("/sim/model/autopush/route/show", getprop("/systems/acconfig/options/autopush/show-route"));
@@ -228,11 +228,12 @@ var OPTIONS = {
 		setprop("/systems/acconfig/options/autopush/show-route", getprop("/sim/model/autopush/route/show"));
 		setprop("/systems/acconfig/options/autopush/show-wingtip", getprop("/sim/model/autopush/route/show-wingtip"));
 		
-		io.write_properties(getprop("/sim/fg-home") ~ "/Export/MD-11-options.xml", "/systems/acconfig/options");
+		io.write_properties(getprop("/sim/fg-home") ~ "/Export/737-MAX-options.xml", "/systems/acconfig/options");
 	},
 };
 
 # Panel States specifically designed to work with IntegratedSystems design
+# TODO: #41 Adjust methods to 737 MAX
 var PANEL = {
 	engTimer: 10,
 	l1: nil,

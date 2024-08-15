@@ -3,6 +3,7 @@
 <PropertyList>
 
     <sim>
+        <minimum-fg-version>2020.3.14</minimum-fg-version>
         <author>Original by Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), legoboyvdlp,
             RenanMsV (BR-RVD), adapted by SP-NTX, Captain Jake, Marsdolphin, Israel Emmanuel
             (naviat)</author>
@@ -176,8 +177,8 @@
                     <item>
                         <label>Aircraft Config</label>
                         <binding>
-                            <command>nasal</command>
-                            <script>acconfig.main_dlg.open();</script>
+                            <command>dialog-show</command>
+							<dialog-name>acconfig-main</dialog-name>
                         </binding>
                     </item>
                     <item>
@@ -1060,6 +1061,9 @@
         <pts>
             <file>Aircraft/737-MAX/Nasal/property-tree-setup.nas</file>
         </pts>
+        <acconfig>
+			<file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
+		</acconfig>
         <hack>
             <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file>
         </hack>

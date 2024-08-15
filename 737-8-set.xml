@@ -271,9 +271,9 @@
         </weight>
     </payload>
 
-    <nasal>
-        <boeing737>
-            <file>Aircraft/737-MAX/Nasal/liveries-8.nas</file>
-        </boeing737>
-    </nasal>
+    <nasal n="0">
+		<setup>
+			<script>aircraft.livery.init("Aircraft/737-MAX/Models/Liveries-8");</script>
+		</setup>
+	</nasal>
 </PropertyList>

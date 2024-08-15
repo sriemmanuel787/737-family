@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<PropertyList>
+
+	<name>acconfig-du-framerate</name>
+	<layout>vbox</layout>
+	
+	<group>
+		<layout>hbox</layout>
+		
+		<text>
+			<halign>left</halign>
+			<label>DU Framerate</label>
+		</text>
+		
+		<button>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>X</legend>
+			<key>Esc</key>
+			<binding>
+				<command>nasal</command>
+				<script>
+					acconfig.OPTIONS.write();
+					canvas_pfd.rateApply();
+					#canvas_nd.rateApply();
+					canvas_ead.rateApply();
+					canvas_sd.rateApply();
+					canvas_iesi.rateApply();
+					canvas_mcdu.rateApply();
+				</script>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+		
+	<hrule/>
+	
+	<group>
+		<layout>vbox</layout>
+		
+		<text>
+			<halign>left</halign>
+			<label>Here you can adjust the framerate of the Display Units.</label>
+		</text>
+		
+		<group>
+			<layout>table</layout>
+			
+			<text>
+				<row>0</row>
+				<col>0</col>
+				<halign>left</halign>
+				<label>Captain's PFD:</label>
+			</text>
+			
+			<slider>
+				<row>0</row>
+				<col>1</col>
+				<pref-width>250</pref-width>
+				<property>/systems/acconfig/options/du/capt-pfd-fps</property>
+				<min>5</min>
+				<max>30</max>
+				<step>5</step>
+				<live>true</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</slider>
+			
+			<text>
+				<row>0</row>
+				<col>2</col>
+				<halign>left</halign>
+				<border>1</border>
+				<label>999</label>
+				<property>/systems/acconfig/options/du/capt-pfd-fps</property>
+				<live>1</live>
+			</text>
+			
+			<text>
+				<row>2</row>
+				<col>0</col>
+				<halign>left</halign>
+				<label>F/O's PFD:</label>
+			</text>
+			
+			<slider>
+				<row>2</row>
+				<col>1</col>
+				<pref-width>250</pref-width>
+				<property>/systems/acconfig/options/du/fo-pfd-fps</property>
+				<min>5</min>
+				<max>30</max>
+				<step>5</step>
+				<live>true</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</slider>
+			
+			<text>
+				<row>2</row>
+				<col>2</col>
+				<halign>left</halign>
+				<border>1</border>
+				<label>999</label>
+				<property>/systems/acconfig/options/du/fo-pfd-fps</property>
+				<live>1</live>
+			</text>
+			
+			<text>
+				<row>3</row>
+				<col>0</col>
+				<halign>left</halign>
+				<label>Captain's MFD:</label>
+			</text>
+			
+			<slider>
+				<row>3</row>
+				<col>1</col>
+				<pref-width>250</pref-width>
+				<property>/systems/acconfig/options/du/capt-mfd-fps</property>
+				<min>5</min>
+				<max>30</max>
+				<step>5</step>
+				<live>true</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</slider>
+			
+			<text>
+				<row>3</row>
+				<col>2</col>
+				<halign>left</halign>
+				<border>1</border>
+				<label>999</label>
+				<property>/systems/acconfig/options/du/capt-mfd-fps</property>
+				<live>1</live>
+			</text>
+			
+			<text>
+				<row>4</row>
+				<col>0</col>
+				<halign>left</halign>
+				<label>F/O's MFD:</label>
+			</text>
+			
+			<slider>
+				<row>4</row>
+				<col>1</col>
+				<pref-width>250</pref-width>
+				<property>/systems/acconfig/options/du/fo-mfd-fps</property>
+				<min>5</min>
+				<max>30</max>
+				<step>5</step>
+				<live>true</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</slider>
+			
+			<text>
+				<row>4</row>
+				<col>2</col>
+				<halign>left</halign>
+				<border>1</border>
+				<label>999</label>
+				<property>/systems/acconfig/options/du/fo-mfd-fps</property>
+				<live>1</live>
+			</text>
+			
+			<text>
+				<row>5</row>
+				<col>0</col>
+				<halign>left</halign>
+				<label>ISFD:</label>
+			</text>
+			
+			<slider>
+				<row>5</row>
+				<col>1</col>
+				<pref-width>250</pref-width>
+				<property>/systems/acconfig/options/du/isfd-fps</property>
+				<min>5</min>
+				<max>10</max>
+				<step>5</step>
+				<live>true</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</slider>
+			
+			<text>
+				<row>5</row>
+				<col>2</col>
+				<halign>left</halign>
+				<border>1</border>
+				<label>999</label>
+				<property>/systems/acconfig/options/du/isfd-fps</property>
+				<live>1</live>
+			</text>
+		</group>
+	</group>
+	
+	<group>
+		<layout>hbox</layout>
+		
+		<button>
+			<halign>center</halign>
+			<legend>Apply/Save</legend>
+			<pref-width>80</pref-width>
+			<binding>
+				<command>nasal</command>
+				<!-- TODO: #40 these functions will almost definitely need to be reworked -->
+				<script>
+					acconfig.OPTIONS.write();
+					canvas_pfd.rateApply();
+					canvas_mfd.rateApply();
+					canvas_isfd.rateApply();
+				</script>
+			</binding>
+		</button>
+		<button>
+			<halign>center</halign>
+			<legend>Default</legend>
+			<pref-width>80</pref-width>
+			<binding>
+				<command>nasal</command>
+				<script>
+					pts.Systems.Acconfig.Options.Du.captPfdFps.setValue(20);
+					pts.Systems.Acconfig.Options.Du.captMfdFps.setValue(20);
+					pts.Systems.Acconfig.Options.Du.foPfdFps.setValue(20);
+					pts.Systems.Acconfig.Options.Du.foMfdFps.setValue(20);
+					pts.Systems.Acconfig.Options.Du.isfdFps.setValue(10);
+					acconfig.OPTIONS.write();
+					canvas_pfd.rateApply();
+					canvas_mfd.rateApply();
+					canvas_isfd.rateApply();
+				</script>
+			</binding>
+		</button>
+		<button>
+			<halign>center</halign>
+			<legend>Apply/Save/Go Away</legend>
+			<pref-width>180</pref-width>
+			<binding>
+				<command>nasal</command>
+				<script>
+					acconfig.OPTIONS.write();
+					canvas_pfd.rateApply();
+					#canvas_nd.rateApply();
+					canvas_ead.rateApply();
+					canvas_sd.rateApply();
+					canvas_iesi.rateApply();
+					canvas_mcdu.rateApply();
+				</script>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	
+</PropertyList>
