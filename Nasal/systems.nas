@@ -43,7 +43,6 @@ setlistener("sim/signals/fdm-initialized", func {
         systems_started = 1;
 	systems.elec_init();
 	systems.hyd_init();
-	boeing737.shaketimer.start();
 }, 0, 0);
 	
 var timerstall = maketimer(5, func(){

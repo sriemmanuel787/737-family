@@ -1061,15 +1061,24 @@
         <pts>
             <file>Aircraft/737-MAX/Nasal/property-tree-setup.nas</file>
         </pts>
-        <acconfig>
-			<file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
-		</acconfig>
         <hack>
             <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file>
         </hack>
+        <acconfig>
+			<file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
+		</acconfig>
         <cdu>
             <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>
         </cdu>
+        <canvas_isfd>
+            <file>Aircraft/737-MAX/Nasal/Displays/ISFD.nas</file>
+        </canvas_isfd>
+        <canvas_mfd>
+            <file>Aircraft/737-MAX/Nasal/Displays/MFD.nas</file>
+        </canvas_mfd>
+        <canvas_nd>
+            <file>Aircraft/737-MAX/Nasal/Displays/ND.nas</file>
+        </canvas_nd>
         <canvas_pfd>
             <file>Aircraft/737-MAX/Nasal/Displays/PFD.nas</file>
         </canvas_pfd>
@@ -1088,7 +1097,6 @@
             <file>Aircraft/737-MAX/Nasal/shake.nas</file>
             <file>Aircraft/737-MAX/Nasal/warnings.nas</file>
             <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
-            <!-- <file>Aircraft/737-MAX/Nasal/throttle-auto.nas</file> -->
         </boeing737>
         <systems>
             <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
@@ -1105,9 +1113,6 @@
         <thrust>
             <file>Aircraft/737-MAX/Nasal/fadec.nas</file>
         </thrust>
-        <acconfig>
-            <file>Aircraft/737-MAX/AircraftConfig/acconfig.nas</file>
-        </acconfig>
         <icing>
             <file>Aircraft/737-MAX/Nasal/icing.nas</file>
         </icing>
