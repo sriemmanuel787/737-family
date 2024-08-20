@@ -26,11 +26,8 @@
 				<script>
 					acconfig.OPTIONS.write();
 					canvas_pfd.rateApply();
-					#canvas_nd.rateApply();
-					canvas_ead.rateApply();
-					canvas_sd.rateApply();
-					canvas_iesi.rateApply();
-					canvas_mcdu.rateApply();
+					canvas_mfd.rateApply();
+					canvas_isfd.rateApply();
 				</script>
 			</binding>
 			<binding>
@@ -255,11 +252,8 @@
 				<script>
 					acconfig.OPTIONS.write();
 					canvas_pfd.rateApply();
-					#canvas_nd.rateApply();
-					canvas_ead.rateApply();
-					canvas_sd.rateApply();
-					canvas_iesi.rateApply();
-					canvas_mcdu.rateApply();
+					canvas_mfd.rateApply();
+					canvas_isfd.rateApply();
 				</script>
 			</binding>
 			<binding>
