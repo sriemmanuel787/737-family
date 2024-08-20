@@ -12,8 +12,8 @@ var UpdateFma = {
 	# thrMode: {"" : ""}, TODO: #42 Implement this hash once derates and limits are supported
     vertMode: {"" : "", "T/O CLB" : "TO/GA", "ROLLOUT" : "", "ALT HLD" : "ALT HLD", "FPA" : "", "V/S" : "V/S", "ALT CAP" : "ALT/ACQ", "FLARE" : "FLARE", "SPD CLB" : "MCP SPD", "SPD DES" : "MCP SPD", "G/S" : "G/S", "G/A CLB" : "TO/GA"}, # G/P and VNAV SPD/PTH/ALT not supported
 	thr: func() { # Called when speed/thrust modes change
-		Fma.throttle.setValue(thrMode[Text.spd.getValue()]);
-		Fma.throttle.setValue(Text.thr.getValue());
+		me.spdText = spdMode[Text.spd.getValue()];
+		me.thrText = Text.thr.getValue();
 	},
 	arm: func() { # Called when armed modes change
 		Output.lnavArm.getBoolValue();
@@ -21,9 +21,9 @@ var UpdateFma = {
 		Output.gsArm.getBoolValue();
 	},
 	lat: func() { # Called when lateral mode changes
-        Fma.roll.setValue(latMode[Text.lat.getValue()]);
+        me.latText = latMode[Text.lat.getValue()];
 	},
 	vert: func() { # Called when vertical mode changes
-        Fma.pitch.setValue(vertMode[Text.vert.getValue()]);
+        me.vertText = vertMode[Text.vert.getValue()];
 	},
 };
