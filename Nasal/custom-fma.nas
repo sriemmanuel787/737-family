@@ -7,13 +7,13 @@ var UpdateFma = {
 	spdText: "PITCH",
 	thrText: "THR LIM",
 	vertText: "T/O CLB",
-    var latMode = {"T/O" : "", "RLOU" : "ROLLOUT", "HDG" : "HDG SEL", "ALGN" : "VOR/LOC", "ROLL" : "", "LNAV" : "LNAV", "LOC" : "VOR/LOC"}; # B/CRS and FAC not supported
-    var spdMode = {};
-    var thrMode = {};
-    var vertMode = {"T/O CLB" : "TO/GA", "ROLLOUT" : "", "ALT HLD" : "ALT HLD", "FPA" : "", "V/S" : "V/S", "ALT CAP" : "ALT/ACQ", "FLARE" : "FLARE", "SPD CLB" : "MCP SPD", "SPD DES" : "MCP SPD", "G/S" : "G/S", "G/A CLB" : "TO/GA"}; # G/P and VNAV SPD/PTH/ALT not supported
+    latMode: {"" : "", "T/O" : "", "RLOU" : "ROLLOUT", "HDG" : "HDG SEL", "ALGN" : "VOR/LOC", "ROLL" : "", "LNAV" : "LNAV", "LOC" : "VOR/LOC"}, # B/CRS and FAC not supported
+    spdMode: {"" : "", "PITCH" : "N1", "RETARD" : "RETARD", "THRUST" : "MCP SPD"}, # GA, FMC SPD, THR HLD, ARM not supported
+	# thrMode: {"" : ""}, TODO: #42 Implement this hash once derates and limits are supported
+    vertMode: {"" : "", "T/O CLB" : "TO/GA", "ROLLOUT" : "", "ALT HLD" : "ALT HLD", "FPA" : "", "V/S" : "V/S", "ALT CAP" : "ALT/ACQ", "FLARE" : "FLARE", "SPD CLB" : "MCP SPD", "SPD DES" : "MCP SPD", "G/S" : "G/S", "G/A CLB" : "TO/GA"}, # G/P and VNAV SPD/PTH/ALT not supported
 	thr: func() { # Called when speed/thrust modes change
-		me.spdText = Text.spd.getValue();
-		me.thrText = Text.thr.getValue();
+		Fma.throttle.setValue(thrMode[Text.spd.getValue()]);
+		Fma.throttle.setValue(Text.thr.getValue());
 	},
 	arm: func() { # Called when armed modes change
 		Output.lnavArm.getBoolValue();
@@ -21,11 +21,9 @@ var UpdateFma = {
 		Output.gsArm.getBoolValue();
 	},
 	lat: func() { # Called when lateral mode changes
-		me.latText = Text.lat.getValue();
-        Fma.roll.setValue(latMode[me.latText]);
+        Fma.roll.setValue(latMode[Text.lat.getValue()]);
 	},
 	vert: func() { # Called when vertical mode changes
-		me.vertText = Text.vert.getValue();
-        Fma.pitch.setValue(vertMode[me.vertText]);
+        Fma.pitch.setValue(vertMode[Text.vert.getValue()]);
 	},
 };

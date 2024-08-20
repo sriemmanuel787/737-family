@@ -40,9 +40,9 @@ var canvas_pfd = {
 	update: func() {
 		# Value.Autopilot.pitchArm = pts.Autoflight.pitchModeArm.getValue();
 		# Value.Autopilot.rollArm = pts.Autoflight.rollModeArm.getValue();
-		# Value.Autopilot.pitchMode = pts.Autoflight.pitchMode.getValue();
-		# Value.Autopilot.rollMode = pts.Autoflight.rollMode.getValue();
-		# Value.Autopilot.speedMode = pts.Autoflight.spdMode.getValue();
+		Value.Autopilot.pitchMode = itaf.Text.vert.getValue();
+		Value.Autopilot.rollMode = itaf.Text.lat.getValue();
+		Value.Autopilot.speedMode = itaf.Text.spd.getValue();
 
 		# Hide failure flags by default
 		me["fail-no-vspd"].hide();
