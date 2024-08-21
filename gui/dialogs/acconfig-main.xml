@@ -378,9 +378,9 @@
 			</group>
 			
 			<checkbox>
-				<label>8.33KHz Radio Equipped</label>
+				<label>Show Fuel Dials</label>
 				<halign>left</halign>
-				<property>/systems/acconfig/options/eight-three-three-radios</property>
+				<property>/systems/acconfig/options/fuel-dials</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -388,16 +388,15 @@
 					<command>nasal</command>
 					<script>
 						acconfig.OPTIONS.write();
-						instruments.RADIOS.toggle833();
 					</script>
 				</binding>
 				<live>true</live>
 			</checkbox>
 			
 			<checkbox>
-				<label>Deflected Ailerons Equipped (PIP)</label>
+				<label>Show Engine Oil/Vibration</label>
 				<halign>left</halign>
-				<property>/systems/acconfig/options/deflected-aileron-equipped</property>
+				<property>/systems/acconfig/options/eng-oil-vib</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -409,15 +408,6 @@
 			</checkbox>
 			
 			<checkbox>
-				<enable>
-					<and>
-						<equals>
-							<property>/options/eng</property>
-							<value>PW</value>
-						</equals>
-						<not><property>/systems/acconfig/options/eng-tapes</property></not>
-					</and>
-				</enable>
 				<label>EGT Dials Above N1 (PW Engines)</label>
 				<halign>left</halign>
 				<property>/systems/acconfig/options/egt-above-n1</property>

@@ -24,15 +24,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1.1811637"
-     inkscape:cx="977.00263"
-     inkscape:cy="-146.04242"
+     inkscape:zoom="1.4030976"
+     inkscape:cx="742.28619"
+     inkscape:cy="-119.37872"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="AP modes" />
+     inkscape:current-layer="main" />
   <defs
      id="defs464">
     <rect
@@ -846,15 +846,15 @@
            style="fill:#000000" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.0033px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ff00ff;stroke-width:0"
-           x="456.4726"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.0033px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#ff00ff;stroke-width:0"
+           x="597.99115"
            y="124.98318"
            id="spd-ap-readout"><tspan
              sodipodi:role="line"
              id="tspan3147"
-             x="456.4726"
+             x="597.99115"
              y="124.98318"
-             style="stroke-width:0">9999</tspan></text>
+             style="text-align:end;text-anchor:end;stroke-width:0">9999</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:67.9843px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#00ff00;stroke-width:0"
@@ -986,7 +986,7 @@
       <g
          id="AP modes">
         <path
-           id="ap-speed-box"
+           id="ap-thr-box"
            fill-rule="evenodd"
            class="s4"
            d="M 628,1 H 884 V 56 H 628 Z m 4,51 H 880 V 5 H 632 Z"
@@ -1008,7 +1008,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.9974px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#00ff00;stroke-width:0"
            x="758.01941"
            y="49.038551"
-           id="ap-speed-mode"><tspan
+           id="ap-thr-mode"><tspan
              sodipodi:role="line"
              id="tspan1069"
              x="758.01941"
