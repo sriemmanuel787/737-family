@@ -1035,9 +1035,6 @@
         <acconfig>
 			<file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
 		</acconfig>
-        <cdu>
-            <file>Aircraft/737-MAX/Models/Instruments/CDU/boeing.nas</file>
-        </cdu>
         <canvas_isfd>
             <file>Aircraft/737-MAX/Nasal/Displays/ISFD.nas</file>
         </canvas_isfd>
