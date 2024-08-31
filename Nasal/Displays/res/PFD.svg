@@ -24,15 +24,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1.4030976"
-     inkscape:cx="742.28619"
-     inkscape:cy="-119.37872"
+     inkscape:zoom="0.27241874"
+     inkscape:cx="-266.1344"
+     inkscape:cy="1198.5225"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="main" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs464">
     <rect
@@ -227,7 +227,8 @@
     <g
        id="main">
       <g
-         id="attitude">
+         id="attitude"
+         inkscape:label="group-attitude">
         <path
            id="ground"
            class="s5"
@@ -331,7 +332,8 @@
            style="fill:#000000" />
       </g>
       <g
-         id="altitude">
+         id="altitude"
+         inkscape:label="group-altitude">
         <path
            id="alt-back"
            class="s7"
@@ -595,7 +597,8 @@
       </g>
       <g
          id="vs"
-         style="display:inline">
+         style="display:inline"
+         inkscape:label="group-vs">
         <path
            id="vs-back"
            class="s7"
@@ -648,7 +651,8 @@
            style="fill:#ffffff" />
       </g>
       <g
-         id="navigation">
+         id="navigation"
+         inkscape:label="group-navigation">
         <path
            id="lines-lat-std"
            fill-rule="evenodd"
@@ -730,7 +734,7 @@
              id="tspan3132"
              x="708.04895"
              y="205.99611"
-             style="stroke-width:0">ZZZ /999</tspan></text>
+             style="stroke-width:0">ZZZZ/999</tspan></text>
         <path
            id="marker-color"
            class="s1"
@@ -762,7 +766,8 @@
            style="fill:#00ff00" />
       </g>
       <g
-         id="speed">
+         id="speed"
+         inkscape:label="group-speed">
         <path
            id="spd-back"
            class="s7"
@@ -834,6 +839,16 @@
            class="s9"
            d="m 632,655 h -6 V 461 h -14 v -6 h 20 z"
            style="fill:#ffc000" />
+        <path
+           d="m 599,675.00003 h -7 l 10,-20 10,20 h -7 V 1150 h -6 z"
+           id="spd-trend-up"
+           style="fill:#00ff00"
+           inkscape:label="spd-trend-up" />
+        <path
+           d="m 599,635 h -7 l 10,20 10,-20 h -7 V 160 h -6 z"
+           id="spd-trend-down"
+           style="fill:#00ff00"
+           inkscape:label="spd-trend-down" />
         <path
            id="spd-ap"
            class="s12"
@@ -984,7 +999,8 @@
            style="fill:#00ff00" />
       </g>
       <g
-         id="AP modes">
+         id="AP modes"
+         inkscape:label="group-ap-modes">
         <path
            id="ap-thr-box"
            fill-rule="evenodd"
@@ -1060,7 +1076,9 @@
              style="stroke-width:0">ZZZZZ</tspan></text>
       </g>
       <g
-         id="fail-warn">
+         id="fail-warn"
+         style="display:inline"
+         inkscape:label="group-fail-warn">
         <path
            id="warning-back"
            class="s3"

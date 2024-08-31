@@ -8,10 +8,10 @@
         <input>
             <expression>
                 <abs>
-                    <dif>
+                    <difference>
                         <property>/instrumentation/altimeter[0]/indicated-altitude-ft</property>
                         <property>/it-autoflight/internal/alt</property>
-                    </dif>
+                    </difference>
                 </abs>
             </expression>
         </input>
@@ -26,10 +26,10 @@
         <input>
             <expression>
                 <abs>
-                    <dif>
+                    <difference>
                         <property>/instrumentation/altimeter[1]/indicated-altitude-ft</property>
                         <property>/it-autoflight/internal/alt</property>
-                    </dif>
+                    </difference>
                 </abs>
             </expression>
         </input>
@@ -241,7 +241,8 @@
     <!-- wheel spin detection system -->
 
     <logic>
-        <name>main wheel spin</name>        <!-- outputs 1 if one of main wheels are spinnig faster than 60 kts -->
+        <name>main wheel spin</name>        <!-- outputs 1 if one of main wheels are spinnig faster than 60
+        kts -->
         <input>
             <or>
                 <greater-than>

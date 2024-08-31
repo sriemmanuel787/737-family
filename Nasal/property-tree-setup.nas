@@ -23,6 +23,7 @@ var Instrumentation = {
 	AirspeedIndicator: {
 		indicatedMach: [props.globals.getNode("/instrumentation/airspeed-indicator[0]/indicated-mach"), props.globals.getNode("/instrumentation/airspeed-indicator[1]/indicated-mach"), props.globals.getNode("/instrumentation/airspeed-indicator[2]/indicated-mach")],
 		indicatedSpeedKt: [props.globals.getNode("/instrumentation/airspeed-indicator[0]/indicated-speed-kt"), props.globals.getNode("/instrumentation/airspeed-indicator[1]/indicated-speed-kt"), props.globals.getNode("/instrumentation/airspeed-indicator[2]/indicated-speed-kt")],
+		radioAlt: [props.globals.getNode("/instrumentation/radar-altimeter[0]/radar-altitude-ft"), props.globals.getNode("/instrumentation/radar-altimeter[1]/radar-altitude-ft")],
 		servicable: [props.globals.getNode("/instrumentation/airspeed-indicator[0]/servicable"), props.globals.getNode("/instrumentation/airspeed-indicator[1]/servicable"), props.globals.getNode("/instrumentation/airspeed-indicator[2]/servicable")],
 	},
 	Altimeter: {
@@ -104,6 +105,7 @@ var Instrumentation = {
 		vsNeedleDn: props.globals.initNode("/instrumentation/pfd/vs-needle-dn", 0, "DOUBLE"),
 		vsNeedleUp: props.globals.initNode("/instrumentation/pfd/vs-needle-up", 0, "DOUBLE"),
 		vsDigit: props.globals.initNode("/instrumentation/pfd/vs-digit", 0, "DOUBLE"),
+		mmo: props.globals.getNode("/instrumentation/pfd/mmo-kt"),
 	},
 };
 
