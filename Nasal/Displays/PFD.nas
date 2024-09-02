@@ -12,8 +12,9 @@ var Value = {
 	Altitude: {
 		indicatedAltitudeFt: 0,
 		radioAlt: 0,
+		radioAltServiceable: 0,
 		settingHpa: 0,
-		servicable: 0,
+		serviceable: 0,
 	},
 	Autopilot: {
 		kts: 0,
@@ -156,6 +157,8 @@ var canvas_pfd = {
 			Value.Navigation.navLoc = pts.Instrumentation.Nav.navLoc[0].getValue();
 			Value.Navigation.radialSelectedDeg = pts.Instrumentation.Nav.Radials.selectedDeg[0].getValue();
 			Value.Navigation.signalQualityNorm = pts.Instrumentation.Nav.signalQualityNorm[0].getValue();
+			Value.Altitude.radioAlt = pts.Instrumentation.Altimeter.radioAlt[0].getValue();
+			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[0].getValue();
 		} elsif (n == "fo") {
 			Value.Airspeed.iasKts = pts.Instrumentation.AirspeedIndicator.indicatedSpeedKt[1].getValue();
 			Value.Airspeed.iasMach = pts.Instrumentation.AirspeedIndicator.indicatedMach[1].getValue();
@@ -170,6 +173,8 @@ var canvas_pfd = {
 			Value.Navigation.navLoc = pts.Instrumentation.Nav.navLoc[1].getValue();
 			Value.Navigation.radialSelectedDeg = pts.Instrumentation.Nav.Radials.selectedDeg[1].getValue();
 			Value.Navigation.signalQualityNorm = pts.Instrumentation.Nav.signalQualityNorm[1].getValue();
+			Value.Altitude.radioAlt = pts.Instrumentation.Altimeter.radioAlt[1].getValue();
+			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[1].getValue();
 		}
 
 		# Hide failure flags by default
@@ -304,71 +309,95 @@ var canvas_pfd = {
 		}
 
 		# Radio Navigation
-		if (Value.Navigation.signalQualityNorm > 0.95 and Value.Navigation.navLoc and Value.Altitude.radioAlt < 2500) {
-			me["rising-rwy"].show();
-			if (Value.Altitude.radioAlt < 200) {
-				me["rising-rwy"].setTranslation(0, Value.Altitude.radioAlt * -1.75);
-			}
-		} else {
-			me["rising-rwy"].hide();
-		}
+		me["rising-rwy"].hide();
+		if (Value.Navigation.selectedMhz != 0) {
+			if (Value.Navigation.signalQualityNorm >= 0.95 and Value.Navigation.navLoc) {
+				if (Value.Altitude.radioAlt <= 2500) {	
+					me["rising-rwy"].show();
+					if (Value.Altitude.radioAlt < 200) {
+						me["rising-rwy"].setTranslation(0, Value.Altitude.radioAlt * -1.75);
+					}
+				} else {
+					me["rising-rwy"].hide();
+				}
 
-		if (!Value.Navigation.MarkerBeacon.inner) {
-			Value.Navigation.MarkerBeacon.innerTimeStart = Value.Time.elapsedSec;
-		}
-		if (!Value.Navigation.MarkerBeacon.middle) {
-			Value.Navigation.MarkerBeacon.middleTimeStart = Value.Time.elapsedSec;
-		}
-		if (!Value.Navigation.MarkerBeacon.outer) {
-			Value.Navigation.MarkerBeacon.outerTimeStart = Value.Time.elapsedSec;
-		}
-		me["marker-color"].hide();
-		me["inner-marker"].hide();
-		me["middle-marker"].hide();
-		me["outer-marker"].hide();
-		if (Value.Navigation.MarkerBeacon.inner) {
-			# On for .125 seconds, off for .125
-			me["marker-color"].setColorFill(1, 1, 1, 1);
-			if (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.innerTimeStart, 0.25) > 0.125) {
-				me["marker-color"].show();
-				me["inner-marker"].show();
-			} else {
+				# Marker Beacon
+				if (!Value.Navigation.MarkerBeacon.inner) {
+					Value.Navigation.MarkerBeacon.innerTimeStart = Value.Time.elapsedSec;
+				}
+				if (!Value.Navigation.MarkerBeacon.middle) {
+					Value.Navigation.MarkerBeacon.middleTimeStart = Value.Time.elapsedSec;
+				}
+				if (!Value.Navigation.MarkerBeacon.outer) {
+					Value.Navigation.MarkerBeacon.outerTimeStart = Value.Time.elapsedSec;
+				}
 				me["marker-color"].hide();
 				me["inner-marker"].hide();
-			}
-		} elsif (Value.Navigation.MarkerBeacon.middle) {
-			# On for .375 seconds, off for .125, on for .125, off for .125
-			me["marker-color"].setColorFill(1, 0.75, 0, 1);
-			if ((math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) > 0.125 and math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) < 0.25)  or (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) > 0.375 and math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) < 0.75)) {
-				me["marker-color"].show();
-				me["middle-marker"].show();
-			} else {
-				me["marker-color"].hide();
 				me["middle-marker"].hide();
-			}
-		} elsif (Value.Navigation.MarkerBeacon.outer) {
-			# On for .375 seconds, off for .125
-			me["marker-color"].setColorFill(0, 1, 1, 1);
-			if (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.outerTimeStart, 0.5) > 0.125) {
-				me["marker-color"].show();
-				me["outer-marker"].show();
-			} else {
-				me["marker-color"].hide();
 				me["outer-marker"].hide();
+				if (Value.Navigation.MarkerBeacon.inner) {
+					# On for .125 seconds, off for .125
+					me["marker-color"].setColorFill(1, 1, 1, 1);
+					if (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.innerTimeStart, 0.25) > 0.125) {
+						me["marker-color"].show();
+						me["inner-marker"].show();
+					} else {
+						me["marker-color"].hide();
+						me["inner-marker"].hide();
+					}
+				} elsif (Value.Navigation.MarkerBeacon.middle) {
+					# On for .375 seconds, off for .125, on for .125, off for .125
+					me["marker-color"].setColorFill(1, 0.75, 0, 1);
+					if ((math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) > 0.125 and math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) < 0.25)  or (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) > 0.375 and math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) < 0.75)) {
+						me["marker-color"].show();
+						me["middle-marker"].show();
+					} else {
+						me["marker-color"].hide();
+						me["middle-marker"].hide();
+					}
+				} elsif (Value.Navigation.MarkerBeacon.outer) {
+					# On for .375 seconds, off for .125
+					me["marker-color"].setColorFill(0, 1, 1, 1);
+					if (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.outerTimeStart, 0.5) > 0.125) {
+						me["marker-color"].show();
+						me["outer-marker"].show();
+					} else {
+						me["marker-color"].hide();
+						me["outer-marker"].hide();
+					}
+				}
+				if (!Value.Navigation.inRange or Value.Navigation.navId == "" or Value.Navigation.navId == nil) {
+					me["ils-ident"].setText(sprintf("%.2f/%03d", Value.Navigation.selectedMhz, Value.Navigation.radialSelectedDeg));
+				} else {
+					me["ils-ident"].setText(sprintf("%s/%03d", Value.Navigation.navId, Value.Navigation.radialSelectedDeg));
+				}
+				if (Value.Navigation.Dme.inRange) {
+					me["ils-dist"].setText(sprintf("DME %.1f", Value.Navigation.Dme.indicatedDistanceNm));
+				} else {
+					me["ils-dist"].hide();
+				}
+				me["nav-src"].setText(""); # TODO: #46 Simulate RNP sources
+
+				# Localiser
+				
 			}
 		}
 
-		if (!Value.Navigation.inRange or Value.Navigation.navId == "" or Value.Navigation.navId == nil) {
-			me["ils-ident"].setText(sprintf("%.2f/%03d", Value.Navigation.selectedMhz, Value.Navigation.radialSelectedDeg));
+		# Altitude
+		if (Value.Altitude.radioAlt <= 2500) {
+			me["alt-final"].show();
+			me["alt-final-box"].show();
+			if (Value.Altitude.radioAlt <= 100) {
+				me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 2)));
+			} elsif (Value.Altitude.radioAlt <= 500) {
+				me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 10)));
+			} else {
+				me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 20)));
+			}
 		} else {
-			me["ils-ident"].setText(sprintf("%s/%03d", Value.Navigation.navId, Value.Navigation.radialSelectedDeg));
+			me["alt-final"].hide();
+			me["alt-final-box"].hide();
 		}
-		if (Value.Navigation.Dme.inRange) {
-			me["ils-dist"].setText(sprintf("DME %.1f", Value.Navigation.Dme.indicatedDistanceNm));
-		} else {
-			me["ils-dist"].hide();
-		}
-		me["nav-src"].setText(""); # TODO: #46 Simulate RNP sources
 	},
 };
 

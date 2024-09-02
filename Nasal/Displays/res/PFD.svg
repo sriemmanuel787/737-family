@@ -24,9 +24,9 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.27241874"
-     inkscape:cx="-266.1344"
-     inkscape:cy="1198.5225"
+     inkscape:zoom="2.7777154"
+     inkscape:cx="1049.9636"
+     inkscape:cy="1181.7265"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -243,7 +243,7 @@
            id="labels-back"
            class="s7"
            d="m 789,1224 h 470 v 70 H 789 Z m 563,-808 h 70 v 470 h -70 z M 625,0 h 798 V 90 H 625 Z"
-           style="opacity:0.2;fill:#000000" />
+           style="display:inline;opacity:0.2;fill:#000000" />
         <path
            id="ladder"
            fill-rule="evenodd"
@@ -282,12 +282,12 @@
            id="aoa-approach-lower"
            class="s6"
            d="m 1274.8,278.2 c -34.4,-34.4 -34.4,-90 0,-124.4 l 124.4,124.4 c -34.4,34.4 -90,34.4 -124.4,0 z"
-           style="fill:#077ccb" />
+           style="display:inline;fill:#077ccb" />
         <path
            id="aoa-approach-upper"
            class="s6"
            d="m 1399.2,153.8 c 34.4,34.4 34.4,90 0,124.4 L 1274.8,153.8 c 34.4,-34.4 90,-34.4 124.4,0 z"
-           style="fill:#077ccb" />
+           style="display:inline;fill:#077ccb" />
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.9654px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;writing-mode:lr-tb;fill:#ffffff;stroke-width:0"
@@ -529,15 +529,15 @@
            style="fill:#000000" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.0033px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;writing-mode:lr-tb;fill:#ffffff;stroke-width:0"
-           x="955.27258"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.0033px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke-width:0"
+           x="1026.0319"
            y="1193.9832"
            id="alt-final"><tspan
              sodipodi:role="line"
              id="tspan2324"
-             x="955.27258"
+             x="1026.0319"
              y="1193.9832"
-             style="stroke-width:0">9999</tspan></text>
+             style="text-align:center;text-anchor:middle;stroke-width:0">9999</tspan></text>
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:67.9939px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#00ff00;stroke-width:0"
