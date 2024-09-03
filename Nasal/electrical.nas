@@ -39,18 +39,18 @@ setlistener("sim/signals/fdm-initialized", func {
 }, 0, 0);
 
 var elec_init = func {
-	setprop("controls/electric/battery-switch", 0);   # Set all the stuff I need
-	setprop("controls/electrical/ext/sw", 0);
-	setprop("controls/electrical/emerpwr", 0);
-	setprop("controls/electrical/galley", 0);
-	setprop("controls/electrical/xtie/acxtie", 1);
-	setprop("controls/electrical/xtie/dcxtie", 0);
-	setprop("controls/electrical/xtie/xtieL", 0);
-	setprop("controls/electrical/xtie/xtieR", 0);
-	setprop("controls/electrical/apu/Lsw", 0);
-	setprop("controls/electrical/apu/Rsw", 0);
-	setprop("controls/electrical/eng/Lsw", 0);
-	setprop("controls/electrical/eng/Rsw", 0);
+	setprop("controls/electric/battery-switch", 1); 
+    setprop("controls/electrical/ext/sw", 0);
+    setprop("controls/electrical/emerpwr", 0);
+    setprop("controls/electrical/galley", 1);
+    setprop("controls/electrical/xtie/acxtie", 1);
+    setprop("controls/electrical/xtie/dcxtie", 1);
+    setprop("controls/electrical/xtie/xtieL", 0);
+    setprop("controls/electrical/xtie/xtieR", 0);
+    setprop("controls/electrical/apu/Lsw", 0);
+    setprop("controls/electrical/apu/Rsw", 0);
+    setprop("controls/electrical/eng/Lsw", 1);
+    setprop("controls/electrical/eng/Rsw", 1);
 	setprop("systems/electrical/bus/dcL", 0);
 	setprop("systems/electrical/bus/dcR", 0);
 	setprop("systems/electrical/bus/acL", 0);
