@@ -6,17 +6,19 @@
 
 	<name>acconfig-main</name>
 	<layout>vbox</layout>
-	
+
 	<group>
 		<layout>hbox</layout>
-		
+
 		<text>
 			<halign>left</halign>
 			<label>Aircraft Config Center</label>
 		</text>
-		
-		<empty><stretch>1</stretch></empty>
-		
+
+		<empty>
+			<stretch>1</stretch>
+		</empty>
+
 		<button>
 			<halign>right</halign>
 			<pref-width>20</pref-width>
@@ -48,18 +50,18 @@
 			</binding>
 		</button>
 	</group>
-	
-	<hrule/>
-		
+
+	<hrule />
+
 	<group>
 		<layout>hbox</layout>
 
 		<group>
 			<layout>vbox</layout>
-			
+
 			<group>
 				<layout>vbox</layout>
-				
+
 				<button>
 					<halign>center</halign>
 					<legend>Select Livery</legend>
@@ -101,7 +103,9 @@
 					<legend>System Failures</legend>
 					<pref-width>140</pref-width>
 					<enable>
-						<not><property>/systems/acconfig/options/allow-damage</property></not>
+						<not>
+							<property>/systems/acconfig/options/allow-damage</property>
+						</not>
 					</enable>
 					<binding>
 						<command>dialog-show</command>
@@ -109,13 +113,13 @@
 					</binding>
 				</button>
 			</group>
-			
+
 			<group>
 				<layout>vbox</layout>
-				
+
 				<group>
 					<layout>hbox</layout>
-					
+
 					<hrule>
 						<stretch>true</stretch>
 					</hrule>
@@ -126,17 +130,19 @@
 						<stretch>true</stretch>
 					</hrule>
 				</group>
-				
+
 				<group>
 					<layout>vbox</layout>
-					
+
 					<button>
 						<halign>center</halign>
 						<legend>Cold and Dark</legend>
 						<pref-width>140</pref-width>
 						<enable>
 							<and>
-								<not><property>/systems/acconfig/autoconfig-running</property></not>
+								<not>
+									<property>/systems/acconfig/autoconfig-running</property>
+								</not>
 								<property>/gear/gear[0]/wow</property>
 								<property>/gear/gear[1]/wow</property>
 								<property>/gear/gear[2]/wow</property>
@@ -156,7 +162,9 @@
 						<pref-width>140</pref-width>
 						<enable>
 							<and>
-								<not><property>/systems/acconfig/autoconfig-running</property></not>
+								<not>
+									<property>/systems/acconfig/autoconfig-running</property>
+								</not>
 								<property>/gear/gear[0]/wow</property>
 								<property>/gear/gear[1]/wow</property>
 								<property>/gear/gear[2]/wow</property>
@@ -176,7 +184,9 @@
 						<pref-width>140</pref-width>
 						<enable>
 							<and>
-								<not><property>/systems/acconfig/autoconfig-running</property></not>
+								<not>
+									<property>/systems/acconfig/autoconfig-running</property>
+								</not>
 								<property>/gear/gear[0]/wow</property>
 								<property>/gear/gear[1]/wow</property>
 								<property>/gear/gear[2]/wow</property>
@@ -196,7 +206,9 @@
 						<pref-width>140</pref-width>
 						<enable>
 							<and>
-								<not><property>/systems/acconfig/autoconfig-running</property></not>
+								<not>
+									<property>/systems/acconfig/autoconfig-running</property>
+								</not>
 								<property>/gear/gear[0]/wow</property>
 								<property>/gear/gear[1]/wow</property>
 								<property>/gear/gear[2]/wow</property>
@@ -213,12 +225,12 @@
 				</group>
 			</group>
 		</group>
-		
-		<vrule/>
-		
+
+		<vrule />
+
 		<group>
 			<layout>vbox</layout>
-			
+
 			<checkbox>
 				<label>Enable Wheel Chocks</label>
 				<halign>left</halign>
@@ -240,7 +252,7 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
-			
+
 			<checkbox>
 				<label>Enable External Power Box</label>
 				<halign>left</halign>
@@ -278,7 +290,7 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
-			
+
 			<checkbox>
 				<label>Enable External Air</label>
 				<halign>left</halign>
@@ -306,10 +318,10 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
-			
+
 			<group>
 				<layout>hbox</layout>
-				
+
 				<hrule>
 					<stretch>true</stretch>
 				</hrule>
@@ -320,7 +332,7 @@
 					<stretch>true</stretch>
 				</hrule>
 			</group>
-			
+
 			<checkbox>
 				<label>IRS Aligns Instantly</label>
 				<halign>left</halign>
@@ -334,7 +346,7 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
-			
+
 			<checkbox>
 				<label>Keyboard Mode</label>
 				<halign>left</halign>
@@ -348,7 +360,7 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
-			
+
 			<checkbox>
 				<label>Separate Tiller Axis</label>
 				<halign>left</halign>
@@ -362,10 +374,10 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
-			
+
 			<group>
 				<layout>hbox</layout>
-				
+
 				<hrule>
 					<stretch>true</stretch>
 				</hrule>
@@ -376,7 +388,7 @@
 					<stretch>true</stretch>
 				</hrule>
 			</group>
-			
+
 			<checkbox>
 				<label>Show Fuel Dials</label>
 				<halign>left</halign>
@@ -392,95 +404,11 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
-			
+
 			<checkbox>
 				<label>Show Engine Oil/Vibration</label>
 				<halign>left</halign>
 				<property>/systems/acconfig/options/eng-oil-vib</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<binding>
-					<command>nasal</command>
-					<script>acconfig.OPTIONS.write();</script>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>EGT Dials Above N1 (PW Engines)</label>
-				<halign>left</halign>
-				<property>/systems/acconfig/options/egt-above-n1</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<binding>
-					<command>nasal</command>
-					<script>acconfig.OPTIONS.write();</script>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>Engine Tape Gauges (EAD &amp; SD)</label>
-				<halign>left</halign>
-				<property>/systems/acconfig/options/eng-tapes</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<binding>
-					<command>nasal</command>
-					<script>acconfig.OPTIONS.write();</script>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>IESI Equipped</label>
-				<halign>left</halign>
-				<property>/systems/acconfig/options/iesi-equipped</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<binding>
-					<command>nasal</command>
-					<script>acconfig.OPTIONS.write();</script>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>RCWS Equipped</label>
-				<halign>left</halign>
-				<property>/systems/acconfig/options/rcws-equipped</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<binding>
-					<command>nasal</command>
-					<script>acconfig.OPTIONS.write();</script>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>Rising Runway T-Bar</label>
-				<halign>left</halign>
-				<property>/systems/acconfig/options/rising-runway-t-bar</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<binding>
-					<command>nasal</command>
-					<script>acconfig.OPTIONS.write();</script>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>Single Cue Flight Director</label>
-				<halign>left</halign>
-				<property>/systems/acconfig/options/single-cue-fd</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>

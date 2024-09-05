@@ -178,7 +178,7 @@
                         <label>Aircraft Config</label>
                         <binding>
                             <command>dialog-show</command>
-							<dialog-name>acconfig-main</dialog-name>
+                            <dialog-name>acconfig-main</dialog-name>
                         </binding>
                     </item>
                     <item>
@@ -204,66 +204,81 @@
     </sim>
 
     <it-autoflight>
-		<config>
-			<roll>
-				<kp-low>0.11</kp-low> <!-- Kp at low speed -->
-				<kp-high>0.05</kp-high> <!-- Kp at high speed -->
-				<ti>1.0</ti>
-				<td>0.0001</td>
-			</roll>
-			<pitch>
-				<kp-low>-0.14</kp-low> <!-- Kp at low speed -->
-				<kp-high>-0.06</kp-high> <!-- Kp at high speed -->
-				<ti>0.5</ti>
-				<td>0.001</td>
-			</pitch>
-			<cmd>
-				<alt>-5</alt>
-				<flch-accel>1.5</flch-accel>
-				<roll>1.6</roll>
-			</cmd>
-			<autoland> 
-				<pitch-kp>0.0051</pitch-kp>
-				<yaw-kp>-0.05</yaw-kp>
-			</autoland>
-			<rollout>
-				<roll-kp>-0.1</roll-kp>
-				<pitch-nose>0.1</pitch-nose>
-				<pitch-rate>-1.5</pitch-rate>
-				<yaw-kp>-0.02</yaw-kp>
-			</rollout>
-		</config>
-		<settings>
-			<accel-ft type="double">1000</accel-ft> <!-- Acceleration AGL when T/O CLB changes to SPD CLB, 0 to disable -->
-			<auto-bank-limit-calc type="bool">1</auto-bank-limit-calc> <!-- Disable to add a custom auto bank limit schedule -->
-			<auto-system-reset type="bool">1</auto-system-reset> <!-- Automatically reset the system after landing -->
-			<autoland-without-ap type="bool">1</autoland-without-ap> <!-- Engage autoland guidance even if the AP is off -->
-			<autothrottle-max type="double">0.95</autothrottle-max> <!-- Thrust max limit normalized -->
-			<autothrottle-min type="double">0.02</autothrottle-min> <!-- Thrust low limit normalized -->
-			<bank-max-deg type="double">25</bank-max-deg> <!-- Maximum bank limit -->
-			<custom-fma type="bool">1</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented --> 
-			<disable-final type="bool">0</disable-final> <!-- Disable the Final Controllers for custom FCS integration -->
-			<elevator-in-trim type="double">0.01</elevator-in-trim> <!-- Normalized elevator to stop trimming -->
-			<elevator-out-of-trim type="double">0.02</elevator-out-of-trim> <!-- Normalized elevator to start trimming -->
-			<fd-starts-on type="bool">1</fd-starts-on> <!-- Enable/Disable Flight Director being on by default -->
-			<fd-takeoff-deg type="double">7.5</fd-takeoff-deg> <!-- Adjust Flight Director pitch bar in T/O CLB on ground -->
-			<ground-mode-select type="bool">0</ground-mode-select> <!-- Allow modes to be selected when on ground -->
-			<hdg-hld-separate type="bool">0</hdg-hld-separate> <!-- Separates HDG HLD mode from HDG SEL mode -->
-			<land-enable type="bool">1</land-enable> <!-- Enable/Disable Autoland -->
-			<land-flap type="double">0.7</land-flap> <!-- Minimum Flap used for landing -->
-			<lnav-ft type="double">50</lnav-ft> <!-- AGL when LNAV becomes active if armed -->
-			<max-kts type="int">380</max-kts> <!-- Maxmimum target airspeed in knots -->
-			<max-mach type="double">0.9</max-mach> <!-- Maxmimum target mach number -->
-			<retard-enable type="bool">1</retard-enable> <!-- AGL to enter Thrust Retard mode -->
-			<retard-ft type="double">50</retard-ft> <!-- Enable Thrust Retard mode -->
-			<stall-aoa-deg type="double">15</stall-aoa-deg> <!-- Angle of attack where AP trips off -->
-			<takeoff-hdg-cap type="double">5</takeoff-hdg-cap> <!-- Maximum bank to capture current hdg in T/O mode -->
-			<toga-spd type="double">160</toga-spd> <!-- V2 + 10kts -->
-			<use-controls-engines type="bool">1</use-controls-engines> <!-- Use /controls/engines properties -->
-			<use-controls-flight type="bool">1</use-controls-flight> <!-- Use /controls/flight properties -->
-		</settings>
-	</it-autoflight>
-    
+        <config>
+            <roll>
+                <kp-low>0.11</kp-low> <!-- Kp at low speed -->
+                <kp-high>0.05</kp-high> <!-- Kp at high speed -->
+                <ti>1.0</ti>
+                <td>0.0001</td>
+            </roll>
+            <pitch>
+                <kp-low>-0.14</kp-low> <!-- Kp at low speed -->
+                <kp-high>-0.06</kp-high> <!-- Kp at high speed -->
+                <ti>0.5</ti>
+                <td>0.001</td>
+            </pitch>
+            <cmd>
+                <alt>-5</alt>
+                <flch-accel>1.5</flch-accel>
+                <roll>1.6</roll>
+            </cmd>
+            <autoland>
+                <pitch-kp>0.0051</pitch-kp>
+                <yaw-kp>-0.05</yaw-kp>
+            </autoland>
+            <rollout>
+                <roll-kp>-0.1</roll-kp>
+                <pitch-nose>0.1</pitch-nose>
+                <pitch-rate>-1.5</pitch-rate>
+                <yaw-kp>-0.02</yaw-kp>
+            </rollout>
+        </config>
+        <settings>
+            <accel-ft type="double">1000</accel-ft> <!-- Acceleration AGL when T/O CLB changes to SPD
+            CLB, 0 to disable -->
+            <auto-bank-limit-calc type="bool">1</auto-bank-limit-calc> <!-- Disable to add a custom
+            auto bank limit schedule -->
+            <auto-system-reset type="bool">1</auto-system-reset> <!-- Automatically reset the system
+            after landing -->
+            <autoland-without-ap type="bool">1</autoland-without-ap> <!-- Engage autoland guidance
+            even if the AP is off -->
+            <autothrottle-max type="double">0.95</autothrottle-max> <!-- Thrust max limit normalized -->
+            <autothrottle-min type="double">0.02</autothrottle-min> <!-- Thrust low limit normalized -->
+            <bank-max-deg type="double">25</bank-max-deg> <!-- Maximum bank limit -->
+            <custom-fma type="bool">1</custom-fma> <!-- Call functions when modes change for a custom
+            FMA to be implemented -->
+            <disable-final type="bool">0</disable-final> <!-- Disable the Final Controllers for
+            custom FCS integration -->
+            <elevator-in-trim type="double">0.01</elevator-in-trim> <!-- Normalized elevator to stop
+            trimming -->
+            <elevator-out-of-trim type="double">0.02</elevator-out-of-trim> <!-- Normalized elevator
+            to start trimming -->
+            <fd-starts-on type="bool">1</fd-starts-on> <!-- Enable/Disable Flight Director being on
+            by default -->
+            <fd-takeoff-deg type="double">7.5</fd-takeoff-deg> <!-- Adjust Flight Director pitch bar
+            in T/O CLB on ground -->
+            <ground-mode-select type="bool">0</ground-mode-select> <!-- Allow modes to be selected
+            when on ground -->
+            <hdg-hld-separate type="bool">0</hdg-hld-separate> <!-- Separates HDG HLD mode from HDG
+            SEL mode -->
+            <land-enable type="bool">1</land-enable> <!-- Enable/Disable Autoland -->
+            <land-flap type="double">0.7</land-flap> <!-- Minimum Flap used for landing -->
+            <lnav-ft type="double">50</lnav-ft> <!-- AGL when LNAV becomes active if armed -->
+            <max-kts type="int">380</max-kts> <!-- Maxmimum target airspeed in knots -->
+            <max-mach type="double">0.9</max-mach> <!-- Maxmimum target mach number -->
+            <retard-enable type="bool">1</retard-enable> <!-- AGL to enter Thrust Retard mode -->
+            <retard-ft type="double">50</retard-ft> <!-- Enable Thrust Retard mode -->
+            <stall-aoa-deg type="double">15</stall-aoa-deg> <!-- Angle of attack where AP trips off -->
+            <takeoff-hdg-cap type="double">5</takeoff-hdg-cap> <!-- Maximum bank to capture current
+            hdg in T/O mode -->
+            <toga-spd type="double">160</toga-spd> <!-- V2 + 10kts -->
+            <use-controls-engines type="bool">1</use-controls-engines> <!-- Use /controls/engines
+            properties -->
+            <use-controls-flight type="bool">1</use-controls-flight> <!-- Use /controls/flight
+            properties -->
+        </settings>
+    </it-autoflight>
+
     <lighting>
         <interior type="double">0</interior>
         <panel-aft-norm type="double">0</panel-aft-norm>
@@ -779,6 +794,33 @@
     </b737>
 
     <systems>
+        <acconfig n="0">
+            <autoconfig-running type="bool">0</autoconfig-running>
+            <options n="0">
+                <autopush n="0">
+                    <show-route type="bool">1</show-route>
+                    <show-wingtip type="bool">1</show-wingtip>
+                </autopush>
+                <deflected-aileron-equipped type="bool">1</deflected-aileron-equipped>
+                <du n="0">
+                    <capt-pfd-fps type="double">20</capt-pfd-fps>
+                    <capt-mfd-fps type="double">20</capt-mfd-fps>
+                    <fo-pfd-fps type="double">10</fo-pfd-fps>
+                    <fo-mfd-fps type="double">20</fo-mfd-fps>
+                    <isfd-fps type="double">20</isfd-fps>
+                </du>
+                <eight-three-three-radios type="bool">0</eight-three-three-radios>
+                <fuel-dials type="bool">0</fuel-dials>
+                <eng-oil-vib type="bool">0</eng-oil-vib>
+                <iesi-equipped type="bool">0</iesi-equipped>
+                <irs-aligns-instantly type="bool">0</irs-aligns-instantly>
+                <keyboard-mode type="bool">0</keyboard-mode>
+                <rcws-equipped type="bool">0</rcws-equipped>
+                <rising-runway-t-bar type="bool">1</rising-runway-t-bar>
+                <separate-tiller-axis type="bool">0</separate-tiller-axis>
+                <single-cue-fd type="bool">0</single-cue-fd>
+            </options>
+        </acconfig>
         <apu>
             <rpm type="float">0</rpm>
             <egt type="float">0</egt>
@@ -823,24 +865,6 @@
             <power-btn type="bool">1</power-btn>
             <power-good type="bool">1</power-good>
         </comm>
-
-        <crp n="0">
-            <major-rotate type="int">50000</major-rotate>
-            <mode type="int">0</mode>
-            <minor-rotate type="int">50000</minor-rotate>
-        </crp>
-
-        <crp n="1">
-            <major-rotate type="int">50000</major-rotate>
-            <mode type="int">0</mode>
-            <minor-rotate type="int">50000</minor-rotate>
-        </crp>
-
-        <crp n="2">
-            <major-rotate type="int">50000</major-rotate>
-            <mode type="int">2</mode>
-            <minor-rotate type="int">50000</minor-rotate>
-        </crp>
 
         <nav>
             <volume type="double">0.0</volume>
@@ -1051,8 +1075,8 @@
             <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file>
         </hack>
         <acconfig>
-			<file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
-		</acconfig>
+            <file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
+        </acconfig>
         <canvas_isfd>
             <file>Aircraft/737-MAX/Nasal/Displays/ISFD.nas</file>
         </canvas_isfd>
@@ -1065,11 +1089,6 @@
         <canvas_pfd>
             <file>Aircraft/737-MAX/Nasal/Displays/PFD.nas</file>
         </canvas_pfd>
-        <instruments>
-            <file>Aircraft/737-MAX/Nasal/Instruments/efis.nas</file>
-            <file>Aircraft/737-MAX/Nasal/Instruments/radio.nas</file>
-            <file>Aircraft/737-MAX/Nasal/Instruments/transponder.nas</file>
-        </instruments>
         <boeing737>
             <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
             <file>Aircraft/737-MAX/Nasal/autostart.nas</file>

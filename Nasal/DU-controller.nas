@@ -384,14 +384,14 @@ var DUController = {
 };
 
 # Update PW Dial Positions
-setlistener("/systems/acconfig/options/egt-above-n1", func() {
+setlistener("/systems/acconfig/options/fuel-dials", func() {
 	if (DUController.eadType == "PW-Dials") {
 		canvas_ead.pwDials.setDials();
 	}
 }, 0, 0);
 
 # Update Dials vs Tapes
-setlistener("/systems/acconfig/options/eng-tapes", func() {
+setlistener("/systems/acconfig/options/eng-oil-vib", func() {
 	# This forces them to show the appropriate page
 	DUController.updateEad = 0;
 	DUController.updateSd = 0;

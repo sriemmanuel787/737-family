@@ -95,21 +95,11 @@ var Instrumentation = {
 		signalQualityNorm: [props.globals.getNode("/instrumentation/nav[0]/signal-quality-norm"), props.globals.getNode("/instrumentation/nav[1]/signal-quality-norm"), props.globals.getNode("/instrumentation/nav[2]/signal-quality-norm")],
 	},
 	Pfd: {
-		hdgPreSel: props.globals.initNode("/instrumentation/pfd/heading-pre-sel", 0, "DOUBLE"),
-		hdgSel: props.globals.initNode("/instrumentation/pfd/heading-sel", 0, "DOUBLE"),
-		hdgDeg: [props.globals.initNode("/instrumentation/pfd/heading-deg[0]", 0, "DOUBLE"), props.globals.initNode("/instrumentation/pfd/heading-deg[1]", 0, "DOUBLE")],
-		slipSkid: props.globals.initNode("/instrumentation/pfd/slip-skid", 0, "DOUBLE"),
-		spdFms: props.globals.initNode("/instrumentation/pfd/spd-fms", 0, "DOUBLE"),
-		spdPreSel: props.globals.initNode("/instrumentation/pfd/spd-pre-sel", 0, "DOUBLE"),
-		spdSel: props.globals.initNode("/instrumentation/pfd/spd-sel", 0, "DOUBLE"),
-		speedTrend: props.globals.initNode("/instrumentation/pfd/speed-trend", 0, "DOUBLE"),
-		trackBug: [props.globals.initNode("/instrumentation/pfd/track-bug[0]", 0, "DOUBLE"), props.globals.initNode("/instrumentation/pfd/track-bug[1]", 0, "DOUBLE")],
-		vsBugDn: props.globals.initNode("/instrumentation/pfd/vs-bug-dn", 0, "DOUBLE"),
-		vsBugUp: props.globals.initNode("/instrumentation/pfd/vs-bug-up", 0, "DOUBLE"),
-		vsNeedleDn: props.globals.initNode("/instrumentation/pfd/vs-needle-dn", 0, "DOUBLE"),
-		vsNeedleUp: props.globals.initNode("/instrumentation/pfd/vs-needle-up", 0, "DOUBLE"),
-		vsDigit: props.globals.initNode("/instrumentation/pfd/vs-digit", 0, "DOUBLE"),
 		mmo: props.globals.getNode("/instrumentation/pfd/mmo-kt"),
+	},
+	Vsi: {
+		indicatedSpeedFpm: props.globals.getNode("/instrumentation/vertical-speed-indicator/indicated-speed-fpm"),
+		serviceable: props.globals.getNode("/instrumentation/vertical-speed-indicator/serviceable"),
 	},
 };
 
@@ -139,13 +129,8 @@ var Systems = {
 				foMfdFps: props.globals.getNode("/systems/acconfig/options/du/fo-mfd-fps"),
 				isfdFps: props.globals.getNode("/systems/acconfig/options/du/isfd-fps"),
 			},
-			# These settings are custom to the MD-11
-			# TODO: #39 I need to adjust these to the 737 MAX
-			# egtAboveN1: props.globals.getNode("/systems/acconfig/options/egt-above-n1"),
-			# engTapes: props.globals.getNode("/systems/acconfig/options/eng-tapes"),
-			# iesiEquipped: props.globals.getNode("/systems/acconfig/options/iesi-equipped"),
-			# risingRunwayTBar: props.globals.getNode("/systems/acconfig/options/rising-runway-t-bar"),
-			# singleCueFd: props.globals.getNode("/systems/acconfig/options/single-cue-fd"),
+			fuelDials: props.globals.getNode("/systems/acconfig/options/fuel-dials"),
+			oilVib: props.globals.getNode("/systems/acconfig/options/eng-oil-vib"),
 		},
 	},
 	Shake: {
