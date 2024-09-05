@@ -17,23 +17,25 @@ var Value = {
 		serviceable: 0,
 	},
 	Autopilot: {
-		kts: 0,
-		ktsMach: 0,
-		mach: 0,
+		Input: {
+			alt: 0,
+			fd: 0,
+			hdg: 0,
+			kts: 0,
+			ktsMach: 0,
+			mach: 0,
+		},
 		pitchArm: "",
 		pitchMode: "",
-		pitchModePrev: "",
 		pitchModeChg: 0,
+		pitchModePrev: "",
 		rollArm: "",
 		rollMode: "",
-		rollModePrev: "",
 		rollModeChg: 0,
+		rollModePrev: "",
 		thrMode: "",
-		thrModePrev: "",
 		thrModeChg: 0,
-		ap1Avail: 0,
-		ap2Avail: 0,
-		athrAvail: 0,
+		thrModePrev: "",
 	},
 	Navigation: {
 		Adf: {
@@ -44,6 +46,7 @@ var Value = {
 			inRange: 0,
 		},
 		gsInRange: 0,
+		gsNeedleDeflectionNorm: 0,
 		hasGs: 0,
 		headingNeedleDeflectionNorm: 0,
 		inRange: 0,
@@ -67,6 +70,10 @@ var Value = {
 	Time: {
 		elapsedSec: 0,
 	},
+	Vsi: {
+		indicatedSpeedFpm: 0,
+		serviceable: 0,
+	},
 };
 
 var canvas_pfd = {
@@ -79,7 +86,7 @@ var canvas_pfd = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-MAX/Nasal/Displays/res/PFD.svg" , {'font-mapper': font_mapper});
 		
-		var svg_keys = ["fail-no-vspd", "fail-spd-lim", "fail-sel-spd", "fail-fd", "fail-dme", "fail-fpv", "fail-fac", "fail-loc", "fail-hdg", "fail-ra", "fail-att", "fail-vert", "fail-gp", "fail-gs", "fail-alt", "fail-ldg-alt", "fail-roll", "fail-pitch", "fail-spd", "warning-msg", "warning-back", "ap-pitch-arm", "ap-roll-arm", "ap-pitch-mode", "ap-roll-mode", "ap-thr-mode", "ap-pitch-box", "ap-roll-box", "ap-thr-box", "spd-tick-r", "spd-r", "spd-tick-v1", "spd-v1", "spd-tick-up", "spd-up", "spd-tick-ref", "spd-ref", "spd-tick-1", "spd-1", "spd-tick-5", "spd-5", "spd-tick-15", "spd-15", "spd-vref-20", "spd-80-kts", "spd-v2-15", "spd-spare-bug", "srs-speed", "srs-selected", "spd-mach", "spd-ap-readout", "spd-ap-box", "spd-ap", "spd-trend-up", "spd-trend-down", "spd-limitLY", "spd-limitLR", "spd-limitLB", "spd-limitUY", "spd-limitUR", "spd-limitUB", "spd-box-1", "spd-box-10", "spd-box-100", "spd-box", "spd-tape", "spd-border", "spd-back", "rising-rwy", "inner-marker", "middle-marker", "outer-marker", "marker-color", "ils-ident", "ils-dist", "nav-src", "course-dev-vert", "anp-vert", "course-dev-lat", "anp-lat", "lines-lat-app", "lines-vert-ils", "lines-lat-ils", "lines-vert-std", "lines-lat-std", "vs-labels", "vs-selected", "vs-pos-readout", "vs-neg-readout", "vs-needle", "vs-border", "vs-back", "alt-mins-readout", "alt-mins-mode", "alt-press-std", "alt-press-std-set", "alt-press-units", "alt-press", "alt-final", "alt-final-box", "alt-ap-1000", "alt-ap-100", "alt-ap-m-unit", "alt-ap-m-readout", "alt-ap-back", "alt-m-readout", "alt-m-unit", "alt-m-back", "alt-10000", "alt-1000", "alt-100", "alt-20", "alt-0", "alt-neg", "alt-tape-back", "alt-mins", "alt-ap", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-ground-close", "alt-ground", "alt-border", "alt-back", "airplane-symbol-b", "airplane-symbol-w", "slip-skid", "bank-angle", "aoa-shaker", "aoa-needle", "aoa-readout", "aoa-approach-upper", "aoa-approach-lower", "aoa-approach", "pitch-limit-indicator", "flight-trend", "fd-pitch", "fd-roll", "ladder", "labels-back", "sky", "ground", "heading-mode", "heading-ap-readout", "wind-stats", "true-airspeed", "ground-speed", "vor1", "vor2", "dme1", "dme2", "heading-ap", "heading-track", "compass-label"];
+		var svg_keys = ["group-fail-warn", "group-ap-modes", "group-speed", "group-navigation", "group-vs", "group-altitude", "group-attitude", "fail-no-vspd", "fail-spd-lim", "fail-sel-spd", "fail-fd", "fail-dme", "fail-fpv", "fail-fac", "fail-loc", "fail-hdg", "fail-ra", "fail-att", "fail-vert", "fail-gp", "fail-gs", "fail-alt", "fail-ldg-alt", "fail-roll", "fail-pitch", "fail-spd", "warning-msg", "warning-back", "ap-pitch-arm", "ap-roll-arm", "ap-pitch-mode", "ap-roll-mode", "ap-thr-mode", "ap-pitch-box", "ap-roll-box", "ap-thr-box", "spd-tick-r", "spd-r", "spd-tick-v1", "spd-v1", "spd-tick-up", "spd-up", "spd-tick-ref", "spd-ref", "spd-tick-1", "spd-1", "spd-tick-5", "spd-5", "spd-tick-15", "spd-15", "spd-vref-20", "spd-80-kts", "spd-v2-15", "spd-spare-bug", "srs-speed", "srs-selected", "spd-mach", "spd-ap-readout", "spd-ap-box", "spd-ap", "spd-trend-up", "spd-trend-down", "spd-limitLY", "spd-limitLR", "spd-limitLB", "spd-limitUY", "spd-limitUR", "spd-limitUB", "spd-box-1", "spd-box-10", "spd-box-100", "spd-box", "spd-tape", "spd-border", "spd-back", "rising-rwy", "inner-marker", "middle-marker", "outer-marker", "marker-color", "ils-ident", "ils-dist", "nav-src", "course-dev-vert", "anp-vert", "course-dev-lat", "anp-lat", "lines-lat-app", "lines-vert-ils", "lines-lat-ils", "lines-vert-std", "lines-lat-std", "vs-labels", "vs-selected", "vs-pos-readout", "vs-neg-readout", "vs-needle", "vs-border", "vs-back", "alt-mins-readout", "alt-mins-mode", "alt-press-std", "alt-press-std-set", "alt-press-units", "alt-press", "alt-final", "alt-final-box", "alt-ap-1000", "alt-ap-100", "alt-ap-m-unit", "alt-ap-m-readout", "alt-ap-back", "alt-m-readout", "alt-m-unit", "alt-m-back", "alt-10000", "alt-1000", "alt-100", "alt-20", "alt-0", "alt-neg", "alt-tape-back", "alt-mins", "alt-ap", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-ground-close", "alt-ground", "alt-border", "alt-back", "airplane-symbol-b", "airplane-symbol-w", "slip-skid", "bank-angle", "aoa-shaker", "aoa-needle", "aoa-readout", "aoa-approach-upper", "aoa-approach-lower", "aoa-approach", "pitch-limit-indicator", "flight-trend", "fd-pitch", "fd-roll", "ladder", "labels-back", "sky", "ground", "heading-mode", "heading-ap-readout", "wind-stats", "true-airspeed", "ground-speed", "vor1", "vor2", "dme1", "dme2", "heading-ap", "heading-track", "compass-label"];
 		foreach(var key; svg_keys)
 			m[key] = pfd.getElementById(key);
 
@@ -122,6 +129,7 @@ var canvas_pfd = {
 		m["spd-box-10"].set("clip", "rect(590, 554, 720, 435)");
 		m["spd-box-100"].set("clip", "rect(590, 554, 720, 435)");
 		m["spd-tape"].set("clip", "rect(160, 682, 1142, 437)");
+		m["vs-needle"].set("clip", "rect(314, 1791, 996, 1724)");
 		return m;
 	},
 
@@ -131,14 +139,16 @@ var canvas_pfd = {
 		Value.Autopilot.pitchArm = itaf.Fma.pitchArm.getValue();
 		Value.Autopilot.rollMode = itaf.Fma.roll.getValue();
 		Value.Autopilot.rollArm = itaf.Fma.rollArm.getValue();
-		Value.Autopilot.kts = itaf.Input.kts.getValue();
-		Value.Autopilot.mach = itaf.Input.mach.getValue();
-		Value.Autopilot.ktsMach = itaf.Input.ktsMach.getBoolValue();
+		Value.Autopilot.Input.kts = itaf.Input.kts.getValue();
+		Value.Autopilot.Input.mach = itaf.Input.mach.getValue();
+		Value.Autopilot.Input.ktsMach = itaf.Input.ktsMach.getBoolValue();
 		Value.Airspeed.vmo = pts.Instrumentation.Pfd.mmo.getValue();
 		Value.Navigation.MarkerBeacon.inner = pts.Instrumentation.MarkerBeacon.inner.getBoolValue();
 		Value.Navigation.MarkerBeacon.middle = pts.Instrumentation.MarkerBeacon.middle.getBoolValue();
 		Value.Navigation.MarkerBeacon.outer = pts.Instrumentation.MarkerBeacon.outer.getBoolValue();
 		Value.Time.elapsedSec = pts.Sim.Time.timeElapsed.getValue();
+		Value.Vsi.indicatedSpeedFpm = itaf.Internal.vs.getValue();
+		Value.Vsi.serviceable = pts.Instrumentation.Vsi.serviceable.getBoolValue();
 
 		# Pilot-specific values
 		# These generally come from sensors which only one pilot uses at a time, unless in an emergency
@@ -148,57 +158,39 @@ var canvas_pfd = {
 			Value.Airspeed.iasMach = pts.Instrumentation.AirspeedIndicator.indicatedMach[0].getValue();
 			Value.Navigation.Adf.selectedKhz = pts.Instrumentation.Adf.Frequencies.selectedKhz[0].getValue();
 			Value.Navigation.Dme.indicatedDistanceNm = pts.Instrumentation.Dme.indicatedDistanceNm[0].getValue();
-			Value.Navigation.Dme.inRange = pts.Instrumentation.Dme.inRange[0].getValue();
-			Value.Navigation.gsInRange = pts.Instrumentation.Nav.gsInRange[0].getValue();
+			Value.Navigation.Dme.inRange = pts.Instrumentation.Dme.inRange[0].getBoolValue();
+			Value.Navigation.gsInRange = pts.Instrumentation.Nav.gsInRange[0].getBoolValue();
 			Value.Navigation.gsNeedleDeflectionNorm = pts.Instrumentation.Nav.gsNeedleDeflectionNorm[0].getValue();
 			Value.Navigation.hasGs = pts.Instrumentation.Nav.hasGs[0].getValue();
-			Value.Navigation.inRange = pts.Instrumentation.Nav.inRange[0].getValue();
+			Value.Navigation.inRange = pts.Instrumentation.Nav.inRange[0].getBoolValue();
 			Value.Navigation.navId = pts.Instrumentation.Nav.navId[0].getValue();
-			Value.Navigation.navLoc = pts.Instrumentation.Nav.navLoc[0].getValue();
+			Value.Navigation.navLoc = pts.Instrumentation.Nav.navLoc[0].getBoolValue();
 			Value.Navigation.radialSelectedDeg = pts.Instrumentation.Nav.Radials.selectedDeg[0].getValue();
+			Value.Navigation.selectedMhz = pts.Instrumentation.Nav.Frequencies.selectedMhz[0].getValue();
 			Value.Navigation.signalQualityNorm = pts.Instrumentation.Nav.signalQualityNorm[0].getValue();
 			Value.Altitude.radioAlt = pts.Instrumentation.Altimeter.radioAlt[0].getValue();
-			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[0].getValue();
+			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[0].getBoolValue();
 		} elsif (n == "fo") {
 			Value.Airspeed.iasKts = pts.Instrumentation.AirspeedIndicator.indicatedSpeedKt[1].getValue();
 			Value.Airspeed.iasMach = pts.Instrumentation.AirspeedIndicator.indicatedMach[1].getValue();
 			Value.Navigation.Adf.selectedKhz = pts.Instrumentation.Adf.Frequencies.selectedKhz[1].getValue();
 			Value.Navigation.Dme.indicatedDistanceNm = pts.Instrumentation.Dme.indicatedDistanceNm[1].getValue();
-			Value.Navigation.Dme.inRange = pts.Instrumentation.Dme.inRange[1].getValue();
-			Value.Navigation.gsInRange = pts.Instrumentation.Nav.gsInRange[1].getValue();
+			Value.Navigation.Dme.inRange = pts.Instrumentation.Dme.inRange[1].getBoolValue();
+			Value.Navigation.gsInRange = pts.Instrumentation.Nav.gsInRange[1].getBoolValue();
 			Value.Navigation.gsNeedleDeflectionNorm = pts.Instrumentation.Nav.gsNeedleDeflectionNorm[1].getValue();
 			Value.Navigation.hasGs = pts.Instrumentation.Nav.hasGs[1].getValue();
-			Value.Navigation.inRange = pts.Instrumentation.Nav.inRange[1].getValue();
+			Value.Navigation.inRange = pts.Instrumentation.Nav.inRange[1].getBoolValue();
 			Value.Navigation.navId = pts.Instrumentation.Nav.navId[1].getValue();
-			Value.Navigation.navLoc = pts.Instrumentation.Nav.navLoc[1].getValue();
+			Value.Navigation.navLoc = pts.Instrumentation.Nav.navLoc[1].getBoolValue();
 			Value.Navigation.radialSelectedDeg = pts.Instrumentation.Nav.Radials.selectedDeg[1].getValue();
+			Value.Navigation.selectedMhz = pts.Instrumentation.Nav.Frequencies.selectedMhz[1].getValue();
 			Value.Navigation.signalQualityNorm = pts.Instrumentation.Nav.signalQualityNorm[1].getValue();
 			Value.Altitude.radioAlt = pts.Instrumentation.Altimeter.radioAlt[1].getValue();
-			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[1].getValue();
+			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[1].getBoolValue();
 		}
 
 		# Hide failure flags by default
-		me["fail-no-vspd"].hide();
-		me["fail-spd-lim"].hide();
-		me["fail-sel-spd"].hide();
-		me["fail-fd"].hide();
-		me["fail-dme"].hide();
-		me["fail-fpv"].hide();
-		me["fail-fac"].hide();
-		me["fail-loc"].hide();
-		me["fail-hdg"].hide();
-		me["fail-ra"].hide();
-		me["fail-att"].hide();
-		me["fail-vert"].hide();
-		me["fail-gp"].hide();
-		me["fail-gs"].hide();
-		me["fail-alt"].hide();
-		me["fail-ldg-alt"].hide();
-		me["fail-roll"].hide();
-		me["fail-pitch"].hide();
-		me["fail-spd"].hide();
-		me["warning-msg"].hide();
-		me["warning-back"].hide();
+		me["group-fail-warn"].hide();
 
 		# Autopilot Modes
 		me["ap-pitch-arm"].setText(Value.Autopilot.pitchArm);
@@ -235,14 +227,14 @@ var canvas_pfd = {
 		}
 
 		# Speed Tapes
-		if (Value.Autopilot.kts != nil or Value.Autopilot.mach != nil) {
+		if (Value.Autopilot.Input.kts != nil or Value.Autopilot.Input.mach != nil) {
 			me["spd-ap-box"].show();
 			me["spd-ap-readout"].show();
 			me["spd-ap"].show();
-			if (Value.Autopilot.ktsMach) {
-				me["spd-ap-readout"].setText(sprintf("%.3f", Value.Autopilot.mach));
+			if (Value.Autopilot.Input.ktsMach) {
+				me["spd-ap-readout"].setText(sprintf("%.3f", Value.Autopilot.Input.mach));
 			} else {
-				me["spd-ap-readout"].setText(sprintf("%i", Value.Autopilot.kts));
+				me["spd-ap-readout"].setText(sprintf("%i", Value.Autopilot.Input.kts));
 			}
 		} else {
 			me["spd-ap-box"].hide();
@@ -284,12 +276,12 @@ var canvas_pfd = {
 		me["spd-limitUR"].setTranslation(0, (Value.Airspeed.iasKts - Value.Airspeed.vmo) * 8);
 		me["spd-limitUB"].setTranslation(0, (Value.Airspeed.iasKts - Value.Airspeed.vmo) * 8);
 		me["spd-tape"].setTranslation(0, Value.Airspeed.iasKts * 8);
-		if (Value.Autopilot.kts - Value.Airspeed.iasKts > 61.875) {
+		if (Value.Autopilot.Input.kts - Value.Airspeed.iasKts > 61.875) {
 			me["spd-ap"].setTranslation(0, -495);
-		} elsif (Value.Autopilot.kts - Value.Airspeed.iasKts < -61.875) {
+		} elsif (Value.Autopilot.Input.kts - Value.Airspeed.iasKts < -61.875) {
 			me["spd-ap"].setTranslation(0, 495);
 		} else {
-			me["spd-ap"].setTranslation(0, (Value.Airspeed.iasKts - Value.Autopilot.kts) * 8);
+			me["spd-ap"].setTranslation(0, (Value.Airspeed.iasKts - Value.Autopilot.Input.kts) * 8);
 		}
 		# TODO: #43 animate v-speed bugs
 
@@ -310,6 +302,9 @@ var canvas_pfd = {
 
 		# Radio Navigation
 		me["rising-rwy"].hide();
+		# ANP isn't supported yet
+		me["anp-lat"].hide();
+		me["anp-vert"].hide();
 		if (Value.Navigation.selectedMhz != 0) {
 			if (Value.Navigation.signalQualityNorm >= 0.95 and Value.Navigation.navLoc) {
 				if (Value.Altitude.radioAlt <= 2500) {	
@@ -376,29 +371,77 @@ var canvas_pfd = {
 				} else {
 					me["ils-dist"].hide();
 				}
-				me["nav-src"].setText(""); # TODO: #46 Simulate RNP sources
-
-				# Localiser
-				
+				me["nav-src"].setText(""); # TODO: #46 Simulate RNP sources				
+			} else { # Hide all localiser elements
+				me["group-navigation"].hide();
+			}
+			# Localiser
+			# TODO: #48 Simulate different types of localiser lines
+			me["lines-lat-app"].hide();
+			me["lines-vert-std"].hide();
+			me["lines-lat-std"].hide();
+			if (Value.Navigation.headingNeedleDeflectionNorm >= 10) {
+				me["course-dev-lat"].setTranslation(200, 0);
+			} elsif (Value.Navigation.headingNeedleDeflectionNorm <= -10) {
+				me["course-dev-lat"].setTranslation(-200, 0);
+			} else {
+				me["course-dev-lat"].setColorFill(1, 0, 1, 1);
+				me["course-dev-lat"].setTranslation(Value.Navigation.headingNeedleDeflectionNorm * 20, 0);
+			}
+			if (Value.Navigation.hasGs) {
+				me["course-dev-vert"].show();
+				if (Value.Navigation.gsNeedleDeflectionNorm >= 10) {
+					me["course-dev-vert"].setTranslation(0, 200);
+				} elsif (Value.Navigation.gsNeedleDeflectionNorm <= 10) {
+					me["course-dev-vert"].setTranslation(0, -200);
+				} else {
+					me["course-dev-vert"].setTranslation(0, Value.Navigation.gsNeedleDeflectionNorm * 20);
+				}
 			}
 		}
 
-		# Altitude
-		if (Value.Altitude.radioAlt <= 2500) {
-			me["alt-final"].show();
-			me["alt-final-box"].show();
-			if (Value.Altitude.radioAlt <= 100) {
-				me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 2)));
-			} elsif (Value.Altitude.radioAlt <= 500) {
-				me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 10)));
+		# Vertical Speed
+		if (Value.Vsi.serviceable) {	
+			if (Value.Vsi.indicatedSpeedFpm >= 400) {
+				me["vs-pos-readout"].show();
+				me["vs-neg-readout"].hide();
+				me["vs-pos-readout"].setText(sprintf("%i", math.floor(Value.Vsi.indicatedSpeedFpm / 50) * 50));
+			} elsif (Value.Vsi.indicatedSpeedFpm <= -400) {
+				me["vs-pos-readout"].hide();
+				me["vs-neg-readout"].show();
+				me["vs-neg-readout"].setText(sprintf("%i", math.floor(math.abs(Value.Vsi.indicatedSpeedFpm) / 50) * 50));
 			} else {
-				me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 20)));
+				me["vs-pos-readout"].hide();
+				me["vs-neg-readout"].hide();
+			}
+		} else {
+			me["group-vs"].hide();
+			me["fail-vert"].show();
+		}
+
+		# Altitude
+		if (Value.Altitude.radioAltServiceable) {
+			if (Value.Altitude.radioAlt <= 2500) {
+				me["alt-final"].show();
+				me["alt-final-box"].show();
+				if (Value.Altitude.radioAlt <= 100) {
+					me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 2)));
+				} elsif (Value.Altitude.radioAlt <= 500) {
+					me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 10)));
+				} else {
+					me["alt-final"].setText(sprintf("%i", math.round(Value.Altitude.radioAlt, 20)));
+				}
+			} else {
+				me["alt-final"].hide();
+				me["alt-final-box"].hide();
 			}
 		} else {
 			me["alt-final"].hide();
 			me["alt-final-box"].hide();
+			me["fail-ra"].show();
 		}
-	},
+	}
+		
 };
 
 setlistener("sim/signals/fdm-initialized", func() {
