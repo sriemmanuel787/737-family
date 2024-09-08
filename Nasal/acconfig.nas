@@ -9,7 +9,7 @@ var CONFIG = {
 };
 
 var SYSTEM = {
-	autoConfigRunning: props.globals.getNode("/systems/acconfig/autoconfig-running", 1, "BOOL"),
+	autoConfigRunning: props.globals.getNode("/systems/acconfig/autoconfig-running"),
 	Error: {
 		active: props.globals.initNode("/systems/acconfig/error-active", 0, "BOOL"),
 		outOfDate: 0,
