@@ -48,21 +48,31 @@ var Instrumentation = {
 		inRange: [props.globals.getNode("/instrumentation/dme[0]/in-range"), props.globals.getNode("/instrumentation/dme[1]/in-range"), props.globals.getNode("/instrumentation/dme[2]/in-range")],
 	},
 	Efis: {
-		hdgTrkSelected: [props.globals.initNode("/instrumentation/efis[0]/hdg-trk-selected", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/hdg-trk-selected", 0, "BOOL")],
 		Inputs: {
-			arpt: [props.globals.initNode("/instrumentation/efis[0]/inputs/arpt", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/arpt", 0, "BOOL")],
-			data: [props.globals.initNode("/instrumentation/efis[0]/inputs/data", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/data", 0, "BOOL")],
-			lhVorAdf: [props.globals.initNode("/instrumentation/efis[0]/inputs/lh-vor-adf", 0, "INT"), props.globals.initNode("/instrumentation/efis[1]/inputs/lh-vor-adf", 0, "INT")],
+			baroInHpa: [props.globals.initNode("/instrumentation/efis[0]/inputs/baro-in-hpa", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/baro-in-hpa", 0, "BOOL")], # 0 is HPA, 1 is INHG
+			baroSelected: [props.globals.initNode("/instrumentation/efis[0]/inputs/baro-selected", 0, "INT"), props.globals.initNode("/instrumentation/efis[1]/inputs/baro-selected", 0, "INT")],
+			baroStd: [props.globals.initNode("/instrumentation/efis[0]/inputs/baro-std", 0, "INT"), props.globals.initNode("/instrumentation/efis[1]/inputs/baro-std", 0, "INT")],
+			fpv: [props.globals.initNode("/instrumentation/efis[0]/inputs/fpv", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/fpv", 0, "BOOL")],
+			minsAltitude: [props.globals.initNode("/instrumentation/efis[0]/inputs/mins-altitude", 2500, "INT"), props.globals.initNode("/instrumentation/efis[1]/inputs/mins-altitude", 2500, "INT")],
+			minsBaroRadio: [props.globals.initNode("/instrumentation/efis[0]/inputs/mins-baro-radio", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/mins-baro-radio", 0, "BOOL")], # 0 is BARO, 1 is RADIO
+			mtrs: [props.globals.initNode("/instrumentation/efis[0]/inputs/mtrs", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/mtrs", 0, "BOOL")],
 			ndCentered: [props.globals.initNode("/instrumentation/efis[0]/inputs/nd-centered", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/nd-centered", 0, "BOOL")],
+			NdLayer: {
+				arpt: [props.globals.initNode("/instrumentation/efis[0]/inputs/arpt", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/arpt", 0, "BOOL")],
+				data: [props.globals.initNode("/instrumentation/efis[0]/inputs/data", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/data", 0, "BOOL")],
+				pos: [props.globals.initNode("/instrumentation/efis[0]/inputs/pos", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/pos", 0, "BOOL")],
+				sta: [props.globals.initNode("/instrumentation/efis[0]/inputs/sta", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/sta", 0, "BOOL")],
+				tfc: [props.globals.initNode("/instrumentation/efis[0]/inputs/tfc", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/tfc", 0, "BOOL")],
+				terr: [props.globals.initNode("/instrumentation/efis[0]/inputs/terr", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/terr", 0, "BOOL")],
+				vsd: [props.globals.initNode("/instrumentation/efis[0]/inputs/vsd", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/vsd", 0, "BOOL")],
+				wpt: [props.globals.initNode("/instrumentation/efis[0]/inputs/wpt", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/wpt", 0, "BOOL")],
+				wxr: [props.globals.initNode("/instrumentation/efis[0]/inputs/wxr", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/wxr", 0, "BOOL")],
+			},
+			ndMode: [props.globals.initNode("/instrumentation/efis[0]/inputs/nd-mode", "MAP", "STRING"), props.globals.initNode("/instrumentation/efis[1]/inputs/nd-mode", "MAP", "STRING")],
 			rangeNm: [props.globals.initNode("/instrumentation/efis[0]/inputs/range-nm", 10, "INT"), props.globals.initNode("/instrumentation/efis[1]/inputs/range-nm", 10, "INT")],
-			rhVorAdf: [props.globals.initNode("/instrumentation/efis[0]/inputs/rh-vor-adf", 0, "INT"), props.globals.initNode("/instrumentation/efis[1]/inputs/rh-vor-adf", 0, "INT")],
-			sta: [props.globals.initNode("/instrumentation/efis[0]/inputs/sta", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/sta", 0, "BOOL")],
-			tfc: [props.globals.initNode("/instrumentation/efis[0]/inputs/tfc", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/tfc", 0, "BOOL")],
-			wpt: [props.globals.initNode("/instrumentation/efis[0]/inputs/wpt", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/wpt", 0, "BOOL")],
-		},
-		Mfd: {
-			displayMode: [props.globals.initNode("/instrumentation/efis[0]/mfd/display-mode", "MAP", "STRING"), props.globals.initNode("/instrumentation/efis[1]/mfd/display-mode", "MAP", "STRING")],
-			trueNorth: [props.globals.initNode("/instrumentation/efis[0]/mfd/true-north", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/mfd/true-north", 0, "BOOL")],
+			vorAdf1: [props.globals.initNode("/instrumentation/efis[0]/inputs/vor-adf1", 0, "INT"), props.globals.initNode("/instrumentation/efis[1]/inputs/vor-adf1", 0, "INT")],
+			vorAdf2: [props.globals.initNode("/instrumentation/efis[0]/inputs/vor-adf2", 0, "INT"), props.globals.initNode("/instrumentation/efis[1]/inputs/vor-adf2", 0, "INT")],
+			vsd: [props.globals.initNode("/instrumentation/efis[0]/inputs/vsd", 0, "BOOL"), props.globals.initNode("/instrumentation/efis[1]/inputs/vsd", 0, "BOOL")],
 		},
 	},
 	MarkerBeacon: {

@@ -1042,27 +1042,6 @@
             </antenna>
         </radar-altimeter>
 
-        <efis n="0">
-            <inputs>
-                <range-knob type="int">3</range-knob>
-                <kpa-mode type="bool">1</kpa-mode>
-                <baro-knob type="double">0</baro-knob>
-                <baro-previous type="double">1013</baro-previous>
-                <baro-previous-show type="bool">0</baro-previous-show>
-                <range-nm type="int">50</range-nm>
-            </inputs>
-        </efis>
-
-        <efis n="1">
-            <inputs>
-                <range-knob type="int">3</range-knob>
-                <kpa-mode type="bool">1</kpa-mode>
-                <baro-knob type="double">0</baro-knob>
-                <baro-previous type="double">1013</baro-previous>
-                <baro-previous-show type="bool">0</baro-previous-show>
-            </inputs>
-        </efis>
-
         <slip-skid-ball>
             <side-accel-filtered-norm type="double">0</side-accel-filtered-norm>
         </slip-skid-ball>
@@ -1092,7 +1071,6 @@
         <boeing737>
             <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
             <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
-            <file>Aircraft/737-MAX/Nasal/controls.nas</file>
             <file>Aircraft/737-MAX/Nasal/friction.nas</file>
             <file>Aircraft/737-MAX/Nasal/lighting.nas</file>
             <file>Aircraft/737-MAX/Nasal/tire-smoke.nas</file>

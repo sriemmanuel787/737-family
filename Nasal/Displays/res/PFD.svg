@@ -24,15 +24,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="24.341784"
-     inkscape:cx="1713.7405"
-     inkscape:cy="656.71029"
+     inkscape:zoom="1.7631693"
+     inkscape:cx="1416.4833"
+     inkscape:cy="437.56432"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="group-altitude" />
   <defs
      id="defs464">
     <rect
@@ -468,33 +468,38 @@
            style="fill:#00ffff" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:54.0305px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;writing-mode:lr-tb;fill:#ffffff;stroke-width:0"
-           x="1525.4863"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:54.0305px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#ffffff;stroke-width:0"
+           x="1666.037"
            y="587.06366"
            id="alt-m-readout"
            inkscape:label="alt-m-readout"><tspan
              sodipodi:role="line"
              id="tspan2290"
-             x="1525.4863"
+             x="1666.037"
              y="587.06366"
-             style="stroke-width:0">99999</tspan></text>
+             style="text-align:end;text-anchor:end;stroke-width:0">99999</tspan></text>
         <path
            id="alt-ap-back"
            class="s3"
-           d="m 1459,0 h 177 v 130 h -177 z"
-           style="fill:#000000" />
+           d="m 1459,58 h 177 v 72 h -177 z"
+           style="fill:#000000;stroke-width:0.744208" />
+        <path
+           id="alt-ap-m-back"
+           class="s3"
+           d="m 1459,0 h 177 v 58 h -177 z"
+           style="fill:#000000;stroke-width:0.667947" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:54.0305px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;writing-mode:lr-tb;fill:#ff00ff;stroke-width:0"
-           x="1469.4865"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:54.0305px;line-height:125%;font-family:MFD-Font;-inkscape-font-specification:MFD-Font;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#ff00ff;stroke-width:0"
+           x="1610.037"
            y="52.063705"
            id="alt-ap-m-readout"
            inkscape:label="alt-ap-m-readout"><tspan
              sodipodi:role="line"
              id="tspan2306"
-             x="1469.4865"
+             x="1610.037"
              y="52.063705"
-             style="stroke-width:0;fill:#ff00ff">99999</tspan></text>
+             style="text-align:end;text-anchor:end;fill:#ff00ff;stroke-width:0">99999</tspan></text>
         <path
            id="alt-ap-m-unit"
            class="s14"
