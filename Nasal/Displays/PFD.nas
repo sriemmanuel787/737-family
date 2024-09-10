@@ -16,6 +16,13 @@ var Value = {
 		settingHpa: 0,
 		serviceable: 0,
 	},
+	Attitude: {
+		indicatedPitchDeg: 0,
+		indicatedPitchVector: 0,
+		indicatedRollDeg: 0,
+		indicatedRollVector: 0,
+		indicatedSlipSkid: 0,
+	},
 	Autopilot: {
 		fd: 0,
 		Input: {
@@ -34,6 +41,12 @@ var Value = {
 		rollMode: "",
 		rollModeChg: 0,
 		rollModePrev: "",
+		Route: {
+			departureAlt: 0,
+			destinationAlt: 0,
+			distanceRemainingNm: 0,
+			totalDistance: 0,
+		},
 		thrMode: "",
 		thrModeChg: 0,
 		thrModePrev: "",
@@ -96,7 +109,7 @@ var canvas_pfd = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-MAX/Nasal/Displays/res/PFD.svg" , {'font-mapper': font_mapper});
 		
-		var svg_keys = ["group-fail-warn", "group-ap-modes", "group-speed", "group-navigation", "group-vs", "group-altitude", "group-attitude", "fail-no-vspd", "fail-spd-lim", "fail-sel-spd", "fail-fd", "fail-dme", "fail-fpv", "fail-fac", "fail-loc", "fail-hdg", "fail-ra", "fail-att", "fail-vert", "fail-gp", "fail-gs", "fail-alt", "fail-ldg-alt", "fail-roll", "fail-pitch", "fail-spd", "warning-msg", "warning-back", "ap-pitch-arm", "ap-roll-arm", "ap-pitch-mode", "ap-roll-mode", "ap-thr-mode", "ap-pitch-box", "ap-roll-box", "ap-thr-box", "spd-tick-r", "spd-r", "spd-tick-v1", "spd-v1", "spd-tick-up", "spd-up", "spd-tick-ref", "spd-ref", "spd-tick-1", "spd-1", "spd-tick-5", "spd-5", "spd-tick-15", "spd-15", "spd-vref-20", "spd-80-kts", "spd-v2-15", "spd-spare-bug", "srs-speed", "srs-selected", "spd-mach", "spd-ap-readout", "spd-ap-box", "spd-ap", "spd-trend-up", "spd-trend-down", "spd-limitLY", "spd-limitLR", "spd-limitLB", "spd-limitUY", "spd-limitUR", "spd-limitUB", "spd-box-1", "spd-box-10", "spd-box-100", "spd-box", "spd-tape", "spd-border", "spd-back", "rising-rwy", "inner-marker", "middle-marker", "outer-marker", "marker-color", "ils-ident", "ils-dist", "nav-src", "course-dev-vert", "anp-vert", "course-dev-lat", "anp-lat", "lines-lat-app", "lines-vert-ils", "lines-lat-ils", "lines-vert-std", "lines-lat-std", "vs-labels", "vs-selected", "vs-pos-readout", "vs-neg-readout", "vs-needle", "vs-border", "vs-back", "alt-mins-readout", "alt-mins-mode", "alt-press-std", "alt-press-std-set", "alt-press-units", "alt-press", "alt-final", "alt-final-box", "alt-ap-1000", "alt-ap-100", "alt-ap-m-unit", "alt-ap-m-readout", "alt-ap-m-back", "alt-ap-back", "alt-m-readout", "alt-m-unit", "alt-m-back", "alt-10000", "alt-1000", "alt-100", "alt-20", "alt-0", "alt-neg", "alt-tape-back", "alt-mins", "alt-ap", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-ground-close", "alt-ground", "alt-border", "alt-back", "airplane-symbol-b", "airplane-symbol-w", "slip-skid", "bank-angle", "aoa-shaker", "aoa-needle", "aoa-readout", "aoa-approach-upper", "aoa-approach-lower", "aoa-approach", "pitch-limit-indicator", "flight-trend", "fd-pitch", "fd-roll", "ladder", "labels-back", "sky", "ground", "heading-mode", "heading-ap-readout", "wind-stats", "true-airspeed", "ground-speed", "vor1", "vor2", "dme1", "dme2", "heading-ap", "heading-track", "compass-label"];
+		var svg_keys = ["group-fail-warn", "group-ap-modes", "group-speed", "group-navigation", "group-vs", "group-altitude", "group-attitude", "fail-no-vspd", "fail-spd-lim", "fail-sel-spd", "fail-fd", "fail-dme", "fail-fpv", "fail-fac", "fail-loc", "fail-hdg", "fail-ra", "fail-att", "fail-vert", "fail-gp", "fail-gs", "fail-alt", "fail-ldg-alt", "fail-roll", "fail-pitch", "fail-spd", "warning-msg", "warning-back", "ap-pitch-arm", "ap-roll-arm", "ap-pitch-mode", "ap-roll-mode", "ap-thr-mode", "ap-pitch-box", "ap-roll-box", "ap-thr-box", "spd-tick-r", "spd-r", "spd-tick-v1", "spd-v1", "spd-tick-up", "spd-up", "spd-tick-ref", "spd-ref", "spd-tick-1", "spd-1", "spd-tick-5", "spd-5", "spd-tick-15", "spd-15", "spd-vref-20", "spd-80-kts", "spd-v2-15", "spd-spare-bug", "srs-speed", "srs-selected", "spd-mach", "spd-ap-readout", "spd-ap-box", "spd-ap", "spd-trend-up", "spd-trend-down", "spd-limitLY", "spd-limitLR", "spd-limitLB", "spd-limitUY", "spd-limitUR", "spd-limitUB", "spd-box-1", "spd-box-10", "spd-box-100", "spd-box", "spd-tape", "spd-border", "spd-back", "rising-rwy", "inner-marker", "middle-marker", "outer-marker", "marker-color", "ils-ident", "ils-dist", "nav-src", "course-dev-vert", "anp-vert", "course-dev-lat", "anp-lat", "lines-lat-app", "lines-vert-ils", "lines-lat-ils", "lines-vert-std", "lines-lat-std", "vs-labels", "vs-selected", "vs-pos-readout", "vs-neg-readout", "vs-needle", "vs-border", "vs-back", "alt-mins-readout", "alt-mins-mode", "alt-press-std", "alt-press-std-set", "alt-press-units", "alt-press", "alt-final", "alt-final-box", "alt-ap-1000", "alt-ap-100", "alt-ap-m-unit", "alt-ap-m-readout", "alt-ap-m-back", "alt-ap-back", "alt-m-readout", "alt-m-unit", "alt-m-back", "alt-10000", "alt-1000", "alt-100", "alt-20", "alt-0", "alt-neg", "alt-tape-back", "alt-mins", "alt-ap", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-ground-close", "alt-ground", "alt-border", "alt-back", "airplane-symbol-b", "airplane-symbol-w", "slip-skid", "bank-angle", "aoa-shaker", "aoa-needle", "aoa-readout", "aoa-approach-upper", "aoa-approach-lower", "aoa-approach", "pitch-limit-indicator", "flight-path-vector", "fd-pitch", "fd-roll", "ladder", "labels-back", "sky", "ground", "heading-mode", "heading-ap-readout", "wind-stats", "true-airspeed", "ground-speed", "vor1", "vor2", "dme1", "dme2", "heading-ap", "heading-track", "compass-label"];
 		foreach(var key; svg_keys)
 			m[key] = pfd.getElementById(key);
 
@@ -157,6 +170,8 @@ var canvas_pfd = {
 		m["alt-1000"].set("clip", "rect(595, 1693, 715, 1519)");
 		m["alt-100"].set("clip", "rect(595, 1693, 715, 1519)");
 		m["alt-20"].set("clip", "rect(595, 1693, 715, 1519)");
+		m["slip-skid"].setCenter(1024, 655);
+		m["bank-angle"].setCenter(1024, 655);
 		return m;
 	},
 
@@ -171,6 +186,10 @@ var canvas_pfd = {
 		Value.Autopilot.pitchMode = itaf.Fma.pitch.getValue();
 		Value.Autopilot.rollArm = itaf.Fma.rollArm.getValue();
 		Value.Autopilot.rollMode = itaf.Fma.roll.getValue();
+		Value.Autopilot.Route.departureAlt = pts.Autopilot.Route.Departure.fieldElevationFt.getValue();
+		Value.Autopilot.Route.destinationAlt = pts.Autopilot.Route.Destination.fieldElevationFt.getValue();
+		Value.Autopilot.Route.distanceRemainingNm = pts.Autopilot.Route.distanceRemainingNm.getValue();
+		Value.Autopilot.Route.totalDistance = pts.Autopilot.Route.totalDistance.getValue();
 		Value.Autopilot.thrMode = itaf.Fma.thr.getValue();
 		Value.Autopilot.vert = itaf.Output.vert.getValue();
 		Value.Navigation.MarkerBeacon.inner = pts.Instrumentation.MarkerBeacon.inner.getBoolValue();
@@ -189,6 +208,8 @@ var canvas_pfd = {
 			Value.Altitude.indicatedAltitudeFt = pts.Instrumentation.Altimeter.indicatedAltitudeFt[0].getValue();
 			Value.Altitude.radioAlt = pts.Instrumentation.Altimeter.radioAlt[0].getValue();
 			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[0].getBoolValue();
+			Value.Attitude.indicatedPitchDeg = pts.Instrumentation.Attitude.indicatedPitchDeg[0].getValue();
+			Value.Attitude.indicatedRollDeg = pts.Instrumentation.Attitude.indicatedRollDeg[0].getValue();
 			Value.Autopilot.fd = itaf.Output.fd1.getBoolValue();
 			Value.Efis.baroInHpa = pts.Instrumentation.Efis.Inputs.baroInHpa[0].getValue();
 			Value.Efis.baroSelected = pts.Instrumentation.Efis.Inputs.baroSelected[0].getBoolValue();
@@ -214,6 +235,8 @@ var canvas_pfd = {
 			Value.Altitude.indicatedAltitudeFt = pts.Instrumentation.Altimeter.indicatedAltitude[1].getValue();
 			Value.Altitude.radioAlt = pts.Instrumentation.Altimeter.radioAlt[1].getValue();
 			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[1].getBoolValue();
+			Value.Attitude.indicatedPitchDeg = pts.Instrumentation.Attitude.indicatedPitchDeg[1].getValue();
+			Value.Attitude.indicatedRollDeg = pts.Instrumentation.Attitude.indicatedRollDeg[1].getValue();
 			Value.Autopilot.fd = itaf.Output.fd2.getBoolValue();
 			Value.Efis.baroInHpa = pts.Instrumentation.Efis.baroInHpa[1].getValue();
 			Value.Efis.baroSelected = pts.Instrumentation.Efis.baroSelected[1].getBoolValue();
@@ -568,14 +591,22 @@ var canvas_pfd = {
 			me["alt-ap"].hide();
 		}
 
-		
-		me["alt-tape0"].setTranslation(0, Value.Altitude.indicatedAltitudeFt * 1.2);
 		me["alt-mins"].setTranslation(0, (Value.Altitude.indicatedAltitudeFt - Value.Efis.minsAltitude) * 1.2);
 		if (Value.Altitude.indicatedAltitudeFt < Value.Efis.minsAltitude) {
 			me["alt-mins"].setColorFill(1, 0.75, 0, 1);
 		} else {
 			me["alt-mins"].setColorFill(0, 1, 0, 1);
 		}
+
+		if (Value.Autopilot.Route.totalDistance - Value.Autopilot.Route.distanceRemainingNm > 400 or Value.Autopilot.Route.distanceRemainingNm * 2 > Value.Autopilot.Route.totalDistance) {
+			me["alt-ground"].setTranslation(0, (Value.Altitude.indicatedAltitudeFt - Value.Autopilot.Route.destinationAlt) * 1.2);
+			me["alt-ground-close"].setTranslation(0, (Value.Altitude.indicatedAltitudeFt - Value.Autopilot.Route.destinationAlt) * 1.2);
+		} else {
+			me["alt-ground"].setTranslation(0, (Value.Altitude.indicatedAltitudeFt - Value.Autopilot.Route.departureAlt) * 1.2);
+			me["alt-ground-close"].setTranslation(0, (Value.Altitude.indicatedAltitudeFt - Value.Autopilot.Route.departureAlt) * 1.2);
+		}
+
+		me["alt-tape0"].setTranslation(0, Value.Altitude.indicatedAltitudeFt * 1.2);
 		for (var i = 0; i < 7; i += 1) {
 			me["alt-tape" ~ (i + 1) ~ ""].setTranslation(0, Value.Altitude.indicatedAltitudeFt * 1.2 - (6000 * i))
 		}
@@ -609,6 +640,12 @@ var canvas_pfd = {
 			}
 		}
 		
+		# Attitude
+		me["sky"].setTranslation(0, Value.Attitude.indicatedPitchDeg * 14).setCenter(1024, 655 - (Value.Attitude.indicatedPitchDeg * 14)).setRotation(-Value.Attitude.indicatedRollDeg * D2R);
+		me["ground"].setTranslation(0, Value.Attitude.indicatedPitchDeg * 14).setCenter(1024, 655 - (Value.Attitude.indicatedPitchDeg * 14)).setRotation(-Value.Attitude.indicatedRollDeg * D2R);
+		me["ladder"].setTranslation(0, Value.Attitude.indicatedPitchDeg * 14).setCenter(1024, 655 - (Value.Attitude.indicatedPitchDeg * 14)).setRotation(-Value.Attitude.indicatedRollDeg * D2R);
+		me["slip-skid"].setRotation(-(Value.Attitude.indicatedRollDeg + Value.Attitude.indicatedSlipSkid) * D2R);
+		me["bank-angle"].setRotation(-Value.Attitude.indicatedRollDeg * D2R);
 	}
 		
 };
