@@ -63,12 +63,6 @@ This file selects the instrumentation modules that should be available.
         <tau>0.1</tau>
     </altimeter>
 
-    <attitude-indicator>
-        <name>attitude-indicator</name>
-        <number>0</number>
-        <suction>/systems/vacuum/suction-inhg</suction>
-    </attitude-indicator>
-
     <clock>
         <name>clock</name>
         <number>0</number>

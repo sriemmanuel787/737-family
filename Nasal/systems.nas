@@ -13,7 +13,6 @@ print("Enjoy your flight!!!");
 print("-----------------------------------------------------------------------");
 print(" ");
 
-setprop("instrumentation/attitude-indicator/spin", 1);
 setprop("options/OHPtemp", 1);
 
 var altAlertModeSwitch = func {

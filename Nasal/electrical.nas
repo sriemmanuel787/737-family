@@ -191,8 +191,6 @@ var master_elec = func {
 	} else {
 		setprop("systems/electrical/bus/acR", 0);
 	}
-	
-	setprop("instrumentation/attitude-indicator/spin", 1);
 }
 
 setlistener("systems/electrical/bus/dcL", func {
