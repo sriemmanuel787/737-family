@@ -1,4 +1,4 @@
-# B737-MAX Systems File
+# Boeing 737 MAX Main Libraries
 
 print(" ______ ____ ______      __  __          __   __");
 print("|____  |___ \____  |    |  \/  |   /\    \ \ / /");
@@ -6,14 +6,41 @@ print("    / /  __) |  / /_____| \  / |  /  \    \ V / ");
 print("   / /  |__ <  / /______| |\/| | / /\ \    > <  ");
 print("  / /   ___) |/ /       | |  | |/ ____ \  / . \ ");
 print(" /_/   |____//_/        |_|  |_/_/    \_\/_/ \_\\");
-print("-----------------------------------------------------------------------");
-print("Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), Israel Emmanuel (sriemmanuel787)");
-print("Report all bugs on GitHub Issues tab, or on the FlightGear Discord server.");
-print("Enjoy your flight!!!");
-print("-----------------------------------------------------------------------");
-print(" ");
+print("the random developers");
 
-setprop("options/OHPtemp", 1);
+setprop("/sim/menubar/default/menu[0]/item[0]/enabled", 0);
+setprop("/sim/menubar/default/menu[2]/item[0]/enabled", 0);
+setprop("/sim/menubar/default/menu[2]/item[2]/enabled", 0);
+setprop("/sim/menubar/default/menu[5]/item[8]/enabled", 0);
+setprop("/sim/menubar/default/menu[5]/item[9]/enabled", 0);
+setprop("/sim/menubar/default/menu[5]/item[10]/enabled", 0);
+setprop("/sim/menubar/default/menu[5]/item[11]/enabled", 0);
+setprop("/sim/multiplay/visibility-range-nm", 130);
+
+# Temporary until proper systems are available
+var doMagicStartup = func {
+    # systems.FUEL.Switch.pump1Aft.setBoolValue(1);
+    # systems.FUEL.Switch.pump1Fwd.setBoolValue(1);
+    # systems.FUEL.Switch.pump2LAft.setBoolValue(1);
+    # systems.FUEL.Switch.pump2RAft.setBoolValue(1);
+    # systems.FUEL.Switch.pump2Fwd.setBoolValue(1);
+    settimer(func {
+        setprop("/controls/electrical/switches/gen-1", 1);
+        setprop("/controls/electrical/switches/gen-2", 1);
+        setprop("/controls/hydraulics/switches/l-pump-1", 1);
+        setprop("/controls/hydraulics/switches/l-pump-2", 1);
+        setprop("/controls/hydraulics/switches/r-pump-1", 1);
+        setprop("/controls/hydraulics/switches/r-pump-2", 1);
+        setprop("/controls/engines/engine[0]/cutoff", 0);
+        setprop("/controls/engines/engine[0]/cutoff-switch", 0);
+        setprop("/controls/engines/engine[1]/cutoff", 0);
+        setprop("/controls/engines/engine[1]/cutoff-switch", 0);
+        setprop("/fdm/jsbsim/propulsion/set-running", 0);
+        setprop("/fdm/jsbsim/propulsion/set-running", 1);
+        # setprop("/engines/engine[0]/state", 3);
+        # setprop("/engines/engine[1]/state", 3);
+    }, 0.5);
+}
 
 var altAlertModeSwitch = func {
 	var warning_b = getprop("b737/warnings/altitude-alert-b-conditions");
