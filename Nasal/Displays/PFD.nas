@@ -109,7 +109,7 @@ var canvas_pfd = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-MAX/Nasal/Displays/res/PFD.svg" , {'font-mapper': font_mapper});
 		
-		var svg_keys = ["group-fail-warn", "group-ap-modes", "group-speed", "group-navigation", "group-vs", "group-altitude", "group-attitude", "fail-no-vspd", "fail-spd-lim", "fail-sel-spd", "fail-fd", "fail-dme", "fail-fpv", "fail-fac", "fail-loc", "fail-hdg", "fail-ra", "fail-att", "fail-vert", "fail-gp", "fail-gs", "fail-alt", "fail-ldg-alt", "fail-roll", "fail-pitch", "fail-spd", "warning-msg", "warning-back", "ap-pitch-arm", "ap-roll-arm", "ap-pitch-mode", "ap-roll-mode", "ap-thr-mode", "ap-pitch-box", "ap-roll-box", "ap-thr-box", "spd-tick-r", "spd-r", "spd-tick-v1", "spd-v1", "spd-tick-up", "spd-up", "spd-tick-ref", "spd-ref", "spd-tick-1", "spd-1", "spd-tick-5", "spd-5", "spd-tick-15", "spd-15", "spd-vref-20", "spd-80-kts", "spd-v2-15", "spd-spare-bug", "srs-speed", "srs-selected", "spd-mach", "spd-ap-readout", "spd-ap-box", "spd-ap", "spd-trend-up", "spd-trend-down", "spd-limitLY", "spd-limitLR", "spd-limitLB", "spd-limitUY", "spd-limitUR", "spd-limitUB", "spd-box-1", "spd-box-10", "spd-box-100", "spd-box", "spd-tape", "spd-border", "spd-back", "rising-rwy", "inner-marker", "middle-marker", "outer-marker", "marker-color", "ils-ident", "ils-dist", "nav-src", "course-dev-vert", "anp-vert", "course-dev-lat", "anp-lat", "lines-lat-app", "lines-vert-ils", "lines-lat-ils", "lines-vert-std", "lines-lat-std", "vs-labels", "vs-selected", "vs-pos-readout", "vs-neg-readout", "vs-needle", "vs-border", "vs-back", "alt-mins-readout", "alt-mins-mode", "alt-press-std", "alt-press-std-set", "alt-press-units", "alt-press", "alt-final", "alt-final-box", "alt-ap-1000", "alt-ap-100", "alt-ap-m-unit", "alt-ap-m-readout", "alt-ap-m-back", "alt-ap-back", "alt-m-readout", "alt-m-unit", "alt-m-back", "alt-10000", "alt-1000", "alt-100", "alt-20", "alt-0", "alt-neg", "alt-tape-back", "alt-mins", "alt-ap", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-ground-close", "alt-ground", "alt-border", "alt-back", "airplane-symbol-b", "airplane-symbol-w", "slip-skid", "bank-angle", "aoa-shaker", "aoa-needle", "aoa-readout", "aoa-approach-upper", "aoa-approach-lower", "aoa-approach", "pitch-limit-indicator", "flight-path-vector", "fd-pitch", "fd-roll", "ladder", "labels-back", "sky", "ground", "heading-mode", "heading-ap-readout", "wind-stats", "true-airspeed", "ground-speed", "vor1", "vor2", "dme1", "dme2", "heading-ap", "heading-track", "compass-label"];
+		var svg_keys = ["group-fail-warn", "group-ap-modes", "group-speed", "group-navigation", "group-vs", "group-altitude", "group-attitude", "group-artificial-horizon", "fail-no-vspd", "fail-spd-lim", "fail-sel-spd", "fail-fd", "fail-dme", "fail-fpv", "fail-fac", "fail-loc", "fail-hdg", "fail-ra", "fail-att", "fail-vert", "fail-gp", "fail-gs", "fail-alt", "fail-ldg-alt", "fail-roll", "fail-pitch", "fail-spd", "warning-msg", "warning-back", "ap-pitch-arm", "ap-roll-arm", "ap-pitch-mode", "ap-roll-mode", "ap-thr-mode", "ap-pitch-box", "ap-roll-box", "ap-thr-box", "spd-tick-r", "spd-r", "spd-tick-v1", "spd-v1", "spd-tick-up", "spd-up", "spd-tick-ref", "spd-ref", "spd-tick-1", "spd-1", "spd-tick-5", "spd-5", "spd-tick-15", "spd-15", "spd-vref-20", "spd-80-kts", "spd-v2-15", "spd-spare-bug", "srs-speed", "srs-selected", "spd-mach", "spd-ap-readout", "spd-ap-box", "spd-ap", "spd-trend-up", "spd-trend-down", "spd-limitLY", "spd-limitLR", "spd-limitLB", "spd-limitUY", "spd-limitUR", "spd-limitUB", "spd-box-1", "spd-box-10", "spd-box-100", "spd-box", "spd-tape", "spd-border", "spd-back", "rising-rwy", "inner-marker", "middle-marker", "outer-marker", "marker-color", "ils-ident", "ils-dist", "nav-src", "course-dev-vert", "anp-vert", "course-dev-lat", "anp-lat", "lines-lat-app", "lines-vert-ils", "lines-lat-ils", "lines-vert-std", "lines-lat-std", "vs-labels", "vs-selected", "vs-pos-readout", "vs-neg-readout", "vs-needle", "vs-border", "vs-back", "alt-mins-readout", "alt-mins-mode", "alt-press-std", "alt-press-std-set", "alt-press-units", "alt-press", "alt-final", "alt-final-box", "alt-ap-1000", "alt-ap-100", "alt-ap-m-unit", "alt-ap-m-readout", "alt-ap-m-back", "alt-ap-back", "alt-m-readout", "alt-m-unit", "alt-m-back", "alt-10000", "alt-1000", "alt-100", "alt-20", "alt-0", "alt-neg", "alt-tape-back", "alt-mins", "alt-ap", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-ground-close", "alt-ground", "alt-border", "alt-back", "airplane-symbol-b", "airplane-symbol-w", "slip-skid", "bank-angle", "aoa-shaker", "aoa-needle", "aoa-readout", "aoa-approach-upper", "aoa-approach-lower", "aoa-approach", "pitch-limit-indicator", "flight-path-vector", "fd-pitch", "fd-roll", "ladder", "labels-back", "sky", "ground", "heading-mode", "heading-ap-readout", "wind-stats", "true-airspeed", "ground-speed", "vor1", "vor2", "dme1", "dme2", "heading-ap", "heading-track", "compass-label"];
 		foreach(var key; svg_keys)
 			m[key] = pfd.getElementById(key);
 
@@ -153,7 +153,7 @@ var canvas_pfd = {
 		m["spd-box-100"].set("clip", "rect(590, 554, 720, 435)");
 		m["spd-tape"].set("clip", "rect(160, 682, 1142, 437)");
 		m["vs-needle"].set("clip", "rect(314, 1791, 996, 1724)");
-		m["vs-needle"].setCenter(1854,655);
+		m["vs-needle"].setCenter(1854, 655);
 		m["alt-mins"].set("clip", "rect(160, 1636, 1142, 1422)");
 		m["alt-ap"].set("clip", "rect(160, 1636, 1142, 1422)");
 		m["alt-tape0"].set("clip", "rect(160, 1636, 1142, 1422)");
@@ -172,6 +172,10 @@ var canvas_pfd = {
 		m["alt-20"].set("clip", "rect(595, 1693, 715, 1519)");
 		m["slip-skid"].setCenter(1024, 655);
 		m["bank-angle"].setCenter(1024, 655);
+
+		me.attitudeTransPitch = m["group-artificial-horizon"].createTransform();
+		me.attitudeTransRoll = m["group-artificial-horizon"].createTransform();
+		me.fpvTrans = m["flight-path-vector"].createTransform();
 		return m;
 	},
 
@@ -370,66 +374,47 @@ var canvas_pfd = {
 		}
 
 		# Radio Navigation
-		me["rising-rwy"].hide();
 		# ANP isn't supported yet
 		me["anp-lat"].hide();
 		me["anp-vert"].hide();
 		if (Value.Navigation.selectedMhz != 0) {
 			if (Value.Navigation.signalQualityNorm >= 0.95 and Value.Navigation.navLoc) {
+				me["group-navigation"].show();
 				if (Value.Altitude.radioAlt <= 2500) {	
 					me["rising-rwy"].show();
 					if (Value.Altitude.radioAlt < 200) {
-						me["rising-rwy"].setTranslation(0, Value.Altitude.radioAlt * -1.75);
+						me["rising-rwy"].setTranslation(0, Value.Altitude.radioAlt * 1.75);
 					}
 				} else {
 					me["rising-rwy"].hide();
 				}
 
 				# Marker Beacon
-				if (!Value.Navigation.MarkerBeacon.inner) {
-					Value.Navigation.MarkerBeacon.innerTimeStart = Value.Time.elapsedSec;
-				}
-				if (!Value.Navigation.MarkerBeacon.middle) {
-					Value.Navigation.MarkerBeacon.middleTimeStart = Value.Time.elapsedSec;
-				}
-				if (!Value.Navigation.MarkerBeacon.outer) {
-					Value.Navigation.MarkerBeacon.outerTimeStart = Value.Time.elapsedSec;
-				}
-				me["marker-color"].hide();
-				me["inner-marker"].hide();
-				me["middle-marker"].hide();
-				me["outer-marker"].hide();
 				if (Value.Navigation.MarkerBeacon.inner) {
-					# On for .125 seconds, off for .125
+					me["marker-color"].show();
 					me["marker-color"].setColorFill(1, 1, 1, 1);
-					if (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.innerTimeStart, 0.25) > 0.125) {
-						me["marker-color"].show();
-						me["inner-marker"].show();
-					} else {
-						me["marker-color"].hide();
-						me["inner-marker"].hide();
-					}
+					me["inner-marker"].show();
+					me["middle-marker"].hide();
+					me["outer-marker"].hide();
 				} elsif (Value.Navigation.MarkerBeacon.middle) {
-					# On for .375 seconds, off for .125, on for .125, off for .125
+					me["marker-color"].show();
 					me["marker-color"].setColorFill(1, 0.75, 0, 1);
-					if ((math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) > 0.125 and math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) < 0.25)  or (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) > 0.375 and math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.middleTimeStart, 0.75) < 0.75)) {
-						me["marker-color"].show();
-						me["middle-marker"].show();
-					} else {
-						me["marker-color"].hide();
-						me["middle-marker"].hide();
-					}
+					me["inner-marker"].hide();
+					me["middle-marker"].show();
+					me["outer-marker"].hide();
 				} elsif (Value.Navigation.MarkerBeacon.outer) {
-					# On for .375 seconds, off for .125
+					me["marker-color"].show();
 					me["marker-color"].setColorFill(0, 1, 1, 1);
-					if (math.mod(Value.Time.elapsedSec - Value.Navigation.MarkerBeacon.outerTimeStart, 0.5) > 0.125) {
-						me["marker-color"].show();
-						me["outer-marker"].show();
-					} else {
-						me["marker-color"].hide();
-						me["outer-marker"].hide();
-					}
+					me["inner-marker"].hide();
+					me["middle-marker"].hide();
+					me["outer-marker"].show();
+				} else {
+					me["marker-color"].hide();
+					me["inner-marker"].hide();
+					me["middle-marker"].hide();
+					me["outer-marker"].hide();
 				}
+
 				if (!Value.Navigation.inRange or Value.Navigation.navId == "" or Value.Navigation.navId == nil) {
 					me["ils-ident"].setText(sprintf("%.2f/%03d", Value.Navigation.selectedMhz, Value.Navigation.radialSelectedDeg));
 				} else {
@@ -450,6 +435,7 @@ var canvas_pfd = {
 			me["lines-vert-std"].hide();
 			me["lines-lat-std"].hide();
 			if (Value.Navigation.headingNeedleDeflectionNorm >= 10) {
+				me["course-dev-lat"].setColorFill(0, 0, 0, 0);
 				me["course-dev-lat"].setTranslation(200, 0);
 			} elsif (Value.Navigation.headingNeedleDeflectionNorm <= -10) {
 				me["course-dev-lat"].setTranslation(-200, 0);
@@ -504,21 +490,17 @@ var canvas_pfd = {
 			me["alt-press-std"].hide();
 			me["alt-press-std-set"].hide();
 			me["alt-press-units"].hide();
-			me["alt-press"].show();
-			me["alt-press"].setText("STD");
+			me["alt-press"].show().setText("STD");
 		} elsif (Value.Efis.baroStd == 1) {
 			me["alt-press-std"].hide();
 			me["alt-press-std-set"].hide();
-			me["alt-press-units"].show();
-			me["alt-press"].show();
-			me["alt-press"].setText(Value.Efis.baroInHpa ? sprintf("%.2f", Value.Efis.baroSelected) : sprintf("%i", Value.Efis.baroSelected));
-			me["alt-press-units"].setText(Value.Efis.baroInHpa ? "IN" : "HPA");
+			me["alt-press-units"].show().setText(Value.Efis.baroInHpa ? "IN" : "HPA");
+			me["alt-press"].show().setText(Value.Efis.baroInHpa ? sprintf("%.2f", Value.Efis.baroSelected) : sprintf("%i", Value.Efis.baroSelected));
 		} else {
 			me["alt-press-std"].show();
-			me["alt-press-std-set"].show();
+			me["alt-press-std-set"].show().setText(Value.Efis.baroInHpa ? sprintf("%.2f IN", Value.Efis.baroSelected) : sprintf("%i HPA", Value.Efis.baroSelected));
 			me["alt-press-units"].hide();
 			me["alt-press"].hide();
-			me["alt-press-std-set"].setText(Value.Efis.baroInHpa ? sprintf("%.2f IN", Value.Efis.baroSelected) : sprintf("%i HPA", Value.Efis.baroSelected));
 		}
 
 		if (Value.Altitude.radioAltServiceable) {
@@ -641,11 +623,29 @@ var canvas_pfd = {
 		}
 		
 		# Attitude
-		me["sky"].setTranslation(0, Value.Attitude.indicatedPitchDeg * 14).setCenter(1024, 655 - (Value.Attitude.indicatedPitchDeg * 14)).setRotation(-Value.Attitude.indicatedRollDeg * D2R);
-		me["ground"].setTranslation(0, Value.Attitude.indicatedPitchDeg * 14).setCenter(1024, 655 - (Value.Attitude.indicatedPitchDeg * 14)).setRotation(-Value.Attitude.indicatedRollDeg * D2R);
-		me["ladder"].setTranslation(0, Value.Attitude.indicatedPitchDeg * 14).setCenter(1024, 655 - (Value.Attitude.indicatedPitchDeg * 14)).setRotation(-Value.Attitude.indicatedRollDeg * D2R);
-		me["slip-skid"].setRotation(-(Value.Attitude.indicatedRollDeg + Value.Attitude.indicatedSlipSkid) * D2R);
-		me["bank-angle"].setRotation(-Value.Attitude.indicatedRollDeg * D2R);
+		me.attitudeTransPitch.setTranslation(0, Value.Attitude.indicatedPitchDeg * 14);
+		me.attitudeTransRoll.setRotation(-Value.Attitude.indicatedRollDeg * D2R, [1024, 655 - (Value.Attitude.indicatedPitchDeg * 14)]);
+		if (Value.Attitude.indicatedRollDeg > 60) {
+			me["bank-angle"].setRotation(-60 * D2R);
+		} elsif (Value.Attitude.indicatedRollDeg < -60) {
+			me["bank-angle"].setRotation(60 * D2R);
+		} else {
+			me["bank-angle"].setRotation(-Value.Attitude.indicatedRollDeg * D2R);
+		}
+
+		if (Value.Attitude.indicatedRollDeg + Value.Attitude.indicatedSlipSkid > 60) {
+			me["slip-skid"].setRotation(-60 * D2R);
+		} elsif (Value.Attitude.indicatedRollDeg < -60) {
+			me["slip-skid"].setRotation(60 * D2R);
+		} else {
+			me["slip-skid"].setRotation(-Value.Attitude.indicatedRollDeg * D2R);
+		}
+
+		if (math.abs(Value.Attitude.indicatedRollDeg) > 35) {
+			me["bank-angle"].setColor(1, 0.75, 0, 1).setColorFill(1, 0.75, 0, 1);
+		} else {
+			me["bank-angle"].setColor(1, 1, 1, 1).setColorFill(0, 0, 0, 0);
+		}
 	}
 		
 };

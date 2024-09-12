@@ -1,6 +1,31 @@
 #737 MAX Property Tree Setup
 #Israel Emmanuel
 
+var Autopilot = {
+	Route: {
+		active: props.globals.getNode("/autopilot/route-manager/active"),
+		Departure: {
+			airport: props.globals.getNode("/autopilot/route-manager/departure/airport"),
+			fieldElevationFt: props.globals.getNode("/autopilot/route-manager/departure/field-elevation-ft"),
+			runway: props.globals.getNode("/autopilot/route-manager/departure/runway"),
+			sid: props.globals.getNode("/autopilot/route-manager/departure/sid"),
+		},
+		Destination: {
+			airport: props.globals.getNode("/autopilot/route-manager/destination/airport"),
+			approach: props.globals.getNode("/autopilot/route-manager/destination/approach"),
+			fieldElevationFt: props.globals.getNode("/autopilot/route-manager/destination/field-elevation-ft"),
+			runway: props.globals.getNode("/autopilot/route-manager/destination/runway"),
+			star: props.globals.getNode("/autopilot/route-manager/destination/sid"),
+		},
+		distanceRemainingNm: props.globals.getNode("/autopilot/route-manager/distance-remaining-nm"),
+		totalDistance: props.globals.getNode("/autopilot/route-manager/total-distance"),
+		WpCur: {
+			eta: props.globals.getNode("/autopilot/route-manager/wp[0]/eta"),
+			id: props.globals.getNode("/autopilot/route-manager/wp[0]/id"),
+		},
+	},
+};
+
 var Consumables = {
     Fuel: {
         tankRight:  props.globals.getNode("consumables/fuel/tank[0]/level-kg"),
@@ -34,6 +59,11 @@ var Instrumentation = {
 		serviceable: [props.globals.getNode("/instrumentation/altimeter[0]/serviceable"), props.globals.getNode("/instrumentation/altimeter[1]/serviceable"), props.globals.getNode("/instrumentation/altimeter[2]/serviceable")],
 		settingHpa: [props.globals.getNode("/instrumentation/altimeter[0]/setting-hpa"), props.globals.getNode("/instrumentation/altimeter[1]/setting-hpa"), props.globals.getNode("/instrumentation/altimeter[2]/setting-hpa")],
 		settingInhg: [props.globals.getNode("/instrumentation/altimeter[0]/setting-inhg"), props.globals.getNode("/instrumentation/altimeter[1]/setting-inhg"), props.globals.getNode("/instrumentation/altimeter[2]/setting-inhg")],
+	},
+	Attitude: {
+		indicatedPitchDeg: [props.globals.getNode("/orientation/pitch-deg"), props.globals.getNode("/orientation/pitch-deg")],
+		indicatedRollDeg: [props.globals.getNode("/orientation/roll-deg"), props.globals.getNode("/orientation/roll-deg")],
+		indicatedSlipSkid: props.globals.getNode("/instrumentation/slip-skid-ball/indicated-slip-skid"),
 	},
 	Comm: {
 		Frequencies: {
