@@ -4,9 +4,11 @@ var pfd_display = nil;
 
 var Value = {
 	Airspeed: {
+		gsKts: 0,
 		iasKts: 0,
 		iasMach: 0,
 		stall: 0,
+		tasKts: 0,
 		vmo: 0,
 	},
 	Altitude: {
@@ -17,20 +19,22 @@ var Value = {
 		serviceable: 0,
 	},
 	Attitude: {
+		alpha: 0,
 		indicatedPitchDeg: 0,
-		indicatedPitchVector: 0,
 		indicatedRollDeg: 0,
-		indicatedRollVector: 0,
 		indicatedSlipSkid: 0,
 	},
 	Autopilot: {
 		fd: 0,
+		fdPitch: 0,
+		fdRoll: 0,
 		Input: {
 			alt: 0,
 			hdg: 0,
 			kts: 0,
 			ktsMach: 0,
 			mach: 0,
+			vs: 0,
 		},
 		lat: 0,
 		pitchArm: "",
@@ -56,9 +60,15 @@ var Value = {
 		baroInHpa: 0,
 		baroSelected: 0,
 		baroStd: 0,
+		fpv: 0,
 		minsAltitude: 0,
 		minsBaroRadio: 0,
 		mtrs: 0,
+	},
+	Heading: {
+		indicatedHeadingDeg: 0,
+		indicatedTrackDeg: 0,
+		magTru: 0,
 	},
 	Navigation: {
 		Adf: {
@@ -109,7 +119,7 @@ var canvas_pfd = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-MAX/Nasal/Displays/res/PFD.svg" , {'font-mapper': font_mapper});
 		
-		var svg_keys = ["group-fail-warn", "group-ap-modes", "group-speed", "group-navigation", "group-vs", "group-altitude", "group-attitude", "group-artificial-horizon", "fail-no-vspd", "fail-spd-lim", "fail-sel-spd", "fail-fd", "fail-dme", "fail-fpv", "fail-fac", "fail-loc", "fail-hdg", "fail-ra", "fail-att", "fail-vert", "fail-gp", "fail-gs", "fail-alt", "fail-ldg-alt", "fail-roll", "fail-pitch", "fail-spd", "warning-msg", "warning-back", "ap-pitch-arm", "ap-roll-arm", "ap-pitch-mode", "ap-roll-mode", "ap-thr-mode", "ap-pitch-box", "ap-roll-box", "ap-thr-box", "spd-tick-r", "spd-r", "spd-tick-v1", "spd-v1", "spd-tick-up", "spd-up", "spd-tick-ref", "spd-ref", "spd-tick-1", "spd-1", "spd-tick-5", "spd-5", "spd-tick-15", "spd-15", "spd-vref-20", "spd-80-kts", "spd-v2-15", "spd-spare-bug", "srs-speed", "srs-selected", "spd-mach", "spd-ap-readout", "spd-ap-box", "spd-ap", "spd-trend-up", "spd-trend-down", "spd-limitLY", "spd-limitLR", "spd-limitLB", "spd-limitUY", "spd-limitUR", "spd-limitUB", "spd-box-1", "spd-box-10", "spd-box-100", "spd-box", "spd-tape", "spd-border", "spd-back", "rising-rwy", "inner-marker", "middle-marker", "outer-marker", "marker-color", "ils-ident", "ils-dist", "nav-src", "course-dev-vert", "anp-vert", "course-dev-lat", "anp-lat", "lines-lat-app", "lines-vert-ils", "lines-lat-ils", "lines-vert-std", "lines-lat-std", "vs-labels", "vs-selected", "vs-pos-readout", "vs-neg-readout", "vs-needle", "vs-border", "vs-back", "alt-mins-readout", "alt-mins-mode", "alt-press-std", "alt-press-std-set", "alt-press-units", "alt-press", "alt-final", "alt-final-box", "alt-ap-1000", "alt-ap-100", "alt-ap-m-unit", "alt-ap-m-readout", "alt-ap-m-back", "alt-ap-back", "alt-m-readout", "alt-m-unit", "alt-m-back", "alt-10000", "alt-1000", "alt-100", "alt-20", "alt-0", "alt-neg", "alt-tape-back", "alt-mins", "alt-ap", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-ground-close", "alt-ground", "alt-border", "alt-back", "airplane-symbol-b", "airplane-symbol-w", "slip-skid", "bank-angle", "aoa-shaker", "aoa-needle", "aoa-readout", "aoa-approach-upper", "aoa-approach-lower", "aoa-approach", "pitch-limit-indicator", "flight-path-vector", "fd-pitch", "fd-roll", "ladder", "labels-back", "sky", "ground", "heading-mode", "heading-ap-readout", "wind-stats", "true-airspeed", "ground-speed", "vor1", "vor2", "dme1", "dme2", "heading-ap", "heading-track", "compass-label"];
+		var svg_keys = ["group-fail-warn", "group-ap-modes", "group-speed", "group-navigation", "group-vs", "group-altitude", "group-attitude", "group-artificial-horizon", "fail-no-vspd", "fail-spd-lim", "fail-sel-spd", "fail-fd", "fail-dme", "fail-fpv", "fail-fac", "fail-loc", "fail-hdg", "fail-ra", "fail-att", "fail-vert", "fail-gp", "fail-gs", "fail-alt", "fail-ldg-alt", "fail-roll", "fail-pitch", "fail-spd", "warning-msg", "warning-back", "ap-pitch-arm", "ap-roll-arm", "ap-pitch-mode", "ap-roll-mode", "ap-thr-mode", "ap-pitch-box", "ap-roll-box", "ap-thr-box", "spd-tick-r", "spd-r", "spd-tick-v1", "spd-v1", "spd-tick-up", "spd-up", "spd-tick-ref", "spd-ref", "spd-tick-1", "spd-1", "spd-tick-5", "spd-5", "spd-tick-15", "spd-15", "spd-vref-20", "spd-80-kts", "spd-v2-15", "spd-spare-bug", "srs-speed", "srs-selected", "spd-mach", "spd-ap-readout", "spd-ap-box", "spd-ap", "spd-trend-up", "spd-trend-down", "spd-limitLY", "spd-limitLR", "spd-limitLB", "spd-limitUY", "spd-limitUR", "spd-limitUB", "spd-box-1", "spd-box-10", "spd-box-100", "spd-box", "spd-tape", "spd-border", "spd-back", "rising-rwy", "inner-marker", "middle-marker", "outer-marker", "marker-color", "ils-ident", "ils-dist", "nav-src", "course-dev-vert", "anp-vert", "course-dev-lat", "anp-lat", "lines-lat-app", "lines-vert-ils", "lines-lat-ils", "lines-vert-std", "lines-lat-std", "vs-labels", "vs-selected", "vs-pos-readout", "vs-neg-readout", "vs-needle", "vs-border", "vs-back", "alt-mins-readout", "alt-mins-mode", "alt-press-std", "alt-press-std-set", "alt-press-units", "alt-press", "alt-final", "alt-final-box", "alt-ap-1000", "alt-ap-100", "alt-ap-m-unit", "alt-ap-m-readout", "alt-ap-m-back", "alt-ap-back", "alt-m-readout", "alt-m-unit", "alt-m-back", "alt-10000", "alt-1000", "alt-100", "alt-20", "alt-0", "alt-neg", "alt-tape-back", "alt-mins", "alt-ap", "alt-tape0", "alt-tape1", "alt-tape2", "alt-tape3", "alt-tape4", "alt-tape5", "alt-tape6", "alt-tape7", "alt-ground-close", "alt-ground", "alt-border", "alt-back", "airplane-symbol-b", "airplane-symbol-w", "slip-skid", "bank-angle", "aoa-shaker", "aoa-needle", "aoa-readout", "aoa-approach-upper", "aoa-approach-lower", "aoa-approach", "pitch-limit-indicator", "flight-path-vector", "fd-pitch", "fd-roll", "ladder", "labels-back", "sky", "ground", "heading-mode", "heading-mode-box", "heading-ap-readout", "wind-stats", "true-airspeed", "ground-speed", "vor1", "vor2", "dme1", "dme2", "heading-ap", "heading-track", "compass-label"];
 		foreach(var key; svg_keys)
 			m[key] = pfd.getElementById(key);
 
@@ -117,74 +127,89 @@ var canvas_pfd = {
 
 		# These run once - do not put inside update()
 		# Clipping boxes are (top, right, bottom, left)
+		var spdTapeClip = "rect(160, 682, 1142, 437)";
+		var spdBoxClip = "rect(590, 554, 720, 435)";
+		var altTapeClip = "rect(160, 1636, 1142, 1422)";
+		var altBoxClip = "rect(595, 1693, 715, 1519)";
 		m["spd-back"].setColorFill(0, 0, 0, 0.2);
 		m["alt-back"].setColorFill(0, 0, 0, 0.2);
 		m["labels-back"].setColorFill(0, 0, 0, 0.2);
 		m["vs-back"].setColorFill(0, 0, 0, 0.2);
-		m["spd-tick-r"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-r"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-tick-v1"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-v1"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-tick-up"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-up"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-tick-ref"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-ref"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-tick-1"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-1"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-tick-5"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-5"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-tick-15"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-15"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-vref-20"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-80-kts"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-v2-15"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-spare-bug"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-ap"].set("clip", "rect(160, 682, 1142, 437)");
+		m["spd-tick-r"].set("clip", spdTapeClip);
+		m["spd-r"].set("clip", spdTapeClip);
+		m["spd-tick-v1"].set("clip", spdTapeClip);
+		m["spd-v1"].set("clip", spdTapeClip);
+		m["spd-tick-up"].set("clip", spdTapeClip);
+		m["spd-up"].set("clip", spdTapeClip);
+		m["spd-tick-ref"].set("clip", spdTapeClip);
+		m["spd-ref"].set("clip", spdTapeClip);
+		m["spd-tick-1"].set("clip", spdTapeClip);
+		m["spd-1"].set("clip", spdTapeClip);
+		m["spd-tick-5"].set("clip", spdTapeClip);
+		m["spd-5"].set("clip", spdTapeClip);
+		m["spd-tick-15"].set("clip", spdTapeClip);
+		m["spd-15"].set("clip", spdTapeClip);
+		m["spd-vref-20"].set("clip", spdTapeClip);
+		m["spd-80-kts"].set("clip", spdTapeClip);
+		m["spd-v2-15"].set("clip", spdTapeClip);
+		m["spd-spare-bug"].set("clip", spdTapeClip);
+		m["spd-ap"].set("clip", spdTapeClip);
 		m["spd-trend-up"].set("clip", "rect(160, 612, 655, 592)");
 		m["spd-trend-down"].set("clip", "rect(655, 612, 1150, 592)");
-		m["spd-limitLY"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-limitLR"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-limitLB"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-limitUY"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-limitUR"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-limitUB"].set("clip", "rect(160, 682, 1142, 437)");
-		m["spd-box-1"].set("clip", "rect(590, 554, 720, 435)");
-		m["spd-box-10"].set("clip", "rect(590, 554, 720, 435)");
-		m["spd-box-100"].set("clip", "rect(590, 554, 720, 435)");
-		m["spd-tape"].set("clip", "rect(160, 682, 1142, 437)");
+		m["spd-limitLY"].set("clip", spdTapeClip);
+		m["spd-limitLR"].set("clip", spdTapeClip);
+		m["spd-limitLB"].set("clip", spdTapeClip);
+		m["spd-limitUY"].set("clip", spdTapeClip);
+		m["spd-limitUR"].set("clip", spdTapeClip);
+		m["spd-limitUB"].set("clip", spdTapeClip);
+		m["spd-box-1"].set("clip", spdBoxClip);
+		m["spd-box-10"].set("clip", spdBoxClip);
+		m["spd-box-100"].set("clip", spdBoxClip);
+		m["spd-tape"].set("clip", spdTapeClip);
 		m["vs-needle"].set("clip", "rect(314, 1791, 996, 1724)");
 		m["vs-needle"].setCenter(1854, 655);
-		m["alt-mins"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-ap"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-tape0"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-tape1"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-tape2"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-tape3"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-tape4"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-tape5"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-tape6"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-tape7"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-ground-close"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-ground"].set("clip", "rect(160, 1636, 1142, 1422)");
-		m["alt-10000"].set("clip", "rect(595, 1693, 715, 1519)");
-		m["alt-1000"].set("clip", "rect(595, 1693, 715, 1519)");
-		m["alt-100"].set("clip", "rect(595, 1693, 715, 1519)");
-		m["alt-20"].set("clip", "rect(595, 1693, 715, 1519)");
+		m["alt-mins"].set("clip", altTapeClip);
+		m["alt-ap"].set("clip", altTapeClip);
+		m["alt-tape0"].set("clip", altTapeClip);
+		m["alt-tape1"].set("clip", altTapeClip);
+		m["alt-tape2"].set("clip", altTapeClip);
+		m["alt-tape3"].set("clip", altTapeClip);
+		m["alt-tape4"].set("clip", altTapeClip);
+		m["alt-tape5"].set("clip", altTapeClip);
+		m["alt-tape6"].set("clip", altTapeClip);
+		m["alt-tape7"].set("clip", altTapeClip);
+		m["alt-ground-close"].set("clip", altTapeClip);
+		m["alt-ground"].set("clip", altTapeClip);
+		m["alt-10000"].set("clip", altBoxClip);
+		m["alt-1000"].set("clip", altBoxClip);
+		m["alt-100"].set("clip", altBoxClip);
+		m["alt-20"].set("clip", altBoxClip);
 		m["slip-skid"].setCenter(1024, 655);
 		m["bank-angle"].setCenter(1024, 655);
+		var compassCenter = m["compass-label"].getCenter();
+		m["heading-track"].setCenter(compassCenter);
+		m["heading-ap"].setCenter(compassCenter);
 
 		me.attitudeTransPitch = m["group-artificial-horizon"].createTransform();
 		me.attitudeTransRoll = m["group-artificial-horizon"].createTransform();
 		me.fpvTrans = m["flight-path-vector"].createTransform();
+		me.fpvRot = m["flight-path-vector"].createTransform();
 		return m;
 	},
 
 	update: func(n) {
 		Value.Airspeed.vmo = pts.Instrumentation.Pfd.mmo.getValue();
+		Value.Attitude.indicatedPitchDeg = pts.Orientation.pitchDeg.getValue();
+		Value.Attitude.indicatedRollDeg = pts.Orientation.rollDeg.getValue();
+		Value.Attitude.indicatedSlipSkid = pts.Fdm.Jsbsim.Accelerations.Ny.getValue();
+		Value.Autopilot.fdPitch = itaf.Fd.pitchBar.getValue();
+		Value.Autopilot.fdRoll = itaf.Fd.rollBar.getValue();
 		Value.Autopilot.Input.alt = itaf.Input.alt.getValue();
+		Value.Autopilot.Input.hdg = itaf.Input.hdg.getValue();
 		Value.Autopilot.Input.kts = itaf.Input.kts.getValue();
 		Value.Autopilot.Input.ktsMach = itaf.Input.ktsMach.getBoolValue();
 		Value.Autopilot.Input.mach = itaf.Input.mach.getValue();
+		Value.Autopilot.Input.vs = itaf.Input.vs.getValue();
 		Value.Autopilot.lat = itaf.Output.lat.getValue();
 		Value.Autopilot.pitchArm = itaf.Fma.pitchArm.getValue();
 		Value.Autopilot.pitchMode = itaf.Fma.pitch.getValue();
@@ -196,6 +221,7 @@ var canvas_pfd = {
 		Value.Autopilot.Route.totalDistance = pts.Autopilot.Route.totalDistance.getValue();
 		Value.Autopilot.thrMode = itaf.Fma.thr.getValue();
 		Value.Autopilot.vert = itaf.Output.vert.getValue();
+		Value.Heading.indicatedHeadingDeg = pts.Orientation.headingDeg.getValue();
 		Value.Navigation.MarkerBeacon.inner = pts.Instrumentation.MarkerBeacon.inner.getBoolValue();
 		Value.Navigation.MarkerBeacon.middle = pts.Instrumentation.MarkerBeacon.middle.getBoolValue();
 		Value.Navigation.MarkerBeacon.outer = pts.Instrumentation.MarkerBeacon.outer.getBoolValue();
@@ -212,12 +238,11 @@ var canvas_pfd = {
 			Value.Altitude.indicatedAltitudeFt = pts.Instrumentation.Altimeter.indicatedAltitudeFt[0].getValue();
 			Value.Altitude.radioAlt = pts.Instrumentation.Altimeter.radioAlt[0].getValue();
 			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[0].getBoolValue();
-			Value.Attitude.indicatedPitchDeg = pts.Instrumentation.Attitude.indicatedPitchDeg[0].getValue();
-			Value.Attitude.indicatedRollDeg = pts.Instrumentation.Attitude.indicatedRollDeg[0].getValue();
 			Value.Autopilot.fd = itaf.Output.fd1.getBoolValue();
 			Value.Efis.baroInHpa = pts.Instrumentation.Efis.Inputs.baroInHpa[0].getValue();
 			Value.Efis.baroSelected = pts.Instrumentation.Efis.Inputs.baroSelected[0].getBoolValue();
 			Value.Efis.baroStd = pts.Instrumentation.Efis.Inputs.baroStd[0].getValue();
+			Value.Efis.fpv = pts.Instrumentation.Efis.Inputs.fpv[0].getBoolValue();
 			Value.Efis.minsAltitude = pts.Instrumentation.Efis.Inputs.minsAltitude[0].getValue();
 			Value.Efis.minsBaroRadio = pts.Instrumentation.Efis.Inputs.minsBaroRadio[0].getValue();
 			Value.Efis.mtrs = pts.Instrumentation.Efis.Inputs.mtrs[0].getBoolValue();
@@ -239,12 +264,11 @@ var canvas_pfd = {
 			Value.Altitude.indicatedAltitudeFt = pts.Instrumentation.Altimeter.indicatedAltitude[1].getValue();
 			Value.Altitude.radioAlt = pts.Instrumentation.Altimeter.radioAlt[1].getValue();
 			Value.Altitude.radioAltServiceable = pts.Instrumentation.Altimeter.radioAltServiceable[1].getBoolValue();
-			Value.Attitude.indicatedPitchDeg = pts.Instrumentation.Attitude.indicatedPitchDeg[1].getValue();
-			Value.Attitude.indicatedRollDeg = pts.Instrumentation.Attitude.indicatedRollDeg[1].getValue();
 			Value.Autopilot.fd = itaf.Output.fd2.getBoolValue();
 			Value.Efis.baroInHpa = pts.Instrumentation.Efis.baroInHpa[1].getValue();
 			Value.Efis.baroSelected = pts.Instrumentation.Efis.baroSelected[1].getBoolValue();
 			Value.Efis.baroStd = pts.Instrumentation.Efis.baroStd[1].getValue();
+			Value.Efis.fpv = pts.Instrumentation.Efis.fpv[1].getBoolValue();
 			Value.Efis.minsAltitude = pts.Instrumentation.Efis.minsAltitude[1].getValue();
 			Value.Efis.minsBaroRadio = pts.Instrumentation.Efis.minsBaroRadio[1].getValue();
 			Value.Efis.mtrs = pts.Instrumentation.Efis.mtrs[1].getBoolValue();
@@ -263,7 +287,24 @@ var canvas_pfd = {
 		}
 
 		# Hide failure flags by default
-		me["group-fail-warn"].hide();
+		me["fail-spd-lim"].hide();
+		me["fail-fd"].hide();
+		me["fail-dme"].hide();
+		me["fail-fpv"].hide();
+		me["fail-fac"].hide();
+		me["fail-loc"].hide();
+		me["fail-hdg"].hide();
+		me["fail-ra"].hide();
+		me["fail-att"].hide();
+		me["fail-gp"].hide();
+		me["fail-gs"].hide();
+		me["fail-alt"].hide();
+		me["fail-ldg-alt"].hide();
+		me["fail-roll"].hide();
+		me["fail-pitch"].hide();
+		me["fail-spd"].hide();
+		me["warning-msg"].hide();
+		me["warning-back"].hide();
 
 		# Autopilot Modes
 		me["ap-pitch-arm"].setText(Value.Autopilot.pitchArm);
@@ -302,13 +343,9 @@ var canvas_pfd = {
 		# Speed Tapes
 		if (Value.Autopilot.Input.kts != nil or Value.Autopilot.Input.mach != nil) {
 			me["spd-ap-box"].show();
-			me["spd-ap-readout"].show();
+			me["spd-ap-readout"].show().setText(Value.Autopilot.Input.ktsMach ? sprintf("%.3f", Value.Autopilot.Input.mach) : sprintf("%i", Value.Autopilot.Input.kts));
 			me["spd-ap"].show();
-			if (Value.Autopilot.Input.ktsMach) {
-				me["spd-ap-readout"].setText(sprintf("%.3f", Value.Autopilot.Input.mach));
-			} else {
-				me["spd-ap-readout"].setText(sprintf("%i", Value.Autopilot.Input.kts));
-			}
+			me["fail-sel-spd"].hide();
 		} else {
 			me["spd-ap-box"].hide();
 			me["spd-ap-readout"].hide();
@@ -319,8 +356,7 @@ var canvas_pfd = {
 		if (Value.Airspeed.iasMach < 0.4) {
 			me["spd-mach"].hide();
 		} else {
-			me["spd-mach"].show();
-			me["spd-mach"].setText(sprintf("%.3f", Value.Airspeed.iasMach));
+			me["spd-mach"].show().setText(sprintf("%.3f", Value.Airspeed.iasMach));
 		}
 
 		me["spd-tick-r"].hide(); #.setTranslation(0, Value.Airspeed.iasKts * 8);
@@ -391,20 +427,17 @@ var canvas_pfd = {
 
 				# Marker Beacon
 				if (Value.Navigation.MarkerBeacon.inner) {
-					me["marker-color"].show();
-					me["marker-color"].setColorFill(1, 1, 1, 1);
+					me["marker-color"].show().setColorFill(1, 1, 1, 1);
 					me["inner-marker"].show();
 					me["middle-marker"].hide();
 					me["outer-marker"].hide();
 				} elsif (Value.Navigation.MarkerBeacon.middle) {
-					me["marker-color"].show();
-					me["marker-color"].setColorFill(1, 0.75, 0, 1);
+					me["marker-color"].show().setColorFill(1, 0.75, 0, 1);
 					me["inner-marker"].hide();
 					me["middle-marker"].show();
 					me["outer-marker"].hide();
 				} elsif (Value.Navigation.MarkerBeacon.outer) {
-					me["marker-color"].show();
-					me["marker-color"].setColorFill(0, 1, 1, 1);
+					me["marker-color"].show().setColorFill(0, 1, 1, 1);
 					me["inner-marker"].hide();
 					me["middle-marker"].hide();
 					me["outer-marker"].show();
@@ -435,22 +468,20 @@ var canvas_pfd = {
 			me["lines-vert-std"].hide();
 			me["lines-lat-std"].hide();
 			if (Value.Navigation.headingNeedleDeflectionNorm >= 10) {
-				me["course-dev-lat"].setColorFill(0, 0, 0, 0);
-				me["course-dev-lat"].setTranslation(200, 0);
+				me["course-dev-lat"].setColor(1, 1, 1, 1).setColorFill(0, 0, 0, 0).setTranslation(200, 0);
 			} elsif (Value.Navigation.headingNeedleDeflectionNorm <= -10) {
-				me["course-dev-lat"].setTranslation(-200, 0);
+				me["course-dev-lat"].setColor(1, 1, 1, 1).setColorFill(0, 0, 0, 0).setTranslation(-200, 0);
 			} else {
-				me["course-dev-lat"].setColorFill(1, 0, 1, 1);
-				me["course-dev-lat"].setTranslation(Value.Navigation.headingNeedleDeflectionNorm * 20, 0);
+				me["course-dev-lat"].setColor(0, 0, 0, 0).setColorFill(1, 0, 1, 1).setTranslation(Value.Navigation.headingNeedleDeflectionNorm * 20, 0);
 			}
 			if (Value.Navigation.hasGs) {
 				me["course-dev-vert"].show();
 				if (Value.Navigation.gsNeedleDeflectionNorm >= 10) {
-					me["course-dev-vert"].setTranslation(0, 200);
+					me["course-dev-vert"].setColor(1, 1, 1, 1).setColorFill(0, 0, 0, 0).setTranslation(0, 200);
 				} elsif (Value.Navigation.gsNeedleDeflectionNorm <= 10) {
-					me["course-dev-vert"].setTranslation(0, -200);
+					me["course-dev-vert"].setColor(1, 1, 1, 1).setColorFill(0, 0, 0, 0).setTranslation(0, -200);
 				} else {
-					me["course-dev-vert"].setTranslation(0, Value.Navigation.gsNeedleDeflectionNorm * 20);
+					me["course-dev-vert"].setColor(0, 0, 0, 0).setColorFill(1, 0, 1, 1).setTranslation(0, Value.Navigation.gsNeedleDeflectionNorm * 20);
 				}
 			}
 		}
@@ -458,6 +489,7 @@ var canvas_pfd = {
 		# Vertical Speed
 		if (Value.Vsi.serviceable) {	
 			me["group-vs"].show();
+			me["fail-vert"].hide();
 			if (Value.Vsi.indicatedSpeedFpm >= 400) {
 				me["vs-pos-readout"].show();
 				me["vs-neg-readout"].hide();
@@ -474,7 +506,7 @@ var canvas_pfd = {
 			me["vs-needle"].setRotation(math.clamp(47.11 * math.atan2(Value.Vsi.indicatedSpeedFpm * 0.001518, 1), -68.84847, 68.84847) * D2R);
 			if (Value.Autopilot.vert == 1) {
 				me["vs-selected"].show();
-				me["vs-selected"].setTranslation(0, 234.7 * math.atan(Value.Vsi.indicatedSpeedFpm * 0.0007042, 1));
+				me["vs-selected"].setTranslation(0, -234.7 * math.atan(Value.Autopilot.Input.vs * 0.0007042, 1));
 			} else {
 				me["vs-selected"].hide();
 			}
@@ -504,6 +536,7 @@ var canvas_pfd = {
 		}
 
 		if (Value.Altitude.radioAltServiceable) {
+			me["fail-ra"].hide();
 			if (Value.Altitude.radioAlt <= 2500) {
 				me["alt-final"].show();
 				me["alt-final-box"].show();
@@ -624,7 +657,7 @@ var canvas_pfd = {
 		
 		# Attitude
 		me.attitudeTransPitch.setTranslation(0, Value.Attitude.indicatedPitchDeg * 14);
-		me.attitudeTransRoll.setRotation(-Value.Attitude.indicatedRollDeg * D2R, [1024, 655 - (Value.Attitude.indicatedPitchDeg * 14)]);
+		me.attitudeTransRoll.setRotation(-Value.Attitude.indicatedRollDeg * D2R, [1024, 655]);
 		if (Value.Attitude.indicatedRollDeg > 60) {
 			me["bank-angle"].setRotation(-60 * D2R);
 		} elsif (Value.Attitude.indicatedRollDeg < -60) {
@@ -646,6 +679,28 @@ var canvas_pfd = {
 		} else {
 			me["bank-angle"].setColor(1, 1, 1, 1).setColorFill(0, 0, 0, 0);
 		}
+
+		if (Value.Efis.fpv) {
+			me["flight-path-vector"].show().setRotation(-Value.Attitude.indicatedRollDeg * D2R);
+			me.fpvTrans.setTranslation(math.clamp(Value.Heading.indicatedTrackDeg, -20, 20) * 14, math.clamp(Value.Attitude.alpha, -20, 20) * 14);
+			me.fpvRot.setRotation(-Value.Attitude.indicatedRollDeg * D2R, [1024, 655]);
+		} else {
+			me["flight-path-vector"].hide();
+		}
+
+		if (Value.Autopilot.fd) {
+			me["fd-pitch"].show().setTranslation(0, -Value.Autopilot.fdPitch * 14);
+			me["fd-roll"].show().setTranslation(-Value.Autopilot.fdRoll * 14, 0);
+		} else {
+			me["fd-pitch"].hide();
+			me["fd-roll"].hide();
+		}
+
+		# Compass Panel
+		me["compass-label"].setRotation(-Value.Heading.indicatedHeadingDeg * D2R);
+		me["heading-track"].setRotation((Value.Heading.indicatedTrackDeg - Value.Heading.indicatedHeadingDeg) * D2R);
+		me["heading-ap"].setRotation((Value.Autopilot.Input.hdg - Value.Heading.indicatedHeadingDeg) * D2R);
+		me["heading-ap-readout"].setText(sprintf("%i", Value.Autopilot.Input.hdg));
 	}
 		
 };

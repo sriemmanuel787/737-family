@@ -107,9 +107,9 @@
                     </not>
                 </and>
                 <and>
-                    <property>/instrumentation/flightdirector/fd-right-on</property>
+                    <property>/it-autoflight/input/fd2</property>
                     <not>
-                        <property>/instrumentation/flightdirector/fd-left-on</property>
+                        <property>/it-autoflight/input/fd1</property>
                     </not>
                     <not>
                         <property>/autopilot/internal/CMDA</property>
