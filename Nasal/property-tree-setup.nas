@@ -34,6 +34,14 @@ var Consumables = {
     },
 };
 
+var Fdm = {
+	Jsbsim: {
+		Accelerations: {
+			Ny: props.globals.getNode("/fdm/jsbsim/accelerations/Ny"),
+		},
+	},
+};
+
 var Gear = {
 	rollspeedMs: [props.globals.getNode("/gear/gear[0]/rollspeed-ms"), props.globals.getNode("/gear/gear[1]/rollspeed-ms"), props.globals.getNode("/gear/gear[2]/rollspeed-ms")],
 	wow: [props.globals.getNode("/gear/gear[0]/wow"), props.globals.getNode("/gear/gear[1]/wow"), props.globals.getNode("/gear/gear[2]/wow")],
@@ -59,11 +67,6 @@ var Instrumentation = {
 		serviceable: [props.globals.getNode("/instrumentation/altimeter[0]/serviceable"), props.globals.getNode("/instrumentation/altimeter[1]/serviceable"), props.globals.getNode("/instrumentation/altimeter[2]/serviceable")],
 		settingHpa: [props.globals.getNode("/instrumentation/altimeter[0]/setting-hpa"), props.globals.getNode("/instrumentation/altimeter[1]/setting-hpa"), props.globals.getNode("/instrumentation/altimeter[2]/setting-hpa")],
 		settingInhg: [props.globals.getNode("/instrumentation/altimeter[0]/setting-inhg"), props.globals.getNode("/instrumentation/altimeter[1]/setting-inhg"), props.globals.getNode("/instrumentation/altimeter[2]/setting-inhg")],
-	},
-	Attitude: {
-		indicatedPitchDeg: [props.globals.getNode("/orientation/pitch-deg"), props.globals.getNode("/orientation/pitch-deg")],
-		indicatedRollDeg: [props.globals.getNode("/orientation/roll-deg"), props.globals.getNode("/orientation/roll-deg")],
-		indicatedSlipSkid: props.globals.getNode("/instrumentation/slip-skid-ball/indicated-slip-skid"),
 	},
 	Comm: {
 		Frequencies: {
@@ -141,6 +144,14 @@ var Instrumentation = {
 		indicatedSpeedFpm: props.globals.getNode("/instrumentation/vertical-speed-indicator/indicated-speed-fpm"),
 		serviceable: props.globals.getNode("/instrumentation/vertical-speed-indicator/serviceable"),
 	},
+};
+
+var Orientation = {
+	alpha: props.globals.getNode("/orientation/alpha-deg"),
+	headingDeg: props.globals.getNode("/orientation/heading-deg"),
+	pitchDeg: props.globals.getNode("/orientation/pitch-deg"),
+	rollDeg: props.globals.getNode("/orientation/roll-deg"),
+	trackDeg: props.globals.getNode("/orientation/track-deg"),
 };
 
 var Sim = {
