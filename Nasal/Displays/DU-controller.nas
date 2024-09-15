@@ -1,4 +1,4 @@
-# McDonnell Douglas MD-11 DU Controller
+# Boeing 737 MAX DU Controller
 # Copyright (c) 2024 Josh Davidson (Octal450)
 # This file manages the DU Canvas hide/showing in an efficient and synchronized way
 
