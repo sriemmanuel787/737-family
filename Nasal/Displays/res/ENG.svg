@@ -5,7 +5,7 @@
    width="2048"
    height="2048"
    id="svg7638"
-   sodipodi:docname="EICAS.svg"
+   sodipodi:docname="ENG.svg"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -21,12 +21,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      showgrid="false"
-     inkscape:zoom="0.39746094"
-     inkscape:cx="700.69779"
-     inkscape:cy="924.61916"
+     inkscape:zoom="0.58740234"
+     inkscape:cx="1024"
+     inkscape:cy="666.49377"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
-     inkscape:window-x="-9"
+     inkscape:window-x="2391"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg7638" />
@@ -59,7 +59,7 @@
      y="0"
      style="fill:#000000" />
   <rect
-     style="fill:#000000;stroke-width:0"
+     style="display:inline;fill:#000000;stroke-width:0"
      id="rect7954"
      width="2048"
      height="2048"
@@ -590,7 +590,8 @@
       <path
          id="eng2-n2-actual"
          class="s0"
-         d="m1045 839v6h-150v-6z" />
+         d="m 1023,839 v 6 H 895 v -6 z"
+         style="stroke-width:0.92376" />
       <path
          id="eng2-n2-max"
          class="s6"
@@ -637,9 +638,10 @@
       <path
          id="eng1-n2-actual"
          class="s0"
-         d="m688 839v6h-150v-6z" />
+         d="m 666,839 v 6 H 538 v -6 z"
+         style="stroke-width:0.92376" />
       <path
-         id="eng1-n2-max-"
+         id="eng1-n2-max"
          class="s6"
          d="m396 793.5l2.1-5.6 26.3 9.6-2.1 5.6z" />
       <path
@@ -692,7 +694,8 @@
       <path
          id="eng2-egt-actual"
          class="s0"
-         d="m1045 561v6h-150v-6z" />
+         d="m 1023,561 v 6 H 895 v -6 z"
+         style="stroke-width:0.92376" />
       <path
          id="eng2-egt-max-start"
          class="s6"
@@ -742,7 +745,8 @@
       <path
          id="eng1-egt-actual"
          class="s0"
-         d="m688 561v6h-150v-6z" />
+         d="m 666,561 v 6 H 538 v -6 z"
+         style="stroke-width:0.92376" />
       <path
          id="eng1-egt-max-start"
          class="s6"
