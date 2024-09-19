@@ -12,8 +12,8 @@ var dc_volt_min = 25;
 
 var elec_started =0;
 setlistener("sim/signals/fdm-initialized", func {
-        if (elec_started == 1) return;
-        elec_started = 1;
+    if (elec_started == 1) return;
+    elec_started = 1;
 	var battery_on = getprop("controls/electric/battery-switch");
 	var extpwr_on = getprop("services/ext-pwr/enable");
 	var ext = getprop("controls/electrical/ext/sw");
