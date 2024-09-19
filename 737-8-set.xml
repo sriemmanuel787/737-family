@@ -150,17 +150,6 @@
             </config>
         </view>
     </sim>
-    <instrumentation>
-        <cdu>
-            <display>IDENT</display>
-            <ident>
-                <model>737 MAX 8</model>
-                <engines>CFM LEAP 1B</engines>
-            </ident>
-            <input type="string" />
-            <serviceable type="bool">true</serviceable>
-        </cdu>
-    </instrumentation>
 
     <limits>
         <!-- According to http://wwww.b737.org.uk -->
@@ -209,7 +198,6 @@
     </limits>
 
     <payload>
-
         <pax>
             <business type="double">20</business>
             <tourist type="double">33</tourist>

@@ -9,10 +9,10 @@
             (naviat)</author>
         <flight-model>jsb</flight-model>
         <gui n="0" include="gui/it-gui.xml" />
-		<hud n="0">
-			<enable3d n="0">false</enable3d>
-			<enable3d n="1">false</enable3d>
-		</hud>
+        <hud n="0">
+            <enable3d n="0">false</enable3d>
+            <enable3d n="1">false</enable3d>
+        </hud>
 
         <systems>
             <!-- Disable the generic electrical system -->
@@ -259,8 +259,12 @@
     </consumables>
 
     <controls>
+        <autobrake type="int">0</autobrake>
         <bleed>
+            <aft-cab-air type="int">0</aft-cab-air>
             <apu-on type="bool">0</apu-on>
+            <cont-cab-air type="int">0</cont-cab-air>
+            <fwd-cab-air type="int">0</fwd-cab-air>
             <isolation-valve type="bool">0</isolation-valve>
             <l-recirc-fan type="int">0</l-recirc-fan>
             <n1-on type="bool">0</n1-on>
@@ -269,8 +273,18 @@
             <pack-l type="int">0</pack-l>
             <pack-r type="int">0</pack-r>
             <r-recirc-fan type="int">0</r-recirc-fan>
+            <supply type="int">0</supply>
+            <trim-air type="bool">0</trim-air>
             <trip-reset type="bool">0</trip-reset>
         </bleed>
+        <efis n="0">
+            <vor-adf-1 type="int">0</vor-adf-1>
+            <vor-adf-2 type="int">0</vor-adf-2>
+        </efis>
+        <efis n="1">
+            <vor-adf-1 type="int">0</vor-adf-1>
+            <vor-adf-2 type="int">0</vor-adf-2>
+        </efis>
         <elec>
             <ac-mode type="int">0</ac-mode>
             <apu-gen-1 type="bool">0</apu-gen-1>
@@ -287,6 +301,10 @@
             <ife type="bool">0</ife>
             <standby-pwr type="int">0</standby-pwr>
         </elec>
+        <elt>
+            <elt-cover type="bool">0</elt-cover>
+            <elt-switch type="bool">0</elt-switch>
+        </elt>
         <eng>
             <apu type="int">0</apu>
             <eng-mode type="int">0</eng-mode>
@@ -311,6 +329,21 @@
             <pump-ra type="bool">0</pump-ra>
             <pump-rf type="bool">0</pump-rf>
         </fuel>
+        <gear>
+            <gear-handle type="bool">0</gear-handle>
+            <nose-wheel-steer-cover type="bool">0</nose-wheel-steer-cover>
+            <nose-wheel-steer-switch type="bool">0</nose-wheel-steer-switch>
+        </gear>
+        <gpws>
+            <flap-inhibit-cover type="bool">0</flap-inhibit-cover>
+            <flap-inhibit-switch type="bool">0</flap-inhibit-switch>
+            <gear-inhibit-cover type="bool">0</gear-inhibit-cover>
+            <gear-inhibit-switch type="bool">0</gear-inhibit-switch>
+            <runway-inhibit-cover type="bool">0</runway-inhibit-cover>
+            <runway-inhibit-switch type="bool">0</runway-inhibit-switch>
+            <terr-inhibit-cover type="bool">0</terr-inhibit-cover>
+            <terr-inhibit-switch type="bool">0</terr-inhibit-switch>
+        </gpws>
         <heat>
             <eng-1 type="bool">0</eng-1>
             <eng-1-hyd type="bool">0</eng-1-hyd>
@@ -326,17 +359,43 @@
             <window-side-r type="bool">0</window-side-r>
             <wing type="bool">0</wing>
         </heat>
+        <hyd>
+            <elec-1 type="bool">0</elec-1>
+            <elec-2 type="bool">0</elec-2>
+            <eng-1 type="bool">0</eng-1>
+            <eng-2 type="bool">0</eng-2>
+        </hyd>
         <lighting>
+            <afds-flood type="int">0</afds-flood>
             <anti-collision type="bool">0</anti-collision>
+            <ap-disc-test-1 type="bool">0</ap-disc-test-1>
+            <ap-disc-test-2 type="bool">0</ap-disc-test-2>
+            <background type="int">0</background>
+            <breaker type="int">0</breaker>
+            <du-1 type="int">0</du-1>
+            <du-2 type="int">0</du-2>
+            <du-3 type="int">0</du-3>
+            <du-4 type="int">0</du-4>
+            <exit type="int">0</exit>
             <landing-l type="bool">0</landing-l>
             <landing-r type="bool">0</landing-r>
+            <light-mode type="int">0</light-mode>
             <logo type="bool">0</logo>
+            <main-panel-capt type="int">0</main-panel-capt>
+            <main-panel-fo type="int">0</main-panel-fo>
+            <oh-panel type="int">0</oh-panel>
             <position type="int">0</position>
             <rwy-turnoff-l type="bool">0</rwy-turnoff-l>
             <rwy-turnoff-r type="bool">0</rwy-turnoff-r>
             <wheel-well type="bool">0</wheel-well>
             <wing type="bool">0</wing>
         </lighting>
+        <mfd>
+            <selector-mode-1 type="bool">0</selector-mode-1>
+            <selector-mode-2 type="bool">0</selector-mode-2>
+            <cursor-1 type="int">0</cursor-1>
+            <cursor-2 type="int">0</cursor-2>
+        </mfd>
         <nav>
             <control-src type="int">0</control-src>
             <display-src type="int">0</display-src>
@@ -344,21 +403,10 @@
             <irs type="int">0</irs>
             <vhf-nav type="int">0</vhf-nav>
         </nav>
-
-        <APU>
-            <master type="int">0</master>
-        </APU>
-
-        <engines n="0">
-            <engine n="0">
-                <start-switch type="int">1</start-switch>
-                <throttle-fdm type="double">0</throttle-fdm>
-            </engine>
-            <engine n="1">
-                <start-switch type="int">1</start-switch>
-                <throttle-fdm type="double">0</throttle-fdm>
-            </engine>
-        </engines>
+        <wipers>
+            <wiper-l type="int">0</wiper-l>
+            <wiper-r type="int">0</wiper-r>
+        </wipers>
 
         <flight n="0">
             <aileron-sum>0</aileron-sum>
@@ -389,17 +437,6 @@
             <tiller-cmd-norm type="double">0</tiller-cmd-norm>
             <tiller-enabled type="bool">0</tiller-enabled>
         </gear>
-
-        <lighting>
-            <panel type="int">0</panel>
-            <breaker type="int">0</breaker>
-            <pedestal type="int">0</pedestal>
-            <instrument-panel type="int">0</instrument-panel>
-            <exit-cover type="int">0</exit-cover>
-            <exit type="int">0</exit>
-            <no-smoking type="int">0</no-smoking>
-            <seatbelts type="int">0</seatbelts>
-        </lighting>
 
     </controls>
 
@@ -993,17 +1030,17 @@
         <dome-norm type="double">0</dome-norm>
         <overhead-panel-norm type="double">0</overhead-panel-norm>
     </lighting>
-	
-	<services>
+
+    <services>
         <baggage n="0">
             <enable type="bool">0</enable>
         </baggage>
         <baggage n="1">
             <enable type="bool">0</enable>
         </baggage>
-		<chocks>
-			<enable type="bool">1</enable>
-		</chocks>
+        <chocks>
+            <enable type="bool">1</enable>
+        </chocks>
         <fuel-truck>
             <enable type="bool">0</enable>
         </fuel-truck>
