@@ -7,6 +7,7 @@
     <light>
         <name>Top Beacon Compositor</name>
         <type>point</type>
+        <dim-factor><property>systems/lighting/beacon-upper</property></dim-factor>
         <position>
             <x-m>-1.49812</x-m>
             <y-m>0</y-m>
@@ -40,6 +41,7 @@
     <light>
         <name>Bottom Beacon Compositor</name>
         <type>point</type>
+        <dim-factor><property>systems/lighting/beacon-lower</property></dim-factor>
         <position>
             <x-m>0.869678</x-m>
             <y-m>0.000946</y-m>
@@ -74,7 +76,7 @@
     <light>
 		<name>Landing Light Left Compositor</name>
 		<type>spot</type>
-		<priority>high</priority>
+        <dim-factor><property>systems/lighting/landing-left</property></dim-factor>
 		<position>
 			<x-m>-2.98661</x-m>
 			<y-m>-2.28637</y-m>
@@ -116,7 +118,7 @@
     <light>
 		<name>Landing Light Right Compositor</name>
 		<type>spot</type>
-		<priority>high</priority>
+        <dim-factor><property>systems/lighting/landing-right</property></dim-factor>
 		<position>
 			<x-m>-2.98661</x-m>
 			<y-m>2.28637</y-m>
@@ -158,7 +160,7 @@
 	<light>
 		<name>Left Turnoff Compositor</name>
 		<type>spot</type>
-		<priority>medium</priority>
+        <dim-factor><property>systems/lighting/turnoff-left</property></dim-factor>
 		<position>
 			<x-m>-2.98661</x-m>
 			<y-m>-2.28637</y-m>
@@ -200,7 +202,7 @@
 	<light>
 		<name>Right Turnoff Compositor</name>
 		<type>spot</type>
-		<priority>medium</priority>
+        <dim-factor><property>systems/lighting/turnoff-right</property></dim-factor>
 		<position>
 			<x-m>-2.98661</x-m>
 			<y-m>2.28637</y-m>
@@ -237,6 +239,132 @@
 		<spot-exponent>20.0</spot-exponent>
 		<spot-cutoff>25.0</spot-cutoff>
 		<range-m>250.0</range-m>
+	</light>
+
+    <light>
+		<name>Left Strobe Light Compositor</name>
+		<type>spot</type>
+		<dim-factor><property>systems/lighting/strobe-left</property></dim-factor>
+		<position>
+			<x-m>5.6936</x-m>
+			<y-m>-17.185</y-m>
+			<z-m>2.6194</z-m>
+		</position>
+		<direction>
+			<x>-0.492108</x>
+			<y>-0.508071</y>
+			<z>-0.706896</z>
+		</direction>
+		<ambient>
+			<r>0.20</r>
+			<g>0.20</g>
+			<b>0.20</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.78</r>
+			<g>0.78</g>
+			<b>0.78</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.98</r>
+			<g>0.98</g>
+			<b>0.98</b>
+			<a>1</a>
+		</specular>
+	    <attenuation>
+			<c>1.0</c>
+			<l>0.09</l>
+			<q>0.032</q>
+		</attenuation>
+		<spot-exponent>10</spot-exponent>
+		<spot-cutoff>45</spot-cutoff>
+		<range-m>50</range-m>
+	</light>
+
+    <light>
+		<name>Right Strobe Light Compositor</name>
+		<type>spot</type>
+		<!-- <dim-factor><property>systems/lighting/strobe-right</property></dim-factor> -->
+		<position>
+			<x-m>5.6936</x-m>
+			<y-m>17.185</y-m>
+			<z-m>2.6194</z-m>
+		</position>
+		<direction>
+			<x>-0.492108</x>
+			<y>0.508071</y>
+			<z>-0.706896</z>
+		</direction>
+		<ambient>
+			<r>0.20</r>
+			<g>0.20</g>
+			<b>0.20</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.78</r>
+			<g>0.78</g>
+			<b>0.78</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.98</r>
+			<g>0.98</g>
+			<b>0.98</b>
+			<a>1</a>
+		</specular>
+	    <attenuation>
+			<c>1.0</c>
+			<l>0.09</l>
+			<q>0.032</q>
+		</attenuation>
+		<spot-exponent>10</spot-exponent>
+		<spot-cutoff>45</spot-cutoff>
+		<range-m>50</range-m>
+	</light>
+
+    <light>
+		<name>Left Navigation Light Compositor</name>
+		<type>spot</type>
+		<!-- <dim-factor><property>systems/lighting/position-left</property></dim-factor> -->
+		<position>
+			<x-m>5.13187</x-m>
+			<y-m>-16.8169</y-m>
+			<z-m>2.66119</z-m>
+		</position>
+		<direction>
+			<x>-0.885722</x>
+			<y>-0.000302</y>
+			<z>0.464214</z>
+		</direction>
+		<ambient>
+			<r>0.20</r>
+			<g>0</g>
+			<b>0</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.78</r>
+			<g>0</g>
+			<b>0</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.98</r>
+			<g>0</g>
+			<b>0</b>
+			<a>1</a>
+		</specular>
+	    <attenuation>
+			<c>1.0</c>
+			<l>0.09</l>
+			<q>0.032</q>
+		</attenuation>
+		<spot-exponent>10</spot-exponent>
+		<spot-cutoff>45</spot-cutoff>
+		<range-m>50</range-m>
 	</light>
 
     <effect>
@@ -1088,28 +1216,28 @@
             </entry>
             <entry>
                 <ind>0.125</ind>
-                <dep>12.5</dep>
+                <dep>-12.5</dep>
             </entry>
             <entry>
                 <ind>0.375</ind>
-                <dep>12.5</dep>
+                <dep>-12.5</dep>
             </entry>
             <entry>
                 <ind>0.5</ind>
-                <dep>25</dep>
+                <dep>-25</dep>
             </entry>
             <entry>
                 <ind>1</ind>
-                <dep>25</dep>
+                <dep>-25</dep>
             </entry>
         </interpolation>
         <axis>
-            <x1-m>-0.391689</x1-m>
-            <y1-m>-5.30122</y1-m>
-            <z1-m>0.75841</z1-m>
-            <x2-m>1.0679</x2-m>
-            <y2-m>-8.11477</y2-m>
-            <z2-m>1.00586</z2-m>
+            <x1-m>0.000731</x1-m>
+            <y1-m>-6.41691</y1-m>
+            <z1-m>1.28165</z1-m>
+            <x2-m>-0.45937</x2-m>
+            <y2-m>-5.53321</y2-m>
+            <z2-m>1.19574</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1123,28 +1251,28 @@
             </entry>
             <entry>
                 <ind>0.125</ind>
-                <dep>12.5</dep>
+                <dep>-12.5</dep>
             </entry>
             <entry>
                 <ind>0.375</ind>
-                <dep>12.5</dep>
+                <dep>-12.5</dep>
             </entry>
             <entry>
                 <ind>0.5</ind>
-                <dep>25</dep>
+                <dep>-25</dep>
             </entry>
             <entry>
                 <ind>1</ind>
-                <dep>25</dep>
+                <dep>-25</dep>
             </entry>
         </interpolation>
         <axis>
-            <x1-m>1.0679</x1-m>
-            <y1-m>-8.11477</y1-m>
-            <z1-m>1.00586</z1-m>
-            <x2-m>2.5275</x2-m>
-            <y2-m>-10.9283</y2-m>
-            <z2-m>1.2533</z2-m>
+            <x1-m>0.000731</x1-m>
+            <y1-m>-6.41691</y1-m>
+            <z1-m>1.28165</z1-m>
+            <x2-m>-0.45937</x2-m>
+            <y2-m>-5.53321</y2-m>
+            <z2-m>1.19574</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1158,28 +1286,28 @@
             </entry>
             <entry>
                 <ind>0.125</ind>
-                <dep>12.5</dep>
+                <dep>-12.5</dep>
             </entry>
             <entry>
                 <ind>0.375</ind>
-                <dep>12.5</dep>
+                <dep>-12.5</dep>
             </entry>
             <entry>
                 <ind>0.5</ind>
-                <dep>25</dep>
+                <dep>-25</dep>
             </entry>
             <entry>
                 <ind>1</ind>
-                <dep>25</dep>
+                <dep>-25</dep>
             </entry>
         </interpolation>
         <axis>
-            <x1-m>2.5275</x1-m>
-            <y1-m>-10.9283</y1-m>
-            <z1-m>1.2533</z1-m>
-            <x2-m>3.98709</x2-m>
-            <y2-m>-13.7419</y2-m>
-            <z2-m>1.50075</z2-m>
+            <x1-m>0.000731</x1-m>
+            <y1-m>-6.41691</y1-m>
+            <z1-m>1.28165</z1-m>
+            <x2-m>-0.45937</x2-m>
+            <y2-m>-5.53321</y2-m>
+            <z2-m>1.19574</z2-m>
         </axis>
     </animation>
     <animation>
@@ -1193,28 +1321,28 @@
             </entry>
             <entry>
                 <ind>0.125</ind>
-                <dep>12.5</dep>
+                <dep>-12.5</dep>
             </entry>
             <entry>
                 <ind>0.375</ind>
-                <dep>12.5</dep>
+                <dep>-12.5</dep>
             </entry>
             <entry>
                 <ind>0.5</ind>
-                <dep>25</dep>
+                <dep>-25</dep>
             </entry>
             <entry>
                 <ind>1</ind>
-                <dep>25</dep>
+                <dep>-25</dep>
             </entry>
         </interpolation>
         <axis>
-            <x1-m>3.98709</x1-m>
-            <y1-m>-13.7419</y1-m>
-            <z1-m>1.50075</z1-m>
-            <x2-m>5.44668</x2-m>
-            <y2-m>-16.5554</y2-m>
-            <z2-m>1.74819</z2-m>
+            <x1-m>0.000731</x1-m>
+            <y1-m>-6.41691</y1-m>
+            <z1-m>1.28165</z1-m>
+            <x2-m>-0.45937</x2-m>
+            <y2-m>-5.53321</y2-m>
+            <z2-m>1.19574</z2-m>
         </axis>
     </animation>
 
@@ -1249,7 +1377,7 @@
     </animation>
     <animation>
         <type>rotate</type>
-        <object-name>flap.krugerL2</object-name>
+        <object-name>flap.krugerR2</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1267,16 +1395,16 @@
         </interpolation>
         <axis>
             <x1-m>-2.47732</x1-m>
-            <y1-m>-2.3557</y1-m>
+            <y1-m>2.3557</y1-m>
             <z1-m>0.979556</z1-m>
             <x2-m>-2.84014</x2-m>
-            <y2-m>-1.82399</y2-m>
+            <y2-m>1.82399</y2-m>
             <z2-m>0.804606</z2-m>
         </axis>
     </animation>
     <animation>
         <type>rotate</type>
-        <object-name>flap.krugerL3</object-name>
+        <object-name>flap.krugerR3</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1294,11 +1422,151 @@
         </interpolation>
         <axis>
             <x1-m>-1.48066</x1-m>
-            <y1-m>-3.90866</y1-m>
+            <y1-m>3.90866</y1-m>
             <z1-m>1.19883</z1-m>
             <x2-m>-2.47546</x2-m>
-            <y2-m>-2.35665</y2-m>
+            <y2-m>2.35665</y2-m>
             <z2-m>0.979859</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>slat.R1</object-name>
+        <property>fdm/jsbsim/fcs/flap-pos-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.125</ind>
+                <dep>-12.5</dep>
+            </entry>
+            <entry>
+                <ind>0.375</ind>
+                <dep>-12.5</dep>
+            </entry>
+            <entry>
+                <ind>0.5</ind>
+                <dep>-25</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>-25</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>-0.45937</x1-m>
+            <y1-m>5.53321</y1-m>
+            <z1-m>1.19574</z1-m>
+            <x2-m>0.000731</x2-m>
+            <y2-m>6.41691</y2-m>
+            <z2-m>1.28165</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>slat.R2</object-name>
+        <property>fdm/jsbsim/fcs/flap-pos-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.125</ind>
+                <dep>-12.5</dep>
+            </entry>
+            <entry>
+                <ind>0.375</ind>
+                <dep>-12.5</dep>
+            </entry>
+            <entry>
+                <ind>0.5</ind>
+                <dep>-25</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>-25</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>-0.45937</x1-m>
+            <y1-m>5.53321</y1-m>
+            <z1-m>1.19574</z1-m>
+            <x2-m>0.000731</x2-m>
+            <y2-m>6.41691</y2-m>
+            <z2-m>1.28165</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>slat.R3</object-name>
+        <property>fdm/jsbsim/fcs/flap-pos-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.125</ind>
+                <dep>-12.5</dep>
+            </entry>
+            <entry>
+                <ind>0.375</ind>
+                <dep>-12.5</dep>
+            </entry>
+            <entry>
+                <ind>0.5</ind>
+                <dep>-25</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>-25</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>-0.45937</x1-m>
+            <y1-m>5.53321</y1-m>
+            <z1-m>1.19574</z1-m>
+            <x2-m>0.000731</x2-m>
+            <y2-m>6.41691</y2-m>
+            <z2-m>1.28165</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>slat.R4</object-name>
+        <property>fdm/jsbsim/fcs/flap-pos-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.125</ind>
+                <dep>-12.5</dep>
+            </entry>
+            <entry>
+                <ind>0.375</ind>
+                <dep>-12.5</dep>
+            </entry>
+            <entry>
+                <ind>0.5</ind>
+                <dep>-25</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>-25</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>-0.45937</x1-m>
+            <y1-m>5.53321</y1-m>
+            <z1-m>1.19574</z1-m>
+            <x2-m>0.000731</x2-m>
+            <y2-m>6.41691</y2-m>
+            <z2-m>1.28165</z2-m>
         </axis>
     </animation>
 
