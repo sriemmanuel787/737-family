@@ -69,6 +69,8 @@ var Value = {
 		indicatedHeadingDeg: 0,
 		indicatedTrackDeg: 0,
 		magTru: 0,
+		magTruChg: 0,
+		magTruPrev: 0,
 	},
 	Navigation: {
 		Adf: {
@@ -701,8 +703,23 @@ var canvas_pfd = {
 		me["heading-track"].setRotation((Value.Heading.indicatedTrackDeg - Value.Heading.indicatedHeadingDeg) * D2R);
 		me["heading-ap"].setRotation((Value.Autopilot.Input.hdg - Value.Heading.indicatedHeadingDeg) * D2R);
 		me["heading-ap-readout"].setText(sprintf("%i", Value.Autopilot.Input.hdg));
+		me["heading-mode"].setText(Value.Heading.magTru ? "TRU" : "MAG");
+		if (Value.Heading.magTru != Value.Heading.magTruPrev and Value.Heading.magTruPrev == 1) {
+			Value.Heading.magTruPrev = Value.Heading.magTru;
+			Value.Heading.magTruChg = Value.Sim.elapsedSec;
+		}
+		if (Value.Heading.magTru) {
+			me["heading-mode-box"].setColorFill(1, 1, 1, 1);
+			
+		} else {
+			me["heading-mode-box"].setColorFill(0, 1, 0, 1);
+			if (Value.Time.elapsedSec - Value.Heading.magTruChg < 10) {
+				me["heading-mode-box"].show();
+			} else {
+				me["heading-mode-box"].hide();
+			}
+		}
 	}
-		
 };
 
 setlistener("sim/signals/fdm-initialized", func() {
