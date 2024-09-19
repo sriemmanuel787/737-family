@@ -42,6 +42,13 @@ var doMagicStartup = func {
     }, 0.5);
 }
 
+var doorLF = aircraft.door.new("/systems/doors/left-fwd", 6);
+var doorLA = aircraft.door.new("/systems/doors/left-aft", 6);
+var doorRF = aircraft.door.new("/systems/doors/right-fwd", 6);
+var doorRA = aircraft.door.new("/systems/doors/right-aft", 6);
+var cargoF = aircraft.door.new("/systems/doors/cargo-fwd", 6);
+var cargoA = aircraft.door.new("/systems/doors/cargo-aft", 6);
+
 var altAlertModeSwitch = func {
 	var warning_b = getprop("b737/warnings/altitude-alert-b-conditions");
 	var diff_0 = getprop("b737/helpers/alt-diff-ft[0]");
