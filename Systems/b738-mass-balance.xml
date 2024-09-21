@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<!-- Boeing 737-8 MAX JSBSim -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<mass_balance>
+	
+	<ixx unit="SLUG*FT2">423457</ixx>
+	<iyy unit="SLUG*FT2">902434</iyy>
+	<izz unit="SLUG*FT2">687164</izz>
+	<ixy unit="SLUG*FT2">0</ixy>
+	<ixz unit="SLUG*FT2">0</ixz>
+	<iyz unit="SLUG*FT2">0</iyz>
+	<emptywt unit="LBS">98500</emptywt> <!-- Check -->
+	
+	<location name="CG" unit="M">
+		<x></x> <!-- 25% MAC, Check -->
+		<y>0</y>
+		<z>1.59159</z>
+	</location>
+	
+	<!-- All below positions fudged for CG accuracy -->
+	<pointmass name="Forward Cabin">
+		<weight unit="LBS">9800</weight>
+		<location name="POINTMASS" unit="M">
+			<x></x>
+			<y>0</y>
+			<z>2.948</z>
+		</location>
+	</pointmass>
+	<pointmass name="Aft Cabin">
+		<weight unit="LBS">9600</weight>
+		<location name="POINTMASS" unit="M">
+			<x></x>
+			<y>0</y>
+			<z>2.948</z>
+		</location>
+	</pointmass>
+	
+	<pointmass name="Forward Cargo">
+		<weight unit="LBS">2900</weight>
+		<location name="POINTMASS" unit="M">
+			<x></x>
+			<y>0</y>
+			<z>1.172</z>
+		</location>
+	</pointmass>
+	<pointmass name="Aft Cargo">
+		<weight unit="LBS">2700</weight>
+		<location name="POINTMASS" unit="M">
+			<x></x>
+			<y>0</y>
+			<z>1.172</z>
+		</location>
+	</pointmass>
+
+</mass_balance>

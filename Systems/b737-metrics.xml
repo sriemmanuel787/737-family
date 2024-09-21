@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!-- Boeing 737 MAX JSBSim -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<metrics>
+	
+	<wingarea unit="FT2">3648</wingarea>
+	<wingspan unit="FT">117.78</wingspan>
+	<chord unit="FT">25.85</chord>
+	<htailarea unit="FT2">352.84</htailarea>
+	<vtailarea unit="FT2">284.6</vtailarea>
+	
+	<location name="AERORP" unit="M">
+		<x></x>
+		<y>0</y>
+		<z>1.59159</z>
+	</location>
+	
+	<location name="EYEPOINT" unit="M">
+		<x>0</x>
+		<y>0</y>
+		<z>2.83847</z>
+	</location>
+	
+	<location name="VRP" unit="M">
+		<x>0</x>
+		<y>0</y>
+		<z>1.66752</z>
+	</location>
+
+</metrics>

@@ -37,12 +37,6 @@
             <autopilot n="10">
                 <path>Aircraft/737-MAX/Systems/fl2070_sound.xml</path>
             </autopilot>
-            <autopilot n="11">
-                <path>Aircraft/737-MAX/Systems/fadec.xml</path>
-            </autopilot>
-            <autopilot n="12">
-                <path>Aircraft/737-MAX/Systems/zoom-views.xml</path>
-            </autopilot>
             <path>Aircraft/737-MAX/Systems/systems.xml</path>
             <property-rule n="101">
                 <path>Aircraft/737-MAX/Systems/instrument-filters.xml</path>

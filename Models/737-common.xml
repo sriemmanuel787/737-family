@@ -2,6 +2,11 @@
 <!-- Animation common properties -->
 
 <PropertyList>
+	
+	<offsets> <!-- Due to VRP -->
+		<z-m>-1.66752</z-m>
+	</offsets>
+	
     <!-- Lights -->
     <!-- Compositor -->
     <light>
