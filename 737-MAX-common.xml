@@ -4,9 +4,9 @@
 
     <sim>
         <minimum-fg-version>2020.3.14</minimum-fg-version>
-        <author>Original by Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), legoboyvdlp,
+        <author>Original by Gabriel Hernandez (YV3399), legoboyvdlp,
             RenanMsV (BR-RVD), adapted by SP-NTX, Captain Jake, Marsdolphin, Israel Emmanuel
-            (naviat)</author>
+            (naviat), Josh Davidson (Octal450)</author>
         <flight-model>jsb</flight-model>
         <gui n="0" include="gui/it-gui.xml" />
         <hud n="0">

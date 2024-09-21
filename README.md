@@ -7,7 +7,7 @@ A project to create the 737 MAX series for FlightGear, the free flight simulator
 - Braindamage - 3D
 - Captain Jake - 3D modelling
 - Israel Emmanuel(naviat) - Systems, Animations
-- Joshua Davidson (Octal450) - FDM
+- Josh Davidson (Octal450) - FDM
 - Marsdolphin - Systems
 - Semir Gebran (CaptB) - 3D modelling, testing
 - SP-NTX - 3D modelling
