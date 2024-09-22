@@ -7,7 +7,9 @@
     <light>
         <name>Top Beacon Compositor</name>
         <type>point</type>
-        <dim-factor><property>systems/lighting/beacon-upper</property></dim-factor>
+        <!-- <dim-factor>
+            <property>systems/lighting/beacon-upper</property>
+        </dim-factor> -->
         <position>
             <x-m>-1.49812</x-m>
             <y-m>0</y-m>
@@ -41,7 +43,9 @@
     <light>
         <name>Bottom Beacon Compositor</name>
         <type>point</type>
-        <dim-factor><property>systems/lighting/beacon-lower</property></dim-factor>
+        <!-- <dim-factor>
+            <property>systems/lighting/beacon-lower</property>
+        </dim-factor> -->
         <position>
             <x-m>0.869678</x-m>
             <y-m>0.000946</y-m>
@@ -74,298 +78,350 @@
     </light>
 
     <light>
-		<name>Landing Light Left Compositor</name>
-		<type>spot</type>
-        <dim-factor><property>systems/lighting/landing-left</property></dim-factor>
-		<position>
-			<x-m>-2.98661</x-m>
-			<y-m>-2.28637</y-m>
-			<z-m>1.18893</z-m>
-		</position>
-		<direction>
-			<x>-1.0</x>
-			<y>-0.175</y>
-			<z>-0.095</z>
-		</direction>
-		<ambient>
-			<r>0.25</r>
-			<g>0.25</g>
-			<b>0.25</b>
-			<a>1</a>
-		</ambient>
-		<diffuse>
-			<r>1.0</r>
-			<g>1.0</g>
-			<b>1.0</b>
-			<a>1.0</a>
-		</diffuse>
-		<specular>
-			<r>1.0</r>
-			<g>1.0</g>
-			<b>1.0</b>
-			<a>1.0</a>
-		</specular>
-		<attenuation>
-			<c>0.1</c>
-			<l>0.01</l>
-			<q>0.0</q>
-		</attenuation>
-		<spot-exponent>100.0</spot-exponent>
-		<spot-cutoff>21.5</spot-cutoff>
-		<range-m>2500.0</range-m>
-	</light>
+        <name>Landing Light Left Compositor</name>
+        <type>spot</type>
+        <!-- <dim-factor>
+            <property>systems/lighting/landing-left</property>
+        </dim-factor> -->
+        <position>
+            <x-m>-2.98661</x-m>
+            <y-m>-2.28637</y-m>
+            <z-m>1.18893</z-m>
+        </position>
+        <direction>
+            <x>-1.0</x>
+            <y>-0.175</y>
+            <z>-0.095</z>
+        </direction>
+        <ambient>
+            <r>0.25</r>
+            <g>0.25</g>
+            <b>0.25</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>1.0</a>
+        </diffuse>
+        <specular>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>1.0</a>
+        </specular>
+        <attenuation>
+            <c>0.1</c>
+            <l>0.01</l>
+            <q>0.0</q>
+        </attenuation>
+        <spot-exponent>100.0</spot-exponent>
+        <spot-cutoff>21.5</spot-cutoff>
+        <range-m>2500.0</range-m>
+    </light>
 
     <light>
-		<name>Landing Light Right Compositor</name>
-		<type>spot</type>
-        <dim-factor><property>systems/lighting/landing-right</property></dim-factor>
-		<position>
-			<x-m>-2.98661</x-m>
-			<y-m>2.28637</y-m>
-			<z-m>1.18893</z-m>
-		</position>
-		<direction>
-			<x>-1.0</x>
-			<y>0.175</y>
-			<z>-0.095</z>
-		</direction>
-		<ambient>
-			<r>0.25</r>
-			<g>0.25</g>
-			<b>0.25</b>
-			<a>1</a>
-		</ambient>
-		<diffuse>
-			<r>1.0</r>
-			<g>1.0</g>
-			<b>1.0</b>
-			<a>1.0</a>
-		</diffuse>
-		<specular>
-			<r>1.0</r>
-			<g>1.0</g>
-			<b>1.0</b>
-			<a>1.0</a>
-		</specular>
-		<attenuation>
-			<c>0.1</c>
-			<l>0.01</l>
-			<q>0.0</q>
-		</attenuation>
-		<spot-exponent>100.0</spot-exponent>
-		<spot-cutoff>21.5</spot-cutoff>
-		<range-m>2500.0</range-m>
-	</light>
-	
-	<light>
-		<name>Left Turnoff Compositor</name>
-		<type>spot</type>
-        <dim-factor><property>systems/lighting/turnoff-left</property></dim-factor>
-		<position>
-			<x-m>-2.98661</x-m>
-			<y-m>-2.28637</y-m>
-			<z-m>1.18893</z-m>
-		</position>
-		<direction>
-			<x>-1.0</x>
-			<y>-0.571953125</y>
-			<z>-0.15</z>
-		</direction>
-		<ambient>
-			<r>0.50</r>
-			<g>0.50</g>
-			<b>0.50</b>
-			<a>1</a>
-		</ambient>
-		<diffuse>
-			<r>1.0</r>
-			<g>1.0</g>
-			<b>1.0</b>
-			<a>1.0</a>
-		</diffuse>
-		<specular>
-			<r>1.0</r>
-			<g>1.0</g>
-			<b>1.0</b>
-			<a>1.0</a>
-		</specular>
-	    <attenuation>
-			<c>1.0</c>
-			<l>0.045</l>
-			<q>0.002</q>
-		</attenuation>
-		<spot-exponent>20.0</spot-exponent>
-		<spot-cutoff>25.0</spot-cutoff>
-		<range-m>250.0</range-m>
-	</light>
-	
-	<light>
-		<name>Right Turnoff Compositor</name>
-		<type>spot</type>
-        <dim-factor><property>systems/lighting/turnoff-right</property></dim-factor>
-		<position>
-			<x-m>-2.98661</x-m>
-			<y-m>2.28637</y-m>
-			<z-m>1.18893</z-m>
-		</position>
-		<direction>
-			<x>-1.0</x>
-			<y>0.571953125</y>
-			<z>-0.15</z>
-		</direction>
-		<ambient>
-			<r>0.50</r>
-			<g>0.50</g>
-			<b>0.50</b>
-			<a>1</a>
-		</ambient>
-		<diffuse>
-			<r>1.0</r>
-			<g>1.0</g>
-			<b>1.0</b>
-			<a>1.0</a>
-		</diffuse>
-		<specular>
-			<r>1.0</r>
-			<g>1.0</g>
-			<b>1.0</b>
-			<a>1.0</a>
-		</specular>
-	    <attenuation>
-			<c>1.0</c>
-			<l>0.045</l>
-			<q>0.002</q>
-		</attenuation>
-		<spot-exponent>20.0</spot-exponent>
-		<spot-cutoff>25.0</spot-cutoff>
-		<range-m>250.0</range-m>
-	</light>
+        <name>Landing Light Right Compositor</name>
+        <type>spot</type>
+        <!-- <dim-factor>
+            <property>systems/lighting/landing-right</property>
+        </dim-factor> -->
+        <position>
+            <x-m>-2.98661</x-m>
+            <y-m>2.28637</y-m>
+            <z-m>1.18893</z-m>
+        </position>
+        <direction>
+            <x>-1.0</x>
+            <y>0.175</y>
+            <z>-0.095</z>
+        </direction>
+        <ambient>
+            <r>0.25</r>
+            <g>0.25</g>
+            <b>0.25</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>1.0</a>
+        </diffuse>
+        <specular>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>1.0</a>
+        </specular>
+        <attenuation>
+            <c>0.1</c>
+            <l>0.01</l>
+            <q>0.0</q>
+        </attenuation>
+        <spot-exponent>100.0</spot-exponent>
+        <spot-cutoff>21.5</spot-cutoff>
+        <range-m>2500.0</range-m>
+    </light>
 
     <light>
-		<name>Left Strobe Light Compositor</name>
-		<type>spot</type>
-		<dim-factor><property>systems/lighting/strobe-left</property></dim-factor>
-		<position>
-			<x-m>5.6936</x-m>
-			<y-m>-17.185</y-m>
-			<z-m>2.6194</z-m>
-		</position>
-		<direction>
-			<x>-0.492108</x>
-			<y>-0.508071</y>
-			<z>-0.706896</z>
-		</direction>
-		<ambient>
-			<r>0.20</r>
-			<g>0.20</g>
-			<b>0.20</b>
-			<a>1</a>
-		</ambient>
-		<diffuse>
-			<r>0.78</r>
-			<g>0.78</g>
-			<b>0.78</b>
-			<a>1</a>
-		</diffuse>
-		<specular>
-			<r>0.98</r>
-			<g>0.98</g>
-			<b>0.98</b>
-			<a>1</a>
-		</specular>
-	    <attenuation>
-			<c>1.0</c>
-			<l>0.09</l>
-			<q>0.032</q>
-		</attenuation>
-		<spot-exponent>10</spot-exponent>
-		<spot-cutoff>45</spot-cutoff>
-		<range-m>50</range-m>
-	</light>
+        <name>Left Turnoff Compositor</name>
+        <type>spot</type>
+        <!-- <dim-factor>
+            <property>systems/lighting/turnoff-left</property>
+        </dim-factor> -->
+        <position>
+            <x-m>-2.98661</x-m>
+            <y-m>-2.28637</y-m>
+            <z-m>1.18893</z-m>
+        </position>
+        <direction>
+            <x>-1.0</x>
+            <y>-0.571953125</y>
+            <z>-0.15</z>
+        </direction>
+        <ambient>
+            <r>0.50</r>
+            <g>0.50</g>
+            <b>0.50</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>1.0</a>
+        </diffuse>
+        <specular>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>1.0</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.045</l>
+            <q>0.002</q>
+        </attenuation>
+        <spot-exponent>20.0</spot-exponent>
+        <spot-cutoff>25.0</spot-cutoff>
+        <range-m>250.0</range-m>
+    </light>
 
     <light>
-		<name>Right Strobe Light Compositor</name>
-		<type>spot</type>
-		<!-- <dim-factor><property>systems/lighting/strobe-right</property></dim-factor> -->
-		<position>
-			<x-m>5.6936</x-m>
-			<y-m>17.185</y-m>
-			<z-m>2.6194</z-m>
-		</position>
-		<direction>
-			<x>-0.492108</x>
-			<y>0.508071</y>
-			<z>-0.706896</z>
-		</direction>
-		<ambient>
-			<r>0.20</r>
-			<g>0.20</g>
-			<b>0.20</b>
-			<a>1</a>
-		</ambient>
-		<diffuse>
-			<r>0.78</r>
-			<g>0.78</g>
-			<b>0.78</b>
-			<a>1</a>
-		</diffuse>
-		<specular>
-			<r>0.98</r>
-			<g>0.98</g>
-			<b>0.98</b>
-			<a>1</a>
-		</specular>
-	    <attenuation>
-			<c>1.0</c>
-			<l>0.09</l>
-			<q>0.032</q>
-		</attenuation>
-		<spot-exponent>10</spot-exponent>
-		<spot-cutoff>45</spot-cutoff>
-		<range-m>50</range-m>
-	</light>
+        <name>Right Turnoff Compositor</name>
+        <type>spot</type>
+        <!-- <dim-factor>
+            <property>systems/lighting/turnoff-right</property>
+        </dim-factor> -->
+        <position>
+            <x-m>-2.98661</x-m>
+            <y-m>2.28637</y-m>
+            <z-m>1.18893</z-m>
+        </position>
+        <direction>
+            <x>-1.0</x>
+            <y>0.571953125</y>
+            <z>-0.15</z>
+        </direction>
+        <ambient>
+            <r>0.50</r>
+            <g>0.50</g>
+            <b>0.50</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>1.0</a>
+        </diffuse>
+        <specular>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>1.0</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.045</l>
+            <q>0.002</q>
+        </attenuation>
+        <spot-exponent>20.0</spot-exponent>
+        <spot-cutoff>25.0</spot-cutoff>
+        <range-m>250.0</range-m>
+    </light>
 
     <light>
-		<name>Left Navigation Light Compositor</name>
-		<type>spot</type>
-		<!-- <dim-factor><property>systems/lighting/position-left</property></dim-factor> -->
-		<position>
-			<x-m>5.13187</x-m>
-			<y-m>-16.8169</y-m>
-			<z-m>2.66119</z-m>
-		</position>
-		<direction>
-			<x>-0.885722</x>
-			<y>-0.000302</y>
-			<z>0.464214</z>
-		</direction>
-		<ambient>
-			<r>0.20</r>
-			<g>0</g>
-			<b>0</b>
-			<a>1</a>
-		</ambient>
-		<diffuse>
-			<r>0.78</r>
-			<g>0</g>
-			<b>0</b>
-			<a>1</a>
-		</diffuse>
-		<specular>
-			<r>0.98</r>
-			<g>0</g>
-			<b>0</b>
-			<a>1</a>
-		</specular>
-	    <attenuation>
-			<c>1.0</c>
-			<l>0.09</l>
-			<q>0.032</q>
-		</attenuation>
-		<spot-exponent>10</spot-exponent>
-		<spot-cutoff>45</spot-cutoff>
-		<range-m>50</range-m>
-	</light>
+        <name>Left Strobe Light Compositor</name>
+        <type>spot</type>
+        <!-- <dim-factor>
+            <property>systems/lighting/strobe-left</property>
+        </dim-factor> -->
+        <position>
+            <x-m>5.6936</x-m>
+            <y-m>-17.185</y-m>
+            <z-m>2.6194</z-m>
+        </position>
+        <direction>
+            <x>-0.492108</x>
+            <y>-0.508071</y>
+            <z>-0.706896</z>
+        </direction>
+        <ambient>
+            <r>0.20</r>
+            <g>0.20</g>
+            <b>0.20</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>0.78</r>
+            <g>0.78</g>
+            <b>0.78</b>
+            <a>1</a>
+        </diffuse>
+        <specular>
+            <r>0.98</r>
+            <g>0.98</g>
+            <b>0.98</b>
+            <a>1</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.09</l>
+            <q>0.032</q>
+        </attenuation>
+        <spot-exponent>10</spot-exponent>
+        <spot-cutoff>45</spot-cutoff>
+        <range-m>50</range-m>
+    </light>
+
+    <light>
+        <name>Right Strobe Light Compositor</name>
+        <type>spot</type>
+        <!-- <dim-factor><property>systems/lighting/strobe-right</property></dim-factor> -->
+        <position>
+            <x-m>5.6936</x-m>
+            <y-m>17.185</y-m>
+            <z-m>2.6194</z-m>
+        </position>
+        <direction>
+            <x>-0.492108</x>
+            <y>0.508071</y>
+            <z>-0.706896</z>
+        </direction>
+        <ambient>
+            <r>0.20</r>
+            <g>0.20</g>
+            <b>0.20</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>0.78</r>
+            <g>0.78</g>
+            <b>0.78</b>
+            <a>1</a>
+        </diffuse>
+        <specular>
+            <r>0.98</r>
+            <g>0.98</g>
+            <b>0.98</b>
+            <a>1</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.09</l>
+            <q>0.032</q>
+        </attenuation>
+        <spot-exponent>10</spot-exponent>
+        <spot-cutoff>45</spot-cutoff>
+        <range-m>50</range-m>
+    </light>
+
+    <light>
+        <name>Left Navigation Light Compositor</name>
+        <type>spot</type>
+        <!-- <dim-factor><property>systems/lighting/position-left</property></dim-factor> -->
+        <position>
+            <x-m>5.13187</x-m>
+            <y-m>-16.8169</y-m>
+            <z-m>2.66119</z-m>
+        </position>
+        <direction>
+            <x>-0.885722</x>
+            <y>-0.000302</y>
+            <z>0.464214</z>
+        </direction>
+        <ambient>
+            <r>0.20</r>
+            <g>0</g>
+            <b>0</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>0.78</r>
+            <g>0</g>
+            <b>0</b>
+            <a>1</a>
+        </diffuse>
+        <specular>
+            <r>0.98</r>
+            <g>0</g>
+            <b>0</b>
+            <a>1</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.09</l>
+            <q>0.032</q>
+        </attenuation>
+        <spot-exponent>10</spot-exponent>
+        <spot-cutoff>45</spot-cutoff>
+        <range-m>50</range-m>
+    </light>
+
+    <light>
+        <name>Right Navigation Light Compositor</name>
+        <type>spot</type>
+        <!-- <dim-factor><property>systems/lighting/position-right</property></dim-factor> -->
+        <position>
+            <x-m>5.13187</x-m>
+            <y-m>16.8169</y-m>
+            <z-m>2.66119</z-m>
+        </position>
+        <direction>
+            <x>-0.885722</x>
+            <y>0.000302</y>
+            <z>0.464214</z>
+        </direction>
+        <ambient>
+            <r>0</r>
+            <g>0.2</g>
+            <b>0</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>0</r>
+            <g>0.78</g>
+            <b>0</b>
+            <a>1</a>
+        </diffuse>
+        <specular>
+            <r>0</r>
+            <g>0.98</g>
+            <b>0</b>
+            <a>1</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.09</l>
+            <q>0.032</q>
+        </attenuation>
+        <spot-exponent>10</spot-exponent>
+        <spot-cutoff>45</spot-cutoff>
+        <range-m>50</range-m>
+    </light>
 
     <effect>
         <inherits-from>Effects/fuselage</inherits-from>
@@ -451,14 +507,31 @@
         <object-name>n2.intake</object-name>
         <object-name>n2.pylon</object-name>
         <object-name>n2.rev</object-name>
+        <object-name>placards.wing</object-name>
+        <object-name>placards.slatL1</object-name>
+        <object-name>placards.slatL2</object-name>
+        <object-name>placards.slatL3</object-name>
+        <object-name>placards.slatL4</object-name>
+        <object-name>placards.slatR1</object-name>
+        <object-name>placards.slatR2</object-name>
+        <object-name>placards.slatR3</object-name>
+        <object-name>placards.slatR4</object-name>
         <object-name>slat.L1</object-name>
+        <object-name>slat.chromeL1</object-name>
         <object-name>slat.L2</object-name>
+        <object-name>slat.chromeL2</object-name>
         <object-name>slat.L3</object-name>
+        <object-name>slat.chromeL3</object-name>
         <object-name>slat.L4</object-name>
+        <object-name>slat.chromeL4</object-name>
         <object-name>slat.R1</object-name>
+        <object-name>slat.chromeR1</object-name>
         <object-name>slat.R2</object-name>
+        <object-name>slat.chromeR2</object-name>
         <object-name>slat.R3</object-name>
+        <object-name>slat.chromeR3</object-name>
         <object-name>slat.R4</object-name>
+        <object-name>slat.chromeR4</object-name>
         <object-name>spoiler.L1</object-name>
         <object-name>spoiler.L2</object-name>
         <object-name>spoiler.L3</object-name>
@@ -1207,7 +1280,9 @@
     </animation>
     <animation>
         <type>rotate</type>
+        <object-name>placards.slatL1</object-name>
         <object-name>slat.L1</object-name>
+        <object-name>slat.chromeL1</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1242,7 +1317,9 @@
     </animation>
     <animation>
         <type>rotate</type>
+        <object-name>placards.slatL2</object-name>
         <object-name>slat.L2</object-name>
+        <object-name>slat.chromeL2</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1277,7 +1354,9 @@
     </animation>
     <animation>
         <type>rotate</type>
+        <object-name>placards.slatL3</object-name>
         <object-name>slat.L3</object-name>
+        <object-name>slat.chromeL3</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1312,7 +1391,9 @@
     </animation>
     <animation>
         <type>rotate</type>
+        <object-name>placards.slatL4</object-name>
         <object-name>slat.L4</object-name>
+        <object-name>slat.chromeL4</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1431,7 +1512,9 @@
     </animation>
     <animation>
         <type>rotate</type>
+        <object-name>placards.slatR1</object-name>
         <object-name>slat.R1</object-name>
+        <object-name>slat.chromeR1</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1466,7 +1549,9 @@
     </animation>
     <animation>
         <type>rotate</type>
+        <object-name>placards.slatR2</object-name>
         <object-name>slat.R2</object-name>
+        <object-name>slat.chromeR2</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1501,7 +1586,9 @@
     </animation>
     <animation>
         <type>rotate</type>
+        <object-name>placards.slatR3</object-name>
         <object-name>slat.R3</object-name>
+        <object-name>slat.chromeR3</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
@@ -1536,7 +1623,9 @@
     </animation>
     <animation>
         <type>rotate</type>
+        <object-name>placards.slatR4</object-name>
         <object-name>slat.R4</object-name>
+        <object-name>slat.chromeR4</object-name>
         <property>fdm/jsbsim/fcs/flap-pos-norm</property>
         <interpolation>
             <entry>
