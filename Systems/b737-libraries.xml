@@ -49,7 +49,7 @@
 			<input>-propulsion/total-fuel-lbs</input>
 		</summer>
 		
-		<fcs_function name="inertia/cg-percent-mac"> <!-- TODO: This needs to be fixed -->
+		<fcs_function name="inertia/cg-percent-mac">
 			<function>
 				<product>
 					<quotient>
@@ -58,9 +58,9 @@
 								<property>inertia/cg-x-in</property>
 								<value>0.0254</value> <!-- Inches to meters -->
 							</product>
-							<value>23.06471</value> <!-- Offset -->
+							<value>-0.74639</value> <!-- Offset -->
 						</difference>
-						<value>3.06</value> <!-- MAC length, fudged for balance accuracy -->
+						<value>4.17</value> <!-- MAC length, fudged for balance accuracy -->
 					</quotient>
 					<value>100</value>
 				</product>
@@ -103,7 +103,7 @@
 			</function>
 		</fcs_function>
 		
-		<fcs_function name="inertia/zfwcg-percent-mac"> <!-- TODO: This needs to be fixed -->
+		<fcs_function name="inertia/zfwcg-percent-mac">
 			<function>
 				<product>
 					<quotient>
@@ -112,9 +112,9 @@
 								<property>inertia/zfwcg-x-in</property>
 								<value>0.0254</value> <!-- Inches to meters -->
 							</product>
-							<value>23.06471</value> <!-- Offset -->
+							<value>-0.74639</value> <!-- Offset -->
 						</difference>
-						<value>3.06</value> <!-- MAC length, fudged for balance accuracy -->
+						<value>4.17</value> <!-- MAC length, fudged for balance accuracy -->
 					</quotient>
 					<value>100</value>
 				</product>

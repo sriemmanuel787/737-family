@@ -34,9 +34,6 @@
             <autopilot n="9">
                 <path>Aircraft/737-MAX/Systems/autospeedbrake.xml</path>
             </autopilot>
-            <autopilot n="10">
-                <path>Aircraft/737-MAX/Systems/fl2070_sound.xml</path>
-            </autopilot>
             <path>Aircraft/737-MAX/Systems/systems.xml</path>
             <property-rule n="101">
                 <path>Aircraft/737-MAX/Systems/instrument-filters.xml</path>
@@ -120,12 +117,6 @@
                 </iceable>
             </icing>
         </model>
-
-        <view n="1">
-            <config>
-                <z-offset-m type="double" archive="y">-80.0</z-offset-m>
-            </config>
-        </view>
 
         <chase-distance-m>-60</chase-distance-m>
 
@@ -455,24 +446,9 @@
                     <z alias="/sim/model/autopush/force-z" />
                 </tractor>
             </external_reactions>
-            <fcs>
-                <flap-lrs type="double">0</flap-lrs>
-                <slats-cmd type="double">0</slats-cmd>
-                <slats-pos type="double">0</slats-pos>
-                <stabilizer-pos-unit type="double">5</stabilizer-pos-unit>
-                <brake-left-cmd type="double">0</brake-left-cmd>
-                <brake-right-cmd type="double">0</brake-right-cmd>
-                <autobrake>
-                    <autobrake-in-use type="bool">0</autobrake-in-use>
-                    <autobrake-used type="bool">0</autobrake-used>
-                    <target-decel-fps_sec2 type="double">0</target-decel-fps_sec2>
-                    <start-time-sec type="double">0</start-time-sec>
-                </autobrake>
-                <stabilizer>
-                    <stab-target>5</stab-target>
-                    <trim-rate type="double">0</trim-rate>
-                </stabilizer>
-            </fcs>
+			<inertia n="0">
+				<empty-weight-x-in type="double">11.657874</empty-weight-x-in> <!-- 0.29611 meters, 25% MAC -->
+			</inertia>
             <metrics>
                 <aerorp-mac type="double">0.30</aerorp-mac>
                 <lift type="double">0.0</lift>
@@ -902,6 +878,7 @@
 
         <pfd>
             <display-mach type="bool">false</display-mach>
+            <mmo-kt type="double">345</mmo-kt>
             <overspeed-kt type="double">345</overspeed-kt>
         </pfd>
 
@@ -1092,24 +1069,6 @@
         <pts>
             <file>Aircraft/737-MAX/Nasal/property-tree-setup.nas</file>
         </pts>
-        <hack>
-            <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file>
-        </hack>
-        <acconfig>
-            <file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
-        </acconfig>
-        <canvas_isfd>
-            <file>Aircraft/737-MAX/Nasal/Displays/ISFD.nas</file>
-        </canvas_isfd>
-        <canvas_mfd>
-            <file>Aircraft/737-MAX/Nasal/Displays/MFD.nas</file>
-        </canvas_mfd>
-        <canvas_nd>
-            <file>Aircraft/737-MAX/Nasal/Displays/ND.nas</file>
-        </canvas_nd>
-        <canvas_pfd>
-            <file>Aircraft/737-MAX/Nasal/Displays/PFD.nas</file>
-        </canvas_pfd>
         <boeing737>
             <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
             <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
@@ -1130,16 +1089,28 @@
             <file>Aircraft/737-MAX/Nasal/hydraulics.nas</file>
             <file>Aircraft/737-MAX/Nasal/engines.nas</file>
         </systems>
+        <hack>
+            <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file>
+        </hack>
+        <acconfig>
+            <file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
+        </acconfig>
+        <canvas_isfd>
+            <file>Aircraft/737-MAX/Nasal/Displays/ISFD.nas</file>
+        </canvas_isfd>
+        <canvas_mfd>
+            <file>Aircraft/737-MAX/Nasal/Displays/MFD.nas</file>
+        </canvas_mfd>
+        <canvas_nd>
+            <file>Aircraft/737-MAX/Nasal/Displays/ND.nas</file>
+        </canvas_nd>
+        <canvas_pfd>
+            <file>Aircraft/737-MAX/Nasal/Displays/PFD.nas</file>
+        </canvas_pfd>
         <itaf>
             <file>Nasal/it-autoflight.nas</file>
             <file>Nasal/custom-fma.nas</file>
         </itaf>
-        <reversethrust>
-            <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
-        </reversethrust>
-        <thrust>
-            <file>Aircraft/737-MAX/Nasal/fadec.nas</file>
-        </thrust>
         <icing>
             <file>Aircraft/737-MAX/Nasal/icing.nas</file>
         </icing>

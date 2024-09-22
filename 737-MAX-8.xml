@@ -49,9 +49,9 @@
 		<!-- Positions fudged for CG accuracy -->
 		<tank type="FUEL"> <!-- Left Tank -->
 			<location unit="M">
-				<x>-0.54597</x>
-				<y>-5.1783</y>
-				<z>0.27282</z>
+				<x>0.29611</x>
+				<y>-5.01477</y>
+				<z>1.55768</z>
 			</location>
 			<capacity unit="LBS">8630</capacity>
 			<contents unit="LBS">6000</contents>
@@ -62,9 +62,9 @@
 		</tank>
 		<tank type="FUEL"> <!-- Center Tank -->
 			<location unit="M">
-				<x>-0.72875</x>
+				<x>0.29611</x>
 				<y>0</y>
-				<z>0.27282</z>
+				<z>1.55768</z>
 			</location>
 			<capacity unit="LBS">28803</capacity>
 			<contents unit="LBS">0</contents>
@@ -75,9 +75,9 @@
 		</tank>
 		<tank type="FUEL"> <!-- Right Tank -->
 			<location unit="M">
-				<x>-0.54597</x>
-				<y>5.1783</y>
-				<z>0.27282</z>
+				<x>0.29611</x>
+				<y>5.01477</y>
+				<z>1.55768</z>
 			</location>
 			<capacity unit="LBS">8630</capacity>
 			<contents unit="LBS">6000</contents>
@@ -88,9 +88,9 @@
 		</tank>
 		<tank type="FUEL"> <!-- Engine 1 Pipe -->
 			<location unit="M">
-				<x>0.58099</x>
+				<x>0.29611</x>
 				<y>0</y>
-				<z>0.27282</z>
+				<z>1.59159</z>
 			</location>
 			<capacity unit="LBS">10</capacity>
 			<contents unit="LBS">0</contents>
@@ -99,9 +99,9 @@
 		</tank>
 		<tank type="FUEL"> <!-- Engine 2 Pipe -->
 			<location unit="M">
-				<x>0.58099</x>
+				<x>0.29611</x>
 				<y>0</y>
-				<z>0.27282</z>
+				<z>1.59159</z>
 			</location>
 			<capacity unit="LBS">10</capacity>
 			<contents unit="LBS">0</contents>
@@ -110,9 +110,9 @@
 		</tank>
 		<tank type="FUEL"> <!-- APU Pipe -->
 			<location unit="M">
-				<x>0.58099</x>
+				<x>0.29611</x>
 				<y>0</y>
-				<z>0.27282</z>
+				<z>1.59159</z>
 			</location>
 			<capacity unit="LBS">5</capacity>
 			<contents unit="LBS">0</contents>
@@ -125,6 +125,6 @@
 	
 	<flight_control name="none"/>
 	<aerodynamics file="Systems/b737-aerodynamics.xml"/>
-	<external_reactions file="Systems/b737-external-reactions"/>
+	<external_reactions file="Systems/b738-external-reactions"/>
 
 </fdm_config>

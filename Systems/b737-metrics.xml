@@ -12,7 +12,7 @@
 	<vtailarea unit="FT2">284.6</vtailarea>
 	
 	<location name="AERORP" unit="M">
-		<x></x>
+		<x>0.51459</x>
 		<y>0</y>
 		<z>1.59159</z>
 	</location>
@@ -24,7 +24,7 @@
 	</location>
 	
 	<location name="VRP" unit="M">
-		<x>0</x>
+		<x>1.76364</x>
 		<y>0</y>
 		<z>1.66752</z>
 	</location>

@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+
+<!-- Boeing 737 MAX Aerodynamics -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<aerodynamics> <!-- THIS IS CURRENTLY A PLACEHOLDER -->
+	
+	<function name="aero/function/kCLge">
+		<description>Lift factor due to ground effect</description>
+		<table>
+			<independentVar lookup="row">aero/h_b-mac-ft</independentVar>
+			<tableData>
+				0.00  1.203
+				0.10  1.127
+				0.15  1.090
+				0.20  1.073
+				0.30  1.046
+				0.40  1.055
+				0.50  1.019
+				0.60  1.013
+				0.70  1.008
+				0.80  1.006
+				0.90  1.003
+				1.00  1.002
+				1.10  1.000
+			</tableData>
+		</table>
+	</function>
+	
+	<function name="aero/function/kCDge">
+		<description>Drag factor due to ground effect</description>
+		<table>
+			<independentVar lookup="row">aero/h_b-mac-ft</independentVar>
+			<tableData>
+				0.00  0.480
+				0.10  0.515
+				0.15  0.629
+				0.20  0.709
+				0.30  0.815
+				0.40  0.882
+				0.50  0.928
+				0.60  0.962
+				0.70  0.988
+				0.80  1.000
+			</tableData>
+		</table>
+	</function>
+	
+	<axis name="LIFT">
+		
+		<function name="aero/coefficient/CLq">
+			<description>Lift due to pitch rate</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>velocities/q-aero-rad_sec</property>
+				<property>aero/ci2vel</property>
+				<value>1.36</value>
+			</product>
+		</function>
+	
+	</axis>
+	
+	<axis name="DRAG">
+		
+		<function name="aero/coefficient/CD0">
+			<description>Minimum drag</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<value>0.024</value>
+			</product>
+		</function>
+	
+	</axis>
+	
+	<axis name="SIDE">
+		
+		<function name="aero/coefficient/CYbeta">
+			<description>Side force due to beta</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>aero/beta-rad</property>
+				<value>-0.6093</value>
+			</product>
+		</function>
+	
+	</axis>
+	
+	<axis name="ROLL">
+		
+		<function name="aero/coefficient/Clp">
+			<description>Roll moment due to roll rate</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>aero/bi2vel</property>
+				<property>velocities/p-aero-rad_sec</property>
+				<value>-0.51</value>
+			</product>
+		</function>
+	
+	</axis>
+	
+	<axis name="PITCH">
+		
+		<function name="aero/coefficient/Cmq">
+			<description>Pitch moment due to pitch rate</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/cbarw-ft</property>
+				<property>aero/ci2vel</property>
+				<property>velocities/q-aero-rad_sec</property>
+				<value>-25.9</value>
+			</product>
+		</function>
+	
+	</axis>
+	
+	<axis name="YAW">
+		
+		<function name="aero/coefficient/Cnr">
+			<description>Yaw moment due to yaw rate</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>aero/bi2vel</property>
+				<property>velocities/r-aero-rad_sec</property>
+				<value>-0.25</value>
+			</product>
+		</function>
+	
+	</axis>
+
+</aerodynamics>

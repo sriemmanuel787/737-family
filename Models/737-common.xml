@@ -4,6 +4,7 @@
 <PropertyList>
 	
 	<offsets> <!-- Due to VRP -->
+		<x-m>-1.76364</x-m>
 		<z-m>-1.66752</z-m>
 	</offsets>
 	

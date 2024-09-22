@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Boeing 737 MAX-8 JSBSim -->
+<!-- Boeing 737 MAX 8 JSBSim -->
 <!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
 
 <mass_balance>
@@ -14,16 +14,16 @@
 	<emptywt unit="LBS">98500</emptywt> <!-- Check -->
 	
 	<location name="CG" unit="M">
-		<x></x> <!-- 25% MAC, Check -->
+		<x>0.29611</x> <!-- 25% MAC, Check -->
 		<y>0</y>
 		<z>1.59159</z>
 	</location>
 	
-	<!-- All below positions fudged for CG accuracy -->
+	<!-- All below positions fudged for CG accuracy - TODO: FIX X COORDINATES -->
 	<pointmass name="Forward Cabin">
 		<weight unit="LBS">9800</weight>
 		<location name="POINTMASS" unit="M">
-			<x></x>
+			<x>0.29611</x>
 			<y>0</y>
 			<z>2.948</z>
 		</location>
@@ -31,7 +31,7 @@
 	<pointmass name="Aft Cabin">
 		<weight unit="LBS">9600</weight>
 		<location name="POINTMASS" unit="M">
-			<x></x>
+			<x>0.29611</x>
 			<y>0</y>
 			<z>2.948</z>
 		</location>
@@ -40,7 +40,7 @@
 	<pointmass name="Forward Cargo">
 		<weight unit="LBS">2900</weight>
 		<location name="POINTMASS" unit="M">
-			<x></x>
+			<x>0.29611</x>
 			<y>0</y>
 			<z>1.172</z>
 		</location>
@@ -48,7 +48,7 @@
 	<pointmass name="Aft Cargo">
 		<weight unit="LBS">2700</weight>
 		<location name="POINTMASS" unit="M">
-			<x></x>
+			<x>0.29611</x>
 			<y>0</y>
 			<z>1.172</z>
 		</location>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
-    <path>cockpit.ac</path>
+    <!--path>cockpit.ac</path--> <!-- JD: Way too heavy 96MB - causes entire sim to freeze during loading -->
 
     <!-- Submodels -->
     <model>

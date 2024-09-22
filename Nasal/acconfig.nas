@@ -413,7 +413,7 @@ var PANEL = {
 };
 
 var spinningT = maketimer(0.05, SYSTEM, SYSTEM.spinning);
-SYSTEM.simInit();
+#SYSTEM.simInit();
 
 setlistener("/sim/signals/reinit", func(s) {
 	if (!s.getBoolValue() and libraries.initDone) {

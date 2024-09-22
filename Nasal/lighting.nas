@@ -1,19 +1,19 @@
 # 737 MAX Lighting System
 # Israel Emmanuel
 
-var LIGHTS: {
+var LIGHTS = {
     Active: {
-        beaconUpper = props.globals.initNode("/systems/lighting/beacon-upper", 0, "BOOL"),
-        beaconLower = props.globals.initNode("/systems/lighting/beacon-lower", 0, "BOOL"),
-        strobeLeft = props.globals.initNode("/systems/lighting/strobe-left", 0, "BOOL"),
-        strobeRight = props.globals.initNode("/systems/lighting/strobe-right", 0, "BOOL"),
-        positionAft = props.globals.initNode("/systems/lighting/position-aft", 0, "BOOL"),
-        positionLeft = props.globals.initNode("/systems/lighting/position-left", 0, "BOOL"),
-        positionRight = props.globals.initNode("/systems/lighting/position-right", 0, "BOOL"),
+        beaconUpper: props.globals.initNode("/systems/lighting/beacon-upper", 0, "BOOL"),
+        beaconLower: props.globals.initNode("/systems/lighting/beacon-lower", 0, "BOOL"),
+        strobeLeft: props.globals.initNode("/systems/lighting/strobe-left", 0, "BOOL"),
+        strobeRight: props.globals.initNode("/systems/lighting/strobe-right", 0, "BOOL"),
+        positionAft: props.globals.initNode("/systems/lighting/position-aft", 0, "BOOL"),
+        positionLeft: props.globals.initNode("/systems/lighting/position-left", 0, "BOOL"),
+        positionRight: props.globals.initNode("/systems/lighting/position-right", 0, "BOOL"),
     },
     init: func() {
-        var beacon = aircraft.light.new( "/systems/lighting/beacon", [0,2, ], "/controls/lighting/beacon" );
-        var strobe = aircraft.light.new( "/systems/lighting/strobe", [0,2, ], "/controls/lighting/strobe" );
+        var beacon: aircraft.light.new( "/systems/lighting/beacon", [0,2, ], "/controls/lighting/beacon" );
+        var strobe: aircraft.light.new( "/systems/lighting/strobe", [0,2, ], "/controls/lighting/strobe" );
     },
     Switch: {
         afdsFlood: props.globals.getNode("/controls/lighting/afds-flood"),
