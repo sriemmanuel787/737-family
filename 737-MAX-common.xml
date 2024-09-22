@@ -54,10 +54,6 @@
                 <name>IT-AUTOTHRUST</name>
                 <path>Systems/it-autothrust.xml</path>
             </autopilot>
-            <autopilot>
-                <name>Gear AGL FT</name>
-                <path>Systems/gear-agl-ft.xml</path>
-            </autopilot>
         </systems>
 
         <instrumentation>
