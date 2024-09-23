@@ -91,16 +91,20 @@
 			<test value="hydraulics/aileron-l/sum">
 				hydraulics/aileron-power eq 1
 			</test>
-			<clipto>
-				<min>-1.0</min>
-				<max>0.75</max> <!-- 15 -->
-			</clipto>
 		</switch>
 		
-		<pure_gain name="hydraulics/aileron-l/cmd-deg">
-			<input>hydraulics/aileron-l/switch</input>
-			<gain>20</gain>
-		</pure_gain>
+		<fcs_function name="hydraulics/aileron-l/cmd-deg">
+			<function>
+				<table> <!-- 1 deg down at rest -->
+					<independentVar lookup="row">hydraulics/aileron-l/switch</independentVar>
+					<tableData>
+						-1.00000 -20
+						 0.00000   1
+						 0.66666  15
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
 		
 		<switch name="hydraulics/aileron-l/rate">
 			<default value="40"/> <!-- Pretending the controls are heavy -->
@@ -153,16 +157,20 @@
 			<test value="hydraulics/aileron-r/sum">
 				hydraulics/aileron-power eq 1
 			</test>
-			<clipto>
-				<min>-0.75</min> <!-- 15 -->
-				<max>1.0</max>
-			</clipto>
 		</switch>
 		
-		<pure_gain name="hydraulics/aileron-r/cmd-deg">
-			<input>hydraulics/aileron-r/switch</input>
-			<gain>-20</gain>
-		</pure_gain>
+		<fcs_function name="hydraulics/aileron-r/cmd-deg">
+			<function>
+				<table> <!-- 1 deg down at rest -->
+					<independentVar lookup="row">hydraulics/aileron-r/switch</independentVar>
+					<tableData>
+						-0.66666  15
+						 0.00000   1
+						 1.00000 -20
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
 		
 		<switch name="hydraulics/aileron-r/rate">
 			<default value="40"/> <!-- Pretending the controls are heavy -->
