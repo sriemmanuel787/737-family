@@ -168,11 +168,6 @@
 
         <flight-recorder include="Systems/flight-recorder.xml" />
 
-        <submodels>
-            <serviceable>true</serviceable>
-            <path>submodels.xml</path>
-        </submodels>
-
         <menubar>
             <default>
                 <menu n="100">
@@ -259,153 +254,225 @@
     </consumables>
 
     <controls>
-        <autobrake type="int">0</autobrake>
         <bleed>
-            <aft-cab-air type="int">0</aft-cab-air>
-            <apu-on type="bool">0</apu-on>
-            <cont-cab-air type="int">0</cont-cab-air>
-            <fwd-cab-air type="int">0</fwd-cab-air>
-            <isolation-valve type="bool">0</isolation-valve>
-            <l-recirc-fan type="int">0</l-recirc-fan>
-            <n1-on type="bool">0</n1-on>
-            <n2-on type="bool">0</n2-on>
-            <ovht-test type="bool">0</ovht-test>
-            <pack-l type="int">0</pack-l>
-            <pack-r type="int">0</pack-r>
-            <r-recirc-fan type="int">0</r-recirc-fan>
-            <supply type="int">0</supply>
-            <trim-air type="bool">0</trim-air>
-            <trip-reset type="bool">0</trip-reset>
+            <lights>
+                <dual-bleed type="bool">0</dual-bleed>
+                <l-pack type="bool">0</l-pack>
+                <r-pack type="bool">0</r-pack>
+                <l-wing-body-overheat type="bool">0</l-wing-body-overheat>
+                <r-wing-body-overheat type="bool">0</r-wing-body-overheat>
+                <l-bleed type="bool">0</l-bleed>
+                <r-bleed type="bool">0</r-bleed>
+            </lights>
+            <switches>
+                <aft-cab-air type="int">0</aft-cab-air>
+                <apu-on type="bool">0</apu-on>
+                <cont-cab-air type="int">0</cont-cab-air>
+                <fwd-cab-air type="int">0</fwd-cab-air>
+                <isolation-valve type="bool">0</isolation-valve>
+                <l-recirc-fan type="int">0</l-recirc-fan>
+                <n1-on type="bool">0</n1-on>
+                <n2-on type="bool">0</n2-on>
+                <ovht-test type="bool">0</ovht-test>
+                <pack-l type="int">0</pack-l>
+                <pack-r type="int">0</pack-r>
+                <r-recirc-fan type="int">0</r-recirc-fan>
+                <supply type="int">0</supply>
+                <trim-air type="bool">0</trim-air>
+                <trip-reset type="bool">0</trip-reset>
+            </switches>
         </bleed>
+        <cabin>
+            <lights>
+                <altn type="bool">0</altn>
+                <auto-fail type="bool">0</auto-fail>
+                <manual type="bool">0</manual>
+                <off-sched-descent type="bool">0</off-sched-descent>
+            </lights>
+            <switches>
+                <cabin-valve type="bool">0</cabin-valve>
+                <cabin-valve type="int">0</cabin-valve>
+                <flt-alt type="int">0</flt-alt>
+                <land-alt type="int">0</land-alt>
+            </switches>
+        </cabin>
+        <doors>
+            <lights>
+                <aft-cargo type="bool">0</aft-cargo>
+                <aft-entry type="bool">0</aft-entry>
+                <aft-service type="bool">0</aft-service>
+                <equip type="bool">0</equip>
+                <fwd-cargo type="bool">0</fwd-cargo>
+                <fwd-entry type="bool">0</fwd-entry>
+                <fwd-service type="bool">0</fwd-service>
+                <left-aft-overwing type="bool">0</left-aft-overwing>
+                <left-fwd-overwing type="bool">0</left-fwd-overwing>
+                <right-aft-overwing type="bool">0</right-aft-overwing>
+                <right-fwd-overwing type="bool">0</right-fwd-overwing>
+            </lights>
+        </doors>
         <efis n="0">
-            <vor-adf-1 type="int">0</vor-adf-1>
-            <vor-adf-2 type="int">0</vor-adf-2>
+            <switches>
+                <vor-adf-1 type="int">0</vor-adf-1>
+                <vor-adf-2 type="int">0</vor-adf-2>
+            </switches>
         </efis>
         <efis n="1">
-            <vor-adf-1 type="int">0</vor-adf-1>
-            <vor-adf-2 type="int">0</vor-adf-2>
+            <switches>
+                <vor-adf-1 type="int">0</vor-adf-1>
+                <vor-adf-2 type="int">0</vor-adf-2>
+            </switches>
         </efis>
         <elec>
-            <ac-mode type="int">0</ac-mode>
-            <apu-gen-1 type="bool">0</apu-gen-1>
-            <apu-gen-2 type="bool">0</apu-gen-2>
-            <bus-trans type="bool">0</bus-trans>
-            <cabin type="bool">0</cabin>
-            <dc-mode type="int">0</dc-mode>
-            <dc-on type="int">0</dc-on>
-            <drive-1-conn type="bool">0</drive-1-conn>
-            <drive-2-conn type="bool">0</drive-2-conn>
-            <gen-1 type="bool">0</gen-1>
-            <gen-2 type="bool">0</gen-2>
-            <grd-power type="bool">0</grd-power>
-            <ife type="bool">0</ife>
-            <standby-pwr type="int">0</standby-pwr>
+            <switches>
+                <ac-mode type="int">0</ac-mode>
+                <apu-gen-1 type="bool">0</apu-gen-1>
+                <apu-gen-2 type="bool">0</apu-gen-2>
+                <bus-trans type="bool">0</bus-trans>
+                <cabin type="bool">0</cabin>
+                <dc-mode type="int">0</dc-mode>
+                <batt-on type="bool">0</batt-on>
+                <csd-1-conn type="bool">0</csd-1-conn> <!-- red covers, says drive (because i will
+            forget) -->
+                <csd-2-conn type="bool">0</csd-2-conn>
+                <gen-1 type="bool">0</gen-1>
+                <gen-2 type="bool">0</gen-2>
+                <grd-power type="bool">0</grd-power>
+                <ife type="bool">0</ife>
+                <standby-pwr type="int">0</standby-pwr>
+            </switches>
         </elec>
         <elt>
-            <elt-cover type="bool">0</elt-cover>
-            <elt-switch type="bool">0</elt-switch>
+            <switches>
+                <elt-cover type="bool">0</elt-cover>
+                <elt-switch type="bool">0</elt-switch>
+            </switches>
         </elt>
         <eng>
-            <apu type="int">0</apu>
-            <eng-mode type="int">0</eng-mode>
-            <n1-start type="int">0</n1-start>
-            <n2-start type="int">0</n2-start>
+            <switches>
+                <apu type="int">0</apu>
+                <eng-mode type="int">0</eng-mode>
+                <n1-start type="int">0</n1-start>
+                <n2-start type="int">0</n2-start>
+            </switches>
         </eng>
         <flt-control>
-            <alt-flaps-arm type="bool">0</alt-flaps-arm>
-            <alt-flaps type="int">0</alt-flaps>
-            <rudder-a type="int">0</rudder-a>
-            <rudder-b type="int">0</rudder-b>
-            <spoiler-a type="bool">0</spoiler-a>
-            <spoiler-b type="bool">0</spoiler-b>
-            <yaw-damper type="bool">0</yaw-damper>
+            <switches>
+                <alt-flaps-arm type="bool">0</alt-flaps-arm>
+                <alt-flaps type="int">0</alt-flaps>
+                <rudder-a type="int">0</rudder-a>
+                <rudder-b type="int">0</rudder-b>
+                <spoiler-a type="bool">0</spoiler-a>
+                <spoiler-b type="bool">0</spoiler-b>
+                <yaw-damper type="bool">0</yaw-damper>
+            </switches>
         </flt-control>
         <fuel>
-            <crossfeed type="bool">0</crossfeed>
-            <pump-cl type="bool">0</pump-cl>
-            <pump-cr type="bool">0</pump-cr>
-            <pump-la type="bool">0</pump-la>
-            <pump-lf type="bool">0</pump-lf>
-            <pump-ra type="bool">0</pump-ra>
-            <pump-rf type="bool">0</pump-rf>
+            <switches>
+                <crossfeed type="bool">0</crossfeed>
+                <pump-cl type="bool">0</pump-cl>
+                <pump-cr type="bool">0</pump-cr>
+                <pump-la type="bool">0</pump-la>
+                <pump-lf type="bool">0</pump-lf>
+                <pump-ra type="bool">0</pump-ra>
+                <pump-rf type="bool">0</pump-rf>
+            </switches>
         </fuel>
         <gear>
-            <gear-handle type="bool">0</gear-handle>
-            <nose-wheel-steer-cover type="bool">0</nose-wheel-steer-cover>
-            <nose-wheel-steer-switch type="bool">0</nose-wheel-steer-switch>
+            <switches>
+                <autobrake type="int">0</autobrake>
+                <gear-handle type="bool">0</gear-handle>
+                <nose-wheel-steer-cover type="bool">0</nose-wheel-steer-cover>
+                <nose-wheel-steer-switch type="bool">0</nose-wheel-steer-switch>
+                <tiller type="int">0</tiller>
+            </switches>
         </gear>
         <gpws>
-            <flap-inhibit-cover type="bool">0</flap-inhibit-cover>
-            <flap-inhibit-switch type="bool">0</flap-inhibit-switch>
-            <gear-inhibit-cover type="bool">0</gear-inhibit-cover>
-            <gear-inhibit-switch type="bool">0</gear-inhibit-switch>
-            <runway-inhibit-cover type="bool">0</runway-inhibit-cover>
-            <runway-inhibit-switch type="bool">0</runway-inhibit-switch>
-            <terr-inhibit-cover type="bool">0</terr-inhibit-cover>
-            <terr-inhibit-switch type="bool">0</terr-inhibit-switch>
+            <switches>
+                <flap-inhibit-cover type="bool">0</flap-inhibit-cover>
+                <flap-inhibit-switch type="bool">0</flap-inhibit-switch>
+                <gear-inhibit-cover type="bool">0</gear-inhibit-cover>
+                <gear-inhibit-switch type="bool">0</gear-inhibit-switch>
+                <runway-inhibit-cover type="bool">0</runway-inhibit-cover>
+                <runway-inhibit-switch type="bool">0</runway-inhibit-switch>
+                <terr-inhibit-cover type="bool">0</terr-inhibit-cover>
+                <terr-inhibit-switch type="bool">0</terr-inhibit-switch>
+            </switches>
         </gpws>
         <heat>
-            <eng-1 type="bool">0</eng-1>
-            <eng-1-hyd type="bool">0</eng-1-hyd>
-            <eng-2 type="bool">0</eng-2>
-            <eng-2-hyd type="bool">0</eng-2-hyd>
-            <elec-1-hyd type="bool">0</elec-1-hyd>
-            <elec-2-hyd type="bool">0</elec-2-hyd>
-            <probe-a type="bool">0</probe-a>
-            <probe-b type="bool">0</probe-b>
-            <window-fwd-l type="bool">0</window-fwd-l>
-            <window-fwd-r type="bool">0</window-fwd-r>
-            <window-side-l type="bool">0</window-side-l>
-            <window-side-r type="bool">0</window-side-r>
-            <wing type="bool">0</wing>
+            <switches>
+                <eng-1 type="bool">0</eng-1>
+                <eng-1-hyd type="bool">0</eng-1-hyd>
+                <eng-2 type="bool">0</eng-2>
+                <eng-2-hyd type="bool">0</eng-2-hyd>
+                <elec-1-hyd type="bool">0</elec-1-hyd>
+                <elec-2-hyd type="bool">0</elec-2-hyd>
+                <probe-a type="bool">0</probe-a>
+                <probe-b type="bool">0</probe-b>
+                <window-fwd-l type="bool">0</window-fwd-l>
+                <window-fwd-r type="bool">0</window-fwd-r>
+                <window-side-l type="bool">0</window-side-l>
+                <window-side-r type="bool">0</window-side-r>
+                <wing type="bool">0</wing>
+            </switches>
         </heat>
         <hyd>
-            <elec-1 type="bool">0</elec-1>
-            <elec-2 type="bool">0</elec-2>
-            <eng-1 type="bool">0</eng-1>
-            <eng-2 type="bool">0</eng-2>
+            <switches>
+                <elec-1 type="bool">0</elec-1>
+                <elec-2 type="bool">0</elec-2>
+                <eng-1 type="bool">0</eng-1>
+                <eng-2 type="bool">0</eng-2>
+            </switches>
         </hyd>
         <lighting>
-            <afds-flood type="int">0</afds-flood>
-            <anti-collision type="bool">0</anti-collision>
-            <ap-disc-test-1 type="bool">0</ap-disc-test-1>
-            <ap-disc-test-2 type="bool">0</ap-disc-test-2>
-            <background type="int">0</background>
-            <breaker type="int">0</breaker>
-            <du-1 type="int">0</du-1>
-            <du-2 type="int">0</du-2>
-            <du-3 type="int">0</du-3>
-            <du-4 type="int">0</du-4>
-            <exit type="int">0</exit>
-            <landing-l type="bool">0</landing-l>
-            <landing-r type="bool">0</landing-r>
-            <light-mode type="int">0</light-mode>
-            <logo type="bool">0</logo>
-            <main-panel-capt type="int">0</main-panel-capt>
-            <main-panel-fo type="int">0</main-panel-fo>
-            <oh-panel type="int">0</oh-panel>
-            <position type="int">0</position>
-            <rwy-turnoff-l type="bool">0</rwy-turnoff-l>
-            <rwy-turnoff-r type="bool">0</rwy-turnoff-r>
-            <wheel-well type="bool">0</wheel-well>
-            <wing type="bool">0</wing>
+            <switches>
+                <afds-flood type="int">0</afds-flood>
+                <anti-collision type="bool">0</anti-collision> <!-- AKA beacon -->
+                <ap-disc-test-1 type="bool">0</ap-disc-test-1>
+                <ap-disc-test-2 type="bool">0</ap-disc-test-2>
+                <background type="int">0</background>
+                <breaker type="int">0</breaker>
+                <du-1 type="int">0</du-1>
+                <du-2 type="int">0</du-2>
+                <du-3 type="int">0</du-3>
+                <du-4 type="int">0</du-4>
+                <exit type="int">0</exit>
+                <landing-l type="bool">0</landing-l>
+                <landing-r type="bool">0</landing-r>
+                <light-mode type="int">0</light-mode>
+                <logo type="bool">0</logo>
+                <main-panel-capt type="int">0</main-panel-capt>
+                <main-panel-fo type="int">0</main-panel-fo>
+                <oh-panel type="int">0</oh-panel>
+                <position type="int">0</position>
+                <rwy-turnoff-l type="bool">0</rwy-turnoff-l>
+                <rwy-turnoff-r type="bool">0</rwy-turnoff-r>
+                <wheel-well type="bool">0</wheel-well>
+                <wing type="bool">0</wing>
+            </switches>
         </lighting>
         <mfd>
-            <selector-mode-1 type="bool">0</selector-mode-1>
-            <selector-mode-2 type="bool">0</selector-mode-2>
-            <cursor-1 type="int">0</cursor-1>
-            <cursor-2 type="int">0</cursor-2>
+            <switches>
+                <selector-mode-1 type="bool">0</selector-mode-1>
+                <selector-mode-2 type="bool">0</selector-mode-2>
+                <cursor-1 type="int">0</cursor-1>
+                <cursor-2 type="int">0</cursor-2>
+            </switches>
         </mfd>
         <nav>
-            <control-src type="int">0</control-src>
-            <display-src type="int">0</display-src>
-            <fmc type="int">0</fmc>
-            <irs type="int">0</irs>
-            <vhf-nav type="int">0</vhf-nav>
+            <switches>
+                <control-src type="int">0</control-src>
+                <display-src type="int">0</display-src>
+                <fmc type="int">0</fmc>
+                <irs type="int">0</irs>
+                <vhf-nav type="int">0</vhf-nav>
+            </switches>
         </nav>
         <wipers>
-            <wiper-l type="int">0</wiper-l>
-            <wiper-r type="int">0</wiper-r>
+            <switches>
+                <wiper-l type="int">0</wiper-l>
+                <wiper-r type="int">0</wiper-r>
+            </switches>
         </wipers>
 
         <flight n="0">
