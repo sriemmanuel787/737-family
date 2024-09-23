@@ -122,6 +122,7 @@
 	</propulsion>
 	
 	<system file="b737-libraries"/>
+	<system file="b737-fcs"/>
 	
 	<flight_control name="none"/>
 	<aerodynamics file="Systems/b737-aerodynamics.xml"/>

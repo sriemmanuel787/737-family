@@ -25,14 +25,8 @@
             <autopilot n="1">
                 <path>Aircraft/737-MAX/Systems/737_fmc_fg.xml</path>
             </autopilot>
-            <autopilot n="2">
-                <path>Aircraft/737-MAX/Systems/hydraulics.xml</path>
-            </autopilot>
             <autopilot n="3">
                 <path>Aircraft/737-MAX/Systems/aircraft-systems-logic.xml</path>
-            </autopilot>
-            <autopilot n="9">
-                <path>Aircraft/737-MAX/Systems/autospeedbrake.xml</path>
             </autopilot>
             <path>Aircraft/737-MAX/Systems/systems.xml</path>
             <property-rule n="101">
@@ -1045,6 +1039,10 @@
             <rpm type="float">0</rpm>
             <egt type="float">0</egt>
         </apu>
+		<hydraulics n="0"> <!-- Remove this when HYD is implemented -->
+			<sys-a-psi type="double">3000</sys-a-psi>
+			<sys-b-psi type="double">3000</sys-b-psi>
+		</hydraulics>
         <pitot n="1">
             <serviceable type="bool">true</serviceable>
         </pitot>
@@ -1104,9 +1102,9 @@
         <canvas_nd>
             <file>Aircraft/737-MAX/Nasal/Displays/ND.nas</file>
         </canvas_nd>
-        <canvas_pfd>
+        <!--canvas_pfd>
             <file>Aircraft/737-MAX/Nasal/Displays/PFD.nas</file>
-        </canvas_pfd>
+        </canvas_pfd-->
         <itaf>
             <file>Nasal/it-autoflight.nas</file>
             <file>Nasal/custom-fma.nas</file>

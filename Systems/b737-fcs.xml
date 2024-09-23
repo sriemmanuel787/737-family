@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+
+<!-- Boeing 737 MAX FCS -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
+
+<system name="B737: FCS">
+	
+	<property value="1">hydraulics/flt-control</property> <!-- Temporary -->
+	
+	<channel name="Libraries">
+		
+		<fcs_function name="hydraulics/authority-man"> <!-- Guesses based on pilot info -->
+			<function>
+				<table> <!-- At higher speeds its harder for the surface to move, this is taken into account -->
+					<independentVar lookup="row">aero/qbar-psf</independentVar>
+					<tableData>
+						 40  1.0
+						 90  0.8
+						450  0.4
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<switch name="hydraulics/aileron-switch">
+			<default value="/controls/flight/aileron"/>
+			<!--test value="AP roll">
+				AP on
+			</test-->
+		</switch>
+		
+		<pure_gain name="hydraulics/aileron-trim">
+			<input>/controls/flight/aileron-trim</input>
+			<gain>0.5</gain>
+		</pure_gain>
+		
+		<switch name="hydraulics/aileron-power">
+			<default value="0"/>
+			<test value="0">
+				hydraulics/flt-control eq 0
+			</test>
+			<test logic="OR" value="1">
+				/systems/hydraulics/sys-a-psi ge 2200
+				/systems/hydraulics/sys-b-psi ge 2200
+			</test>
+		</switch>
+		
+		<switch name="hydraulics/elevator-power">
+			<default value="0"/>
+			<test value="0">
+				hydraulics/flt-control eq 0
+			</test>
+			<test logic="OR" value="1">
+				/systems/hydraulics/sys-a-psi ge 2200
+				/systems/hydraulics/sys-b-psi ge 2200
+			</test>
+		</switch>
+		
+		<switch name="hydraulics/rudder-power">
+			<default value="0"/>
+			<test value="0">
+				hydraulics/flt-control eq 0
+			</test>
+			<test logic="OR" value="1">
+				/systems/hydraulics/sys-a-psi ge 2200
+				/systems/hydraulics/sys-b-psi ge 2200
+			</test>
+		</switch>
+	
+	</channel>
+	
+	<channel name="Aileron L">
+		
+		<summer name="hydraulics/aileron-l/sum">
+			<input>hydraulics/aileron-switch</input>
+			<input>hydraulics/aileron-trim</input>
+		</summer>
+		
+		<pure_gain name="hydraulics/aileron-l/man-cmd">
+			<input>hydraulics/aileron-l/sum</input>
+			<gain>hydraulics/authority-man</gain>
+		</pure_gain>
+		
+		<lag_filter name="hydraulics/aileron-l/man">
+			<input>hydraulics/aileron-l/man-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="hydraulics/aileron-l/switch">
+			<default value="hydraulics/aileron-l/man"/>
+			<test value="hydraulics/aileron-l/sum">
+				hydraulics/aileron-power eq 1
+			</test>
+			<clipto>
+				<min>-1.0</min>
+				<max>0.75</max> <!-- 15 -->
+			</clipto>
+		</switch>
+		
+		<pure_gain name="hydraulics/aileron-l/cmd-deg">
+			<input>hydraulics/aileron-l/switch</input>
+			<gain>20</gain>
+		</pure_gain>
+		
+		<switch name="hydraulics/aileron-l/rate">
+			<default value="40"/> <!-- Pretending the controls are heavy -->
+			<test value="80">
+				hydraulics/aileron-power eq 1
+			</test>
+		</switch>
+		
+		<switch name="hydraulics/aileron-l/lag">
+			<default value="100"/>
+			<test value="26.5">
+				hydraulics/aileron-power eq 1
+			</test>
+		</switch>
+		
+		<actuator name="hydraulics/aileron-l/final-actuator">
+			<input>hydraulics/aileron-l/cmd-deg</input>
+			<rate_limit>hydraulics/aileron-l/rate</rate_limit>
+			<lag>hydraulics/aileron-l/lag</lag>
+			<output>hydraulics/aileron-l/final-deg</output>
+		</actuator>
+		
+		<pure_gain name="hydraulics/aileron-l/final-tab-gain">
+			<input>hydraulics/aileron-l/final-actuator</input>
+			<gain>-1.0</gain>
+			<output>hydraulics/aileron-l/final-tab-deg</output>
+		</pure_gain>
+	
+	</channel>
+	
+	<channel name="Aileron L">
+		
+		<summer name="hydraulics/aileron-r/sum">
+			<input>hydraulics/aileron-switch</input>
+			<input>hydraulics/aileron-trim</input>
+		</summer>
+		
+		<pure_gain name="hydraulics/aileron-r/man-cmd">
+			<input>hydraulics/aileron-r/sum</input>
+			<gain>hydraulics/authority-man</gain>
+		</pure_gain>
+		
+		<lag_filter name="hydraulics/aileron-r/man">
+			<input>hydraulics/aileron-r/man-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="hydraulics/aileron-r/switch">
+			<default value="hydraulics/aileron-r/man"/>
+			<test value="hydraulics/aileron-r/sum">
+				hydraulics/aileron-power eq 1
+			</test>
+			<clipto>
+				<min>-0.75</min> <!-- 15 -->
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<pure_gain name="hydraulics/aileron-r/cmd-deg">
+			<input>hydraulics/aileron-r/switch</input>
+			<gain>-20</gain>
+		</pure_gain>
+		
+		<switch name="hydraulics/aileron-r/rate">
+			<default value="40"/> <!-- Pretending the controls are heavy -->
+			<test value="80">
+				hydraulics/aileron-power eq 1
+			</test>
+		</switch>
+		
+		<switch name="hydraulics/aileron-r/lag">
+			<default value="100"/>
+			<test value="26.5">
+				hydraulics/aileron-power eq 1
+			</test>
+		</switch>
+		
+		<actuator name="hydraulics/aileron-r/final-actuator">
+			<input>hydraulics/aileron-r/cmd-deg</input>
+			<rate_limit>hydraulics/aileron-r/rate</rate_limit>
+			<lag>hydraulics/aileron-r/lag</lag>
+			<output>hydraulics/aileron-r/final-deg</output>
+		</actuator>
+		
+		<pure_gain name="hydraulics/aileron-r/final-tab-gain">
+			<input>hydraulics/aileron-r/final-actuator</input>
+			<gain>-1.0</gain>
+			<output>hydraulics/aileron-r/final-tab-deg</output>
+		</pure_gain>
+	
+	</channel>
+
+</system>
