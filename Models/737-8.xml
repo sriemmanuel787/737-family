@@ -282,4 +282,79 @@
         </axis>
     </animation>
 
+    <!-- Flight Control Surfaces -->
+    <!-- Elevators -->
+     <animation>
+        <type>rotate</type>
+        <object-name>elevator.L</object-name>
+        <object-name>elevator.tabL</object-name>
+        <property>fdm/jsbsim/hydraulics/elevator-l/final-deg</property>
+        <axis>
+            <x1-m>20.8568</x1-m>
+            <y1-m>-6.50913</y1-m>
+            <z1-m>3.84398</z1-m>
+            <x2-m>18.7145</x2-m>
+            <y2-m>-0.709669</y2-m>
+            <z2-m>3.1499</z2-m>
+        </axis>
+     </animation>
+     <animation>
+        <type>rotate</type>
+        <object-name>elevator.tabL</object-name>
+        <property>fdm/jsbsim/hydraulics/elevator-l/final-tab-deg</property>
+        <axis>
+            <x1-m>20.1489</x1-m>
+            <y1-m>-3.26821</y1-m>
+            <z1-m>3.45477</z1-m>
+            <x2-m>19.4519</x2-m>
+            <y2-m>-0.727066</y2-m>
+            <z2-m>3.14802</z2-m>
+        </axis>
+     </animation>
+     <animation>
+        <type>rotate</type>
+        <object-name>elevator.R</object-name>
+        <object-name>elevator.tabR</object-name>
+        <property>fdm/jsbsim/hydraulics/elevator-r/final-deg</property>
+        <axis>
+            <x1-m>18.7145</x1-m>
+            <y1-m>0.709669</y1-m>
+            <z1-m>3.1499</z1-m>
+            <x2-m>20.8568</x2-m>
+            <y2-m>6.50913</y2-m>
+            <z2-m>3.84398</z2-m>
+        </axis>
+     </animation>
+     <animation>
+        <type>rotate</type>
+        <object-name>elevator.tabL</object-name>
+        <property>fdm/jsbsim/hydraulics/elevator-l/final-tab-deg</property>
+        <axis>
+            <x1-m>19.4519</x1-m>
+            <y1-m>0.727066</y1-m>
+            <z1-m>3.14802</z1-m>
+            <x2-m>20.1489</x2-m>
+            <y2-m>3.26821</y2-m>
+            <z2-m>3.45477</z2-m>
+        </axis>
+     </animation>
+
+     <!-- Rudder -->
+      <animation>
+        <type>rotate</type>
+        <object-name>rudder</object-name>
+        <object-name>static.rudder</object-name>
+        <property>fdm/jsbsim/hydraulics/rudder/final-deg</property>
+        <factor>-1</factor>
+        <axis>
+            <x1-m>19.1325</x1-m>
+            <y1-m>0</y1-m>
+            <z1-m>7.89681</z1-m>
+            <x2-m>20.3718</x2-m>
+            <y2-m>20.3718</y2-m>
+            <y2-m>0</y2-m>
+            <z2-m>10.7151</z2-m>
+        </axis>
+      </animation>
+
 </PropertyList>

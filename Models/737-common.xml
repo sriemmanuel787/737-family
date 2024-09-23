@@ -1659,4 +1659,63 @@
         </axis>
     </animation>
 
+    <!-- Flaps -->
+    <!-- TODO: #49 Add Flap Animations -->
+
+    <!-- Flight Control Surfaces -->
+    <!-- Ailerons -->
+    <animation>
+        <type>rotate</type>
+        <object-name>aileron.L</object-name>
+        <object-name>aileron.tabL</object-name>
+        <property>fdm/jsbsim/hydraulics/aileron-l/final-deg</property>
+        <axis>
+            <x1-m>5.60488</x1-m>
+            <y1-m>-14.4438</y1-m>
+            <z1-m>2.44303</z1-m>
+            <x2-m>4.39976</x2-m>
+            <y2-m>-10.8068</y2-m>
+            <z2-m>2.08774</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>aileron.tabL</object-name>
+        <property>fdm/jsbsim/hydraulics/aileron-l/final-tab-deg</property>
+        <axis>
+            <x1-m>5.40298</x1-m>
+            <y1-m>-12.9929</y1-m>
+            <z1-m>2.27471</z1-m>
+            <x2-m>4.68114</x2-m>
+            <y2-m>-10.8088</y2-m>
+            <z2-m>2.05879</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>aileron.R</object-name>
+        <object-name>aileron.tabR</object-name>
+        <property>fdm/jsbsim/hydraulics/aileron-r/final-deg</property>
+        <axis>
+            <x1-m>4.39976</x1-m>
+            <y1-m>10.8068</y1-m>
+            <z1-m>2.08774</z1-m>
+            <x2-m>5.60488</x2-m>
+            <y2-m>14.4438</y2-m>
+            <z2-m>2.44303</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>aileron.tabR</object-name>
+        <property>fdm/jsbsim/hydraulics/aileron-r/final-tab-deg</property>
+        <axis>
+            <x1-m>4.68114</x1-m>
+            <y1-m>10.8088</y1-m>
+            <z1-m>2.05879</z1-m>
+            <x2-m>5.40298</x2-m>
+            <y2-m>12.9929</y2-m>
+            <z2-m>2.27471</z2-m>
+        </axis>
+    </animation>
 </PropertyList>
