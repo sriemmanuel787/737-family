@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Boeing 737 Lighting -->
+
+<system name="737: Lighting">
+    <property value="0">/systems/lighting/afds-flood</property>
+    <property value="0">/systems/lighting/background</property>
+    <property value="0">/systems/lighting/beacon-lower</property>
+    <property value="0">/systems/lighting/beacon-upper</property>
+    <property value="0">/systems/lighting/breaker</property>
+    <property value="0">/systems/lighting/du-1</property>
+    <property value="0">/systems/lighting/du-2</property>
+    <property value="0">/systems/lighting/du-3</property>
+    <property value="0">/systems/lighting/du-4</property>
+    <property value="0">/systems/lighting/exit</property>
+    <property value="0">/systems/lighting/isfd</property>
+    <property value="0">/systems/lighting/landing-left</property>
+    <property value="0">/systems/lighting/landing-right</property>
+    <property value="0">/systems/lighting/logo</property>
+    <property value="0">/systems/lighting/main-panel-capt</property>
+    <property value="0">/systems/lighting/main-panel-fo</property>
+    <property value="0">/systems/lighting/oh-panel</property>
+    <property value="0">/systems/lighting/position-aft</property>
+    <property value="0">/systems/lighting/position-left</property>
+    <property value="0">/systems/lighting/position-right</property>
+    <property value="0">/systems/lighting/runway-turnoff-left</property>
+    <property value="0">/systems/lighting/runway-turnoff-right</property>
+    <property value="0">/systems/lighting/strobe-left</property>
+    <property value="0">/systems/lighting/strobe-right</property>
+    <property value="0">/systems/lighting/wheel-well</property>
+    <property value="0">/systems/lighting/wing</property>
+
+    <channel name="Lighting Emmission">
+        <fcs_function name="/systems/lighting/afds-flood">
+            <function>
+                <pure-gain>
+                    <property>controls/lighting/afds-flood</property>
+                    <gain>1</gain> <!-- replace with voltage -->
+                </pure-gain>
+            </function>
+        </fcs_function>
+
+        <fcs_function name="/systems/lighting/background">
+            <function>
+                <pure-gain>
+                    <property>controls/lighting/background</property>
+                    <gain>1</gain> <!-- replace with voltage -->
+                </pure-gain>
+            </function>
+        </fcs_function>
+
+        <fcs_function name="/systems/lighting/beacon-lower">
+            <function>
+                <pure-gain>
+                    <property>controls/lighting/anti-collision</property>
+                    <gain>1</gain> <!-- replace with voltage -->
+                </pure-gain>
+            </function>
+        </fcs_function>
+    </channel>
+</system>

@@ -11,11 +11,7 @@ var DUController = {
 		secs: 180,
 		time: 0,
 	},
-	eadType: "GE-Dials",
-	eng: pts.Options.eng.getValue(),
 	elapsedSec: 0,
-	errorActive: 0,
-	iesiLcdOn: props.globals.initNode("/instrumentation/iesi/lcd-on", 0, "BOOL"),
 	PwrSource: {
 		ac1: 0,
 		ac3: 0,
@@ -24,8 +20,6 @@ var DUController = {
 	},
 	sdPage: "ENG",
 	sdPageActive: "ENG",
-	showNd1: props.globals.initNode("/instrumentation/nd/show-nd1", 0, "BOOL"),
-	showNd2: props.globals.initNode("/instrumentation/nd/show-nd2", 0, "BOOL"),
 	singleCueFd: 0,
 	updateEad: 0,
 	updateIesi: 0,
@@ -37,39 +31,6 @@ var DUController = {
 	updatePfd1: 0,
 	updatePfd2: 0,
 	updateSd: 0,
-	showError: func() {
-		me.errorActive = 1;
-		
-		# Hide the pages
-		me.updateMcdu1 = 0;
-		me.updateMcdu2 = 0;
-		me.updateMcdu3 = 0;
-		me.updatePfd1 = 0;
-		me.updatePfd2 = 0;
-		me.updateNd1 = 0;
-		me.updateNd2 = 0;
-		me.updateEad = 0;
-		me.updateSd = 0;
-		me.updateIesi = 0;
-		canvas_pfd.pfd1.page.hide();
-		canvas_pfd.pfd2.page.hide();
-		me.showNd1.setBoolValue(0); # Temporary
-		me.showNd2.setBoolValue(0); # Temporary
-		canvas_ead.geDials.page.hide();
-		canvas_ead.geTapes.page.hide();
-		canvas_ead.pwDials.page.hide();
-		canvas_ead.pwTapes.page.hide();
-		me.showSdPage("NONE");
-		canvas_iesi.iesi.page.hide();
-		canvas_mcdu.mcdu1.page.hide();
-		canvas_mcdu.mcdu2.page.hide();
-		canvas_mcdu.mcdu3.page.hide();
-		me.iesiLcdOn.setBoolValue(0);
-		
-		# Now show the error
-		canvas_pfd.pfd1Error.page.show();
-		canvas_pfd.pfd2Error.page.show();
-	},
 	loop: func() {
 		me.singleCueFd = pts.Systems.Acconfig.Options.singleCueFd.getBoolValue();
 		
