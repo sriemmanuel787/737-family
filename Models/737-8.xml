@@ -327,8 +327,8 @@
      </animation>
      <animation>
         <type>rotate</type>
-        <object-name>elevator.tabL</object-name>
-        <property>fdm/jsbsim/hydraulics/elevator-l/final-tab-deg</property>
+        <object-name>elevator.tabR</object-name>
+        <property>fdm/jsbsim/hydraulics/elevator-r/final-tab-deg</property>
         <axis>
             <x1-m>19.4519</x1-m>
             <y1-m>0.727066</y1-m>
