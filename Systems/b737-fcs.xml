@@ -29,6 +29,13 @@
 			</test-->
 		</switch>
 		
+		<switch name="hydraulics/elevator-switch">
+			<default value="/controls/flight/elevator"/>
+			<!--test value="AP pitch">
+				AP on
+			</test-->
+		</switch>
+		
 		<pure_gain name="hydraulics/aileron-trim">
 			<input>/controls/flight/aileron-trim</input>
 			<gain>0.5</gain>
@@ -135,7 +142,7 @@
 	
 	</channel>
 	
-	<channel name="Aileron L">
+	<channel name="Aileron R">
 		
 		<summer name="hydraulics/aileron-r/sum">
 			<input>hydraulics/aileron-switch</input>
@@ -197,6 +204,154 @@
 			<input>hydraulics/aileron-r/final-actuator</input>
 			<gain>-1.0</gain>
 			<output>hydraulics/aileron-r/final-tab-deg</output>
+		</pure_gain>
+	
+	</channel>
+	
+	<channel name="Elevator L">
+		
+		<pure_gain name="hydraulics/elevator-l/man-cmd">
+			<input>hydraulics/elevator-switch</input>
+			<gain>hydraulics/authority-man</gain>
+		</pure_gain>
+		
+		<lag_filter name="hydraulics/elevator-l/man">
+			<input>hydraulics/elevator-l/man-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="hydraulics/elevator-l/switch">
+			<default value="hydraulics/elevator-l/man"/>
+			<test value="hydraulics/elevator-switch">
+				hydraulics/elevator-power eq 1
+			</test>
+		</switch>
+		
+		<pure_gain name="hydraulics/elevator-l/cmd-deg">
+			<input>hydraulics/elevator-l/switch</input>
+			<gain>24.3</gain>
+			<clipto>
+				<min>-24.3</min>
+				<max>18.1</max>
+			</clipto>
+		</pure_gain>
+		
+		<switch name="hydraulics/elevator-l/tab-gain">
+			<default value="-1"/> <!-- Balance mode -->
+			<test logic="AND" value="1"> <!-- Anti-balance mode -->
+				hydraulics/elevator-power eq 1
+				fcs/flap-pos-deg ge 0.5
+			</test>
+		</switch>
+		
+		<lag_filter name="hydraulics/elevator-l/tab-gain-lag">
+			<input>hydraulics/elevator-l/tab-gain</input>
+			<c1>10</c1>
+		</lag_filter>
+		
+		<switch name="hydraulics/elevator-l/rate">
+			<default value="40"/> <!-- Pretending the controls are heavy -->
+			<test logic="AND" value="75"> <!-- Anti-balance makes it slower -->
+				hydraulics/elevator-power eq 1
+				hydraulics/elevator-l/tab-gain eq 1
+			</test>
+			<test value="80">
+				hydraulics/elevator-power eq 1
+			</test>
+		</switch>
+		
+		<switch name="hydraulics/elevator-l/lag">
+			<default value="100"/>
+			<test value="26.5">
+				hydraulics/elevator-power eq 1
+			</test>
+		</switch>
+		
+		<actuator name="hydraulics/elevator-l/final-actuator">
+			<input>hydraulics/elevator-l/cmd-deg</input>
+			<rate_limit>hydraulics/elevator-l/rate</rate_limit>
+			<lag>hydraulics/elevator-l/lag</lag>
+			<output>hydraulics/elevator-l/final-deg</output>
+		</actuator>
+		
+		<pure_gain name="hydraulics/elevator-l/final-tab-gain">
+			<input>hydraulics/elevator-l/final-actuator</input>
+			<gain>hydraulics/elevator-l/tab-gain-lag</gain>
+			<output>hydraulics/elevator-l/final-tab-deg</output>
+		</pure_gain>
+	
+	</channel>
+	
+	<channel name="Elevator R">
+		
+		<pure_gain name="hydraulics/elevator-r/man-cmd">
+			<input>hydraulics/elevator-switch</input>
+			<gain>hydraulics/authority-man</gain>
+		</pure_gain>
+		
+		<lag_filter name="hydraulics/elevator-r/man">
+			<input>hydraulics/elevator-r/man-cmd</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<switch name="hydraulics/elevator-r/switch">
+			<default value="hydraulics/elevator-r/man"/>
+			<test value="hydraulics/elevator-switch">
+				hydraulics/elevator-power eq 1
+			</test>
+		</switch>
+		
+		<pure_gain name="hydraulics/elevator-r/cmd-deg">
+			<input>hydraulics/elevator-r/switch</input>
+			<gain>24.3</gain>
+			<clipto>
+				<min>-24.3</min>
+				<max>18.1</max>
+			</clipto>
+		</pure_gain>
+		
+		<switch name="hydraulics/elevator-r/tab-gain">
+			<default value="-1"/> <!-- Balance mode -->
+			<test logic="AND" value="1"> <!-- Anti-balance mode -->
+				hydraulics/elevator-power eq 1
+				fcs/flap-pos-deg ge 0.5
+			</test>
+		</switch>
+		
+		<lag_filter name="hydraulics/elevator-r/tab-gain-rag">
+			<input>hydraulics/elevator-r/tab-gain</input>
+			<c1>10</c1>
+		</lag_filter>
+		
+		<switch name="hydraulics/elevator-r/rate">
+			<default value="40"/> <!-- Pretending the controls are heavy -->
+			<test logic="AND" value="75"> <!-- Anti-balance makes it slower -->
+				hydraulics/elevator-power eq 1
+				hydraulics/elevator-r/tab-gain eq 1
+			</test>
+			<test value="80">
+				hydraulics/elevator-power eq 1
+			</test>
+		</switch>
+		
+		<switch name="hydraulics/elevator-r/lag">
+			<default value="100"/>
+			<test value="26.5">
+				hydraulics/elevator-power eq 1
+			</test>
+		</switch>
+		
+		<actuator name="hydraulics/elevator-r/final-actuator">
+			<input>hydraulics/elevator-r/cmd-deg</input>
+			<rate_limit>hydraulics/elevator-r/rate</rate_limit>
+			<lag>hydraulics/elevator-r/lag</lag>
+			<output>hydraulics/elevator-r/final-deg</output>
+		</actuator>
+		
+		<pure_gain name="hydraulics/elevator-r/final-tab-gain">
+			<input>hydraulics/elevator-r/final-actuator</input>
+			<gain>hydraulics/elevator-r/tab-gain-rag</gain>
+			<output>hydraulics/elevator-r/final-tab-deg</output>
 		</pure_gain>
 	
 	</channel>
