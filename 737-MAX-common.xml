@@ -299,6 +299,22 @@
             </switches>
         </efis>
         <elec>
+            <lights>
+                <apu-gen-off-bus type="bool">0</apu-gen-off-bus>
+                <bat-discharge type="bool">0</bat-discharge>
+                <csd-1-drive type="bool">0</csd-1-drive>
+                <csd-2-drive type="bool">0</csd-2-drive>
+                <elec type="bool">0</elec>
+                <gen-1-off-bus type="bool">0</gen-1-off-bus>
+                <gen-1-source-off type="bool">0</gen-1-source-off>
+                <gen-1-transfer-bus-off type="bool">0</gen-1-transfer-bus-off>
+                <gen-2-off-bus type="bool">0</gen-2-off-bus>
+                <gen-2-source-off type="bool">0</gen-2-source-off>
+                <gen-2-transfer-bus-off type="bool">0</gen-2-transfer-bus-off>
+                <grd-power-available type="bool">0</grd-power-available>
+                <standby-pwr-off type="bool">0</standby-pwr-off>
+                <tr-unit type="bool">0</tr-unit>
+            </lights>
             <switches>
                 <ac-mode type="int">0</ac-mode>
                 <apu-gen-1 type="bool">0</apu-gen-1>
@@ -309,7 +325,9 @@
                 <batt-on type="bool">0</batt-on>
                 <csd-1-conn type="bool">0</csd-1-conn> <!-- red covers, says drive (because i will
             forget) -->
+                <csd-1-cover type="bool">0</csd-1-cover>
                 <csd-2-conn type="bool">0</csd-2-conn>
+                <csd-2-cover type="bool">0</csd-2-cover>
                 <gen-1 type="bool">0</gen-1>
                 <gen-2 type="bool">0</gen-2>
                 <grd-power type="bool">0</grd-power>
@@ -332,6 +350,19 @@
             </switches>
         </eng>
         <flt-control>
+            <lights>
+                <auto-slat-fail type="bool">0</auto-slat-fail>
+                <feel-diff-press type="bool">0</feel-diff-press>
+                <mach-trim-fail type="bool">0</mach-trim-fail>
+                <rudder-a-low-pressure type="bool">0</rudder-a-low-pressure>
+                <rudder-b-low-pressure type="bool">0</rudder-b-low-pressure>
+                <speed-trim-fail type="bool">0</speed-trim-fail>
+                <spoilers type="bool">0</spoilers>
+                <stby-low-pressure type="bool">0</stby-low-pressure>
+                <stby-low-quantity type="bool">0</stby-low-quantity>
+                <stby-rud-on type="bool">0</stby-rud-on>
+                <yaw-damper type="bool">0</yaw-damper>
+            </lights>
             <switches>
                 <alt-flaps-arm type="bool">0</alt-flaps-arm>
                 <alt-flaps type="int">0</alt-flaps>
@@ -343,6 +374,21 @@
             </switches>
         </flt-control>
         <fuel>
+            <lights>
+                <eng-valve-closed-l type="bool">0</eng-valve-closed-l>
+                <eng-valve-closed-r type="bool">0</eng-valve-closed-r>
+                <filter-bypass-l type="bool">0</filter-bypass-l>
+                <filter-bypass-r type="bool">0</filter-bypass-r>
+                <low-pressure-cl type="bool">0</low-pressure-cl>
+                <low-pressure-cr type="bool">0</low-pressure-cr>
+                <low-pressure-la type="bool">0</low-pressure-la>
+                <low-pressure-lf type="bool">0</low-pressure-lf>
+                <low-pressure-ra type="bool">0</low-pressure-ra>
+                <low-pressure-rf type="bool">0</low-pressure-rf>
+                <spar-valve-closed-l type="bool">0</spar-valve-closed-l>
+                <spar-valve-closed-r type="bool">0</spar-valve-closed-r>
+                <valve-open type="bool">0</valve-open>
+            </lights>
             <switches>
                 <crossfeed type="bool">0</crossfeed>
                 <pump-cl type="bool">0</pump-cl>
@@ -400,6 +446,9 @@
             </switches>
         </hyd>
         <lighting>
+            <lights>
+                <exit-not-armed type="bool">0</exit-not-armed>
+            </lights>
             <switches>
                 <afds-flood type="int">0</afds-flood>
                 <anti-collision type="bool">0</anti-collision> <!-- AKA beacon -->

@@ -215,7 +215,7 @@
 		<!-- IDG Engine 1 -->
 		<pure_gain name="/systems/electrical/sources/idg-l/drive-rpm-input">
 			<input>/engines/engine[0]/n2-actual</input>
-			<gain>48.27</gain>
+			<gain>50.33</gain> <!-- Ratio of ~6000 and max N2 -->
 		</pure_gain>
 		
 		<pure_gain name="/systems/electrical/sources/idg-l/drive-rpm">
@@ -290,7 +290,7 @@
 		<!-- IDG Engine 2 -->
 		<pure_gain name="/systems/electrical/sources/idg-r/drive-rpm-input">
 			<input>/engines/engine[1]/n2-actual</input>
-			<gain>48.27</gain>
+			<gain>50.33</gain> <!-- Ratio of ~6000 and max N2 -->
 		</pure_gain>
 		
 		<pure_gain name="/systems/electrical/sources/idg-r/drive-rpm">
@@ -420,7 +420,7 @@
 			<function>
 				<ifthen>
 					<eq>
-						<property>/controls/elec/grd-power</property>
+						<property>/controls/elec/switches/grd-power</property>
 						<value>1</value>
 					</eq>
 					<value>115</value>
