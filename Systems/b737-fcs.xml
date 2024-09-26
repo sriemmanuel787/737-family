@@ -73,7 +73,7 @@
 		</summer>
 		
 		<lag_filter name="hydraulics/rudder-pedal">
-			<input>/controls/flight/rudder</input>
+			<input>hydraulics/rudder-sum</input>
 			<c1>20</c1>
 		</lag_filter>
 		
