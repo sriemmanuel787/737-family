@@ -22,16 +22,21 @@
 			</function>
 		</fcs_function>
 		
+		<fcs_function name="hydraulics/rudder-droop-rate">
+			<function>
+				<table>
+					<independentVar lookup="row">aero/qbar-psf</independentVar>
+					<tableData>
+						 7.5  0
+						31.5  2
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
 		<switch name="hydraulics/aileron-switch">
 			<default value="/controls/flight/aileron"/>
 			<!--test value="AP roll">
-				AP on
-			</test-->
-		</switch>
-		
-		<switch name="hydraulics/elevator-switch">
-			<default value="/controls/flight/elevator"/>
-			<!--test value="AP pitch">
 				AP on
 			</test-->
 		</switch>
@@ -40,6 +45,37 @@
 			<input>/controls/flight/aileron-trim</input>
 			<gain>0.5</gain>
 		</pure_gain>
+		
+		<summer name="hydraulics/aileron-sum">
+			<input>hydraulics/aileron-switch</input>
+			<input>hydraulics/aileron-trim</input>
+		</summer>
+		
+		<switch name="hydraulics/elevator-switch">
+			<default value="/controls/flight/elevator"/>
+			<!--test value="AP pitch">
+				AP on
+			</test-->
+		</switch>
+		
+		<pure_gain name="hydraulics/rudder-trim">
+			<input>/controls/flight/rudder-trim</input>
+			<gain>0.6666667</gain>
+		</pure_gain>
+		
+		<summer name="hydraulics/rudder-sum">
+			<input>/controls/flight/rudder</input>
+			<input>hydraulics/rudder-trim</input>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</summer>
+		
+		<lag_filter name="hydraulics/rudder-pedal">
+			<input>/controls/flight/rudder</input>
+			<c1>20</c1>
+		</lag_filter>
 		
 		<switch name="hydraulics/aileron-power">
 			<default value="0"/>
@@ -78,13 +114,8 @@
 	
 	<channel name="Aileron L">
 		
-		<summer name="hydraulics/aileron-l/sum">
-			<input>hydraulics/aileron-switch</input>
-			<input>hydraulics/aileron-trim</input>
-		</summer>
-		
 		<pure_gain name="hydraulics/aileron-l/man-cmd">
-			<input>hydraulics/aileron-l/sum</input>
+			<input>hydraulics/aileron-sum</input>
 			<gain>hydraulics/authority-man</gain>
 		</pure_gain>
 		
@@ -95,7 +126,7 @@
 		
 		<switch name="hydraulics/aileron-l/switch">
 			<default value="hydraulics/aileron-l/man"/>
-			<test value="hydraulics/aileron-l/sum">
+			<test value="hydraulics/aileron-sum">
 				hydraulics/aileron-power eq 1
 			</test>
 		</switch>
@@ -114,7 +145,7 @@
 		</fcs_function>
 		
 		<switch name="hydraulics/aileron-l/rate">
-			<default value="40"/> <!-- Pretending the controls are heavy -->
+			<default value="60"/> <!-- Pretending the controls are heavy -->
 			<test value="80">
 				hydraulics/aileron-power eq 1
 			</test>
@@ -144,13 +175,8 @@
 	
 	<channel name="Aileron R">
 		
-		<summer name="hydraulics/aileron-r/sum">
-			<input>hydraulics/aileron-switch</input>
-			<input>hydraulics/aileron-trim</input>
-		</summer>
-		
 		<pure_gain name="hydraulics/aileron-r/man-cmd">
-			<input>hydraulics/aileron-r/sum</input>
+			<input>hydraulics/aileron-sum</input>
 			<gain>hydraulics/authority-man</gain>
 		</pure_gain>
 		
@@ -161,7 +187,7 @@
 		
 		<switch name="hydraulics/aileron-r/switch">
 			<default value="hydraulics/aileron-r/man"/>
-			<test value="hydraulics/aileron-r/sum">
+			<test value="hydraulics/aileron-sum">
 				hydraulics/aileron-power eq 1
 			</test>
 		</switch>
@@ -180,7 +206,7 @@
 		</fcs_function>
 		
 		<switch name="hydraulics/aileron-r/rate">
-			<default value="40"/> <!-- Pretending the controls are heavy -->
+			<default value="60"/> <!-- Pretending the controls are heavy -->
 			<test value="80">
 				hydraulics/aileron-power eq 1
 			</test>
@@ -250,7 +276,7 @@
 		</lag_filter>
 		
 		<switch name="hydraulics/elevator-l/rate">
-			<default value="40"/> <!-- Pretending the controls are heavy -->
+			<default value="60"/> <!-- Pretending the controls are heavy -->
 			<test logic="AND" value="75"> <!-- Anti-balance makes it slower -->
 				hydraulics/elevator-power eq 1
 				hydraulics/elevator-l/tab-gain eq 1
@@ -324,7 +350,7 @@
 		</lag_filter>
 		
 		<switch name="hydraulics/elevator-r/rate">
-			<default value="40"/> <!-- Pretending the controls are heavy -->
+			<default value="60"/> <!-- Pretending the controls are heavy -->
 			<test logic="AND" value="75"> <!-- Anti-balance makes it slower -->
 				hydraulics/elevator-power eq 1
 				hydraulics/elevator-r/tab-gain eq 1
@@ -372,6 +398,59 @@
 			<c1>23.2</c1>
 			<output>hydraulics/stabilizer/final-deg</output>
 		</lag_filter>
+	
+	</channel>
+	
+	<channel name="Yaw Damper and Rudder Feel">
+		
+		<fcs_function name="hydraulics/rudder-blowdown-gain">
+			<function>
+				<table>
+					<independentVar lookup="row">velocities/vc-kts</independentVar>
+					<tableData> <!-- Adapted and tweaked from Classic -->
+						100  29.0
+						150  21.2
+						250   8.9
+						340   4.5
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<summer name="hydraulics/rudder/sum">
+			<input>hydraulics/rudder-sum</input>
+			<!--input>yaw damper</input-->
+		</summer>
+		
+		<switch name="hydraulics/rudder/switch">
+			<default value="0"/>
+			<test value="hydraulics/rudder/sum">
+				hydraulics/rudder-power eq 1
+			</test>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<pure_gain name="hydraulics/rudder/cmd-deg">
+			<input>hydraulics/rudder/switch</input>
+			<gain>hydraulics/rudder-blowdown-gain</gain>
+		</pure_gain>
+		
+		<switch name="hydraulics/rudder/rate">
+			<default value="hydraulics/rudder-droop-rate"/>
+			<test logic="OR" value="75">
+				hydraulics/rudder-power eq 1
+			</test>
+		</switch>
+		
+		<actuator name="hydraulics/rudder/final-actuator">
+			<input>hydraulics/rudder/cmd-deg</input>
+			<rate_limit>hydraulics/rudder/rate</rate_limit>
+			<lag>25.5</lag>
+			<output>hydraulics/rudder/final-deg</output>
+		</actuator>
 	
 	</channel>
 
