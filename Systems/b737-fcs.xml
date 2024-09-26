@@ -355,5 +355,24 @@
 		</pure_gain>
 	
 	</channel>
+	
+	<channel name="Stabilizer"> <!-- No hydraulics -->
+		
+		<pure_gain name="hydraulics/stabilizer/cmd-deg">
+			<input>/controls/flight/elevator-trim</input>
+			<gain>12.9</gain>
+			<clipto>
+				<min>-12.9</min>
+				<max>4.2</max>
+			</clipto>
+		</pure_gain>
+		
+		<lag_filter name="hydraulics/stabilizer/final-lag">
+			<input>hydraulics/stabilizer/cmd-deg</input>
+			<c1>23.2</c1>
+			<output>hydraulics/stabilizer/final-deg</output>
+		</lag_filter>
+	
+	</channel>
 
 </system>
