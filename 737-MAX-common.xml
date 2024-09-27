@@ -342,19 +342,19 @@
             </lights>
             <switches>
                 <ac-mode type="int">0</ac-mode>
-                <apu-gen-1 type="bool">0</apu-gen-1>
-                <apu-gen-2 type="bool">0</apu-gen-2>
+                <apu-gen-l type="bool">0</apu-gen-l>
+                <apu-gen-r type="bool">0</apu-gen-r>
                 <bus-trans type="bool">0</bus-trans>
                 <cabin type="bool">0</cabin>
                 <dc-mode type="int">0</dc-mode>
                 <batt-on type="bool">0</batt-on>
-                <csd-1-conn type="bool">0</csd-1-conn> <!-- red covers, says drive (because i will
+                <csd-l-conn type="bool">0</csd-l-conn> <!-- red covers, says drive (because i will
             forget) -->
-                <csd-1-cover type="bool">0</csd-1-cover>
-                <csd-2-conn type="bool">0</csd-2-conn>
-                <csd-2-cover type="bool">0</csd-2-cover>
-                <gen-1 type="bool">0</gen-1>
-                <gen-2 type="bool">0</gen-2>
+                <csd-l-cover type="bool">0</csd-l-cover>
+                <csd-r-conn type="bool">0</csd-r-conn>
+                <csd-r-cover type="bool">0</csd-r-cover>
+                <gen-l type="bool">0</gen-l>
+                <gen-r type="bool">0</gen-r>
                 <grd-power type="bool">0</grd-power>
                 <ife type="bool">0</ife>
                 <standby-pwr type="int">0</standby-pwr>
@@ -562,12 +562,17 @@
             <state type="int">0</state>
             <running>false</running>
             <reverser-pos-norm type="double">0</reverser-pos-norm>
+            <n2-actual type="double">0</n2-actual>
         </engine>
         <engine n="1">
             <egt-actual type="double">0</egt-actual>
             <state type="int">0</state>
             <running>false</running>
             <reverser-pos-norm type="double">0</reverser-pos-norm>
+            <n2-actual type="double">0</n2-actual>
+        </engine>
+        <engine n="2">
+            <n1-actual type="double">0</n1-actual>
         </engine>
     </engines>
 
@@ -1178,10 +1183,8 @@
                     <fo-mfd-fps type="double">20</fo-mfd-fps>
                     <isfd-fps type="double">20</isfd-fps>
                 </du>
-                <eight-three-three-radios type="bool">0</eight-three-three-radios>
                 <fuel-dials type="bool">0</fuel-dials>
                 <eng-oil-vib type="bool">0</eng-oil-vib>
-                <iesi-equipped type="bool">0</iesi-equipped>
                 <irs-aligns-instantly type="bool">0</irs-aligns-instantly>
                 <keyboard-mode type="bool">0</keyboard-mode>
                 <rcws-equipped type="bool">0</rcws-equipped>
@@ -1194,24 +1197,16 @@
             <rpm type="float">0</rpm>
             <egt type="float">0</egt>
         </apu>
-        <pitot n="1">
-            <serviceable type="bool">true</serviceable>
-        </pitot>
-        <pitot n="2">
-            <serviceable type="bool">true</serviceable>
-        </pitot>
-        <pitot n="3">
-            <serviceable type="bool">true</serviceable>
-        </pitot>
-        <static n="1">
-            <serviceable type="bool">true</serviceable>
-        </static>
-        <static n="2">
-            <serviceable type="bool">true</serviceable>
-        </static>
-        <static n="3">
-            <serviceable type="bool">true</serviceable>
-        </static>
+        <failures>
+            <electrical>
+                <ac-tie type="bool">0</ac-tie>
+                <apu type="bool">0</apu>
+                <battery type="bool">0</battery>
+                <dc-tie type="bool">0</dc-tie>
+                <gen-l type="bool">0</gen-l>
+                <gen-r type="bool">0</gen-r>
+            </electrical>
+        </failures>
     </systems>
 
     <nasal>
