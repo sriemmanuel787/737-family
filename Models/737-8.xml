@@ -6,7 +6,7 @@
     <model>
         <object-name>Cockpit</object-name>
         <usage>interior</usage>
-        <path>Aircraft/737-MAX/Models/Cockpit/cockpit.xml</path>
+        <path>Aircraft/737-family/Models/Cockpit/cockpit.xml</path>
         <offsets>
             <x-m>2.5765</x-m>
         </offsets>
@@ -284,7 +284,7 @@
 
     <!-- Flight Control Surfaces -->
     <!-- Elevators -->
-     <animation>
+    <animation>
         <type>rotate</type>
         <object-name>elevator.L</object-name>
         <object-name>elevator.tabL</object-name>
@@ -299,8 +299,8 @@
             <y2-m>-0.88186</y2-m>
             <z2-m>3.21542</z2-m>
         </axis>
-     </animation>
-     <animation>
+    </animation>
+    <animation>
         <type>rotate</type>
         <object-name>elevator.R</object-name>
         <object-name>elevator.tabR</object-name>
@@ -315,8 +315,8 @@
             <y2-m>1.87732</y2-m>
             <z2-m>3.27908</z2-m>
         </axis>
-     </animation>
-     <animation>
+    </animation>
+    <animation>
         <type>rotate</type>
         <object-name>elevator.L</object-name>
         <object-name>elevator.tabL</object-name>
@@ -329,8 +329,8 @@
             <y2-m>-0.709669</y2-m>
             <z2-m>3.1499</z2-m>
         </axis>
-     </animation>
-     <animation>
+    </animation>
+    <animation>
         <type>rotate</type>
         <object-name>elevator.tabL</object-name>
         <property>fdm/jsbsim/hydraulics/elevator-l/final-tab-deg</property>
@@ -342,8 +342,8 @@
             <y2-m>-0.727066</y2-m>
             <z2-m>3.14802</z2-m>
         </axis>
-     </animation>
-     <animation>
+    </animation>
+    <animation>
         <type>rotate</type>
         <object-name>elevator.R</object-name>
         <object-name>elevator.tabR</object-name>
@@ -356,8 +356,8 @@
             <y2-m>6.50913</y2-m>
             <z2-m>3.84398</z2-m>
         </axis>
-     </animation>
-     <animation>
+    </animation>
+    <animation>
         <type>rotate</type>
         <object-name>elevator.tabR</object-name>
         <property>fdm/jsbsim/hydraulics/elevator-r/final-tab-deg</property>
@@ -369,10 +369,10 @@
             <y2-m>3.26821</y2-m>
             <z2-m>3.45477</z2-m>
         </axis>
-     </animation>
+    </animation>
 
-     <!-- Rudder -->
-      <animation>
+    <!-- Rudder -->
+    <animation>
         <type>rotate</type>
         <object-name>rudder</object-name>
         <object-name>static.rudder</object-name>
@@ -386,6 +386,6 @@
             <y2-m>0</y2-m>
             <z2-m>10.7151</z2-m>
         </axis>
-      </animation>
+    </animation>
 
 </PropertyList>

@@ -4,12 +4,12 @@
 
     <sim>
         <description>Boeing 737 MAX 8</description>
-        <liveries-path type="string">Aircraft/737-MAX/Models/Liveries-8</liveries-path>
+        <liveries-path type="string">Aircraft/737-family/Models/Liveries-8</liveries-path>
         <aero>FDE/737-MAX-8</aero>
         <startup>
-            <splash-texture>Aircraft/737-MAX/Splash/Splash-8/splash-1.png</splash-texture>
-            <splash-texture>Aircraft/737-MAX/Splash/Splash-8/splash-2.png</splash-texture>
-            <splash-texture>Aircraft/737-MAX/Splash/Splash-8/splash-3.png</splash-texture>
+            <splash-texture>Aircraft/737-family/Splash/Splash-8/splash-1.png</splash-texture>
+            <splash-texture>Aircraft/737-family/Splash/Splash-8/splash-2.png</splash-texture>
+            <splash-texture>Aircraft/737-family/Splash/Splash-8/splash-3.png</splash-texture>
         </startup>
 
         <previews>
@@ -37,7 +37,7 @@
                 <position-z-m type="float">0.00098</position-z-m>
                 <jetway-hood-deg type="float">0</jetway-hood-deg>
             </door>
-            <path>Aircraft/737-MAX/Models/737-8.xml</path>
+            <path>Aircraft/737-family/Models/737-8.xml</path>
             <livery>
                 <file type="string">737-8</file>
             </livery>
@@ -260,8 +260,8 @@
     </payload>
 
     <nasal n="0">
-		<setup>
-			<script>aircraft.livery.init("Aircraft/737-MAX/Models/Liveries-8");</script>
-		</setup>
-	</nasal>
+        <setup>
+            <script>aircraft.livery.init("Aircraft/737-family/Models/Liveries-8");</script>
+        </setup>
+    </nasal>
 </PropertyList>

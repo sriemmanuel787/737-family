@@ -10,7 +10,7 @@ var canvas_mfd = {
 			return "MFD-font.ttf";
 		};
 		
-		canvas.parsesvg(mfd, "Aircraft/737-MAX/Nasal/Displays/res/MFD.svg" , {'font-mapper': font_mapper});
+		canvas.parsesvg(mfd, "Aircraft/737-family/Nasal/Displays/res/MFD.svg" , {'font-mapper': font_mapper});
 		
 		var svg_keys = ["Add SVG elements here"];
 		foreach(var key; svg_keys)

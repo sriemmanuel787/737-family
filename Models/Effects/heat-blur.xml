@@ -2,17 +2,17 @@
 <PropertyList>
 
     <path>Aircraft/Generic/Effects/Thruster/thrust_flame.ac</path>
-    <nopreview/>
+    <nopreview />
     <animation>
         <type>scale</type>
-        <property alias="../../params/egt-degf"/>
+        <property alias="../../params/egt-degf" />
         <x-factor>0.0025</x-factor>
         <y-factor>0.0025</y-factor>
         <z-factor>0.0025</z-factor>
     </animation>
 
     <effect>
-        <inherits-from>Aircraft/737-MAX/Models/Effects/heat-blur</inherits-from>
+        <inherits-from>Aircraft/737-family/Models/Effects/heat-blur</inherits-from>
         <object-name>Bounding_box</object-name>
     </effect>
 

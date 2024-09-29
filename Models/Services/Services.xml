@@ -6,7 +6,7 @@
 
     <model>
         <name>Baggage</name>
-        <path>Aircraft/737-MAX/Models/Services/Baggage/baggage.xml</path>
+        <path>Aircraft/737-family/Models/Services/Baggage/baggage.xml</path>
         <condition>
             <and>
                 <property>controls/switches/baggage1</property>
@@ -19,7 +19,6 @@
         <offsets>
 
 
-
         </offsets>
     </model>
 
@@ -27,7 +26,7 @@
 
     <model>
         <name>baggage</name>
-        <path>Aircraft/737-MAX/Models/Services/Baggage/baggage2.xml</path>
+        <path>Aircraft/737-family/Models/Services/Baggage/baggage2.xml</path>
         <condition>
             <and>
                 <property>controls/switches/baggage2</property>
@@ -40,7 +39,6 @@
         <offsets>
 
 
-
         </offsets>
     </model>
 
@@ -48,7 +46,7 @@
 
     <model>
         <name>Fuel truck</name>
-        <path>Aircraft/737-MAX/Models/Services/Fuel/fuel.xml</path>
+        <path>Aircraft/737-family/Models/Services/Fuel/fuel.xml</path>
         <condition>
             <and>
                 <property>controls/switches/Fuel</property>
@@ -61,7 +59,6 @@
         <offsets>
 
 
-
         </offsets>
     </model>
 
@@ -70,7 +67,7 @@
 
     <model>
         <name>Cateringback Vehicle</name>
-        <path>Aircraft/737-MAX/Models/Services/Catering/catering.xml</path>
+        <path>Aircraft/737-family/Models/Services/Catering/catering.xml</path>
         <condition>
             <equals>
                 <property>controls/switches/catering1</property>
@@ -92,7 +89,7 @@
 
     <model>
         <name>Cateringback Vehicle</name>
-        <path>Aircraft/737-MAX/Models/Services/Catering/catering2.xml</path>
+        <path>Aircraft/737-family/Models/Services/Catering/catering2.xml</path>
         <condition>
             <equals>
                 <property>controls/switches/catering2</property>
@@ -106,7 +103,6 @@
         <offsets>
 
 
-
         </offsets>
     </model>
 
@@ -114,7 +110,7 @@
 
     <model>
         <name>Bus</name>
-        <path>Aircraft/737-MAX/Models/Services/Bus/bus.xml</path>
+        <path>Aircraft/737-family/Models/Services/Bus/bus.xml</path>
         <condition>
             <and>
                 <property>controls/switches/bus</property>
@@ -135,7 +131,7 @@
 
     <model>
         <name>Cone</name>
-        <path>Aircraft/737-MAX/Models/Services/Stairways/stairs.xml</path>
+        <path>Aircraft/737-family/Models/Services/Stairways/stairs.xml</path>
         <condition>
             <and>
                 <property>controls/switches/stairs1</property>
@@ -156,7 +152,7 @@
 
     <model>
         <name>Cone</name>
-        <path>Aircraft/737-MAX/Models/Services/Stairways/stairs2.xml</path>
+        <path>Aircraft/737-family/Models/Services/Stairways/stairs2.xml</path>
         <condition>
             <and>
                 <property>controls/switches/stairs2</property>
