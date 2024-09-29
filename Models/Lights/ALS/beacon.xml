@@ -2,7 +2,7 @@
 <PropertyList>
 
     <path>beacon.ac</path>
-    <nopreview/>
+    <nopreview />
 
 
     <animation>
@@ -11,7 +11,6 @@
         <y-offset>1</y-offset>
         <z-offset>1</z-offset>
     </animation>
-
 
 
     <animation>
@@ -34,9 +33,8 @@
     </animation>
 
 
-
     <effect>
-        <inherits-from>Aircraft/737-MAX/Models/lights/ALS/beacon</inherits-from>
+        <inherits-from>Aircraft/737-family/Models/lights/ALS/beacon</inherits-from>
         <object-name>beacon</object-name>
     </effect>
 

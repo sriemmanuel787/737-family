@@ -6,7 +6,7 @@
     <!-- Submodels -->
     <model>
         <object-name>overhead</object-name>
-        <path>Aircraft/737-MAX/Models/Cockpit/overhead.xml</path>
+        <path>Aircraft/737-family/Models/Cockpit/overhead.xml</path>
     </model>
 
     <!-- <effect>

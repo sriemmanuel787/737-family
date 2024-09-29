@@ -2,12 +2,11 @@
 <PropertyList>
 
     <path>green-navlight.ac</path>
-    <nopreview/>
-
+    <nopreview />
 
 
     <effect>
-        <inherits-from>Aircraft/737-MAX/Models/lights/ALS/green-navlight</inherits-from>
+        <inherits-from>Aircraft/737-family/Models/lights/ALS/green-navlight</inherits-from>
         <object-name>green-navlight</object-name>
     </effect>
 

@@ -2,15 +2,13 @@
 <PropertyList>
 
     <path>landinglight.ac</path>
-    <nopreview/>
-
+    <nopreview />
 
 
     <effect>
-        <inherits-from>Aircraft/737-MAX/Models/lights/ALS/taxilight</inherits-from>
+        <inherits-from>Aircraft/737-family/Models/lights/ALS/taxilight</inherits-from>
         <object-name>landinglight</object-name>
     </effect>
-
 
 
     <animation>
@@ -19,7 +17,6 @@
         <y-offset>0.75</y-offset>
         <z-offset>0.75</z-offset>
     </animation>
-
 
 
     <animation>

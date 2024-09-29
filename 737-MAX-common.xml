@@ -20,32 +20,32 @@
                 <path></path>
             </electrical>
             <autopilot n="0">
-                <path>Aircraft/737-MAX/Systems/737_pfd.xml</path>
+                <path>Aircraft/737-family/Systems/737_pfd.xml</path>
             </autopilot>
             <autopilot n="1">
-                <path>Aircraft/737-MAX/Systems/737_fmc_fg.xml</path>
+                <path>Aircraft/737-family/Systems/737_fmc_fg.xml</path>
             </autopilot>
             <autopilot n="2">
-                <path>Aircraft/737-MAX/Systems/hydraulics.xml</path>
+                <path>Aircraft/737-family/Systems/hydraulics.xml</path>
             </autopilot>
             <autopilot n="3">
-                <path>Aircraft/737-MAX/Systems/aircraft-systems-logic.xml</path>
+                <path>Aircraft/737-family/Systems/aircraft-systems-logic.xml</path>
             </autopilot>
             <autopilot n="9">
-                <path>Aircraft/737-MAX/Systems/autospeedbrake.xml</path>
+                <path>Aircraft/737-family/Systems/autospeedbrake.xml</path>
             </autopilot>
             <autopilot n="10">
-                <path>Aircraft/737-MAX/Systems/fl2070_sound.xml</path>
+                <path>Aircraft/737-family/Systems/fl2070_sound.xml</path>
             </autopilot>
             <autopilot n="11">
-                <path>Aircraft/737-MAX/Systems/fadec.xml</path>
+                <path>Aircraft/737-family/Systems/fadec.xml</path>
             </autopilot>
             <autopilot n="12">
-                <path>Aircraft/737-MAX/Systems/zoom-views.xml</path>
+                <path>Aircraft/737-family/Systems/zoom-views.xml</path>
             </autopilot>
-            <path>Aircraft/737-MAX/Systems/systems.xml</path>
+            <path>Aircraft/737-family/Systems/systems.xml</path>
             <property-rule n="101">
-                <path>Aircraft/737-MAX/Systems/instrument-filters.xml</path>
+                <path>Aircraft/737-family/Systems/instrument-filters.xml</path>
             </property-rule>
             <wingflexer include="Systems/wingflexer-params.xml" />
             <autopilot n="13">
@@ -67,11 +67,11 @@
         </systems>
 
         <instrumentation>
-            <path>Aircraft/737-MAX/Systems/instrumentation.xml</path>
+            <path>Aircraft/737-family/Systems/instrumentation.xml</path>
         </instrumentation>
 
         <sound>
-            <path>Aircraft/737-MAX/Sounds/737-sound.xml</path>
+            <path>Aircraft/737-family/Sounds/737-sound.xml</path>
         </sound>
 
         <virtual-cockpit archive="y">true</virtual-cockpit>
@@ -958,7 +958,7 @@
                 <category-14> 0 </category-14>                <!-- AUDIO_OUTPUT_LEVEL -->
             </configuration-module>
             <voice>
-                <file-prefix type="string">Aircraft/737-MAX/Sounds/gpws/</file-prefix>
+                <file-prefix type="string">Aircraft/737-family/Sounds/gpws/</file-prefix>
             </voice>
             <inputs>
                 <!-- Module I/O -->
@@ -1211,70 +1211,70 @@
 
     <nasal>
         <pts>
-            <file>Aircraft/737-MAX/Nasal/property-tree-setup.nas</file>
+            <file>Aircraft/737-family/Nasal/property-tree-setup.nas</file>
         </pts>
         <hack>
-            <file>Aircraft/737-MAX/Nasal/hackCanvas.nas</file>
+            <file>Aircraft/737-family/Nasal/hackCanvas.nas</file>
         </hack>
         <acconfig>
-            <file>Aircraft/737-MAX/Nasal/acconfig.nas</file>
+            <file>Aircraft/737-family/Nasal/acconfig.nas</file>
         </acconfig>
         <canvas_isfd>
-            <file>Aircraft/737-MAX/Nasal/Displays/ISFD.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/ISFD.nas</file>
         </canvas_isfd>
         <canvas_mfd>
-            <file>Aircraft/737-MAX/Nasal/Displays/MFD.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/MFD.nas</file>
         </canvas_mfd>
         <canvas_nd>
-            <file>Aircraft/737-MAX/Nasal/Displays/ND.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/ND.nas</file>
         </canvas_nd>
         <canvas_pfd>
-            <file>Aircraft/737-MAX/Nasal/Displays/PFD.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/PFD.nas</file>
         </canvas_pfd>
         <boeing737>
-            <file>Aircraft/737-MAX/Nasal/air-ground.nas</file>
-            <file>Aircraft/737-MAX/Nasal/autostart.nas</file>
-            <file>Aircraft/737-MAX/Nasal/friction.nas</file>
-            <file>Aircraft/737-MAX/Nasal/lighting.nas</file>
-            <file>Aircraft/737-MAX/Nasal/tire-smoke.nas</file>
-            <file>Aircraft/737-MAX/Nasal/ground-services.nas</file>
-            <file>Aircraft/737-MAX/Nasal/systems.nas</file>
-            <file>Aircraft/737-MAX/Nasal/engine-fire.nas</file>
-            <file>Aircraft/737-MAX/Nasal/limits.nas</file>
-            <file>Aircraft/737-MAX/Nasal/doors.nas</file>
-            <file>Aircraft/737-MAX/Nasal/shake.nas</file>
-            <file>Aircraft/737-MAX/Nasal/warnings.nas</file>
-            <file>Aircraft/737-MAX/Nasal/v-speed.nas</file>
+            <file>Aircraft/737-family/Nasal/air-ground.nas</file>
+            <file>Aircraft/737-family/Nasal/autostart.nas</file>
+            <file>Aircraft/737-family/Nasal/friction.nas</file>
+            <file>Aircraft/737-family/Nasal/lighting.nas</file>
+            <file>Aircraft/737-family/Nasal/tire-smoke.nas</file>
+            <file>Aircraft/737-family/Nasal/ground-services.nas</file>
+            <file>Aircraft/737-family/Nasal/systems.nas</file>
+            <file>Aircraft/737-family/Nasal/engine-fire.nas</file>
+            <file>Aircraft/737-family/Nasal/limits.nas</file>
+            <file>Aircraft/737-family/Nasal/doors.nas</file>
+            <file>Aircraft/737-family/Nasal/shake.nas</file>
+            <file>Aircraft/737-family/Nasal/warnings.nas</file>
+            <file>Aircraft/737-family/Nasal/v-speed.nas</file>
         </boeing737>
         <systems>
-            <file>Aircraft/737-MAX/Nasal/electrical.nas</file>
-            <file>Aircraft/737-MAX/Nasal/hydraulics.nas</file>
-            <file>Aircraft/737-MAX/Nasal/engines.nas</file>
+            <file>Aircraft/737-family/Nasal/electrical.nas</file>
+            <file>Aircraft/737-family/Nasal/hydraulics.nas</file>
+            <file>Aircraft/737-family/Nasal/engines.nas</file>
         </systems>
         <itaf>
             <file>Nasal/it-autoflight.nas</file>
             <file>Nasal/custom-fma.nas</file>
         </itaf>
         <reversethrust>
-            <file>Aircraft/737-MAX/Nasal/reverse-thrust.nas</file>
+            <file>Aircraft/737-family/Nasal/reverse-thrust.nas</file>
         </reversethrust>
         <thrust>
-            <file>Aircraft/737-MAX/Nasal/fadec.nas</file>
+            <file>Aircraft/737-family/Nasal/fadec.nas</file>
         </thrust>
         <icing>
-            <file>Aircraft/737-MAX/Nasal/icing.nas</file>
+            <file>Aircraft/737-family/Nasal/icing.nas</file>
         </icing>
         <autopush>
-            <file>Aircraft/737-MAX/Nasal/Autopush/autopush.nas</file>
+            <file>Aircraft/737-family/Nasal/Autopush/autopush.nas</file>
         </autopush>
         <autopush_driver>
-            <file>Aircraft/737-MAX/Nasal/Autopush/driver.nas</file>
+            <file>Aircraft/737-family/Nasal/Autopush/driver.nas</file>
         </autopush_driver>
         <dynarr>
-            <file>Aircraft/737-MAX/Nasal/Autopush/dynarr.nas</file>
+            <file>Aircraft/737-family/Nasal/Autopush/dynarr.nas</file>
         </dynarr>
         <autopush_route>
-            <file>Aircraft/737-MAX/Nasal/Autopush/route.nas</file>
+            <file>Aircraft/737-family/Nasal/Autopush/route.nas</file>
         </autopush_route>
     </nasal>
 

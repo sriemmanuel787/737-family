@@ -129,7 +129,7 @@ var init = func() {
 	
 	var isfdGroup = display.createGroup();
 	
-	isfd = canvasIsfd.new(isfdGroup, "Aircraft/737-MAX/Nasal/Displays/res/ISFD.svg");
+	isfd = canvasIsfd.new(isfdGroup, "Aircraft/737-family/Nasal/Displays/res/ISFD.svg");
 	
 	canvasBase.setup();
 	update.start();
