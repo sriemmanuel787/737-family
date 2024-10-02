@@ -796,8 +796,8 @@ var init = func() {
 	var pfd1Group = pfd1Display.createGroup();
 	var pfd2Group = pfd2Display.createGroup();
 	
-	pfd1 = canvasPfd1.new(pfd1Group, "Aircraft/737-family/Nasal/Displays/res/PFD.svg");
-	pfd2 = canvasPfd2.new(pfd2Group, "Aircraft/737-family/Nasal/Displays/res/PFD.svg");
+	pfd1 = canvasPfd1.new(pfd1Group, "Aircraft/737-family/Nasal/Displays/MAX/res/PFD.svg");
+	pfd2 = canvasPfd2.new(pfd2Group, "Aircraft/737-family/Nasal/Displays/MAX/res/PFD.svg");
 	
 	canvasBase.setup();
 	update.start();

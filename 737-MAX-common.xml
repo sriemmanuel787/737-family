@@ -1220,16 +1220,16 @@
             <file>Aircraft/737-family/Nasal/acconfig.nas</file>
         </acconfig>
         <canvas_isfd>
-            <file>Aircraft/737-family/Nasal/Displays/ISFD.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/MAX/ISFD.nas</file>
         </canvas_isfd>
         <canvas_mfd>
-            <file>Aircraft/737-family/Nasal/Displays/MFD.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/MAX/MFD.nas</file>
         </canvas_mfd>
         <canvas_nd>
-            <file>Aircraft/737-family/Nasal/Displays/ND.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/MAX/ND.nas</file>
         </canvas_nd>
         <canvas_pfd>
-            <file>Aircraft/737-family/Nasal/Displays/PFD.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/MAX/PFD.nas</file>
         </canvas_pfd>
         <boeing737>
             <file>Aircraft/737-family/Nasal/air-ground.nas</file>
