@@ -9,9 +9,9 @@
 		<description>737 MAX FDE</description>
 	</fileheader>
 	
-	<metrics file="Systems/b737-metrics"/>
-	<mass_balance file="Systems/b738-mass-balance"/>
-	<ground_reactions file="Systems/b738-ground-reactions"/>
+	<metrics file="FDE/Config/b738m-metrics"/>
+	<mass_balance file="FDE/Config/b738m-mass-balance"/>
+	<ground_reactions file="FDE/Config/b738m-ground-reactions"/>
 	
 	<propulsion>
 		<engine file="leap-1b28_1">
@@ -125,7 +125,7 @@
 	<system file="b737-fcs"/>
 	
 	<flight_control name="none"/>
-	<aerodynamics file="Systems/b737-aerodynamics.xml"/>
-	<external_reactions file="Systems/b738-external-reactions"/>
+	<aerodynamics file="FDE/Config/b738m-aerodynamics.xml"/>
+	<external_reactions file="FDE/Config/b738m-external-reactions"/>
 
 </fdm_config>

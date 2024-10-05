@@ -5,13 +5,13 @@
 
 <mass_balance>
 	
-	<ixx unit="SLUG*FT2">423457</ixx>
-	<iyy unit="SLUG*FT2">902434</iyy>
-	<izz unit="SLUG*FT2">687164</izz>
+	<ixx unit="SLUG*FT2">732679</ixx>
+	<iyy unit="SLUG*FT2">1896582</iyy>
+	<izz unit="SLUG*FT2">1437215</izz>
 	<ixy unit="SLUG*FT2">0</ixy>
 	<ixz unit="SLUG*FT2">0</ixz>
 	<iyz unit="SLUG*FT2">0</iyz>
-	<emptywt unit="LBS">98500</emptywt> <!-- Check -->
+	<emptywt unit="LBS">98500</emptywt>
 	
 	<location name="CG" unit="M">
 		<x>0.29611</x> <!-- 25% MAC, Check -->
