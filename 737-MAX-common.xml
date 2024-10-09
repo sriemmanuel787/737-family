@@ -1238,7 +1238,7 @@
             <file>Aircraft/737-family/Nasal/lighting.nas</file>
             <file>Aircraft/737-family/Nasal/tire-smoke.nas</file>
             <file>Aircraft/737-family/Nasal/ground-services.nas</file>
-            <file>Aircraft/737-family/Nasal/systems.nas</file>
+            <file>Aircraft/737-family/Nasal/libraries.nas</file>
             <file>Aircraft/737-family/Nasal/engine-fire.nas</file>
             <file>Aircraft/737-family/Nasal/limits.nas</file>
             <file>Aircraft/737-family/Nasal/doors.nas</file>
