@@ -21,7 +21,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-charger-powered eq 1
-				/controls/elec/switches/batt-on eq 1
+				/controls/elec/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
@@ -30,7 +30,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-1/amp gt 0
-				/controls/elec/switches/batt-on eq 1
+				/controls/elec/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
@@ -109,7 +109,7 @@
 		<switch name="/systems/electrical/sources/bat-1/amp">
 			<default value="0" />
 			<test logic="AND" value="2">
-				/controls/elec/switches/batt-on eq 1
+				/controls/elec/batt-on eq 1
 				/systems/electrical/sources/bat-1/volt ge 10
 			</test>
 		</switch>
@@ -119,7 +119,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-charger-powered eq 1
-				/controls/elec/switches/batt-on eq 1
+				/controls/elec/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
@@ -128,7 +128,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-2/amp gt 0
-				/controls/elec/switches/batt-on eq 1
+				/controls/elec/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
@@ -212,7 +212,7 @@
 
 		<pure_gain name="/systems/electrical/sources/idg-l/drive-rpm">
 			<input>/systems/electrical/sources/idg-l/drive-rpm-input</input>
-			<gain>/controls/elec/switches/csd-l-conn</gain>
+			<gain>/controls/elec/csd-l-conn</gain>
 		</pure_gain>
 
 		<fcs_function name="/systems/electrical/sources/idg-l/csd-gearbox-ratio-cmd">
@@ -287,7 +287,7 @@
 
 		<pure_gain name="/systems/electrical/sources/idg-r/drive-rpm">
 			<input>/systems/electrical/sources/idg-r/drive-rpm-input</input>
-			<gain>/controls/elec/switches/csd-r-conn</gain>
+			<gain>/controls/elec/csd-r-conn</gain>
 		</pure_gain>
 
 		<fcs_function name="/systems/electrical/sources/idg-r/csd-gearbox-ratio-cmd">
@@ -409,7 +409,7 @@
 			<function>
 				<ifthen>
 					<eq>
-						<property>/controls/elec/switches/grd-power</property>
+						<property>/controls/elec/grd-power</property>
 						<value>1</value>
 					</eq>
 					<value>115</value>
@@ -435,7 +435,7 @@
 		<switch name="/systems/electrical/relay/idg-ac-gen-l/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/controls/elec/switches/gen-l eq 1
+				/controls/elec/gen-l eq 1
 				/systems/electrical/sources/idg-l/output-volt ge 112
 			</test>
 		</switch>
@@ -443,7 +443,7 @@
 		<switch name="/systems/electrical/relay/idg-ac-gen-r/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/controls/elec/switches/gen-r eq 1
+				/controls/elec/gen-r eq 1
 				/systems/electrical/sources/idg-r/output-volt ge 112
 			</test>
 		</switch>
@@ -453,7 +453,7 @@
 		<switch name="/systems/electrical/relay/apu-ac-gen-l/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				<!-- Priority: IDG --> /controls/elec/switches/apu-gen-l eq 1
+				<!-- Priority: IDG --> /controls/elec/apu-gen-l eq 1
 				/systems/electrical/relay/idg-ac-gen-l/contact-pos ne 1
 				/systems/electrical/sources/apu/output-volt ge 112 </test>
 		</switch>
@@ -461,7 +461,7 @@
 		<switch name="/systems/electrical/relay/apu-ac-gen-r/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				<!-- Priority: IDG --> /controls/elec/switches/apu-gen-r eq 1
+				<!-- Priority: IDG --> /controls/elec/apu-gen-r eq 1
 				/systems/electrical/relay/idg-ac-gen-r/contact-pos ne 1
 				/systems/electrical/sources/apu/output-volt ge 112 </test>
 		</switch>
@@ -470,7 +470,7 @@
 		<switch name="/systems/electrical/relay/ext-ac-gen/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				<!-- Priority: IDG, APU --> /controls/elec/switches/ext-pwr-l eq 1
+				<!-- Priority: IDG, APU --> /controls/elec/ext-pwr-l eq 1
 				/systems/electrical/relay/idg-ac-gen-l/contact-pos ne 1
 				/systems/electrical/relay/apu-ac-gen-l/contact-pos ne 1
 				/systems/electrical/sources/ext/output-volt ge 112 </test>
@@ -480,14 +480,14 @@
 		<switch name="/systems/electrical/ac-tie">
 			<default value="0" />
 
-			<test logic="AND" value="1"> /controls/elec/switches/ac-tie eq 1
+			<test logic="AND" value="1"> /controls/elec/ac-tie eq 1
 				/systems/electrical/bus/ac-gen-l ge 112 <test logic="OR">
 				/systems/electrical/bus/ac-gen-r lt 112
 					/systems/electrical/bus/ac-gen-r-src eq 4
 				</test>
 			</test>
 
-			<test logic="AND" value="1"> /controls/elec/switches/ac-tie eq 1
+			<test logic="AND" value="1"> /controls/elec/ac-tie eq 1
 				/systems/electrical/bus/ac-gen-r ge 112 <test logic="OR">
 				/systems/electrical/bus/ac-gen-l lt 112
 					/systems/electrical/bus/ac-gen-l-src eq 4
@@ -652,7 +652,7 @@
 		<switch name="/systems/electrical/relay/apu-ac-gndsvc/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/controls/elec/switches/apu-gndsvc eq 1
+				/controls/elec/apu-gndsvc eq 1
 				/systems/electrical/sources/apu/output-volt ge 112
 			</test>
 		</switch>
@@ -671,7 +671,7 @@
 
 		<switch name="/systems/electrical/relay/ext-ac-gndsvc/contact-pos">
 			<default value="0" />
-			<test logic="AND" value="1"><!-- Priority: APU --> /controls/elec/switches/ext-gndsvc eq 1
+			<test logic="AND" value="1"><!-- Priority: APU --> /controls/elec/ext-gndsvc eq 1
 				/systems/electrical/relay/apu-ac-gndsvc/contact-pos ne 1
 				/systems/electrical/sources/ext/output-volt ge 112 </test>
 		</switch>
@@ -885,7 +885,7 @@
 		<switch name="/systems/electrical/relay/dc-tie-dc-l/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/controls/elec/switches/dc-tie eq 1
+				/controls/elec/dc-tie eq 1
 				/systems/failures/electrical/dc-tie ne 1
 			</test>
 		</switch>
@@ -900,7 +900,7 @@
 		<switch name="/systems/electrical/relay/dc-tie-dc-r/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/controls/elec/switches/dc-tie eq 1
+				/controls/elec/dc-tie eq 1
 				/systems/failures/electrical/dc-tie ne 1
 			</test>
 		</switch>
@@ -1040,7 +1040,7 @@
 		<scheduled_gain name="/systems/electrical/bus/dc-bat">
 			<description>Battery Voltage Step Down/Up (Buck/Boost) Regulator</description>
 			<input>/systems/electrical/bus/dc-bat-direct</input>
-			<gain>/controls/elec/switches/batt-on</gain>
+			<gain>/controls/elec/batt-on</gain>
 			<table>
 				<independentVar lookup="row">/systems/electrical/bus/dc-bat-direct</independentVar>
 				<tableData>
@@ -1066,7 +1066,7 @@
 			<function>
 				<table><!-- DC to AC converter -->
 					<independentVar lookup="row">/systems/electrical/bus/dc-bat</independentVar>
-					<independentVar lookup="column">/controls/elec/switches/emer-pwr</independentVar>
+					<independentVar lookup="column">/controls/elec/emer-pwr</independentVar>
 					<tableData>
 						0 1
 						0 0 0
@@ -1103,7 +1103,7 @@
 		</switch>
 
 		<actuator name="/systems/electrical/relay/ac-inv-src-emer-ac/contact-final">
-			<input>/controls/elec/switches/emer-pwr</input>
+			<input>/controls/elec/emer-pwr</input>
 			<rate_limit>4.8</rate_limit>
 		</actuator>
 
@@ -1142,7 +1142,7 @@
 		<switch name="/systems/electrical/relay/dc-bat-src-emer-dc/contact-pos">
 			<default value="0" />
 			<test value="1">
-				/controls/elec/switches/emer-pwr eq 1
+				/controls/elec/emer-pwr eq 1
 			</test>
 		</switch>
 
@@ -1163,7 +1163,7 @@
 		<switch name="/systems/electrical/sources/bat-charger-powered">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/controls/elec/switches/emer-pwr ne 1
+				/controls/elec/emer-pwr ne 1
 				/systems/electrical/bus/ac-gndsvc ge 112
 			</test>
 		</switch>
@@ -1348,7 +1348,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/bus/dc-bat ge 24
-				/controls/elec/switches/emer-pwr eq 1
+				/controls/elec/emer-pwr eq 1
 			</test>
 		</switch>
 
