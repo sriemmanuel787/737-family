@@ -430,5 +430,233 @@
 				</ifthen>
 			</function>
 		</fcs_function>
+
+		<!-- AC L Bus/AC Gen L Bus -->
+		<switch name="/systems/electrical/bus/ac-gen-l-src">
+			<default value="0" /> <!-- OFF -->
+			<test value="1"> <!-- IDG --> /systems/electrical/relay/idg-ac-gen-l/contact-pos eq 1 </test>
+			<test value="2"> <!-- APU --> /systems/electrical/relay/apu-ac-gen-l/contact-pos eq 1 </test>
+			<test value="4"> <!-- AC TIE --> /systems/electrical/relay/ac-tie-ac-gen-l/contact-pos eq 1 </test>
+		</switch>
+
+		<fcs_function name="/systems/electrical/bus/ac-gen-l-pre">
+			<function>
+				<max>
+					<property>/systems/electrical/relay/idg-ac-gen-l/output-volt</property>
+					<property>/systems/electrical/relay/apu-ac-gen-l/output-volt</property>
+				</max>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="/systems/electrical/bus/ac-gen-l">
+			<function>
+				<max>
+					<property>/systems/electrical/bus/ac-gen-l-pre</property>
+					<property>/systems/electrical/relay/ac-tie-ac-gen-l/output</property>
+				</max>
+			</function>
+		</fcs_function>
+
+		<pure_gain name="/systems/electrical/bus/ac-l">
+			<input>/systems/electrical/bus/ac-gen-l</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/ground-l">
+			<input>/systems/electrical/bus/ac-l</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/galley-l">
+			<input>/systems/electrical/bus/ac-l</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/standby-l">
+			<input>/systems/electrical/bus/ac-l</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/main-l">
+			<input>/systems/electrical/bus/ac-l</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/inst-ac-l"><!-- AC transformer -->
+			<input>/systems/electrical/bus/ac-l</input>
+			<gain>0.24347826087</gain>
+		</pure_gain>
+
+		<!-- AC R Bus/AC Gen R Bus -->
+		<switch name="/systems/electrical/bus/ac-gen-r-src">
+			<default value="0" /> <!-- OFF -->
+			<test value="1"> <!-- IDG --> /systems/electrical/relay/idg-ac-gen-r/contact-pos eq 1 </test>
+			<test value="2"> <!-- APU --> /systems/electrical/relay/apu-ac-gen-r/contact-pos eq 1 </test>
+			<test value="4"> <!-- AC TIE --> /systems/electrical/relay/ac-tie-ac-gen-r/contact-pos eq 1 </test>
+		</switch>
+
+		<fcs_function name="/systems/electrical/bus/ac-gen-r-pre">
+			<function>
+				<max>
+					<property>/systems/electrical/relay/idg-ac-gen-r/output-volt</property>
+					<property>/systems/electrical/relay/apu-ac-gen-r/output-volt</property>
+				</max>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="/systems/electrical/bus/ac-gen-r">
+			<function>
+				<max>
+					<property>/systems/electrical/bus/ac-gen-r-pre</property>
+					<property>/systems/electrical/relay/ac-tie-ac-gen-r/output</property>
+				</max>
+			</function>
+		</fcs_function>
+
+		<pure_gain name="/systems/electrical/bus/ac-r">
+			<input>/systems/electrical/bus/ac-gen-r</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/ground-r">
+			<input>/systems/electrical/bus/ac-r</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/galley-r">
+			<input>/systems/electrical/bus/ac-r</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/standby-r">
+			<input>/systems/electrical/bus/ac-r</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/main-r">
+			<input>/systems/electrical/bus/ac-r</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/electrical/bus/inst-ac-r"><!-- AC transformer -->
+			<input>/systems/electrical/bus/ac-r</input>
+			<gain>0.24347826087</gain>
+		</pure_gain>
+
+		<!-- Transformer Rectifier Relays -->
+		<switch name="/systems/electrical/relay/ac-l-tr-1/contact-pos">
+			<default value="0" />
+			<test value="1">
+				/systems/electrical/bus/ac-l ge 112
+			</test>
+		</switch>
+
+		<switch name="/systems/electrical/relay/ac-l-tr-1/output">
+			<default value="0" />
+			<test value="/systems/electrical/bus/ac-l">
+				/systems/electrical/relay/ac-l-tr-1/contact-pos eq 1
+			</test>
+		</switch>
+		
+		<switch name="/systems/electrical/relay/ac-r-tr-2/contact-pos">
+			<default value="0" />
+			<test value="1">
+				/systems/electrical/bus/ac-r ge 112
+			</test>
+		</switch>
+
+		<switch name="/systems/electrical/relay/ac-r-tr-2/output">
+			<default value="0" />
+			<test value="/systems/electrical/bus/ac-r">
+				/systems/electrical/relay/ac-r-tr-2/contact-pos eq 1
+			</test>
+		</switch>
+		
+		<switch name="/systems/electrical/relay/ac-r-tr-3/contact-pos">
+			<default value="0" />
+			<test value="1">
+				/systems/electrical/bus/ac-r ge 112
+			</test>
+		</switch>
+
+		<switch name="/systems/electrical/relay/ac-r-tr-3/output">
+			<default value="0" />
+			<test value="/systems/electrical/bus/ac-r">
+				/systems/electrical/relay/ac-r-tr-3/contact-pos eq 1
+			</test>
+		</switch>
+
+		<!-- Transformer Rectifiers -->
+		<scheduled_gain name="/systems/electrical/sources/tr-1/output-volt">
+			<input>/systems/electrical/relay/ac-l-tr-1/output</input>
+			<table><!-- AC to DC converter -->
+				<independentVar lookup="row">/systems/electrical/relay/ac-l-tr-1/output</independentVar>
+				<tableData>
+					112 0.21428571429
+					115 0.24347826087
+					118 0.24576271186
+				</tableData>
+			</table>
+		</scheduled_gain>
+
+		<fcs_function name="/systems/electrical/sources/tr-1/output-amp">
+			<function>
+				<table>
+					<independentVar lookup="row">/systems/electrical/sources/tr-1/output-volt</independentVar>
+					<tableData>
+						0 0
+						10 75
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<scheduled_gain name="/systems/electrical/sources/tr-2/output-volt">
+			<input>/systems/electrical/relay/ac-r-tr-2/output</input>
+			<table><!-- AC to DC converter -->
+				<independentVar lookup="row">/systems/electrical/relay/ac-r-tr-2/output</independentVar>
+				<tableData>
+					112 0.21428571429
+					115 0.24347826087
+					118 0.24576271186
+				</tableData>
+			</table>
+		</scheduled_gain>
+
+		<fcs_function name="/systems/electrical/sources/tr-2/output-amp">
+			<function>
+				<table>
+					<independentVar lookup="row">/systems/electrical/sources/tr-2/output-volt</independentVar>
+					<tableData>
+						0 0
+						10 75
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<scheduled_gain name="/systems/electrical/sources/tr-3/output-volt">
+			<input>/systems/electrical/relay/ac-r-tr-3/output</input>
+			<table><!-- AC to DC converter -->
+				<independentVar lookup="row">/systems/electrical/relay/ac-r-tr-3/output</independentVar>
+				<tableData>
+					112 0.21428571429
+					115 0.24347826087
+					118 0.24576271186
+				</tableData>
+			</table>
+		</scheduled_gain>
+
+		<fcs_function name="/systems/electrical/sources/tr-3/output-amp">
+			<function>
+				<table>
+					<independentVar lookup="row">/systems/electrical/sources/tr-3/output-volt</independentVar>
+					<tableData>
+						0 0
+						10 75
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
 	</channel>
 </system>
