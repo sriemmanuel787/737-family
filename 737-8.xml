@@ -744,7 +744,6 @@
                 <default value="0.0" />
                 <test logic="AND" value="accelerations/Ny">
 					aero/h_b-mac-ft GE 1
-					/b737/controls/flight/yaw-damper NE 0
                 </test>
             </switch>
 
@@ -772,7 +771,6 @@
             <switch name="Yaw Damper Final">
                 <default value="0.0" />
                 <test value="fcs/yaw-damper-sum">
-					/b737/controls/flight/yaw-damper ne 0
                 </test>
             </switch>
 

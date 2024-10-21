@@ -4,9 +4,7 @@
 
     <sim>
         <minimum-fg-version>2020.3.14</minimum-fg-version>
-        <author>Original by Gabriel Hernandez (YV3399), Joshua Davidson (Octal450), legoboyvdlp,
-            RenanMsV (BR-RVD), adapted by SP-NTX, Captain Jake, Marsdolphin, Israel Emmanuel
-            (naviat)</author>
+        <author>adapted by SP-NTX, Captain Jake, Marsdolphin, naviat, Octal450</author>
         <flight-model>jsb</flight-model>
         <gui n="0" include="gui/it-gui.xml" />
         <hud n="0">
@@ -15,38 +13,6 @@
         </hud>
 
         <systems>
-            <!-- Disable the generic electrical system -->
-            <electrical>
-                <path></path>
-            </electrical>
-            <autopilot n="0">
-                <path>Aircraft/737-family/Systems/737_pfd.xml</path>
-            </autopilot>
-            <autopilot n="1">
-                <path>Aircraft/737-family/Systems/737_fmc_fg.xml</path>
-            </autopilot>
-            <autopilot n="2">
-                <path>Aircraft/737-family/Systems/hydraulics.xml</path>
-            </autopilot>
-            <autopilot n="3">
-                <path>Aircraft/737-family/Systems/aircraft-systems-logic.xml</path>
-            </autopilot>
-            <autopilot n="9">
-                <path>Aircraft/737-family/Systems/autospeedbrake.xml</path>
-            </autopilot>
-            <autopilot n="10">
-                <path>Aircraft/737-family/Systems/fl2070_sound.xml</path>
-            </autopilot>
-            <autopilot n="11">
-                <path>Aircraft/737-family/Systems/fadec.xml</path>
-            </autopilot>
-            <autopilot n="12">
-                <path>Aircraft/737-family/Systems/zoom-views.xml</path>
-            </autopilot>
-            <path>Aircraft/737-family/Systems/systems.xml</path>
-            <property-rule n="101">
-                <path>Aircraft/737-family/Systems/instrument-filters.xml</path>
-            </property-rule>
             <wingflexer include="Systems/wingflexer-params.xml" />
             <autopilot n="13">
                 <name>wing flexer property rule</name>
@@ -168,67 +134,8 @@
 
         <flight-recorder include="Systems/flight-recorder.xml" />
 
-        <menubar>
-            <default>
-                <menu n="100">
-                    <label>737 MAX</label>
-                    <enabled type="bool">true</enabled>
-                    <item>
-                        <label>Aircraft Config</label>
-                        <binding>
-                            <command>dialog-show</command>
-                            <dialog-name>acconfig-main</dialog-name>
-                        </binding>
-                    </item>
-                    <item>
-                        <label>Select Livery</label>
-                        <binding>
-                            <command>nasal</command>
-                            <script>aircraft.livery.dialog.toggle();</script>
-                        </binding>
-                    </item>
-                    <item n="10">
-                        <label>Pushback</label>
-                        <name>autopush</name>
-                        <binding>
-                            <command>dialog-show</command>
-                            <dialog-name>autopush</dialog-name>
-                        </binding>
-                    </item>
-                </menu>
-            </default>
-        </menubar>
-
-        <checklists include="737-MAX-checklist.xml" />
+        <checklists include="737-checklist.xml" />
     </sim>
-
-    <b737>
-        <controls>
-            <flight>
-                <spoilers-lever-pos type="double">0</spoilers-lever-pos>
-                <yaw-damper type="bool">1</yaw-damper>
-            </flight>
-        </controls>
-        <sensors>
-            <air-ground type="bool">1</air-ground>
-            <main-gear-spin type="bool">false</main-gear-spin>
-            <was-in-air type="bool">false</was-in-air>
-            <lift-off-time type="double">0</lift-off-time>
-            <landing-time type="double">0</landing-time>
-            <landing type="bool">true</landing>
-        </sensors>
-        <sound>
-            <apdisco type="bool">0</apdisco>
-            <spoiler-auto type="bool">0</spoiler-auto>
-            <stab-trim type="bool">0</stab-trim>
-            <mcp-last-change type="double">0</mcp-last-change>
-        </sound>
-        <ap-hide-helper type="bool">0</ap-hide-helper>
-        <at-helper type="bool">1</at-helper>
-        <warnings>
-            <altitude-alert-mode type="int">0</altitude-alert-mode>            <!-- 0 - acq, 1 - deviation -->
-        </warnings>
-    </b737>
 
     <consumables>
         <fuel>
@@ -254,23 +161,6 @@
     </consumables>
 
     <controls>
-        <bleed>
-            <aft-cab-air type="int">0</aft-cab-air>
-            <apu-on type="bool">0</apu-on>
-            <cont-cab-air type="int">0</cont-cab-air>
-            <fwd-cab-air type="int">0</fwd-cab-air>
-            <isolation-valve type="bool">0</isolation-valve>
-            <l-recirc-fan type="int">0</l-recirc-fan>
-            <n1-on type="bool">0</n1-on>
-            <n2-on type="bool">0</n2-on>
-            <ovht-test type="bool">0</ovht-test>
-            <pack-l type="int">0</pack-l>
-            <pack-r type="int">0</pack-r>
-            <r-recirc-fan type="int">0</r-recirc-fan>
-            <supply type="int">0</supply>
-            <trim-air type="bool">0</trim-air>
-            <trip-reset type="bool">0</trip-reset>
-        </bleed>
         <cabin>
             <cabin-valve type="bool">0</cabin-valve>
             <cabin-valve type="int">0</cabin-valve>
@@ -304,10 +194,6 @@
             <ife type="bool">0</ife>
             <standby-pwr type="int">0</standby-pwr>
         </elec>
-        <elt>
-            <elt-cover type="bool">0</elt-cover>
-            <elt-switch type="bool">0</elt-switch>
-        </elt>
         <eng>
             <apu type="int">0</apu>
             <eng-mode type="int">0</eng-mode>
@@ -316,11 +202,16 @@
         </eng>
         <flt-control>
             <alt-flaps-arm type="bool">0</alt-flaps-arm>
+            <alt-flaps-arm-cover type="bool">0</alt-flaps-arm-cover>
             <alt-flaps type="int">0</alt-flaps>
             <rudder-a type="int">0</rudder-a>
+            <rudder-a-cover type="bool">0</rudder-a-cover>
             <rudder-b type="int">0</rudder-b>
+            <rudder-b-cover type="bool">0</rudder-b-cover>
             <spoiler-a type="bool">0</spoiler-a>
+            <spoiler-a-cover type="bool">0</spoiler-a-cover>
             <spoiler-b type="bool">0</spoiler-b>
+            <spoiler-b-cover type="bool">0</spoiler-b-cover>
             <yaw-damper type="bool">0</yaw-damper>
         </flt-control>
         <fuel>
@@ -335,8 +226,6 @@
         <gear>
             <autobrake type="int">0</autobrake>
             <gear-handle type="bool">0</gear-handle>
-            <nose-wheel-steer-cover type="bool">0</nose-wheel-steer-cover>
-            <nose-wheel-steer-switch type="bool">0</nose-wheel-steer-switch>
             <tiller type="int">0</tiller>
         </gear>
         <gpws>
@@ -344,8 +233,6 @@
             <flap-inhibit-switch type="bool">0</flap-inhibit-switch>
             <gear-inhibit-cover type="bool">0</gear-inhibit-cover>
             <gear-inhibit-switch type="bool">0</gear-inhibit-switch>
-            <runway-inhibit-cover type="bool">0</runway-inhibit-cover>
-            <runway-inhibit-switch type="bool">0</runway-inhibit-switch>
             <terr-inhibit-cover type="bool">0</terr-inhibit-cover>
             <terr-inhibit-switch type="bool">0</terr-inhibit-switch>
         </gpws>
@@ -377,10 +264,6 @@
             <ap-disc-test-2 type="bool">0</ap-disc-test-2>
             <background type="int">0</background>
             <breaker type="int">0</breaker>
-            <du-1 type="int">0</du-1>
-            <du-2 type="int">0</du-2>
-            <du-3 type="int">0</du-3>
-            <du-4 type="int">0</du-4>
             <exit type="int">0</exit>
             <landing-l type="bool">0</landing-l>
             <landing-r type="bool">0</landing-r>
@@ -395,16 +278,9 @@
             <wheel-well type="bool">0</wheel-well>
             <wing type="bool">0</wing>
         </lighting>
-        <mfd>
-            <selector-mode-1 type="bool">0</selector-mode-1>
-            <selector-mode-2 type="bool">0</selector-mode-2>
-            <cursor-1 type="int">0</cursor-1>
-            <cursor-2 type="int">0</cursor-2>
-        </mfd>
         <nav>
             <control-src type="int">0</control-src>
             <display-src type="int">0</display-src>
-            <fmc type="int">0</fmc>
             <irs type="int">0</irs>
             <vhf-nav type="int">0</vhf-nav>
         </nav>
@@ -893,16 +769,6 @@
             <spin type="double">1</spin>
         </turn-indicator>
 
-        <cdu>
-            <display>IDENT</display>
-            <ident>
-                <model>737</model>
-                <engines>CFM LEAP 1B</engines>
-            </ident>
-            <input type="string" />
-            <serviceable type="bool">true</serviceable>
-        </cdu>
-
         <fmc>
             <to-flap type="double">5</to-flap>
             <derated-to>
@@ -1026,36 +892,6 @@
         </settings>
     </it-autoflight>
 
-    <lighting>
-        <interior type="double">0</interior>
-        <panel-aft-norm type="double">0</panel-aft-norm>
-        <panel-aft-flood type="double">0</panel-aft-flood>
-        <panel-fwd-norm type="double">0</panel-fwd-norm>
-        <panel-afds-norm type="double">0</panel-afds-norm>
-        <mfd-captL type="double">1</mfd-captL>
-        <mfd-captR type="double">1</mfd-captR>
-        <mfd-foL type="double">1</mfd-foL>
-        <mfd-foR type="double">1</mfd-foR>
-        <cockpit type="bool">false</cockpit>
-        <dome-norm type="double">0</dome-norm>
-        <overhead-panel-norm type="double">0</overhead-panel-norm>
-    </lighting>
-
-    <services>
-        <baggage n="0">
-            <enable type="bool">0</enable>
-        </baggage>
-        <baggage n="1">
-            <enable type="bool">0</enable>
-        </baggage>
-        <chocks>
-            <enable type="bool">1</enable>
-        </chocks>
-        <fuel-truck>
-            <enable type="bool">0</enable>
-        </fuel-truck>
-    </services>
-
     <systems>
         <acconfig n="0">
             <autoconfig-running type="bool">0</autoconfig-running>
@@ -1110,10 +946,6 @@
                 <fwd-cargo type="bool">0</fwd-cargo>
                 <fwd-entry type="bool">0</fwd-entry>
                 <fwd-service type="bool">0</fwd-service>
-                <left-aft-overwing type="bool">0</left-aft-overwing>
-                <left-fwd-overwing type="bool">0</left-fwd-overwing>
-                <right-aft-overwing type="bool">0</right-aft-overwing>
-                <right-fwd-overwing type="bool">0</right-fwd-overwing>
             </lights>
         </doors>
         <elec>
@@ -1142,7 +974,6 @@
                 <rudder-a-low-pressure type="bool">0</rudder-a-low-pressure>
                 <rudder-b-low-pressure type="bool">0</rudder-b-low-pressure>
                 <speed-trim-fail type="bool">0</speed-trim-fail>
-                <spoilers type="bool">0</spoilers>
                 <stby-low-pressure type="bool">0</stby-low-pressure>
                 <stby-low-quantity type="bool">0</stby-low-quantity>
                 <stby-rud-on type="bool">0</stby-rud-on>
@@ -1198,32 +1029,8 @@
             <file>Aircraft/737-family/Nasal/acconfig.nas</file>
         </acconfig>
         <canvas_isfd>
-            <file>Aircraft/737-family/Nasal/Displays/MAX/ISFD.nas</file>
+            <file>Aircraft/737-family/Nasal/Displays/ISFD.nas</file>
         </canvas_isfd>
-        <canvas_mfd>
-            <file>Aircraft/737-family/Nasal/Displays/MAX/MFD.nas</file>
-        </canvas_mfd>
-        <canvas_nd>
-            <file>Aircraft/737-family/Nasal/Displays/MAX/ND.nas</file>
-        </canvas_nd>
-        <canvas_pfd>
-            <file>Aircraft/737-family/Nasal/Displays/MAX/PFD.nas</file>
-        </canvas_pfd>
-        <boeing737>
-            <file>Aircraft/737-family/Nasal/air-ground.nas</file>
-            <file>Aircraft/737-family/Nasal/autostart.nas</file>
-            <file>Aircraft/737-family/Nasal/friction.nas</file>
-            <file>Aircraft/737-family/Nasal/lighting.nas</file>
-            <file>Aircraft/737-family/Nasal/tire-smoke.nas</file>
-            <file>Aircraft/737-family/Nasal/ground-services.nas</file>
-            <file>Aircraft/737-family/Nasal/libraries.nas</file>
-            <file>Aircraft/737-family/Nasal/engine-fire.nas</file>
-            <file>Aircraft/737-family/Nasal/limits.nas</file>
-            <file>Aircraft/737-family/Nasal/doors.nas</file>
-            <file>Aircraft/737-family/Nasal/shake.nas</file>
-            <file>Aircraft/737-family/Nasal/warnings.nas</file>
-            <file>Aircraft/737-family/Nasal/v-speed.nas</file>
-        </boeing737>
         <systems>
             <file>Aircraft/737-family/Nasal/electrical.nas</file>
             <file>Aircraft/737-family/Nasal/hydraulics.nas</file>
@@ -1233,12 +1040,6 @@
             <file>Nasal/it-autoflight.nas</file>
             <file>Nasal/custom-fma.nas</file>
         </itaf>
-        <reversethrust>
-            <file>Aircraft/737-family/Nasal/reverse-thrust.nas</file>
-        </reversethrust>
-        <thrust>
-            <file>Aircraft/737-family/Nasal/fadec.nas</file>
-        </thrust>
         <icing>
             <file>Aircraft/737-family/Nasal/icing.nas</file>
         </icing>

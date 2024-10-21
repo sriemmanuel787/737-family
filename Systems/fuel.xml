@@ -10,11 +10,11 @@
         <switch name="fuel/pump-left-on">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-la EQ 1
+                /controls/fuel/pump-la EQ 1
                 propulsion/tank[0]/contents-lbs GT 0
             </test>
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-lf EQ 1
+                /controls/fuel/pump-lf EQ 1
                 propulsion/tank[0]/contents-lbs GT 0
             </test>
         </switch>
@@ -22,11 +22,11 @@
         <switch name="fuel/pump-right-on">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-ra EQ 1
+                /controls/fuel/pump-ra EQ 1
                 propulsion/tank[1]/contents-lbs GT 0
             </test>
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-rf EQ 1
+                /controls/fuel/pump-rf EQ 1
                 propulsion/tank[1]/contents-lbs GT 0
             </test>
         </switch>
@@ -34,7 +34,7 @@
         <switch name="fuel/pump-left-center-on">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-cl EQ 1
+                /controls/fuel/pump-cl EQ 1
                 propulsion/tank[2]/contents-lbs GT 0
             </test>
         </switch>
@@ -42,7 +42,7 @@
         <switch name="fuel/pump-right-center-on">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-cr EQ 1
+                /controls/fuel/pump-cr EQ 1
                 propulsion/tank[2]/contents-lbs GT 0
             </test>
         </switch>
@@ -55,7 +55,7 @@
                 propulsion/tank[3]/contents-lbs LT 0.25
             </test>
             <test logic="AND" value="3.5">
-                /controls/fuel/switches/pump-cl EQ 1
+                /controls/fuel/pump-cl EQ 1
                 propulsion/tank[2]/contents-lbs GT 0
                 propulsion/tank[3]/contents-lbs LT 0.25
             </test>
@@ -64,13 +64,13 @@
                 fuel/pump-right-on EQ 1
                 propulsion/tank[1]/contents-lbs GT 0
                 propulsion/tank[3]/contents-lbs LT 0.25
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test logic="AND" value="3.5">
-                /controls/fuel/switches/pump-cr EQ 1
+                /controls/fuel/pump-cr EQ 1
                 propulsion/tank[2]/contents-lbs GT 0
                 propulsion/tank[3]/contents-lbs LT 0.25
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <output>propulsion/tank[3]/external-flow-rate-pps</output>
         </switch>
@@ -81,13 +81,13 @@
                 fuel/pump-left-on EQ 1
                 propulsion/tank[0]/contents-lbs GT 0
                 propulsion/tank[4]/contents-lbs LT 0.25
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test logic="AND" value="3.5">
-                /controls/fuel/switches/pump-cl EQ 1
+                /controls/fuel/pump-cl EQ 1
                 propulsion/tank[2]/contents-lbs GT 0
                 propulsion/tank[4]/contents-lbs LT 0.25
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
 
             <test logic="AND" value="3.5">
@@ -96,7 +96,7 @@
                 propulsion/tank[4]/contents-lbs LT 0.25
             </test>
             <test logic="AND" value="3.5">
-                /controls/fuel/switches/pump-cr EQ 1
+                /controls/fuel/pump-cr EQ 1
                 propulsion/tank[2]/contents-lbs GT 0
                 propulsion/tank[4]/contents-lbs LT 0.25
             </test>
@@ -120,42 +120,42 @@
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="-fuel/left-pipe-feed">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test value="-fuel/left-pipe-feed">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="-fuel/left-pipe-feed">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 1
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="-fuel/left-pipe-feed">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 1
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="-fuel/left-pipe-feed-half">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
         </switch>
 
@@ -166,14 +166,14 @@
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test value="-fuel/left-pipe-feed-half">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
         </switch>
 
@@ -184,84 +184,84 @@
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 0
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 0
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
-            </test>
-            <test value="0">
-                fuel/pump-left-on EQ 0
-                fuel/pump-left-center-on EQ 0
-                fuel/pump-right-center-on EQ 1
-                fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 0
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 1
+                fuel/pump-right-on EQ 0
+                /controls/fuel/crossfeed EQ 0
+            </test>
+            <test value="0">
+                fuel/pump-left-on EQ 0
+                fuel/pump-left-center-on EQ 0
+                fuel/pump-right-center-on EQ 1
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 1
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 1
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 0
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
         </switch>
 
@@ -272,14 +272,14 @@
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test value="-fuel/right-pipe-feed-half">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
         </switch>
 
@@ -290,42 +290,42 @@
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="-fuel/right-pipe-feed">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="-fuel/right-pipe-feed">
                 fuel/pump-left-on EQ 0
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test value="-fuel/right-pipe-feed">
                 fuel/pump-left-on EQ 0
                 fuel/pump-left-center-on EQ 1
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="-fuel/right-pipe-feed">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 1
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="-fuel/right-pipe-feed-half">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
         </switch>
 
@@ -336,84 +336,84 @@
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 0
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
-            </test>
-            <test value="0">
-                fuel/pump-left-on EQ 0
-                fuel/pump-left-center-on EQ 1
-                fuel/pump-right-center-on EQ 0
-                fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
-            </test>
-            <test value="0">
-                fuel/pump-left-on EQ 1
-                fuel/pump-left-center-on EQ 1
-                fuel/pump-right-center-on EQ 0
-                fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 0
-            </test>
-            <test value="0">
-                fuel/pump-left-on EQ 1
-                fuel/pump-left-center-on EQ 0
-                fuel/pump-right-center-on EQ 0
-                fuel/pump-right-on EQ 0
-                /controls/fuel/switches/crossfeed EQ 1
-            </test>
-            <test value="0">
-                fuel/pump-left-on EQ 0
-                fuel/pump-left-center-on EQ 0
-                fuel/pump-right-center-on EQ 0
-                fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
-            </test>
-            <test value="0">
-                fuel/pump-left-on EQ 1
-                fuel/pump-left-center-on EQ 0
-                fuel/pump-right-center-on EQ 0
-                fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
-            </test>
-            <test value="0">
-                fuel/pump-left-on EQ 0
-                fuel/pump-left-center-on EQ 0
-                fuel/pump-right-center-on EQ 0
-                fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 0
                 fuel/pump-left-center-on EQ 1
                 fuel/pump-right-center-on EQ 0
-                fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                fuel/pump-right-on EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 1
                 fuel/pump-right-center-on EQ 0
+                fuel/pump-right-on EQ 0
+                /controls/fuel/crossfeed EQ 0
+            </test>
+            <test value="0">
+                fuel/pump-left-on EQ 1
+                fuel/pump-left-center-on EQ 0
+                fuel/pump-right-center-on EQ 0
+                fuel/pump-right-on EQ 0
+                /controls/fuel/crossfeed EQ 1
+            </test>
+            <test value="0">
+                fuel/pump-left-on EQ 0
+                fuel/pump-left-center-on EQ 0
+                fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 0
+                /controls/fuel/crossfeed EQ 0
             </test>
             <test value="0">
                 fuel/pump-left-on EQ 1
                 fuel/pump-left-center-on EQ 0
                 fuel/pump-right-center-on EQ 0
                 fuel/pump-right-on EQ 1
-                /controls/fuel/switches/crossfeed EQ 1
+                /controls/fuel/crossfeed EQ 0
+            </test>
+            <test value="0">
+                fuel/pump-left-on EQ 0
+                fuel/pump-left-center-on EQ 0
+                fuel/pump-right-center-on EQ 0
+                fuel/pump-right-on EQ 1
+                /controls/fuel/crossfeed EQ 1
+            </test>
+            <test value="0">
+                fuel/pump-left-on EQ 0
+                fuel/pump-left-center-on EQ 1
+                fuel/pump-right-center-on EQ 0
+                fuel/pump-right-on EQ 1
+                /controls/fuel/crossfeed EQ 0
+            </test>
+            <test value="0">
+                fuel/pump-left-on EQ 1
+                fuel/pump-left-center-on EQ 1
+                fuel/pump-right-center-on EQ 0
+                fuel/pump-right-on EQ 1
+                /controls/fuel/crossfeed EQ 0
+            </test>
+            <test value="0">
+                fuel/pump-left-on EQ 1
+                fuel/pump-left-center-on EQ 0
+                fuel/pump-right-center-on EQ 0
+                fuel/pump-right-on EQ 1
+                /controls/fuel/crossfeed EQ 1
             </test>
         </switch>
 
@@ -441,7 +441,7 @@
         <switch name="fuel/fwd-left-fuel-pressure-low">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-lf eq 1
+                /controls/fuel/pump-lf eq 1
                 propulsion/tank[0]/contents-lbs lt 100
             </test>
         </switch>
@@ -449,7 +449,7 @@
         <switch name="fuel/fwd-right-fuel-pressure-low">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-rf eq 1
+                /controls/fuel/pump-rf eq 1
                 propulsion/tank[1]/contents-lbs lt 100
             </test>
         </switch>
@@ -457,7 +457,7 @@
         <switch name="fuel/aft-left-fuel-pressure-low">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-la eq 1
+                /controls/fuel/pump-la eq 1
                 propulsion/tank[0]/contents-lbs lt 100
             </test>
         </switch>
@@ -465,7 +465,7 @@
         <switch name="fuel/aft-right-fuel-pressure-low">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-ra eq 1
+                /controls/fuel/pump-ra eq 1
                 propulsion/tank[1]/contents-lbs lt 100
             </test>
         </switch>
@@ -473,7 +473,7 @@
         <switch name="fuel/center-left-fuel-pressure-low">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-cl eq 1
+                /controls/fuel/pump-cl eq 1
                 propulsion/tank[2]/contents-lbs lt 100
             </test>
         </switch>
@@ -481,7 +481,7 @@
         <switch name="fuel/center-right-fuel-pressure-low">
             <default value="0" />
             <test logic="AND" value="1">
-                /controls/fuel/switches/pump-cr eq 1
+                /controls/fuel/pump-cr eq 1
                 propulsion/tank[2]/contents-lbs lt 100
             </test>
         </switch>
@@ -497,18 +497,18 @@
             <test logic="AND" value="1">
                 fuel/center-left-fuel-pressure-low eq 1
                 fuel/center-right-fuel-pressure-low eq 1
-                /controls/fuel/switches/pump-cl eq 1
-                /controls/fuel/switches/pump-cr eq 1
+                /controls/fuel/pump-cl eq 1
+                /controls/fuel/pump-cr eq 1
             </test>
             <test logic="AND" value="1">
                 fuel/center-right-fuel-pressure-low eq 1
-                /controls/fuel/switches/pump-cl eq 0
-                /controls/fuel/switches/pump-cr eq 1
+                /controls/fuel/pump-cl eq 0
+                /controls/fuel/pump-cr eq 1
             </test>
             <test logic="AND" value="1">
                 fuel/center-left-fuel-pressure-low eq 1
-                /controls/fuel/switches/pump-cl eq 1
-                /controls/fuel/switches/pump-cr eq 0
+                /controls/fuel/pump-cl eq 1
+                /controls/fuel/pump-cr eq 0
             </test>
             <output>/systems/weu/fuel-failed</output>
         </switch>

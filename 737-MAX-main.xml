@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+
+<PropertyList include="737-main.xml">
+
+    <sim>
+        <menubar>
+            <default>
+                <menu n="100">
+                    <label>737 MAX</label>
+                    <enabled type="bool">true</enabled>
+                    <item>
+                        <label>Aircraft Config</label>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>acconfig-main</dialog-name>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Select Livery</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>aircraft.livery.dialog.toggle();</script>
+                        </binding>
+                    </item>
+                    <item n="10">
+                        <label>Pushback</label>
+                        <name>autopush</name>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>autopush</dialog-name>
+                        </binding>
+                    </item>
+                </menu>
+            </default>
+        </menubar>
+    </sim>
+
+    <controls>
+        <bleed>
+            <aft-cab-air type="int">0</aft-cab-air>
+            <apu-on type="bool">0</apu-on>
+            <cont-cab-air type="int">0</cont-cab-air>
+            <fwd-cab-air type="int">0</fwd-cab-air>
+            <isolation-valve type="bool">0</isolation-valve>
+            <l-recirc-fan type="int">0</l-recirc-fan>
+            <n1-on type="bool">0</n1-on>
+            <n2-on type="bool">0</n2-on>
+            <ovht-test type="bool">0</ovht-test>
+            <pack-l type="int">0</pack-l>
+            <pack-r type="int">0</pack-r>
+            <r-recirc-fan type="int">0</r-recirc-fan>
+            <supply type="int">0</supply>
+            <trim-air type="bool">0</trim-air>
+            <trip-reset type="bool">0</trip-reset>
+        </bleed>
+        <elt>
+            <elt-cover type="bool">0</elt-cover>
+            <elt-switch type="bool">0</elt-switch>
+        </elt>
+        <gear>
+            <nose-wheel-steer-cover type="bool">0</nose-wheel-steer-cover>
+            <nose-wheel-steer-switch type="bool">0</nose-wheel-steer-switch>
+        </gear>
+        <gpws>
+            <runway-inhibit-cover type="bool">0</runway-inhibit-cover>
+            <runway-inhibit-switch type="bool">0</runway-inhibit-switch>
+        </gpws>
+        <lighting>
+            <afds-flood type="int">0</afds-flood>
+            <anti-collision type="bool">0</anti-collision> <!-- AKA beacon -->
+            <ap-disc-test-1 type="bool">0</ap-disc-test-1>
+            <ap-disc-test-2 type="bool">0</ap-disc-test-2>
+            <background type="int">0</background>
+            <breaker type="int">0</breaker>
+            <du-1 type="int">0</du-1>
+            <du-2 type="int">0</du-2>
+            <du-3 type="int">0</du-3>
+            <du-4 type="int">0</du-4>
+            <exit type="int">0</exit>
+            <landing-l type="bool">0</landing-l>
+            <landing-r type="bool">0</landing-r>
+            <light-mode type="int">0</light-mode>
+            <logo type="bool">0</logo>
+            <main-panel-capt type="int">0</main-panel-capt>
+            <main-panel-fo type="int">0</main-panel-fo>
+            <oh-panel type="int">0</oh-panel>
+            <position type="int">0</position>
+            <rwy-turnoff-l type="bool">0</rwy-turnoff-l>
+            <rwy-turnoff-r type="bool">0</rwy-turnoff-r>
+            <wheel-well type="bool">0</wheel-well>
+            <wing type="bool">0</wing>
+        </lighting>
+        <mfd>
+            <selector-mode-1 type="bool">0</selector-mode-1>
+            <selector-mode-2 type="bool">0</selector-mode-2>
+            <cursor-1 type="int">0</cursor-1>
+            <cursor-2 type="int">0</cursor-2>
+        </mfd>
+        <nav>
+            <fmc type="int">0</fmc>
+        </nav>
+
+        <flight n="0">
+            <aileron-sum>0</aileron-sum>
+            <elevator-sum>0</elevator-sum>
+            <rudder-sum>0</rudder-sum>
+            <spoiler-1>0.0</spoiler-1>
+            <spoiler-2>0.0</spoiler-2>
+            <spoiler-3>0.0</spoiler-3>
+            <spoiler-4>0.0</spoiler-4>
+            <spoiler-5>0.0</spoiler-5>
+            <spoiler-6>0.0</spoiler-6>
+            <spoiler-l-sum>0.0</spoiler-l-sum>
+            <spoiler-7>0.0</spoiler-7>
+            <spoiler-8>0.0</spoiler-8>
+            <spoiler-9>0.0</spoiler-9>
+            <spoiler-10>0.0</spoiler-10>
+            <spoiler-11>0.0</spoiler-11>
+            <spoiler-12>0.0</spoiler-12>
+            <spoiler-r-sum>0.0</spoiler-r-sum>
+            <speedbrake-output>0.0</speedbrake-output>
+            <speedbrake-arm>0</speedbrake-arm>
+            <ground-spoilers-armed type="bool">0</ground-spoilers-armed>
+            <speedbrake-lever type="double">0</speedbrake-lever>
+        </flight>
+
+        <gear>
+            <autobrakes type="int">0</autobrakes>            <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
+            <tiller-cmd-norm type="double">0</tiller-cmd-norm>
+            <tiller-enabled type="bool">0</tiller-enabled>
+        </gear>
+
+    </controls>
+
+    <systems>
+        <acconfig n="0">
+            <autoconfig-running type="bool">0</autoconfig-running>
+            <options n="0">
+                <autopush n="0">
+                    <show-route type="bool">1</show-route>
+                    <show-wingtip type="bool">1</show-wingtip>
+                </autopush>
+                <deflected-aileron-equipped type="bool">1</deflected-aileron-equipped>
+                <du n="0">
+                    <capt-pfd-fps type="double">20</capt-pfd-fps>
+                    <capt-mfd-fps type="double">20</capt-mfd-fps>
+                    <fo-pfd-fps type="double">10</fo-pfd-fps>
+                    <fo-mfd-fps type="double">20</fo-mfd-fps>
+                    <isfd-fps type="double">20</isfd-fps>
+                </du>
+                <fuel-dials type="bool">0</fuel-dials>
+                <eng-oil-vib type="bool">0</eng-oil-vib>
+                <irs-aligns-instantly type="bool">0</irs-aligns-instantly>
+                <keyboard-mode type="bool">0</keyboard-mode>
+                <rcws-equipped type="bool">0</rcws-equipped>
+                <rising-runway-t-bar type="bool">1</rising-runway-t-bar>
+                <separate-tiller-axis type="bool">0</separate-tiller-axis>
+                <single-cue-fd type="bool">0</single-cue-fd>
+            </options>
+        </acconfig>
+        <doors>
+            <lights>
+                <left-aft-overwing type="bool">0</left-aft-overwing>
+                <left-fwd-overwing type="bool">0</left-fwd-overwing>
+                <right-aft-overwing type="bool">0</right-aft-overwing>
+                <right-fwd-overwing type="bool">0</right-fwd-overwing>
+            </lights>
+        </doors>
+        <flt-control>
+            <lights>
+                <spoilers type="bool">0</spoilers>
+            </lights>
+        </flt-control>
+        <lighting>
+            <lights>
+                <exit-not-armed type="bool">0</exit-not-armed>
+            </lights>
+        </lighting>
+        <apu>
+            <rpm type="float">0</rpm>
+            <egt type="float">0</egt>
+        </apu>
+        <failures>
+            <electrical>
+                <ac-tie type="bool">0</ac-tie>
+                <apu type="bool">0</apu>
+                <battery type="bool">0</battery>
+                <dc-tie type="bool">0</dc-tie>
+                <gen-l type="bool">0</gen-l>
+                <gen-r type="bool">0</gen-r>
+            </electrical>
+        </failures>
+    </systems>
+
+    <nasal>
+        <canvas_mfd>
+            <file>Aircraft/737-family/Nasal/Displays/MAX/MFD.nas</file>
+        </canvas_mfd>
+        <canvas_nd>
+            <file>Aircraft/737-family/Nasal/Displays/MAX/ND.nas</file>
+        </canvas_nd>
+        <canvas_pfd>
+            <file>Aircraft/737-family/Nasal/Displays/MAX/PFD.nas</file>
+        </canvas_pfd>
+    </nasal>
+
+</PropertyList>
