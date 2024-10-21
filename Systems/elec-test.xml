@@ -885,7 +885,7 @@
 
 		<!-- DC Tie Bus DC Bus Relays -->
 		<!-- These outputs are from the DC Tie Bus to the DC Bus -->
-		<switch name="/systems/electrical/relay/dc-tie-dc-l/contact-pos">
+		<switch name="/systems/electrical/relay/dc-tie/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
 				/controls/elec/dc-tie eq 1
@@ -893,25 +893,10 @@
 			</test>
 		</switch>
 
-		<switch name="/systems/electrical/relay/dc-tie-dc-l/output">
+		<switch name="/systems/electrical/relay/dc-tie/output">
 			<default value="0" />
 			<test value="/systems/electrical/bus/dc-tie">
-				/systems/electrical/relay/dc-tie-dc-l/contact-pos eq 1
-			</test>
-		</switch>
-
-		<switch name="/systems/electrical/relay/dc-tie-dc-r/contact-pos">
-			<default value="0" />
-			<test logic="AND" value="1">
-				/controls/elec/dc-tie eq 1
-				/systems/failures/electrical/dc-tie ne 1
-			</test>
-		</switch>
-
-		<switch name="/systems/electrical/relay/dc-tie-dc-r/output">
-			<default value="0" />
-			<test value="/systems/electrical/bus/dc-tie">
-				/systems/electrical/relay/dc-tie-dc-r/contact-pos eq 1
+				/systems/electrical/relay/dc-tie/contact-pos eq 1
 			</test>
 		</switch>
 
@@ -919,9 +904,13 @@
 		<switch name="/systems/electrical/bus/dc-l-src">
 			<default value="0" />
 			<!-- OFF -->
-			<test logic="OR" value="1"><!-- TRs --> /systems/electrical/sources/tr-l1/output-volt ge 24
-				/systems/electrical/sources/tr-l2/output-volt ge 24 </test>
-			<test value="2"><!-- DC TIE --> /systems/electrical/relay/dc-tie-dc-l/contact-pos eq 1 </test>
+			<test logic="OR" value="1"><!-- TRs -->
+				/systems/electrical/sources/tr-l1/output-volt ge 24
+				/systems/electrical/sources/tr-l2/output-volt ge 24
+			</test>
+			<test value="2"><!-- DC TIE -->
+				/systems/electrical/relay/dc-tie-dc-l/contact-pos eq 1
+			</test>
 		</switch>
 
 		<fcs_function name="/systems/electrical/bus/dc-l-pre">

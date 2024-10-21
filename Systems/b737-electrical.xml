@@ -659,4 +659,87 @@
 			</function>
 		</fcs_function>
 	</channel>
+
+	<!-- DC Bus 1 -->
+	<switch name="/systems/electrical/bus/dc-1-src">
+		<default value="0" />
+		<!-- OFF -->
+		<test value="1"><!-- TRs --> /systems/electrical/sources/tr-1/output-volt ge 24 </test>
+		<test value="2"><!-- DC TIE --> /systems/electrical/relay/dc-tie/contact-pos eq 1 </test>
+	</switch>
+
+	<pure_gain name="/systems/electrical/bus/dc-1-pre">
+		<input>/systems/electrical/sources/tr-1/output-volt</input>
+		<gain>1.0</gain>
+	</pure_gain>
+
+	<fcs_function name="/systems/electrical/bus/dc-1">
+		<function>
+			<max>
+				<property>/systems/electrical/bus/dc-1-pre</property>
+				<property>/systems/electrical/relay/dc-tie/output</property>
+			</max>
+		</function>
+	</fcs_function>
+
+	<!-- DC Bus 2 -->
+	<switch name="/systems/electrical/bus/dc-2-src">
+		<default value="0" />
+		<!-- OFF -->
+		<test value="1"><!-- TRs --> /systems/electrical/sources/tr-2/output-volt ge 24 </test>
+		<test value="2"><!-- DC TIE --> /systems/electrical/relay/dc-tie/contact-pos eq 1 </test>
+	</switch>
+
+	<pure_gain name="/systems/electrical/bus/dc-2-pre">
+		<input>/systems/electrical/sources/tr-2/output-volt</input>
+		<gain>1.0</gain>
+	</pure_gain>
+
+	<fcs_function name="/systems/electrical/bus/dc-2">
+		<function>
+			<max>
+				<property>/systems/electrical/bus/dc-2-pre</property>
+				<property>/systems/electrical/relay/dc-tie/output</property>
+			</max>
+		</function>
+	</fcs_function>
+
+	<!-- DC Standby Bus -->
+	<switch name="/systems/electrical/bus/dc-stdby-src">
+		<default value="0" />
+		<!-- OFF -->
+		<test value="1"><!-- TRs --> /systems/electrical/sources/tr-1/output-volt ge 24 </test>
+		<test value="2"><!-- DC TIE --> /systems/electrical/relay/dc-tie/contact-pos eq 1 </test>
+	</switch>
+
+	<pure_gain name="/systems/electrical/bus/dc-1-pre">
+		<input>/systems/electrical/sources/tr-1/output-volt</input>
+		<gain>1.0</gain>
+	</pure_gain>
+
+	<fcs_function name="/systems/electrical/bus/dc-1">
+		<function>
+			<max>
+				<property>/systems/electrical/bus/dc-1-pre</property>
+				<property>/systems/electrical/relay/dc-tie/output</property>
+			</max>
+		</function>
+	</fcs_function>
+
+	<!-- Static Inverter -->
+	<fcs_function name="/systems/electrical/sources/si-1/output-volt">
+		<function>
+			<table><!-- DC to AC converter -->
+				<independentVar lookup="row">/systems/electrical/bus/dc-bat</independentVar>
+				<independentVar lookup="column">/controls/elec/emer-pwr</independentVar>
+				<tableData>
+					0 1
+					0 0 0
+					24 0 112
+					28 0 115
+					29 0 118
+				</tableData>
+			</table>
+		</function>
+	</fcs_function>
 </system>
