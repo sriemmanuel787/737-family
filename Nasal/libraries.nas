@@ -17,6 +17,77 @@ setprop("/sim/menubar/default/menu[5]/item[10]/enabled", 0);
 setprop("/sim/menubar/default/menu[5]/item[11]/enabled", 0);
 setprop("/sim/multiplay/visibility-range-nm", 130);
 
+var initDone = 0;
+var systemsInit = func() {
+	systems.ELEC.init();
+	systems.FUEL.init();
+	systems.HYD.init();
+	systems.PNEU.init();
+	if (initDone) { # Anytime after sim init
+		# Figure out what goes here
+	} else { # Sim init
+		# And here as well
+	}
+}
+
+var fdmInit = setlistener("/sim/signals/fdm-initialized", func() {
+	acconfig.SYSTEM.fdmInit();
+	systemsInit();
+	systemsLoop.start();
+	slowLoop.start();
+	lightsLoop.start();
+	canvas_isfd.init();
+	canvas_mfd.init();
+	canvas_nd.init();
+	canvas_pfd.init();
+	removelistener(fdmInit);
+	initDone = 1;
+	acconfig.SYSTEM.finalInit();
+});
+
+var systemsLoop = maketimer(0.1, func() {
+	fms.CORE.loop();
+	mcdu.BASE.loop();
+	systems.FADEC.loop();
+	systems.DUController.loop();
+	SHAKE.loop();
+	
+	if (pts.Sim.Replay.replayState.getBoolValue()) {
+		pts.Controls.Flight.wingflexEnable.setBoolValue(0);
+	} else {
+		pts.Controls.Flight.wingflexEnable.setBoolValue(1);
+	}
+	
+	pts.Services.Chocks.enableTemp = pts.Services.Chocks.enable.getBoolValue();
+	pts.Velocities.groundspeedKtTemp = pts.Velocities.groundspeedKt.getValue();
+	if ((pts.Velocities.groundspeedKtTemp >= 2 or !pts.Fdm.JSBSim.Position.wow.getBoolValue()) and pts.Services.Chocks.enableTemp) {
+		pts.Services.Chocks.enable.setBoolValue(0);
+	}
+	
+	if ((pts.Velocities.groundspeedKtTemp >= 2 or (!systems.GEAR.Switch.brakeParking.getBoolValue() and !pts.Services.Chocks.enableTemp)) and !acconfig.SYSTEM.autoConfigRunning.getBoolValue()) {
+		if (systems.ELEC.Switch.groundCart.getBoolValue() or systems.ELEC.Switch.extPwr.getBoolValue() or systems.ELEC.Switch.extGPwr.getBoolValue()) {
+			systems.ELEC.Switch.groundCart.setBoolValue(0);
+			systems.ELEC.Switch.extPwr.setBoolValue(0);
+			systems.ELEC.Switch.extGPwr.setBoolValue(0);
+		}
+		if (systems.PNEU.Switch.groundAir.getBoolValue()) {
+			systems.PNEU.Switch.groundAir.setBoolValue(0);
+		}
+	}
+});
+
+var slowLoop = maketimer(1, func() {
+	if (acconfig.SYSTEM.Error.active.getBoolValue()) {
+		systemsInit();
+	}
+});
+
+setlistener("/fdm/jsbsim/position/wow", func() {
+	if (initDone) {
+		instruments.XPDR.airGround();
+	}
+}, 0, 0);
+
 # Temporary until proper systems are available
 var doMagicStartup = func {
     # systems.FUEL.Switch.pump1Aft.setBoolValue(1);
@@ -48,27 +119,6 @@ var doorRF = aircraft.door.new("/systems/doors/right-fwd", 6);
 var doorRA = aircraft.door.new("/systems/doors/right-aft", 6);
 var cargoF = aircraft.door.new("/systems/doors/cargo-fwd", 6);
 var cargoA = aircraft.door.new("/systems/doors/cargo-aft", 6);
-
-var altAlertModeSwitch = func {
-	var warning_b = getprop("b737/warnings/altitude-alert-b-conditions");
-	var diff_0 = getprop("b737/helpers/alt-diff-ft[0]");
-	var diff_1 = getprop("b737/helpers/alt-diff-ft[1]");
-
-	if (warning_b) {
-		var diff = diff_1;
-	} else {
-		var diff = diff_0;
-	}
-
-	if (diff < 600) {
-		setprop("b737/warnings/altitude-alert-mode", 1);
-	} else {
-		setprop("b737/warnings/altitude-alert-mode", 0);
-	}
-}
-setlistener( "/b737/warnings/altitude-alert", altAlertModeSwitch, 0, 0);
-
-setprop("controls/lighting/AFDSbrt","0");
 
 var systems_started = 0;
 setlistener("sim/signals/fdm-initialized", func {	
