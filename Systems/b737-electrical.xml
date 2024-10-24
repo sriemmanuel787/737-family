@@ -9,15 +9,15 @@
 	<property value="0">/systems/electrical/bus/ac-gen-l-src</property>
 	<property value="0">/systems/electrical/bus/ac-gen-r-src</property>
 	<property value="0">/systems/electrical/sources/bat-charger-powered</property>
-	<property value="0">/systems/electrical/sources/bat-1/amp</property>
-	<property value="99.9">/systems/electrical/sources/bat-1/percent</property>
-	<property value="0">/systems/electrical/sources/bat-2/amp</property>
-	<property value="99.9">/systems/electrical/sources/bat-2/percent</property>
+	<property value="0">/systems/electrical/sources/bat-main/amp</property>
+	<property value="99.9">/systems/electrical/sources/bat-main/percent</property>
+	<property value="0">/systems/electrical/sources/bat-aux/amp</property>
+	<property value="99.9">/systems/electrical/sources/bat-aux/percent</property>
 
 	<channel name="Main Electrical" execrate="8">
 
-		<!-- Battery 1 -->
-		<switch name="/systems/electrical/sources/bat-1/charge">
+		<!-- Main Battery -->
+		<switch name="/systems/electrical/sources/bat-main/charge">
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-charger-powered eq 1
@@ -26,46 +26,46 @@
 			</test>
 		</switch>
 
-		<switch name="/systems/electrical/sources/bat-1/discharge">
+		<switch name="/systems/electrical/sources/bat-main/discharge">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/systems/electrical/sources/bat-1/amp gt 0
+				/systems/electrical/sources/bat-main/amp gt 0
 				/controls/elec/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
 
-		<switch name="/systems/electrical/sources/bat-1/direction">
+		<switch name="/systems/electrical/sources/bat-main/direction">
 			<default value="0" />
-			<test logic="AND" value="-1"><!-- Charge --> /systems/electrical/sources/bat-1/percent le 99.9
-				/systems/electrical/sources/bat-1/charge eq 1 </test>
+			<test logic="AND" value="-1"><!-- Charge --> /systems/electrical/sources/bat-main/percent le 99.9
+				/systems/electrical/sources/bat-main/charge eq 1 </test>
 			<test logic="AND" value="0">
-				/systems/electrical/sources/bat-1/charge eq 1
+				/systems/electrical/sources/bat-main/charge eq 1
 			</test>
-			<test logic="AND" value="1"><!-- Discharge --> /systems/electrical/sources/bat-1/percent gt 5
-				/systems/electrical/sources/bat-1/discharge eq 1 </test>
+			<test logic="AND" value="1"><!-- Discharge --> /systems/electrical/sources/bat-main/percent gt 5
+				/systems/electrical/sources/bat-main/discharge eq 1 </test>
 		</switch>
 
-		<fcs_function name="/systems/electrical/sources/bat-1/percent-calc">
+		<fcs_function name="/systems/electrical/sources/bat-main/percent-calc">
 			<function>
 				<ifthen>
 					<eq>
-						<property>/systems/electrical/sources/bat-1/direction</property>
+						<property>/systems/electrical/sources/bat-main/direction</property>
 						<value>0</value>
 					</eq>
-					<property>/systems/electrical/sources/bat-1/percent</property>
+					<property>/systems/electrical/sources/bat-main/percent</property>
 					<ifthen>
 						<eq>
-							<property>/systems/electrical/sources/bat-1/direction</property>
+							<property>/systems/electrical/sources/bat-main/direction</property>
 							<value>-1</value>
 						</eq>
 						<sum>
-							<property>/systems/electrical/sources/bat-1/percent</property>
+							<property>/systems/electrical/sources/bat-main/percent</property>
 							<product>
 								<quotient>
 									<value>2.25</value>
 									<sum>
-										<property>/systems/electrical/sources/bat-1/percent</property>
+										<property>/systems/electrical/sources/bat-main/percent</property>
 										<value>1</value>
 									</sum>
 								</quotient>
@@ -73,12 +73,12 @@
 							</product>
 						</sum>
 						<sum>
-							<property>/systems/electrical/sources/bat-1/percent</property>
+							<property>/systems/electrical/sources/bat-main/percent</property>
 							<product>
 								<quotient>
 									<value>-0.75</value>
 									<sum>
-										<property>/systems/electrical/sources/bat-1/percent</property>
+										<property>/systems/electrical/sources/bat-main/percent</property>
 										<value>1</value>
 									</sum>
 								</quotient>
@@ -88,13 +88,13 @@
 					</ifthen>
 				</ifthen>
 			</function>
-			<output>/systems/electrical/sources/bat-1/percent</output>
+			<output>/systems/electrical/sources/bat-main/percent</output>
 		</fcs_function>
 
-		<fcs_function name="/systems/electrical/sources/bat-1/volt">
+		<fcs_function name="/systems/electrical/sources/bat-main/volt">
 			<function>
 				<table>
-					<independentVar lookup="row">/systems/electrical/sources/bat-1/percent</independentVar>
+					<independentVar lookup="row">/systems/electrical/sources/bat-main/percent</independentVar>
 					<independentVar lookup="column">/systems/failures/electrical/battery</independentVar>
 					<tableData>
 						0 1
@@ -106,16 +106,16 @@
 			</function>
 		</fcs_function>
 
-		<switch name="/systems/electrical/sources/bat-1/amp">
+		<switch name="/systems/electrical/sources/bat-main/amp">
 			<default value="0" />
 			<test logic="AND" value="2">
 				/controls/elec/batt-on eq 1
-				/systems/electrical/sources/bat-1/volt ge 10
+				/systems/electrical/sources/bat-main/volt ge 10
 			</test>
 		</switch>
 
-		<!-- Battery 2 -->
-		<switch name="/systems/electrical/sources/bat-2/charge">
+		<!-- Auxiliary Battery -->
+		<switch name="/systems/electrical/sources/bat-aux/charge">
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-charger-powered eq 1
@@ -124,46 +124,46 @@
 			</test>
 		</switch>
 
-		<switch name="/systems/electrical/sources/bat-2/discharge">
+		<switch name="/systems/electrical/sources/bat-aux/discharge">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/systems/electrical/sources/bat-2/amp gt 0
+				/systems/electrical/sources/bat-aux/amp gt 0
 				/controls/elec/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
 
-		<switch name="/systems/electrical/sources/bat-2/direction">
+		<switch name="/systems/electrical/sources/bat-aux/direction">
 			<default value="0" />
-			<test logic="AND" value="-1"><!-- Charge --> /systems/electrical/sources/bat-2/percent le 99.9
-				/systems/electrical/sources/bat-2/charge eq 1 </test>
+			<test logic="AND" value="-1"><!-- Charge --> /systems/electrical/sources/bat-aux/percent le 99.9
+				/systems/electrical/sources/bat-aux/charge eq 1 </test>
 			<test logic="AND" value="0">
-				/systems/electrical/sources/bat-2/charge eq 1
+				/systems/electrical/sources/bat-aux/charge eq 1
 			</test>
-			<test logic="AND" value="1"><!-- Discharge --> /systems/electrical/sources/bat-2/percent gt 5
-				/systems/electrical/sources/bat-2/discharge eq 1 </test>
+			<test logic="AND" value="1"><!-- Discharge --> /systems/electrical/sources/bat-aux/percent gt 5
+				/systems/electrical/sources/bat-aux/discharge eq 1 </test>
 		</switch>
 
-		<fcs_function name="/systems/electrical/sources/bat-2/percent-calc">
+		<fcs_function name="/systems/electrical/sources/bat-aux/percent-calc">
 			<function>
 				<ifthen>
 					<eq>
-						<property>/systems/electrical/sources/bat-2/direction</property>
+						<property>/systems/electrical/sources/bat-aux/direction</property>
 						<value>0</value>
 					</eq>
-					<property>/systems/electrical/sources/bat-2/percent</property>
+					<property>/systems/electrical/sources/bat-aux/percent</property>
 					<ifthen>
 						<eq>
-							<property>/systems/electrical/sources/bat-2/direction</property>
+							<property>/systems/electrical/sources/bat-aux/direction</property>
 							<value>-1</value>
 						</eq>
 						<sum>
-							<property>/systems/electrical/sources/bat-2/percent</property>
+							<property>/systems/electrical/sources/bat-aux/percent</property>
 							<product>
 								<quotient>
 									<value>2.25</value>
 									<sum>
-										<property>/systems/electrical/sources/bat-2/percent</property>
+										<property>/systems/electrical/sources/bat-aux/percent</property>
 										<value>1</value>
 									</sum>
 								</quotient>
@@ -171,12 +171,12 @@
 							</product>
 						</sum>
 						<sum>
-							<property>/systems/electrical/sources/bat-2/percent</property>
+							<property>/systems/electrical/sources/bat-aux/percent</property>
 							<product>
 								<quotient>
 									<value>-0.75</value>
 									<sum>
-										<property>/systems/electrical/sources/bat-2/percent</property>
+										<property>/systems/electrical/sources/bat-aux/percent</property>
 										<value>1</value>
 									</sum>
 								</quotient>
@@ -186,13 +186,13 @@
 					</ifthen>
 				</ifthen>
 			</function>
-			<output>/systems/electrical/sources/bat-2/percent</output>
+			<output>/systems/electrical/sources/bat-aux/percent</output>
 		</fcs_function>
 
-		<fcs_function name="/systems/electrical/sources/bat-2/volt">
+		<fcs_function name="/systems/electrical/sources/bat-aux/volt">
 			<function>
 				<table>
-					<independentVar lookup="row">/systems/electrical/sources/bat-2/percent</independentVar>
+					<independentVar lookup="row">/systems/electrical/sources/bat-aux/percent</independentVar>
 					<independentVar lookup="column">/systems/failures/electrical/battery</independentVar>
 					<tableData>
 						0 1
@@ -712,15 +712,15 @@
 		<test value="2"><!-- DC TIE --> /systems/electrical/relay/dc-tie/contact-pos eq 1 </test>
 	</switch>
 
-	<pure_gain name="/systems/electrical/bus/dc-1-pre">
+	<pure_gain name="/systems/electrical/bus/dc-stdby-pre">
 		<input>/systems/electrical/sources/tr-1/output-volt</input>
 		<gain>1.0</gain>
 	</pure_gain>
 
-	<fcs_function name="/systems/electrical/bus/dc-1">
+	<fcs_function name="/systems/electrical/bus/dc-stdby">
 		<function>
 			<max>
-				<property>/systems/electrical/bus/dc-1-pre</property>
+				<property>/systems/electrical/bus/dc-stdby-pre</property>
 				<property>/systems/electrical/relay/dc-tie/output</property>
 			</max>
 		</function>
