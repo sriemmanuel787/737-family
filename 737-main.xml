@@ -179,14 +179,13 @@
             <ac-mode type="int">0</ac-mode>
             <apu-gen-l type="bool">0</apu-gen-l>
             <apu-gen-r type="bool">0</apu-gen-r>
-            <bus-trans type="bool">0</bus-trans>
+            <bus-tie type="bool">1</bus-tie> <!-- Labelled as BUS TRANS -->
             <cabin type="bool">0</cabin>
             <dc-mode type="int">0</dc-mode>
             <batt-on type="bool">0</batt-on>
-            <csd-l-conn type="bool">0</csd-l-conn> <!-- red covers, says drive (because i will
-            forget) -->
+            <csd-l-conn type="bool">1</csd-l-conn> <!-- red covers, says drive (because i will forget) -->
             <csd-l-cover type="bool">0</csd-l-cover>
-            <csd-r-conn type="bool">0</csd-r-conn>
+            <csd-r-conn type="bool">1</csd-r-conn>
             <csd-r-cover type="bool">0</csd-r-cover>
             <gen-l type="bool">0</gen-l>
             <gen-r type="bool">0</gen-r>
