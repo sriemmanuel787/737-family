@@ -21,7 +21,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-charger-powered eq 1
-				/controls/elec/batt-on eq 1
+				/controls/electrical/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
@@ -30,7 +30,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-main/amp gt 0
-				/controls/elec/batt-on eq 1
+				/controls/electrical/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
@@ -113,7 +113,7 @@
 		<switch name="/systems/electrical/sources/bat-main/amp">
 			<default value="0" />
 			<test logic="AND" value="2">
-				/controls/elec/batt-on eq 1
+				/controls/electrical/batt-on eq 1
 				/systems/electrical/sources/bat-main/volt ge 10
 			</test>
 		</switch>
@@ -123,7 +123,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-charger-powered eq 1
-				/controls/elec/batt-on eq 1
+				/controls/electrical/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
@@ -132,7 +132,7 @@
 			<default value="0" />
 			<test logic="AND" value="1">
 				/systems/electrical/sources/bat-aux/amp gt 0
-				/controls/elec/batt-on eq 1
+				/controls/electrical/batt-on eq 1
 				/systems/failures/electrical/battery ne 1
 			</test>
 		</switch>
@@ -216,7 +216,7 @@
 
 		<pure_gain name="/systems/electrical/sources/idg-l/drive-rpm">
 			<input>/systems/electrical/sources/idg-l/drive-rpm-input</input>
-			<gain>/controls/elec/csd-l-conn</gain>
+			<gain>/controls/electrical/csd-l-conn</gain>
 		</pure_gain>
 
 		<fcs_function name="/systems/electrical/sources/idg-l/csd-gearbox-ratio-cmd">
@@ -291,7 +291,7 @@
 
 		<pure_gain name="/systems/electrical/sources/idg-r/drive-rpm">
 			<input>/systems/electrical/sources/idg-r/drive-rpm-input</input>
-			<gain>/controls/elec/csd-r-conn</gain>
+			<gain>/controls/electrical/csd-r-conn</gain>
 		</pure_gain>
 
 		<fcs_function name="/systems/electrical/sources/idg-r/csd-gearbox-ratio-cmd">
@@ -413,7 +413,7 @@
 			<function>
 				<ifthen>
 					<eq>
-						<property>/controls/elec/grd-power</property>
+						<property>/controls/electrical/grd-power</property>
 						<value>1</value>
 					</eq>
 					<value>115</value>
@@ -439,7 +439,7 @@
 		<switch name="/systems/electrical/relay/idg-ac-gen-l/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/controls/elec/gen-l eq 1
+				/controls/electrical/gen-l eq 1
 				/systems/electrical/sources/idg-l/output-volt ge 112
 			</test>
 		</switch>
@@ -454,7 +454,7 @@
 		<switch name="/systems/electrical/relay/idg-ac-gen-r/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
-				/controls/elec/gen-r eq 1
+				/controls/electrical/gen-r eq 1
 				/systems/electrical/sources/idg-r/output-volt ge 112
 			</test>
 		</switch>
@@ -470,7 +470,7 @@
 		<switch name="/systems/electrical/relay/apu-ac-gen-l/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1"> <!-- Priority: IDG -->
-				/controls/elec/apu-gen-l eq 1
+				/controls/electrical/apu-gen-l eq 1
 				/systems/electrical/relay/idg-ac-gen-l/contact-pos ne 1
 				/systems/electrical/sources/apu/output-volt ge 112
 			</test>
@@ -486,7 +486,7 @@
 		<switch name="/systems/electrical/relay/apu-ac-gen-r/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1"> <!-- Priority: IDG -->
-				/controls/elec/apu-gen-r eq 1
+				/controls/electrical/apu-gen-r eq 1
 				/systems/electrical/relay/idg-ac-gen-r/contact-pos ne 1
 				/systems/electrical/sources/apu/output-volt ge 112
 			</test>
@@ -505,7 +505,7 @@
 			<default value="0" />
 
 			<test logic="AND" value="1">
-				/controls/elec/bus-tie eq 1
+				/controls/electrical/bus-tie eq 1
 				/systems/electrical/bus/ac-gen-l ge 112
 				<test logic="OR">
 				/systems/electrical/bus/ac-gen-r lt 112
@@ -513,7 +513,7 @@
 				</test>
 			</test>
 
-			<test logic="AND" value="1"> /controls/elec/bus-tie eq 1
+			<test logic="AND" value="1"> /controls/electrical/bus-tie eq 1
 				/systems/electrical/bus/ac-gen-r ge 112
 				<test logic="OR">
 				/systems/electrical/bus/ac-gen-l lt 112
@@ -530,6 +530,13 @@
 			</test>
 		</switch>
 
+		<switch name="/systems/electrical/relay/ac-tie-ac-gen-l/output">
+			<default value="0"/>
+			<test value="/systems/electrical/bus/ac-tie">
+				/systems/electrical/relay/ac-tie-ac-gen-l/contact-pos eq 1
+			</test>
+		</switch>
+
 		<switch name="/systems/electrical/relay/ac-tie-ac-gen-r/contact-pos">
 			<default value="0" />
 			<test logic="AND" value="1">
@@ -538,13 +545,25 @@
 			</test>
 		</switch>
 
+		<switch name="/systems/electrical/relay/ac-tie-ac-gen-r/output">
+			<default value="0"/>
+			<test value="/systems/electrical/bus/ac-tie">
+				/systems/electrical/relay/ac-tie-ac-gen-r/contact-pos eq 1
+			</test>
+		</switch>
 
 		<!-- AC L Bus/AC Gen L Bus -->
 		<switch name="/systems/electrical/bus/ac-gen-l-src">
 			<default value="0" /> <!-- OFF -->
-			<test value="1"> <!-- IDG --> /systems/electrical/relay/idg-ac-gen-l/contact-pos eq 1 </test>
-			<test value="2"> <!-- APU --> /systems/electrical/relay/apu-ac-gen-l/contact-pos eq 1 </test>
-			<test value="4"> <!-- AC TIE --> /systems/electrical/relay/ac-tie-ac-gen-l/contact-pos eq 1 </test>
+			<test value="1"> <!-- IDG -->
+				/systems/electrical/relay/idg-ac-gen-l/contact-pos eq 1
+			</test>
+			<test value="2"> <!-- APU -->
+				/systems/electrical/relay/apu-ac-gen-l/contact-pos eq 1
+			</test>
+			<test value="4"> <!-- AC TIE -->
+				/systems/electrical/relay/ac-tie-ac-gen-l/contact-pos eq 1
+			</test>
 		</switch>
 
 		<fcs_function name="/systems/electrical/bus/ac-gen-l-pre">
@@ -560,7 +579,7 @@
 			<function>
 				<max>
 					<property>/systems/electrical/bus/ac-gen-l-pre</property>
-					<property>/systems/electrical/relay/ac-tie-ac-gen-l/contact-pos</property>
+					<property>/systems/electrical/relay/ac-tie-ac-gen-l/output</property>
 				</max>
 			</function>
 		</fcs_function>
@@ -580,7 +599,7 @@
 			<gain>1.0</gain>
 		</pure_gain>
 
-		<pure_gain name="/systems/electrical/bus/standby-l">
+		<pure_gain name="/systems/electrical/bus/standby">
 			<input>/systems/electrical/bus/ac-l</input>
 			<gain>1.0</gain>
 		</pure_gain>
@@ -598,9 +617,15 @@
 		<!-- AC R Bus/AC Gen R Bus -->
 		<switch name="/systems/electrical/bus/ac-gen-r-src">
 			<default value="0" /> <!-- OFF -->
-			<test value="1"> <!-- IDG --> /systems/electrical/relay/idg-ac-gen-r/contact-pos eq 1 </test>
-			<test value="2"> <!-- APU --> /systems/electrical/relay/apu-ac-gen-r/contact-pos eq 1 </test>
-			<test value="4"> <!-- AC TIE --> /systems/electrical/relay/ac-tie-ac-gen-r/contact-pos eq 1 </test>
+			<test value="1"> <!-- IDG -->
+				/systems/electrical/relay/idg-ac-gen-r/contact-pos eq 1
+			</test>
+			<test value="2"> <!-- APU -->
+				/systems/electrical/relay/apu-ac-gen-r/contact-pos eq 1
+			</test>
+			<test value="4"> <!-- AC TIE -->
+				/systems/electrical/relay/ac-tie-ac-gen-r/contact-pos eq 1
+			</test>
 		</switch>
 
 		<fcs_function name="/systems/electrical/bus/ac-gen-r-pre">
@@ -616,7 +641,7 @@
 			<function>
 				<max>
 					<property>/systems/electrical/bus/ac-gen-r-pre</property>
-					<property>/systems/electrical/relay/ac-tie-ac-gen-r/contact-pos</property>
+					<property>/systems/electrical/relay/ac-tie-ac-gen-r/output</property>
 				</max>
 			</function>
 		</fcs_function>
@@ -632,11 +657,6 @@
 		</pure_gain>
 
 		<pure_gain name="/systems/electrical/bus/galley-r">
-			<input>/systems/electrical/bus/ac-r</input>
-			<gain>1.0</gain>
-		</pure_gain>
-
-		<pure_gain name="/systems/electrical/bus/standby-r">
 			<input>/systems/electrical/bus/ac-r</input>
 			<gain>1.0</gain>
 		</pure_gain>
@@ -658,11 +678,25 @@
 				/systems/electrical/bus/ac-l ge 112
 			</test>
 		</switch>
+
+		<switch name="/systems/electrical/relay/ac-l-tr-1/output">
+			<default value="0"/>
+			<test value="/systems/electrical/bus/ac-l">
+				/systems/electrical/relay/ac-l-tr-1/contact-pos eq 1
+			</test>
+		</switch>
 		
 		<switch name="/systems/electrical/relay/ac-r-tr-2/contact-pos">
 			<default value="0" />
 			<test value="1">
 				/systems/electrical/bus/ac-r ge 112
+			</test>
+		</switch>
+
+		<switch name="/systems/electrical/relay/ac-r-tr-2/output">
+			<default value="0"/>
+			<test value="/systems/electrical/bus/ac-r">
+				/systems/electrical/relay/ac-r-tr-2/contact-pos eq 1
 			</test>
 		</switch>
 		
@@ -673,11 +707,18 @@
 			</test>
 		</switch>
 
+		<switch name="/systems/electrical/relay/ac-r-tr-3/output">
+			<default value="0"/>
+			<test value="/systems/electrical/bus/ac-r">
+				/systems/electrical/relay/ac-r-tr-3/contact-pos eq 1
+			</test>
+		</switch>
+
 		<!-- Transformer Rectifiers -->
 		<scheduled_gain name="/systems/electrical/sources/tr-1/output-volt">
-			<input>/systems/electrical/relay/ac-l-tr-1/contact-pos</input>
+			<input>/systems/electrical/relay/ac-l-tr-1/output</input>
 			<table><!-- AC to DC converter -->
-				<independentVar lookup="row">/systems/electrical/relay/ac-l-tr-1/contact-pos</independentVar>
+				<independentVar lookup="row">/systems/electrical/relay/ac-l-tr-1/output</independentVar>
 				<tableData>
 					112 0.21428571429
 					115 0.24347826087
@@ -699,9 +740,9 @@
 		</fcs_function>
 		
 		<scheduled_gain name="/systems/electrical/sources/tr-2/output-volt">
-			<input>/systems/electrical/relay/ac-r-tr-2/contact-pos</input>
+			<input>/systems/electrical/relay/ac-r-tr-2/output</input>
 			<table><!-- AC to DC converter -->
-				<independentVar lookup="row">/systems/electrical/relay/ac-r-tr-2/contact-pos</independentVar>
+				<independentVar lookup="row">/systems/electrical/relay/ac-r-tr-2/output</independentVar>
 				<tableData>
 					112 0.21428571429
 					115 0.24347826087
@@ -723,9 +764,9 @@
 		</fcs_function>
 		
 		<scheduled_gain name="/systems/electrical/sources/tr-3/output-volt">
-			<input>/systems/electrical/relay/ac-r-tr-3/contact-pos</input>
+			<input>/systems/electrical/relay/ac-r-tr-3/output</input>
 			<table><!-- AC to DC converter -->
-				<independentVar lookup="row">/systems/electrical/relay/ac-r-tr-3/contact-pos</independentVar>
+				<independentVar lookup="row">/systems/electrical/relay/ac-r-tr-3/output</independentVar>
 				<tableData>
 					112 0.21428571429
 					115 0.24347826087
@@ -745,88 +786,117 @@
 				</table>
 			</function>
 		</fcs_function>
+
+		<!-- DC Tie Bus DC Bus Relays -->
+		<!-- These outputs are from the DC Tie Bus to the DC Bus -->
+		<switch name="/systems/electrical/relay/dc-tie/contact-pos">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				/controls/electrical/bus-tie eq 1
+				/systems/failures/electrical/dc-tie ne 1
+			</test>
+		</switch>
+		
+		<switch name="/systems/electrical/relay/dc-tie/output">
+			<default value="0"/>
+			<test value="/systems/electrical/bus/dc-tie">
+				/systems/electrical/relay/dc-tie/contact-pos eq 1
+			</test>
+		</switch>
+
+		<!-- DC Bus 1 -->
+		<switch name="/systems/electrical/bus/dc-1-src">
+			<default value="0" />
+			<!-- OFF -->
+			<test value="1"><!-- TRs -->
+				/systems/electrical/sources/tr-1/output-volt ge 24
+			</test>
+			<test value="2"><!-- DC TIE -->
+				/systems/electrical/relay/dc-tie/contact-pos eq 1
+			</test>
+		</switch>
+
+		<pure_gain name="/systems/electrical/bus/dc-1-pre">
+			<input>/systems/electrical/sources/tr-1/output-volt</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<fcs_function name="/systems/electrical/bus/dc-1">
+			<function>
+				<max>
+					<property>/systems/electrical/bus/dc-1-pre</property>
+					<property>/systems/electrical/relay/dc-tie/output</property>
+				</max>
+			</function>
+		</fcs_function>
+
+		<!-- DC Bus 2 -->
+		<switch name="/systems/electrical/bus/dc-2-src">
+			<default value="0" />
+			<!-- OFF -->
+			<test value="1"><!-- TRs -->
+				/systems/electrical/sources/tr-2/output-volt ge 24
+			</test>
+			<test value="2"><!-- DC TIE -->
+				/systems/electrical/relay/dc-tie/contact-pos eq 1
+			</test>
+		</switch>
+
+		<pure_gain name="/systems/electrical/bus/dc-2-pre">
+			<input>/systems/electrical/sources/tr-2/output-volt</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<fcs_function name="/systems/electrical/bus/dc-2">
+			<function>
+				<max>
+					<property>/systems/electrical/bus/dc-2-pre</property>
+					<property>/systems/electrical/relay/dc-tie/output</property>
+				</max>
+			</function>
+		</fcs_function>
+
+		<!-- DC Standby Bus -->
+		<switch name="/systems/electrical/bus/dc-stdby-src">
+			<default value="0" />
+			<!-- OFF -->
+			<test value="1"><!-- TRs -->
+				/systems/electrical/sources/tr-1/output-volt ge 24
+			</test>
+			<test value="2"><!-- DC TIE -->
+				/systems/electrical/relay/dc-tie/output eq 1
+			</test>
+		</switch>
+
+		<pure_gain name="/systems/electrical/bus/dc-stdby-pre">
+			<input>/systems/electrical/sources/tr-1/output-volt</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<fcs_function name="/systems/electrical/bus/dc-stdby">
+			<function>
+				<max>
+					<property>/systems/electrical/bus/dc-stdby-pre</property>
+					<property>/systems/electrical/relay/dc-tie/output</property>
+				</max>
+			</function>
+		</fcs_function>
+
+		<!-- Static Inverter -->
+		<fcs_function name="/systems/electrical/sources/si-1/output-volt">
+			<function>
+				<table><!-- DC to AC converter -->
+					<independentVar lookup="row">/systems/electrical/bus/dc-stdby</independentVar>
+					<independentVar lookup="column">/controls/electrical/standby-pwr</independentVar>
+					<tableData>
+						0 1
+						0 0 0
+						24 0 112
+						28 0 115
+						29 0 118
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
 	</channel>
-
-	<!-- DC Bus 1 -->
-	<switch name="/systems/electrical/bus/dc-1-src">
-		<default value="0" />
-		<!-- OFF -->
-		<test value="1"><!-- TRs --> /systems/electrical/sources/tr-1/output-volt ge 24 </test>
-		<test value="2"><!-- DC TIE --> /systems/electrical/relay/dc-tie/contact-pos eq 1 </test>
-	</switch>
-
-	<pure_gain name="/systems/electrical/bus/dc-1-pre">
-		<input>/systems/electrical/sources/tr-1/output-volt</input>
-		<gain>1.0</gain>
-	</pure_gain>
-
-	<fcs_function name="/systems/electrical/bus/dc-1">
-		<function>
-			<max>
-				<property>/systems/electrical/bus/dc-1-pre</property>
-				<property>/systems/electrical/relay/dc-tie/contact-pos</property>
-			</max>
-		</function>
-	</fcs_function>
-
-	<!-- DC Bus 2 -->
-	<switch name="/systems/electrical/bus/dc-2-src">
-		<default value="0" />
-		<!-- OFF -->
-		<test value="1"><!-- TRs --> /systems/electrical/sources/tr-2/output-volt ge 24 </test>
-		<test value="2"><!-- DC TIE --> /systems/electrical/relay/dc-tie/contact-pos eq 1 </test>
-	</switch>
-
-	<pure_gain name="/systems/electrical/bus/dc-2-pre">
-		<input>/systems/electrical/sources/tr-2/output-volt</input>
-		<gain>1.0</gain>
-	</pure_gain>
-
-	<fcs_function name="/systems/electrical/bus/dc-2">
-		<function>
-			<max>
-				<property>/systems/electrical/bus/dc-2-pre</property>
-				<property>/systems/electrical/relay/dc-tie/contact-pos</property>
-			</max>
-		</function>
-	</fcs_function>
-
-	<!-- DC Standby Bus -->
-	<switch name="/systems/electrical/bus/dc-stdby-src">
-		<default value="0" />
-		<!-- OFF -->
-		<test value="1"><!-- TRs --> /systems/electrical/sources/tr-1/output-volt ge 24 </test>
-		<test value="2"><!-- DC TIE --> /systems/electrical/relay/dc-tie/contact-pos eq 1 </test>
-	</switch>
-
-	<pure_gain name="/systems/electrical/bus/dc-stdby-pre">
-		<input>/systems/electrical/sources/tr-1/output-volt</input>
-		<gain>1.0</gain>
-	</pure_gain>
-
-	<fcs_function name="/systems/electrical/bus/dc-stdby">
-		<function>
-			<max>
-				<property>/systems/electrical/bus/dc-stdby-pre</property>
-				<property>/systems/electrical/relay/dc-tie/contact-pos</property>
-			</max>
-		</function>
-	</fcs_function>
-
-	<!-- Static Inverter -->
-	<fcs_function name="/systems/electrical/sources/si-1/output-volt">
-		<function>
-			<table><!-- DC to AC converter -->
-				<independentVar lookup="row">/systems/electrical/bus/dc-bat</independentVar>
-				<independentVar lookup="column">/controls/elec/emer-pwr</independentVar>
-				<tableData>
-					0 1
-					0 0 0
-					24 0 112
-					28 0 115
-					29 0 118
-				</tableData>
-			</table>
-		</function>
-	</fcs_function>
 </system>

@@ -175,7 +175,7 @@
             <vor-adf-1 type="int">0</vor-adf-1>
             <vor-adf-2 type="int">0</vor-adf-2>
         </efis>
-        <elec>
+        <electrical>
             <ac-mode type="int">0</ac-mode>
             <apu-gen-l type="bool">0</apu-gen-l>
             <apu-gen-r type="bool">0</apu-gen-r>
@@ -192,13 +192,13 @@
             <grd-power type="bool">0</grd-power>
             <ife type="bool">0</ife>
             <standby-pwr type="int">0</standby-pwr>
-        </elec>
-        <eng>
+        </electrical>
+        <engine>
             <apu type="int">0</apu>
             <eng-mode type="int">0</eng-mode>
             <n1-start type="int">0</n1-start>
             <n2-start type="int">0</n2-start>
-        </eng>
+        </engine>
         <flt-control>
             <alt-flaps-arm type="bool">0</alt-flaps-arm>
             <alt-flaps-arm-cover type="bool">0</alt-flaps-arm-cover>
@@ -947,7 +947,7 @@
                 <fwd-service type="bool">0</fwd-service>
             </lights>
         </doors>
-        <elec>
+        <electrical>
             <lights>
                 <apu-gen-off-bus type="bool">0</apu-gen-off-bus>
                 <bat-discharge type="bool">0</bat-discharge>
@@ -964,7 +964,7 @@
                 <standby-pwr-off type="bool">0</standby-pwr-off>
                 <tr-unit type="bool">0</tr-unit>
             </lights>
-        </elec>
+        </electrical>
         <flt-control>
             <lights>
                 <auto-slat-fail type="bool">0</auto-slat-fail>
