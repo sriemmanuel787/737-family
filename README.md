@@ -1,6 +1,7 @@
 # 737-MAX
 A project to create the 737 MAX series for FlightGear, the free flight simulator.
-<br>Original 3D model by omri_ha_muglob
+
+# This plane is still under construction, and is not flyable at the present moment. If you'd like to help with the development process, please let me know with the info at the bottom.
 
 ## Authors
 - Austin Tallent (falconbird16) - 3D
