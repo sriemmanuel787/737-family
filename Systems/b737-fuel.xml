@@ -90,7 +90,7 @@
 		<switch name="/systems/fuel/aft-pump-r">
 			<default value="0"/>
 			<test logic="AND" value="1">
-				/systems/electrical/bus/ac-gndsvc ge 112
+				/systems/electrical/bus/ac-r ge 112
 				/controls/fuel/pump-ra eq 1
 				/systems/failures/fuel/pumps-r ne 1
 			</test>

@@ -250,12 +250,12 @@
             <window-side-r type="bool">0</window-side-r>
             <wing type="bool">0</wing>
         </heat>
-        <hyd>
+        <hydraulics>
             <elec-1 type="bool">0</elec-1>
             <elec-2 type="bool">0</elec-2>
             <eng-1 type="bool">0</eng-1>
             <eng-2 type="bool">0</eng-2>
-        </hyd>
+        </hydraulics>
         <lighting>
             <afds-flood type="int">0</afds-flood>
             <anti-collision type="bool">0</anti-collision> <!-- AKA beacon -->
@@ -1014,6 +1014,11 @@
                 <gen-l type="bool">0</gen-l>
                 <gen-r type="bool">0</gen-r>
             </electrical>
+            <fuel>
+                <pumps-c type="bool">0</pumps-c>
+                <pumps-l type="bool">0</pumps-l>
+                <pumps-r type="bool">0</pumps-r>
+            </fuel>
         </failures>
     </systems>
 
