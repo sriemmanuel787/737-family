@@ -401,7 +401,7 @@
 	
 	</channel>
 	
-	<channel name="Yaw Damper and Rudder Feel">
+	<channel name="Rudder">
 		
 		<fcs_function name="hydraulics/rudder-blowdown-gain">
 			<function>
