@@ -157,10 +157,16 @@
             <tank n="4">
                 <hidden type="bool">1</hidden>
             </tank>
+            <tank n="5">
+                <hidden type="bool">1</hidden>
+            </tank>
         </fuel>
     </consumables>
 
     <controls>
+        <apu>
+            <master type="bool">0</master>
+        </apu>
         <cabin>
             <cabin-valve type="bool">0</cabin-valve>
             <cabin-valve type="int">0</cabin-valve>
@@ -336,7 +342,9 @@
             <n2-actual type="double">0</n2-actual>
         </engine>
         <engine n="2">
-            <n1-actual type="double">0</n1-actual>
+            <n1 type="double">0</n1>
+            <n2 type="double">0</n2>
+            <fuel-flow_pph type="double">0</fuel-flow_pph>
         </engine>
     </engines>
 

@@ -38,8 +38,12 @@
 		
 		<switch name="/systems/apu/door-cmd">
 			<default value="0"/>
-			<test value="/systems/apu/door-cmd">
-				/systems/electrical/bus/dc-bat lt 24
+			<test logic="OR" value="/systems/apu/door-cmd">
+				/controls/electrical/batt-on eq 0
+				<test logic="AND">
+					/systems/electrical/bus/dc-bat lt 24
+					/systems/electrical/bus/ac-l lt 112
+				</test>
 			</test>
 			<test logic="OR" value="1">
 				/controls/apu/master ge 1
@@ -55,10 +59,12 @@
 		<switch name="/systems/apu/cutoff-cmd">
 			<default value="1"/>
 			<test logic="AND" value="0">
+				/controls/electrical/batt-on eq 1
 				/controls/apu/master ge 1
 				/engines/engine[2]/n2-actual ge 10
 			</test>
 			<test logic="AND" value="0"> <!-- Timer for shutdown -->
+				/controls/electrical/batt-on eq 1
 				/systems/apu/delay-timer ne 0
 				/engines/engine[2]/n2-actual ge 10
 			</test>
@@ -80,7 +86,11 @@
 		<switch name="/systems/apu/starter-avail">
 			<default value="0"/>
 			<test logic="AND" value="1">
-				/systems/electrical/bus/dc-bat ge 24
+				/controls/electrical/batt-on eq 1
+				<test logic="OR">
+					/systems/electrical/bus/ac-l ge 112
+					/systems/electrical/bus/dc-bat ge 24
+				</test>
 				propulsion/tank[5]/contents-lbs ge 1
 				/systems/apu/door-norm eq 1
 			</test>
