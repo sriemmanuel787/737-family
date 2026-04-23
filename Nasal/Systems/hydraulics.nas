@@ -1,51 +1,62 @@
-# McDonnell Douglas MD-80 Hydraulic System
+# Boeing 737 Hydraulic System
 # Copyright (c) 2024 Josh Davidson (Octal450)
 
 var HYD = {
 	Fail: {
-		auxPump: props.globals.getNode("/systems/failures/hydraulics/aux-pump"),
-		lPump: props.globals.getNode("/systems/failures/hydraulics/l-pump"),
-		rPump: props.globals.getNode("/systems/failures/hydraulics/r-pump"),
-		trans: props.globals.getNode("/systems/failures/hydraulics/trans"),
-		sysLLeak: props.globals.getNode("/systems/failures/hydraulics/sys-l-leak"),
-		sysRLeak: props.globals.getNode("/systems/failures/hydraulics/sys-r-leak"),
+		elec1Pump: props.globals.getNode("/systems/failures/hydraulics/elec-1-pump"),
+		elec2Pump: props.globals.getNode("/systems/failures/hydraulics/elec-2-pump"),
+		eng1Pump: props.globals.getNode("/systems/failures/hydraulics/eng-1-pump"),
+		eng2Pump: props.globals.getNode("/systems/failures/hydraulics/eng-2-pump"),
+		ptu: props.globals.getNode("/systems/failures/hydraulics/ptu"),
+		standbyPump: props.globals.getNode("/systems/failures/hydraulics/standby-pump"),
+		sysALeak: props.globals.getNode("/systems/failures/hydraulics/sys-a-leak"),
+		sysBLeak: props.globals.getNode("/systems/failures/hydraulics/sys-b-leak"),
 	},
 	Psi: {
-		auxPump: props.globals.getNode("/systems/hydraulics/aux-pump-psi"),
-		lPump: props.globals.getNode("/systems/hydraulics/l-pump-psi"),
-		rPump: props.globals.getNode("/systems/hydraulics/r-pump-psi"),
-		sysL: props.globals.getNode("/systems/hydraulics/sys-l-psi"),
-		sysR: props.globals.getNode("/systems/hydraulics/sys-r-psi"),
+		elec1Pump: props.globals.getNode("/systems/hydraulics/elec-1-pump-psi"),
+		elec2Pump: props.globals.getNode("/systems/hydraulics/elec-2-pump-psi"),
+		eng1Pump: props.globals.getNode("/systems/hydraulics/eng-1-pump-psi"),
+		eng2Pump: props.globals.getNode("/systems/hydraulics/eng-2-pump-psi"),
+		ptu: props.globals.getNode("/systems/hydraulics/ptu-psi"),
+		standby: props.globals.getNode("/systems/hydraulics/standby-psi"),
+		sysA: props.globals.getNode("/systems/hydraulics/sys-a-psi"),
+		sysB: props.globals.getNode("/systems/hydraulics/sys-b-psi"),
 	},
 	Qty: {
-		sysL: props.globals.getNode("/systems/hydraulics/sys-l-qty"),
-		sysLInput: props.globals.getNode("/systems/hydraulics/sys-l-qty-input"),
-		sysR: props.globals.getNode("/systems/hydraulics/sys-r-qty"),
-		sysRInput: props.globals.getNode("/systems/hydraulics/sys-r-qty-input"),
+		sysA: props.globals.getNode("/systems/hydraulics/sys-a-qty"),
+		sysAInput: props.globals.getNode("/systems/hydraulics/sys-l-qty-input"),
+		sysB: props.globals.getNode("/systems/hydraulics/sys-b-qty"),
+		sysBInput: props.globals.getNode("/systems/hydraulics/sys-r-qty-input"),
 	},
 	Switch: {
-		auxPump: props.globals.getNode("/controls/hydraulics/switches/aux-pump"),
-		gearGravityExt: props.globals.getNode("/controls/hydraulics/switches/gear-gravity-ext"),
-		lPump: props.globals.getNode("/controls/hydraulics/switches/l-pump"),
-		rPump: props.globals.getNode("/controls/hydraulics/switches/r-pump"),
-		trans: props.globals.getNode("/controls/hydraulics/switches/trans"),
+		elec1Pump: props.globals.getNode("/controls/hydraulics/elec-1"),
+		elec2Pump: props.globals.getNode("/controls/hydraulics/elec-2"),
+		eng1Pump: props.globals.getNode("/controls/hydraulics/eng-1"),
+		eng2Pump: props.globals.getNode("/controls/hydraulics/eng-2"),
+		altFlapsArm: props.globals.getNode("/controls/flt-control/alt-flaps-arm"),
+		rudderA: props.globals.getNode("/controls/flt-control/rudder-a"),
+		rudderB: props.globals.getNode("/controls/flt-control/rudder-b"),
 	},
 	init: func() {
 		me.resetFailures();
-		me.Qty.sysLInput.setValue(math.round((rand() * 8) + 10 , 0.1)); # Random between 10 and 18
-		me.Qty.sysRInput.setValue(math.round((rand() * 8) + 10 , 0.1)); # Random between 10 and 18
-		me.Switch.auxPump.setValue(0);
-		me.Switch.gearGravityExt.setBoolValue(0);
-		me.Switch.lPump.setValue(0);
-		me.Switch.rPump.setValue(0);
-		me.Switch.trans.setBoolValue(0);
+		me.Qty.sysAInput.setValue(math.round((rand() * 10) + 90, 0.1)); # 90 to 100 percent serviced
+		me.Qty.sysBInput.setValue(math.round((rand() * 10) + 90, 0.1)); # 90 to 100 percent serviced
+		me.Switch.elec1Pump.setBoolValue(0);
+		me.Switch.elec2Pump.setBoolValue(0);
+		me.Switch.eng1Pump.setBoolValue(0);
+		me.Switch.eng2Pump.setBoolValue(0);
+		me.Switch.altFlapsArm.setBoolValue(0);
+		me.Switch.rudderA.setValue(0); # 0 is treated as the normal guarded position
+		me.Switch.rudderB.setValue(0);
 	},
 	resetFailures: func() {
-		me.Fail.auxPump.setBoolValue(0);
-		me.Fail.lPump.setBoolValue(0);
-		me.Fail.rPump.setBoolValue(0);
-		me.Fail.trans.setBoolValue(0);
-		me.Fail.sysLLeak.setBoolValue(0);
-		me.Fail.sysRLeak.setBoolValue(0);
+		me.Fail.elec1Pump.setBoolValue(0);
+		me.Fail.elec2Pump.setBoolValue(0);
+		me.Fail.eng1Pump.setBoolValue(0);
+		me.Fail.eng2Pump.setBoolValue(0);
+		me.Fail.ptu.setBoolValue(0);
+		me.Fail.standbyPump.setBoolValue(0);
+		me.Fail.sysALeak.setBoolValue(0);
+		me.Fail.sysBLeak.setBoolValue(0);
 	},
 };

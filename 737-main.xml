@@ -132,7 +132,7 @@
             </generic>
         </multiplay>
 
-        <flight-recorder include="Systems/flight-recorder.xml" />
+        <!-- <flight-recorder include="Systems/flight-recorder.xml" /> -->
 
         <checklists include="737-checklist.xml" />
     </sim>
@@ -1004,6 +1004,10 @@
                 <valve-open type="bool">0</valve-open>
             </lights>
         </fuel>
+        <hydraulics>
+            <sys-a-qty-input type="double">8</sys-a-qty-input>
+            <sys-b-qty-input type="double">8</sys-b-qty-input>
+        </hydraulics>
         <lighting>
             <lights>
                 <exit-not-armed type="bool">0</exit-not-armed>
@@ -1027,6 +1031,16 @@
                 <pumps-l type="bool">0</pumps-l>
                 <pumps-r type="bool">0</pumps-r>
             </fuel>
+            <hydraulics>
+                <elec-1-pump type="bool">0</elec-1-pump>
+                <elec-2-pump type="bool">0</elec-2-pump>
+                <eng-1-pump type="bool">0</eng-1-pump>
+                <eng-2-pump type="bool">0</eng-2-pump>
+                <ptu type="bool">0</ptu>
+                <standby-pump type="bool">0</standby-pump>
+                <sys-a-leak type="bool">0</sys-a-leak>
+                <sys-b-leak type="bool">0</sys-b-leak>
+            </hydraulics>
         </failures>
     </systems>
 

@@ -2,285 +2,434 @@
 
 <!-- Boeing 737 Hydraulic System -->
 
-<system name="737: Hydraulics">
-	
+<system name="B737: Hydraulics">
+
 	<property value="0">/systems/hydraulics/brakes/left-actuator-feedback</property>
 	<property value="0">/systems/hydraulics/brakes/left-input-feedback</property>
 	<property value="0">/systems/hydraulics/brakes/right-actuator-feedback</property>
 	<property value="0">/systems/hydraulics/brakes/right-input-feedback</property>
-	<property value="2990">/systems/hydraulics/brakes/sys-l-psi</property>
-	<property value="3010">/systems/hydraulics/brakes/sys-2-psi</property>
-	<property value="0">/systems/hydraulics/trans-sys-l-to-sys-2</property>
-	<property value="0">/systems/hydraulics/trans-sys-2-to-sys-l</property>
-	
-	<channel name="SYS Leak Logic" execrate="8">
-		
-		<!-- SYS L -->
-		<switch name="/systems/hydraulics/sys-l-qty-cmd">
-			<default value="/systems/hydraulics/sys-l-qty-input"/>
+	<property value="0">/systems/hydraulics/brakes/sys-a-psi</property>
+	<property value="0">/systems/hydraulics/brakes/sys-b-psi</property>
+	<property value="0">/systems/hydraulics/ptu-psi</property>
+	<property value="0">/systems/hydraulics/standby-psi</property>
+
+	<channel name="Hydraulic Quantities" execrate="8">
+
+
+		<switch name="/systems/hydraulics/system-a-leak">
+			<default value="0" />
+			<test logic="OR" value="1">
+				/systems/failures/hydraulics/sys-a-leak eq 1
+				/systems/failures/hydraulics/sys-a-leak eq 1
+			</test>
+		</switch>
+
+		<switch name="/systems/hydraulics/system-b-leak">
+			<default value="0" />
+			<test logic="OR" value="1">
+				/systems/failures/hydraulics/sys-b-leak eq 1
+				/systems/failures/hydraulics/sys-b-leak eq 1
+			</test>
+		</switch>
+
+		<!-- System A -->
+		<switch name="/systems/hydraulics/sys-a-qty-cmd">
+			<default value="/systems/hydraulics/sys-a-qty-input" />
 			<test value="0">
-				/systems/failures/hydraulics/sys-l-leak eq 1
+				/systems/hydraulics/system-a-leak eq 1
 			</test>
 		</switch>
-		
-		<switch name="/systems/hydraulics/sys-l-qty-decr-rate">
-			<default value="100"/> <!-- Instant -->
+
+		<switch name="/systems/hydraulics/sys-a-qty-decr-rate">
+			<default value="100" />
 			<test value="0.25">
-				/systems/failures/hydraulics/sys-l-leak eq 1
+				/systems/hydraulics/system-a-leak eq 1
 			</test>
 		</switch>
-		
-		<actuator name="/systems/hydraulics/sys-l-qty">
-			<input>/systems/hydraulics/sys-l-qty-cmd</input>
-			<rate_limit sense="incr">100</rate_limit> <!-- Instant -->
-			<rate_limit sense="decr">/systems/hydraulics/sys-l-qty-decr-rate</rate_limit>
+
+		<actuator name="/systems/hydraulics/sys-a-qty">
+			<input>/systems/hydraulics/sys-a-qty-cmd</input>
+			<rate_limit sense="incr">100</rate_limit>
+			<rate_limit sense="decr">/systems/hydraulics/sys-a-qty-decr-rate</rate_limit>
 		</actuator>
-		
-		<switch name="/systems/hydraulics/sys-l-preflight-qty">
-			<default value="/systems/hydraulics/sys-l-preflight-qty"/>
-			<test logic="OR" value="/systems/hydraulics/sys-l-qty">
-				/engines/engine[1]/state lt 3
+
+		<switch name="/systems/hydraulics/sys-a-preflight-qty">
+			<default value="/systems/hydraulics/sys-a-qty-input" />
+			<test logic="OR" value="/systems/hydraulics/sys-a-qty">
+				/engines/engine[0]/state ge 3
+				/engines/engine[1]/state ge 3
 				/systems/acconfig/autoconfig-running eq 1
 			</test>
 		</switch>
-		
-		<!-- SYS R -->
-		<switch name="/systems/hydraulics/sys-2-qty-cmd">
-			<default value="/systems/hydraulics/sys-2-qty-input"/>
+
+		<!-- System B -->
+		<switch name="/systems/hydraulics/sys-b-qty-cmd">
+			<default value="/systems/hydraulics/sys-b-qty-input" />
 			<test value="0">
-				/systems/failures/hydraulics/sys-2-leak eq 1
+				/systems/hydraulics/system-b-leak eq 1
 			</test>
 		</switch>
-		
-		<switch name="/systems/hydraulics/sys-2-qty-decr-rate">
-			<default value="100"/> <!-- Instant -->
+
+		<switch name="/systems/hydraulics/sys-b-qty-decr-rate">
+			<default value="100" />
 			<test value="0.25">
-				/systems/failures/hydraulics/sys-2-leak eq 1
+				/systems/hydraulics/system-b-leak eq 1
 			</test>
 		</switch>
-		
-		<actuator name="/systems/hydraulics/sys-2-qty">
-			<input>/systems/hydraulics/sys-2-qty-cmd</input>
-			<rate_limit sense="incr">100</rate_limit> <!-- Instant -->
-			<rate_limit sense="decr">/systems/hydraulics/sys-2-qty-decr-rate</rate_limit>
+
+		<actuator name="/systems/hydraulics/sys-b-qty">
+			<input>/systems/hydraulics/sys-b-qty-cmd</input>
+			<rate_limit sense="incr">100</rate_limit>
+			<rate_limit sense="decr">/systems/hydraulics/sys-b-qty-decr-rate</rate_limit>
 		</actuator>
-		
-		<switch name="/systems/hydraulics/sys-2-preflight-qty">
-			<default value="/systems/hydraulics/sys-2-preflight-qty"/>
-			<test logic="OR" value="/systems/hydraulics/sys-2-qty">
-				/engines/engine[1]/state lt 3
+
+		<switch name="/systems/hydraulics/sys-b-preflight-qty">
+			<default value="/systems/hydraulics/sys-b-qty-input" />
+			<test logic="OR" value="/systems/hydraulics/sys-b-qty">
+				/engines/engine[0]/state ge 3
+				/engines/engine[1]/state ge 3
 				/systems/acconfig/autoconfig-running eq 1
 			</test>
 		</switch>
-	
+
 	</channel>
-	
+
 	<channel name="Main Hydraulics" execrate="8">
-		
+
 		<!-- Common -->
 		<switch name="/systems/hydraulics/sys-incr-rate">
-			<default value="500"/> <!-- 2 seconds per 1000 psi -->
-			<test value="100000"> <!-- Instant -->
+			<default value="500" />
+			<test value="100000">
 				/systems/acconfig/autoconfig-running eq 1
 			</test>
 		</switch>
-		
+
 		<switch name="/systems/hydraulics/sys-decr-rate">
-			<default value="45.45455"/> <!-- 22 seconds per 1000 psi -->
-			<test value="100000"> <!-- Instant -->
+			<default value="45.45455" />
+			<test value="100000">
 				/systems/acconfig/autoconfig-running eq 1
 			</test>
 		</switch>
-		
-		<!-- SYS L -->
-		<fcs_function name="/systems/hydraulics/l-pump-psi-input">
+
+		<!-- System A engine-driven pump -->
+		<fcs_function name="/systems/hydraulics/a-pump-psi-input">
 			<function>
 				<ifthen>
 					<and>
 						<nq>
-							<property>/systems/failures/hydraulics/l-pump</property>
+							<property>/systems/failures/hydraulics/eng-1-pump</property>
 							<value>1</value>
 						</nq>
 						<ge>
-							<property>/systems/hydraulics/sys-l-qty</property>
+							<property>/systems/hydraulics/sys-a-qty</property>
 							<value>1</value>
 						</ge>
 					</and>
 					<table>
 						<independentVar lookup="row">/engines/engine[0]/n2-actual</independentVar>
 						<tableData>
-							40    40
-							45  2990
+							40 0
+							45 2990
 						</tableData>
 					</table>
-					<value>40</value>
+					<value>0</value>
 				</ifthen>
 			</function>
 		</fcs_function>
-		
-		<switch name="/systems/hydraulics/l-pump-psi">
-			<default value="40"/>
-			<test logic="OR" value="/systems/hydraulics/l-pump-psi-input">
-				/controls/hydraulics/elec-2 eq 1
-				/controls/hydraulics/eng-2 eq 1
-			</test>
-			<test logic="AND" value="2980">
-				/systems/electrical/bus/ac-gen-l ge 112
-				/controls/hydraulics/aux-pump ne 0
-				/systems/failures/hydraulics/aux-pump ne 1
-				/systems/hydraulics/sys-2-qty ge 1
+
+		<switch name="/systems/hydraulics/a-pump-psi">
+			<default value="0" />
+			<test value="/systems/hydraulics/a-pump-psi-input">
+				/controls/hydraulics/eng-1 eq 1
 			</test>
 		</switch>
-		
-		<fcs_function name="/systems/hydraulics/sys-l-pre-psi-cmd">
+
+		<switch name="/systems/hydraulics/system-a-elec-pump-psi">
+			<default value="0" />
+			<test logic="AND" value="2980">
+				/systems/electrical/bus/ac-r ge 112
+				/controls/hydraulics/elec-1 eq 1
+				/systems/failures/hydraulics/elec-1-pump ne 1
+				/systems/hydraulics/sys-a-qty ge 1
+			</test>
+		</switch>
+
+		<fcs_function name="/systems/hydraulics/sys-a-pre-psi-cmd">
 			<function>
 				<ifthen>
 					<ge>
-						<property>/systems/hydraulics/sys-l-qty</property>
-						<value>1</value>
-					</ge>
-					<property>/systems/hydraulics/l-pump-psi</property>
-					<value>40</value>
-				</ifthen>
-			</function>
-		</fcs_function>
-		
-		<fcs_function name="/systems/hydraulics/sys-l-psi-cmd">
-			<function>
-				<ifthen>
-					<ge>
-						<property>/systems/hydraulics/sys-l-qty</property>
+						<property>/systems/hydraulics/sys-a-qty</property>
 						<value>1</value>
 					</ge>
 					<max>
-						<property>/systems/hydraulics/sys-l-pre-psi-cmd</property>
-						<property>/systems/hydraulics/trans-sys-2-to-sys-l</property>
+						<property>/systems/hydraulics/a-pump-psi</property>
+						<property>/systems/hydraulics/system-a-elec-pump-psi</property>
 					</max>
-					<value>40</value>
+					<value>0</value>
 				</ifthen>
 			</function>
 		</fcs_function>
-		
-		<actuator name="/systems/hydraulics/sys-l-psi">
-			<input>/systems/hydraulics/sys-l-psi-cmd</input>
+
+		<pure_gain name="/systems/hydraulics/sys-a-psi-cmd">
+			<input>/systems/hydraulics/sys-a-pre-psi-cmd</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<actuator name="/systems/hydraulics/sys-a-psi">
+			<input>/systems/hydraulics/sys-a-psi-cmd</input>
 			<rate_limit sense="incr">/systems/hydraulics/sys-incr-rate</rate_limit>
 			<rate_limit sense="decr">/systems/hydraulics/sys-decr-rate</rate_limit>
 		</actuator>
-		
-		<!-- SYS R -->
-		<fcs_function name="/systems/hydraulics/pump-2-psi-input">
+
+		<!-- System B engine-driven pump -->
+		<fcs_function name="/systems/hydraulics/r-pump-psi-input">
 			<function>
 				<ifthen>
 					<and>
 						<nq>
-							<property>/systems/failures/hydraulics/pump-2</property>
+							<property>/systems/failures/hydraulics/eng-2-pump</property>
 							<value>1</value>
 						</nq>
 						<ge>
-							<property>/systems/hydraulics/sys-2-qty</property>
+							<property>/systems/hydraulics/sys-b-qty</property>
 							<value>1</value>
 						</ge>
 					</and>
 					<table>
 						<independentVar lookup="row">/engines/engine[1]/n2-actual</independentVar>
 						<tableData>
-							40    40
-							45  3010
+							40 0
+							45 3010
 						</tableData>
 					</table>
-					<value>40</value>
+					<value>0</value>
 				</ifthen>
 			</function>
 		</fcs_function>
-		
-		<switch name="/systems/hydraulics/pump-2-psi">
-			<default value="40"/>
-			<test value="/systems/hydraulics/pump-2-psi-input">
-				/controls/hydraulics/pump-2 eq 1
+
+		<switch name="/systems/hydraulics/r-pump-psi">
+			<default value="0" />
+			<test value="/systems/hydraulics/r-pump-psi-input">
+				/controls/hydraulics/eng-2 eq 1
 			</test>
 		</switch>
-		
-		<switch name="/systems/hydraulics/aux-pump-psi">
-			<default value="0"/>
+
+		<switch name="/systems/hydraulics/system-b-elec-pump-psi">
+			<default value="0" />
 			<test logic="AND" value="2980">
-				/systems/electrical/bus/ac-gen-l ge 112
-				/controls/hydraulics/aux-pump ne 0
-				/systems/failures/hydraulics/aux-pump ne 1
-				/systems/hydraulics/sys-2-qty ge 1
+				/systems/electrical/bus/ac-l ge 112
+				/controls/hydraulics/elec-2 eq 1
+				/systems/failures/hydraulics/elec-2-pump ne 1
+				/systems/hydraulics/sys-b-qty ge 1
 			</test>
 		</switch>
-		
-		<fcs_function name="/systems/hydraulics/sys-2-pre-psi-cmd">
+
+		<fcs_function name="/systems/hydraulics/sys-b-pre-psi-cmd">
 			<function>
 				<ifthen>
 					<ge>
-						<property>/systems/hydraulics/sys-2-qty</property>
+						<property>/systems/hydraulics/sys-b-qty</property>
 						<value>1</value>
 					</ge>
 					<max>
-						<property>/systems/hydraulics/pump-2-psi</property>
-						<property>/systems/hydraulics/aux-pump-psi</property>
+						<property>/systems/hydraulics/r-pump-psi</property>
+						<property>/systems/hydraulics/system-b-elec-pump-psi</property>
 					</max>
-					<value>40</value>
+					<value>0</value>
 				</ifthen>
 			</function>
 		</fcs_function>
-		
-		<fcs_function name="/systems/hydraulics/sys-2-psi-cmd">
+
+		<!-- PTU: automatic System A to System B assist -->
+		<switch name="/systems/hydraulics/ptu-active">
+			<default value="0" />
+			<test logic="AND" value="1">
+				/systems/failures/hydraulics/ptu ne 1
+				/systems/hydraulics/sys-a-qty ge 1
+				/systems/hydraulics/sys-b-qty ge 1
+				/systems/hydraulics/sys-a-pre-psi-cmd ge 2500
+				/systems/hydraulics/r-pump-psi lt 500
+				/surface-positions/flap-pos-norm gt 0
+				/surface-positions/flap-pos-norm lt 0.375
+				/gear/gear[1]/wow eq 0
+				/gear/gear[2]/wow eq 0
+			</test>
+		</switch>
+
+		<switch name="/systems/hydraulics/ptu-psi">
+			<default value="0" />
+			<test value="/systems/hydraulics/sys-a-pre-psi-cmd">
+				/systems/hydraulics/ptu-active eq 1
+			</test>
+		</switch>
+
+		<fcs_function name="/systems/hydraulics/sys-b-psi-cmd">
 			<function>
 				<ifthen>
 					<ge>
-						<property>/systems/hydraulics/sys-2-qty</property>
+						<property>/systems/hydraulics/sys-b-qty</property>
 						<value>1</value>
 					</ge>
 					<max>
-						<property>/systems/hydraulics/sys-2-pre-psi-cmd</property>
-						<property>/systems/hydraulics/trans-sys-l-to-sys-2</property>
+						<property>/systems/hydraulics/sys-b-pre-psi-cmd</property>
+						<property>/systems/hydraulics/ptu-psi</property>
 					</max>
-					<value>40</value>
+					<value>0</value>
 				</ifthen>
 			</function>
 		</fcs_function>
-		
-		<actuator name="/systems/hydraulics/sys-2-psi">
-			<input>/systems/hydraulics/sys-2-psi-cmd</input>
+
+		<actuator name="/systems/hydraulics/sys-b-psi">
+			<input>/systems/hydraulics/sys-b-psi-cmd</input>
 			<rate_limit sense="incr">/systems/hydraulics/sys-incr-rate</rate_limit>
 			<rate_limit sense="decr">/systems/hydraulics/sys-decr-rate</rate_limit>
 		</actuator>
-		
-		<!-- Trans Pump -->
-		<actuator name="/systems/hydraulics/trans-valve">
-			<input>/controls/hydraulics/trans</input>
-			<rate_limit>0.333</rate_limit> <!-- 3 seconds -->
-		</actuator>
-		
-		<switch name="/systems/hydraulics/trans-disag">
-			<default value="0"/>
+
+		<!-- Standby system -->
+		<switch name="/systems/hydraulics/standby-manual">
+			<default value="0" />
+			<test logic="OR" value="1">
+				/controls/flt-control/alt-flaps-arm eq 1
+				/controls/flt-control/rudder-a ge 2
+				/controls/flt-control/rudder-b ge 2
+			</test>
+		</switch>
+
+		<switch name="/systems/hydraulics/standby-auto">
+			<default value="0" />
 			<test logic="AND" value="1">
-				/systems/hydraulics/trans-valve ne 0
-				/systems/hydraulics/trans-valve ne 1
+				<test logic="OR">
+					/systems/hydraulics/sys-a-psi lt 1500
+					/systems/hydraulics/sys-b-psi lt 1500
+				</test> /surface-positions/flap-pos-norm gt 0
+				<test logic="OR">
+					/gear/gear[1]/wow eq 0
+					/gear/gear[2]/wow eq 0
+					/velocities/groundspeed-kt ge 60
+				</test>
+				<test logic="OR">
+					/controls/flt-control/rudder-a ne 1
+					/controls/flt-control/rudder-b ne 1
+				</test>
 			</test>
 		</switch>
-		
-		<switch name="/systems/hydraulics/trans-sys-l-to-sys-2">
-			<default value="0"/>
-			<test logic="AND" value="/systems/hydraulics/sys-l-pre-psi-cmd">
-				/systems/hydraulics/trans-valve eq 1
-				/systems/failures/hydraulics/trans ne 1
-				/systems/hydraulics/sys-2-qty ge 1
+
+		<switch name="/systems/hydraulics/standby-rudder-command">
+			<default value="0" />
+			<test logic="OR" value="1">
+				/controls/flt-control/rudder-a ge 2
+				/controls/flt-control/rudder-b ge 2
+				/systems/hydraulics/standby-auto eq 1
 			</test>
 		</switch>
-		
-		<switch name="/systems/hydraulics/trans-sys-2-to-sys-l">
-			<default value="0"/>
-			<test logic="AND" value="/systems/hydraulics/sys-2-pre-psi-cmd">
-				/systems/hydraulics/trans-valve eq 1
-				/systems/failures/hydraulics/trans ne 1
-				/systems/hydraulics/sys-l-qty ge 1
+
+		<switch name="/systems/hydraulics/standby-command">
+			<default value="0" />
+			<test logic="AND" value="1">
+				<test logic="OR">
+					/systems/hydraulics/standby-manual eq 1
+					/systems/hydraulics/standby-auto eq 1
+				</test>
+				/systems/failures/hydraulics/standby-pump ne 1
+				/systems/hydraulics/sys-b-qty ge 1
 			</test>
 		</switch>
-		
-		<!-- Brake System -->
+
+		<switch name="/systems/hydraulics/standby-psi-cmd">
+			<default value="0" />
+			<test value="3000">
+				/systems/hydraulics/standby-command eq 1
+			</test>
+		</switch>
+
+		<actuator name="/systems/hydraulics/standby-psi">
+			<input>/systems/hydraulics/standby-psi-cmd</input>
+			<rate_limit sense="incr">/systems/hydraulics/sys-incr-rate</rate_limit>
+			<rate_limit sense="decr">/systems/hydraulics/sys-decr-rate</rate_limit>
+		</actuator>
+
+		<!-- 737-style aliases -->
+		<pure_gain name="/systems/hydraulics/sys-a-psi">
+			<input>/systems/hydraulics/sys-a-psi</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/hydraulics/sys-b-psi">
+			<input>/systems/hydraulics/sys-b-psi</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/hydraulics/sys-a-qty">
+			<input>/systems/hydraulics/sys-a-qty</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/hydraulics/sys-b-qty">
+			<input>/systems/hydraulics/sys-b-qty</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/hydraulics/eng-1-pump-psi">
+			<input>/systems/hydraulics/a-pump-psi</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/hydraulics/eng-2-pump-psi">
+			<input>/systems/hydraulics/r-pump-psi</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/hydraulics/elec-2-pump-psi">
+			<input>/systems/hydraulics/system-a-elec-pump-psi</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<pure_gain name="/systems/hydraulics/elec-1-pump-psi">
+			<input>/systems/hydraulics/system-b-elec-pump-psi</input>
+			<gain>1.0</gain>
+		</pure_gain>
+
+		<!-- Flight control hydraulic annunciations -->
+		<switch name="/systems/flt-control/lights/rudder-a-low-pressure">
+			<default value="0" />
+			<test logic="AND" value="1">
+				/systems/hydraulics/sys-a-psi lt 1500
+				/controls/flt-control/rudder-a lt 2
+			</test>
+		</switch>
+
+		<switch name="/systems/flt-control/lights/rudder-b-low-pressure">
+			<default value="0" />
+			<test logic="AND" value="1">
+				/systems/hydraulics/sys-b-psi lt 1500
+				/controls/flt-control/rudder-b lt 2
+			</test>
+		</switch>
+
+		<switch name="/systems/flt-control/lights/stby-low-pressure">
+			<default value="0" />
+			<test logic="AND" value="1">
+				<test logic="OR">
+					/systems/hydraulics/standby-manual eq 1
+					/systems/hydraulics/standby-auto eq 1
+				</test> /systems/hydraulics/standby-psi lt 1500 </test>
+		</switch>
+
+		<switch name="/systems/flt-control/lights/stby-low-quantity">
+			<default value="0" />
+			<test value="1">
+				/systems/hydraulics/sys-b-qty lt 5
+			</test>
+		</switch>
+
+		<switch name="/systems/flt-control/lights/stby-rud-on">
+			<default value="0" />
+			<test value="1">
+				/systems/hydraulics/standby-rudder-command eq 1
+			</test>
+		</switch>
+
+		<!-- Brake pressure indications -->
 		<fcs_function name="/systems/hydraulics/brakes/left-error">
 			<function>
 				<abs>
@@ -291,7 +440,7 @@
 				</abs>
 			</function>
 		</fcs_function>
-		
+
 		<fcs_function name="/systems/hydraulics/brakes/right-error">
 			<function>
 				<abs>
@@ -302,41 +451,43 @@
 				</abs>
 			</function>
 		</fcs_function>
-		
+
 		<fcs_function name="/systems/hydraulics/brakes/sys-decr-rate-cmd">
-			<function> <!-- About 10 full depresses and releases from nominal PSI -->
-				<sum> <!-- V = 2x, if V = 145 then x = 72.5 -->
+			<function>
+				<sum>
 					<product>
 						<property>/systems/hydraulics/brakes/left-error</property>
-						<value>72.5</value> <!-- x -->
+						<value>72.5</value>
 					</product>
 					<product>
 						<property>/systems/hydraulics/brakes/right-error</property>
-						<value>72.5</value> <!-- x -->
+						<value>72.5</value>
 					</product>
 				</sum>
 			</function>
 		</fcs_function>
-		
+
 		<switch name="/systems/hydraulics/brakes/sys-decr-rate">
-			<default value="/systems/hydraulics/brakes/sys-decr-rate-cmd"/>
+			<default value="/systems/hydraulics/brakes/sys-decr-rate-cmd" />
 			<test logic="AND" value="0">
 				/systems/hydraulics/brakes/left-error le 0.01
 				/systems/hydraulics/brakes/right-error le 0.01
 			</test>
 		</switch>
-		
-		<fcs_function name="/systems/hydraulics/brakes/sys-l-psi-cmd">
+
+		<!-- Legacy brake gauge names retained:
+		     sys-a = alternate/system A pressure, sys-b = normal/system B pressure. -->
+		<fcs_function name="/systems/hydraulics/brakes/sys-a-psi-cmd">
 			<function>
 				<difference>
-					<property>/systems/hydraulics/sys-l-psi</property>
+					<property>/systems/hydraulics/sys-a-psi</property>
 					<product>
 						<property>/systems/hydraulics/brakes/left-actuator-feedback</property>
-						<value>45</value>
+						<value>40</value>
 					</product>
 					<product>
 						<property>/systems/hydraulics/brakes/right-actuator-feedback</property>
-						<value>50</value>
+						<value>40</value>
 					</product>
 				</difference>
 			</function>
@@ -345,25 +496,25 @@
 				<max>4000</max>
 			</clipto>
 		</fcs_function>
-		
-		<actuator name="/systems/hydraulics/brakes/sys-l-psi">
-			<input>/systems/hydraulics/brakes/sys-l-psi-cmd</input>
+
+		<actuator name="/systems/hydraulics/brakes/sys-a-psi">
+			<input>/systems/hydraulics/brakes/sys-a-psi-cmd</input>
 			<rate_limit sense="incr">/systems/hydraulics/sys-incr-rate</rate_limit>
 			<rate_limit sense="decr">/systems/hydraulics/brakes/sys-decr-rate</rate_limit>
 		</actuator>
-		
-		<lag_filter name="/systems/hydraulics/brakes/sys-l-psi-needle">
-			<input>/systems/hydraulics/brakes/sys-l-psi</input>
+
+		<lag_filter name="/systems/hydraulics/brakes/sys-a-psi-needle">
+			<input>/systems/hydraulics/brakes/sys-a-psi</input>
 			<c1>10</c1>
 		</lag_filter>
-		
-		<fcs_function name="/systems/hydraulics/brakes/sys-2-psi-cmd">
+
+		<fcs_function name="/systems/hydraulics/brakes/sys-b-psi-cmd">
 			<function>
 				<difference>
-					<property>/systems/hydraulics/sys-2-psi</property>
+					<property>/systems/hydraulics/sys-b-psi</property>
 					<product>
 						<property>/systems/hydraulics/brakes/left-actuator-feedback</property>
-						<value>50</value>
+						<value>55</value>
 					</product>
 					<product>
 						<property>/systems/hydraulics/brakes/right-actuator-feedback</property>
@@ -376,18 +527,18 @@
 				<max>4000</max>
 			</clipto>
 		</fcs_function>
-		
-		<actuator name="/systems/hydraulics/brakes/sys-2-psi">
-			<input>/systems/hydraulics/brakes/sys-2-psi-cmd</input>
+
+		<actuator name="/systems/hydraulics/brakes/sys-b-psi">
+			<input>/systems/hydraulics/brakes/sys-b-psi-cmd</input>
 			<rate_limit sense="incr">/systems/hydraulics/sys-incr-rate</rate_limit>
 			<rate_limit sense="decr">/systems/hydraulics/brakes/sys-decr-rate</rate_limit>
 		</actuator>
-		
-		<lag_filter name="/systems/hydraulics/brakes/sys-2-psi-needle">
-			<input>/systems/hydraulics/brakes/sys-2-psi</input>
+
+		<lag_filter name="/systems/hydraulics/brakes/sys-b-psi-needle">
+			<input>/systems/hydraulics/brakes/sys-b-psi</input>
 			<c1>10</c1>
 		</lag_filter>
-	
+
 	</channel>
 
 </system>

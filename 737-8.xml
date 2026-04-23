@@ -574,6 +574,7 @@
 	<system file="b737-apu" />
 	<system file="b737-fuel" />
 	<system file="b737-electrical" />
+	<system file="b737-hydraulics" />
 
 	<flight_control name="FCS: 737">
 		<channel name="Pitch">

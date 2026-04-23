@@ -98,10 +98,10 @@ var doMagicStartup = func {
     settimer(func {
         setprop("/controls/electrical/switches/gen-1", 1);
         setprop("/controls/electrical/switches/gen-2", 1);
-        setprop("/controls/hydraulics/switches/l-pump-1", 1);
-        setprop("/controls/hydraulics/switches/l-pump-2", 1);
-        setprop("/controls/hydraulics/switches/r-pump-1", 1);
-        setprop("/controls/hydraulics/switches/r-pump-2", 1);
+        setprop("/controls/hydraulics/eng-1", 1);
+        setprop("/controls/hydraulics/eng-2", 1);
+        setprop("/controls/hydraulics/elec-1", 1);
+        setprop("/controls/hydraulics/elec-2", 1);
         setprop("/controls/engines/engine[0]/cutoff", 0);
         setprop("/controls/engines/engine[0]/cutoff-switch", 0);
         setprop("/controls/engines/engine[1]/cutoff", 0);

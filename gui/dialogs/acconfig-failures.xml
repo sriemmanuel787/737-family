@@ -293,9 +293,9 @@
 			</group>
 			
 			<checkbox>
-				<label>System (HSC)</label>
+				<label>System A Leak</label>
 				<halign>left</halign>
-				<property>/systems/failures/hydraulics/system</property>
+				<property>/systems/failures/hydraulics/sys-a-leak</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -303,9 +303,9 @@
 			</checkbox>
 			
 			<checkbox>
-				<label>Catastrophic Aft Explosion</label>
+				<label>ENG 1 Pump</label>
 				<halign>left</halign>
-				<property>/systems/failures/hydraulics/catastrophic-aft</property>
+				<property>/systems/failures/hydraulics/eng-1-pump</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -313,9 +313,9 @@
 			</checkbox>
 			
 			<checkbox>
-				<label>SYS 1 Leak</label>
+				<label>ELEC 2 Pump</label>
 				<halign>left</halign>
-				<property>/systems/failures/hydraulics/sys-1-leak</property>
+				<property>/systems/failures/hydraulics/elec-2-pump</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -323,9 +323,9 @@
 			</checkbox>
 			
 			<checkbox>
-				<label>SYS 1 L Pump</label>
+				<label>System B Leak</label>
 				<halign>left</halign>
-				<property>/systems/failures/hydraulics/l-pump-1</property>
+				<property>/systems/failures/hydraulics/sys-b-leak</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -333,9 +333,9 @@
 			</checkbox>
 			
 			<checkbox>
-				<label>SYS 1 R Pump</label>
+				<label>ENG 2 Pump</label>
 				<halign>left</halign>
-				<property>/systems/failures/hydraulics/r-pump-1</property>
+				<property>/systems/failures/hydraulics/eng-2-pump</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -343,9 +343,9 @@
 			</checkbox>
 			
 			<checkbox>
-				<label>SYS 2 Leak</label>
+				<label>ELEC 1 Pump</label>
 				<halign>left</halign>
-				<property>/systems/failures/hydraulics/sys-2-leak</property>
+				<property>/systems/failures/hydraulics/elec-1-pump</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -353,9 +353,9 @@
 			</checkbox>
 			
 			<checkbox>
-				<label>SYS 2 L Pump</label>
+				<label>PTU</label>
 				<halign>left</halign>
-				<property>/systems/failures/hydraulics/l-pump-2</property>
+				<property>/systems/failures/hydraulics/ptu</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -363,99 +363,9 @@
 			</checkbox>
 			
 			<checkbox>
-				<label>SYS 2 R Pump</label>
+				<label>Standby Pump</label>
 				<halign>left</halign>
-				<property>/systems/failures/hydraulics/r-pump-2</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>SYS 3 Leak</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/sys-3-leak</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>SYS 3 L Pump</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/l-pump-3</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>SYS 3 R Pump</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/r-pump-3</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>Aux Pump 1</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/aux-pump-1</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>Aux Pump 2</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/aux-pump-2</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>RMP 1-3</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/rmp-1-3</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>RMP 2-3</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/rmp-2-3</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>NRMP 2-1</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/nrmp-2-1</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>NRMP 3-2</label>
-				<halign>left</halign>
-				<property>/systems/failures/hydraulics/nrmp-3-2</property>
+				<property>/systems/failures/hydraulics/standby-pump</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
