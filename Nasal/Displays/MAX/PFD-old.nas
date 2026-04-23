@@ -116,7 +116,7 @@ var canvas_pfd = {
 		var m = {parents: [canvas_pfd]};
 		var pfd = canvas_group;
 		var font_mapper = func(family, weight) {
-			return "MFD-font.ttf";
+			return "BoeingEFIS.ttf";
 		};
 		
 		canvas.parsesvg(pfd, "Aircraft/737-family/Nasal/Displays/MAX/res/PFD.svg" , {'font-mapper': font_mapper});
